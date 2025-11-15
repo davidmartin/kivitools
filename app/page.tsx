@@ -1,65 +1,197 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { Card } from "@heroui/react";
+import AdSlot from "./components/ad-slot";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+
+  // Plataformas disponibles
+  const platforms = [
+    {
+      name: "TikTok",
+      description: t("tiktok.page.description"),
+      href: "/tiktok",
+      icon: "🎵",
+      color: "purple",
+    },
+    {
+      name: "Instagram",
+      description: t("instagram.page.description"),
+      href: "/instagram",
+      icon: "📸",
+      color: "pink",
+    },
+    {
+      name: "Twitter",
+      description: t("twitter.page.description"),
+      href: "/twitter",
+      icon: "🐦",
+      color: "blue",
+    },
+    {
+      name: "Snapchat",
+      description: t("snapchat.page.description"),
+      href: "/snapchat",
+      icon: "👻",
+      color: "yellow",
+    },
+    {
+      name: "YouTube",
+      description: t("youtube.page.description"),
+      href: "/youtube",
+      icon: "🎥",
+      color: "red",
+    },
+    {
+      name: "Reddit",
+      description: t("reddit.page.description"),
+      href: "/reddit",
+      icon: "🔴",
+      color: "orange",
+    },
+    {
+      name: "Discord",
+      description: t("discord.page.description"),
+      href: "/discord",
+      icon: "💬",
+      color: "indigo",
+    },
+    {
+      name: "Twitch",
+      description: t("twitch.page.description"),
+      href: "/twitch",
+      icon: "🎮",
+      color: "purple",
+    },
+  ];
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+            {t("home.hero.title")}
+            <span className="block text-accent">
+              {t("home.hero.subtitle")}
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
+            {t("home.hero.description")}
           </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/tiktok/script-writer"
+              className="px-8 py-3 bg-accent text-accent-foreground hover:bg-accent-hover rounded-lg font-semibold transition-colors"
+            >
+              {t("home.hero.cta")} →
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Ad Space - Top */}
+      <div className="max-w-7xl mx-auto px-4 mb-12">
+        <AdSlot slotId="top-banner" format="horizontal" className="text-center" />
+      </div>
+
+      {/* Platforms Section */}
+      <section className="py-12 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              {t("home.platformsSection.title")}
+            </h2>
+            <p className="text-xl text-muted">
+              {t("home.platformsSection.description")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {platforms.map((platform, index) => (
+              <Link
+                key={index}
+                href={platform.href}
+                className="group block h-full"
+              >
+                <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <Card.Header className="text-center">
+                    <div className="w-full">
+                      <div className="text-6xl mb-4">{platform.icon}</div>
+                      <Card.Title className="text-2xl group-hover:text-accent transition-colors">
+                        {platform.name}
+                      </Card.Title>
+                    </div>
+                  </Card.Header>
+                  <Card.Content>
+                    <Card.Description className="text-center">
+                      {platform.description}
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Ad Space - Bottom */}
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <AdSlot slotId="bottom-banner" format="horizontal" className="text-center" />
+      </div>
+
+      {/* Features Section */}
+      <section className="py-20 px-4 bg-surface">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+            {t("home.features.title")}
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl mb-4">🚀</div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                {t("home.features.free.title")}
+              </h3>
+              <p className="text-muted">
+                {t("home.features.free.description")}
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                {t("home.features.noSignup.title")}
+              </h3>
+              <p className="text-muted">
+                {t("home.features.noSignup.description")}
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl mb-4">🤖</div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                {t("home.features.aiPowered.title")}
+              </h3>
+              <p className="text-muted">
+                {t("home.features.aiPowered.description")}
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-4xl mb-4">🌍</div>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                {t("home.features.multiLanguage.title")}
+              </h3>
+              <p className="text-muted">
+                {t("home.features.multiLanguage.description")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

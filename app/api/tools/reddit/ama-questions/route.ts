@@ -1,0 +1,48 @@
+import { NextRequest, NextResponse } from "next/server";
+import { generateRedditAMAQuestions } from "@/lib/deepseek";
+import type { RedditAMARequest, RedditAMAResponse } from "@/types";
+
+export async function POST(request: NextRequest) {
+    try {
+        const body: RedditAMARequest = await request.json();
+        const { topic, language } = body;
+
+        // Validate required fields
+        if (!topic || topic.trim().length === 0) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Topic is required",
+                } as RedditAMAResponse,
+                { status: 400 }
+            );
+        }
+
+        if (topic.length > 500) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Topic must be less than 500 characters",
+                } as RedditAMAResponse,
+                { status: 400 }
+            );
+        }
+
+        // Generate questions using DeepSeek
+        const questions = await generateRedditAMAQuestions(topic, language);
+
+        return NextResponse.json({
+            success: true,
+            questions,
+        } as RedditAMAResponse);
+    } catch (error) {
+        console.error("Reddit AMA question generation error:", error);
+        return NextResponse.json(
+            {
+                success: false,
+                error: error instanceof Error ? error.message : "Failed to generate questions",
+            } as RedditAMAResponse,
+            { status: 500 }
+        );
+    }
+}
