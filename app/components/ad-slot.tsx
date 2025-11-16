@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import { useEffect, useRef } from "react";
 
@@ -31,6 +31,9 @@ export default function AdSlot({
     }
   }, [slotId]); // Añadir slotId como dependencia
 
+
+  return null;
+   d
   return (
     <div className={`ad-container ${className}`}>
       <ins
