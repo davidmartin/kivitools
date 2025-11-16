@@ -8,24 +8,26 @@ const SUGGESTIONS_COLLECTION_ID = process.env.APPWRITE_SUGGESTIONS_COLLECTION_ID
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, platform, toolName, toolPurpose, additionalInfo, language } = body;
+        const { platform, platformOther, toolName, toolPurpose, additionalInfo, language } = body;
 
         // Validate required fields
-        if (!name || !email || !platform || !toolName || !toolPurpose) {
+        if (!platform || !toolName || !toolPurpose) {
             return NextResponse.json(
                 { error: "Missing required fields" },
                 { status: 400 }
             );
         }
 
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
+        // If platform is "other", validate that platformOther is provided
+        if (platform === "other" && !platformOther?.trim()) {
             return NextResponse.json(
-                { error: "Invalid email format" },
+                { error: "Platform name is required when selecting 'Other platform'" },
                 { status: 400 }
             );
         }
+
+        // Get the final platform name (either the selected one or the custom name)
+        const finalPlatform = platform === "other" ? platformOther : platform;
 
         // Get user IP
         const userIp = getUserIpFromRequest(request);
@@ -44,9 +46,7 @@ export async function POST(request: Request) {
             SUGGESTIONS_COLLECTION_ID,
             ID.unique(),
             {
-                name,
-                email,
-                platform,
+                platform: finalPlatform,
                 toolName,
                 toolPurpose,
                 additionalInfo: additionalInfo || "",

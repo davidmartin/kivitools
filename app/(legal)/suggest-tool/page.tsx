@@ -9,6 +9,7 @@ export default function SuggestToolPage() {
   const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     platform: "",
+    platformOther: "",
     toolName: "",
     toolPurpose: "",
     additionalInfo: "",
@@ -24,6 +25,12 @@ export default function SuggestToolPage() {
 
     // Validate required fields
     if (!formData.platform || !formData.toolName || !formData.toolPurpose) {
+      setError(t("suggestTool.form.requiredFields"));
+      return;
+    }
+
+    // If "other" platform is selected, validate that platformOther is filled
+    if (formData.platform === "other" && !formData.platformOther.trim()) {
       setError(t("suggestTool.form.requiredFields"));
       return;
     }
@@ -50,6 +57,7 @@ export default function SuggestToolPage() {
       setSuccess(true);
       setFormData({
         platform: "",
+        platformOther: "",
         toolName: "",
         toolPurpose: "",
         additionalInfo: "",
@@ -121,6 +129,23 @@ export default function SuggestToolPage() {
                   ))}
                 </select>
               </div>
+
+              {formData.platform === "other" && (
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">
+                    {t("suggestTool.form.platformName")} <span className="text-danger">*</span>
+                  </label>
+                  <Input
+                    value={formData.platformOther}
+                    onChange={(e) =>
+                      setFormData({ ...formData, platformOther: e.target.value })
+                    }
+                    placeholder={t("suggestTool.form.platformNamePlaceholder")}
+                    disabled={isLoading}
+                    className="w-full"
+                  />
+                </div>
+              )}
 
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
