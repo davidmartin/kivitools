@@ -16,6 +16,7 @@ export const translations = {
         "nav.discord": "Discord",
         "nav.twitch": "Twitch",
         "nav.suno": "Suno",
+        "nav.suggestTool": "Suggest Tool",
 
         // Platform Pages
         "tiktok.page.description": "Scripts tan buenos que hasta tu abuela te pedirá el enlace (aunque no sepa qué es TikTok)",

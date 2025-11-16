@@ -8,8 +8,6 @@ import Link from "next/link";
 export default function SuggestToolPage() {
   const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
     platform: "",
     toolName: "",
     toolPurpose: "",
@@ -19,25 +17,14 @@ export default function SuggestToolPage() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
 
     // Validate required fields
-    if (!formData.name || !formData.email || !formData.platform || !formData.toolName || !formData.toolPurpose) {
+    if (!formData.platform || !formData.toolName || !formData.toolPurpose) {
       setError(t("suggestTool.form.requiredFields"));
-      return;
-    }
-
-    // Validate email format
-    if (!validateEmail(formData.email)) {
-      setError(t("suggestTool.form.invalidEmail"));
       return;
     }
 
@@ -62,8 +49,6 @@ export default function SuggestToolPage() {
 
       setSuccess(true);
       setFormData({
-        name: "",
-        email: "",
         platform: "",
         toolName: "",
         toolPurpose: "",
@@ -114,38 +99,6 @@ export default function SuggestToolPage() {
               {t("suggestTool.form.title")}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">
-                    {t("suggestTool.form.name")} <span className="text-danger">*</span>
-                  </label>
-                  <Input
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    placeholder={t("suggestTool.form.namePlaceholder")}
-                    disabled={isLoading}
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-2">
-                    {t("suggestTool.form.email")} <span className="text-danger">*</span>
-                  </label>
-                  <Input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    placeholder={t("suggestTool.form.emailPlaceholder")}
-                    disabled={isLoading}
-                    className="w-full"
-                  />
-                </div>
-              </div>
-
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
                   {t("suggestTool.form.platform")} <span className="text-danger">*</span>
