@@ -48,7 +48,6 @@ export async function saveGenerationLog(log: GenerationLog): Promise<void> {
                 userIp: log.userIp || "unknown",
                 language: log.language || "en",
                 timestamp: log.timestamp || new Date().toISOString(),
-                createdAt: new Date().toISOString(),
             }
         );
 

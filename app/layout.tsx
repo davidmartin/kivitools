@@ -134,7 +134,6 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2958996148094482"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         /> 
 
         {/* JSON-LD Structured Data */}
