@@ -682,12 +682,14 @@ When creating a new platform (e.g., Suno, Spotify, Twitch, etc.), follow this ch
 When creating a new platform with tools:
 
 1. **Create Platform Hub Page**
+
    - [ ] Create `/app/(tools)/[platform]/page.tsx`
    - [ ] Follow the TikTok/Instagram platform hub pattern
    - [ ] Create tools array with title, description, icon, href
    - [ ] Add platform info section with translations
 
 2. **Update Navigation Header** (`app/components/navigation.tsx`)
+
    - [ ] Add platform object to `platforms` array with:
      - `id`: platform name (lowercase, e.g., "suno")
      - `name`: `t("nav.[platform]")` translation key
@@ -695,24 +697,29 @@ When creating a new platform with tools:
      - `tools`: array of tool objects with `name` and `href`
 
 3. **Add Translation Keys** (`lib/translations.ts`)
+
    - [ ] Add `"nav.[platform]": "[Platform Name]"` to BOTH `es` and `en` sections
    - [ ] Add all tool-specific translations (see "Creating a New Tool" section below)
    - [ ] Add platform page translations: `"[platform].page.title"`, `"[platform].page.description"`, `"[platform].info.title"`, `"[platform].info.description"`
 
 4. **Update SEO Metadata** (`lib/seo-metadata.ts`)
+
    - [ ] Add `"[platform]"` to `Platform` union type
    - [ ] Add platform to `platformColors` Record: `"[platform]": "[hex-color]"`
    - [ ] Add platform to `platformNames` Record: `"[platform]": "[Platform Name]"`
 
 5. **Update Tool Selector** (`app/components/tool-selector.tsx`)
+
    - [ ] Add `"[platform]"` to `Platform` union type
    - [ ] Add platform tools to `PLATFORM_TOOLS` mapping
 
 6. **Create Spanish URL Aliases** (`next.config.ts`)
+
    - [ ] Add rewrite rule for Spanish platform URL (if needed)
    - [ ] Add rewrite rules for each tool's Spanish URL
 
 7. **Document Routes** (`docs/RUTAS_ALIAS.md`)
+
    - [ ] Add platform and all tools with their English/Spanish URLs
 
 8. **Update PRD.md**
@@ -723,6 +730,7 @@ When creating a new platform with tools:
 **Example: Adding Suno Platform**
 
 Files to create/modify:
+
 ```
 app/(tools)/suno/page.tsx                          ← Create
 app/(tools)/suno/[tool-1]/page.tsx                ← Create
@@ -740,6 +748,7 @@ PRD.md                                             ← Update status
 ```
 
 **Example: Navigation Entry**
+
 ```typescript
 {
   id: "suno",
