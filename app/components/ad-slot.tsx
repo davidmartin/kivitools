@@ -33,7 +33,6 @@ export default function AdSlot({
 
 
   return null;
-   d
   return (
     <div className={`ad-container ${className}`}>
       <ins
