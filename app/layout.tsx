@@ -130,12 +130,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
         {/* Google AdSense - Reemplaza con tu ID cuando tengas uno */}
-        {/* <Script
+        <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2958996148094482"
           crossOrigin="anonymous"
           strategy="afterInteractive"
-        /> */}
+        /> 
 
         {/* JSON-LD Structured Data */}
         <Script
