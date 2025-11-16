@@ -80,17 +80,17 @@ export default function ContactUsPage() {
     {
       title: t("contact.support.title"),
       description: t("contact.support.description"),
-      icon: "🛠️",
+      icon: "",
     },
     {
       title: t("contact.feedback.title"),
       description: t("contact.feedback.description"),
-      icon: "💡",
+      icon: "",
     },
     {
       title: t("contact.response.title"),
       description: t("contact.response.description"),
-      icon: "⏱️",
+      icon: "",
     },
   ];
 
@@ -237,7 +237,7 @@ export default function ContactUsPage() {
           {contactSections.map((section, index) => (
             <Card key={index} className="bg-surface">
               <Card.Content className="p-6 text-center">
-                <div className="text-4xl mb-3">{section.icon}</div>
+                {section.icon && <div className="text-4xl mb-3">{section.icon}</div>}
                 <h3 className="text-lg font-bold text-foreground mb-2">
                   {section.title}
                 </h3>

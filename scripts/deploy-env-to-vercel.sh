@@ -29,6 +29,9 @@ echo "69199754001e10f816a5" | vercel env add APPWRITE_COLLECTION_ID production
 echo "📝 Añadiendo APPWRITE_CONTACT_COLLECTION_ID..."
 echo "contact_messages" | vercel env add APPWRITE_CONTACT_COLLECTION_ID production
 
+echo "📝 Añadiendo APPWRITE_SUGGESTIONS_COLLECTION_ID..."
+echo "tool-suggestions" | vercel env add APPWRITE_SUGGESTIONS_COLLECTION_ID production
+
 # Cloudflare Turnstile
 echo "📝 Añadiendo NEXT_PUBLIC_TURNSTILE_SITE_KEY..."
 echo "0x4AAAAAACBMWVCEjs6FnoUx" | vercel env add NEXT_PUBLIC_TURNSTILE_SITE_KEY production

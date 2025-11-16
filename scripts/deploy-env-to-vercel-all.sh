@@ -41,6 +41,16 @@ for ENV in "${ENVIRONMENTS[@]}"; do
     echo "69199754001e10f816a5" | vercel env add APPWRITE_COLLECTION_ID "$ENV"
 done
 
+echo "📝 Añadiendo APPWRITE_CONTACT_COLLECTION_ID a todos los entornos..."
+for ENV in "${ENVIRONMENTS[@]}"; do
+    echo "contact_messages" | vercel env add APPWRITE_CONTACT_COLLECTION_ID "$ENV"
+done
+
+echo "📝 Añadiendo APPWRITE_SUGGESTIONS_COLLECTION_ID a todos los entornos..."
+for ENV in "${ENVIRONMENTS[@]}"; do
+    echo "tool-suggestions" | vercel env add APPWRITE_SUGGESTIONS_COLLECTION_ID "$ENV"
+done
+
 # Cloudflare Turnstile
 echo "📝 Añadiendo NEXT_PUBLIC_TURNSTILE_SITE_KEY a todos los entornos..."
 for ENV in "${ENVIRONMENTS[@]}"; do

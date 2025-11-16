@@ -134,6 +134,14 @@ export default function Navigation() {
               📚 Blog
             </Link>
 
+            {/* Suggest Tool Link */}
+            <Link
+              href="/suggest-tool"
+              className="px-4 py-2 text-sm font-medium text-foreground hover:bg-accent/10 rounded-lg transition-colors"
+            >
+              💡 {t("nav.suggestTool")}
+            </Link>
+
             {/* Platforms Dropdown */}
             <Popover>
               <Button variant="ghost" size="sm" className="gap-1">
@@ -244,6 +252,15 @@ export default function Navigation() {
               onClick={() => setIsMenuOpen(false)}
             >
               📚 Blog
+            </Link>
+
+            {/* Suggest Tool Link Mobile */}
+            <Link
+              href="/suggest-tool"
+              className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-surface rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              💡 {t("nav.suggestTool")}
             </Link>
             
             {platforms.map((platform) => (
