@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button, Popover } from "@heroui/react";
 import ThemeToggle from "./theme-toggle";
+import PlatformLogo from "./platform-logo";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -161,7 +162,7 @@ export default function Navigation() {
                         href={`/${platform.id}`}
                         className="flex items-center gap-3 px-3 py-2 text-sm text-foreground hover:bg-accent/10 rounded-lg transition-colors"
                       >
-                        <span className="text-xl">{platform.emoji}</span>
+                        <PlatformLogo platform={platform.id as any} size="md" />
                         <span>{platform.name}</span>
                       </Link>
                     ))}
@@ -248,7 +249,7 @@ export default function Navigation() {
             {platforms.map((platform) => (
               <div key={platform.id}>
                 <div className="px-4 py-2 text-sm font-semibold text-muted flex items-center gap-2">
-                  <span>{platform.emoji}</span>
+                  <PlatformLogo platform={platform.id as any} size="sm" />
                   <span>{platform.name}</span>
                 </div>
                 {platform.tools.map((tool) => (

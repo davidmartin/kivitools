@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Card } from "@heroui/react";
+import PlatformLogo from "@/app/components/platform-logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TwitterToolsPage() {
@@ -33,7 +34,9 @@ export default function TwitterToolsPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">🐦</div>
+          <div className="flex justify-center mb-4">
+            <PlatformLogo platform="twitter" size="xl" />
+          </div>
           <h1 className="text-5xl font-bold text-foreground mb-4">
             {t("nav.twitter")} {t("nav.tools")}
           </h1>

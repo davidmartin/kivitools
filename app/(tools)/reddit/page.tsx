@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Card } from "@heroui/react";
+import PlatformLogo from "@/app/components/platform-logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function RedditToolsPage() {
@@ -31,8 +32,11 @@ export default function RedditToolsPage() {
   return (
     <div className="min-h-screen bg-background py-12 px-4">
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-12">
-          <div className="text-6xl mb-4">🔴</div>
+          <div className="flex justify-center mb-4">
+            <PlatformLogo platform="reddit" size="xl" />
+          </div>
           <h1 className="text-5xl font-bold text-foreground mb-4">
             {t("nav.reddit")} {t("nav.tools")}
           </h1>

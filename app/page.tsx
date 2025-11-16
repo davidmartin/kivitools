@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Card } from "@heroui/react";
 import AdSlot from "./components/ad-slot";
+import PlatformLogo from "./components/platform-logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
@@ -66,6 +67,13 @@ export default function Home() {
       icon: "🎮",
       color: "purple",
     },
+    {
+      name: "Suno",
+      description: t("suno.page.description"),
+      href: "/suno",
+      icon: "🎵",
+      color: "purple",
+    },
   ];
   return (
     <div className="min-h-screen bg-background">
@@ -119,7 +127,12 @@ export default function Home() {
                 <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <Card.Header className="text-center">
                     <div className="w-full">
-                      <div className="text-6xl mb-4">{platform.icon}</div>
+                      <div className="flex justify-center mb-4">
+                        <PlatformLogo 
+                          platform={platform.name.toLowerCase() as any}
+                          size="lg"
+                        />
+                      </div>
                       <Card.Title className="text-2xl group-hover:text-accent transition-colors">
                         {platform.name}
                       </Card.Title>
@@ -213,7 +226,7 @@ export default function Home() {
               <p className="text-muted">{t("stats.time")}</p>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-accent mb-2">8</div>
+              <div className="text-5xl font-bold text-accent mb-2">9</div>
               <p className="text-muted">{t("stats.platforms")}</p>
             </div>
           </div>

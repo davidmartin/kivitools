@@ -35,6 +35,28 @@ npm run dev
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
+## 🖼️ Optimización de Imágenes
+
+Este proyecto incluye scripts automáticos para comprimir PNG y SVG sin pérdida de calidad:
+
+```bash
+# Optimizar todas las imágenes en public/
+npm run optimize:images
+
+# Optimizar una sola imagen
+npm run optimize:single -- public/logo.png
+```
+
+**Optimización automática**: Al ejecutar `npm run build`, las imágenes se optimizan automáticamente antes del build.
+
+**Resultados típicos**:
+
+- PNG: ~70-75% de reducción de tamaño
+- SVG: ~10-20% de reducción de tamaño
+- Sin pérdida de calidad visual
+
+Ver más detalles en [`scripts/README-OPTIMIZE-IMAGES.md`](./scripts/README-OPTIMIZE-IMAGES.md)
+
 ## 📊 Configuración de Google AdSense
 
 ### Paso 1: Obtener tu ID de AdSense
