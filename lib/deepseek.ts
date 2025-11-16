@@ -1660,3 +1660,193 @@ Generate a professional, well-formatted panel description.`;
         throw new Error("Failed to generate Twitch panel description");
     }
 }
+
+// Suno Lyric Generator
+export async function generateSunoLyrics({
+    theme,
+    genre,
+    mood,
+    language,
+}: {
+    theme: string;
+    genre: string;
+    mood: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert songwriter and lyricist. Create engaging song lyrics that:
+- Follow a classic structure (Verse - Chorus - Verse - Bridge - Chorus - Outro)
+- Have rhyming patterns that sound natural
+- Tell a cohesive story or emotion
+- Match the mood and genre requested
+- Are memorable and singable
+- Use vivid imagery and relatable themes
+
+Generate the lyrics in ${targetLanguage}.`;
+
+    const userPrompt = `Create song lyrics for:
+- Theme: ${theme}
+- Genre: ${genre}
+- Mood: ${mood}
+- Language: ${targetLanguage}
+
+Structure the lyrics with clear sections:
+[Verse 1]
+...
+
+[Chorus]
+...
+
+[Verse 2]
+...
+
+[Bridge]
+...
+
+[Chorus]
+...
+
+[Outro]
+...
+
+Make them creative, engaging, and suitable for music generation in Suno.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 1000,
+            temperature: 0.9,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating Suno lyrics:", error);
+        throw new Error("Failed to generate lyrics");
+    }
+}
+
+// Suno Music Prompt Generator
+export async function generateMusicPrompt({
+    style,
+    instruments,
+    bpm,
+    mood,
+    language,
+}: {
+    style: string;
+    instruments: string;
+    bpm: string;
+    mood: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert music producer and prompt engineer for AI music generation. Create detailed, descriptive prompts that:
+- Clearly describe the musical style and vibe
+- Include specific instrumentation details
+- Mention production techniques and effects
+- Describe the emotional tone and mood
+- Include tempo (BPM) information
+- Are specific enough to guide AI generation
+- Sound natural and musical
+
+Generate the prompt in ${targetLanguage}.`;
+
+    const userPrompt = `Create a detailed music prompt for Suno with these specifications:
+- Style: ${style}
+- Primary Instruments: ${instruments}
+- Tempo: ${bpm} BPM
+- Mood: ${mood}
+- Language: ${targetLanguage}
+
+Create a detailed prompt that describes exactly what the music should sound like. Include production details, emotional qualities, and specific instrumentation. The prompt should be descriptive yet concise (2-3 sentences).`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 500,
+            temperature: 0.85,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating music prompt:", error);
+        throw new Error("Failed to generate music prompt");
+    }
+}
+
+// Suno Song Description Generator
+export async function generateSongDescription({
+    theme,
+    genre,
+    mood,
+    platform,
+    language,
+}: {
+    theme: string;
+    genre: string;
+    mood: string;
+    platform: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert at writing compelling song descriptions for music platforms. Create catchy, engaging descriptions that:
+- Capture the essence of the song
+- Appeal to the target audience
+- Include relevant keywords for discoverability
+- Are optimized for the specific platform
+- Use emojis naturally (where appropriate)
+- Are concise but memorable
+- Encourage sharing and engagement
+
+Generate descriptions in ${targetLanguage}.`;
+
+    const userPrompt = `Create 3 different song descriptions for a ${genre} song with these details:
+- Theme: ${theme}
+- Mood: ${mood}
+- Platform: ${platform}
+- Language: ${targetLanguage}
+
+For ${platform}, write descriptions that:
+1. First description (140-160 characters for ${platform === "twitter" ? "Twitter" : platform === "instagram" ? "Instagram captions" : "Spotify"})
+2. Second description (longer, 300-350 characters for detailed version)
+3. Third description (creative/engaging version with emojis)
+
+Return exactly 3 descriptions, one per line, separated by clear markers.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 800,
+            temperature: 0.8,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        // Parse descriptions - split by new lines and filter empty ones
+        const descriptions = content
+            .split("\n")
+            .filter((line: string) => line.trim().length > 0)
+            .slice(0, 3);
+
+        return descriptions.length > 0
+            ? descriptions
+            : ["Your song", "Amazing music", "Check it out"];
+    } catch (error) {
+        console.error("Error generating song description:", error);
+        throw new Error("Failed to generate song description");
+    }
+}

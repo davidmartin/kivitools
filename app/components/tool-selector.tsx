@@ -10,7 +10,7 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
@@ -54,6 +54,11 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "twitchStreamTitle.title", href: "/twitch/stream-title" },
     { name: "twitchCommand.title", href: "/twitch/chat-command" },
     { name: "twitchPanel.title", href: "/twitch/panel-description" },
+  ],
+  suno: [
+    { name: "sunoLyricGenerator.title", href: "/suno/lyric-generator" },
+    { name: "sunoMusicPrompt.title", href: "/suno/music-prompt-generator" },
+    { name: "sunoSongDescription.title", href: "/suno/song-description-generator" },
   ],
 };
 

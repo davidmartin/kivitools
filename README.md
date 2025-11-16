@@ -1,8 +1,8 @@
-# KiviTools - Free AI Social Media Tools
+# KiviTools - Free AI Tools for Any Digital Platform
 
 ¿Bloqueado creativo? Nosotros también, por eso hicimos esta app. 🚀
 
-Herramientas gratuitas con IA para crear contenido viral (o al menos intentarlo) en redes sociales. Sin registro, sin drama, sin cobros sorpresa.
+Herramientas gratuitas con IA para crear contenido en **cualquier plataforma digital**: redes sociales (TikTok, Instagram), música (Suno), foros (Reddit, Forocoches), streaming (Twitch), gaming, y más. Sin registro, sin drama, sin cobros sorpresa.
 
 ## 🚀 Stack Tecnológico
 

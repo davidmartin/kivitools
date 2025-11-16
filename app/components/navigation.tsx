@@ -94,6 +94,16 @@ export default function Navigation() {
         { name: t("twitchPanel.title"), href: "/twitch/panel-description" },
       ],
     },
+    {
+      id: "suno",
+      name: t("nav.suno"),
+      emoji: "🎵",
+      tools: [
+        { name: t("sunoLyricGenerator.title"), href: "/suno/lyric-generator" },
+        { name: t("sunoMusicPrompt.title"), href: "/suno/music-prompt-generator" },
+        { name: t("sunoSongDescription.title"), href: "/suno/song-description-generator" },
+      ],
+    },
   ];
 
   return (

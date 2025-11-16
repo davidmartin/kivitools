@@ -1,10 +1,10 @@
 # Product Requirements Document (PRD)
 
-## KiviTools - Multi-Platform Social Media Toolkit
+## KiviTools - AI-Powered Tools for Any Digital Platform
 
-**Version:** 1.1  
-**Last Updated:** November 15, 2025  
-**Status:** Phase 2 - Active Development
+**Version:** 2.0  
+**Last Updated:** November 16, 2025  
+**Status:** Phase 2 - Active Development (Pivot to Multi-Platform)
 
 ---
 
@@ -12,7 +12,7 @@
 
 ### 1.1 Product Vision
 
-KiviTools es una plataforma web integral que proporciona herramientas gratuitas para creadores de contenido, marketers y usuarios de redes sociales. El objetivo es democratizar el acceso a herramientas profesionales de análisis, generación de contenido y descarga de medios para las principales plataformas sociales.
+KiviTools es una plataforma web integral que proporciona herramientas gratuitas impulsadas por IA para creadores de contenido, marketers y usuarios de **cualquier plataforma digital**. El objetivo es democratizar el acceso a herramientas profesionales de generación de contenido, análisis y automatización para cualquier tipo de plataforma: redes sociales (TikTok, Instagram), plataformas de música (Suno), foros (Reddit, Forocoches), streaming (Twitch), comunicación (Discord), y cualquier otra plataforma que pueda beneficiarse de herramientas de IA.
 
 ### 1.2 Inspiration
 
@@ -20,10 +20,13 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 
 ### 1.3 Target Users
 
-- **Creadores de contenido** (influencers, YouTubers, TikTokers)
-- **Social Media Managers** y equipos de marketing
-- **Pequeñas empresas** que gestionan sus propias redes sociales
-- **Usuarios casuales** que buscan descargar contenido o generar ideas
+- **Creadores de contenido** (influencers, YouTubers, TikTokers, músicos, podcasters)
+- **Social Media Managers** y equipos de marketing digital
+- **Músicos y productores** (usuarios de Suno, Spotify, etc.)
+- **Community managers** (foros, Discord, Reddit)
+- **Streamers** (Twitch, YouTube Live)
+- **Pequeñas empresas** que gestionan presencia digital
+- **Usuarios casuales** que necesitan ayuda con contenido en cualquier plataforma
 
 ---
 
@@ -31,11 +34,12 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 
 ### 2.1 Primary Goals
 
-1. Proporcionar herramientas gratuitas y accesibles para 9+ plataformas sociales
+1. Proporcionar herramientas gratuitas y accesibles para **cualquier plataforma digital** (sociales, música, foros, streaming, gaming, etc.)
 2. No requerir registro para funciones básicas
-3. Ofrecer resultados instantáneos y de alta calidad
+3. Ofrecer resultados instantáneos y de alta calidad con IA
 4. Soportar múltiples idiomas (inicialmente: Español, Inglés)
 5. Ser completamente responsive (mobile-first)
+6. Permitir agregar nuevas plataformas fácilmente (arquitectura escalable)
 
 ### 2.2 Success Metrics (KPIs)
 
@@ -164,6 +168,179 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 | **Stream Title Generator** | Títulos atractivos para streams | Juego/tema, estilo       | Títulos optimizados (8 opciones) | ✅     |
 | **Chat Command Generator** | Genera respuestas para comandos | Comando, propósito, tono | Respuesta para bot de chat       | ✅     |
 | **Panel Description**      | Descripciones para paneles      | Tipo panel, contenido    | Descripción con formato          | ✅     |
+
+### 3.9 Future Platforms - Examples (Not Implemented)
+
+**Philosophy**: KiviTools can support ANY digital platform that benefits from AI-powered content tools. Here are examples of new platform categories we can expand into:
+
+#### Music Platforms
+
+**Suno (AI Music Generator)**
+
+- Lyric Generator (multiple genres)
+- Song Title Generator
+- Prompt Generator for AI music
+- Song Description for releases
+- Genre Mixer Ideas
+
+**Spotify**
+
+- Playlist Name Generator
+- Playlist Description
+- Artist Bio Generator
+- Album Description
+
+#### Forums & Communities
+
+**Forocoches**
+
+- Thread Title Generator
+- Post Generator (adapted to forum culture)
+- Reply Generator
+- Signature Generator
+
+**4chan / Anonymous Forums**
+
+- Thread Starter Generator
+- Greentext Story Generator
+
+**Stack Overflow**
+
+- Question Title Optimizer
+- Answer Generator (technical)
+- Comment Generator
+
+#### Gaming Platforms
+
+**Steam**
+
+- Game Review Generator
+- Workshop Item Description
+- Community Post Generator
+- Guide Title Generator
+
+**Epic Games**
+
+- Creator Code Description
+- Game Rating/Review
+
+**Roblox**
+
+- Game Description Generator
+- Group Description
+- Update Announcement
+
+#### Professional Platforms
+
+**GitHub**
+
+- README Generator
+- Issue Title/Description
+- Pull Request Description
+- Commit Message Generator
+
+**Medium**
+
+- Article Title Generator
+- Article Outline
+- Introduction Hook Generator
+- Meta Description
+
+**Dev.to**
+
+- Post Title Generator
+- Tags Suggester
+- Series Description
+
+#### E-commerce
+
+**Etsy**
+
+- Product Title Generator
+- Product Description
+- Shop Announcement
+- About Section
+
+**eBay**
+
+- Listing Title Optimizer
+- Product Description
+- Seller Bio
+
+**Amazon Seller**
+
+- Product Bullet Points
+- A+ Content Description
+- Response to Reviews
+
+#### Email & Newsletters
+
+**Substack**
+
+- Newsletter Title
+- Email Subject Lines
+- Post Intro Generator
+
+**ConvertKit**
+
+- Email Sequence Generator
+- Welcome Email
+- Subject Line Tester
+
+#### Podcast Platforms
+
+**Spotify Podcasts**
+
+- Episode Title Generator
+- Episode Description
+- Show Notes Generator
+- Transcript Summarizer
+
+**Apple Podcasts**
+
+- Show Description
+- Episode Summary
+- Category Suggester
+
+#### Dating Apps
+
+**Tinder**
+
+- Bio Generator
+- Conversation Starter
+- First Message Ideas
+
+**Bumble**
+
+- Profile Prompt Answers
+- Bio Optimizer
+
+**Hinge**
+
+- Prompt Response Generator
+- Bio Ideas
+
+#### Job Platforms
+
+**LinkedIn** (already planned)
+
+- Job Post Generator
+- Job Description
+- InMail Template
+
+**Indeed**
+
+- Job Description Generator
+- Company Description
+
+**AngelList**
+
+- Startup Description
+- Job Post for Startups
+
+---
+
+**Implementation Priority**: Start with platforms that have the most synergy with existing tools (e.g., Suno for music, Forocoches for Spanish forums) and high user demand.
 
 ### 3.7 Discord Tools (3 herramientas)
 
@@ -704,13 +881,63 @@ Usar sistema de 4px:
 - **Team collaboration:** Múltiples usuarios, aprobación de contenido
 - **Webhooks:** Notificaciones de eventos
 
-### 14.4 Platform Expansion
+### 14.4 Platform Expansion Strategy
 
-- **Pinterest** tools (Pin generator, board ideas)
-- **Telegram** tools (channel posts, bot messages)
-- **Facebook** tools (post generator, ad copy)
-- **Medium** tools (article ideas, SEO optimization)
-- **Podcasts** tools (episode ideas, show notes, transcription)
+**New Platform Categories to Explore:**
+
+1. **Music & Audio Platforms**
+
+   - Suno (AI music generation)
+   - Spotify (playlists, artist bios)
+   - SoundCloud (track descriptions)
+   - Podcasts (show notes, episode descriptions)
+
+2. **Forum & Community Platforms**
+
+   - Forocoches (Spanish forum culture)
+   - Stack Overflow (technical Q&A)
+   - 4chan/Anonymous boards
+   - Quora (question/answer optimization)
+
+3. **Gaming Platforms**
+
+   - Steam (reviews, guides, workshop)
+   - Epic Games (creator descriptions)
+   - Roblox (game descriptions)
+   - Discord gaming communities
+
+4. **Professional Development**
+
+   - GitHub (README, issues, PRs)
+   - Dev.to (article titles, posts)
+   - Medium (article optimization)
+   - Personal blogs (SEO-optimized content)
+
+5. **E-commerce Platforms**
+
+   - Etsy (product descriptions, shop info)
+   - eBay (listing optimization)
+   - Amazon Seller (product bullets, A+ content)
+   - Shopify (product copy)
+
+6. **Dating Apps**
+
+   - Tinder (bio generation, openers)
+   - Bumble (profile prompts)
+   - Hinge (creative answers)
+
+7. **Email & Newsletters**
+   - Substack (newsletter ideas)
+   - ConvertKit (email sequences)
+   - Mailchimp (subject lines)
+
+**Selection Criteria for New Platforms:**
+
+- High user demand (via feedback, surveys)
+- Synergy with existing tools (can we reuse prompts?)
+- Market size and monetization potential
+- Technical feasibility (APIs available?)
+- Alignment with brand (tools that genuinely help creators)
 
 ---
 
