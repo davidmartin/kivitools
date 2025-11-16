@@ -6,6 +6,7 @@ import { LANGUAGES } from "@/types";
 import type { YouTubeDescriptionResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function YouTubeDescriptionGeneratorPage() {
   const { t } = useLanguage();
@@ -15,10 +16,17 @@ export default function YouTubeDescriptionGeneratorPage() {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("youtubeDescription.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -34,6 +42,8 @@ export default function YouTubeDescriptionGeneratorPage() {
           topic: topic.trim(), 
           keywords: keywords.trim() || undefined, 
           language 
+        ,
+          turnstileToken,
         }),
       });
 
@@ -63,6 +73,7 @@ export default function YouTubeDescriptionGeneratorPage() {
   const handleUseAgain = () => {
     setDescription("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -131,19 +142,25 @@ export default function YouTubeDescriptionGeneratorPage() {
             </div>
 
             {!description && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-red-600 hover:bg-red-700"
               >
                 {isLoading ? t("youtubeDescription.form.generating") : t("youtubeDescription.form.generate")}
               </Button>
+              </>
             )}
 
             {description && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("youtubeDescription.form.useAgain")}
               </Button>
             )}
@@ -161,7 +178,7 @@ export default function YouTubeDescriptionGeneratorPage() {
                 <label className="block text-sm font-medium text-foreground">
                   {t("youtubeDescription.result.title")}
                 </label>
-                <Button onClick={handleCopy} variant="ghost" size="sm" className="text-red-600">
+                <Button onPress={handleCopy} variant="ghost" size="sm" className="text-red-600">
                   {t("youtubeDescription.result.copy")}
                 </Button>
               </div>

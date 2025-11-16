@@ -12,10 +12,17 @@ export default function TikTokShopNameGeneratorPage() {
   const [shopNames, setShopNames] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!category.trim()) {
       setError(t("shopNameGenerator.form.error.emptyCategory"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -31,6 +38,8 @@ export default function TikTokShopNameGeneratorPage() {
           category: category.trim(), 
           keywords: keywords.trim(),
           style 
+        ,
+          turnstileToken,
         }),
       });
 
@@ -124,7 +133,7 @@ export default function TikTokShopNameGeneratorPage() {
             {!shopNames.length && (
               <Button
                 onPress={handleGenerate}
-                isDisabled={isLoading}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"

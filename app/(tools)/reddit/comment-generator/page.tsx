@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { RedditCommentResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function RedditCommentGeneratorPage() {
   const { t, language: uiLanguage } = useLanguage();
@@ -15,10 +16,17 @@ export default function RedditCommentGeneratorPage() {
   const [comment, setComment] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!postContext.trim()) {
       setError(t("redditComment.form.error.emptyContext"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -34,6 +42,8 @@ export default function RedditCommentGeneratorPage() {
           postContext: postContext.trim(), 
           tone, 
           language 
+        ,
+          turnstileToken,
         }),
       });
 
@@ -63,6 +73,7 @@ export default function RedditCommentGeneratorPage() {
   const handleUseAgain = () => {
     setComment("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -135,19 +146,25 @@ export default function RedditCommentGeneratorPage() {
             </div>
 
             {!comment && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-orange-600 hover:bg-orange-700"
               >
                 {isLoading ? t("redditComment.form.generating") : t("redditComment.form.generate")}
               </Button>
+              </>
             )}
 
             {comment && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("redditComment.form.useAgain")}
               </Button>
             )}
@@ -165,7 +182,7 @@ export default function RedditCommentGeneratorPage() {
                 <label className="block text-sm font-medium text-foreground">
                   {t("redditComment.result.title")}
                 </label>
-                <Button onClick={handleCopy} variant="ghost" size="sm" className="text-orange-600">
+                <Button onPress={handleCopy} variant="ghost" size="sm" className="text-orange-600">
                   {t("redditComment.result.copy")}
                 </Button>
               </div>

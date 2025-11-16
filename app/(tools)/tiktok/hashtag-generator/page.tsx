@@ -5,6 +5,7 @@ import { Button } from "@heroui/react";
 import type { HashtagGeneratorResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TikTokHashtagGeneratorPage() {
   const { t } = useLanguage();
@@ -14,10 +15,17 @@ export default function TikTokHashtagGeneratorPage() {
   >([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!keyword.trim()) {
       setError(t("hashtagGenerator.form.error.emptyKeyword"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -33,6 +41,7 @@ export default function TikTokHashtagGeneratorPage() {
         },
         body: JSON.stringify({
           keyword: keyword.trim(),
+          turnstileToken,
         }),
       });
 
@@ -72,6 +81,7 @@ export default function TikTokHashtagGeneratorPage() {
   const handleUseAgain = () => {
     setHashtags([]);
     setError("");
+      setTurnstileToken("");
   };
 
   const getRelevanceColor = (relevance: string) => {
@@ -129,8 +139,8 @@ export default function TikTokHashtagGeneratorPage() {
             {/* Generate Button */}
             {hashtags.length === 0 && (
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
@@ -142,7 +152,7 @@ export default function TikTokHashtagGeneratorPage() {
             {/* Use Again Button */}
             {hashtags.length > 0 && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"

@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { TwitterBioResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TwitterBioGeneratorPage() {
   const { t } = useLanguage();
@@ -16,10 +17,17 @@ export default function TwitterBioGeneratorPage() {
   const [bio, setBio] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!description.trim()) {
       setError(t("twitterBio.form.error.emptyDescription"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -38,6 +46,7 @@ export default function TwitterBioGeneratorPage() {
           tone,
           includeEmojis,
           language,
+          turnstileToken,
         }),
       });
 
@@ -67,6 +76,7 @@ export default function TwitterBioGeneratorPage() {
   const handleUseAgain = () => {
     setBio("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -174,9 +184,14 @@ export default function TwitterBioGeneratorPage() {
 
             {/* Generate Button */}
             {!bio && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
@@ -185,12 +200,13 @@ export default function TwitterBioGeneratorPage() {
                   ? t("twitterBio.form.generating")
                   : t("twitterBio.form.generate")}
               </Button>
+              </>
             )}
 
             {/* Use Again Button */}
             {bio && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"
@@ -215,7 +231,7 @@ export default function TwitterBioGeneratorPage() {
                   {t("twitterBio.result.title")}
                 </label>
                 <Button
-                  onClick={handleCopy}
+                  onPress={handleCopy}
                   variant="ghost"
                   size="sm"
                   className="text-blue-600"

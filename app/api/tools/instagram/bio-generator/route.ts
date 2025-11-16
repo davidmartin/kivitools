@@ -1,12 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateInstagramBio } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { BioGeneratorRequest, BioGeneratorResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
     try {
         const body: BioGeneratorRequest = await request.json();
-        const { description, tone, includeEmojis, language } = body;
+        const { description, tone, includeEmojis, language, turnstileToken } = body;
+        // Verify Turnstile token first
+        if (!turnstileToken) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification required",
+                },
+                { status: 403 }
+            );
+        }
+
+        const userIp = getUserIpFromRequest(request);
+        const isValid = await verifyTurnstileToken(turnstileToken, userIp);
+
+        if (!isValid) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification failed",
+                },
+                { status: 403 }
+            );
+        }
+
 
         // Validación
         if (!description || description.trim().length === 0) {

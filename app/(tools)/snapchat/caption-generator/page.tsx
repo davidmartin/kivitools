@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { SnapchatCaptionResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function SnapchatCaptionGeneratorPage() {
   const { t, language: uiLanguage } = useLanguage();
@@ -16,10 +17,17 @@ export default function SnapchatCaptionGeneratorPage() {
   const [caption, setCaption] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("snapchatCaption.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -38,6 +46,7 @@ export default function SnapchatCaptionGeneratorPage() {
           tone,
           includeEmojis,
           language,
+          turnstileToken,
         }),
       });
 
@@ -67,6 +76,7 @@ export default function SnapchatCaptionGeneratorPage() {
   const handleUseAgain = () => {
     setCaption("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -174,9 +184,14 @@ export default function SnapchatCaptionGeneratorPage() {
 
             {/* Generate Button */}
             {!caption && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-yellow-400 hover:bg-yellow-500"
@@ -185,12 +200,13 @@ export default function SnapchatCaptionGeneratorPage() {
                   ? t("snapchatCaption.form.generating")
                   : t("snapchatCaption.form.generate")}
               </Button>
+              </>
             )}
 
             {/* Use Again Button */}
             {caption && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"
@@ -215,7 +231,7 @@ export default function SnapchatCaptionGeneratorPage() {
                   {t("snapchatCaption.result.title")}
                 </label>
                 <Button
-                  onClick={handleCopy}
+                  onPress={handleCopy}
                   variant="ghost"
                   size="sm"
                   className="text-yellow-600"

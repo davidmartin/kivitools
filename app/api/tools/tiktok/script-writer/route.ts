@@ -1,13 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTikTokScript } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { ScriptWriterRequest, ScriptWriterResponse } from "@/types";
 
 // POST /api/tools/tiktok/script-writer
 export async function POST(request: NextRequest) {
     try {
         const body: ScriptWriterRequest = await request.json();
-        const { topic, tone, duration, language } = body;
+        const { topic, tone, duration, language, turnstileToken } = body;
+
+        // Verify Turnstile token first
+        if (!turnstileToken) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification required",
+                } as ScriptWriterResponse,
+                { status: 403 }
+            );
+        }
+
+        const userIp = getUserIpFromRequest(request);
+        const isValid = await verifyTurnstileToken(turnstileToken, userIp);
+
+        if (!isValid) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification failed",
+                } as ScriptWriterResponse,
+                { status: 403 }
+            );
+        }
 
         // Validación básica
         if (!topic || topic.trim().length === 0) {
@@ -39,12 +64,13 @@ export async function POST(request: NextRequest) {
         });
 
         // Log generation to Appwrite (backend only, non-blocking)
+        const requestIp = getUserIpFromRequest(request);
         await saveGenerationLog({
             platform: "tiktok",
             tool: "script-writer",
             requestData: body,
             responseData: { script },
-            userIp: getUserIpFromRequest(request),
+            userIp: requestIp,
             language: language || "en",
         });
 

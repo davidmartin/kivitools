@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { TweetGeneratorResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TweetGeneratorPage() {
   const { t } = useLanguage();
@@ -15,10 +16,17 @@ export default function TweetGeneratorPage() {
   const [tweets, setTweets] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("tweetGenerator.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -36,6 +44,7 @@ export default function TweetGeneratorPage() {
           topic: topic.trim(),
           tone,
           language,
+          turnstileToken,
         }),
       });
 
@@ -75,6 +84,7 @@ export default function TweetGeneratorPage() {
   const handleUseAgain = () => {
     setTweets([]);
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -165,8 +175,8 @@ export default function TweetGeneratorPage() {
             {/* Generate Button */}
             {tweets.length === 0 && (
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
@@ -180,7 +190,7 @@ export default function TweetGeneratorPage() {
             {/* Use Again Button */}
             {tweets.length > 0 && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"

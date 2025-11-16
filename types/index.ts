@@ -1,5 +1,10 @@
+// Base interface for all tool requests with Turnstile protection
+export interface BaseToolRequest {
+    turnstileToken?: string;
+}
+
 // TikTok Script Writer Types
-export interface ScriptWriterRequest {
+export interface ScriptWriterRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     duration: string;
@@ -13,7 +18,7 @@ export interface ScriptWriterResponse {
 }
 
 // TikTok Video Ideas Generator Types
-export interface VideoIdeasRequest {
+export interface VideoIdeasRequest extends BaseToolRequest {
     topic: string;
     language: string;
 }
@@ -25,7 +30,7 @@ export interface VideoIdeasResponse {
 }
 
 // TikTok Hook Generator Types
-export interface HookGeneratorRequest {
+export interface HookGeneratorRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     language: string;
@@ -38,7 +43,7 @@ export interface HookGeneratorResponse {
 }
 
 // TikTok Hashtag Generator Types
-export interface HashtagGeneratorRequest {
+export interface HashtagGeneratorRequest extends BaseToolRequest {
     keyword: string;
 }
 
@@ -53,7 +58,7 @@ export interface HashtagGeneratorResponse {
 }
 
 // Instagram Caption Generator Types
-export interface CaptionGeneratorRequest {
+export interface CaptionGeneratorRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     includeEmojis: boolean;
@@ -68,7 +73,7 @@ export interface CaptionGeneratorResponse {
 }
 
 // Instagram Bio Generator Types
-export interface BioGeneratorRequest {
+export interface BioGeneratorRequest extends BaseToolRequest {
     description: string;
     tone: string;
     includeEmojis: boolean;
@@ -82,7 +87,7 @@ export interface BioGeneratorResponse {
 }
 
 // Instagram Reel Script Types
-export interface ReelScriptRequest {
+export interface ReelScriptRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     duration: string;
@@ -96,7 +101,7 @@ export interface ReelScriptResponse {
 }
 
 // Twitter Thread Maker Types
-export interface ThreadMakerRequest {
+export interface ThreadMakerRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     numberOfTweets: number;
@@ -110,7 +115,7 @@ export interface ThreadMakerResponse {
 }
 
 // Twitter Bio Generator Types
-export interface TwitterBioRequest {
+export interface TwitterBioRequest extends BaseToolRequest {
     description: string;
     tone: string;
     includeEmojis: boolean;
@@ -124,7 +129,7 @@ export interface TwitterBioResponse {
 }
 
 // Tweet Generator Types
-export interface TweetGeneratorRequest {
+export interface TweetGeneratorRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     language: string;
@@ -137,7 +142,7 @@ export interface TweetGeneratorResponse {
 }
 
 // Snapchat Caption Generator Types
-export interface SnapchatCaptionRequest {
+export interface SnapchatCaptionRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     includeEmojis: boolean;
@@ -151,7 +156,7 @@ export interface SnapchatCaptionResponse {
 }
 
 // Snapchat Story Idea Generator Types
-export interface SnapchatStoryIdeasRequest {
+export interface SnapchatStoryIdeasRequest extends BaseToolRequest {
     topic: string;
     language: string;
 }
@@ -163,7 +168,7 @@ export interface SnapchatStoryIdeasResponse {
 }
 
 // Snapchat Lens Idea Generator Types
-export interface SnapchatLensIdeasRequest {
+export interface SnapchatLensIdeasRequest extends BaseToolRequest {
     topic: string;
     language: string;
 }
@@ -249,7 +254,7 @@ export const LANGUAGES = [
 ] as const;
 
 // YouTube Video Script Generator Types
-export interface YouTubeScriptRequest {
+export interface YouTubeScriptRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     duration: string;
@@ -263,7 +268,7 @@ export interface YouTubeScriptResponse {
 }
 
 // YouTube Title Generator Types
-export interface YouTubeTitleRequest {
+export interface YouTubeTitleRequest extends BaseToolRequest {
     topic: string;
     language: string;
 }
@@ -275,7 +280,7 @@ export interface YouTubeTitleResponse {
 }
 
 // YouTube Description Generator Types
-export interface YouTubeDescriptionRequest {
+export interface YouTubeDescriptionRequest extends BaseToolRequest {
     topic: string;
     keywords: string;
     language: string;
@@ -288,7 +293,7 @@ export interface YouTubeDescriptionResponse {
 }
 
 // Reddit Post Generator Types
-export interface RedditPostRequest {
+export interface RedditPostRequest extends BaseToolRequest {
     topic: string;
     subreddit: string;
     tone: string;
@@ -303,7 +308,7 @@ export interface RedditPostResponse {
 }
 
 // Reddit Comment Generator Types
-export interface RedditCommentRequest {
+export interface RedditCommentRequest extends BaseToolRequest {
     postContext: string;
     tone: string;
     language: string;
@@ -316,7 +321,7 @@ export interface RedditCommentResponse {
 }
 
 // Reddit AMA Question Generator Types
-export interface RedditAMARequest {
+export interface RedditAMARequest extends BaseToolRequest {
     topic: string;
     language: string;
 }
@@ -334,7 +339,7 @@ export const YOUTUBE_DURATIONS = [
 ] as const;
 
 // Discord Server Announcement Types
-export interface DiscordAnnouncementRequest {
+export interface DiscordAnnouncementRequest extends BaseToolRequest {
     topic: string;
     tone: string;
     language: string;
@@ -347,7 +352,7 @@ export interface DiscordAnnouncementResponse {
 }
 
 // Discord Welcome Message Types
-export interface DiscordWelcomeRequest {
+export interface DiscordWelcomeRequest extends BaseToolRequest {
     serverName: string;
     tone: string;
     language: string;
@@ -360,7 +365,7 @@ export interface DiscordWelcomeResponse {
 }
 
 // Discord Event Description Types
-export interface DiscordEventRequest {
+export interface DiscordEventRequest extends BaseToolRequest {
     eventName: string;
     eventDetails: string;
     tone: string;
@@ -374,7 +379,7 @@ export interface DiscordEventResponse {
 }
 
 // Twitch Stream Title Types
-export interface TwitchStreamTitleRequest {
+export interface TwitchStreamTitleRequest extends BaseToolRequest {
     game: string;
     tone: string;
     language: string;
@@ -387,7 +392,7 @@ export interface TwitchStreamTitleResponse {
 }
 
 // Twitch Chat Command Response Types
-export interface TwitchCommandRequest {
+export interface TwitchCommandRequest extends BaseToolRequest {
     commandName: string;
     purpose: string;
     tone: string;
@@ -401,7 +406,7 @@ export interface TwitchCommandResponse {
 }
 
 // Twitch Panel Description Types
-export interface TwitchPanelRequest {
+export interface TwitchPanelRequest extends BaseToolRequest {
     panelType: string;
     content: string;
     language: string;

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateDiscordWelcome } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { DiscordWelcomeResponse } from "@/types";
 
 export async function POST(req: NextRequest) {

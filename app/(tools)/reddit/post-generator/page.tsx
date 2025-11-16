@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { RedditPostResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function RedditPostGeneratorPage() {
   const { t, language: uiLanguage } = useLanguage();
@@ -16,6 +17,7 @@ export default function RedditPostGeneratorPage() {
   const [post, setPost] = useState<{ title: string; content: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
@@ -24,6 +26,12 @@ export default function RedditPostGeneratorPage() {
     }
     if (!subreddit.trim()) {
       setError(t("redditPost.form.error.emptySubreddit"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -40,6 +48,8 @@ export default function RedditPostGeneratorPage() {
           subreddit: subreddit.trim(),
           tone, 
           language 
+        ,
+          turnstileToken,
         }),
       });
 
@@ -80,6 +90,7 @@ export default function RedditPostGeneratorPage() {
   const handleUseAgain = () => {
     setPost(null);
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -167,19 +178,25 @@ export default function RedditPostGeneratorPage() {
             </div>
 
             {!post && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-orange-600 hover:bg-orange-700"
               >
                 {isLoading ? t("redditPost.form.generating") : t("redditPost.form.generate")}
               </Button>
+              </>
             )}
 
             {post && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("redditPost.form.useAgain")}
               </Button>
             )}

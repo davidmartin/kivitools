@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { TwitchStreamTitleResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TwitchStreamTitlePage() {
   const { t } = useLanguage();
@@ -15,10 +16,17 @@ export default function TwitchStreamTitlePage() {
   const [titles, setTitles] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!game.trim()) {
       setError(t("twitchStreamTitle.form.error.emptyGame"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -30,7 +38,9 @@ export default function TwitchStreamTitlePage() {
       const response = await fetch("/api/tools/twitch/stream-title", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ game: game.trim(), tone, language }),
+        body: JSON.stringify({ game: game.trim(), tone, language ,
+          turnstileToken,
+        }),
       });
 
       const data: TwitchStreamTitleResponse = await response.json();
@@ -69,6 +79,7 @@ export default function TwitchStreamTitlePage() {
   const handleUseAgain = () => {
     setTitles([]);
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -142,8 +153,8 @@ export default function TwitchStreamTitlePage() {
 
             {titles.length === 0 && (
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
@@ -153,7 +164,7 @@ export default function TwitchStreamTitlePage() {
             )}
 
             {titles.length > 0 && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("twitchStreamTitle.form.useAgain")}
               </Button>
             )}

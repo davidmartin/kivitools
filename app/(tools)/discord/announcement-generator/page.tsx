@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { DiscordAnnouncementResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function DiscordAnnouncementPage() {
   const { t } = useLanguage();
@@ -15,10 +16,17 @@ export default function DiscordAnnouncementPage() {
   const [announcement, setAnnouncement] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("discordAnnouncement.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -30,7 +38,9 @@ export default function DiscordAnnouncementPage() {
       const response = await fetch("/api/tools/discord/announcement-generator", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic: topic.trim(), tone, language }),
+        body: JSON.stringify({ topic: topic.trim(), tone, language ,
+          turnstileToken,
+        }),
       });
 
       const data: DiscordAnnouncementResponse = await response.json();
@@ -59,6 +69,7 @@ export default function DiscordAnnouncementPage() {
   const handleUseAgain = () => {
     setAnnouncement("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -131,19 +142,25 @@ export default function DiscordAnnouncementPage() {
             </div>
 
             {!announcement && (
-              <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
-                variant="secondary"
-                size="lg"
-                className="w-full bg-indigo-600 hover:bg-indigo-700"
-              >
-                {isLoading ? t("discordAnnouncement.form.generating") : t("discordAnnouncement.form.generate")}
-              </Button>
+              <>
+                <TurnstileWidget
+                  onSuccess={setTurnstileToken}
+                  onError={() => setError(t("turnstile.error"))}
+                />
+                <Button
+                  onPress={handleGenerate}
+                  isDisabled={isLoading || !turnstileToken}
+                  variant="secondary"
+                  size="lg"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700"
+                >
+                  {isLoading ? t("discordAnnouncement.form.generating") : t("discordAnnouncement.form.generate")}
+                </Button>
+              </>
             )}
 
             {announcement && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("discordAnnouncement.form.useAgain")}
               </Button>
             )}
@@ -161,7 +178,7 @@ export default function DiscordAnnouncementPage() {
                 <label className="block text-sm font-medium text-foreground">
                   {t("discordAnnouncement.result.title")}
                 </label>
-                <Button onClick={handleCopy} variant="ghost" size="sm" className="text-indigo-600">
+                <Button onPress={handleCopy} variant="ghost" size="sm" className="text-indigo-600">
                   {t("discordAnnouncement.result.copy")}
                 </Button>
               </div>

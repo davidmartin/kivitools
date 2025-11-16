@@ -6,6 +6,7 @@ import { TONES, LANGUAGES, THREAD_LENGTHS } from "@/types";
 import type { ThreadMakerResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TwitterThreadMakerPage() {
   const { t } = useLanguage();
@@ -16,10 +17,17 @@ export default function TwitterThreadMakerPage() {
   const [tweets, setTweets] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("threadMaker.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -38,6 +46,7 @@ export default function TwitterThreadMakerPage() {
           tone,
           numberOfTweets,
           language,
+          turnstileToken,
         }),
       });
 
@@ -77,6 +86,7 @@ export default function TwitterThreadMakerPage() {
   const handleUseAgain = () => {
     setTweets([]);
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -190,8 +200,8 @@ export default function TwitterThreadMakerPage() {
             {/* Generate Button */}
             {tweets.length === 0 && (
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
@@ -205,7 +215,7 @@ export default function TwitterThreadMakerPage() {
             {/* Use Again Button */}
             {tweets.length > 0 && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"

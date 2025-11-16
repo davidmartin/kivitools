@@ -1,12 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateRedditAMAQuestions } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { RedditAMARequest, RedditAMAResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
     try {
         const body: RedditAMARequest = await request.json();
-        const { topic, language } = body;
+        const { topic, language, turnstileToken } = body;
+        // Verify Turnstile token first
+        if (!turnstileToken) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification required",
+                },
+                { status: 403 }
+            );
+        }
+
+        const userIp = getUserIpFromRequest(request);
+        const isValid = await verifyTurnstileToken(turnstileToken, userIp);
+
+        if (!isValid) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification failed",
+                },
+                { status: 403 }
+            );
+        }
+
 
         // Validate required fields
         if (!topic || topic.trim().length === 0) {

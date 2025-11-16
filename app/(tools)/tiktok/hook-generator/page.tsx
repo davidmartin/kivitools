@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { HookGeneratorResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TikTokHookGeneratorPage() {
   const { t, language: uiLanguage } = useLanguage();
@@ -15,10 +16,17 @@ export default function TikTokHookGeneratorPage() {
   const [hooks, setHooks] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("hookGenerator.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -36,6 +44,7 @@ export default function TikTokHookGeneratorPage() {
           topic: topic.trim(),
           tone,
           language,
+          turnstileToken,
         }),
       });
 
@@ -75,6 +84,7 @@ export default function TikTokHookGeneratorPage() {
   const handleUseAgain = () => {
     setHooks([]);
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -165,8 +175,8 @@ export default function TikTokHookGeneratorPage() {
             {/* Generate Button */}
             {hooks.length === 0 && (
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
@@ -178,7 +188,7 @@ export default function TikTokHookGeneratorPage() {
             {/* Use Again Button */}
             {hooks.length > 0 && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"

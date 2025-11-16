@@ -1,12 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTwitterThread } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { ThreadMakerRequest, ThreadMakerResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
     try {
         const body: ThreadMakerRequest = await request.json();
-        const { topic, tone, numberOfTweets, language } = body;
+        const { topic, tone, numberOfTweets, language, turnstileToken } = body;
+        // Verify Turnstile token first
+        if (!turnstileToken) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification required",
+                },
+                { status: 403 }
+            );
+        }
+
+        const userIp = getUserIpFromRequest(request);
+        const isValid = await verifyTurnstileToken(turnstileToken, userIp);
+
+        if (!isValid) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification failed",
+                },
+                { status: 403 }
+            );
+        }
+
 
         // Validation
         if (!topic || topic.trim().length === 0) {

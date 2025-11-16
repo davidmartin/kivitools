@@ -21,6 +21,7 @@ export default function TikTokMoneyCalculatorPage() {
   const [result, setResult] = useState<ProfileData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleCalculate = async () => {
     const cleanUsername = username.trim().replace('@', '');
@@ -38,7 +39,9 @@ export default function TikTokMoneyCalculatorPage() {
       const response = await fetch("/api/tools/tiktok/money-calculator", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: cleanUsername }),
+        body: JSON.stringify({ username: cleanUsername ,
+          turnstileToken,
+        }),
       });
 
       const data = await response.json();
@@ -108,7 +111,7 @@ export default function TikTokMoneyCalculatorPage() {
             {!result && (
               <Button
                 onPress={handleCalculate}
-                isDisabled={isLoading}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"

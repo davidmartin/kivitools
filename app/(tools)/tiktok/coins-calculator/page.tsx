@@ -17,6 +17,7 @@ export default function TikTokCoinsCalculatorPage() {
   const [result, setResult] = useState<CoinsResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleCalculate = async () => {
     const coinsNum = parseInt(coins);
@@ -93,7 +94,7 @@ export default function TikTokCoinsCalculatorPage() {
             {!result && (
               <Button
                 onPress={handleCalculate}
-                isDisabled={isLoading}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"

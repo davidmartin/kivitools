@@ -6,6 +6,7 @@ import { TONES, LANGUAGES, REEL_DURATIONS } from "@/types";
 import type { ReelScriptResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function InstagramReelScriptPage() {
   const { t, language: uiLanguage } = useLanguage();
@@ -16,10 +17,17 @@ export default function InstagramReelScriptPage() {
   const [script, setScript] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("reelScript.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -38,6 +46,7 @@ export default function InstagramReelScriptPage() {
           tone,
           duration,
           language,
+          turnstileToken,
         }),
       });
 
@@ -67,6 +76,7 @@ export default function InstagramReelScriptPage() {
   const handleUseAgain = () => {
     setScript("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -182,21 +192,27 @@ export default function InstagramReelScriptPage() {
 
             {/* Generate Button */}
             {!script && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
               >
                 {isLoading ? t("reelScript.form.generating") : t("reelScript.form.generate")}
               </Button>
+              </>
             )}
 
             {/* Use Again Button */}
             {script && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"
@@ -226,7 +242,7 @@ export default function InstagramReelScriptPage() {
                 className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent bg-surface text-foreground resize-none whitespace-pre-wrap"
               />
               <Button
-                onClick={handleCopy}
+                onPress={handleCopy}
                 variant="primary"
                 size="lg"
                 className="w-full bg-green-600 hover:bg-green-700"

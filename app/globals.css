@@ -6,3 +6,4 @@
 
 /* Configure Tailwind v4 dark mode with class strategy */
 @custom-variant dark (&:where(.dark, .dark *));
+

@@ -2248,6 +2248,13 @@ export const translations = {
         "common.required": "This field is required (we know, annoying)",
         "common.copied": "Copied! 🎉 Now go be viral!",
         "common.copyFailed": "Copy failed (try Ctrl+C like in the old days)",
+
+        // Cloudflare Turnstile
+        "turnstile.verifying": "Verifying you're human...",
+        "turnstile.error": "Verification error. Please reload the page.",
+        "turnstile.expired": "Verification expired. Please try again.",
+        "turnstile.failed": "Verification failed. Make sure you're not a bot. 🤖",
+        "turnstile.blocked": "Request blocked by anti-bot protection.",
     },
 } as const;
 

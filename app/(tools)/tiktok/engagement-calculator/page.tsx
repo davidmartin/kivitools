@@ -21,6 +21,7 @@ export default function TikTokEngagementCalculatorPage() {
   const [result, setResult] = useState<EngagementResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleCalculate = async () => {
     const cleanUsername = username.trim().replace('@', '');
@@ -38,7 +39,9 @@ export default function TikTokEngagementCalculatorPage() {
       const response = await fetch("/api/tools/tiktok/engagement-calculator", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: cleanUsername }),
+        body: JSON.stringify({ username: cleanUsername ,
+          turnstileToken,
+        }),
       });
 
       const data = await response.json();
@@ -102,7 +105,7 @@ export default function TikTokEngagementCalculatorPage() {
             {!result && (
               <Button
                 onPress={handleCalculate}
-                isDisabled={isLoading}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"

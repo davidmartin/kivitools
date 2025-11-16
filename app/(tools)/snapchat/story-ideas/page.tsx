@@ -6,6 +6,7 @@ import { LANGUAGES } from "@/types";
 import type { SnapchatStoryIdeasResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function SnapchatStoryIdeasPage() {
   const { t, language: uiLanguage } = useLanguage();
@@ -14,10 +15,17 @@ export default function SnapchatStoryIdeasPage() {
   const [ideas, setIdeas] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("snapchatStoryIdeas.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -34,6 +42,7 @@ export default function SnapchatStoryIdeasPage() {
         body: JSON.stringify({
           topic: topic.trim(),
           language,
+          turnstileToken,
         }),
       });
 
@@ -73,6 +82,7 @@ export default function SnapchatStoryIdeasPage() {
   const handleUseAgain = () => {
     setIdeas([]);
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -140,8 +150,8 @@ export default function SnapchatStoryIdeasPage() {
             {/* Generate Button */}
             {ideas.length === 0 && (
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-yellow-400 hover:bg-yellow-500"
@@ -155,7 +165,7 @@ export default function SnapchatStoryIdeasPage() {
             {/* Use Again Button */}
             {ideas.length > 0 && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"

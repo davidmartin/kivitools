@@ -6,6 +6,7 @@ import { LANGUAGES } from "@/types";
 import type { TwitchPanelResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TwitchPanelPage() {
   const { t } = useLanguage();
@@ -15,6 +16,7 @@ export default function TwitchPanelPage() {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!panelType.trim()) {
@@ -26,6 +28,12 @@ export default function TwitchPanelPage() {
       return;
     }
 
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
+      return;
+    }
+
     setIsLoading(true);
     setError("");
     setDescription("");
@@ -34,7 +42,9 @@ export default function TwitchPanelPage() {
       const response = await fetch("/api/tools/twitch/panel-description", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ panelType: panelType.trim(), content: content.trim(), language }),
+        body: JSON.stringify({ panelType: panelType.trim(), content: content.trim(), language ,
+          turnstileToken,
+        }),
       });
 
       const data: TwitchPanelResponse = await response.json();
@@ -63,6 +73,7 @@ export default function TwitchPanelPage() {
   const handleUseAgain = () => {
     setDescription("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -131,19 +142,25 @@ export default function TwitchPanelPage() {
             </div>
 
             {!description && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
               >
                 {isLoading ? t("twitchPanel.form.generating") : t("twitchPanel.form.generate")}
               </Button>
+              </>
             )}
 
             {description && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("twitchPanel.form.useAgain")}
               </Button>
             )}
@@ -161,7 +178,7 @@ export default function TwitchPanelPage() {
                 <label className="block text-sm font-medium text-foreground">
                   {t("twitchPanel.result.title")}
                 </label>
-                <Button onClick={handleCopy} variant="ghost" size="sm" className="text-purple-600">
+                <Button onPress={handleCopy} variant="ghost" size="sm" className="text-purple-600">
                   {t("twitchPanel.result.copy")}
                 </Button>
               </div>

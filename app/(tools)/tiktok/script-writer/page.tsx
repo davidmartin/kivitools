@@ -6,6 +6,7 @@ import { TONES, DURATIONS, LANGUAGES } from "@/types";
 import type { ScriptWriterResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TikTokScriptWriterPage() {
   const { t, language: uiLanguage } = useLanguage();
@@ -16,10 +17,16 @@ export default function TikTokScriptWriterPage() {
   const [script, setScript] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("scriptWriter.form.error.emptyTopic"));
+      return;
+    }
+
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -38,6 +45,7 @@ export default function TikTokScriptWriterPage() {
           tone,
           duration,
           language,
+          turnstileToken,
         }),
       });
 
@@ -68,6 +76,7 @@ export default function TikTokScriptWriterPage() {
   const handleUseAgain = () => {
     setScript("");
     setError("");
+    setTurnstileToken("");
   };
 
   return (
@@ -178,11 +187,19 @@ export default function TikTokScriptWriterPage() {
               </select>
             </div>
 
+            {/* Turnstile Widget */}
+            {!script && (
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
+            )}
+
             {/* Generate Button */}
             {!script && (
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
@@ -194,7 +211,7 @@ export default function TikTokScriptWriterPage() {
             {/* Use Again Button */}
             {script && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"
@@ -224,7 +241,7 @@ export default function TikTokScriptWriterPage() {
                 className="w-full px-4 py-3 border border-border rounded-lg bg-surface text-foreground font-mono text-sm whitespace-pre-wrap"
               />
               <Button
-                onClick={handleCopy}
+                onPress={handleCopy}
                 variant="primary"
                 size="lg"
                 className="w-full bg-green-600 hover:bg-green-700"

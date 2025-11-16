@@ -6,6 +6,7 @@ import { LANGUAGES } from "@/types";
 import type { YouTubeTitleResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function YouTubeTitleGeneratorPage() {
   const { t } = useLanguage();
@@ -14,10 +15,17 @@ export default function YouTubeTitleGeneratorPage() {
   const [titles, setTitles] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("youtubeTitle.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -29,7 +37,9 @@ export default function YouTubeTitleGeneratorPage() {
       const response = await fetch("/api/tools/youtube/title-generator", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic: topic.trim(), language }),
+        body: JSON.stringify({ topic: topic.trim(), language ,
+          turnstileToken,
+        }),
       });
 
       const data: YouTubeTitleResponse = await response.json();
@@ -68,6 +78,7 @@ export default function YouTubeTitleGeneratorPage() {
   const handleUseAgain = () => {
     setTitles([]);
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -122,8 +133,8 @@ export default function YouTubeTitleGeneratorPage() {
 
             {titles.length === 0 && (
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-red-600 hover:bg-red-700"
@@ -133,7 +144,7 @@ export default function YouTubeTitleGeneratorPage() {
             )}
 
             {titles.length > 0 && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("youtubeTitle.form.useAgain")}
               </Button>
             )}

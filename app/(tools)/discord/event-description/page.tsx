@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { DiscordEventResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function DiscordEventPage() {
   const { t } = useLanguage();
@@ -16,6 +17,7 @@ export default function DiscordEventPage() {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!eventName.trim()) {
@@ -24,6 +26,12 @@ export default function DiscordEventPage() {
     }
     if (!eventDetails.trim()) {
       setError(t("discordEvent.form.error.emptyEventDetails"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -40,6 +48,8 @@ export default function DiscordEventPage() {
           eventDetails: eventDetails.trim(),
           tone, 
           language 
+        ,
+          turnstileToken,
         }),
       });
 
@@ -69,6 +79,7 @@ export default function DiscordEventPage() {
   const handleUseAgain = () => {
     setDescription("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -156,19 +167,25 @@ export default function DiscordEventPage() {
             </div>
 
             {!description && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-indigo-600 hover:bg-indigo-700"
               >
                 {isLoading ? t("discordEvent.form.generating") : t("discordEvent.form.generate")}
               </Button>
+              </>
             )}
 
             {description && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("discordEvent.form.useAgain")}
               </Button>
             )}
@@ -186,7 +203,7 @@ export default function DiscordEventPage() {
                 <label className="block text-sm font-medium text-foreground">
                   {t("discordEvent.result.title")}
                 </label>
-                <Button onClick={handleCopy} variant="ghost" size="sm" className="text-indigo-600">
+                <Button onPress={handleCopy} variant="ghost" size="sm" className="text-indigo-600">
                   {t("discordEvent.result.copy")}
                 </Button>
               </div>

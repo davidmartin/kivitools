@@ -6,6 +6,7 @@ import { TONES, YOUTUBE_DURATIONS, LANGUAGES } from "@/types";
 import type { YouTubeScriptResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function YouTubeScriptGeneratorPage() {
   const { t } = useLanguage();
@@ -16,10 +17,17 @@ export default function YouTubeScriptGeneratorPage() {
   const [script, setScript] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("youtubeScript.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -31,7 +39,9 @@ export default function YouTubeScriptGeneratorPage() {
       const response = await fetch("/api/tools/youtube/script-generator", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic: topic.trim(), tone, duration, language }),
+        body: JSON.stringify({ topic: topic.trim(), tone, duration, language ,
+          turnstileToken,
+        }),
       });
 
       const data: YouTubeScriptResponse = await response.json();
@@ -60,6 +70,7 @@ export default function YouTubeScriptGeneratorPage() {
   const handleUseAgain = () => {
     setScript("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -152,19 +163,25 @@ export default function YouTubeScriptGeneratorPage() {
             </div>
 
             {!script && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-red-600 hover:bg-red-700"
               >
                 {isLoading ? t("youtubeScript.form.generating") : t("youtubeScript.form.generate")}
               </Button>
+              </>
             )}
 
             {script && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("youtubeScript.form.useAgain")}
               </Button>
             )}
@@ -182,7 +199,7 @@ export default function YouTubeScriptGeneratorPage() {
                 <label className="block text-sm font-medium text-foreground">
                   {t("youtubeScript.result.title")}
                 </label>
-                <Button onClick={handleCopy} variant="ghost" size="sm" className="text-red-600">
+                <Button onPress={handleCopy} variant="ghost" size="sm" className="text-red-600">
                   {t("youtubeScript.result.copy")}
                 </Button>
               </div>

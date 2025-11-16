@@ -12,10 +12,17 @@ export default function TikTokUsernameGeneratorPage() {
   const [usernames, setUsernames] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!keywords.trim()) {
       setError(t("usernameGenerator.form.error.emptyKeywords"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -27,7 +34,9 @@ export default function TikTokUsernameGeneratorPage() {
       const response = await fetch("/api/tools/tiktok/username-generator", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ keywords: keywords.trim(), style }),
+        body: JSON.stringify({ keywords: keywords.trim(), style ,
+          turnstileToken,
+        }),
       });
 
       const data = await response.json();
@@ -128,7 +137,7 @@ export default function TikTokUsernameGeneratorPage() {
             {!usernames.length && (
               <Button
                 onPress={handleGenerate}
-                isDisabled={isLoading}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"

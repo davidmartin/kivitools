@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTwitchStreamTitles } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { TwitchStreamTitleResponse } from "@/types";
 
 export async function POST(req: NextRequest) {

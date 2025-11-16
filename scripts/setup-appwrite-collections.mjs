@@ -48,9 +48,9 @@ async function setupCollections() {
     try {
         // 1. Crear Collection: generation_logs
         console.log("📝 Creando collection 'generation_logs'...");
-        
+
         const collectionId = ID.unique();
-        
+
         const collection = await databases.createCollection(
             DATABASE_ID,
             collectionId,
@@ -211,14 +211,14 @@ async function setupCollections() {
 
     } catch (error) {
         console.error("\n❌ Error al configurar collections:", error.message);
-        
+
         if (error.code === 409) {
             console.log("\n⚠️  La collection ya existe. Si quieres recrearla:");
             console.log("  1. Ve a Appwrite Console");
             console.log("  2. Elimina la collection 'generation_logs'");
             console.log("  3. Vuelve a ejecutar este script");
         }
-        
+
         process.exit(1);
     }
 }

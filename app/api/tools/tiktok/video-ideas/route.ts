@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateVideoIdeas } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { VideoIdeasRequest, VideoIdeasResponse } from "@/types";
 
 export async function POST(request: NextRequest) {

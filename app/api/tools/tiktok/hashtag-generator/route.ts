@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateHashtags } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { HashtagGeneratorRequest, HashtagGeneratorResponse } from "@/types";
 
 export async function POST(request: NextRequest) {

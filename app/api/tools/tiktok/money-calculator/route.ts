@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 
 // Función para obtener datos del perfil de TikTok
 async function getTikTokProfile(username: string) {
@@ -63,7 +64,31 @@ async function getTikTokProfile(username: string) {
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { username } = body;
+        const { username, turnstileToken } = body;
+        // Verify Turnstile token first
+        if (!turnstileToken) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification required",
+                },
+                { status: 403 }
+            );
+        }
+
+        const userIp = getUserIpFromRequest(request);
+        const isValid = await verifyTurnstileToken(turnstileToken, userIp);
+
+        if (!isValid) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification failed",
+                },
+                { status: 403 }
+            );
+        }
+
 
         if (!username || username.trim().length === 0) {
             return NextResponse.json(

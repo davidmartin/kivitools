@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { CaptionGeneratorResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function InstagramCaptionGeneratorPage() {
   const { t, language: uiLanguage } = useLanguage();
@@ -17,10 +18,17 @@ export default function InstagramCaptionGeneratorPage() {
   const [caption, setCaption] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!topic.trim()) {
       setError(t("captionGenerator.form.error.emptyTopic"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -40,6 +48,7 @@ export default function InstagramCaptionGeneratorPage() {
           includeEmojis,
           includeHashtags,
           language,
+          turnstileToken,
         }),
       });
 
@@ -69,6 +78,7 @@ export default function InstagramCaptionGeneratorPage() {
   const handleUseAgain = () => {
     setCaption("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -187,21 +197,27 @@ export default function InstagramCaptionGeneratorPage() {
 
             {/* Generate Button */}
             {!caption && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
               >
                 {isLoading ? t("captionGenerator.form.generating") : t("captionGenerator.form.generate")}
               </Button>
+              </>
             )}
 
             {/* Use Again Button */}
             {caption && (
               <Button
-                onClick={handleUseAgain}
+                onPress={handleUseAgain}
                 variant="ghost"
                 size="lg"
                 className="w-full"
@@ -231,7 +247,7 @@ export default function InstagramCaptionGeneratorPage() {
                 className="w-full px-4 py-3 border border-border rounded-lg bg-surface text-foreground font-mono text-sm whitespace-pre-wrap"
               />
               <Button
-                onClick={handleCopy}
+                onPress={handleCopy}
                 variant="primary"
                 size="lg"
                 className="w-full bg-green-600 hover:bg-green-700"

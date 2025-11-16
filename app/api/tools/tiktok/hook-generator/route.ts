@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateHooks } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { HookGeneratorRequest, HookGeneratorResponse } from "@/types";
 
 export async function POST(request: NextRequest) {

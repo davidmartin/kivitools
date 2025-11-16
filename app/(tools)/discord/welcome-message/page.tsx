@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { DiscordWelcomeResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function DiscordWelcomePage() {
   const { t } = useLanguage();
@@ -15,10 +16,17 @@ export default function DiscordWelcomePage() {
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!serverName.trim()) {
       setError(t("discordWelcome.form.error.emptyServerName"));
+      return;
+    }
+
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
       return;
     }
 
@@ -30,7 +38,9 @@ export default function DiscordWelcomePage() {
       const response = await fetch("/api/tools/discord/welcome-message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ serverName: serverName.trim(), tone, language }),
+        body: JSON.stringify({ serverName: serverName.trim(), tone, language ,
+          turnstileToken,
+        }),
       });
 
       const data: DiscordWelcomeResponse = await response.json();
@@ -59,6 +69,7 @@ export default function DiscordWelcomePage() {
   const handleUseAgain = () => {
     setMessage("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -131,19 +142,25 @@ export default function DiscordWelcomePage() {
             </div>
 
             {!message && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full bg-indigo-600 hover:bg-indigo-700"
               >
                 {isLoading ? t("discordWelcome.form.generating") : t("discordWelcome.form.generate")}
               </Button>
+              </>
             )}
 
             {message && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("discordWelcome.form.useAgain")}
               </Button>
             )}
@@ -161,7 +178,7 @@ export default function DiscordWelcomePage() {
                 <label className="block text-sm font-medium text-foreground">
                   {t("discordWelcome.result.title")}
                 </label>
-                <Button onClick={handleCopy} variant="ghost" size="sm" className="text-indigo-600">
+                <Button onPress={handleCopy} variant="ghost" size="sm" className="text-indigo-600">
                   {t("discordWelcome.result.copy")}
                 </Button>
               </div>

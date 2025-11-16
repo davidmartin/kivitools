@@ -1,12 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateRedditComment } from "@/lib/deepseek";
 import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 import type { RedditCommentRequest, RedditCommentResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
     try {
         const body: RedditCommentRequest = await request.json();
-        const { postContext, tone, language } = body;
+        const { postContext, tone, language, turnstileToken } = body;
+        // Verify Turnstile token first
+        if (!turnstileToken) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification required",
+                },
+                { status: 403 }
+            );
+        }
+
+        const userIp = getUserIpFromRequest(request);
+        const isValid = await verifyTurnstileToken(turnstileToken, userIp);
+
+        if (!isValid) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Bot verification failed",
+                },
+                { status: 403 }
+            );
+        }
+
 
         // Validate required fields
         if (!postContext || postContext.trim().length === 0) {

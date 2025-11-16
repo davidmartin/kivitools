@@ -6,6 +6,7 @@ import { TONES, LANGUAGES } from "@/types";
 import type { TwitchCommandResponse } from "@/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ToolSelector from "@/app/components/tool-selector";
+import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TwitchCommandPage() {
   const { t } = useLanguage();
@@ -16,6 +17,7 @@ export default function TwitchCommandPage() {
   const [response, setResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const handleGenerate = async () => {
     if (!commandName.trim()) {
@@ -27,6 +29,12 @@ export default function TwitchCommandPage() {
       return;
     }
 
+    
+    if (!turnstileToken) {
+      setError(t("turnstile.failed"));
+      return;
+    }
+
     setIsLoading(true);
     setError("");
     setResponse("");
@@ -35,7 +43,9 @@ export default function TwitchCommandPage() {
       const res = await fetch("/api/tools/twitch/chat-command", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ commandName: commandName.trim(), purpose: purpose.trim(), tone, language }),
+        body: JSON.stringify({ commandName: commandName.trim(), purpose: purpose.trim(), tone, language ,
+          turnstileToken,
+        }),
       });
 
       const data: TwitchCommandResponse = await res.json();
@@ -64,6 +74,7 @@ export default function TwitchCommandPage() {
   const handleUseAgain = () => {
     setResponse("");
     setError("");
+      setTurnstileToken("");
   };
 
   return (
@@ -151,19 +162,25 @@ export default function TwitchCommandPage() {
             </div>
 
             {!response && (
+              <>
+              <TurnstileWidget
+                onSuccess={setTurnstileToken}
+                onError={() => setError(t("turnstile.error"))}
+              />
               <Button
-                onClick={handleGenerate}
-                isDisabled={isLoading}
+                onPress={handleGenerate}
+                isDisabled={isLoading || !turnstileToken}
                 variant="secondary"
                 size="lg"
                 className="w-full"
               >
                 {isLoading ? t("twitchCommand.form.generating") : t("twitchCommand.form.generate")}
               </Button>
+              </>
             )}
 
             {response && (
-              <Button onClick={handleUseAgain} variant="ghost" size="lg" className="w-full">
+              <Button onPress={handleUseAgain} variant="ghost" size="lg" className="w-full">
                 {t("twitchCommand.form.useAgain")}
               </Button>
             )}
@@ -181,7 +198,7 @@ export default function TwitchCommandPage() {
                 <label className="block text-sm font-medium text-foreground">
                   {t("twitchCommand.result.title")}
                 </label>
-                <Button onClick={handleCopy} variant="ghost" size="sm" className="text-purple-600">
+                <Button onPress={handleCopy} variant="ghost" size="sm" className="text-purple-600">
                   {t("twitchCommand.result.copy")}
                 </Button>
               </div>
