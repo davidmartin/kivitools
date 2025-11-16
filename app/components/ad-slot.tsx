@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface AdSlotProps {
   slotId: string;
@@ -13,18 +13,23 @@ export default function AdSlot({
   format = "auto",
   className = "",
 }: AdSlotProps) {
+  const adLoaded = useRef(false);
+
   useEffect(() => {
-    // Cargar anuncios cuando el componente se monta
+    // Solo cargar anuncios una vez por componente
+    if (adLoaded.current) return;
+
     try {
       // @ts-ignore
       if (typeof window !== "undefined" && window.adsbygoogle) {
         // @ts-ignore
         (window.adsbygoogle = window.adsbygoogle || []).push({});
+        adLoaded.current = true;
       }
     } catch (err) {
       console.error("AdSense error:", err);
     }
-  }, []);
+  }, [slotId]); // Añadir slotId como dependencia
 
   return (
     <div className={`ad-container ${className}`}>
