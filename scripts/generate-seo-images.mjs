@@ -120,9 +120,9 @@ async function createMainOpenGraphImage(outputPath) {
     <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#a3e635;stop-opacity:1" />
-          <stop offset="50%" style="stop-color:#84cc16;stop-opacity:0.9" />
-          <stop offset="100%" style="stop-color:#65a30d;stop-opacity:0.8" />
+          <stop offset="0%" style="stop-color:#f5f5f5;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#e5e5e5;stop-opacity:0.9" />
+          <stop offset="100%" style="stop-color:#d4d4d4;stop-opacity:0.8" />
         </linearGradient>
       </defs>
       
@@ -134,7 +134,7 @@ async function createMainOpenGraphImage(outputPath) {
             font-family="Arial, sans-serif" 
             font-size="48" 
             font-weight="bold" 
-            fill="#ffffff" 
+            fill="#374151" 
             text-anchor="middle">
         Free AI-Powered Social Media Tools
       </text>
@@ -142,7 +142,7 @@ async function createMainOpenGraphImage(outputPath) {
       <text x="600" y="500" 
             font-family="Arial, sans-serif" 
             font-size="32" 
-            fill="#ffffff" 
+            fill="#374151" 
             opacity="0.95"
             text-anchor="middle">
         TikTok - Instagram - Twitter - YouTube and More
