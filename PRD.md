@@ -888,9 +888,9 @@ Usar sistema de 4px:
 ## 20. Contact & Ownership
 
 **Product Owner:** David Martin  
-**Repository:** /Users/davidmartin/Developer/me/social-tools  
-**Last Updated:** November 9, 2025  
-**Version:** 1.0 - MVP Planning
+**Repository:** https://github.com/davidmartin/kivitools  
+**Last Updated:** November 16, 2025  
+**Version:** 1.1 - Rebranded to KiviTools
 
 **Feedback & Iteration:**
 Este documento debe actualizarse cada 2 semanas durante desarrollo activo, incorporando:
