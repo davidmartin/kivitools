@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button, Popover } from "@heroui/react";
@@ -100,10 +101,16 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-accent">
-              {t("nav.title")}
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo-title.png"
+              alt="KiviTools - Free AI Social Media Tools"
+              width={200}
+              height={60}
+              priority
+              className="h-10 w-auto object-contain dark:invert"
+              style={{ background: 'transparent' }}
+            />
           </Link>
 
           {/* Desktop Menu */}

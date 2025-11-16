@@ -8,6 +8,57 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["@heroui/react"],
   },
+
+  // Rutas alias en español (SEO multilingüe)
+  async rewrites() {
+    return [
+      // TikTok - Rutas en español
+      { source: "/tiktok/escritor-de-guiones", destination: "/tiktok/script-writer" },
+      { source: "/tiktok/ideas-de-videos", destination: "/tiktok/video-ideas" },
+      { source: "/tiktok/generador-de-ganchos", destination: "/tiktok/hook-generator" },
+      { source: "/tiktok/generador-de-hashtags", destination: "/tiktok/hashtag-generator" },
+      { source: "/tiktok/generador-de-nombres", destination: "/tiktok/username-generator" },
+      { source: "/tiktok/generador-nombre-tienda", destination: "/tiktok/shop-name-generator" },
+      { source: "/tiktok/calculadora-monedas", destination: "/tiktok/coins-calculator" },
+      { source: "/tiktok/calculadora-dinero", destination: "/tiktok/money-calculator" },
+      { source: "/tiktok/calculadora-engagement", destination: "/tiktok/engagement-calculator" },
+
+      // Instagram - Rutas en español
+      { source: "/instagram/generador-bio", destination: "/instagram/bio-generator" },
+      { source: "/instagram/generador-subtitulos", destination: "/instagram/caption-generator" },
+      { source: "/instagram/guion-reel", destination: "/instagram/reel-script" },
+
+      // Twitter - Rutas en español
+      { source: "/twitter/generador-bio", destination: "/twitter/bio-generator" },
+      { source: "/twitter/generador-tweets", destination: "/twitter/tweet-generator" },
+      { source: "/twitter/creador-hilos", destination: "/twitter/thread-maker" },
+
+      // Snapchat - Rutas en español
+      { source: "/snapchat/ideas-historias", destination: "/snapchat/story-ideas" },
+      { source: "/snapchat/generador-subtitulos", destination: "/snapchat/caption-generator" },
+      { source: "/snapchat/ideas-lentes", destination: "/snapchat/lens-ideas" },
+
+      // YouTube - Rutas en español
+      { source: "/youtube/generador-titulos", destination: "/youtube/title-generator" },
+      { source: "/youtube/generador-descripciones", destination: "/youtube/description-generator" },
+      { source: "/youtube/generador-guiones", destination: "/youtube/script-generator" },
+
+      // Reddit - Rutas en español
+      { source: "/reddit/generador-publicaciones", destination: "/reddit/post-generator" },
+      { source: "/reddit/generador-comentarios", destination: "/reddit/comment-generator" },
+      { source: "/reddit/preguntas-ama", destination: "/reddit/ama-questions" },
+
+      // Discord - Rutas en español
+      { source: "/discord/generador-anuncios", destination: "/discord/announcement-generator" },
+      { source: "/discord/mensaje-bienvenida", destination: "/discord/welcome-message" },
+      { source: "/discord/descripcion-eventos", destination: "/discord/event-description" },
+
+      // Twitch - Rutas en español
+      { source: "/twitch/titulo-stream", destination: "/twitch/stream-title" },
+      { source: "/twitch/descripcion-panel", destination: "/twitch/panel-description" },
+      { source: "/twitch/comando-chat", destination: "/twitch/chat-command" },
+    ];
+  },
 };
 
 export default nextConfig;
