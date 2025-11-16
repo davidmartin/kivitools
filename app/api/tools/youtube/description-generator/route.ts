@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateYouTubeDescription } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { YouTubeDescriptionRequest, YouTubeDescriptionResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -30,6 +31,16 @@ export async function POST(request: NextRequest) {
 
         // Generate description using DeepSeek
         const description = await generateYouTubeDescription(topic, keywords, language);
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "youtube",
+            tool: "description-generator",
+            requestData: body,
+            responseData: { description },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
+        });
 
         return NextResponse.json({
             success: true,

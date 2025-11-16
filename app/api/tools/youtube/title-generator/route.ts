@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateYouTubeTitles } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { YouTubeTitleRequest, YouTubeTitleResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -30,6 +31,16 @@ export async function POST(request: NextRequest) {
 
         // Generate titles using DeepSeek
         const titles = await generateYouTubeTitles(topic, language);
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "youtube",
+            tool: "title-generator",
+            requestData: body,
+            responseData: { titles },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
+        });
 
         return NextResponse.json({
             success: true,

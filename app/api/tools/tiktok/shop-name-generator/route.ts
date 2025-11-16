@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTikTokShopNames } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 
 export async function POST(request: NextRequest) {
     try {
@@ -30,6 +31,16 @@ export async function POST(request: NextRequest) {
             category: category.trim(),
             keywords: keywords?.trim(),
             style: style || "modern",
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "tiktok",
+            tool: "shop-name-generator",
+            requestData: body,
+            responseData: { names },
+            userIp: getUserIpFromRequest(request),
+            language: "en",
         });
 
         return NextResponse.json({

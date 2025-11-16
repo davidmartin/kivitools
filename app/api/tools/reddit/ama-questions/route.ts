@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateRedditAMAQuestions } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { RedditAMARequest, RedditAMAResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -30,6 +31,16 @@ export async function POST(request: NextRequest) {
 
         // Generate questions using DeepSeek
         const questions = await generateRedditAMAQuestions(topic, language);
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "reddit",
+            tool: "ama-questions",
+            requestData: body,
+            responseData: { questions },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
+        });
 
         return NextResponse.json({
             success: true,

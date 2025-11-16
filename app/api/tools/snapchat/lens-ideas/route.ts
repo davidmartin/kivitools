@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateSnapchatLensIdeas } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type {
     SnapchatLensIdeasRequest,
     SnapchatLensIdeasResponse,
@@ -35,6 +36,16 @@ export async function POST(request: NextRequest) {
         const ideas = await generateSnapchatLensIdeas({
             topic,
             language,
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "snapchat",
+            tool: "lens-ideas",
+            requestData: body,
+            responseData: { ideas },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
         });
 
         return NextResponse.json({

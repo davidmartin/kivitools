@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 
 async function getTikTokEngagement(username: string) {
     try {
@@ -77,6 +78,16 @@ export async function POST(request: NextRequest) {
 
         const cleanUsername = username.trim().replace('@', '');
         const result = await getTikTokEngagement(cleanUsername);
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "tiktok",
+            tool: "engagement-calculator",
+            requestData: body,
+            responseData: { result },
+            userIp: getUserIpFromRequest(request),
+            language: "en",
+        });
 
         return NextResponse.json({
             success: true,

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateYouTubeScript } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { YouTubeScriptRequest, YouTubeScriptResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -30,6 +31,16 @@ export async function POST(request: NextRequest) {
 
         // Generate script using DeepSeek
         const script = await generateYouTubeScript(topic, tone, duration, language);
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "youtube",
+            tool: "script-generator",
+            requestData: body,
+            responseData: { script },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
+        });
 
         return NextResponse.json({
             success: true,

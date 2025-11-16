@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateHashtags } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { HashtagGeneratorRequest, HashtagGeneratorResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -30,6 +31,16 @@ export async function POST(request: NextRequest) {
         // Generar hashtags
         const hashtags = await generateHashtags({
             keyword: body.keyword,
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "tiktok",
+            tool: "hashtag-generator",
+            requestData: body,
+            responseData: { hashtags },
+            userIp: getUserIpFromRequest(request),
+            language: "en",
         });
 
         return NextResponse.json({

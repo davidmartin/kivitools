@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateSnapchatCaption } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type {
     SnapchatCaptionRequest,
     SnapchatCaptionResponse,
@@ -37,6 +38,16 @@ export async function POST(request: NextRequest) {
             tone,
             includeEmojis,
             language,
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "snapchat",
+            tool: "caption-generator",
+            requestData: body,
+            responseData: { caption },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
         });
 
         return NextResponse.json({

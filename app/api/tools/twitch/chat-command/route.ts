@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTwitchCommand } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { TwitchCommandResponse } from "@/types";
 
 export async function POST(req: NextRequest) {
@@ -37,6 +38,16 @@ export async function POST(req: NextRequest) {
 
         // Generate command response
         const response = await generateTwitchCommand(commandName, purpose, tone || "friendly", language || "en");
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "twitch",
+            tool: "chat-command",
+            requestData: { commandName, purpose, tone, language },
+            responseData: { response },
+            userIp: getUserIpFromRequest(req),
+            language: language || "en",
+        });
 
         return NextResponse.json<TwitchCommandResponse>({
             success: true,

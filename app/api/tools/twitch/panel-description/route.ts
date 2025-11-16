@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTwitchPanel } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { TwitchPanelResponse } from "@/types";
 
 export async function POST(req: NextRequest) {
@@ -37,6 +38,16 @@ export async function POST(req: NextRequest) {
 
         // Generate panel description
         const description = await generateTwitchPanel(panelType, content, language || "en");
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "twitch",
+            tool: "panel-description",
+            requestData: { panelType, content, language },
+            responseData: { description },
+            userIp: getUserIpFromRequest(req),
+            language: language || "en",
+        });
 
         return NextResponse.json<TwitchPanelResponse>({
             success: true,

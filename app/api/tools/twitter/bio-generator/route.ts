@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTwitterBio } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { TwitterBioRequest, TwitterBioResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -34,6 +35,16 @@ export async function POST(request: NextRequest) {
             tone,
             includeEmojis,
             language,
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "twitter",
+            tool: "bio-generator",
+            requestData: body,
+            responseData: { bio },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
         });
 
         return NextResponse.json({

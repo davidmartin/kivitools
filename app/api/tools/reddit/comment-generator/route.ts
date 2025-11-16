@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateRedditComment } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { RedditCommentRequest, RedditCommentResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -30,6 +31,16 @@ export async function POST(request: NextRequest) {
 
         // Generate comment using DeepSeek
         const comment = await generateRedditComment(postContext, tone, language);
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "reddit",
+            tool: "comment-generator",
+            requestData: body,
+            responseData: { comment },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
+        });
 
         return NextResponse.json({
             success: true,

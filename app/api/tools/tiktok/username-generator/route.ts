@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTikTokUsernames } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 
 export async function POST(request: NextRequest) {
     try {
@@ -29,6 +30,16 @@ export async function POST(request: NextRequest) {
         const usernames = await generateTikTokUsernames({
             keywords: keywords.trim(),
             style: style || "creative",
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "tiktok",
+            tool: "username-generator",
+            requestData: body,
+            responseData: { usernames },
+            userIp: getUserIpFromRequest(request),
+            language: "en",
         });
 
         return NextResponse.json({

@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { generateInstagramCaption } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { CaptionGeneratorRequest, CaptionGeneratorResponse } from "@/types";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
     try {
         const body: CaptionGeneratorRequest = await request.json();
         const { topic, tone, includeEmojis, includeHashtags, language } = body;
@@ -29,6 +30,16 @@ export async function POST(request: Request) {
             includeEmojis,
             includeHashtags,
             language,
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "instagram",
+            tool: "caption-generator",
+            requestData: body,
+            responseData: { caption },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
         });
 
         return NextResponse.json<CaptionGeneratorResponse>({

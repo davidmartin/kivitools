@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateVideoIdeas } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { VideoIdeasRequest, VideoIdeasResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -30,6 +31,16 @@ export async function POST(request: NextRequest) {
         // Generar ideas
         const ideas = await generateVideoIdeas({
             topic: body.topic,
+            language: body.language || "en",
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "tiktok",
+            tool: "video-ideas",
+            requestData: body,
+            responseData: { ideas },
+            userIp: getUserIpFromRequest(request),
             language: body.language || "en",
         });
 

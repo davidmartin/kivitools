@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateHooks } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { HookGeneratorRequest, HookGeneratorResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -31,6 +32,16 @@ export async function POST(request: NextRequest) {
         const hooks = await generateHooks({
             topic: body.topic,
             tone: body.tone || "friendly",
+            language: body.language || "en",
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "tiktok",
+            tool: "hook-generator",
+            requestData: body,
+            responseData: { hooks },
+            userIp: getUserIpFromRequest(request),
             language: body.language || "en",
         });
 

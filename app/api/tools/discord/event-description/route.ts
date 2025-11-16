@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateDiscordEvent } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { DiscordEventResponse } from "@/types";
 
 export async function POST(req: NextRequest) {
@@ -37,6 +38,16 @@ export async function POST(req: NextRequest) {
 
         // Generate event description
         const description = await generateDiscordEvent(eventName, eventDetails, tone || "friendly", language || "en");
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "discord",
+            tool: "event-description",
+            requestData: { eventName, eventDetails, tone, language },
+            responseData: { description },
+            userIp: getUserIpFromRequest(req),
+            language: language || "en",
+        });
 
         return NextResponse.json<DiscordEventResponse>({
             success: true,

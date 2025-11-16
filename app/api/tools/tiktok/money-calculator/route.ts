@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 
 // Función para obtener datos del perfil de TikTok
 async function getTikTokProfile(username: string) {
@@ -127,13 +128,25 @@ export async function POST(request: NextRequest) {
         const minEarnings = totalBaseEarnings * 0.8;
         const maxEarnings = totalBaseEarnings * 1.2;
 
+        const profile = {
+            ...profileData,
+            minEarnings: Math.max(minEarnings, 0.50),
+            maxEarnings: Math.max(maxEarnings, 1.00),
+        };
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "tiktok",
+            tool: "money-calculator",
+            requestData: body,
+            responseData: { profile },
+            userIp: getUserIpFromRequest(request),
+            language: "en",
+        });
+
         return NextResponse.json({
             success: true,
-            profile: {
-                ...profileData,
-                minEarnings: Math.max(minEarnings, 0.50),
-                maxEarnings: Math.max(maxEarnings, 1.00),
-            }
+            profile,
         });
     } catch (error) {
         console.error("Money calculation error:", error);

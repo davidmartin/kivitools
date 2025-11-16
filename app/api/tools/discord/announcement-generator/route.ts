@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateDiscordAnnouncement } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { DiscordAnnouncementResponse } from "@/types";
 
 export async function POST(req: NextRequest) {
@@ -23,6 +24,16 @@ export async function POST(req: NextRequest) {
 
         // Generate announcement
         const announcement = await generateDiscordAnnouncement(topic, tone || "friendly", language || "en");
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "discord",
+            tool: "announcement-generator",
+            requestData: { topic, tone, language },
+            responseData: { announcement },
+            userIp: getUserIpFromRequest(req),
+            language: language || "en",
+        });
 
         return NextResponse.json<DiscordAnnouncementResponse>({
             success: true,

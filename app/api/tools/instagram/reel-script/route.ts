@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { generateReelScript } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { ReelScriptRequest, ReelScriptResponse } from "@/types";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
     try {
         const body: ReelScriptRequest = await request.json();
         const { topic, tone, duration, language } = body;
@@ -28,6 +29,16 @@ export async function POST(request: Request) {
             tone,
             duration,
             language,
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "instagram",
+            tool: "reel-script",
+            requestData: body,
+            responseData: { script },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
         });
 
         return NextResponse.json<ReelScriptResponse>({

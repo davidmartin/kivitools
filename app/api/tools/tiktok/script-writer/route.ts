@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTikTokScript } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { ScriptWriterRequest, ScriptWriterResponse } from "@/types";
 
 // POST /api/tools/tiktok/script-writer
@@ -34,6 +35,16 @@ export async function POST(request: NextRequest) {
             topic: topic.trim(),
             tone: tone || "friendly",
             duration: duration || "30-60s",
+            language: language || "en",
+        });
+
+        // Log generation to Appwrite (backend only, non-blocking)
+        await saveGenerationLog({
+            platform: "tiktok",
+            tool: "script-writer",
+            requestData: body,
+            responseData: { script },
+            userIp: getUserIpFromRequest(request),
             language: language || "en",
         });
 

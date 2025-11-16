@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTwitchStreamTitles } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { TwitchStreamTitleResponse } from "@/types";
 
 export async function POST(req: NextRequest) {
@@ -23,6 +24,16 @@ export async function POST(req: NextRequest) {
 
         // Generate stream titles
         const titles = await generateTwitchStreamTitles(game, tone || "friendly", language || "en");
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "twitch",
+            tool: "stream-title",
+            requestData: { game, tone, language },
+            responseData: { titles },
+            userIp: getUserIpFromRequest(req),
+            language: language || "en",
+        });
 
         return NextResponse.json<TwitchStreamTitleResponse>({
             success: true,

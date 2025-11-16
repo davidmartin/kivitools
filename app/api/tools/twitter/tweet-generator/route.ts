@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateTweet } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { TweetGeneratorRequest, TweetGeneratorResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -33,6 +34,16 @@ export async function POST(request: NextRequest) {
             topic,
             tone,
             language,
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "twitter",
+            tool: "tweet-generator",
+            requestData: body,
+            responseData: { tweets },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
         });
 
         return NextResponse.json({

@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { generateInstagramBio } from "@/lib/deepseek";
+import { saveGenerationLog, getUserIpFromRequest } from "@/lib/appwrite";
 import type { BioGeneratorRequest, BioGeneratorResponse } from "@/types";
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
     try {
         const body: BioGeneratorRequest = await request.json();
         const { description, tone, includeEmojis, language } = body;
@@ -28,6 +29,16 @@ export async function POST(request: Request) {
             tone,
             includeEmojis,
             language,
+        });
+
+        // Log generation to Appwrite
+        await saveGenerationLog({
+            platform: "instagram",
+            tool: "bio-generator",
+            requestData: body,
+            responseData: { bio },
+            userIp: getUserIpFromRequest(request),
+            language: language || "en",
         });
 
         return NextResponse.json<BioGeneratorResponse>({
