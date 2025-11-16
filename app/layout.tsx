@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description:
     "Create engaging TikTok scripts, Instagram captions, and Twitter threads with AI. Free tools for content creators. No signup required.",
   keywords: [
+    "KiviTools",
     "TikTok script writer",
     "Instagram caption generator",
     "Twitter thread maker",

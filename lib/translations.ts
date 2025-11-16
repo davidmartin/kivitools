@@ -17,18 +17,18 @@ export const translations = {
         "nav.twitch": "Twitch",
 
         // Platform Pages
-        "tiktok.page.description": "Herramientas profesionales con IA para crear contenido viral en TikTok",
-        "instagram.page.description": "Crea captions, bios y scripts perfectos para Instagram con IA",
-        "twitter.page.description": "Genera hilos, tweets y bios impactantes para Twitter",
-        "snapchat.page.description": "Ideas creativas y captions divertidos para tus Snaps",
-        "youtube.page.description": "Scripts, títulos y descripciones optimizadas para YouTube",
-        "reddit.page.description": "Posts, comentarios y preguntas auténticas para Reddit",
-        "discord.page.description": "Anuncios, mensajes y descripciones profesionales para Discord",
-        "twitch.page.description": "Títulos, comandos y paneles atractivos para tu canal de Twitch",
+        "tiktok.page.description": "Scripts tan buenos que hasta tu abuela te pedirá el enlace (aunque no sepa qué es TikTok)",
+        "instagram.page.description": "Captions que consiguen likes más rápido que puedes decir 'aesthetic'",
+        "twitter.page.description": "Hilos tan buenos que la gente olvidará que vino a discutir",
+        "snapchat.page.description": "Porque tu Snap merece algo mejor que 'Hola' con la cara de perrito",
+        "youtube.page.description": "Títulos clickbait éticos (¿eso existe?) y scripts que mantienen a la gente despierta",
+        "reddit.page.description": "Posts que no te harán ganar downvotes (esperamos)",
+        "discord.page.description": "Mensajes que no terminarán en /r/discordcringe",
+        "twitch.page.description": "Títulos que atraen viewers (resultados de partnerships no garantizados)",
 
         // Footer
         "footer.about": "Acerca de",
-        "footer.aboutText": "Herramientas gratuitas potenciadas por IA para creadores de contenido en redes sociales.",
+        "footer.aboutText": "Herramientas gratuitas con IA que hacen el trabajo difícil mientras tú finges ser un genio creativo. 🚀",
         "footer.tools": "Herramientas",
         "footer.tiktokScript": "Script TikTok",
         "footer.instagramCaption": "Caption Instagram",
@@ -71,8 +71,8 @@ export const translations = {
         "terms.termination.description": "Nos reservamos el derecho de terminar o suspender el acceso a nuestro servicio sin previo aviso por conducta que consideremos inapropiada.",
 
         // Contact Us
-        "contact.title": "Contáctanos",
-        "contact.intro": "¿Tienes preguntas, sugerencias o comentarios? Nos encantaría escucharte.",
+        "contact.title": "Contáctanos (Prometemos leer tu email)",
+        "contact.intro": "¿Bug? ¿Idea brillante? ¿Solo quieres decirnos hola? Todo vale (menos spam, porfa).",
         "contact.email.title": "Email",
         "contact.email.description": "Envíanos un correo a:",
         "contact.email.address": "contacto@kivitools.com",
@@ -81,13 +81,13 @@ export const translations = {
         "contact.feedback.title": "Comentarios",
         "contact.feedback.description": "Tus sugerencias nos ayudan a mejorar. Comparte tus ideas para nuevas herramientas o mejoras.",
         "contact.response.title": "Tiempo de Respuesta",
-        "contact.response.description": "Normalmente respondemos dentro de 24-48 horas laborables.",
+        "contact.response.description": "24-48 horas (o menos si tu email nos hace reír).",
 
         // Homepage - Hero
         "home.hero.title": "Herramientas Gratuitas con IA",
         "home.hero.subtitle": "para Redes Sociales",
-        "home.hero.description": "Crea contenido atractivo para TikTok, Instagram, Twitter, Snapchat, YouTube, Reddit, Discord y Twitch con IA. Sin registro requerido. Completamente gratis.",
-        "home.hero.cta": "Probar Script Writer",
+        "home.hero.description": "¿Bloqueado creativo? No te preocupes, nuestra IA tiene más ideas que tú cafés al día. Crea contenido viral para TikTok, Instagram, Twitter y más. Sin registro, sin drama, sin excusas. 100% gratis (sí, gratis de verdad).",
+        "home.hero.cta": "¡Hazme viral! 🚀",
 
         // Homepage - Sections
         "home.tiktokSection.title": "Herramientas TikTok",
@@ -105,19 +105,19 @@ export const translations = {
         "home.badge.comingSoon": "Próximamente",
 
         // Homepage - Platforms Section
-        "home.platformsSection.title": "Elige Tu Plataforma",
-        "home.platformsSection.description": "Selecciona la red social para la que deseas crear contenido y descubre todas las herramientas disponibles",
+        "home.platformsSection.title": "Elige Tu Campo de Batalla Social",
+        "home.platformsSection.description": "¿TikTok? ¿Instagram? ¿Twitter para discutir? Tenemos herramientas para todas tus adicciones sociales.",
 
         // Homepage - Features
-        "home.features.title": "¿Por Qué Elegir KiviTools?",
-        "home.features.free.title": "100% Gratis",
-        "home.features.free.description": "Todas las herramientas completamente gratis. Sin costos ocultos ni suscripciones.",
-        "home.features.noSignup.title": "Sin Registro",
-        "home.features.noSignup.description": "Comienza a usar inmediatamente. No se requiere cuenta ni email.",
-        "home.features.aiPowered.title": "Con IA",
-        "home.features.aiPowered.description": "IA avanzada crea contenido atractivo y digno de ser viral.",
-        "home.features.multiLanguage.title": "Multi-idioma",
-        "home.features.multiLanguage.description": "Genera contenido en más de 13 idiomas en todo el mundo.",
+        "home.features.title": "¿Por Qué KiviTools y No Otra Herramienta Aburrida?",
+        "home.features.free.title": "100% Gratis (No es broma)",
+        "home.features.free.description": "Sí, gratis de verdad. Ni suscripciones sorpresa, ni 'prueba gratis por 3 días'. Tu cartera puede relajarse.",
+        "home.features.noSignup.title": "Sin Registro (Te queremos, pero no tanto)",
+        "home.features.noSignup.description": "¿Email? ¿Contraseña? ¿Quién tiene tiempo para eso? Entra, crea, vete. Así de simple.",
+        "home.features.aiPowered.title": "IA que Sí Funciona",
+        "home.features.aiPowered.description": "Nuestra IA no te dará respuestas filosóficas raras. Solo contenido viral y ya.",
+        "home.features.multiLanguage.title": "Habla 13+ Idiomas (Más que tu primo políglota)",
+        "home.features.multiLanguage.description": "Español, inglés, chino, klingon... bueno, klingon todavía no, pero trabajamos en ello.",
 
         // Tones
         "tones.formal": "👔 Formal",
@@ -165,7 +165,7 @@ export const translations = {
 
         // TikTok Script Writer
         "scriptWriter.title": "Creador de Scripts para TikTok",
-        "scriptWriter.description": "Crea scripts atractivos y originales para TikTok con IA. ¡Transforma tus ideas creativas en contenido viral!",
+        "scriptWriter.description": "Tu cerebro: 💤 Nuestra IA: 🚀 Crea scripts tan buenos que tu FYP te lo agradecerá.",
         "scriptWriter.form.topic": "Tema",
         "scriptWriter.form.topicPlaceholder": "Por favor ingresa el tema de tu publicación...",
         "scriptWriter.form.tone": "Tono",
@@ -179,18 +179,18 @@ export const translations = {
         "scriptWriter.result.copied": "¡Script copiado al portapapeles!",
         "scriptWriter.result.success": "✓ Resultado generado exitosamente",
         "scriptWriter.form.error.emptyTopic": "Por favor ingresa un tema",
-        "scriptWriter.features.free.title": "🚀 Gratis y Fácil de Usar",
-        "scriptWriter.features.free.description": "Sin registro requerido. Solo úsalo cuando lo necesites.",
-        "scriptWriter.features.smart.title": "✨ Ideas de Scripts Inteligentes",
-        "scriptWriter.features.smart.description": "Obtén ideas frescas y divertidas que coincidan con tu tema y tono.",
-        "scriptWriter.features.multilang.title": "🌍 Soporte Multi-idioma",
-        "scriptWriter.features.multilang.description": "Crea scripts en 13 idiomas diferentes con una herramienta.",
-        "scriptWriter.features.fast.title": "⚡ Copiar y Publicar Rápido",
-        "scriptWriter.features.fast.description": "Tu script está listo para copiar y usar. Sin ediciones extra.",
+        "scriptWriter.features.free.title": "🚀 Gratis (Porque el dinero da pereza)",
+        "scriptWriter.features.free.description": "Sin tarjetas de crédito, sin tu primogénito. Nada. Cero. Nada de nada.",
+        "scriptWriter.features.smart.title": "✨ Más Ideas que Tu Playlist de Spotify",
+        "scriptWriter.features.smart.description": "La IA tiene mejores ideas a las 3am que tú después de 5 cafés.",
+        "scriptWriter.features.multilang.title": "🌍 Habla Más Idiomas que Duolingo",
+        "scriptWriter.features.multilang.description": "13 idiomas disponibles. Tu crush de otro país finalmente te entenderá.",
+        "scriptWriter.features.fast.title": "⚡ Copia, Pega, Triunfa",
+        "scriptWriter.features.fast.description": "Ctrl+C, Ctrl+V, espera los millones de views. Así de fácil.",
 
         // TikTok Video Ideas
         "videoIdeas.title": "Generador de Ideas para Videos de TikTok",
-        "videoIdeas.description": "Obtén ideas frescas y creativas para tu contenido de TikTok. ¡Nunca más te quedes sin ideas!",
+        "videoIdeas.description": "¿Mirando la cámara sin saber qué grabar? Te rescatamos de ese momento incómodo.",
         "videoIdeas.form.topic": "Tema o Nicho",
         "videoIdeas.form.topicPlaceholder": "Ej: fitness, cocina, viajes, productividad...",
         "videoIdeas.form.language": "Idioma",
@@ -214,7 +214,7 @@ export const translations = {
 
         // TikTok Hook Generator
         "hookGenerator.title": "Generador de Hooks para TikTok",
-        "hookGenerator.description": "Crea hooks que captan la atención y detienen el scroll. ¡Perfectos primeros 3 segundos!",
+        "hookGenerator.description": "Hooks tan buenos que la gente dejará de scrollear (sí, incluso tu ex).",
         "hookGenerator.form.topic": "Tema del Video",
         "hookGenerator.form.topicPlaceholder": "¿De qué trata tu video?",
         "hookGenerator.form.tone": "Tono",
@@ -1120,10 +1120,10 @@ export const translations = {
         "twitchPanel.features.instant.description": "Descripciones listas en segundos.",
 
         // Common
-        "common.error": "Algo salió mal",
-        "common.required": "Este campo es requerido",
-        "common.copied": "¡Copiado al portapapeles!",
-        "common.copyFailed": "Error al copiar",
+        "common.error": "¡Ups! Algo salió mal (no es tu culpa, probablemente)",
+        "common.required": "Este campo es requerido (sí, lo sabemos, molesto)",
+        "common.copied": "¡Copiado! 🎉 ¡Ahora a ser viral!",
+        "common.copyFailed": "Error al copiar (prueba Ctrl+C a la antigua)",
     },
 
     en: {
@@ -1141,18 +1141,18 @@ export const translations = {
         "nav.twitch": "Twitch",
 
         // Platform Pages
-        "tiktok.page.description": "Professional AI-powered tools to create viral TikTok content",
-        "instagram.page.description": "Create perfect captions, bios and scripts for Instagram with AI",
-        "twitter.page.description": "Generate impactful threads, tweets and bios for Twitter",
-        "snapchat.page.description": "Creative ideas and fun captions for your Snaps",
-        "youtube.page.description": "Optimized scripts, titles and descriptions for YouTube",
-        "reddit.page.description": "Authentic posts, comments and questions for Reddit",
-        "discord.page.description": "Professional announcements, messages and descriptions for Discord",
-        "twitch.page.description": "Catchy titles, commands and panels for your Twitch channel",
+        "tiktok.page.description": "Scripts so good even your grandma will ask for the link (though she doesn't know what TikTok is)",
+        "instagram.page.description": "Captions that get likes faster than you can say 'aesthetic'",
+        "twitter.page.description": "Threads so good people will forget they came to argue",
+        "snapchat.page.description": "Because your Snap deserves better than 'Hey' with a dog face",
+        "youtube.page.description": "Ethical clickbait titles (does that exist?) and scripts that keep people awake",
+        "reddit.page.description": "Posts that won't get you downvoted to oblivion (hopefully)",
+        "discord.page.description": "Messages that won't end up on /r/discordcringe",
+        "twitch.page.description": "Titles that attract viewers (partnership results not guaranteed)",
 
         // Footer
         "footer.about": "About",
-        "footer.aboutText": "Free AI-powered tools for social media content creators.",
+        "footer.aboutText": "Free AI tools that do the hard work while you pretend to be a creative genius. 🚀",
         "footer.tools": "Tools",
         "footer.tiktokScript": "TikTok Script",
         "footer.instagramCaption": "Instagram Caption",
@@ -1195,8 +1195,8 @@ export const translations = {
         "terms.termination.description": "We reserve the right to terminate or suspend access to our service without prior notice for conduct we deem inappropriate.",
 
         // Contact Us
-        "contact.title": "Contact Us",
-        "contact.intro": "Have questions, suggestions, or feedback? We'd love to hear from you.",
+        "contact.title": "Contact Us (We Promise to Read Your Email)",
+        "contact.intro": "Bug? Brilliant idea? Just want to say hi? All good (except spam, please no).",
         "contact.email.title": "Email",
         "contact.email.description": "Send us an email at:",
         "contact.email.address": "contact@kivitools.com",
@@ -1205,13 +1205,13 @@ export const translations = {
         "contact.feedback.title": "Feedback",
         "contact.feedback.description": "Your suggestions help us improve. Share your ideas for new tools or enhancements.",
         "contact.response.title": "Response Time",
-        "contact.response.description": "We typically respond within 24-48 business hours.",
+        "contact.response.description": "24-48 hours (or less if your email makes us laugh).",
 
         // Homepage - Hero
         "home.hero.title": "Free AI-Powered",
         "home.hero.subtitle": "Social Media Tools",
-        "home.hero.description": "Create engaging content for TikTok, Instagram, Twitter, Snapchat, YouTube, Reddit, Discord, and Twitch with AI. No signup required. Completely free.",
-        "home.hero.cta": "Try TikTok Script Writer",
+        "home.hero.description": "Creative block? Don't worry, our AI has more ideas than you've had coffees today. Create viral content for TikTok, Instagram, Twitter and more. No signup, no drama, no excuses. 100% free (yes, actually free).",
+        "home.hero.cta": "Make Me Viral! 🚀",
 
         // Homepage - Sections
         "home.tiktokSection.title": "TikTok Tools",
@@ -1229,19 +1229,19 @@ export const translations = {
         "home.badge.comingSoon": "Coming Soon",
 
         // Homepage - Platforms Section
-        "home.platformsSection.title": "Choose Your Platform",
-        "home.platformsSection.description": "Select the social network you want to create content for and discover all available tools",
+        "home.platformsSection.title": "Pick Your Social Battlefield",
+        "home.platformsSection.description": "TikTok? Instagram? Twitter for arguing? We've got tools for all your social addictions.",
 
         // Homepage - Features
-        "home.features.title": "Why Choose KiviTools?",
-        "home.features.free.title": "100% Free",
-        "home.features.free.description": "All tools completely free. No hidden costs, no subscriptions.",
-        "home.features.noSignup.title": "No Signup",
-        "home.features.noSignup.description": "Start using immediately. No account or email required.",
-        "home.features.aiPowered.title": "AI-Powered",
-        "home.features.aiPowered.description": "Advanced AI creates engaging, viral-worthy content.",
-        "home.features.multiLanguage.title": "Multi-Language",
-        "home.features.multiLanguage.description": "Generate content in 13+ languages worldwide.",
+        "home.features.title": "Why KiviTools and Not Some Boring Tool?",
+        "home.features.free.title": "100% Free (Not Kidding)",
+        "home.features.free.description": "Yes, actually free. No surprise subscriptions, no 'free for 3 days'. Your wallet can chill.",
+        "home.features.noSignup.title": "No Signup (We like you, but not that much)",
+        "home.features.noSignup.description": "Email? Password? Who has time for that? Just get in, create, and bounce. That simple.",
+        "home.features.aiPowered.title": "AI That Actually Works",
+        "home.features.aiPowered.description": "Our AI won't give you weird philosophical answers. Just viral content, period.",
+        "home.features.multiLanguage.title": "Speaks 13+ Languages (More than your polyglot cousin)",
+        "home.features.multiLanguage.description": "Spanish, English, Chinese, Klingon... okay, not Klingon yet, but we're working on it.",
 
         // Tones
         "tones.formal": "👔 Formal",
@@ -1289,7 +1289,7 @@ export const translations = {
 
         // TikTok Script Writer
         "scriptWriter.title": "TikTok Script Writer",
-        "scriptWriter.description": "Create engaging and original TikTok scripts with AI. Transform your creative ideas into viral-worthy content!",
+        "scriptWriter.description": "Your brain: 💤 Our AI: 🚀 Create scripts so good your FYP will thank you.",
         "scriptWriter.form.topic": "Topic",
         "scriptWriter.form.topicPlaceholder": "Please enter your post topic...",
         "scriptWriter.form.tone": "Tone",
@@ -1303,18 +1303,18 @@ export const translations = {
         "scriptWriter.result.copied": "Script copied to clipboard!",
         "scriptWriter.result.success": "✓ Result generated successfully",
         "scriptWriter.form.error.emptyTopic": "Please enter a topic",
-        "scriptWriter.features.free.title": "🚀 Free and Easy to Use",
-        "scriptWriter.features.free.description": "No sign up required. Just use it anytime you want.",
-        "scriptWriter.features.smart.title": "✨ Smart Script Ideas",
-        "scriptWriter.features.smart.description": "Get fresh and fun ideas that match your topic and tone.",
-        "scriptWriter.features.multilang.title": "🌍 Multi-Language Support",
-        "scriptWriter.features.multilang.description": "Create scripts in 13 different languages with one tool.",
-        "scriptWriter.features.fast.title": "⚡ Copy and Post Fast",
-        "scriptWriter.features.fast.description": "Your script is ready to copy and use. No extra edits needed.",
+        "scriptWriter.features.free.title": "🚀 Free (Because Money Is Effort)",
+        "scriptWriter.features.free.description": "No credit cards, no firstborn child. Nothing. Zero. Zilch.",
+        "scriptWriter.features.smart.title": "✨ More Ideas Than Your Spotify Playlist",
+        "scriptWriter.features.smart.description": "The AI has better ideas at 3am than you after 5 coffees.",
+        "scriptWriter.features.multilang.title": "🌍 Speaks More Languages Than Duolingo",
+        "scriptWriter.features.multilang.description": "13 languages available. Your crush from another country will finally get you.",
+        "scriptWriter.features.fast.title": "⚡ Copy, Paste, Win",
+        "scriptWriter.features.fast.description": "Ctrl+C, Ctrl+V, wait for millions of views. That easy.",
 
         // TikTok Video Ideas
         "videoIdeas.title": "TikTok Video Ideas Generator",
-        "videoIdeas.description": "Get fresh, creative video ideas for your TikTok content. Never run out of ideas again!",
+        "videoIdeas.description": "Staring at your camera not knowing what to film? We rescue you from that awkward moment.",
         "videoIdeas.form.topic": "Topic or Niche",
         "videoIdeas.form.topicPlaceholder": "E.g., fitness, cooking, travel, productivity...",
         "videoIdeas.form.language": "Language",
@@ -1338,7 +1338,7 @@ export const translations = {
 
         // TikTok Hook Generator
         "hookGenerator.title": "TikTok Hook Generator",
-        "hookGenerator.description": "Create attention-grabbing hooks that stop scrollers in their tracks. Perfect first 3 seconds!",
+        "hookGenerator.description": "Hooks so good people will stop scrolling (yes, even your ex).",
         "hookGenerator.form.topic": "Video Topic",
         "hookGenerator.form.topicPlaceholder": "What's your video about?",
         "hookGenerator.form.tone": "Tone",
@@ -1387,7 +1387,7 @@ export const translations = {
 
         // TikTok Username Generator
         "usernameGenerator.title": "TikTok Username Generator",
-        "usernameGenerator.description": "Create unique and memorable usernames for TikTok. Stand out from your profile!",
+        "usernameGenerator.description": "Create unique and memorable usernames for TikTok. Because @user123456 isn't cutting it.",
         "usernameGenerator.hero.subtitle": "Find the Perfect TikTok Username",
         "usernameGenerator.hero.description": "Need a cool name for your TikTok account? Our TikTok Username Generator helps you create smart and unique usernames for any kind of account. No login needed and always free.\n\nChoose your account type, pick a category, add a short description, select your language, and hit generate. You'll get a list of names you can copy and use right away.",
         "usernameGenerator.howItWorks.title": "How Our TikTok Username Generator Works",
@@ -2244,10 +2244,10 @@ export const translations = {
         "twitchPanel.features.instant.description": "Descriptions ready in seconds.",
 
         // Common
-        "common.error": "Something went wrong",
-        "common.required": "This field is required",
-        "common.copied": "Copied to clipboard!",
-        "common.copyFailed": "Failed to copy",
+        "common.error": "Oops! Something went wrong (not your fault, probably)",
+        "common.required": "This field is required (we know, annoying)",
+        "common.copied": "Copied! 🎉 Now go be viral!",
+        "common.copyFailed": "Copy failed (try Ctrl+C like in the old days)",
     },
 } as const;
 
