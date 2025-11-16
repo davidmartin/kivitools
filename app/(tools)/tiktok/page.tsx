@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function TikTokToolsPage() {
   const { t } = useLanguage();
 
+  // ✅ HERRAMIENTAS FUNCIONALES (AI-Powered)
   const tools = [
     {
       name: t("scriptWriter.title"),
@@ -39,12 +40,6 @@ export default function TikTokToolsPage() {
       icon: "👤",
     },
     {
-      name: t("usernameChecker.title"),
-      description: t("usernameChecker.description"),
-      href: "/tiktok/username-checker",
-      icon: "✅",
-    },
-    {
       name: t("shopNameGenerator.title"),
       description: t("shopNameGenerator.description"),
       href: "/tiktok/shop-name-generator",
@@ -67,48 +62,6 @@ export default function TikTokToolsPage() {
       description: t("engagementCalculator.description"),
       href: "/tiktok/engagement-calculator",
       icon: "📊",
-    },
-    {
-      name: t("videoDownloader.title"),
-      description: t("videoDownloader.description"),
-      href: "/tiktok/video-downloader",
-      icon: "⬇️",
-    },
-    {
-      name: t("transcriptGenerator.title"),
-      description: t("transcriptGenerator.description"),
-      href: "/tiktok/transcript-generator",
-      icon: "📝",
-    },
-    {
-      name: t("profileViewer.title"),
-      description: t("profileViewer.description"),
-      href: "/tiktok/profile-viewer",
-      icon: "👁️",
-    },
-    {
-      name: t("profileAnalytics.title"),
-      description: t("profileAnalytics.description"),
-      href: "/tiktok/profile-analytics",
-      icon: "📈",
-    },
-    {
-      name: t("mp3Downloader.title"),
-      description: t("mp3Downloader.description"),
-      href: "/tiktok/mp3-downloader",
-      icon: "🎵",
-    },
-    {
-      name: t("thumbnailDownloader.title"),
-      description: t("thumbnailDownloader.description"),
-      href: "/tiktok/thumbnail-downloader",
-      icon: "🖼️",
-    },
-    {
-      name: t("voiceGenerator.title"),
-      description: t("voiceGenerator.description"),
-      href: "/tiktok/voice-generator",
-      icon: "🎤",
     },
   ];
 

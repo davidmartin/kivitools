@@ -108,7 +108,7 @@ export default function RedditAMAQuestionsPage() {
               <select
                 id="language"
                 value={language}
-                onChange={(e) => setLanguage(e.target.value)}
+                onChange={(e) => setLanguage(e.target.value as "en" | "es")}
                 className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-surface text-foreground"
                 disabled={isLoading}
               >
