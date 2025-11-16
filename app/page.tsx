@@ -192,6 +192,149 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+            {t("stats.title")}
+          </h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-accent mb-2">50K+</div>
+              <p className="text-muted">{t("stats.creators")}</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-accent mb-2">1M+</div>
+              <p className="text-muted">{t("stats.content")}</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-accent mb-2">100K+</div>
+              <p className="text-muted">{t("stats.time")}</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-accent mb-2">8</div>
+              <p className="text-muted">{t("stats.platforms")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 bg-surface">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              {t("testimonials.title")}
+            </h2>
+            <p className="text-muted">{t("testimonials.subtitle")}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card>
+              <Card.Content className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-1">
+                    <div className="font-bold text-foreground">
+                      {t("testimonials.t1.name")}
+                    </div>
+                    <div className="text-sm text-muted">
+                      {t("testimonials.t1.role")}
+                    </div>
+                  </div>
+                  <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p className="text-muted">&quot;{t("testimonials.t1.text")}&quot;</p>
+              </Card.Content>
+            </Card>
+
+            <Card>
+              <Card.Content className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-1">
+                    <div className="font-bold text-foreground">
+                      {t("testimonials.t2.name")}
+                    </div>
+                    <div className="text-sm text-muted">
+                      {t("testimonials.t2.role")}
+                    </div>
+                  </div>
+                  <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p className="text-muted">&quot;{t("testimonials.t2.text")}&quot;</p>
+              </Card.Content>
+            </Card>
+
+            <Card>
+              <Card.Content className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-1">
+                    <div className="font-bold text-foreground">
+                      {t("testimonials.t3.name")}
+                    </div>
+                    <div className="text-sm text-muted">
+                      {t("testimonials.t3.role")}
+                    </div>
+                  </div>
+                  <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p className="text-muted">&quot;{t("testimonials.t3.text")}&quot;</p>
+              </Card.Content>
+            </Card>
+
+            <Card>
+              <Card.Content className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-1">
+                    <div className="font-bold text-foreground">
+                      {t("testimonials.t4.name")}
+                    </div>
+                    <div className="text-sm text-muted">
+                      {t("testimonials.t4.role")}
+                    </div>
+                  </div>
+                  <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p className="text-muted">&quot;{t("testimonials.t4.text")}&quot;</p>
+              </Card.Content>
+            </Card>
+
+            <Card>
+              <Card.Content className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-1">
+                    <div className="font-bold text-foreground">
+                      {t("testimonials.t5.name")}
+                    </div>
+                    <div className="text-sm text-muted">
+                      {t("testimonials.t5.role")}
+                    </div>
+                  </div>
+                  <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p className="text-muted">&quot;{t("testimonials.t5.text")}&quot;</p>
+              </Card.Content>
+            </Card>
+
+            <Card>
+              <Card.Content className="p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-1">
+                    <div className="font-bold text-foreground">
+                      {t("testimonials.t6.name")}
+                    </div>
+                    <div className="text-sm text-muted">
+                      {t("testimonials.t6.role")}
+                    </div>
+                  </div>
+                  <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+                </div>
+                <p className="text-muted">&quot;{t("testimonials.t6.text")}&quot;</p>
+              </Card.Content>
+            </Card>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

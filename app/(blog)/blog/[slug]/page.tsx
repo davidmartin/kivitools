@@ -131,28 +131,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <p className="text-muted mb-6">{t("blog.relatedTool.description")}</p>
           <Link
             href={getRelatedTool(slug)}
-            className="inline-block px-8 py-3 bg-accent hover:bg-accent-hover text-white rounded-lg font-semibold transition-colors"
+            className="inline-block px-8 py-3 bg-accent hover:bg-accent-hover text-accent-foreground rounded-lg font-semibold transition-colors"
           >
             {t("blog.relatedTool.button")} →
           </Link>
-        </Card.Content>
-      </Card>
-
-      {/* Newsletter Signup */}
-      <Card className="my-12 bg-surface">
-        <Card.Content className="p-8">
-          <h3 className="text-2xl font-bold text-foreground mb-3">
-            {t("blog.newsletter.title")}
-          </h3>
-          <p className="text-muted mb-6">{t("blog.newsletter.description")}</p>
-          <div className="flex gap-3">
-            <input
-              type="email"
-              placeholder={t("blog.newsletter.placeholder")}
-              className="flex-1 px-4 py-2 bg-background border border-border rounded-lg text-foreground"
-            />
-            <Button variant="primary">{t("blog.newsletter.button")}</Button>
-          </div>
         </Card.Content>
       </Card>
 

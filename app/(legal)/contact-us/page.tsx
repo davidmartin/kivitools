@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, Button, Input, TextArea, Alert, Select } from "@heroui/react";
+import { Card, Button, Input, TextArea, Alert } from "@heroui/react";
 import Link from "next/link";
 
 export default function ContactUsPage() {
@@ -154,25 +154,23 @@ export default function ContactUsPage() {
                 <label className="block text-sm font-semibold text-foreground mb-2">
                   {t("contact.form.type")} <span className="text-danger">*</span>
                 </label>
-                <Select
+                <select
                   value={formData.type}
                   onChange={(e) =>
                     setFormData({ ...formData, type: e.target.value })
                   }
                   disabled={isLoading}
-                  className="w-full"
+                  className="w-full px-4 py-2 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Select.Trigger>
-                    <Select.Value placeholder={t("contact.form.typePlaceholder")} />
-                  </Select.Trigger>
-                  <Select.Content>
-                    {contactTypes.map((type) => (
-                      <Select.Item key={type.value} value={type.value}>
-                        {type.label}
-                      </Select.Item>
-                    ))}
-                  </Select.Content>
-                </Select>
+                  <option value="" disabled>
+                    {t("contact.form.typePlaceholder")}
+                  </option>
+                  {contactTypes.map((type) => (
+                    <option key={type.value} value={type.value}>
+                      {type.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div>

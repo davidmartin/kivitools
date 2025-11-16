@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/reddit",
     "/discord",
     "/twitch",
+    "/blog",
     "/privacy-policy",
     "/terms-and-conditions",
     "/contact-us",
@@ -22,6 +23,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.8,
+  }));
+
+  // Blog posts
+  const blogPosts = [
+    "/blog/como-escribir-guiones-virales-tiktok-2025",
+    "/blog/mejores-hashtags-tiktok-2025",
+    "/blog/caption-generator-instagram-guia-completa",
+    "/blog/como-crear-hilos-virales-twitter",
+    "/blog/herramientas-ia-redes-sociales-gratis",
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
   }));
 
   // TikTok tools (English + Spanish aliases)
@@ -158,6 +173,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...routes,
+    ...blogPosts,
     ...tiktokTools,
     ...instagramTools,
     ...twitterTools,

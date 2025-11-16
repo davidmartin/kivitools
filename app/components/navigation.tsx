@@ -115,6 +115,14 @@ export default function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-2">
+            {/* Blog Link */}
+            <Link
+              href="/blog"
+              className="px-4 py-2 text-sm font-medium text-foreground hover:bg-accent/10 rounded-lg transition-colors"
+            >
+              📚 Blog
+            </Link>
+
             {/* Platforms Dropdown */}
             <Popover>
               <Button variant="ghost" size="sm" className="gap-1">
@@ -218,6 +226,15 @@ export default function Navigation() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden py-4 space-y-3 max-h-[calc(100vh-5rem)] overflow-y-auto">
+            {/* Blog Link Mobile */}
+            <Link
+              href="/blog"
+              className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-surface rounded-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              📚 Blog
+            </Link>
+            
             {platforms.map((platform) => (
               <div key={platform.id}>
                 <div className="px-4 py-2 text-sm font-semibold text-muted flex items-center gap-2">
