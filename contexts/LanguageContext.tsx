@@ -16,11 +16,20 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>("en");
 
-  // Cargar idioma guardado al montar
+  // Cargar idioma guardado o detectar automáticamente
   useEffect(() => {
     const saved = localStorage.getItem("language") as Language;
+    
     if (saved && (saved === "es" || saved === "en")) {
+      // Si hay un idioma guardado, usarlo
       setLanguageState(saved);
+    } else {
+      // Detectar idioma del navegador
+      const browserLang = navigator.language || navigator.languages?.[0] || "en";
+      const detectedLang = browserLang.toLowerCase().startsWith("es") ? "es" : "en";
+      setLanguageState(detectedLang);
+      // No guardamos en localStorage para permitir que cambie si el usuario cambia su idioma del navegador
+      // Solo guardamos cuando el usuario selecciona manualmente
     }
   }, []);
 
