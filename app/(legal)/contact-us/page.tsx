@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, Button, Input, TextArea, Alert } from "@heroui/react";
+import { Card, Button, Input, TextArea, Alert, Select } from "@heroui/react";
 import Link from "next/link";
 
 export default function ContactUsPage() {
@@ -10,6 +10,7 @@ export default function ContactUsPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    type: "",
     subject: "",
     message: "",
   });
@@ -17,14 +18,31 @@ export default function ContactUsPage() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
 
-    // Validate
-    if (!formData.name || !formData.email || !formData.message) {
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.type || !formData.message) {
       setError(t("contact.form.requiredFields"));
+      return;
+    }
+
+    // Validate email format
+    if (!validateEmail(formData.email)) {
+      setError(t("contact.form.invalidEmail"));
+      return;
+    }
+
+    // Validate message length
+    if (formData.message.length < 10) {
+      setError(t("contact.form.messageTooShort"));
       return;
     }
 
@@ -42,13 +60,21 @@ export default function ContactUsPage() {
       }
 
       setSuccess(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", type: "", subject: "", message: "" });
     } catch (err) {
       setError(t("contact.form.error"));
     } finally {
       setIsLoading(false);
     }
   };
+
+  const contactTypes = [
+    { value: "support", label: t("contact.form.types.support") },
+    { value: "feedback", label: t("contact.form.types.feedback") },
+    { value: "bug", label: t("contact.form.types.bug") },
+    { value: "feature", label: t("contact.form.types.feature") },
+    { value: "other", label: t("contact.form.types.other") },
+  ];
 
   const contactSections = [
     {
@@ -75,7 +101,7 @@ export default function ContactUsPage() {
         <div className="text-center mb-12">
           <Link
             href="/"
-            className="inline-block mb-6 text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 transition-colors"
+            className="inline-block mb-6 text-accent hover:text-accent-hover transition-colors"
           >
             ← {t("nav.title")}
           </Link>
@@ -86,13 +112,16 @@ export default function ContactUsPage() {
         </div>
 
         {/* Contact Form */}
-        <Card className="mb-8">
+        <Card className="mb-12">
           <Card.Content className="p-8">
+            <h2 className="text-2xl font-bold text-foreground mb-6">
+              {t("contact.form.title")}
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    {t("contact.form.name")} *
+                  <label className="block text-sm font-semibold text-foreground mb-2">
+                    {t("contact.form.name")} <span className="text-danger">*</span>
                   </label>
                   <Input
                     value={formData.name}
@@ -101,11 +130,12 @@ export default function ContactUsPage() {
                     }
                     placeholder={t("contact.form.namePlaceholder")}
                     disabled={isLoading}
+                    className="w-full"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    {t("contact.form.email")} *
+                  <label className="block text-sm font-semibold text-foreground mb-2">
+                    {t("contact.form.email")} <span className="text-danger">*</span>
                   </label>
                   <Input
                     type="email"
@@ -115,12 +145,38 @@ export default function ContactUsPage() {
                     }
                     placeholder={t("contact.form.emailPlaceholder")}
                     disabled={isLoading}
+                    className="w-full"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  {t("contact.form.type")} <span className="text-danger">*</span>
+                </label>
+                <Select
+                  value={formData.type}
+                  onChange={(e) =>
+                    setFormData({ ...formData, type: e.target.value })
+                  }
+                  disabled={isLoading}
+                  className="w-full"
+                >
+                  <Select.Trigger>
+                    <Select.Value placeholder={t("contact.form.typePlaceholder")} />
+                  </Select.Trigger>
+                  <Select.Content>
+                    {contactTypes.map((type) => (
+                      <Select.Item key={type.value} value={type.value}>
+                        {type.label}
+                      </Select.Item>
+                    ))}
+                  </Select.Content>
+                </Select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">
                   {t("contact.form.subject")}
                 </label>
                 <Input
@@ -130,12 +186,13 @@ export default function ContactUsPage() {
                   }
                   placeholder={t("contact.form.subjectPlaceholder")}
                   disabled={isLoading}
+                  className="w-full"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  {t("contact.form.message")} *
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  {t("contact.form.message")} <span className="text-danger">*</span>
                 </label>
                 <TextArea
                   value={formData.message}
@@ -145,7 +202,11 @@ export default function ContactUsPage() {
                   placeholder={t("contact.form.messagePlaceholder")}
                   rows={6}
                   disabled={isLoading}
+                  className="w-full"
                 />
+                <p className="text-sm text-muted mt-1">
+                  {t("contact.form.messageHelper")}
+                </p>
               </div>
 
               {error && (
@@ -173,29 +234,10 @@ export default function ContactUsPage() {
           </Card.Content>
         </Card>
 
-        {/* Alternative Contact */}
-        <Card className="mb-8 bg-surface">
-          <Card.Content className="p-6 text-center">
-            <div className="text-4xl mb-3">📧</div>
-            <h3 className="text-lg font-bold text-foreground mb-2">
-              {t("contact.email.title")}
-            </h3>
-            <p className="text-muted mb-3">{t("contact.email.description")}</p>
-            <Button
-              variant="secondary"
-              onPress={() =>
-                (window.location.href = `mailto:${t("contact.email.address")}`)
-              }
-            >
-              {t("contact.email.address")}
-            </Button>
-          </Card.Content>
-        </Card>
-
         {/* Contact Information Sections */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           {contactSections.map((section, index) => (
-            <Card key={index}>
+            <Card key={index} className="bg-surface">
               <Card.Content className="p-6 text-center">
                 <div className="text-4xl mb-3">{section.icon}</div>
                 <h3 className="text-lg font-bold text-foreground mb-2">
@@ -208,16 +250,16 @@ export default function ContactUsPage() {
         </div>
 
         {/* Footer Navigation */}
-        <div className="mt-12 text-center">
+        <div className="mt-16 text-center space-x-6">
           <Link
             href="/privacy-policy"
-            className="text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 transition-colors mr-6"
+            className="text-accent hover:text-accent-hover transition-colors"
           >
             {t("footer.privacy")}
           </Link>
           <Link
             href="/terms-and-conditions"
-            className="text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 transition-colors"
+            className="text-accent hover:text-accent-hover transition-colors"
           >
             {t("footer.terms")}
           </Link>
