@@ -149,13 +149,13 @@ export default function ContactUsPage() {
               </div>
 
               {error && (
-                <Alert variant="danger">
+                <Alert status="danger">
                   <Alert.Content>{error}</Alert.Content>
                 </Alert>
               )}
 
               {success && (
-                <Alert variant="success">
+                <Alert status="success">
                   <Alert.Content>{t("contact.form.success")}</Alert.Content>
                 </Alert>
               )}
