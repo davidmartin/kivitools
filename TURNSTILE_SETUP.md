@@ -40,11 +40,13 @@ npm run dev
 ## 🎯 How It Works
 
 ### Client-Side (Tool Pages)
+
 1. User fills out form on any tool page
 2. Turnstile widget validates in background (invisible)
 3. On form submit, Turnstile token is sent with request
 
 ### Server-Side (API Routes)
+
 1. API receives request with Turnstile token
 2. Token is verified with Cloudflare's API
 3. If valid → Process AI generation
@@ -55,6 +57,7 @@ npm run dev
 All 29 tools are protected:
 
 ### TikTok (9 tools)
+
 - Script Writer
 - Video Ideas Generator
 - Hook Generator
@@ -66,36 +69,43 @@ All 29 tools are protected:
 - Coins Calculator
 
 ### Instagram (3 tools)
+
 - Bio Generator
 - Caption Generator
 - Reel Script Generator
 
 ### Twitter (3 tools)
+
 - Bio Generator
 - Tweet Generator
 - Thread Maker
 
 ### Snapchat (3 tools)
+
 - Caption Generator
 - Story Ideas Generator
 - Lens Ideas Generator
 
 ### YouTube (3 tools)
+
 - Title Generator
 - Description Generator
 - Script Generator
 
 ### Reddit (3 tools)
+
 - Post Generator
 - Comment Generator
 - AMA Questions Generator
 
 ### Discord (3 tools)
+
 - Announcement Generator
 - Event Description Generator
 - Welcome Message Generator
 
 ### Twitch (3 tools)
+
 - Stream Title Generator
 - Panel Description Generator
 - Chat Command Generator
@@ -103,32 +113,38 @@ All 29 tools are protected:
 ## 🔧 Development vs Production
 
 ### Development (localhost)
+
 - Use domain: `localhost` in Turnstile dashboard
 - Widget works on `http://localhost:3000`
 
 ### Production
+
 - Update domain in Turnstile dashboard to your actual domain
 - Update `NEXT_PUBLIC_TURNSTILE_SITE_KEY` in production environment variables
 
 ## 🚨 Troubleshooting
 
 ### Widget not showing?
+
 - Check `NEXT_PUBLIC_TURNSTILE_SITE_KEY` is set correctly
 - Verify domain matches Turnstile dashboard settings
 - Check browser console for errors
 
 ### Verification failing?
+
 - Confirm `TURNSTILE_SECRET_KEY` is set correctly
 - Check API route logs for detailed error messages
 - Verify token is being sent from client
 
 ### "Invalid domain" error?
+
 - Add your domain/localhost to Turnstile dashboard
 - Wait a few minutes for DNS propagation
 
 ## 📊 Monitoring
 
 Check Turnstile dashboard for:
+
 - Request volume
 - Block rate
 - Pass/fail statistics
@@ -137,6 +153,7 @@ Check Turnstile dashboard for:
 ## 🆓 Free Tier Limits
 
 Cloudflare Turnstile is **100% free** with:
+
 - ✅ Unlimited requests
 - ✅ Unlimited domains
 - ✅ No time limits

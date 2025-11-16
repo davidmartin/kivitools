@@ -9,16 +9,19 @@ The TikTok Script Writer has been fully updated with Turnstile bot protection. U
 ### Frontend Changes (Tool Page):
 
 1. **Add import**:
+
 ```tsx
 import TurnstileWidget from "@/app/components/turnstile-widget";
 ```
 
 2. **Add state**:
+
 ```tsx
 const [turnstileToken, setTurnstileToken] = useState<string>("");
 ```
 
 3. **Update API call** to include token:
+
 ```tsx
 body: JSON.stringify({
   // ... existing fields
@@ -27,6 +30,7 @@ body: JSON.stringify({
 ```
 
 4. **Add validation** in submit handler:
+
 ```tsx
 if (!turnstileToken) {
   setError(t("turnstile.failed"));
@@ -35,16 +39,20 @@ if (!turnstileToken) {
 ```
 
 5. **Add Turnstile widget** before generate button:
+
 ```tsx
-{!result && (
-  <TurnstileWidget
-    onSuccess={setTurnstileToken}
-    onError={() => setError(t("turnstile.error"))}
-  />
-)}
+{
+  !result && (
+    <TurnstileWidget
+      onSuccess={setTurnstileToken}
+      onError={() => setError(t("turnstile.error"))}
+    />
+  );
+}
 ```
 
 6. **Disable button** when token not ready:
+
 ```tsx
 <Button
   onClick={handleGenerate}
@@ -54,6 +62,7 @@ if (!turnstileToken) {
 ```
 
 7. **Reset token** in "Use Again" handler:
+
 ```tsx
 const handleUseAgain = () => {
   // ... existing resets
@@ -64,39 +73,42 @@ const handleUseAgain = () => {
 ### Backend Changes (API Route):
 
 1. **Add import**:
+
 ```tsx
 import { verifyTurnstileToken } from "@/lib/turnstile";
 ```
 
 2. **Extract token** from request:
+
 ```tsx
 const { /* ...existing fields */, turnstileToken } = body;
 ```
 
 3. **Verify token** before processing:
+
 ```tsx
 // Verify Turnstile token first
 if (!turnstileToken) {
-    return NextResponse.json(
-        {
-            success: false,
-            error: "Bot verification required",
-        } as YourResponseType,
-        { status: 403 }
-    );
+  return NextResponse.json(
+    {
+      success: false,
+      error: "Bot verification required",
+    } as YourResponseType,
+    { status: 403 }
+  );
 }
 
 const userIp = getUserIpFromRequest(request);
 const isValid = await verifyTurnstileToken(turnstileToken, userIp);
 
 if (!isValid) {
-    return NextResponse.json(
-        {
-            success: false,
-            error: "Bot verification failed",
-        } as YourResponseType,
-        { status: 403 }
-    );
+  return NextResponse.json(
+    {
+      success: false,
+      error: "Bot verification failed",
+    } as YourResponseType,
+    { status: 403 }
+  );
 }
 ```
 
@@ -106,13 +118,14 @@ All request types now extend `BaseToolRequest` which includes the `turnstileToke
 
 ```tsx
 export interface YourToolRequest extends BaseToolRequest {
-    // ... your tool specific fields
+  // ... your tool specific fields
 }
 ```
 
 ## 🔄 Remaining Tools to Update (28)
 
 ### TikTok (8 tools)
+
 - [ ] video-ideas
 - [ ] hook-generator
 - [ ] hashtag-generator
@@ -123,36 +136,43 @@ export interface YourToolRequest extends BaseToolRequest {
 - [ ] coins-calculator
 
 ### Instagram (3 tools)
+
 - [ ] bio-generator
 - [ ] caption-generator
 - [ ] reel-script
 
 ### Twitter (3 tools)
+
 - [ ] bio-generator
 - [ ] tweet-generator
 - [ ] thread-maker
 
 ### Snapchat (3 tools)
+
 - [ ] caption-generator
 - [ ] story-ideas
 - [ ] lens-ideas
 
 ### YouTube (3 tools)
+
 - [ ] title-generator
 - [ ] description-generator
 - [ ] script-generator
 
 ### Reddit (3 tools)
+
 - [ ] post-generator
 - [ ] comment-generator
 - [ ] ama-questions
 
 ### Discord (3 tools)
+
 - [ ] announcement-generator
 - [ ] event-description
 - [ ] welcome-message
 
 ### Twitch (3 tools)
+
 - [ ] stream-title
 - [ ] panel-description
 - [ ] chat-command
@@ -168,15 +188,18 @@ Due to the large number of files (58 files total: 29 pages + 29 API routes), we 
 ## 📊 Priority Order
 
 **High Priority (Update First)**:
+
 - TikTok tools (most popular platform)
 - Instagram tools
 - Twitter tools
 
 **Medium Priority**:
+
 - YouTube tools
 - Snapchat tools
 
 **Low Priority**:
+
 - Reddit, Discord, Twitch tools
 
 ## ⚠️ Important Notes
