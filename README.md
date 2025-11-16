@@ -55,7 +55,7 @@ npm run optimize:single -- public/logo.png
 - SVG: ~10-20% de reducción de tamaño
 - Sin pérdida de calidad visual
 
-Ver más detalles en [`scripts/README-OPTIMIZE-IMAGES.md`](./scripts/README-OPTIMIZE-IMAGES.md)
+Ver más detalles en [`docs/IMAGE_OPTIMIZATION.md`](./docs/IMAGE_OPTIMIZATION.md)
 
 ## 📊 Configuración de Google AdSense
 

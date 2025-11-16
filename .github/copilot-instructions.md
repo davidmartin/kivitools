@@ -25,7 +25,25 @@ KiviTools is designed to support **any digital platform**, not just social media
 
 When creating new tools, think broadly about what platforms could benefit from them.
 
-Note: All repository documentation Markdown files (except `PRD.md` and `README.md`) are stored in the `docs/` directory at the repository root.
+## Documentation Structure
+
+**IMPORTANT**: All repository documentation Markdown files are stored in the `docs/` directory at the repository root.
+
+**Exceptions** (stored at root):
+
+- `PRD.md` - Product Requirements Document
+- `README.md` - Main project README
+
+**Documentation in `docs/`:**
+
+- Technical guides and implementation docs
+- Platform-specific reviews
+- Setup and integration guides
+- SEO and marketing documentation
+- Image optimization guide (`IMAGE_OPTIMIZATION.md`)
+- URL routing documentation (`RUTAS_ALIAS.md`)
+
+**When creating new documentation**: Always place it in `docs/` unless it's the PRD or main README.
 
 ## Content Tone Guidelines
 
