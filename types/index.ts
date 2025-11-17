@@ -417,3 +417,67 @@ export interface TwitchPanelResponse {
     description?: string;
     error?: string;
 }
+
+// ElevenLabs Voice Script Writer Types
+export interface VoiceScriptWriterRequest extends BaseToolRequest {
+    topic: string;
+    style: string;
+    duration: string;
+    language: string;
+}
+
+export interface VoiceScriptWriterResponse {
+    success: boolean;
+    script?: string;
+    error?: string;
+}
+
+// ElevenLabs Video Voiceover Script Types
+export interface VideoVoiceoverScriptRequest extends BaseToolRequest {
+    topic: string;
+    videoType: string;
+    duration: string;
+    tone: string;
+    language: string;
+}
+
+export interface VideoVoiceoverScriptResponse {
+    success: boolean;
+    script?: string;
+    error?: string;
+}
+
+// ElevenLabs Voice Text Formatter Types
+export interface VoiceTextFormatterRequest extends BaseToolRequest {
+    text: string;
+    language: string;
+}
+
+export interface VoiceTextFormatterResponse {
+    success: boolean;
+    formattedText?: string;
+    error?: string;
+}
+
+export const VOICE_STYLES = [
+    { value: "narration", labelKey: "voiceStyles.narration" },
+    { value: "conversational", labelKey: "voiceStyles.conversational" },
+    { value: "dramatic", labelKey: "voiceStyles.dramatic" },
+    { value: "commercial", labelKey: "voiceStyles.commercial" },
+    { value: "storytelling", labelKey: "voiceStyles.storytelling" },
+] as const;
+
+export const VOICE_DURATIONS = [
+    { value: "30s", labelKey: "durations.voice.thirty" },
+    { value: "60s", labelKey: "durations.voice.sixty" },
+    { value: "2min", labelKey: "durations.voice.twoMin" },
+    { value: "5min", labelKey: "durations.voice.fiveMin" },
+] as const;
+
+export const VIDEO_TYPES = [
+    { value: "youtube", labelKey: "videoTypes.youtube" },
+    { value: "tiktok", labelKey: "videoTypes.tiktok" },
+    { value: "instagram", labelKey: "videoTypes.instagram" },
+    { value: "commercial", labelKey: "videoTypes.commercial" },
+    { value: "explainer", labelKey: "videoTypes.explainer" },
+] as const;

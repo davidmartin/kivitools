@@ -358,6 +358,22 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 | **Comment Generator** | Crea comentarios relevantes  | Contexto, tono     | Comentario constructivo         | ✅     |
 | **AMA Questions**     | Genera preguntas para AMAs   | Tema, audiencia    | Lista de preguntas interesantes | ✅     |
 
+### 3.8 Suno Tools (3 herramientas)
+
+| Herramienta                      | Descripción                       | Inputs                       | Outputs                               | Status |
+| -------------------------------- | --------------------------------- | ---------------------------- | ------------------------------------- | ------ |
+| **Lyric Generator**              | Genera letras para canciones      | Tema, género, estilo, idioma | Letra completa con estructura         | ✅     |
+| **Music Prompt Generator**       | Crea prompts para generar música  | Género, mood, instrumentos   | Prompt optimizado para Suno AI        | ✅     |
+| **Song Description Generator**   | Descripciones para publicar música| Género, tema, mood, plataforma| Descripción atractiva con emojis      | ✅     |
+
+### 3.9 ElevenLabs Tools (3 herramientas)
+
+| Herramienta                      | Descripción                       | Inputs                       | Outputs                               | Status |
+| -------------------------------- | --------------------------------- | ---------------------------- | ------------------------------------- | ------ |
+| **Voice Script Writer**          | Guiones optimizados para TTS      | Tema, estilo, duración, idioma| Script con tags de voz [pause], [emphasis] | ✅     |
+| **Video Voiceover Script**       | Scripts para voiceovers de video  | Tema, tipo video, tono, idioma| Script con timing y voice direction    | ✅     |
+| **Voice Text Formatter**         | Optimiza texto para voz AI        | Texto, idioma                 | Texto formateado con tags de voz      | ✅     |
+
 ---
 
 ## 4. Technical Requirements
@@ -627,8 +643,10 @@ Todas las herramientas de generación de contenido utilizarán modelos de lengua
 - ✅ **Reddit:** Post Generator, Comment Generator, AMA Questions (3 tools)
 - ✅ **Discord:** Announcement, Welcome Message, Event Description (3 tools)
 - ✅ **Twitch:** Stream Title, Chat Command, Panel Description (3 tools)
+- ✅ **Suno:** Lyric Generator, Music Prompt Generator, Song Description Generator (3 tools)
+- ✅ **ElevenLabs:** Voice Script Writer, Video Voiceover Script, Voice Text Formatter (3 tools)
 - ✅ Legal pages: Privacy Policy, Terms & Conditions, Contact Us
-- ✅ Navigation improved with all 8 platforms
+- ✅ Navigation improved with all 9 platforms (TikTok, Instagram, Twitter, Snapchat, YouTube, Reddit, Discord, Twitch, Suno, ElevenLabs)
 - ✅ Sistema de rate limiting (por implementar en APIs)
 
 **In Progress:**
@@ -636,7 +654,7 @@ Todas las herramientas de generación de contenido utilizarán modelos de lengua
 - ⏳ SEO optimization
 - ⏳ Mejoras de UX basadas en feedback
 
-**Tools Count:** 28 herramientas activas (de 60+ planificadas)
+**Tools Count:** 34 herramientas activas (de 60+ planificadas)
 
 ### Phase 3: Full Platform Coverage (Weeks 9-12)
 

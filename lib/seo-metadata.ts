@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno";
+type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs";
 
 interface GenerateToolMetadataProps {
   platform: Platform;
@@ -22,6 +22,7 @@ const platformColors: Record<Platform, string> = {
   discord: "#5865F2",
   twitch: "#9146FF",
   suno: "#9f7aea",
+  elevenlabs: "#8B5CF6",
 };
 
 const platformNames: Record<Platform, string> = {
@@ -34,6 +35,7 @@ const platformNames: Record<Platform, string> = {
   discord: "Discord",
   twitch: "Twitch",
   suno: "Suno",
+  elevenlabs: "ElevenLabs",
 };
 
 /**

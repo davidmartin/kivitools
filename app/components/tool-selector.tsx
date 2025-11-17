@@ -10,7 +10,7 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
@@ -59,6 +59,11 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "sunoLyricGenerator.title", href: "/suno/lyric-generator" },
     { name: "sunoMusicPrompt.title", href: "/suno/music-prompt-generator" },
     { name: "sunoSongDescription.title", href: "/suno/song-description-generator" },
+  ],
+  elevenlabs: [
+    { name: "voiceScriptWriter.title", href: "/elevenlabs/voice-script-writer" },
+    { name: "videoVoiceoverScript.title", href: "/elevenlabs/video-voiceover-script" },
+    { name: "voiceTextFormatter.title", href: "/elevenlabs/voice-text-formatter" },
   ],
 };
 

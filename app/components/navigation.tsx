@@ -105,6 +105,16 @@ export default function Navigation() {
         { name: t("sunoSongDescription.title"), href: "/suno/song-description-generator" },
       ],
     },
+    {
+      id: "elevenlabs",
+      name: t("nav.elevenlabs"),
+      emoji: "🎙️",
+      tools: [
+        { name: t("voiceScriptWriter.title"), href: "/elevenlabs/voice-script-writer" },
+        { name: t("videoVoiceoverScript.title"), href: "/elevenlabs/video-voiceover-script" },
+        { name: t("voiceTextFormatter.title"), href: "/elevenlabs/voice-text-formatter" },
+      ],
+    },
   ];
 
   return (

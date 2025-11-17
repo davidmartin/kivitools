@@ -1850,3 +1850,176 @@ Return exactly 3 descriptions, one per line, separated by clear markers.`;
         throw new Error("Failed to generate song description");
     }
 }
+
+// ==================== ElevenLabs Tools ====================
+
+export async function generateVoiceScript({
+    topic,
+    style,
+    duration,
+    language,
+}: {
+    topic: string;
+    style: string;
+    duration: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert AI voice script writer for ElevenLabs. Create scripts optimized for text-to-speech with:
+- Natural pauses using [pause: Xs] tags
+- Emphasis markers using [emphasis] tags
+- Emotional cues like [enthusiastically], [calmly], [whisper]
+- Proper pacing and rhythm
+- Clear pronunciation guides for complex words
+- Engaging, conversational flow
+- Appropriate tone and style
+
+Generate scripts in ${targetLanguage}.`;
+
+    const userPrompt = `Create a ${style} voice script about: ${topic}
+
+Duration: ${duration}
+Style: ${style}
+Language: ${targetLanguage}
+
+Use these ElevenLabs voice tags:
+- [pause: 0.5s] - Short pause
+- [pause: 1s] - Medium pause
+- [pause: 2s] - Long pause
+- [emphasis] - Emphasize word/phrase
+- [whisper] - Whisper effect
+- [enthusiastically] - Enthusiastic tone
+- [calmly] - Calm tone
+- [dramatically] - Dramatic tone
+
+Make it engaging and natural for AI voice generation.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 1200,
+            temperature: 0.8,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating voice script:", error);
+        throw new Error("Failed to generate voice script");
+    }
+}
+
+export async function generateVideoVoiceoverScript({
+    topic,
+    videoType,
+    duration,
+    tone,
+    language,
+}: {
+    topic: string;
+    videoType: string;
+    duration: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert video voiceover scriptwriter for ElevenLabs. Create scripts that:
+- Match the video type and platform
+- Include timing markers
+- Have clear scene transitions
+- Use appropriate pacing
+- Include voice direction tags
+- Are optimized for AI voice generation
+- Engage viewers immediately
+- Match the specified tone
+
+Generate scripts in ${targetLanguage}.`;
+
+    const userPrompt = `Create a voiceover script for a ${videoType} video about: ${topic}
+
+Video Type: ${videoType}
+Duration: ${duration}
+Tone: ${tone}
+Language: ${targetLanguage}
+
+Include:
+- [0:00] Timing markers every few seconds
+- [pause: Xs] for natural pauses
+- Scene descriptions in parentheses
+- Emphasis tags for important words
+- Natural, conversational flow
+
+Make it platform-appropriate for ${videoType}.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 1500,
+            temperature: 0.8,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating video voiceover script:", error);
+        throw new Error("Failed to generate video voiceover script");
+    }
+}
+
+export async function formatTextForVoice({
+    text,
+    language,
+}: {
+    text: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert at optimizing text for AI voice generation with ElevenLabs. Your job is to:
+- Add natural pauses where needed
+- Mark emphasis on important words
+- Add emotional/tonal cues
+- Fix awkward phrasing for speech
+- Add pronunciation guides for complex words
+- Improve flow and rhythm
+- Make text sound natural when read aloud
+- Remove elements that don't work in voice (like URLs, special characters)
+
+Use these tags:
+- [pause: 0.5s], [pause: 1s], [pause: 2s]
+- [emphasis] for important words
+- [calmly], [enthusiastically], [whisper], [dramatically]
+
+Output in ${targetLanguage}.`;
+
+    const userPrompt = `Format this text to be voice-friendly for ElevenLabs text-to-speech:
+
+${text}
+
+Add appropriate pauses, emphasis, and emotional cues. Fix any awkward phrasing. Make it sound natural when read by an AI voice.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 1500,
+            temperature: 0.7,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error formatting text for voice:", error);
+        throw new Error("Failed to format text for voice");
+    }
+}

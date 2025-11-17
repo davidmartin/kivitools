@@ -90,6 +90,14 @@ Ambas URLs funcionan y muestran **exactamente el mismo contenido**.
 | `/twitch/panel-description` | `/twitch/descripcion-panel` |
 | `/twitch/chat-command`      | `/twitch/comando-chat`      |
 
+### 🎙️ ElevenLabs
+
+| Inglés                             | Español                            |
+| ---------------------------------- | ---------------------------------- |
+| `/elevenlabs/voice-script-writer`  | `/elevenlabs/escritor-de-guiones-voz` |
+| `/elevenlabs/video-voiceover-script` | `/elevenlabs/guion-de-video-voz` |
+| `/elevenlabs/voice-text-formatter` | `/elevenlabs/formateador-texto-voz` |
+
 ---
 
 ## Beneficios SEO

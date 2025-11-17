@@ -74,6 +74,13 @@ export default function Home() {
       icon: "🎵",
       color: "purple",
     },
+    {
+      name: "ElevenLabs",
+      description: t("elevenlabs.page.description"),
+      href: "/elevenlabs",
+      icon: "🎙️",
+      color: "purple",
+    },
   ];
   return (
     <div className="min-h-screen bg-background">

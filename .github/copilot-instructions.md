@@ -1,5 +1,27 @@
 # GitHub Copilot Instructions for KiviTools
 
+## ⚠️ CRITICAL REMINDER: Complete Platform Integration Checklist
+
+**When adding a NEW PLATFORM, you MUST update ALL 10 files/locations:**
+
+1. ✅ Platform hub page (`app/(tools)/[platform]/page.tsx`)
+2. ✅ Navigation header (`app/components/navigation.tsx`)
+3. ✅ Translations (`lib/translations.ts`) - **MUST include `"nav.[platform]": "[Platform Name]"` in BOTH es and en**
+4. ✅ SEO metadata (`lib/seo-metadata.ts`)
+5. ✅ Tool selector (`app/components/tool-selector.tsx`)
+6. ✅ **Platform logo** (`app/components/platform-logo.tsx` + logo file in `/public/platforms/`)
+7. ✅ **Home page** (`app/page.tsx` - platforms array)
+8. ✅ Spanish URL rewrites (`next.config.ts`)
+9. ✅ Routes documentation (`docs/RUTAS_ALIAS.md`)
+10. ✅ PRD update (`PRD.md`)
+
+**DO NOT skip steps 3, 6 and 7** - they are easy to forget:
+- Step 3: Must add `nav.[platform]` translation key
+- Step 6: Platform logo component + SVG file
+- Step 7: Home page platforms array
+
+---
+
 ## Project Overview
 
 This is a Next.js 16.0.1 application with TypeScript that provides free AI-powered tools for **any digital platform** - not just social media. The app uses:
@@ -716,7 +738,7 @@ When creating a new platform with tools:
 
 3. **Add Translation Keys** (`lib/translations.ts`)
 
-   - [ ] Add `"nav.[platform]": "[Platform Name]"` to BOTH `es` and `en` sections
+   - [ ] **CRITICAL**: Add `"nav.[platform]": "[Platform Name]"` to BOTH `es` and `en` sections (navigation won't work without this!)
    - [ ] Add all tool-specific translations (see "Creating a New Tool" section below)
    - [ ] Add platform page translations: `"[platform].page.title"`, `"[platform].page.description"`, `"[platform].info.title"`, `"[platform].info.description"`
 
@@ -731,16 +753,31 @@ When creating a new platform with tools:
    - [ ] Add `"[platform]"` to `Platform` union type
    - [ ] Add platform tools to `PLATFORM_TOOLS` mapping
 
-6. **Create Spanish URL Aliases** (`next.config.ts`)
+6. **Update Platform Logo Component** (`app/components/platform-logo.tsx`)
+
+   - [ ] Add `"[platform]"` to `PlatformLogoProps` platform union type
+   - [ ] If logo needs dark mode invert, add to `needsInvert` check
+   - [ ] Ensure logo file exists in `/public/platforms/[platform].svg`
+
+7. **Update Home Page** (`app/page.tsx`)
+
+   - [ ] Add platform object to `platforms` array with:
+     - `name`: "[Platform Name]"
+     - `description`: `t("[platform].page.description")`
+     - `href`: "/[platform]"
+     - `icon`: "emoji"
+     - `color`: "color-name"
+
+8. **Create Spanish URL Aliases** (`next.config.ts`)
 
    - [ ] Add rewrite rule for Spanish platform URL (if needed)
    - [ ] Add rewrite rules for each tool's Spanish URL
 
-7. **Document Routes** (`docs/RUTAS_ALIAS.md`)
+9. **Document Routes** (`docs/RUTAS_ALIAS.md`)
 
    - [ ] Add platform and all tools with their English/Spanish URLs
 
-8. **Update PRD.md**
+10. **Update PRD.md**
    - [ ] Add platform to the platforms table
    - [ ] Add all tools to the platform's tool table
    - [ ] Mark initial status as ✅
@@ -779,6 +816,8 @@ PRD.md                                             ← Update status
   ],
 },
 ```
+
+**AFTER COMPLETING ALL STEPS:** Go to step "MANDATORY: Test All New Tools After Creation" and test every tool you just created before considering the work done.
 
 ---
 
@@ -1221,7 +1260,62 @@ Mark tool as completed in the tools table:
 - [ ] No console errors
 - [ ] **Appwrite logs generation** (check database)
 
-#### 12. **Platform-Specific Styling**
+#### 15. **MANDATORY: Test All New Tools After Creation**
+
+**CRITICAL**: After creating ANY new tool (or new platform with tools), you MUST test them immediately to ensure they work correctly.
+
+**Testing Protocol:**
+
+1. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
+
+2. **Test Each New Tool Manually:**
+   - [ ] Navigate to the tool page (both English and Spanish URLs)
+   - [ ] Fill in the form with realistic test data
+   - [ ] Verify Turnstile widget loads and completes
+   - [ ] Click "Generate" button
+   - [ ] Verify API call succeeds and returns data
+   - [ ] Check that results display correctly
+   - [ ] Test "Copy" button functionality
+   - [ ] Test "Use Again" button (should reset form and Turnstile)
+   - [ ] Switch UI language (🇺🇸/🇪🇸) and verify translations work
+   - [ ] If tool has output language selector, test generating in different languages
+   - [ ] Test on mobile view (responsive design)
+   - [ ] Test dark mode toggle
+
+3. **Verify Navigation:**
+   - [ ] Tool appears in platform dropdown menu
+   - [ ] Tool appears in platform hub page
+   - [ ] Tool appears in home page platform card (if new platform)
+   - [ ] Related tools links work correctly
+
+4. **Check Console & Network:**
+   - [ ] No console errors in browser
+   - [ ] API response is successful (200 status)
+   - [ ] Check Appwrite database for generation log entry
+   - [ ] Verify DeepSeek API call completed successfully
+
+5. **Report Results:**
+   - List all tested tools with their status (✅ or ❌)
+   - Report any issues found
+   - Confirm all tools are working before finishing
+
+**Example Test Report:**
+```
+Testing Results:
+✅ Voice Script Writer - All features working
+✅ Video Voiceover Script - Generating correctly in EN/ES
+✅ Voice Text Formatter - Formatting applied successfully
+✅ Navigation updated and working
+✅ All URLs accessible (EN + ES)
+✅ Appwrite logs confirmed
+```
+
+**DO NOT** consider the task complete until you've tested the tools and confirmed they work.
+
+#### 16. **Platform-Specific Styling**
 
 Use these colors for consistency:
 
@@ -1624,3 +1718,6 @@ curl -I http://localhost:3000/tiktok/generador-de-nombres
 - [ ] Mobile responsive tested
 - [ ] UI language switcher tested (🇺🇸/🇪🇸)
 - [ ] No TypeScript/console errors
+- [ ] **ALL NEW TOOLS TESTED** (see "MANDATORY: Test All New Tools After Creation" section above)
+
+**REMINDER**: Do NOT consider the work complete until you have manually tested all new tools following the testing protocol in step 15.
