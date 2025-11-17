@@ -27,6 +27,24 @@ export default function ElevenLabsToolsPage() {
       href: "/elevenlabs/voice-text-formatter",
       icon: "✍️",
     },
+    {
+      name: t("podcastScript.title"),
+      description: t("podcastScript.description"),
+      href: "/elevenlabs/podcast-script",
+      icon: "🎙️",
+    },
+    {
+      name: t("adScript.title"),
+      description: t("adScript.description"),
+      href: "/elevenlabs/ad-script",
+      icon: "📢",
+    },
+    {
+      name: t("audiobookOptimizer.title"),
+      description: t("audiobookOptimizer.description"),
+      href: "/elevenlabs/audiobook-optimizer",
+      icon: "📚",
+    },
   ];
 
   return (

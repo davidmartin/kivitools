@@ -113,6 +113,9 @@ export default function Navigation() {
         { name: t("voiceScriptWriter.title"), href: "/elevenlabs/voice-script-writer" },
         { name: t("videoVoiceoverScript.title"), href: "/elevenlabs/video-voiceover-script" },
         { name: t("voiceTextFormatter.title"), href: "/elevenlabs/voice-text-formatter" },
+        { name: t("podcastScript.title"), href: "/elevenlabs/podcast-script" },
+        { name: t("adScript.title"), href: "/elevenlabs/ad-script" },
+        { name: t("audiobookOptimizer.title"), href: "/elevenlabs/audiobook-optimizer" },
       ],
     },
   ];

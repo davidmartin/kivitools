@@ -97,6 +97,9 @@ Ambas URLs funcionan y muestran **exactamente el mismo contenido**.
 | `/elevenlabs/voice-script-writer`    | `/elevenlabs/escritor-de-guiones-voz` |
 | `/elevenlabs/video-voiceover-script` | `/elevenlabs/guion-de-video-voz`      |
 | `/elevenlabs/voice-text-formatter`   | `/elevenlabs/formateador-texto-voz`   |
+| `/elevenlabs/podcast-script`         | `/elevenlabs/guion-podcast`           |
+| `/elevenlabs/ad-script`              | `/elevenlabs/guion-anuncio`           |
+| `/elevenlabs/audiobook-optimizer`    | `/elevenlabs/optimizador-audiolibro`  |
 
 ---
 

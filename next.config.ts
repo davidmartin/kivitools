@@ -62,6 +62,9 @@ const nextConfig: NextConfig = {
       { source: "/elevenlabs/escritor-de-guiones-voz", destination: "/elevenlabs/voice-script-writer" },
       { source: "/elevenlabs/guion-de-video-voz", destination: "/elevenlabs/video-voiceover-script" },
       { source: "/elevenlabs/formateador-texto-voz", destination: "/elevenlabs/voice-text-formatter" },
+      { source: "/elevenlabs/guion-podcast", destination: "/elevenlabs/podcast-script" },
+      { source: "/elevenlabs/guion-anuncio", destination: "/elevenlabs/ad-script" },
+      { source: "/elevenlabs/optimizador-audiolibro", destination: "/elevenlabs/audiobook-optimizer" },
     ];
   },
 };

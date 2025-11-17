@@ -2023,3 +2023,227 @@ Add appropriate pauses, emphasis, and emotional cues. Fix any awkward phrasing. 
         throw new Error("Failed to format text for voice");
     }
 }
+
+// Podcast Episode Script Generator
+export async function generatePodcastScript({
+    topic,
+    format,
+    duration,
+    segments,
+    tone,
+    language,
+}: {
+    topic: string;
+    format: string;
+    duration: string;
+    segments: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert podcast scriptwriter for ElevenLabs. Create structured, engaging podcast scripts that:
+- Match the podcast format (monologue, interview, co-hosts, narrative)
+- Include clear segments with transitions
+- Have timing markers [0:00], [5:30], etc.
+- Include pauses for music/ads: [music break], [ad break]
+- Use natural, conversational language
+- Include emotional/tonal cues
+- Have strong intro hooks and outros
+- Include strategic CTAs
+
+Generate scripts in ${targetLanguage}.`;
+
+    const userPrompt = `Create a podcast episode script about: ${topic}
+
+Format: ${format}
+Duration: ${duration}
+Number of segments: ${segments}
+Tone: ${tone}
+Language: ${targetLanguage}
+
+Structure:
+1. [0:00] Intro - Hook listeners in first 15 seconds
+2. Main segments (${segments} segments with smooth transitions)
+3. [music break] or [ad break] markers where appropriate
+4. Outro - Recap and CTA
+
+Include:
+- Timing markers every ~2-5 minutes
+- [pause: Xs] for natural pauses
+- [enthusiastically], [calmly], [whisper] for emotional tone
+- [music break], [ad break] for production
+- Conversational, engaging language
+- Questions to audience if format allows
+- Clear segment transitions
+
+Make it sound natural and engaging for ${format} format.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 2000,
+            temperature: 0.8,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating podcast script:", error);
+        throw new Error("Failed to generate podcast script");
+    }
+}
+
+// Ad/Commercial Script Generator
+export async function generateAdScript({
+    product,
+    duration,
+    style,
+    cta,
+    audience,
+    language,
+}: {
+    product: string;
+    duration: string;
+    style: string;
+    cta: string;
+    audience: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert commercial/ad copywriter for ElevenLabs. Create persuasive, engaging ad scripts that:
+- Grab attention in the first 3 seconds
+- Highlight key benefits clearly
+- Include compelling CTAs
+- Match the ad style and duration
+- Use voice direction tags for optimal delivery
+- Are optimized for AI voice generation
+- Create urgency when appropriate
+- Sound natural and conversational
+
+Generate scripts in ${targetLanguage}.`;
+
+    const userPrompt = `Create an ad/commercial script for: ${product}
+
+Duration: ${duration}
+Style: ${style}
+CTA: ${cta || "Visit our website"}
+Target Audience: ${audience || "General"}
+Language: ${targetLanguage}
+
+Structure based on duration:
+- 15s: Hook (3s) + Benefit (8s) + CTA (4s)
+- 30s: Hook (5s) + Problem/Solution (15s) + Benefits (5s) + CTA (5s)
+- 60s: Hook (8s) + Story/Problem (20s) + Solution (15s) + Benefits (10s) + CTA (7s)
+
+Include:
+- [0:00], [0:05], [0:15] timing markers
+- [pause: 0.5s] for emphasis
+- [enthusiastically], [urgently], [warmly] for tone
+- [emphasis] on key words (product name, benefits, CTA)
+- Power words that drive action
+- Clear, memorable CTA (repeat if 60s)
+
+Style guidelines:
+- Informative: Educational, fact-based, trustworthy
+- Emotional: Story-driven, relatable, heartfelt
+- Urgent: Time-sensitive, FOMO, action-driven
+- Fun: Playful, entertaining, memorable
+
+Make it compelling and conversion-focused.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 1000,
+            temperature: 0.8,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating ad script:", error);
+        throw new Error("Failed to generate ad script");
+    }
+}
+
+// Audiobook Chapter Optimizer
+export async function optimizeAudiobookChapter({
+    text,
+    genre,
+    narrative,
+    language,
+}: {
+    text: string;
+    genre: string;
+    narrative: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert audiobook editor for ElevenLabs. Optimize text for audiobook narration by:
+- Adding natural pauses at sentence/paragraph breaks
+- Marking dialogue with character tags: [Character Name]
+- Adding emotional/tonal cues for narration
+- Fixing awkward phrasing that sounds weird when read aloud
+- Adding pronunciation guides for complex words
+- Creating dramatic pauses for effect
+- Improving pacing and rhythm
+- Making descriptions more vivid for audio-only
+- Adding breath marks for long sentences
+
+Preserve the original content - only add voice optimization tags and minor phrasing improvements.
+
+Output in ${targetLanguage}.`;
+
+    const userPrompt = `Optimize this audiobook text for ElevenLabs narration:
+
+Genre: ${genre}
+Narrative: ${narrative}
+Language: ${targetLanguage}
+
+TEXT:
+${text}
+
+Add:
+- [pause: 0.5s], [pause: 1s], [pause: 2s] at appropriate breaks
+- [Character Name] before dialogue lines
+- [whisper], [dramatically], [tenderly], [urgently] for emotional scenes
+- [emphasis] on important words/phrases
+- (pronunciation: word = "phonetic") for complex names/terms
+- Improve pacing for audio listening
+
+Genre-specific tips:
+- Fiction: Emphasize dramatic moments, character emotions
+- Non-fiction: Clear explanations, natural teaching tone
+- Children's: Animated, expressive, clear pronunciation
+- Technical: Slow pacing, emphasis on key terms
+- Thriller: Build tension with pauses, urgent tone
+- Romance: Tender, emotional, intimate tone
+
+Keep the original text intact - only add optimization tags and minor improvements for audio.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 2000,
+            temperature: 0.7,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error optimizing audiobook chapter:", error);
+        throw new Error("Failed to optimize audiobook chapter");
+    }
+}

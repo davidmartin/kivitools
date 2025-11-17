@@ -366,13 +366,16 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 | **Music Prompt Generator**     | Crea prompts para generar música   | Género, mood, instrumentos     | Prompt optimizado para Suno AI   | ✅     |
 | **Song Description Generator** | Descripciones para publicar música | Género, tema, mood, plataforma | Descripción atractiva con emojis | ✅     |
 
-### 3.9 ElevenLabs Tools (3 herramientas)
+### 3.9 ElevenLabs Tools (6 herramientas)
 
-| Herramienta                | Descripción                      | Inputs                         | Outputs                                    | Status |
-| -------------------------- | -------------------------------- | ------------------------------ | ------------------------------------------ | ------ |
-| **Voice Script Writer**    | Guiones optimizados para TTS     | Tema, estilo, duración, idioma | Script con tags de voz [pause], [emphasis] | ✅     |
-| **Video Voiceover Script** | Scripts para voiceovers de video | Tema, tipo video, tono, idioma | Script con timing y voice direction        | ✅     |
-| **Voice Text Formatter**   | Optimiza texto para voz AI       | Texto, idioma                  | Texto formateado con tags de voz           | ✅     |
+| Herramienta                     | Descripción                         | Inputs                                        | Outputs                                    | Status |
+| ------------------------------- | ----------------------------------- | --------------------------------------------- | ------------------------------------------ | ------ |
+| **Voice Script Writer**         | Guiones optimizados para TTS        | Tema, estilo, duración, idioma                | Script con tags de voz [pause], [emphasis] | ✅     |
+| **Video Voiceover Script**      | Scripts para voiceovers de video    | Tema, tipo video, tono, idioma                | Script con timing y voice direction        | ✅     |
+| **Voice Text Formatter**        | Optimiza texto para voz AI          | Texto, idioma                                 | Texto formateado con tags de voz           | ✅     |
+| **Podcast Script Generator**    | Guiones estructurados para podcasts | Tema, formato, duración, segmentos, tono      | Script con timestamps y breaks musicales   | ✅     |
+| **Ad/Commercial Script**        | Scripts publicitarios persuasivos   | Producto, duración, estilo, CTA, audiencia    | Script con hook, beneficios y CTA          | ✅     |
+| **Audiobook Chapter Optimizer** | Optimiza texto de libros para audio | Texto (5000 chars), género, narrativa, idioma | Texto con diálogos marcados y cues         | ✅     |
 
 ---
 
