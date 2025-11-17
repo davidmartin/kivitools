@@ -360,19 +360,19 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 
 ### 3.8 Suno Tools (3 herramientas)
 
-| Herramienta                      | Descripción                       | Inputs                       | Outputs                               | Status |
-| -------------------------------- | --------------------------------- | ---------------------------- | ------------------------------------- | ------ |
-| **Lyric Generator**              | Genera letras para canciones      | Tema, género, estilo, idioma | Letra completa con estructura         | ✅     |
-| **Music Prompt Generator**       | Crea prompts para generar música  | Género, mood, instrumentos   | Prompt optimizado para Suno AI        | ✅     |
-| **Song Description Generator**   | Descripciones para publicar música| Género, tema, mood, plataforma| Descripción atractiva con emojis      | ✅     |
+| Herramienta                    | Descripción                        | Inputs                         | Outputs                          | Status |
+| ------------------------------ | ---------------------------------- | ------------------------------ | -------------------------------- | ------ |
+| **Lyric Generator**            | Genera letras para canciones       | Tema, género, estilo, idioma   | Letra completa con estructura    | ✅     |
+| **Music Prompt Generator**     | Crea prompts para generar música   | Género, mood, instrumentos     | Prompt optimizado para Suno AI   | ✅     |
+| **Song Description Generator** | Descripciones para publicar música | Género, tema, mood, plataforma | Descripción atractiva con emojis | ✅     |
 
 ### 3.9 ElevenLabs Tools (3 herramientas)
 
-| Herramienta                      | Descripción                       | Inputs                       | Outputs                               | Status |
-| -------------------------------- | --------------------------------- | ---------------------------- | ------------------------------------- | ------ |
-| **Voice Script Writer**          | Guiones optimizados para TTS      | Tema, estilo, duración, idioma| Script con tags de voz [pause], [emphasis] | ✅     |
-| **Video Voiceover Script**       | Scripts para voiceovers de video  | Tema, tipo video, tono, idioma| Script con timing y voice direction    | ✅     |
-| **Voice Text Formatter**         | Optimiza texto para voz AI        | Texto, idioma                 | Texto formateado con tags de voz      | ✅     |
+| Herramienta                | Descripción                      | Inputs                         | Outputs                                    | Status |
+| -------------------------- | -------------------------------- | ------------------------------ | ------------------------------------------ | ------ |
+| **Voice Script Writer**    | Guiones optimizados para TTS     | Tema, estilo, duración, idioma | Script con tags de voz [pause], [emphasis] | ✅     |
+| **Video Voiceover Script** | Scripts para voiceovers de video | Tema, tipo video, tono, idioma | Script con timing y voice direction        | ✅     |
+| **Voice Text Formatter**   | Optimiza texto para voz AI       | Texto, idioma                  | Texto formateado con tags de voz           | ✅     |
 
 ---
 

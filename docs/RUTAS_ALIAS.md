@@ -92,11 +92,11 @@ Ambas URLs funcionan y muestran **exactamente el mismo contenido**.
 
 ### 🎙️ ElevenLabs
 
-| Inglés                             | Español                            |
-| ---------------------------------- | ---------------------------------- |
-| `/elevenlabs/voice-script-writer`  | `/elevenlabs/escritor-de-guiones-voz` |
-| `/elevenlabs/video-voiceover-script` | `/elevenlabs/guion-de-video-voz` |
-| `/elevenlabs/voice-text-formatter` | `/elevenlabs/formateador-texto-voz` |
+| Inglés                               | Español                               |
+| ------------------------------------ | ------------------------------------- |
+| `/elevenlabs/voice-script-writer`    | `/elevenlabs/escritor-de-guiones-voz` |
+| `/elevenlabs/video-voiceover-script` | `/elevenlabs/guion-de-video-voz`      |
+| `/elevenlabs/voice-text-formatter`   | `/elevenlabs/formateador-texto-voz`   |
 
 ---
 
