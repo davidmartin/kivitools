@@ -112,6 +112,100 @@ export default function Home() {
         <AdSlot slotId="top-banner" format="horizontal" className="text-center" />
       </div>
 
+      {/* Latest Tools Section */}
+      <section className="py-12 px-4 bg-surface">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              {t("home.latestTools.title")}
+            </h2>
+            <p className="text-xl text-muted">
+              {t("home.latestTools.description")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Podcast Script Generator */}
+            <Link
+              href="/elevenlabs/podcast-script"
+              className="group block h-full"
+            >
+              <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Card.Header>
+                  <div className="w-full">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-semibold">
+                        🎙️ ElevenLabs
+                      </div>
+                    </div>
+                    <Card.Title className="text-xl group-hover:text-accent transition-colors">
+                      {t("podcastScript.title")}
+                    </Card.Title>
+                  </div>
+                </Card.Header>
+                <Card.Content>
+                  <Card.Description>
+                    {t("podcastScript.description")}
+                  </Card.Description>
+                </Card.Content>
+              </Card>
+            </Link>
+
+            {/* Ad Script Generator */}
+            <Link
+              href="/elevenlabs/ad-script"
+              className="group block h-full"
+            >
+              <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Card.Header>
+                  <div className="w-full">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-semibold">
+                        🎙️ ElevenLabs
+                      </div>
+                    </div>
+                    <Card.Title className="text-xl group-hover:text-accent transition-colors">
+                      {t("adScript.title")}
+                    </Card.Title>
+                  </div>
+                </Card.Header>
+                <Card.Content>
+                  <Card.Description>
+                    {t("adScript.description")}
+                  </Card.Description>
+                </Card.Content>
+              </Card>
+            </Link>
+
+            {/* Audiobook Optimizer */}
+            <Link
+              href="/elevenlabs/audiobook-optimizer"
+              className="group block h-full"
+            >
+              <Card className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Card.Header>
+                  <div className="w-full">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-semibold">
+                        🎙️ ElevenLabs
+                      </div>
+                    </div>
+                    <Card.Title className="text-xl group-hover:text-accent transition-colors">
+                      {t("audiobookOptimizer.title")}
+                    </Card.Title>
+                  </div>
+                </Card.Header>
+                <Card.Content>
+                  <Card.Description>
+                    {t("audiobookOptimizer.description")}
+                  </Card.Description>
+                </Card.Content>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Platforms Section */}
       <section className="py-12 px-4">
         <div className="max-w-7xl mx-auto">

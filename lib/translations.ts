@@ -515,6 +515,11 @@ export const translations = {
         "home.badge.free": "Gratis",
         "home.badge.comingSoon": "Próximamente",
 
+        // Homepage - Latest Tools Section
+        "home.latestTools.title": "Últimas Herramientas Añadidas",
+        "home.latestTools.description": "Descubre las herramientas más recientes que hemos creado para ti",
+        "home.latestTools.viewAll": "Ver todas las herramientas",
+
         // Homepage - Platforms Section
         "home.platformsSection.title": "Elige Tu Plataforma",
         "home.platformsSection.description": "¿Redes sociales? ¿Música? ¿Foros? ¿Streaming? Tenemos herramientas con IA para cualquier plataforma digital que uses.",
@@ -2298,6 +2303,11 @@ export const translations = {
         // Homepage - Badge
         "home.badge.free": "Free",
         "home.badge.comingSoon": "Coming Soon",
+
+        // Homepage - Latest Tools Section
+        "home.latestTools.title": "Latest Tools Added",
+        "home.latestTools.description": "Discover the newest tools we've created for you",
+        "home.latestTools.viewAll": "View all tools",
 
         // Homepage - Platforms Section
         "home.platformsSection.title": "Choose Your Platform",
