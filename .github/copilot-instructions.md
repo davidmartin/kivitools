@@ -16,6 +16,7 @@
 10. ✅ PRD update (`PRD.md`)
 
 **DO NOT skip steps 3, 6 and 7** - they are easy to forget:
+
 - Step 3: Must add `nav.[platform]` translation key
 - Step 6: Platform logo component + SVG file
 - Step 7: Home page platforms array
@@ -91,7 +92,7 @@ When creating new tools, think broadly about what platforms could benefit from t
 1. **Be Playful**: Use humor, exaggeration, and self-deprecation
 2. **Be Relatable**: Reference common user frustrations and experiences
 3. **Be Honest**: Acknowledge the absurdity of social media while helping users succeed
-4. **Use Emojis**: Sprinkle emojis throughout (but don't overdo it)
+4. **Use Emojis Sparingly**: Only use emojis when they add meaningful context or emphasis (e.g., platform icons, emphasis in marketing copy). Never use emojis just for decoration. Navigation, buttons, and UI elements should be clean and professional.
 5. **Keep It Short**: Punchy, memorable phrases work best
 6. **No Corporate Speak**: Avoid buzzwords like "leverage", "synergy", "optimize" unless used ironically
 
@@ -778,9 +779,10 @@ When creating a new platform with tools:
    - [ ] Add platform and all tools with their English/Spanish URLs
 
 10. **Update PRD.md**
-   - [ ] Add platform to the platforms table
-   - [ ] Add all tools to the platform's tool table
-   - [ ] Mark initial status as ✅
+
+- [ ] Add platform to the platforms table
+- [ ] Add all tools to the platform's tool table
+- [ ] Mark initial status as ✅
 
 **Example: Adding Suno Platform**
 
@@ -1267,11 +1269,13 @@ Mark tool as completed in the tools table:
 **Testing Protocol:**
 
 1. **Start Development Server**
+
    ```bash
    npm run dev
    ```
 
 2. **Test Each New Tool Manually:**
+
    - [ ] Navigate to the tool page (both English and Spanish URLs)
    - [ ] Fill in the form with realistic test data
    - [ ] Verify Turnstile widget loads and completes
@@ -1286,12 +1290,14 @@ Mark tool as completed in the tools table:
    - [ ] Test dark mode toggle
 
 3. **Verify Navigation:**
+
    - [ ] Tool appears in platform dropdown menu
    - [ ] Tool appears in platform hub page
    - [ ] Tool appears in home page platform card (if new platform)
    - [ ] Related tools links work correctly
 
 4. **Check Console & Network:**
+
    - [ ] No console errors in browser
    - [ ] API response is successful (200 status)
    - [ ] Check Appwrite database for generation log entry
@@ -1303,6 +1309,7 @@ Mark tool as completed in the tools table:
    - Confirm all tools are working before finishing
 
 **Example Test Report:**
+
 ```
 Testing Results:
 ✅ Voice Script Writer - All features working
