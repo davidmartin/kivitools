@@ -1,0 +1,26 @@
+export const video_ideas = {
+    // TikTok Video Ideas
+    "videoIdeas.title": "TikTok Video Ideas Generator",
+    "videoIdeas.description": "Staring at your camera not knowing what to film? We rescue you from that awkward moment.",
+    "videoIdeas.form.topic": "Topic or Niche",
+    "videoIdeas.form.topicPlaceholder": "E.g., fitness, cooking, travel, productivity...",
+    "videoIdeas.form.language": "Language",
+    "videoIdeas.form.generate": "Generate Video Ideas",
+    "videoIdeas.form.generating": "Generating Ideas...",
+    "videoIdeas.form.useAgain": "Generate More Ideas",
+    "videoIdeas.form.error.emptyTopic": "Please enter a topic",
+    "videoIdeas.result.title": "Video Ideas",
+    "videoIdeas.result.copyAll": "Copy All",
+    "videoIdeas.result.copied": "Idea copied to clipboard!",
+    "videoIdeas.result.copiedAll": "All ideas copied to clipboard!",
+    "videoIdeas.result.success": "✓ {count} ideas generated successfully",
+    "videoIdeas.features.creative.title": "💡 Creative Ideas",
+    "videoIdeas.features.creative.description": "Get diverse video ideas from different angles and formats.",
+    "videoIdeas.features.trending.title": "🎯 Trend-Focused",
+    "videoIdeas.features.trending.description": "Ideas based on current TikTok trends and viral formats.",
+    "videoIdeas.features.multilang.title": "🌍 Multi-Language",
+    "videoIdeas.features.multilang.description": "Generate ideas in 13 different languages for global reach.",
+    "videoIdeas.features.easyCopy.title": "📋 Easy to Copy",
+    "videoIdeas.features.easyCopy.description": "Copy individual ideas or all at once with one click.",
+
+};

@@ -1,0 +1,26 @@
+export const story_ideas = {
+    // Snapchat Story Ideas
+    "snapchatStoryIdeas.title": "Snapchat Story Ideas Generator",
+    "snapchatStoryIdeas.description": "Get creative ideas for your Snapchat Stories. Never run out of content!",
+    "snapchatStoryIdeas.form.topic": "Topic or Niche",
+    "snapchatStoryIdeas.form.topicPlaceholder": "E.g., daily life, travel, food...",
+    "snapchatStoryIdeas.form.language": "Language",
+    "snapchatStoryIdeas.form.generate": "Generate Ideas",
+    "snapchatStoryIdeas.form.generating": "Generating...",
+    "snapchatStoryIdeas.form.useAgain": "Generate More",
+    "snapchatStoryIdeas.form.error.emptyTopic": "Please enter a topic",
+    "snapchatStoryIdeas.result.title": "Story Ideas",
+    "snapchatStoryIdeas.result.copyAll": "Copy All",
+    "snapchatStoryIdeas.result.copied": "Idea copied!",
+    "snapchatStoryIdeas.result.copiedAll": "All copied!",
+    "snapchatStoryIdeas.result.success": "✓ {count} ideas generated",
+    "snapchatStoryIdeas.features.creative.title": "💡 Super Creative",
+    "snapchatStoryIdeas.features.creative.description": "Unique ideas perfect for Snapchat's format.",
+    "snapchatStoryIdeas.features.trending.title": "🔥 Trend-Based",
+    "snapchatStoryIdeas.features.trending.description": "Ideas that leverage current trends.",
+    "snapchatStoryIdeas.features.diverse.title": "🎨 Varied",
+    "snapchatStoryIdeas.features.diverse.description": "Different content types and angles.",
+    "snapchatStoryIdeas.features.instant.title": "⚡ Ready to Use",
+    "snapchatStoryIdeas.features.instant.description": "Implement ideas immediately.",
+
+};

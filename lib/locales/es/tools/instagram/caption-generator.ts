@@ -1,0 +1,28 @@
+export const caption_generator = {
+    // Instagram Caption Generator
+    "captionGenerator.title": "Generador de Captions para Instagram",
+    "captionGenerator.description": "Crea captions atractivos y perfectos para tus posts de Instagram. ¡Haz que cada publicación destaque!",
+    "captionGenerator.form.topic": "Tema del Post",
+    "captionGenerator.form.topicPlaceholder": "¿De qué trata tu post?",
+    "captionGenerator.form.tone": "Tono",
+    "captionGenerator.form.language": "Idioma",
+    "captionGenerator.form.includeEmojis": "Incluir emojis",
+    "captionGenerator.form.includeHashtags": "Incluir hashtags",
+    "captionGenerator.form.generate": "Generar Caption",
+    "captionGenerator.form.generating": "Generando...",
+    "captionGenerator.form.useAgain": "Generar Otro",
+    "captionGenerator.form.error.emptyTopic": "Por favor ingresa un tema",
+    "captionGenerator.result.title": "Tu Caption",
+    "captionGenerator.result.copy": "Copiar Caption",
+    "captionGenerator.result.copied": "¡Caption copiado al portapapeles!",
+    "captionGenerator.result.success": "✓ Caption generado exitosamente",
+    "captionGenerator.features.engaging.title": "💬 Captions Atractivos",
+    "captionGenerator.features.engaging.description": "Crea captions que generen conversación y aumenten el engagement.",
+    "captionGenerator.features.customizable.title": "🎨 Personalizable",
+    "captionGenerator.features.customizable.description": "Elige el tono, emojis y hashtags según tu estilo.",
+    "captionGenerator.features.hashtagReady.title": "#️⃣ Hashtags Listos",
+    "captionGenerator.features.hashtagReady.description": "Obtén hashtags relevantes automáticamente en tu caption.",
+    "captionGenerator.features.multiLanguage.title": "🌍 Multi-idioma",
+    "captionGenerator.features.multiLanguage.description": "Genera captions en más de 13 idiomas diferentes.",
+
+};

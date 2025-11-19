@@ -1,0 +1,26 @@
+export const hashtag_generator = {
+    // TikTok Hashtag Generator
+    "hashtagGenerator.title": "Generador de Hashtags para TikTok",
+    "hashtagGenerator.description": "Encuentra los mejores hashtags para tus videos de TikTok. ¡Aumenta tu alcance y descubribilidad!",
+    "hashtagGenerator.form.keyword": "Palabra Clave o Tema",
+    "hashtagGenerator.form.keywordPlaceholder": "Ej: fitness, cocina, moda...",
+    "hashtagGenerator.form.generate": "Generar Hashtags",
+    "hashtagGenerator.form.generating": "Buscando Hashtags...",
+    "hashtagGenerator.form.useAgain": "Buscar de Nuevo",
+    "hashtagGenerator.form.error.emptyKeyword": "Por favor ingresa una palabra clave",
+    "hashtagGenerator.result.title": "Hashtags Recomendados",
+    "hashtagGenerator.result.copyAll": "Copiar Todos",
+    "hashtagGenerator.result.copied": "¡Hashtag copiado al portapapeles!",
+    "hashtagGenerator.result.copiedAll": "¡Todos los hashtags copiados al portapapeles!",
+    "hashtagGenerator.result.tip": "💡 Consejo Pro: Mezcla hashtags de alta, media y baja competencia para mejores resultados. Alta relevancia = muy relacionado con tu contenido.",
+    "hashtagGenerator.result.success": "✓ {count} hashtags encontrados exitosamente",
+    "hashtagGenerator.features.viewEstimates.title": "📊 Estimaciones de Vistas",
+    "hashtagGenerator.features.viewEstimates.description": "Ve las vistas estimadas para cada hashtag para medir popularidad.",
+    "hashtagGenerator.features.relevance.title": "🎯 Puntuación de Relevancia",
+    "hashtagGenerator.features.relevance.description": "Sabe qué hashtags son más relevantes para tu contenido.",
+    "hashtagGenerator.features.mixMatch.title": "🔥 Mezcla y Combina",
+    "hashtagGenerator.features.mixMatch.description": "Obtén una mezcla equilibrada de tags de alta, media y baja competencia.",
+    "hashtagGenerator.features.quickCopy.title": "📋 Copia Rápida",
+    "hashtagGenerator.features.quickCopy.description": "Copia tags individuales o todos a la vez para la descripción de tu video.",
+
+};

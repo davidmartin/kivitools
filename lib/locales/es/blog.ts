@@ -1,0 +1,26 @@
+export const blog = {
+    // Blog Section
+    "blog.badge": "Blog",
+    "blog.title": "Guías y Trucos para Redes Sociales",
+    "blog.description": "Aprende a dominar las redes sociales con nuestros artículos y tutoriales. Tips, trucos y estrategias para crecer tu audiencia.",
+    "blog.readTime": "lectura",
+    "blog.readMore": "Leer más",
+    "blog.platform.tiktok": "TikTok",
+    "blog.platform.instagram": "Instagram",
+    "blog.platform.twitter": "Twitter",
+    "blog.platform.general": "General",
+    "blog.cta.title": "¿Listo para crear contenido viral?",
+    "blog.cta.description": "Usa nuestras herramientas gratuitas con IA para empezar ahora mismo.",
+    "blog.cta.button": "Explorar Herramientas",
+    "blog.relatedTool.title": "Prueba la herramienta gratis",
+    "blog.relatedTool.description": "Pon en práctica lo que aprendiste con nuestra herramienta de IA.",
+    "blog.relatedTool.button": "Usar herramienta gratis",
+    "blog.newsletter.title": "Recibe tips de contenido gratis",
+    "blog.newsletter.description": "Únete a miles de creadores que reciben nuestros mejores consejos cada semana.",
+    "blog.newsletter.placeholder": "tu@email.com",
+    "blog.newsletter.button": "Suscribirme",
+    "blog.shareAgain": "¿Te gustó este artículo? ¡Compártelo!",
+    "blog.empty.title": "Próximamente",
+    "blog.empty.description": "Estamos preparando guías increíbles para ayudarte a crecer en redes sociales. ¡Vuelve pronto!",
+
+};

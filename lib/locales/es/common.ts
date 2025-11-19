@@ -1,0 +1,119 @@
+export const common = {
+    // Navigation
+    "nav.title": "KiviTools",
+    "nav.platforms": "Plataformas",
+    "nav.tools": "Herramientas",
+    "nav.tiktok": "TikTok",
+    "nav.instagram": "Instagram",
+    "nav.twitter": "Twitter",
+    "nav.snapchat": "Snapchat",
+    "nav.youtube": "YouTube",
+    "nav.reddit": "Reddit",
+    "nav.discord": "Discord",
+    "nav.twitch": "Twitch",
+    "nav.suno": "Suno",
+    "nav.elevenlabs": "ElevenLabs",
+    "nav.linkedin": "LinkedIn",
+    "nav.forocoches": "Forocoches",
+    "nav.suggestTool": "Sugerir Herramienta",
+
+    // Voice Styles
+    "voiceStyles.narration": "Narración",
+    "voiceStyles.conversational": "Conversacional",
+    "voiceStyles.dramatic": "Dramático",
+    "voiceStyles.commercial": "Comercial",
+    "voiceStyles.storytelling": "Narrativo",
+
+    // Video Types
+    "videoTypes.youtube": "YouTube",
+    "videoTypes.tiktok": "TikTok",
+    "videoTypes.instagram": "Instagram",
+    "videoTypes.commercial": "Comercial",
+    "videoTypes.explainer": "Explicativo",
+
+    // Voice Durations
+    "durations.voice.thirty": "30 segundos",
+    "durations.voice.sixty": "60 segundos",
+    "durations.voice.twoMin": "2 minutos",
+    "durations.voice.fiveMin": "5 minutos",
+
+    // Footer
+    "footer.about": "Acerca de",
+    "footer.aboutText": "Herramientas gratuitas con IA que hacen el trabajo difícil mientras tú finges ser un genio creativo. 🚀",
+    "footer.tools": "Herramientas",
+    "footer.tiktokScript": "Script TikTok",
+    "footer.instagramCaption": "Caption Instagram",
+    "footer.twitterThread": "Hilo Twitter",
+    "footer.legal": "Legal",
+    "footer.privacy": "Política de Privacidad",
+    "footer.terms": "Términos y Condiciones",
+    "footer.contact": "Contacto",
+    "footer.contactUs": "Contáctanos",
+    "footer.copyright": "© 2025 KiviTools. Todos los derechos reservados.",
+
+    // Share buttons
+    "share.twitter": "Compartir en Twitter",
+    "share.facebook": "Compartir en Facebook",
+    "share.linkedin": "Compartir en LinkedIn",
+    "share.whatsapp": "Compartir en WhatsApp",
+    "share.copy": "Copiar enlace",
+    "share.copied": "¡Enlace copiado!",
+
+    // Tones
+    "tones.formal": "👔 Formal",
+    "tones.friendly": "🙂 Amigable",
+    "tones.casual": "😎 Casual",
+    "tones.professional": "💼 Profesional",
+    "tones.diplomatic": "🤝 Diplomático",
+    "tones.confident": "💪 Confiado",
+    "tones.middleSchool": "📕 Secundaria",
+    "tones.highSchool": "📗 Preparatoria",
+    "tones.academic": "🎓 Académico",
+    "tones.simplified": "📖 Simplificado",
+    "tones.bold": "🦄 Audaz",
+    "tones.empathetic": "🤗 Empático",
+    "tones.luxury": "💎 Lujoso",
+    "tones.engaging": "👍 Atractivo",
+    "tones.direct": "➡️ Directo",
+    "tones.persuasive": "🎯 Persuasivo",
+
+    // Languages
+    "languages.en": "Inglés",
+    "languages.es": "Español",
+    "languages.fr": "Francés",
+    "languages.zh": "Chino",
+    "languages.hi": "Hindi",
+    "languages.ar": "Árabe",
+    "languages.ru": "Ruso",
+    "languages.de": "Alemán",
+    "languages.ja": "Japonés",
+    "languages.id": "Indonesio",
+    "languages.vi": "Vietnamita",
+    "languages.th": "Tailandés",
+    "languages.ko": "Coreano",
+
+    // Durations
+    "durations.tiktok.short": "30 a 60 segundos",
+    "durations.tiktok.thirty": "30 segundos",
+    "durations.tiktok.sixty": "60 segundos",
+    "durations.reel.fifteen": "15 segundos",
+    "durations.reel.thirty": "30 segundos",
+    "durations.reel.sixty": "60 segundos",
+    "durations.youtube.short": "1-3 minutos",
+    "durations.youtube.medium": "5-10 minutos",
+    "durations.youtube.long": "15-20 minutos",
+
+    // Common
+    "common.error": "¡Ups! Algo salió mal (no es tu culpa, probablemente)",
+    "common.required": "Este campo es requerido (sí, lo sabemos, molesto)",
+    "common.copied": "¡Copiado! 🎉 ¡Ahora a ser viral!",
+    "common.copyFailed": "Error al copiar (prueba Ctrl+C a la antigua)",
+    "common.explore": "Explorar",
+
+    // Cloudflare Turnstile
+    "turnstile.verifying": "Verificando que eres humano...",
+    "turnstile.error": "Error de verificación. Por favor recarga la página.",
+    "turnstile.expired": "Verificación expirada. Por favor intenta de nuevo.",
+    "turnstile.failed": "Verificación fallida. Asegúrate de no ser un robot. 🤖",
+    "turnstile.blocked": "Solicitud bloqueada por protección anti-bot.",
+};

@@ -1,0 +1,27 @@
+export const script_writer = {
+    // TikTok Script Writer
+    "scriptWriter.title": "Creador de Scripts para TikTok",
+    "scriptWriter.description": "Tu cerebro: 💤 Nuestra IA: 🚀 Crea scripts tan buenos que tu FYP te lo agradecerá.",
+    "scriptWriter.form.topic": "Tema",
+    "scriptWriter.form.topicPlaceholder": "Por favor ingresa el tema de tu publicación...",
+    "scriptWriter.form.tone": "Tono",
+    "scriptWriter.form.duration": "Duración",
+    "scriptWriter.form.language": "Idioma",
+    "scriptWriter.form.generate": "Generar Script",
+    "scriptWriter.form.generating": "Generando...",
+    "scriptWriter.form.useAgain": "Usar de Nuevo",
+    "scriptWriter.result.title": "Script Generado",
+    "scriptWriter.result.copy": "Copiar Script",
+    "scriptWriter.result.copied": "¡Script copiado al portapapeles!",
+    "scriptWriter.result.success": "✓ Resultado generado exitosamente",
+    "scriptWriter.form.error.emptyTopic": "Por favor ingresa un tema",
+    "scriptWriter.features.free.title": "🚀 Gratis (Porque el dinero da pereza)",
+    "scriptWriter.features.free.description": "Sin tarjetas de crédito, sin tu primogénito. Nada. Cero. Nada de nada.",
+    "scriptWriter.features.smart.title": "✨ Más Ideas que Tu Playlist de Spotify",
+    "scriptWriter.features.smart.description": "La IA tiene mejores ideas a las 3am que tú después de 5 cafés.",
+    "scriptWriter.features.multilang.title": "🌍 Habla Más Idiomas que Duolingo",
+    "scriptWriter.features.multilang.description": "13 idiomas disponibles. Tu crush de otro país finalmente te entenderá.",
+    "scriptWriter.features.fast.title": "⚡ Copia, Pega, Triunfa",
+    "scriptWriter.features.fast.description": "Ctrl+C, Ctrl+V, espera los millones de views. Así de fácil.",
+
+};

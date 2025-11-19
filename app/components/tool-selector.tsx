@@ -10,10 +10,15 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
+  linkedin: [
+    { name: "linkedinPost.title", href: "/linkedin/post-generator" },
+    { name: "linkedinHeadline.title", href: "/linkedin/headline-generator" },
+    { name: "linkedinAbout.title", href: "/linkedin/about-generator" },
+  ],
   tiktok: [
     { name: "scriptWriter.title", href: "/tiktok/script-writer" },
     { name: "videoIdeas.title", href: "/tiktok/video-ideas" },
@@ -65,6 +70,11 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "videoVoiceoverScript.title", href: "/elevenlabs/video-voiceover-script" },
     { name: "voiceTextFormatter.title", href: "/elevenlabs/voice-text-formatter" },
   ],
+  forocoches: [
+    { name: "forocochesThread.title", href: "/forocoches/thread-generator" },
+    { name: "forocochesPole.title", href: "/forocoches/pole-generator" },
+    { name: "forocochesTroll.title", href: "/forocoches/troll-response" },
+  ],
 };
 
 export default function ToolSelector({ platform }: ToolSelectorProps) {
@@ -80,11 +90,10 @@ export default function ToolSelector({ platform }: ToolSelectorProps) {
           <Link
             key={tool.href}
             href={tool.href}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-              isActive
-                ? "bg-accent text-accent-foreground"
-                : "bg-surface text-foreground hover:bg-accent/10 border border-border"
-            }`}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive
+              ? "bg-accent text-accent-foreground"
+              : "bg-surface text-foreground hover:bg-accent/10 border border-border"
+              }`}
           >
             {t(tool.name)}
           </Link>

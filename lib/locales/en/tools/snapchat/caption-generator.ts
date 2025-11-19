@@ -1,0 +1,27 @@
+export const caption_generator = {
+    // Snapchat Caption Generator
+    "snapchatCaption.title": "Snapchat Caption Generator",
+    "snapchatCaption.description": "Create fun and creative captions for your Snaps. Make every Snap count!",
+    "snapchatCaption.form.topic": "Snap Topic",
+    "snapchatCaption.form.topicPlaceholder": "What's your Snap about?",
+    "snapchatCaption.form.tone": "Tone",
+    "snapchatCaption.form.language": "Language",
+    "snapchatCaption.form.includeEmojis": "Include emojis",
+    "snapchatCaption.form.generate": "Generate Caption",
+    "snapchatCaption.form.generating": "Generating...",
+    "snapchatCaption.form.useAgain": "Generate Another",
+    "snapchatCaption.form.error.emptyTopic": "Please enter a topic",
+    "snapchatCaption.result.title": "Your Caption",
+    "snapchatCaption.result.copy": "Copy Caption",
+    "snapchatCaption.result.copied": "Caption copied!",
+    "snapchatCaption.result.success": "✓ Caption generated successfully",
+    "snapchatCaption.features.fun.title": "🎉 Fun & Creative",
+    "snapchatCaption.features.fun.description": "Captions that capture Snapchat's unique spirit.",
+    "snapchatCaption.features.short.title": "📱 Short & Direct",
+    "snapchatCaption.features.short.description": "Perfect for Snapchat's quick-view experience.",
+    "snapchatCaption.features.emojis.title": "😊 Emoji-Rich",
+    "snapchatCaption.features.emojis.description": "Option to include relevant and fun emojis.",
+    "snapchatCaption.features.instant.title": "⚡ Quick",
+    "snapchatCaption.features.instant.description": "Copy and use immediately on your Snap.",
+
+};

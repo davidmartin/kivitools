@@ -1,0 +1,28 @@
+export const title_generator = {
+    // YouTube Title Generator
+    "youtubeTitle.title": "YouTube Title Generator",
+    "youtubeTitle.description": "Create catchy titles that increase your views and CTR.",
+    "youtubeTitle.form.topic": "Video Topic",
+    "youtubeTitle.form.topicPlaceholder": "Please describe your video...",
+    "youtubeTitle.form.language": "Language",
+    "youtubeTitle.form.generate": "Generate Titles",
+    "youtubeTitle.form.generating": "Generating...",
+    "youtubeTitle.form.useAgain": "Generate More",
+    "youtubeTitle.form.error.emptyTopic": "Please enter a topic",
+    "youtubeTitle.result.title": "Suggested Titles",
+    "youtubeTitle.result.option": "Option",
+    "youtubeTitle.result.copy": "Copy",
+    "youtubeTitle.result.copyAll": "Copy All",
+    "youtubeTitle.result.copied": "Title copied!",
+    "youtubeTitle.result.copiedAll": "All titles copied!",
+    "youtubeTitle.result.success": "10 titles generated successfully!",
+    "youtubeTitle.features.clickworthy.title": "🖱️ High Click Rate",
+    "youtubeTitle.features.clickworthy.description": "Titles optimized to maximize clicks.",
+    "youtubeTitle.features.variety.title": "🎨 Great Variety",
+    "youtubeTitle.features.variety.description": "10 different options to choose from.",
+    "youtubeTitle.features.keywords.title": "🔑 With Keywords",
+    "youtubeTitle.features.keywords.description": "Includes popular search terms.",
+    "youtubeTitle.features.instant.title": "⚡ Instant Results",
+    "youtubeTitle.features.instant.description": "Titles ready in seconds.",
+
+};

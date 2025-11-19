@@ -1,0 +1,26 @@
+export const comment_generator = {
+    // Reddit Comment Generator
+    "redditComment.title": "Reddit Comment Generator",
+    "redditComment.description": "Generate relevant and thoughtful comments for any post.",
+    "redditComment.form.context": "Post Context",
+    "redditComment.form.contextPlaceholder": "Paste the post title or content here...",
+    "redditComment.form.tone": "Tone",
+    "redditComment.form.language": "Language",
+    "redditComment.form.generate": "Generate Comment",
+    "redditComment.form.generating": "Generating...",
+    "redditComment.form.useAgain": "Generate Another",
+    "redditComment.form.error.emptyContext": "Please enter the context",
+    "redditComment.result.title": "Your Comment",
+    "redditComment.result.copy": "Copy",
+    "redditComment.result.copied": "Comment copied!",
+    "redditComment.result.success": "Comment generated successfully!",
+    "redditComment.features.relevant.title": "🎯 Relevant",
+    "redditComment.features.relevant.description": "Directly responds to the post content.",
+    "redditComment.features.thoughtful.title": "💭 Thoughtful",
+    "redditComment.features.thoughtful.description": "Adds value to the conversation.",
+    "redditComment.features.natural.title": "😊 Natural",
+    "redditComment.features.natural.description": "Sounds like a genuine comment.",
+    "redditComment.features.instant.title": "⚡ Instant Results",
+    "redditComment.features.instant.description": "Comments ready in seconds.",
+
+};

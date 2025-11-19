@@ -799,6 +799,165 @@ Write ONLY the bio text, no titles or extra formatting.`;
     }
 }
 
+// Forocoches Thread Generator
+export async function generateForocochesThread({
+    topic,
+    tone,
+}: {
+    topic: string;
+    tone: string;
+}): Promise<string> {
+    const systemPrompt = `You are a legendary Forocoches user (shurmano). Create a thread content that:
+- Uses typical Forocoches slang (shur, shurmano, rocoso, demigrante, tds pts, etc.)
+- Formats the text with BBCode ([b], [i], [quote], [img], etc.)
+- Matches the requested tone (${tone})
+- Is engaging and encourages replies
+- Includes a "Resumen para vagos" (TL;DR) at the end
+
+Tone guidelines:
+- Serious: Use [Tema Serio] tag, be respectful but use slang.
+- Troll: Be sarcastic, funny, maybe a bit absurd.
+- Story: Tell a detailed anecdote, use [tocho] warning.
+
+IMPORTANT: Write ONLY in Spanish (Spain slang). Return ONLY the BBCode content.`;
+
+    const userPrompt = `Create a Forocoches thread about: ${topic}
+
+Tone: ${tone}
+
+Requirements:
+- Use BBCode for formatting
+- Include "Resumen para vagos"
+- Use Forocoches slang naturally
+- Make it look like a real post`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.9,
+            max_tokens: 800,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim();
+
+        if (!content) {
+            throw new Error("No thread generated");
+        }
+
+        return content;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate thread"
+        );
+    }
+}
+
+// Forocoches Pole Generator
+export async function generateForocochesPole({
+    style,
+    topic,
+}: {
+    style: string;
+    topic?: string;
+}): Promise<string> {
+    const topicContext = topic ? `\n- Context: The thread is about "${topic}"` : "";
+    const systemPrompt = `You are a Forocoches user trying to get the "Pole" (first reply). Generate a short, funny message to claim the pole.
+- Use slang (pole, subpole, fail, sitio, pillo sitio)
+- Style: ${style}${topicContext}
+- Keep it short (1-2 lines)
+- You can include a placeholder for a GIF like [img]http://example.com/gif.gif[/img] if appropriate for the style.
+
+Styles:
+- Classic: Standard "Pole" or "Pillo sitio".
+- Fail: Pretend you failed the pole (Subpole).
+- Creative: Something absurd or funny related to the topic if provided.
+
+IMPORTANT: Write ONLY in Spanish.`;
+
+    const userPrompt = `Generate a "Pole" message. Style: ${style}${topic ? `\nTopic: ${topic}` : ""}`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 1.0,
+            max_tokens: 100,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim();
+
+        if (!content) {
+            throw new Error("No pole generated");
+        }
+
+        return content;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate pole"
+        );
+    }
+}
+
+// Forocoches Troll Response
+export async function generateForocochesTroll({
+    comment,
+    intensity,
+}: {
+    comment: string;
+    intensity: string;
+}): Promise<string> {
+    const systemPrompt = `You are a witty Forocoches troll. Generate a reply to a comment that is:
+- Sarcastic, funny, or "zasca" (burn)
+- Uses Forocoches slang
+- Matches the intensity: ${intensity}
+- Uses BBCode if needed
+
+Intensity:
+- Soft: Irony, mild teasing.
+- Medium: Sarcasm, making fun of the logic.
+- Hard: Total destruction (but keep it within legal limits, no insults that ban).
+
+IMPORTANT: Write ONLY in Spanish.`;
+
+    const userPrompt = `Reply to this comment: "${comment}"
+
+Intensity: ${intensity}`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.9,
+            max_tokens: 300,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim();
+
+        if (!content) {
+            throw new Error("No response generated");
+        }
+
+        return content;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate response"
+        );
+    }
+}
+
 // Tweet Generator
 export async function generateTweet({
     topic,
@@ -2245,5 +2404,197 @@ Keep the original text intact - only add optimization tags and minor improvement
     } catch (error) {
         console.error("Error optimizing audiobook chapter:", error);
         throw new Error("Failed to optimize audiobook chapter");
+    }
+}
+
+// LinkedIn Post Generator
+export async function generateLinkedInPost({
+    topic,
+    tone,
+    language,
+}: {
+    topic: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a LinkedIn content expert. Create engaging, professional posts that:
+- Hook the reader in the first line
+- Provide value or insight
+- Use appropriate formatting (bullet points, spacing)
+- Encourage engagement (questions, call to action)
+- Include 3-5 relevant hashtags at the end
+- Maintain a ${tone} tone
+
+IMPORTANT: Write ONLY in ${targetLanguage}. Do not include any other language.`;
+
+    const userPrompt = `Create a LinkedIn post about: ${topic}
+
+Requirements:
+- Language: ${targetLanguage}
+- Tone: ${tone}
+- Structure: Hook -> Value/Story -> Takeaway -> Call to Action
+- Use line breaks for readability
+- Include relevant emojis (but don't overdo it)
+- Add hashtags at the end
+
+Write ONLY the post content.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.7,
+            max_tokens: 600,
+        });
+
+        const post = completion.choices[0]?.message?.content?.trim();
+
+        if (!post) {
+            throw new Error("No post generated");
+        }
+
+        return post;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate post"
+        );
+    }
+}
+
+// LinkedIn Headline Generator
+export async function generateLinkedInHeadline({
+    role,
+    industry,
+    keywords,
+    language,
+}: {
+    role: string;
+    industry: string;
+    keywords?: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+    const keywordsPart = keywords ? `Keywords to include: ${keywords}` : "";
+
+    const systemPrompt = `You are a LinkedIn profile optimization expert. Generate professional headlines that:
+- Are catchy and memorable
+- Highlight value proposition
+- Use keywords effectively for SEO
+- Are under 220 characters
+- Stand out in search results
+
+IMPORTANT: Write ONLY in ${targetLanguage}. Do not include any other language.`;
+
+    const userPrompt = `Generate 5 LinkedIn headlines for a ${role} in ${industry}.
+${keywordsPart}
+
+Requirements:
+- Language: ${targetLanguage}
+- Provide 5 distinct options (e.g., direct, creative, results-oriented)
+- Use separators like | or • if needed
+- Format: Return each headline on a new line, numbered (1., 2., etc.)
+
+Write ONLY the numbered list of headlines.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.8,
+            max_tokens: 400,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim();
+
+        if (!content) {
+            throw new Error("No headlines generated");
+        }
+
+        const headlines = content
+            .split("\n")
+            .filter((line) => line.trim())
+            .map((line) => line.replace(/^\d+\.\s*/, "").trim())
+            .filter((h) => h.length > 0);
+
+        return headlines;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate headlines"
+        );
+    }
+}
+
+// LinkedIn About Generator
+export async function generateLinkedInAbout({
+    role,
+    experience,
+    skills,
+    achievements,
+    language,
+}: {
+    role: string;
+    experience: string;
+    skills: string;
+    achievements?: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+    const achievementsPart = achievements ? `Key achievements: ${achievements}` : "";
+
+    const systemPrompt = `You are a professional bio writer. Write a compelling LinkedIn "About" section that:
+- Tells a professional story
+- Highlights expertise and passion
+- Includes key skills naturally
+- Is engaging and easy to read (use short paragraphs)
+- Ends with a call to action (e.g., "Let's connect")
+- Is written in the first person ("I")
+
+IMPORTANT: Write ONLY in ${targetLanguage}. Do not include any other language.`;
+
+    const userPrompt = `Write a LinkedIn About section for a ${role} with ${experience} years of experience.
+Key skills: ${skills}
+${achievementsPart}
+
+Requirements:
+- Language: ${targetLanguage}
+- Tone: Professional yet approachable
+- Structure: Hook -> Background/Experience -> Skills/Achievements -> What drives me -> Call to Action
+- Use proper spacing
+
+Write ONLY the About section text.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.7,
+            max_tokens: 800,
+        });
+
+        const about = completion.choices[0]?.message?.content?.trim();
+
+        if (!about) {
+            throw new Error("No about section generated");
+        }
+
+        return about;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate about section"
+        );
     }
 }

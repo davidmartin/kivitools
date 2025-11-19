@@ -1,0 +1,119 @@
+export const common = {
+    // Navigation
+    "nav.title": "KiviTools",
+    "nav.platforms": "Platforms",
+    "nav.tools": "Tools",
+    "nav.tiktok": "TikTok",
+    "nav.instagram": "Instagram",
+    "nav.twitter": "Twitter",
+    "nav.snapchat": "Snapchat",
+    "nav.youtube": "YouTube",
+    "nav.reddit": "Reddit",
+    "nav.discord": "Discord",
+    "nav.twitch": "Twitch",
+    "nav.suno": "Suno",
+    "nav.elevenlabs": "ElevenLabs",
+    "nav.linkedin": "LinkedIn",
+    "nav.forocoches": "Forocoches",
+    "nav.suggestTool": "Suggest Tool",
+
+    // Voice Styles
+    "voiceStyles.narration": "Narration",
+    "voiceStyles.conversational": "Conversational",
+    "voiceStyles.dramatic": "Dramatic",
+    "voiceStyles.commercial": "Commercial",
+    "voiceStyles.storytelling": "Storytelling",
+
+    // Video Types
+    "videoTypes.youtube": "YouTube",
+    "videoTypes.tiktok": "TikTok",
+    "videoTypes.instagram": "Instagram",
+    "videoTypes.commercial": "Commercial",
+    "videoTypes.explainer": "Explainer",
+
+    // Voice Durations
+    "durations.voice.thirty": "30 seconds",
+    "durations.voice.sixty": "60 seconds",
+    "durations.voice.twoMin": "2 minutes",
+    "durations.voice.fiveMin": "5 minutes",
+
+    // Footer
+    "footer.about": "About",
+    "footer.aboutText": "Free AI tools that do the hard work while you pretend to be a creative genius. 🚀",
+    "footer.tools": "Tools",
+    "footer.tiktokScript": "TikTok Script",
+    "footer.instagramCaption": "Instagram Caption",
+    "footer.twitterThread": "Twitter Thread",
+    "footer.legal": "Legal",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms & Conditions",
+    "footer.contact": "Contact",
+    "footer.contactUs": "Contact Us",
+    "footer.copyright": "© 2025 KiviTools. All rights reserved.",
+
+    // Share buttons
+    "share.twitter": "Share on Twitter",
+    "share.facebook": "Share on Facebook",
+    "share.linkedin": "Share on LinkedIn",
+    "share.whatsapp": "Share on WhatsApp",
+    "share.copy": "Copy link",
+    "share.copied": "Link copied!",
+
+    // Tones
+    "tones.formal": "👔 Formal",
+    "tones.friendly": "🙂 Friendly",
+    "tones.casual": "😎 Casual",
+    "tones.professional": "💼 Professional",
+    "tones.diplomatic": "🤝 Diplomatic",
+    "tones.confident": "💪 Confident",
+    "tones.middleSchool": "📕 Middle school",
+    "tones.highSchool": "📗 High school",
+    "tones.academic": "🎓 Academic",
+    "tones.simplified": "📖 Simplified",
+    "tones.bold": "🦄 Bold",
+    "tones.empathetic": "🤗 Empathetic",
+    "tones.luxury": "💎 Luxury",
+    "tones.engaging": "👍 Engaging",
+    "tones.direct": "➡️ Direct",
+    "tones.persuasive": "🎯 Persuasive",
+
+    // Languages
+    "languages.en": "English",
+    "languages.es": "Spanish",
+    "languages.fr": "French",
+    "languages.zh": "Chinese",
+    "languages.hi": "Hindi",
+    "languages.ar": "Arabic",
+    "languages.ru": "Russian",
+    "languages.de": "German",
+    "languages.ja": "Japanese",
+    "languages.id": "Indonesian",
+    "languages.vi": "Vietnamese",
+    "languages.th": "Thai",
+    "languages.ko": "Korean",
+
+    // Durations
+    "durations.tiktok.short": "30 to 60 seconds",
+    "durations.tiktok.thirty": "30 seconds",
+    "durations.tiktok.sixty": "60 seconds",
+    "durations.reel.fifteen": "15 seconds",
+    "durations.reel.thirty": "30 seconds",
+    "durations.reel.sixty": "60 seconds",
+    "durations.youtube.short": "1-3 minutes",
+    "durations.youtube.medium": "5-10 minutes",
+    "durations.youtube.long": "15-20 minutes",
+
+    // Common
+    "common.error": "Oops! Something went wrong (not your fault, probably)",
+    "common.required": "This field is required (we know, annoying)",
+    "common.copied": "Copied! 🎉 Now go be viral!",
+    "common.copyFailed": "Copy failed (try Ctrl+C like in the old days)",
+    "common.explore": "Explore",
+
+    // Cloudflare Turnstile
+    "turnstile.verifying": "Verifying you're human...",
+    "turnstile.error": "Verification error. Please reload the page.",
+    "turnstile.expired": "Verification expired. Please try again.",
+    "turnstile.failed": "Verification failed. Make sure you're not a bot. 🤖",
+    "turnstile.blocked": "Request blocked by anti-bot protection.",
+};

@@ -2,16 +2,25 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button, Popover } from "@heroui/react";
 import ThemeToggle from "./theme-toggle";
 import PlatformLogo from "./platform-logo";
+import AppLogo from "./app-logo";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const platforms = [
     {
@@ -118,50 +127,72 @@ export default function Navigation() {
         { name: t("audiobookOptimizer.title"), href: "/elevenlabs/audiobook-optimizer" },
       ],
     },
+    {
+      id: "linkedin",
+      name: t("nav.linkedin"),
+      emoji: "💼",
+      tools: [
+        { name: t("linkedinPost.title"), href: "/linkedin/post-generator" },
+        { name: t("linkedinHeadline.title"), href: "/linkedin/headline-generator" },
+        { name: t("linkedinAbout.title"), href: "/linkedin/about-generator" },
+      ],
+    },
+    {
+      id: "forocoches",
+      name: t("nav.forocoches"),
+      emoji: "🚗",
+      tools: [
+        { name: t("forocochesThread.title"), href: "/forocoches/thread-generator" },
+        { name: t("forocochesPole.title"), href: "/forocoches/pole-generator" },
+        { name: t("forocochesTroll.title"), href: "/forocoches/troll-response" },
+      ],
+    },
   ];
 
   return (
-    <nav className="bg-surface border-b border-border">
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-surface/70 backdrop-blur-xl border-b border-border/50 shadow-sm"
+        : "bg-transparent border-b border-transparent"
+        }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/logo-title.png"
-              alt="KiviTools - Free AI Social Media Tools"
-              width={200}
-              height={60}
-              priority
-              className="h-10 w-auto object-contain dark:invert"
-              style={{ background: 'transparent' }}
-            />
+          <Link href="/" className="flex items-center group">
+            <div className="relative transition-transform duration-300 group-hover:scale-105">
+              <AppLogo />
+            </div>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-1">
             {/* Blog Link */}
             <Link
               href="/blog"
-              className="px-4 py-2 text-sm font-medium text-foreground hover:bg-accent/10 rounded-lg transition-colors"
+              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full transition-all duration-200"
             >
-              📚 Blog
+              Blog
             </Link>
 
             {/* Suggest Tool Link */}
             <Link
               href="/suggest-tool"
-              className="px-4 py-2 text-sm font-medium text-foreground hover:bg-accent/10 rounded-lg transition-colors"
+              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full transition-all duration-200"
             >
-              💡 {t("nav.suggestTool")}
+              {t("nav.suggestTool")}
             </Link>
 
             {/* Platforms Dropdown */}
             <Popover>
-              <Button variant="ghost" size="sm" className="gap-1">
-                <span>🌐</span>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full transition-all duration-200 data-[hover=true]:bg-surface/50"
+              >
                 <span>{t("nav.platforms")}</span>
                 <svg
-                  className="w-3 h-3"
+                  className="w-3 h-3 transition-transform duration-200 group-data-[open=true]:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -174,29 +205,31 @@ export default function Navigation() {
                   />
                 </svg>
               </Button>
-              <Popover.Content className="w-64" placement="bottom">
-                <Popover.Dialog className="p-2">
-                  <div className="space-y-1">
-                    {platforms.map((platform) => (
-                      <Link
-                        key={platform.id}
-                        href={`/${platform.id}`}
-                        className="flex items-center gap-3 px-3 py-2 text-sm text-foreground hover:bg-accent/10 rounded-lg transition-colors"
-                      >
-                        <PlatformLogo platform={platform.id as any} size="md" />
-                        <span>{platform.name}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </Popover.Dialog>
+              <Popover.Content className="w-72 p-0 bg-surface/80 backdrop-blur-xl border border-border/50 shadow-xl rounded-2xl overflow-hidden">
+                <div className="max-h-[60vh] overflow-y-auto p-2 space-y-1 custom-scrollbar">
+                  {platforms.map((platform) => (
+                    <Link
+                      key={platform.id}
+                      href={`/${platform.id}`}
+                      className="flex items-center gap-3 px-3 py-2.5 text-sm text-foreground/90 hover:text-foreground hover:bg-foreground/5 rounded-xl transition-colors group"
+                    >
+                      <div className="p-1.5 rounded-lg bg-surface border border-border/50 group-hover:border-accent/50 transition-colors">
+                        <PlatformLogo platform={platform.id as any} size="sm" />
+                      </div>
+                      <span className="font-medium">{platform.name}</span>
+                    </Link>
+                  ))}
+                </div>
               </Popover.Content>
             </Popover>
 
+            <div className="w-px h-6 bg-border/50 mx-2" />
+
             {/* Language Selector */}
             <Button
-              variant="tertiary"
+              variant="ghost"
               size="sm"
-              className="ml-2"
+              className="min-w-0 px-3 text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full"
               onPress={() => setLanguage(language === "en" ? "es" : "en")}
               aria-label={language === "en" ? "Cambiar a Español" : "Switch to English"}
             >
@@ -204,29 +237,30 @@ export default function Navigation() {
             </Button>
 
             {/* Theme Toggle */}
-            <ThemeToggle />
+            <div className="ml-1">
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-2">
-            {/* Language Selector Mobile */}
             <Button
-              variant="tertiary"
+              variant="ghost"
               size="sm"
               isIconOnly
+              className="text-foreground/80 hover:bg-surface/50 rounded-full"
               onPress={() => setLanguage(language === "en" ? "es" : "en")}
-              aria-label={language === "en" ? "Cambiar a Español" : "Switch to English"}
             >
               {language === "en" ? "ES" : "EN"}
             </Button>
 
-            {/* Theme Toggle Mobile */}
             <ThemeToggle />
 
             <Button
               variant="ghost"
               size="sm"
               isIconOnly
+              className="text-foreground/80 hover:bg-surface/50 rounded-full ml-1"
               onPress={() => setIsMenuOpen(!isMenuOpen)}
             >
               <svg
@@ -257,43 +291,47 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 space-y-3 max-h-[calc(100vh-5rem)] overflow-y-auto">
-            {/* Blog Link Mobile */}
-            <Link
-              href="/blog"
-              className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-surface rounded-lg"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              📚 Blog
-            </Link>
+          <div className="lg:hidden absolute top-16 left-0 right-0 bg-surface/95 backdrop-blur-xl border-b border-border/50 shadow-xl animate-slide-up">
+            <div className="max-h-[80vh] overflow-y-auto py-4 px-4 space-y-4">
+              <div className="space-y-2">
+                <Link
+                  href="/blog"
+                  className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-foreground hover:bg-foreground/5 rounded-xl transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Blog
+                </Link>
 
-            {/* Suggest Tool Link Mobile */}
-            <Link
-              href="/suggest-tool"
-              className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-surface rounded-lg"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              💡 {t("nav.suggestTool")}
-            </Link>
-            
-            {platforms.map((platform) => (
-              <div key={platform.id}>
-                <div className="px-4 py-2 text-sm font-semibold text-muted flex items-center gap-2">
-                  <PlatformLogo platform={platform.id as any} size="sm" />
-                  <span>{platform.name}</span>
-                </div>
-                {platform.tools.map((tool) => (
-                  <Link
-                    key={tool.href}
-                    href={tool.href}
-                    className="block pl-10 pr-4 py-2 text-sm text-foreground hover:bg-surface rounded-lg"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {tool.name}
-                  </Link>
-                ))}
+                <Link
+                  href="/suggest-tool"
+                  className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-foreground hover:bg-foreground/5 rounded-xl transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t("nav.suggestTool")}
+                </Link>
               </div>
-            ))}
+
+              <div className="h-px bg-border/50" />
+
+              <div className="space-y-4">
+                <div className="px-2 text-xs font-bold text-muted uppercase tracking-wider">
+                  {t("nav.platforms")}
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {platforms.map((platform) => (
+                    <Link
+                      key={platform.id}
+                      href={`/${platform.id}`}
+                      className="flex flex-col items-center gap-2 p-3 text-sm text-foreground bg-surface border border-border/50 hover:border-accent/50 rounded-xl transition-all active:scale-95"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <PlatformLogo platform={platform.id as any} size="md" />
+                      <span className="font-medium text-xs">{platform.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>

@@ -1,0 +1,26 @@
+export const hashtag_generator = {
+    // TikTok Hashtag Generator
+    "hashtagGenerator.title": "TikTok Hashtag Generator",
+    "hashtagGenerator.description": "Find the best hashtags for your TikTok videos. Boost your reach and discoverability!",
+    "hashtagGenerator.form.keyword": "Keyword or Topic",
+    "hashtagGenerator.form.keywordPlaceholder": "E.g., fitness, cooking, fashion...",
+    "hashtagGenerator.form.generate": "Generate Hashtags",
+    "hashtagGenerator.form.generating": "Finding Hashtags...",
+    "hashtagGenerator.form.useAgain": "Search Again",
+    "hashtagGenerator.form.error.emptyKeyword": "Please enter a keyword",
+    "hashtagGenerator.result.title": "Recommended Hashtags",
+    "hashtagGenerator.result.copyAll": "Copy All",
+    "hashtagGenerator.result.copied": "Hashtag copied to clipboard!",
+    "hashtagGenerator.result.copiedAll": "All hashtags copied to clipboard!",
+    "hashtagGenerator.result.tip": "💡 Pro Tip: Mix high, medium, and low competition hashtags for best results. High relevance = closely related to your content.",
+    "hashtagGenerator.result.success": "✓ {count} hashtags found successfully",
+    "hashtagGenerator.features.viewEstimates.title": "📊 View Estimates",
+    "hashtagGenerator.features.viewEstimates.description": "See estimated views for each hashtag to gauge popularity.",
+    "hashtagGenerator.features.relevance.title": "🎯 Relevance Score",
+    "hashtagGenerator.features.relevance.description": "Know which hashtags are most relevant to your content.",
+    "hashtagGenerator.features.mixMatch.title": "🔥 Mix & Match",
+    "hashtagGenerator.features.mixMatch.description": "Get a balanced mix of high, medium, and low competition tags.",
+    "hashtagGenerator.features.quickCopy.title": "📋 Quick Copy",
+    "hashtagGenerator.features.quickCopy.description": "Copy individual tags or all at once for your video description.",
+
+};

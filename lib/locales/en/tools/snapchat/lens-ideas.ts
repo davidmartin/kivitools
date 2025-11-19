@@ -1,0 +1,26 @@
+export const lens_ideas = {
+    // Snapchat Lens Ideas
+    "snapchatLensIdeas.title": "Snapchat Lens Ideas Generator",
+    "snapchatLensIdeas.description": "Creative ideas for your own Snapchat Lenses. Stand out with unique effects!",
+    "snapchatLensIdeas.form.topic": "Theme or Concept",
+    "snapchatLensIdeas.form.topicPlaceholder": "E.g., makeup, funny effects...",
+    "snapchatLensIdeas.form.language": "Language",
+    "snapchatLensIdeas.form.generate": "Generate Ideas",
+    "snapchatLensIdeas.form.generating": "Generating...",
+    "snapchatLensIdeas.form.useAgain": "Generate More",
+    "snapchatLensIdeas.form.error.emptyTopic": "Please enter a topic",
+    "snapchatLensIdeas.result.title": "Lens Ideas",
+    "snapchatLensIdeas.result.copyAll": "Copy All",
+    "snapchatLensIdeas.result.copied": "Idea copied!",
+    "snapchatLensIdeas.result.copiedAll": "All copied!",
+    "snapchatLensIdeas.result.success": "✓ {count} ideas generated",
+    "snapchatLensIdeas.features.innovative.title": "🚀 Innovative",
+    "snapchatLensIdeas.features.innovative.description": "Unique and creative Lens concepts.",
+    "snapchatLensIdeas.features.feasible.title": "✅ Feasible",
+    "snapchatLensIdeas.features.feasible.description": "Ideas that can be implemented in Lens Studio.",
+    "snapchatLensIdeas.features.popular.title": "⭐ Viral Potential",
+    "snapchatLensIdeas.features.popular.description": "Concepts users will want to use and share.",
+    "snapchatLensIdeas.features.detailed.title": "📝 Detailed",
+    "snapchatLensIdeas.features.detailed.description": "Complete descriptions to implement the Lens.",
+
+};

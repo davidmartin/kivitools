@@ -1,0 +1,27 @@
+export const description_generator = {
+    // YouTube Description Generator
+    "youtubeDescription.title": "YouTube Description Generator",
+    "youtubeDescription.description": "Create complete SEO-optimized descriptions.",
+    "youtubeDescription.form.topic": "Video Topic",
+    "youtubeDescription.form.topicPlaceholder": "Please describe your video...",
+    "youtubeDescription.form.keywords": "Keywords",
+    "youtubeDescription.form.keywordsPlaceholder": "Enter keywords separated by commas...",
+    "youtubeDescription.form.language": "Language",
+    "youtubeDescription.form.generate": "Generate Description",
+    "youtubeDescription.form.generating": "Generating...",
+    "youtubeDescription.form.useAgain": "Generate Another",
+    "youtubeDescription.form.error.emptyTopic": "Please enter a topic",
+    "youtubeDescription.result.title": "Your Description",
+    "youtubeDescription.result.copy": "Copy",
+    "youtubeDescription.result.copied": "Description copied!",
+    "youtubeDescription.result.success": "Description generated successfully!",
+    "youtubeDescription.features.complete.title": "📝 Complete Description",
+    "youtubeDescription.features.complete.description": "Includes summary, timestamps, and CTAs.",
+    "youtubeDescription.features.seo.title": "🔍 SEO Optimized",
+    "youtubeDescription.features.seo.description": "Keywords strategically placed.",
+    "youtubeDescription.features.links.title": "🔗 Space for Links",
+    "youtubeDescription.features.links.description": "Sections for social media and resources.",
+    "youtubeDescription.features.instant.title": "⚡ Instant Results",
+    "youtubeDescription.features.instant.description": "Complete descriptions in seconds.",
+
+};

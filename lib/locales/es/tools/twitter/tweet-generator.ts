@@ -1,0 +1,27 @@
+export const tweet_generator = {
+    // Tweet Generator
+    "tweetGenerator.title": "Generador de Tweets",
+    "tweetGenerator.description": "Genera tweets atractivos sobre cualquier tema. ¡Contenido fresco siempre!",
+    "tweetGenerator.form.topic": "Tema",
+    "tweetGenerator.form.topicPlaceholder": "¿Sobre qué quieres tuitear?",
+    "tweetGenerator.form.tone": "Tono",
+    "tweetGenerator.form.language": "Idioma",
+    "tweetGenerator.form.generate": "Generar Tweets",
+    "tweetGenerator.form.generating": "Generando...",
+    "tweetGenerator.form.useAgain": "Generar Más",
+    "tweetGenerator.form.error.emptyTopic": "Por favor ingresa un tema",
+    "tweetGenerator.result.title": "Tweets Generados",
+    "tweetGenerator.result.copyAll": "Copiar Todos",
+    "tweetGenerator.result.copied": "¡Tweet copiado!",
+    "tweetGenerator.result.copiedAll": "¡Todos copiados!",
+    "tweetGenerator.result.success": "✓ {count} tweets generados",
+    "tweetGenerator.features.engaging.title": "💬 Muy Atractivos",
+    "tweetGenerator.features.engaging.description": "Tweets diseñados para likes, retweets y respuestas.",
+    "tweetGenerator.features.varied.title": "🎨 Variedad",
+    "tweetGenerator.features.varied.description": "Diferentes estilos y ángulos sobre el mismo tema.",
+    "tweetGenerator.features.optimal.title": "📊 Longitud Óptima",
+    "tweetGenerator.features.optimal.description": "Perfectos para máximo impacto y engagement.",
+    "tweetGenerator.features.instant.title": "⚡ Usa Ahora",
+    "tweetGenerator.features.instant.description": "Copia y publica en segundos.",
+
+};

@@ -125,7 +125,7 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-2958996148094482"></meta>
         {/* Prevent auto-detection of phone numbers, emails */}
         <meta name="format-detection" content="telephone=no, email=no, address=no" />
-        
+
         {/* Performance hints */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -135,7 +135,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2958996148094482"
           crossOrigin="anonymous"
-        /> 
+        />
 
         {/* JSON-LD Structured Data */}
         <Script
@@ -179,7 +179,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} antialiased flex flex-col min-h-screen bg-background text-foreground`}
+        className={`${inter.variable} antialiased flex flex-col min-h-screen bg-mesh text-foreground selection:bg-accent selection:text-accent-foreground`}
       >
         <GoogleAnalytics />
         <LanguageProvider>

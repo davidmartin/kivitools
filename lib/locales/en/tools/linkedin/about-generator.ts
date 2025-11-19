@@ -1,0 +1,16 @@
+export const aboutGenerator = {
+    "linkedinAbout.title": "About Section Generator",
+    "linkedinAbout.description": "Write an 'About' section that tells your professional story.",
+    "linkedinAbout.form.role": "Current Role",
+    "linkedinAbout.form.rolePlaceholder": "Ex: Senior Product Designer",
+    "linkedinAbout.form.experience": "Years of Experience",
+    "linkedinAbout.form.skills": "Key Skills",
+    "linkedinAbout.form.skillsPlaceholder": "Ex: UX Research, Figma, Agile...",
+    "linkedinAbout.form.achievements": "Key Achievements (Optional)",
+    "linkedinAbout.form.achievementsPlaceholder": "Ex: Led app redesign, increased conversion by 20%...",
+    "linkedinAbout.form.generate": "Generate 'About'",
+    "linkedinAbout.form.generating": "Drafting...",
+    "linkedinAbout.result.title": "Your 'About' Section",
+    "linkedinAbout.result.copy": "Copy Text",
+    "linkedinAbout.result.copied": "Copied!",
+};

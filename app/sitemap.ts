@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://kivitools.com";
@@ -25,17 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : 0.8,
   }));
 
-  // Blog posts
-  const blogPosts = [
-    "/blog/como-escribir-guiones-virales-tiktok-2025",
-    "/blog/mejores-hashtags-tiktok-2025",
-    "/blog/caption-generator-instagram-guia-completa",
-    "/blog/como-crear-hilos-virales-twitter",
-    "/blog/herramientas-ia-redes-sociales-gratis",
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
+  // Blog Posts
+  const posts = getAllPosts();
+  const blogPosts: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly",
     priority: 0.7,
   }));
 

@@ -1,0 +1,27 @@
+export const bio_generator = {
+    // Instagram Bio Generator
+    "bioGenerator.title": "Generador de Bio para Instagram",
+    "bioGenerator.description": "Crea la bio perfecta para tu perfil de Instagram. ¡Primera impresión que cuenta!",
+    "bioGenerator.form.description": "Descripción de Ti/Tu Marca",
+    "bioGenerator.form.descriptionPlaceholder": "Cuéntanos sobre ti o tu marca...",
+    "bioGenerator.form.tone": "Tono",
+    "bioGenerator.form.language": "Idioma",
+    "bioGenerator.form.includeEmojis": "Incluir emojis",
+    "bioGenerator.form.generate": "Generar Bio",
+    "bioGenerator.form.generating": "Generando...",
+    "bioGenerator.form.useAgain": "Generar Otra",
+    "bioGenerator.form.error.emptyDescription": "Por favor ingresa una descripción",
+    "bioGenerator.result.title": "Tu Bio de Instagram",
+    "bioGenerator.result.copy": "Copiar Bio",
+    "bioGenerator.result.copied": "¡Bio copiada al portapapeles!",
+    "bioGenerator.result.success": "✓ Bio generada exitosamente",
+    "bioGenerator.features.concise.title": "📏 Concisa y Clara",
+    "bioGenerator.features.concise.description": "Bio perfectamente limitada a 150 caracteres de Instagram.",
+    "bioGenerator.features.personality.title": "✨ Con Personalidad",
+    "bioGenerator.features.personality.description": "Refleja tu personalidad o identidad de marca únicamente.",
+    "bioGenerator.features.professional.title": "🎯 Profesional",
+    "bioGenerator.features.professional.description": "Equilibra profesionalismo con un toque personal.",
+    "bioGenerator.features.instant.title": "⚡ Instantáneo",
+    "bioGenerator.features.instant.description": "Genera y usa tu nueva bio en segundos.",
+
+};

@@ -1,0 +1,26 @@
+export const transcript_generator = {
+    // TikTok Transcript Generator
+    "transcriptGenerator.title": "TikTok Transcript Generator",
+    "transcriptGenerator.description": "Transcribe the audio of any TikTok video to text. Perfect for subtitles and accessibility!",
+    "transcriptGenerator.form.videoUrl": "TikTok Video URL",
+    "transcriptGenerator.form.videoUrlPlaceholder": "Paste the video URL...",
+    "transcriptGenerator.form.language": "Audio Language",
+    "transcriptGenerator.form.generate": "Generate Transcript",
+    "transcriptGenerator.form.generating": "Transcribing...",
+    "transcriptGenerator.form.useAgain": "Transcribe Another",
+    "transcriptGenerator.form.error.emptyUrl": "Please enter a URL",
+    "transcriptGenerator.form.error.invalidUrl": "Invalid TikTok URL",
+    "transcriptGenerator.result.title": "Transcript",
+    "transcriptGenerator.result.copy": "Copy Transcript",
+    "transcriptGenerator.result.copied": "Transcript copied!",
+    "transcriptGenerator.result.success": "✓ Transcription completed",
+    "transcriptGenerator.features.accurate.title": "🎯 Accurate",
+    "transcriptGenerator.features.accurate.description": "Precise transcriptions with advanced AI.",
+    "transcriptGenerator.features.fast.title": "⚡ Fast",
+    "transcriptGenerator.features.fast.description": "Get transcripts in seconds.",
+    "transcriptGenerator.features.multilang.title": "🌍 Multi-language",
+    "transcriptGenerator.features.multilang.description": "Supports over 13 different languages.",
+    "transcriptGenerator.features.accessibility.title": "♿ Accessibility",
+    "transcriptGenerator.features.accessibility.description": "Perfect for creating accessible content.",
+
+};

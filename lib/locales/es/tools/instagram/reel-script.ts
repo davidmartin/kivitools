@@ -1,0 +1,27 @@
+export const reel_script = {
+    // Instagram Reel Script
+    "reelScript.title": "Generador de Scripts para Reels de Instagram",
+    "reelScript.description": "Crea scripts perfectos para tus Reels de Instagram. ¡Contenido viral garantizado!",
+    "reelScript.form.topic": "Tema del Reel",
+    "reelScript.form.topicPlaceholder": "¿De qué trata tu Reel?",
+    "reelScript.form.tone": "Tono",
+    "reelScript.form.duration": "Duración",
+    "reelScript.form.language": "Idioma",
+    "reelScript.form.generate": "Generar Script",
+    "reelScript.form.generating": "Generando...",
+    "reelScript.form.useAgain": "Generar Otro",
+    "reelScript.form.error.emptyTopic": "Por favor ingresa un tema",
+    "reelScript.result.title": "Script del Reel",
+    "reelScript.result.copy": "Copiar Script",
+    "reelScript.result.copied": "¡Script copiado al portapapeles!",
+    "reelScript.result.success": "✓ Script generado exitosamente",
+    "reelScript.features.engaging.title": "🎬 Contenido Atractivo",
+    "reelScript.features.engaging.description": "Scripts diseñados para mantener a los espectadores enganchados.",
+    "reelScript.features.timed.title": "⏱️ Perfectamente Cronometrado",
+    "reelScript.features.timed.description": "Scripts adaptados a tu duración elegida (15s, 30s o 60s).",
+    "reelScript.features.viral.title": "🔥 Potencial Viral",
+    "reelScript.features.viral.description": "Basados en formatos de Reels que funcionan y se vuelven virales.",
+    "reelScript.features.instant.title": "⚡ Copia y Graba",
+    "reelScript.features.instant.description": "Tu script está listo para usar inmediatamente.",
+
+};

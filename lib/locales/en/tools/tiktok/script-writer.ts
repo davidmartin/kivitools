@@ -1,0 +1,27 @@
+export const script_writer = {
+    // TikTok Script Writer
+    "scriptWriter.title": "TikTok Script Writer",
+    "scriptWriter.description": "Your brain: 💤 Our AI: 🚀 Create scripts so good your FYP will thank you.",
+    "scriptWriter.form.topic": "Topic",
+    "scriptWriter.form.topicPlaceholder": "Please enter your post topic...",
+    "scriptWriter.form.tone": "Tone",
+    "scriptWriter.form.duration": "Duration",
+    "scriptWriter.form.language": "Language",
+    "scriptWriter.form.generate": "Generate Script",
+    "scriptWriter.form.generating": "Generating...",
+    "scriptWriter.form.useAgain": "Use Again",
+    "scriptWriter.result.title": "Generated Script",
+    "scriptWriter.result.copy": "Copy Script",
+    "scriptWriter.result.copied": "Script copied to clipboard!",
+    "scriptWriter.result.success": "✓ Result generated successfully",
+    "scriptWriter.form.error.emptyTopic": "Please enter a topic",
+    "scriptWriter.features.free.title": "🚀 Free (Because Money Is Effort)",
+    "scriptWriter.features.free.description": "No credit cards, no firstborn child. Nothing. Zero. Zilch.",
+    "scriptWriter.features.smart.title": "✨ More Ideas Than Your Spotify Playlist",
+    "scriptWriter.features.smart.description": "The AI has better ideas at 3am than you after 5 coffees.",
+    "scriptWriter.features.multilang.title": "🌍 Speaks More Languages Than Duolingo",
+    "scriptWriter.features.multilang.description": "13 languages available. Your crush from another country will finally get you.",
+    "scriptWriter.features.fast.title": "⚡ Copy, Paste, Win",
+    "scriptWriter.features.fast.description": "Ctrl+C, Ctrl+V, wait for millions of views. That easy.",
+
+};

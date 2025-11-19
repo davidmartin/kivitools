@@ -1,0 +1,27 @@
+export const hook_generator = {
+    // TikTok Hook Generator
+    "hookGenerator.title": "Generador de Hooks para TikTok",
+    "hookGenerator.description": "Hooks tan buenos que la gente dejará de scrollear (sí, incluso tu ex).",
+    "hookGenerator.form.topic": "Tema del Video",
+    "hookGenerator.form.topicPlaceholder": "¿De qué trata tu video?",
+    "hookGenerator.form.tone": "Tono",
+    "hookGenerator.form.language": "Idioma",
+    "hookGenerator.form.generate": "Generar Hooks",
+    "hookGenerator.form.generating": "Generando Hooks...",
+    "hookGenerator.form.useAgain": "Generar Más Hooks",
+    "hookGenerator.form.error.emptyTopic": "Por favor ingresa un tema",
+    "hookGenerator.result.title": "Hooks Virales",
+    "hookGenerator.result.copyAll": "Copiar Todos",
+    "hookGenerator.result.copied": "¡Hook copiado al portapapeles!",
+    "hookGenerator.result.copiedAll": "¡Todos los hooks copiados al portapapeles!",
+    "hookGenerator.result.success": "✓ {count} hooks generados exitosamente",
+    "hookGenerator.features.stopScroll.title": "⚡ Detén el Scroll",
+    "hookGenerator.features.stopScroll.description": "Hooks diseñados para captar la atención en los primeros 3 segundos.",
+    "hookGenerator.features.multipleStyles.title": "🎭 Múltiples Estilos",
+    "hookGenerator.features.multipleStyles.description": "Preguntas, afirmaciones impactantes, gaps de curiosidad y más.",
+    "hookGenerator.features.proven.title": "🎯 Patrones Probados",
+    "hookGenerator.features.proven.description": "Basados en fórmulas de hooks virales que funcionan.",
+    "hookGenerator.features.copyTest.title": "📋 Copiar y Probar",
+    "hookGenerator.features.copyTest.description": "Copia cualquier hook al instante y prueba cuál funciona mejor.",
+
+};
