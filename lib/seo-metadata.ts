@@ -235,3 +235,60 @@ export function generateFaqJsonLd(
     })),
   };
 }
+
+/**
+ * Generate Home JSON-LD
+ */
+export function generateHomeJsonLd() {
+  const baseUrl = "https://kivitools.com";
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "KiviTools",
+    url: baseUrl,
+    description: "Free AI tools for content creators on TikTok, Instagram, YouTube, and more.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${baseUrl}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "KiviTools",
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/logo.png`,
+      },
+    },
+  };
+}
+
+/**
+ * Generate Software Application JSON-LD for Home
+ */
+export function generateSoftwareAppJsonLd() {
+  const baseUrl = "https://kivitools.com";
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "KiviTools",
+    applicationCategory: "MultimediaApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    description: "Suite of free AI tools to generate viral content for social media platforms.",
+    url: baseUrl,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "5000",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+}

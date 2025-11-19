@@ -6,6 +6,7 @@ export const home = {
     "home.hero.cta": "Get Started! 🚀",
     "home.hero.trusted": "Trusted by 50K+ creators",
     "home.hero.explore": "Explore Tools",
+    "home.hero.create": "Create Tool",
     "home.hero.card.title": "AI Script Generator",
     "home.hero.card.generating": "Writing viral script...",
     "home.hero.card.result": "\"Stop scrolling! This AI tool changes everything...\"",
@@ -74,4 +75,35 @@ export const home = {
     "stats.time": "Hours saved",
     "stats.platforms": "Supported platforms",
 
+    // Hero Main Title Parts
+    "home.hero.mainTitle.part1": "Create",
+    "home.hero.mainTitle.part2": "Viral Content",
+    "home.hero.mainTitle.part3": "with AI",
+
+    // Homepage - Create Tool CTA
+    "home.cta.title": "Have a great idea? Become a creator",
+    "home.cta.description": "Create your own AI tools in minutes and share them with the community. No code, completely free.",
+    "home.cta.button": "Create Tool Now",
+
+    // Homepage - FAQ
+    "home.faq.title": "Frequently Asked Questions",
+    "home.faq.subtitle": "Everything you need to know about KiviTools",
+    "home.faq.q1": "Is KiviTools really free?",
+    "home.faq.a1": "Yes, 100% free. No premium plans, no hidden limits, no surprises. Our mission is to democratize AI content creation.",
+    "home.faq.q2": "Do I need to sign up to use the tools?",
+    "home.faq.a2": "No. You can use all content generation tools without creating an account. You only need to sign up if you want to create your own tools with our Builder.",
+    "home.faq.q3": "Which platforms do you support?",
+    "home.faq.a3": "We currently support TikTok, Instagram, Twitter, YouTube, Snapchat, Reddit, Discord, Twitch, Suno, ElevenLabs, LinkedIn, and Forocoches. And we keep adding more.",
+    "home.faq.q4": "Can I create my own tools?",
+    "home.faq.a4": "Yes! With our 'Tool Builder' you can create your own custom AI tools in minutes and share them with the community. It's very easy and requires no coding skills.",
+    "home.faq.q5": "Does the AI generate original content?",
+    "home.faq.a5": "Yes, every time you use a tool, the AI generates unique content based on your inputs. These are not predefined templates.",
+
+    // Homepage - Popular Tools
+    "home.popularTools.title": "Most Popular Tools",
+    "home.popularTools.description": "Community favorites. Start here if you don't know which one to choose.",
+
+    // Homepage - SEO Footer
+    "home.seoFooter.title": "The Best AI Tool Suite for Creators",
+    "home.seoFooter.text": "KiviTools is the ultimate platform for content creators looking to boost their digital presence with Artificial Intelligence. We offer a wide range of free tools designed specifically for TikTok, Instagram, YouTube, Twitter, Twitch, and more. From viral script generators and automatic captions to video ideas and profile optimization, our AI technology helps you overcome creative block and increase your engagement. With no mandatory signups or hidden costs, KiviTools democratizes access to professional content creation tools for influencers, brands, and digital marketing agencies.",
 };

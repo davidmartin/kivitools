@@ -6,6 +6,7 @@ import Footer from "./components/footer";
 import Breadcrumbs from "./components/breadcrumbs";
 import Script from "next/script";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "./components/google-analytics";
@@ -183,10 +184,12 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         <LanguageProvider>
-          <Navigation />
-          <Breadcrumbs />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <AuthProvider>
+            <Navigation />
+            <Breadcrumbs />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </AuthProvider>
         </LanguageProvider>
         <Analytics />
         <SpeedInsights />

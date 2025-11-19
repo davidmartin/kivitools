@@ -6,6 +6,7 @@ export const home = {
     "home.hero.cta": "¡Empezar ahora! 🚀",
     "home.hero.trusted": "Con la confianza de +50K creadores",
     "home.hero.explore": "Explorar Herramientas",
+    "home.hero.create": "Crear Herramienta",
     "home.hero.card.title": "Generador de Guiones IA",
     "home.hero.card.generating": "Redactando guion viral...",
     "home.hero.card.result": "\"¡Deja de hacer scroll! Esta IA lo cambia todo...\"",
@@ -74,4 +75,35 @@ export const home = {
     "stats.time": "Horas ahorradas",
     "stats.platforms": "Plataformas soportadas",
 
+    // Hero Main Title Parts
+    "home.hero.mainTitle.part1": "Crea",
+    "home.hero.mainTitle.part2": "Contenido Viral",
+    "home.hero.mainTitle.part3": "con IA",
+
+    // Homepage - Create Tool CTA
+    "home.cta.title": "¿Tienes una idea genial? Conviértete en creador",
+    "home.cta.description": "Crea tus propias herramientas con IA en minutos y compártelas con la comunidad. Sin código, totalmente gratis.",
+    "home.cta.button": "Crear Herramienta Ahora",
+
+    // Homepage - FAQ
+    "home.faq.title": "Preguntas Frecuentes",
+    "home.faq.subtitle": "Todo lo que necesitas saber sobre KiviTools",
+    "home.faq.q1": "¿Es KiviTools realmente gratis?",
+    "home.faq.a1": "Sí, 100% gratis. No hay planes premium, ni límites ocultos, ni sorpresas. Nuestra misión es democratizar la creación de contenido con IA.",
+    "home.faq.q2": "¿Necesito registrarme para usar las herramientas?",
+    "home.faq.a2": "No. Puedes usar todas las herramientas de generación de contenido sin crear una cuenta. Solo necesitas registrarte si quieres crear tus propias herramientas con nuestro Builder.",
+    "home.faq.q3": "¿Qué plataformas soportáis?",
+    "home.faq.a3": "Actualmente soportamos TikTok, Instagram, Twitter, YouTube, Snapchat, Reddit, Discord, Twitch, Suno, ElevenLabs, LinkedIn y Forocoches. Y seguimos añadiendo más.",
+    "home.faq.q4": "¿Puedo crear mis propias herramientas?",
+    "home.faq.a4": "¡Sí! Con nuestro 'Tool Builder' puedes crear tus propias herramientas de IA personalizadas en minutos y compartirlas con la comunidad. Es muy fácil y no requiere saber programar.",
+    "home.faq.q5": "¿La IA genera contenido original?",
+    "home.faq.a5": "Sí, cada vez que usas una herramienta, la IA genera contenido único basado en tus inputs. No son plantillas predefinidas.",
+
+    // Homepage - Popular Tools
+    "home.popularTools.title": "Herramientas Más Populares",
+    "home.popularTools.description": "Las favoritas de la comunidad. Empieza por aquí si no sabes cuál elegir.",
+
+    // Homepage - SEO Footer
+    "home.seoFooter.title": "La Mejor Suite de Herramientas IA para Creadores",
+    "home.seoFooter.text": "KiviTools es la plataforma definitiva para creadores de contenido que buscan potenciar su presencia digital con Inteligencia Artificial. Ofrecemos una amplia gama de herramientas gratuitas diseñadas específicamente para TikTok, Instagram, YouTube, Twitter, Twitch y más. Desde generadores de guiones virales y subtítulos automáticos hasta ideas para vídeos y optimización de perfiles, nuestra tecnología IA te ayuda a superar el bloqueo creativo y aumentar tu engagement. Sin registros obligatorios ni costes ocultos, KiviTools democratiza el acceso a herramientas profesionales de creación de contenido para influencers, marcas y agencias de marketing digital.",
 };

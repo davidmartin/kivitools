@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Card } from "@heroui/react";
 import PlatformLogo from "@/app/components/platform-logo";
 import { useLanguage } from "@/contexts/LanguageContext";
+import CustomToolsList from "@/app/components/custom-tools-list";
 
 export default function TwitterToolsPage() {
   const { t } = useLanguage();
@@ -83,6 +84,8 @@ export default function TwitterToolsPage() {
             </Link>
           ))}
         </div>
+
+        <CustomToolsList platform="twitter" />
       </div>
     </div>
   );

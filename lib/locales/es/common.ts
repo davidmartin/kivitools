@@ -16,6 +16,10 @@ export const common = {
     "nav.linkedin": "LinkedIn",
     "nav.forocoches": "Forocoches",
     "nav.suggestTool": "Sugerir Herramienta",
+    "nav.login": "Iniciar Sesión",
+    "nav.logout": "Cerrar Sesión",
+    "nav.dashboard": "Panel",
+    "nav.createTool": "Crear Tool",
 
     // Voice Styles
     "voiceStyles.narration": "Narración",
@@ -109,6 +113,8 @@ export const common = {
     "common.copied": "¡Copiado! 🎉 ¡Ahora a ser viral!",
     "common.copyFailed": "Error al copiar (prueba Ctrl+C a la antigua)",
     "common.explore": "Explorar",
+    "common.communityTools": "Herramientas de la Comunidad",
+    "common.by": "por",
 
     // Cloudflare Turnstile
     "turnstile.verifying": "Verificando que eres humano...",
@@ -116,4 +122,14 @@ export const common = {
     "turnstile.expired": "Verificación expirada. Por favor intenta de nuevo.",
     "turnstile.failed": "Verificación fallida. Asegúrate de no ser un robot. 🤖",
     "turnstile.blocked": "Solicitud bloqueada por protección anti-bot.",
+
+    // Auth
+    "auth.login.title": "Iniciar Sesión",
+    "auth.login.google": "Iniciar sesión con Google",
+    "auth.login.noAccount": "¿No tienes una cuenta?",
+    "auth.login.registerLink": "Regístrate",
+    "auth.register.title": "Registro",
+    "auth.register.google": "Registrarse con Google",
+    "auth.register.hasAccount": "¿Ya tienes una cuenta?",
+    "auth.register.loginLink": "Inicia Sesión",
 };

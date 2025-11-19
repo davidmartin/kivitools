@@ -2598,3 +2598,98 @@ Write ONLY the About section text.`;
         );
     }
 }
+
+// Custom Tool Content Generator
+export async function generateCustomToolContent({
+    promptTemplate,
+    inputs
+}: {
+    promptTemplate: string;
+    inputs: Record<string, any>;
+}): Promise<string> {
+    // 1. Interpolate inputs into prompt
+    let finalPrompt = promptTemplate;
+    for (const [key, value] of Object.entries(inputs)) {
+        // Replace {{key}} with value
+        finalPrompt = finalPrompt.replace(new RegExp(`{{${key}}}`, 'g'), String(value));
+    }
+
+    // 2. Call DeepSeek
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: "You are a helpful AI assistant. Follow the user's instructions precisely." },
+                { role: "user", content: finalPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.8,
+            max_tokens: 1000,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim();
+
+        if (!content) {
+            throw new Error("No content generated");
+        }
+
+        return content;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate content"
+        );
+    }
+}
+
+// Nueva función para generar captions de TikTok
+export async function generateTikTokCaption({
+    topic,
+    tone,
+    language,
+}: {
+    topic: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert social media manager specializing in TikTok.
+Create an engaging, viral-worthy TikTok caption about the user's topic.
+
+Requirements:
+- Write in a ${tone} tone
+- Use relevant emojis
+- Include 3-5 relevant hashtags at the end
+- Keep it concise and readable
+- Encourage engagement (questions, call to action)
+- Write ONLY in ${targetLanguage}
+
+Return ONLY the caption text.`;
+
+    const userPrompt = `Write a post about ${topic}`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.9,
+            max_tokens: 300,
+        });
+
+        const caption = completion.choices[0]?.message?.content?.trim();
+
+        if (!caption) {
+            throw new Error("No caption generated");
+        }
+
+        return caption;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate caption"
+        );
+    }
+}

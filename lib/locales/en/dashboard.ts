@@ -1,0 +1,16 @@
+export const dashboard = {
+    "dashboard.title": "My Tools",
+    "dashboard.subtitle": "Manage your AI tools and check their status.",
+    "dashboard.createTool": "Create New Tool",
+    "dashboard.empty.title": "No tools yet",
+    "dashboard.empty.description": "Start creating your own AI tools to share with the community.",
+    "dashboard.empty.button": "Start Building",
+    "dashboard.actions.view": "View",
+    "dashboard.actions.delete": "Delete",
+    "dashboard.confirmDelete": "Are you sure you want to delete this tool?",
+    "dashboard.errorDelete": "Failed to delete tool",
+    "dashboard.errorFetch": "Failed to fetch user tools",
+    "dashboard.status.pending": "Pending",
+    "dashboard.status.approved": "Approved",
+    "dashboard.status.rejected": "Rejected",
+};

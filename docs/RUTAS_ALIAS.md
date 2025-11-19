@@ -28,6 +28,7 @@ Ambas URLs funcionan y muestran **exactamente el mismo contenido**.
 | `/tiktok/video-ideas`           | `/tiktok/ideas-de-videos`         |
 | `/tiktok/hook-generator`        | `/tiktok/generador-de-ganchos`    |
 | `/tiktok/hashtag-generator`     | `/tiktok/generador-de-hashtags`   |
+| `/tiktok/caption-generator`     | `/tiktok/generador-subtitulos`    |
 | `/tiktok/username-generator`    | `/tiktok/generador-de-nombres`    |
 | `/tiktok/shop-name-generator`   | `/tiktok/generador-nombre-tienda` |
 | `/tiktok/coins-calculator`      | `/tiktok/calculadora-monedas`     |

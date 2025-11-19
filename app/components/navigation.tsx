@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 import { Button, Popover } from "@heroui/react";
 import ThemeToggle from "./theme-toggle";
 import PlatformLogo from "./platform-logo";
@@ -13,6 +15,8 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { user, loading, logout } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -175,14 +179,6 @@ export default function Navigation() {
               Blog
             </Link>
 
-            {/* Suggest Tool Link */}
-            <Link
-              href="/suggest-tool"
-              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full transition-all duration-200"
-            >
-              {t("nav.suggestTool")}
-            </Link>
-
             {/* Platforms Dropdown */}
             <Popover>
               <Button
@@ -223,6 +219,40 @@ export default function Navigation() {
               </Popover.Content>
             </Popover>
 
+            {/* Auth Buttons (Desktop) */}
+            {!loading && (
+              <>
+                {user && user.labels?.includes("admin") && (
+                  <Button 
+                    size="sm" 
+                    variant="ghost" 
+                    className="rounded-full font-medium text-danger hover:text-danger-600"
+                    onPress={() => router.push("/admin")}
+                  >
+                    Admin
+                  </Button>
+                )}
+                {user && (
+                  <Button 
+                    size="sm" 
+                    variant="ghost" 
+                    className="rounded-full font-medium text-foreground/80 hover:text-foreground"
+                    onPress={() => router.push("/dashboard")}
+                  >
+                    {t("nav.dashboard")}
+                  </Button>
+                )}
+                <Button 
+                  size="sm" 
+                  variant="primary" 
+                  className="rounded-full font-medium"
+                  onPress={() => router.push(user ? "/builder" : "/login")}
+                >
+                  {t("nav.createTool")}
+                </Button>
+              </>
+            )}
+
             <div className="w-px h-6 bg-border/50 mx-2" />
 
             {/* Language Selector */}
@@ -237,8 +267,32 @@ export default function Navigation() {
             </Button>
 
             {/* Theme Toggle */}
-            <div className="ml-1">
+            <div className="ml-1 flex items-center gap-1">
               <ThemeToggle />
+
+              {/* Auth Icon Button */}
+              {!loading && (
+                <Button
+                  isIconOnly
+                  variant="ghost"
+                  size="sm"
+                  className="text-foreground/80 hover:bg-surface/50 rounded-full"
+                  onPress={user ? logout : () => router.push("/login")}
+                  aria-label={user ? t("nav.logout") : t("nav.login")}
+                >
+                  {user ? (
+                    // Logout Icon
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                  ) : (
+                    // Login Icon
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                    </svg>
+                  )}
+                </Button>
+              )}
             </div>
           </div>
 
@@ -255,6 +309,28 @@ export default function Navigation() {
             </Button>
 
             <ThemeToggle />
+
+            {/* Auth Icon Button (Mobile) */}
+            {!loading && (
+              <Button
+                isIconOnly
+                variant="ghost"
+                size="sm"
+                className="text-foreground/80 hover:bg-surface/50 rounded-full"
+                onPress={user ? logout : () => router.push("/login")}
+                aria-label={user ? t("nav.logout") : t("nav.login")}
+              >
+                {user ? (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                  </svg>
+                )}
+              </Button>
+            )}
 
             <Button
               variant="ghost"
@@ -302,13 +378,43 @@ export default function Navigation() {
                   Blog
                 </Link>
 
-                <Link
-                  href="/suggest-tool"
-                  className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-foreground hover:bg-foreground/5 rounded-xl transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t("nav.suggestTool")}
-                </Link>
+                {!loading && (
+                  user ? (
+                    <>
+                      {user.labels?.includes("admin") && (
+                        <Link
+                          href="/admin"
+                          className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-danger hover:bg-danger/10 rounded-xl transition-colors"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Admin Panel
+                        </Link>
+                      )}
+                      <Link
+                        href="/builder"
+                        className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-primary hover:bg-primary/10 rounded-xl transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {t("nav.createTool")}
+                      </Link>
+                      <Link
+                        href="/dashboard"
+                        className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-foreground hover:bg-foreground/5 rounded-xl transition-colors"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {t("nav.dashboard")}
+                      </Link>
+                    </>
+                  ) : (
+                    <Link
+                      href="/login"
+                      className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-foreground hover:bg-foreground/5 rounded-xl transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t("nav.login")}
+                    </Link>
+                  )
+                )}
               </div>
 
               <div className="h-px bg-border/50" />

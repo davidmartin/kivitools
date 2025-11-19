@@ -15,6 +15,7 @@ import { engagement_calculator } from "./engagement-calculator";
 import { mp3_downloader } from "./mp3-downloader";
 import { money_calculator } from "./money-calculator";
 import { username_checker } from "./username-checker";
+import { caption_generator } from "./caption-generator";
 
 export const tiktok = {
   ...script_writer,
@@ -34,4 +35,5 @@ export const tiktok = {
   ...mp3_downloader,
   ...money_calculator,
   ...username_checker,
+  ...caption_generator,
 };

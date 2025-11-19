@@ -62,6 +62,7 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 | **Video Ideas Generator** | Genera ideas frescas para videos    | Tema, idioma                 | Lista de 5-10 ideas listas para copiar     | ✅     |
 | **Script Writer**         | Crea guiones completos para videos  | Tema, tono, duración, idioma | Guion estructurado con intro/cuerpo/cierre | ✅     |
 | **Hook Generator**        | Genera frases de inicio impactantes | Tema, tono, idioma           | 5-10 hooks listos para copiar              | ✅     |
+| **Caption Generator**     | Genera descripciones virales        | Tema, tono, idioma           | Caption optimizado con hashtags            | ✅     |
 | **Hashtag Generator**     | Busca hashtags relevantes           | Palabra clave                | Lista de hashtags con visualizaciones      | ✅     |
 
 #### Username & Branding
@@ -1105,7 +1106,7 @@ Usar sistema de 4px:
 - [ ] 500+ usuarios únicos en primera semana
 - [ ] 90+ Lighthouse score (performance & accessibility)
 - [ ] < 1% error rate en generación de contenido
-- [ ] Featured en Product Hunt o similar
+- [ ] Featured in Product Hunt o similar
 
 ### Phase 2 Success (Week 8)
 

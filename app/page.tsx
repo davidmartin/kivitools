@@ -1,13 +1,38 @@
 "use client";
 
 import Link from "next/link";
-import { Card } from "@heroui/react";
+import { Card, Accordion } from "@heroui/react";
+import LatestTools from "./components/latest-tools";
 import AdSlot from "./components/ad-slot";
 import PlatformLogo from "./components/platform-logo";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
+import { generateHomeJsonLd, generateSoftwareAppJsonLd, generateFaqJsonLd } from "@/lib/seo-metadata";
 
 export default function Home() {
   const { t } = useLanguage();
+  const { user } = useAuth();
+  const router = useRouter();
+
+  // SEO Data
+  const homeJsonLd = generateHomeJsonLd();
+  const softwareAppJsonLd = generateSoftwareAppJsonLd();
+  
+  const faqs = [
+    { q: "home.faq.q1", a: "home.faq.a1" },
+    { q: "home.faq.q2", a: "home.faq.a2" },
+    { q: "home.faq.q3", a: "home.faq.a3" },
+    { q: "home.faq.q4", a: "home.faq.a4" },
+    { q: "home.faq.q5", a: "home.faq.a5" },
+  ];
+
+  const faqJsonLd = generateFaqJsonLd(
+    faqs.map(item => ({
+      question: t(item.q),
+      answer: t(item.a)
+    }))
+  );
 
   // Plataformas disponibles
   const platforms = [
@@ -96,8 +121,67 @@ export default function Home() {
       color: "blue",
     },
   ];
+
+  // Popular Tools
+  const popularTools = [
+    {
+      name: t("scriptWriter.title"),
+      description: t("scriptWriter.description"),
+      href: "/tiktok/script-writer",
+      icon: "🎵",
+      iconClass: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+    },
+    {
+      name: t("bioGenerator.title"),
+      description: t("bioGenerator.description"),
+      href: "/instagram/bio-generator",
+      icon: "📸",
+      iconClass: "bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400",
+    },
+    {
+      name: t("youtubeTitle.title"),
+      description: t("youtubeTitle.description"),
+      href: "/youtube/title-generator",
+      icon: "🎥",
+      iconClass: "bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400",
+    },
+    {
+      name: t("moneyCalculator.title"),
+      description: t("moneyCalculator.description"),
+      href: "/tiktok/money-calculator",
+      icon: "💰",
+      iconClass: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+    },
+    {
+      name: t("captionGenerator.title"),
+      description: t("captionGenerator.description"),
+      href: "/instagram/caption-generator",
+      icon: "📝",
+      iconClass: "bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400",
+    },
+    {
+      name: t("videoIdeas.title"),
+      description: t("videoIdeas.description"),
+      href: "/tiktok/video-ideas",
+      icon: "💡",
+      iconClass: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden pt-6 md:pt-12">
         {/* Dynamic Background Elements */}
@@ -118,9 +202,9 @@ export default function Home() {
             </div>
 
             <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-foreground mb-8 animate-slide-up leading-[0.9]">
-              Create
-              <span className="block text-gradient">Viral Content</span>
-              with AI
+              {t("home.hero.mainTitle.part1")}
+              <span className="block text-gradient">{t("home.hero.mainTitle.part2")}</span>
+              {t("home.hero.mainTitle.part3")}
             </h1>
 
             <p className="text-xl md:text-2xl text-muted max-w-xl mb-10 animate-slide-up leading-relaxed" style={{ animationDelay: "0.2s" }}>
@@ -136,20 +220,20 @@ export default function Home() {
                   {t("home.hero.cta")}
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-20 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-r from-primary to-secondary opacity-0 group-hover:opacity-20 transition-opacity" />
               </Link>
-              <Link
-                href="#tools"
-                className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-foreground rounded-full font-bold text-lg backdrop-blur-sm transition-all hover:scale-105"
+              <button
+                onClick={() => router.push(user ? "/builder" : "/login")}
+                className="px-8 py-4 bg-foreground/5 hover:bg-foreground/10 border border-foreground/10 text-foreground rounded-full font-bold text-lg backdrop-blur-sm transition-all hover:scale-105"
               >
-                {t("home.hero.explore")}
-              </Link>
+                {t("home.hero.create")}
+              </button>
             </div>
           </div>
 
           {/* Visual Hook - Floating Glass Card */}
           <div className="hidden lg:block relative animate-float" style={{ animationDelay: "0.5s" }}>
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-30 animate-pulse-glow" />
+            <div className="absolute -inset-1 bg-linear-to-r from-primary to-secondary rounded-2xl blur opacity-30 animate-pulse-glow" />
             <Card className="relative glass-card border-border/50 bg-surface/40 backdrop-blur-xl p-6 transform rotate-[-5deg] hover:rotate-0 transition-transform duration-500">
               <Card.Header className="pb-4 border-b border-border/10">
                 <div className="flex items-center justify-between w-full">
@@ -197,95 +281,71 @@ export default function Home() {
       </div>
 
       {/* Latest Tools Section */}
-      <section id="tools" className="py-20 px-4">
+      <LatestTools />
+
+      {/* Popular Tools Section */}
+      <section className="py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {t("home.latestTools.title")}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              {t("home.popularTools.title")}
             </h2>
-            <p className="text-xl text-muted max-w-2xl mx-auto">
-              {t("home.latestTools.description")}
+            <p className="text-xl text-muted">
+              {t("home.popularTools.description")}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Podcast Script Generator */}
-            <Link
-              href="/elevenlabs/podcast-script"
-              className="group block h-full"
-            >
-              <Card className="glass-card h-full border-white/10 bg-white/5">
-                <Card.Header>
-                  <div className="w-full">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-bold backdrop-blur-md border border-purple-500/20">
-                        🎙️ ElevenLabs
-                      </div>
+            {popularTools.map((tool, index) => (
+              <Link
+                key={index}
+                href={tool.href}
+                className="group block h-full"
+              >
+                <Card className="glass-card h-full border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
+                  <Card.Header className="flex flex-row items-center gap-4 pt-6 px-6">
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl ${tool.iconClass}`}>
+                      {tool.icon}
                     </div>
-                    <Card.Title className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {t("podcastScript.title")}
+                    <Card.Title className="text-xl font-bold group-hover:text-primary transition-colors">
+                      {tool.name}
                     </Card.Title>
-                  </div>
-                </Card.Header>
-                <Card.Content>
-                  <Card.Description className="text-muted text-base">
-                    {t("podcastScript.description")}
-                  </Card.Description>
-                </Card.Content>
-              </Card>
-            </Link>
+                  </Card.Header>
+                  <Card.Content className="px-6 pb-6">
+                    <Card.Description className="text-muted text-base">
+                      {tool.description}
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Ad Script Generator */}
-            <Link
-              href="/elevenlabs/ad-script"
-              className="group block h-full"
-            >
-              <Card className="glass-card h-full border-white/10 bg-white/5">
-                <Card.Header>
-                  <div className="w-full">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-bold backdrop-blur-md border border-purple-500/20">
-                        🎙️ ElevenLabs
-                      </div>
-                    </div>
-                    <Card.Title className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {t("adScript.title")}
-                    </Card.Title>
-                  </div>
-                </Card.Header>
-                <Card.Content>
-                  <Card.Description className="text-muted text-base">
-                    {t("adScript.description")}
-                  </Card.Description>
-                </Card.Content>
-              </Card>
-            </Link>
-
-            {/* Audiobook Optimizer */}
-            <Link
-              href="/elevenlabs/audiobook-optimizer"
-              className="group block h-full"
-            >
-              <Card className="glass-card h-full border-white/10 bg-white/5">
-                <Card.Header>
-                  <div className="w-full">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-bold backdrop-blur-md border border-purple-500/20">
-                        🎙️ ElevenLabs
-                      </div>
-                    </div>
-                    <Card.Title className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {t("audiobookOptimizer.title")}
-                    </Card.Title>
-                  </div>
-                </Card.Header>
-                <Card.Content>
-                  <Card.Description className="text-muted text-base">
-                    {t("audiobookOptimizer.description")}
-                  </Card.Description>
-                </Card.Content>
-              </Card>
-            </Link>
+      {/* Create Tool CTA Section */}
+      <section className="py-12 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary/10 via-surface to-secondary/10 border border-border/50 p-8 md:p-12 text-center">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-full h-full bg-surface/30 backdrop-blur-sm z-0" />
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-50 animate-pulse-slow" />
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/20 rounded-full blur-3xl opacity-50 animate-pulse-slow" style={{ animationDelay: "2s" }} />
+            
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                {t("home.cta.title")}
+              </h2>
+              <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-8">
+                {t("home.cta.description")}
+              </p>
+              <button
+                onClick={() => router.push(user ? "/builder" : "/login")}
+                className="px-8 py-4 bg-foreground text-background hover:bg-foreground/90 rounded-full font-bold text-lg transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                {t("home.cta.button")}
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -449,6 +509,54 @@ export default function Home() {
                 </Card.Content>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-surface/30">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              {t("home.faq.title")}
+            </h2>
+            <p className="text-muted text-lg">
+              {t("home.faq.subtitle")}
+            </p>
+          </div>
+          
+          <Accordion className="w-full" variant="surface">
+            {faqs.map((faq, index) => (
+              <Accordion.Item key={index} className="group mb-2 rounded-xl border border-white/5 bg-white/5 px-2 data-[open=true]:bg-white/10 transition-colors">
+                <Accordion.Heading>
+                  <Accordion.Trigger className="py-4 text-lg font-medium text-foreground">
+                    {t(faq.q)}
+                    <Accordion.Indicator className="text-muted group-data-[open=true]:rotate-180 transition-transform">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </Accordion.Indicator>
+                  </Accordion.Trigger>
+                </Accordion.Heading>
+                <Accordion.Panel>
+                  <Accordion.Body className="pb-4 text-muted leading-relaxed">
+                    {t(faq.a)}
+                  </Accordion.Body>
+                </Accordion.Panel>
+              </Accordion.Item>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* SEO Footer Section */}
+      <section className="py-12 px-4 border-t border-border/10 bg-surface/5">
+        <div className="max-w-5xl mx-auto text-center opacity-40 hover:opacity-100 transition-opacity duration-500">
+          <h2 className="text-lg font-semibold text-foreground mb-4">
+            {t("home.seoFooter.title")}
+          </h2>
+          <div className="text-muted leading-relaxed space-y-4 text-xs md:text-sm">
+            <p>{t("home.seoFooter.text")}</p>
           </div>
         </div>
       </section>

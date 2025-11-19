@@ -1,0 +1,16 @@
+export const dashboard = {
+    "dashboard.title": "Mis Herramientas",
+    "dashboard.subtitle": "Gestiona tus herramientas de IA y verifica su estado.",
+    "dashboard.createTool": "Crear Nueva Herramienta",
+    "dashboard.empty.title": "Aún no hay herramientas",
+    "dashboard.empty.description": "Comienza a crear tus propias herramientas de IA para compartir con la comunidad.",
+    "dashboard.empty.button": "Comenzar a Construir",
+    "dashboard.actions.view": "Ver",
+    "dashboard.actions.delete": "Eliminar",
+    "dashboard.confirmDelete": "¿Estás seguro de que quieres eliminar esta herramienta?",
+    "dashboard.errorDelete": "Error al eliminar la herramienta",
+    "dashboard.errorFetch": "Error al obtener las herramientas del usuario",
+    "dashboard.status.pending": "Pendiente",
+    "dashboard.status.approved": "Aprobada",
+    "dashboard.status.rejected": "Rechazada",
+};

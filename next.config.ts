@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
       { source: "/tiktok/ideas-de-videos", destination: "/tiktok/video-ideas" },
       { source: "/tiktok/generador-de-ganchos", destination: "/tiktok/hook-generator" },
       { source: "/tiktok/generador-de-hashtags", destination: "/tiktok/hashtag-generator" },
+      { source: "/tiktok/generador-subtitulos", destination: "/tiktok/caption-generator" },
       { source: "/tiktok/generador-de-nombres", destination: "/tiktok/username-generator" },
       { source: "/tiktok/generador-nombre-tienda", destination: "/tiktok/shop-name-generator" },
       { source: "/tiktok/calculadora-monedas", destination: "/tiktok/coins-calculator" },

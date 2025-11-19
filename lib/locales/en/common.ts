@@ -16,6 +16,10 @@ export const common = {
     "nav.linkedin": "LinkedIn",
     "nav.forocoches": "Forocoches",
     "nav.suggestTool": "Suggest Tool",
+    "nav.login": "Login",
+    "nav.logout": "Logout",
+    "nav.dashboard": "Dashboard",
+    "nav.createTool": "Create Tool",
 
     // Voice Styles
     "voiceStyles.narration": "Narration",
@@ -107,8 +111,10 @@ export const common = {
     "common.error": "Oops! Something went wrong (not your fault, probably)",
     "common.required": "This field is required (we know, annoying)",
     "common.copied": "Copied! 🎉 Now go be viral!",
-    "common.copyFailed": "Copy failed (try Ctrl+C like in the old days)",
+    "common.copyFailed": "Failed to copy (try Ctrl+C old school style)",
     "common.explore": "Explore",
+    "common.communityTools": "Community Tools",
+    "common.by": "by",
 
     // Cloudflare Turnstile
     "turnstile.verifying": "Verifying you're human...",
@@ -116,4 +122,14 @@ export const common = {
     "turnstile.expired": "Verification expired. Please try again.",
     "turnstile.failed": "Verification failed. Make sure you're not a bot. 🤖",
     "turnstile.blocked": "Request blocked by anti-bot protection.",
+
+    // Auth
+    "auth.login.title": "Login",
+    "auth.login.google": "Sign in with Google",
+    "auth.login.noAccount": "Don't have an account?",
+    "auth.login.registerLink": "Register",
+    "auth.register.title": "Register",
+    "auth.register.google": "Sign up with Google",
+    "auth.register.hasAccount": "Already have an account?",
+    "auth.register.loginLink": "Login",
 };
