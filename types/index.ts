@@ -481,3 +481,18 @@ export const VIDEO_TYPES = [
     { value: "commercial", labelKey: "videoTypes.commercial" },
     { value: "explainer", labelKey: "videoTypes.explainer" },
 ] as const;
+
+// Amazon Product Description Generator Types
+export interface ProductDescriptionGeneratorRequest extends BaseToolRequest {
+    productName: string;
+    features: string;
+    tone: string;
+    targetAudience: string;
+    language: string;
+}
+
+export interface ProductDescriptionGeneratorResponse {
+    success: boolean;
+    description?: string;
+    error?: string;
+}

@@ -114,6 +114,13 @@ export default function Home() {
       color: "green",
     },
     {
+      name: "Amazon",
+      description: t("amazon.page.description"),
+      href: "/amazon",
+      icon: "🛒",
+      color: "orange",
+    },
+    {
       name: "LinkedIn",
       description: t("linkedin.page.description"),
       href: "/linkedin",

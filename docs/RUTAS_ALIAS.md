@@ -20,6 +20,14 @@ Ambas URLs funcionan y muestran **exactamente el mismo contenido**.
 
 ## Rutas Disponibles por Plataforma
 
+### 🛒 Amazon
+
+| Inglés                                  | Español                                   |
+| --------------------------------------- | ----------------------------------------- |
+| `/amazon/product-description-generator` | `/amazon/generador-descripcion-producto`  |
+| `/amazon/product-review-generator`      | `/amazon/generador-resenas-producto`      |
+| `/amazon/product-comparison-generator`  | `/amazon/generador-comparativa-productos` |
+
 ### 🎵 TikTok
 
 | Inglés                          | Español                           |

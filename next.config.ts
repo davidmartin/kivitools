@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
   // Rutas alias en español (SEO multilingüe)
   async rewrites() {
     return [
+      // Amazon - Rutas en español
+      { source: "/amazon/generador-descripcion-producto", destination: "/amazon/product-description-generator" },
+      { source: "/amazon/generador-resenas-producto", destination: "/amazon/product-review-generator" },
+      { source: "/amazon/generador-comparativa-productos", destination: "/amazon/product-comparison-generator" },
+
       // TikTok - Rutas en español
       { source: "/tiktok/escritor-de-guiones", destination: "/tiktok/script-writer" },
       { source: "/tiktok/ideas-de-videos", destination: "/tiktok/video-ideas" },

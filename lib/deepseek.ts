@@ -915,7 +915,7 @@ export async function generateForocochesTroll({
     comment: string;
     intensity: string;
 }): Promise<string> {
-    const systemPrompt = `You are a witty Forocoches troll. Generate a reply to a comment that is:
+    const systemPrompt = `You are a witty Forocoches troll.
 - Sarcastic, funny, or "zasca" (burn)
 - Uses Forocoches slang
 - Matches the intensity: ${intensity}
@@ -2641,6 +2641,73 @@ export async function generateCustomToolContent({
     }
 }
 
+// Amazon Product Description Generator
+export async function generateAmazonProductDescription({
+    productName,
+    features,
+    tone,
+    targetAudience,
+    language,
+}: {
+    productName: string;
+    features: string;
+    tone: string;
+    targetAudience: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert Amazon copywriter. Create high-converting product descriptions that:
+- Use persuasive language and psychological triggers
+- Highlight benefits over features
+- Are optimized for Amazon SEO (keywords)
+- Use bullet points for readability
+- Address potential objections
+- Match the requested tone and target audience
+
+Structure:
+1. Catchy Headline
+2. 5 Key Benefit Bullet Points (Feature -> Benefit)
+3. Detailed Product Description (Paragraphs)
+4. Technical Specifications (if applicable)
+
+IMPORTANT: Write ONLY in ${targetLanguage}. Do not include any other language.`;
+
+    const userPrompt = `Create an Amazon product description for: ${productName}
+
+Key Features: ${features}
+Target Audience: ${targetAudience}
+Tone: ${tone}
+Language: ${targetLanguage}
+
+Generate a complete, formatted description ready to copy and paste.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.8,
+            max_tokens: 1000,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim();
+
+        if (!content) {
+            throw new Error("No description generated");
+        }
+
+        return content;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate description"
+        );
+    }
+}
+
 // Nueva función para generar captions de TikTok
 export async function generateTikTokCaption({
     topic,
@@ -2690,6 +2757,121 @@ Return ONLY the caption text.`;
         console.error("DeepSeek API error:", error);
         throw new Error(
             error instanceof Error ? error.message : "Failed to generate caption"
+        );
+    }
+}
+
+// Amazon Product Review Generator
+export async function generateAmazonProductReview({
+    productName,
+    features,
+    rating,
+    tone,
+    language,
+}: {
+    productName: string;
+    features: string;
+    rating: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert product reviewer. Write a detailed, authentic, and helpful product review for Amazon.
+- Base the review on the provided product name and features.
+- Reflect the rating given (${rating}/5 stars).
+- Use a ${tone} tone.
+- Include pros and cons if appropriate for the rating.
+- Make it sound like a real user experience.
+- Write ONLY in ${targetLanguage}.`;
+
+    const userPrompt = `Product: ${productName}
+Features: ${features}
+Rating: ${rating} Stars
+Tone: ${tone}
+Language: ${targetLanguage}
+
+Write a comprehensive review.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.8,
+            max_tokens: 600,
+        });
+
+        const review = completion.choices[0]?.message?.content?.trim();
+
+        if (!review) {
+            throw new Error("No review generated");
+        }
+
+        return review;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate review"
+        );
+    }
+}
+
+// Amazon Product Comparison Generator
+export async function generateAmazonProductComparison({
+    productA,
+    productB,
+    criteria,
+    tone,
+    language,
+}: {
+    productA: string;
+    productB: string;
+    criteria: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a product comparison expert. Create a detailed comparison between two products.
+- Compare ${productA} vs ${productB}.
+- Focus on these criteria: ${criteria || "Key features, performance, price value, pros and cons"}.
+- Use a ${tone} tone.
+- Be objective and helpful for a buyer deciding between the two.
+- Structure with clear headings or bullet points.
+- Write ONLY in ${targetLanguage}.`;
+
+    const userPrompt = `Compare: ${productA} vs ${productB}
+Criteria: ${criteria}
+Tone: ${tone}
+Language: ${targetLanguage}
+
+Write a detailed comparison.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            model: "deepseek-chat",
+            temperature: 0.8,
+            max_tokens: 800,
+        });
+
+        const comparison = completion.choices[0]?.message?.content?.trim();
+
+        if (!comparison) {
+            throw new Error("No comparison generated");
+        }
+
+        return comparison;
+    } catch (error) {
+        console.error("DeepSeek API error:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate comparison"
         );
     }
 }

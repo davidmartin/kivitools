@@ -10,10 +10,15 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
+  amazon: [
+    { name: "productDescriptionGenerator.title", href: "/amazon/product-description-generator" },
+    { name: "productReviewGenerator.title", href: "/amazon/product-review-generator" },
+    { name: "productComparisonGenerator.title", href: "/amazon/product-comparison-generator" },
+  ],
   linkedin: [
     { name: "linkedinPost.title", href: "/linkedin/post-generator" },
     { name: "linkedinHeadline.title", href: "/linkedin/headline-generator" },

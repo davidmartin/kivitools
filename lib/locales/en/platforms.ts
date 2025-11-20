@@ -14,5 +14,8 @@ export const platforms = {
     "elevenlabs.info.title": "What is ElevenLabs?",
     "elevenlabs.info.description": "ElevenLabs is the leading AI voice synthesis platform. Convert text to ultra-realistic audio in seconds. Our tools help you create optimized scripts for perfect text-to-speech.",
     "linkedin.page.description": "Posts that will make you look like a Fortune 500 CEO (even if you work in pajamas)",
+    "amazon.page.description": "Descriptions that sell more than a charismatic used car salesman.",
+    "amazon.info.title": "What is Amazon Associates?",
+    "amazon.info.description": "The Amazon Associates program allows you to earn commissions by recommending products. Our tools help you create persuasive content to boost your clicks and sales.",
 
 };

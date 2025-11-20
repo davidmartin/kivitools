@@ -170,7 +170,13 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 | **Chat Command Generator** | Genera respuestas para comandos | Comando, propósito, tono | Respuesta para bot de chat       | ✅     |
 | **Panel Description**      | Descripciones para paneles      | Tipo panel, contenido    | Descripción con formato          | ✅     |
 
-### 3.9 Future Platforms - Examples (Not Implemented)
+### 3.10 Amazon Tools (1 herramienta)
+
+| Herramienta                       | Descripción                       | Inputs                                | Outputs                            | Status |
+| --------------------------------- | --------------------------------- | ------------------------------------- | ---------------------------------- | ------ |
+| **Product Description Generator** | Genera descripciones de productos | Nombre, características, tono, idioma | Descripción optimizada para ventas | ✅     |
+
+### 3.11 Future Platforms - Examples (Not Implemented)
 
 **Philosophy**: KiviTools can support ANY digital platform that benefits from AI-powered content tools. Here are examples of new platform categories we can expand into:
 

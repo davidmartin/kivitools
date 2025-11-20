@@ -14,5 +14,8 @@ export const platforms = {
     "forocoches.page.description": "Herramientas para ser un auténtico shurmano y no morir en el intento (ni en la pole).",
     "elevenlabs.info.title": "¿Qué es ElevenLabs?",
     "elevenlabs.info.description": "ElevenLabs es la plataforma líder en síntesis de voz con IA. Convierte texto en audio ultrarrealista en segundos. Nuestras herramientas te ayudan a crear guiones optimizados para text-to-speech perfecto.",
+    "amazon.page.description": "Descripciones que venden más que un vendedor de coches usados con carisma.",
+    "amazon.info.title": "¿Qué es Amazon Afiliados?",
+    "amazon.info.description": "El programa de afiliados de Amazon te permite ganar comisiones recomendando productos. Nuestras herramientas te ayudan a crear contenido persuasivo para aumentar tus clics y ventas.",
 
 };

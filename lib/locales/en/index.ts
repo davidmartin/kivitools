@@ -14,6 +14,7 @@ import { snapchat } from "./tools/snapchat";
 import { linkedin } from "./tools/linkedin";
 import { forocoches } from "./tools/forocoches";
 import { suno } from "./tools/suno";
+import { amazon } from "./tools/amazon";
 import { builder } from "./builder";
 import { dashboard } from "./dashboard";
 import { admin } from "./admin";
@@ -35,6 +36,7 @@ export const en = {
   ...linkedin,
   ...forocoches,
   ...suno,
+  ...amazon,
   ...builder,
   ...dashboard,
   ...admin,

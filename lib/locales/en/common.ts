@@ -15,6 +15,7 @@ export const common = {
     "nav.elevenlabs": "ElevenLabs",
     "nav.linkedin": "LinkedIn",
     "nav.forocoches": "Forocoches",
+    "nav.amazon": "Amazon",
     "nav.suggestTool": "Suggest Tool",
     "nav.login": "Login",
     "nav.logout": "Logout",

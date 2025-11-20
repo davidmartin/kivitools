@@ -151,6 +151,14 @@ export default function Navigation() {
         { name: t("forocochesTroll.title"), href: "/forocoches/troll-response" },
       ],
     },
+    {
+      id: "amazon",
+      name: t("nav.amazon"),
+      emoji: "📦",
+      tools: [
+        { name: t("productDescriptionGenerator.title"), href: "/amazon/product-description-generator" },
+      ],
+    },
   ];
 
   return (
