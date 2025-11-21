@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Card, Input, TextArea, Select } from "@heroui/react";
+import { Button, Card, Input, TextArea } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import TurnstileWidget from "@/app/components/turnstile-widget";
@@ -101,7 +101,8 @@ export default function ProductDescriptionGeneratorPage() {
   ]);
 
   const relatedTools = [
-    // Placeholder for now, as we only have one tool
+    { name: t("productReviewGenerator.title"), href: "/amazon/product-review-generator" },
+    { name: t("productComparisonGenerator.title"), href: "/amazon/product-comparison-generator" },
   ];
 
   return (
@@ -175,18 +176,18 @@ export default function ProductDescriptionGeneratorPage() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         {t("productDescriptionGenerator.form.tone")}
                       </label>
-                      <Select
-                        selectedKey={tone}
-                        onSelectionChange={(key) => setTone(key as string)}
-                        isDisabled={isLoading}
-                        className="bg-surface"
+                      <select
+                        value={tone}
+                        onChange={(e) => setTone(e.target.value)}
+                        disabled={isLoading}
+                        className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-surface text-foreground"
                       >
                         {TONES.map((tOption) => (
-                          <Select.Option key={tOption.value} id={tOption.value}>
+                          <option key={tOption.value} value={tOption.value}>
                             {t(tOption.labelKey)}
-                          </Select.Option>
+                          </option>
                         ))}
-                      </Select>
+                      </select>
                     </div>
 
                     <div>
@@ -207,18 +208,18 @@ export default function ProductDescriptionGeneratorPage() {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       {t("productDescriptionGenerator.form.language")}
                     </label>
-                    <Select
-                      selectedKey={language}
-                      onSelectionChange={(key) => setLanguage(key as any)}
-                      isDisabled={isLoading}
-                      className="bg-surface"
+                    <select
+                      value={language}
+                      onChange={(e) => setLanguage(e.target.value as any)}
+                      disabled={isLoading}
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-surface text-foreground"
                     >
                       {LANGUAGES.map((l) => (
-                        <Select.Option key={l.value} id={l.value}>
+                        <option key={l.value} value={l.value}>
                           {t(l.labelKey)}
-                        </Select.Option>
+                        </option>
                       ))}
-                    </Select>
+                    </select>
                   </div>
 
                   <TurnstileWidget
