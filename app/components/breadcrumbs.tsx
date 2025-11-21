@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface BreadcrumbItem {
   label: string;
@@ -10,25 +11,59 @@ interface BreadcrumbItem {
 
 export default function Breadcrumbs() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   // Don't show breadcrumbs on homepage
   if (pathname === "/") return null;
 
+  const toCamelCase = (str: string) => {
+    return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+  };
+
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
     const paths = pathname.split("/").filter(Boolean);
     const breadcrumbs: BreadcrumbItem[] = [
-      { label: "Home", href: "/" },
+      { label: t("nav.home"), href: "/" },
     ];
 
     let currentPath = "";
     paths.forEach((path, index) => {
       currentPath += `/${path}`;
       
-      // Format label (capitalize and replace hyphens)
-      const label = path
-        .split("-")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
+      let label = path;
+
+      // Try to translate
+      if (index === 0) {
+        // Platform
+        const key = `nav.${path}`;
+        const translated = t(key);
+        if (translated !== key) {
+          label = translated;
+        } else {
+           // Fallback formatting
+           label = path.charAt(0).toUpperCase() + path.slice(1);
+        }
+      } else if (index === 1) {
+        // Tool
+        const camelCase = toCamelCase(path);
+        const key = `${camelCase}.title`;
+        const translated = t(key);
+        if (translated !== key) {
+          label = translated;
+        } else {
+           // Fallback formatting
+           label = path
+            .split("-")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ");
+        }
+      } else {
+        // Other segments
+        label = path
+          .split("-")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+      }
 
       breadcrumbs.push({
         label,

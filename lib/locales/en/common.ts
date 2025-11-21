@@ -1,6 +1,7 @@
 export const common = {
     // Navigation
     "nav.title": "KiviTools",
+    "nav.home": "Home",
     "nav.platforms": "Platforms",
     "nav.tools": "Tools",
     "nav.tiktok": "TikTok",

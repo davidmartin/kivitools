@@ -142,36 +142,43 @@ export default function ProductComparisonGeneratorPage() {
           <Card className="bg-surface/50 backdrop-blur-xl border-white/10 shadow-2xl">
             <Card.Content className="p-8">
               {!result ? (
-                <div className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        {t("productComparisonGenerator.form.product1")}
-                      </label>
-                      <Input
-                        value={product1}
-                        onChange={(e) => setProduct1(e.target.value)}
-                        placeholder={t("productComparisonGenerator.form.product1Placeholder")}
-                        disabled={isLoading}
-                        className="bg-surface"
-                      />
+                <div className="space-y-8">
+                  <div className="relative">
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="space-y-2">
+                        <label className="block text-sm font-medium text-foreground">
+                          {t("productComparisonGenerator.form.product1")} 🅰️
+                        </label>
+                        <Input
+                          value={product1}
+                          onChange={(e) => setProduct1(e.target.value)}
+                          placeholder={t("productComparisonGenerator.form.product1Placeholder")}
+                          disabled={isLoading}
+                          className="bg-surface"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="block text-sm font-medium text-foreground">
+                          {t("productComparisonGenerator.form.product2")} 🅱️
+                        </label>
+                        <Input
+                          value={product2}
+                          onChange={(e) => setProduct2(e.target.value)}
+                          placeholder={t("productComparisonGenerator.form.product2Placeholder")}
+                          disabled={isLoading}
+                          className="bg-surface"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
-                        {t("productComparisonGenerator.form.product2")}
-                      </label>
-                      <Input
-                        value={product2}
-                        onChange={(e) => setProduct2(e.target.value)}
-                        placeholder={t("productComparisonGenerator.form.product2Placeholder")}
-                        disabled={isLoading}
-                        className="bg-surface"
-                      />
+                    
+                    {/* VS Badge */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center w-12 h-12 bg-orange-500 text-white font-bold rounded-full shadow-lg border-4 border-surface z-10 mt-3">
+                      VS
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium text-foreground">
                       {t("productComparisonGenerator.form.features")}
                     </label>
                     <TextArea
@@ -185,40 +192,54 @@ export default function ProductComparisonGeneratorPage() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-foreground">
                         {t("productComparisonGenerator.form.tone")}
                       </label>
-                      <select
-                        value={tone}
-                        onChange={(e) => setTone(e.target.value)}
-                        disabled={isLoading}
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-surface text-foreground"
-                      >
-                        {TONES.map((tOption) => (
-                          <option key={tOption.value} value={tOption.value}>
-                            {t(tOption.labelKey)}
-                          </option>
-                        ))}
-                      </select>
+                      <div className="relative">
+                        <select
+                          value={tone}
+                          onChange={(e) => setTone(e.target.value)}
+                          disabled={isLoading}
+                          className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-surface text-foreground appearance-none"
+                        >
+                          {TONES.map((tOption) => (
+                            <option key={tOption.value} value={tOption.value}>
+                              {t(tOption.labelKey)}
+                            </option>
+                          ))}
+                        </select>
+                        <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                          <svg className="w-4 h-4 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">
+                    <div className="space-y-2">
+                      <label className="block text-sm font-medium text-foreground">
                         {t("productComparisonGenerator.form.language")}
                       </label>
-                      <select
-                        value={language}
-                        onChange={(e) => setLanguage(e.target.value as any)}
-                        disabled={isLoading}
-                        className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-surface text-foreground"
-                      >
-                        {LANGUAGES.map((l) => (
-                          <option key={l.value} value={l.value}>
-                            {t(l.labelKey)}
-                          </option>
-                        ))}
-                      </select>
+                      <div className="relative">
+                        <select
+                          value={language}
+                          onChange={(e) => setLanguage(e.target.value as any)}
+                          disabled={isLoading}
+                          className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-surface text-foreground appearance-none"
+                        >
+                          {LANGUAGES.map((l) => (
+                            <option key={l.value} value={l.value}>
+                              {t(l.labelKey)}
+                            </option>
+                          ))}
+                        </select>
+                        <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                          <svg className="w-4 h-4 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
