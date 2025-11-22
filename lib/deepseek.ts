@@ -3300,3 +3300,198 @@ Format: Return ONLY the list of text options, one per line, numbered.`;
         throw new Error("Failed to generate thumbnail text");
     }
 }
+
+// ------------------------------------------------------------------
+// INSTAGRAM TOOLS
+// ------------------------------------------------------------------
+
+export async function generateInstagramHashtags(params: {
+    description: string;
+    niche: string;
+    quantity?: string;
+    language?: string;
+}) {
+    const { description, niche, quantity = "30", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+
+    const systemPrompt = `You are an Instagram growth expert. Generate a list of highly relevant, high-reach hashtags for an Instagram post.
+  The user will provide a post description and a niche.
+  You must generate exactly ${quantity} hashtags.
+  Mix high-volume (popular), medium-volume (niche), and low-volume (specific) hashtags for maximum reach.
+  Return ONLY the hashtags as a single string, separated by spaces. Do not include any other text.
+  Language: ${langName}`;
+
+    const userPrompt = `Description: ${description}\nNiche: ${niche}`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+        });
+
+        return completion.choices[0].message.content || "";
+    } catch (error) {
+        console.error("Error generating Instagram hashtags:", error);
+        throw new Error("Failed to generate hashtags");
+    }
+}
+
+export async function generateInstagramStoryIdeas(params: {
+    niche: string;
+    goal: string;
+    mood?: string;
+    language?: string;
+}) {
+    const { niche, goal, mood = "engaging", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+
+    const systemPrompt = `You are an Instagram Story expert. Generate 5 creative and engaging Instagram Story ideas for a specific niche and goal.
+  Each idea should include:
+  1. **Title**: A catchy title for the story sequence.
+  2. **Concept**: Brief description of what to post (e.g., "Behind the scenes", "Poll", "Q&A").
+  3. **Engagement Tactic**: How to use stickers (Poll, Quiz, Slider, Link) to drive interaction.
+  Output format: JSON array of objects with keys: title, concept, engagementTactic.
+  Language: ${langName}`;
+
+    const userPrompt = `Niche: ${niche}\nGoal: ${goal}\nMood: ${mood}`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            response_format: { type: "json_object" },
+        });
+
+        const content = completion.choices[0].message.content;
+        if (!content) return [];
+        const parsed = JSON.parse(content);
+        return parsed.ideas || parsed.storyIdeas || (Array.isArray(parsed) ? parsed : []);
+    } catch (error) {
+        console.error("Error generating Instagram story ideas:", error);
+        throw new Error("Failed to generate story ideas");
+    }
+}
+
+export async function generateInstagramContentCalendar(params: {
+    niche: string;
+    frequency: string;
+    duration: string;
+    language?: string;
+}) {
+    const { niche, frequency, duration, language = "en" } = params;
+    const langName = languageNames[language] || "English";
+
+    const systemPrompt = `You are a social media manager. Create a detailed Instagram content calendar for a specific niche.
+  Frequency: ${frequency}
+  Duration: ${duration}
+  For each post, provide:
+  - Day/Date (relative, e.g., "Day 1", "Week 1 - Monday")
+  - Format (Reel, Carousel, Single Image, Story)
+  - Content Idea (Brief description)
+  - Caption Hook (First sentence of the caption)
+  Return the response as a formatted text string (Markdown table or list) that is easy to read and copy.
+  Language: ${langName}`;
+
+    const userPrompt = `Niche: ${niche}`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+        });
+
+        return completion.choices[0].message.content || "";
+    } catch (error) {
+        console.error("Error generating Instagram content calendar:", error);
+        throw new Error("Failed to generate content calendar");
+    }
+}
+
+export async function generateInstagramAdCopy(params: {
+    productName: string;
+    productDescription: string;
+    targetAudience: string;
+    tone?: string;
+    language?: string;
+}) {
+    const { productName, productDescription, targetAudience, tone = "persuasive", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert copywriter for Instagram Ads. Write a high-converting ad caption for a product.
+  Structure the ad copy with:
+  1. **Hook**: Attention-grabbing first line (visible before "more").
+  2. **Problem/Agitation**: Address a pain point.
+  3. **Solution**: How the product solves it.
+  4. **Social Proof/Benefits**: Key features or results.
+  5. **CTA**: Clear Call to Action.
+  Tone: ${tone}
+  Language: ${langName}`;
+
+    const userPrompt = `Product: ${productName}\nDescription: ${productDescription}\nTarget Audience: ${targetAudience}`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+        });
+
+        return completion.choices[0].message.content || "";
+    } catch (error) {
+        console.error("Error generating Instagram ad copy:", error);
+        throw new Error("Failed to generate ad copy");
+    }
+}
+
+export async function generateInstagramCarousel(params: {
+    topic: string;
+    slideCount?: string;
+    tone?: string;
+    language?: string;
+}) {
+    const { topic, slideCount = "5", tone = "educational", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+
+    const systemPrompt = `You are an Instagram Carousel expert. Create a structured carousel post.
+  Topic: ${topic}
+  Slides: ${slideCount}
+  Tone: ${tone}
+  Output format: JSON array of objects, where each object represents a slide and has:
+  - slideNumber: number
+  - title: Headline for the slide
+  - content: Main text/bullet points for the slide
+  - visualCue: Suggestion for the image/graphic
+  Language: ${langName}`;
+
+    const userPrompt = `Generate the carousel content.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            response_format: { type: "json_object" },
+        });
+
+        const content = completion.choices[0].message.content;
+        if (!content) return [];
+        const parsed = JSON.parse(content);
+        return parsed.slides || parsed.carousel || (Array.isArray(parsed) ? parsed : []);
+    } catch (error) {
+        console.error("Error generating Instagram carousel:", error);
+        throw new Error("Failed to generate carousel");
+    }
+}
