@@ -9,10 +9,10 @@ import ToolSelector from "@/app/components/tool-selector";
 import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TwitchPanelPage() {
-  const { t } = useLanguage();
+  const { t, language: uiLanguage } = useLanguage();
   const [panelType, setPanelType] = useState("");
   const [content, setContent] = useState("");
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(uiLanguage);
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

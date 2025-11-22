@@ -9,10 +9,10 @@ import ToolSelector from "@/app/components/tool-selector";
 import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function DiscordWelcomePage() {
-  const { t } = useLanguage();
+  const { t, language: uiLanguage } = useLanguage();
   const [serverName, setServerName] = useState("");
   const [tone, setTone] = useState("friendly");
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(uiLanguage);
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

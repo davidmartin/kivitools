@@ -9,9 +9,9 @@ import ToolSelector from "@/app/components/tool-selector";
 import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function YouTubeTitleGeneratorPage() {
-  const { t } = useLanguage();
+  const { t, language: uiLanguage } = useLanguage();
   const [topic, setTopic] = useState("");
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(uiLanguage);
   const [titles, setTitles] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

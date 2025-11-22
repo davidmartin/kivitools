@@ -9,10 +9,10 @@ echo ""
 # Array de environments
 ENVIRONMENTS=("production" "preview" "development")
 
-# DeepSeek API Key
-echo "📝 Añadiendo DEEPSEEK_API_KEY a todos los entornos..."
+# OpenRouter API Key
+echo "📝 Añadiendo OPENROUTER_API_KEY a todos los entornos..."
 for ENV in "${ENVIRONMENTS[@]}"; do
-    echo "sk-eaea2704768645d7aa56a2e49d9e4809" | vercel env add DEEPSEEK_API_KEY "$ENV"
+    echo "your_openrouter_key_here" | vercel env add OPENROUTER_API_KEY "$ENV"
 done
 
 # Appwrite Configuration

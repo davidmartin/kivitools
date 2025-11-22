@@ -8,11 +8,11 @@ import ToolSelector from "@/app/components/tool-selector";
 import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TwitchStreamPlanPage() {
-  const { t } = useLanguage();
+  const { t, language: uiLanguage } = useLanguage();
   const [activity, setActivity] = useState("");
   const [duration, setDuration] = useState("2 hours");
   const [tone, setTone] = useState("friendly");
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(uiLanguage);
   const [plan, setPlan] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

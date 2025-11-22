@@ -9,11 +9,11 @@ import ToolSelector from "@/app/components/tool-selector";
 import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function TwitchCommandPage() {
-  const { t } = useLanguage();
+  const { t, language: uiLanguage } = useLanguage();
   const [commandName, setCommandName] = useState("");
   const [purpose, setPurpose] = useState("");
   const [tone, setTone] = useState("friendly");
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(uiLanguage);
   const [response, setResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

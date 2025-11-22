@@ -9,11 +9,11 @@ import ToolSelector from "@/app/components/tool-selector";
 import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function InstagramBioGeneratorPage() {
-  const { t } = useLanguage();
+  const { t, language: uiLanguage } = useLanguage();
   const [description, setDescription] = useState("");
   const [tone, setTone] = useState("friendly");
   const [includeEmojis, setIncludeEmojis] = useState(true);
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(uiLanguage);
   const [bio, setBio] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

@@ -6,9 +6,9 @@
 echo "🚀 Añadiendo variables de entorno a Vercel..."
 echo ""
 
-# DeepSeek API Key
-echo "📝 Añadiendo DEEPSEEK_API_KEY..."
-echo "sk-eaea2704768645d7aa56a2e49d9e4809" | vercel env add DEEPSEEK_API_KEY production
+# OpenRouter API Key
+echo "📝 Añadiendo OPENROUTER_API_KEY..."
+echo "your_openrouter_key_here" | vercel env add OPENROUTER_API_KEY production
 
 # Appwrite Configuration
 echo "📝 Añadiendo APPWRITE_ENDPOINT..."

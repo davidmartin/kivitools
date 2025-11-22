@@ -9,11 +9,11 @@ import ToolSelector from "@/app/components/tool-selector";
 import TurnstileWidget from "@/app/components/turnstile-widget";
 
 export default function YouTubeScriptGeneratorPage() {
-  const { t } = useLanguage();
+  const { t, language: uiLanguage } = useLanguage();
   const [topic, setTopic] = useState("");
   const [tone, setTone] = useState("friendly");
   const [duration, setDuration] = useState("5-10min");
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(uiLanguage);
   const [script, setScript] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");

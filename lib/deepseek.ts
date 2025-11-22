@@ -1,10 +1,12 @@
 import OpenAI from "openai";
 
-// Cliente DeepSeek configurado
+// Cliente OpenRouter configurado
 const deepseek = new OpenAI({
-    baseURL: "https://api.deepseek.com",
-    apiKey: process.env.DEEPSEEK_API_KEY,
+    baseURL: "https://openrouter.ai/api/v1",
+    apiKey: process.env.OPENROUTER_API_KEY,
 });
+
+const MODEL_NAME = "x-ai/grok-4.1-fast";
 
 // Mapeo de idiomas a nombres completos (compartido)
 const languageNames: Record<string, string> = {
@@ -75,7 +77,7 @@ Write ONLY the script text, no titles, no extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 500,
         });
@@ -129,7 +131,7 @@ Write ONLY the numbered list, no titles or extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 600,
         });
@@ -197,7 +199,7 @@ Write ONLY the numbered list of hooks, no explanations or extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 500,
         });
@@ -264,7 +266,7 @@ Write ONLY the hashtag list in that exact format, no extra text.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.7,
             max_tokens: 600,
         });
@@ -348,7 +350,7 @@ Requirements:
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 400,
         });
@@ -428,7 +430,7 @@ Requirements:
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 400,
         });
@@ -507,7 +509,7 @@ Write ONLY the caption text, no titles or extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 500,
         });
@@ -570,7 +572,7 @@ Write ONLY the bio text, no titles or extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 200,
         });
@@ -643,7 +645,7 @@ Write ONLY the script text, no titles, no scene numbers, just the voiceover text
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 500,
         });
@@ -707,7 +709,7 @@ Write ONLY the numbered tweets, no extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 800,
         });
@@ -779,7 +781,7 @@ Write ONLY the bio text, no titles or extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 200,
         });
@@ -837,7 +839,7 @@ Requirements:
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 800,
         });
@@ -887,7 +889,7 @@ IMPORTANT: Write ONLY in Spanish.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 1.0,
             max_tokens: 100,
         });
@@ -938,7 +940,7 @@ Intensity: ${intensity}`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 300,
         });
@@ -997,7 +999,7 @@ Write ONLY the numbered tweets, no extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 500,
         });
@@ -1069,7 +1071,7 @@ Write ONLY the caption text, no titles or extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 150,
         });
@@ -1125,7 +1127,7 @@ Write ONLY the numbered list, no titles or extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 600,
         });
@@ -1192,7 +1194,7 @@ Write ONLY the numbered list, no titles or extra formatting.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 800,
         });
@@ -1252,7 +1254,7 @@ Write the complete script in ${targetLanguage}.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 1500,
         });
@@ -1301,7 +1303,7 @@ Write ONLY the numbered list, no explanations.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 600,
         });
@@ -1360,7 +1362,7 @@ Write the complete description in ${targetLanguage}.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 1000,
         });
@@ -1411,7 +1413,7 @@ Write everything in ${targetLanguage}.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 1000,
         });
@@ -1472,7 +1474,7 @@ Write the comment in ${targetLanguage}.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 400,
         });
@@ -1521,7 +1523,7 @@ Write ONLY the numbered list, no explanations.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 600,
         });
@@ -1578,7 +1580,7 @@ Generate an engaging announcement that uses Discord formatting and emojis effect
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -1621,7 +1623,7 @@ Generate a warm, welcoming message for new members.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -1667,7 +1669,7 @@ Generate an exciting, detailed event description.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -1711,7 +1713,7 @@ Generate 8 different engaging stream title options. Return ONLY the titles, one 
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -1761,7 +1763,7 @@ Generate a brief, informative command response suitable for Twitch chat.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -1804,7 +1806,7 @@ Generate a professional, well-formatted panel description.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -1873,7 +1875,7 @@ Make them creative, engaging, and suitable for music generation in Suno.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -1927,7 +1929,7 @@ Create a detailed prompt that describes exactly what the music should sound like
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -1985,7 +1987,7 @@ Return exactly 3 descriptions, one per line, separated by clear markers.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -2056,7 +2058,7 @@ Make it engaging and natural for AI voice generation.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -2117,7 +2119,7 @@ Make it platform-appropriate for ${videoType}.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -2167,7 +2169,7 @@ Add appropriate pauses, emphasis, and emotional cues. Fix any awkward phrasing. 
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -2240,7 +2242,7 @@ Make it sound natural and engaging for ${format} format.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -2317,7 +2319,7 @@ Make it compelling and conversion-focused.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -2391,7 +2393,7 @@ Keep the original text intact - only add optimization tags and minor improvement
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -2447,7 +2449,7 @@ Write ONLY the post content.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.7,
             max_tokens: 600,
         });
@@ -2508,7 +2510,7 @@ Write ONLY the numbered list of headlines.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 400,
         });
@@ -2579,7 +2581,7 @@ Write ONLY the About section text.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.7,
             max_tokens: 800,
         });
@@ -2621,7 +2623,7 @@ export async function generateCustomToolContent({
                 { role: "system", content: "You are a helpful AI assistant. Follow the user's instructions precisely." },
                 { role: "user", content: finalPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 1000,
         });
@@ -2688,7 +2690,7 @@ Generate a complete, formatted description ready to copy and paste.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 1000,
         });
@@ -2741,7 +2743,7 @@ Return ONLY the caption text.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.9,
             max_tokens: 300,
         });
@@ -2799,7 +2801,7 @@ Write a comprehensive review.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 600,
         });
@@ -2856,7 +2858,7 @@ Write a detailed comparison.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
             ],
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             temperature: 0.8,
             max_tokens: 800,
         });
@@ -2907,7 +2909,7 @@ Generate 5 different bio options. Return ONLY the bios, one per line, numbered (
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -2958,7 +2960,7 @@ Generate a numbered list of rules. Return ONLY the rules, one per line.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
@@ -3011,7 +3013,7 @@ Format the plan clearly with segments, times, and notes.`;
 
     try {
         const completion = await deepseek.chat.completions.create({
-            model: "deepseek-chat",
+            model: MODEL_NAME,
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt },
