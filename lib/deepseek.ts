@@ -3028,3 +3028,275 @@ Format the plan clearly with segments, times, and notes.`;
         throw new Error("Failed to generate Twitch stream plan");
     }
 }
+
+// TikTok Bio Generator
+export async function generateTikTokBio({
+    description,
+    tone,
+    includeEmojis,
+    language,
+}: {
+    description: string;
+    tone: string;
+    includeEmojis: boolean;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a TikTok bio specialist. Create compelling bios that:
+- Are concise (80 characters or less, as TikTok bios are short)
+- Clearly communicate who/what
+- Are memorable and engaging
+- Show personality
+${includeEmojis ? "- Use 1-3 relevant emojis" : "- Do NOT use any emojis"}
+
+Write in a ${tone} tone.
+IMPORTANT: Write ONLY in ${targetLanguage}. Do not include any other language.`;
+
+    const userPrompt = `Create TikTok bios for: ${description}
+
+Requirements:
+- Language: ${targetLanguage}
+- Tone: ${tone}
+- Maximum 80 characters
+${includeEmojis ? "- Include 1-3 relevant emojis" : "- No emojis"}
+- Clear and concise
+- Show personality
+
+Generate 5 different bio options. Return ONLY the bios, one per line, numbered (1., 2., etc.).`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 400,
+            temperature: 0.9,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        return content
+            .split("\n")
+            .map((line) => line.replace(/^\d+\.\s*/, "").trim())
+            .filter((line) => line.length > 0)
+            .slice(0, 5);
+    } catch (error) {
+        console.error("Error generating TikTok bios:", error);
+        throw new Error("Failed to generate TikTok bios");
+    }
+}
+
+// TikTok Ad Copy Generator
+export async function generateTikTokAdCopy({
+    productName,
+    productDescription,
+    targetAudience,
+    tone,
+    language,
+}: {
+    productName: string;
+    productDescription: string;
+    targetAudience: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a TikTok advertising expert. Create high-converting ad copy that:
+- Hooks viewers instantly
+- Highlights key benefits naturally
+- Uses TikTok-native language and trends
+- Includes a strong Call to Action (CTA)
+- Feels authentic, not overly "salesy"
+
+Write in a ${tone} tone.
+IMPORTANT: Write ONLY in ${targetLanguage}. Do not include any other language.`;
+
+    const userPrompt = `Create TikTok ad copy for:
+Product: ${productName}
+Description: ${productDescription}
+Target Audience: ${targetAudience}
+
+Requirements:
+- Language: ${targetLanguage}
+- Tone: ${tone}
+- Structure: Hook -> Problem/Agitation -> Solution (Product) -> Benefits -> CTA
+- Keep it concise and punchy
+- Use line breaks for readability
+
+Write ONLY the ad copy text.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 600,
+            temperature: 0.8,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating TikTok ad copy:", error);
+        throw new Error("Failed to generate TikTok ad copy");
+    }
+}
+
+// TikTok Song Recommendations
+export async function generateTikTokSongRecommendations({
+    videoDescription,
+    mood,
+    language,
+}: {
+    videoDescription: string;
+    mood: string;
+    language: string;
+}): Promise<Array<{ title: string; artist: string; reason: string }>> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a TikTok trend expert and music curator. Recommend songs/sounds that:
+- Fit the video content and mood perfectly
+- Are currently trending or timelessly popular on TikTok
+- Enhance the viewer's emotional response
+- Have viral potential
+
+Provide 5 recommendations.
+IMPORTANT: Write the 'reason' ONLY in ${targetLanguage}.`;
+
+    const userPrompt = `Recommend songs for this TikTok video:
+Description: ${videoDescription}
+Mood: ${mood}
+
+Format: Return a JSON array of objects with 'title', 'artist', and 'reason' keys.
+Example:
+[
+  { "title": "Song Name", "artist": "Artist Name", "reason": "Why it fits..." }
+]
+
+Return ONLY the JSON array.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 800,
+            temperature: 0.8,
+            response_format: { type: "json_object" },
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "{}";
+        const parsed = JSON.parse(content);
+        return Array.isArray(parsed.songs) ? parsed.songs : (Array.isArray(parsed) ? parsed : []);
+    } catch (error) {
+        console.error("Error generating song recommendations:", error);
+        return [];
+    }
+}
+
+// TikTok Content Calendar
+export async function generateTikTokContentCalendar({
+    niche,
+    frequency,
+    duration,
+    language,
+}: {
+    niche: string;
+    frequency: string;
+    duration: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a TikTok content strategist. Create a content calendar that:
+- Is tailored to the specific niche
+- Provides variety in content types (educational, entertaining, trending, etc.)
+- Follows the requested frequency
+- Includes brief content ideas for each scheduled post
+
+Write in a professional but creative tone.
+IMPORTANT: Write ONLY in ${targetLanguage}. Do not include any other language.`;
+
+    const userPrompt = `Create a ${duration} content calendar for a TikTok account in the ${niche} niche.
+Posting Frequency: ${frequency}
+Language: ${targetLanguage}
+
+Format:
+Day 1: [Content Type] - [Brief Idea]
+Day 2: ...
+
+Write ONLY the calendar plan.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 1000,
+            temperature: 0.8,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating content calendar:", error);
+        throw new Error("Failed to generate content calendar");
+    }
+}
+
+// TikTok Thumbnail Text Generator
+export async function generateTikTokThumbnailText({
+    videoTopic,
+    style,
+    language,
+}: {
+    videoTopic: string;
+    style: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a TikTok optimization expert. Generate thumbnail text overlays that:
+- Are short (2-5 words max)
+- Are highly clickable (high CTR)
+- Create curiosity or promise value
+- Are easy to read quickly
+- Match the requested style
+
+Generate 10 options.
+IMPORTANT: Write ONLY in ${targetLanguage}. Do not include any other language.`;
+
+    const userPrompt = `Generate 10 thumbnail text ideas for a video about: ${videoTopic}
+Style: ${style} (e.g., Clickbait, Educational, Question, Shocking)
+Language: ${targetLanguage}
+
+Format: Return ONLY the list of text options, one per line, numbered.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 400,
+            temperature: 0.9,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        return content
+            .split("\n")
+            .map((line) => line.replace(/^\d+\.\s*/, "").trim())
+            .filter((line) => line.length > 0);
+    } catch (error) {
+        console.error("Error generating thumbnail text:", error);
+        throw new Error("Failed to generate thumbnail text");
+    }
+}

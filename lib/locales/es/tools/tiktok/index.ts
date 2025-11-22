@@ -16,6 +16,11 @@ import { mp3_downloader } from "./mp3-downloader";
 import { money_calculator } from "./money-calculator";
 import { username_checker } from "./username-checker";
 import { caption_generator } from "./caption-generator";
+import { tiktokBioGenerator } from "./bio-generator";
+import { tiktokAdCopyGenerator } from "./ad-copy-generator";
+import { tiktokSongRecommendations } from "./song-recommendations";
+import { tiktokContentCalendarGenerator } from "./content-calendar-generator";
+import { tiktokThumbnailTextGenerator } from "./thumbnail-text-generator";
 
 export const tiktok = {
   ...script_writer,
@@ -36,4 +41,9 @@ export const tiktok = {
   ...money_calculator,
   ...username_checker,
   ...caption_generator,
+  tiktokBioGenerator,
+  tiktokAdCopyGenerator,
+  tiktokSongRecommendations,
+  tiktokContentCalendarGenerator,
+  tiktokThumbnailTextGenerator,
 };
