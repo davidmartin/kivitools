@@ -2390,7 +2390,7 @@ Genre-specific tips:
 Keep the original text intact - only add optimization tags and minor improvements for audio.`;
 
     try {
-        const completion = await deepseek.chat.completions.create({
+               const completion = await deepseek.chat.completions.create({
             model: "deepseek-chat",
             messages: [
                 { role: "system", content: systemPrompt },
@@ -2873,5 +2873,156 @@ Write a detailed comparison.`;
         throw new Error(
             error instanceof Error ? error.message : "Failed to generate comparison"
         );
+    }
+}
+
+// Twitch Bio Generator
+export async function generateTwitchBio({
+    description,
+    tone,
+    language,
+}: {
+    description: string;
+    tone: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a Twitch profile expert. Create engaging "About Me" bios that:
+- Are concise (under 300 characters)
+- Show personality and gaming style
+- Include relevant emojis
+- Are formatted for easy reading
+- Match the requested tone
+- Encourage viewers to follow
+
+Generate 5 different bio options in ${targetLanguage}.`;
+
+    const userPrompt = `Create Twitch bios for a streamer who describes themselves as: "${description}"
+
+Tone: ${tone}
+Language: ${targetLanguage}
+
+Generate 5 different bio options. Return ONLY the bios, one per line, numbered (1., 2., etc.).`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 600,
+            temperature: 0.9,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        return content
+            .split("\n")
+            .map((line) => line.replace(/^\d+\.\s*/, "").trim())
+            .filter((line) => line.length > 0)
+            .slice(0, 5);
+    } catch (error) {
+        console.error("Error generating Twitch bios:", error);
+        throw new Error("Failed to generate Twitch bios");
+    }
+}
+
+// Twitch Rules Generator
+export async function generateTwitchRules({
+    context,
+    tone,
+    language,
+}: {
+    context: string;
+    tone: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a Twitch community manager. Create clear, effective chat rules that:
+- Set clear boundaries
+- Are easy to understand
+- Match the channel's tone
+- Cover common issues (spam, hate speech, links, etc.)
+- Use positive framing where possible
+
+Generate a list of 7-10 standard rules in ${targetLanguage}.`;
+
+    const userPrompt = `Generate Twitch chat rules.
+Context/Specifics: ${context || "Standard gaming channel rules"}
+Tone: ${tone}
+Language: ${targetLanguage}
+
+Generate a numbered list of rules. Return ONLY the rules, one per line.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 600,
+            temperature: 0.8,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        return content
+            .split("\n")
+            .map((line) => line.replace(/^\d+\.\s*/, "").trim())
+            .filter((line) => line.length > 0);
+    } catch (error) {
+        console.error("Error generating Twitch rules:", error);
+        throw new Error("Failed to generate Twitch rules");
+    }
+}
+
+// Twitch Stream Plan Generator
+export async function generateTwitchStreamPlan({
+    activity,
+    duration,
+    tone,
+    language,
+}: {
+    activity: string;
+    duration: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a professional Twitch stream producer. Create a detailed run-of-show (stream plan) that:
+- Breaks down the stream into logical segments (Intro, Gameplay, Intermission, Outro, etc.)
+- Assigns estimated durations to each segment
+- Includes engagement ideas for each segment
+- Matches the total duration requested
+- Is formatted clearly with timestamps or duration markers
+
+Generate the plan in ${targetLanguage}.`;
+
+    const userPrompt = `Create a stream plan for:
+Activity/Game: ${activity}
+Total Duration: ${duration}
+Tone: ${tone}
+Language: ${targetLanguage}
+
+Format the plan clearly with segments, times, and notes.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: "deepseek-chat",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 1000,
+            temperature: 0.8,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating Twitch stream plan:", error);
+        throw new Error("Failed to generate Twitch stream plan");
     }
 }

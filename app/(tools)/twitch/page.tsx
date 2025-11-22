@@ -28,6 +28,24 @@ export default function TwitchToolsPage() {
       href: "/twitch/panel-description",
       icon: "📋",
     },
+    {
+      name: t("twitchBio.title"),
+      description: t("twitchBio.description"),
+      href: "/twitch/bio-generator",
+      icon: "📝",
+    },
+    {
+      name: t("twitchRules.title"),
+      description: t("twitchRules.description"),
+      href: "/twitch/rules-generator",
+      icon: "📜",
+    },
+    {
+      name: t("twitchStreamPlan.title"),
+      description: t("twitchStreamPlan.description"),
+      href: "/twitch/stream-plan-generator",
+      icon: "📅",
+    },
   ];
 
   return (
@@ -43,13 +61,13 @@ export default function TwitchToolsPage() {
         <div className="text-center mb-20 relative z-10">
           <div className="inline-flex items-center justify-center mb-8 animate-fade-in">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-violet-500 blur-xl opacity-50 animate-pulse-glow rounded-full" />
+              <div className="absolute inset-0 bg-linear-to-r from-purple-500 to-violet-500 blur-xl opacity-50 animate-pulse-glow rounded-full" />
               <PlatformLogo platform="twitch" size="xl" className="relative z-10" />
             </div>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black text-foreground mb-6 animate-slide-up tracking-tight">
-            {t("nav.twitch")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-violet-500">{t("nav.tools")}</span>
+            {t("nav.twitch")} <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-violet-500">{t("nav.tools")}</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted max-w-2xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: "0.1s" }}>
@@ -64,14 +82,14 @@ export default function TwitchToolsPage() {
               <Card className="glass-card h-full border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 group-hover:-translate-y-2">
                 <Card.Header className="pt-8 px-8">
                   <div className="flex items-start justify-between w-full mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500 border border-white/10">
+                    <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500 border border-white/10">
                       {tool.icon}
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <svg className="w-6 h-6 text-muted group-hover:text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                     </div>
                   </div>
-                  <Card.Title className="text-2xl font-bold text-foreground group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-violet-500 transition-all duration-300">
+                  <Card.Title className="text-2xl font-bold text-foreground group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-purple-500 group-hover:to-violet-500 transition-all duration-300">
                     {tool.name}
                   </Card.Title>
                 </Card.Header>

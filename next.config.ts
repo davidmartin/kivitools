@@ -63,6 +63,9 @@ const nextConfig: NextConfig = {
       { source: "/twitch/titulo-stream", destination: "/twitch/stream-title" },
       { source: "/twitch/descripcion-panel", destination: "/twitch/panel-description" },
       { source: "/twitch/comando-chat", destination: "/twitch/chat-command" },
+      { source: "/twitch/generador-bio", destination: "/twitch/bio-generator" },
+      { source: "/twitch/generador-reglas", destination: "/twitch/rules-generator" },
+      { source: "/twitch/planificador-stream", destination: "/twitch/stream-plan-generator" },
 
       // ElevenLabs - Rutas en español
       { source: "/elevenlabs/escritor-de-guiones-voz", destination: "/elevenlabs/voice-script-writer" },
