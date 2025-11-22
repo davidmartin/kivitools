@@ -3495,3 +3495,129 @@ export async function generateInstagramCarousel(params: {
         throw new Error("Failed to generate carousel");
     }
 }
+
+// YouTube Tag Generator
+export async function generateYouTubeTags({
+    topic,
+    language,
+}: {
+    topic: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a YouTube SEO expert. Generate high-volume, low-competition tags for a video.
+Return ONLY a comma-separated list of tags. No other text.
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Video Topic: ${topic}
+Generate 15-20 relevant tags.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.7,
+            max_tokens: 500,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating YouTube tags:", error);
+        throw new Error("Failed to generate tags");
+    }
+}
+
+// YouTube Video Ideas Generator
+export async function generateYouTubeVideoIdeas({
+    niche,
+    targetAudience,
+    language,
+}: {
+    niche: string;
+    targetAudience: string;
+    language: string;
+}): Promise<Array<{ title: string; thumbnailIdea: string; description: string }>> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a YouTube strategist. Generate viral video ideas for a specific niche.
+Return the response as a JSON array of objects with the following structure:
+[
+  {
+    "title": "Click-worthy video title",
+    "thumbnailIdea": "Description of the thumbnail visual",
+    "description": "Brief concept of the video"
+  }
+]
+IMPORTANT: Return ONLY the JSON array. No markdown formatting or other text.
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Niche: ${niche}
+Target Audience: ${targetAudience}
+Generate 5 video ideas.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.8,
+            max_tokens: 1000,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "[]";
+        // Clean up potential markdown code blocks
+        const cleanContent = content.replace(/```json/g, "").replace(/```/g, "").trim();
+        return JSON.parse(cleanContent);
+    } catch (error) {
+        console.error("Error generating YouTube video ideas:", error);
+        throw new Error("Failed to generate video ideas");
+    }
+}
+
+// YouTube Community Post Generator
+export async function generateYouTubeCommunityPost({
+    topic,
+    type,
+    tone,
+    language,
+}: {
+    topic: string;
+    type: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a YouTube Community Manager. Write an engaging Community Post.
+Type: ${type} (Poll, Update, Question, Behind the Scenes, etc.)
+Tone: ${tone}
+Language: ${targetLanguage}
+Include emojis where appropriate.
+Keep it concise and interaction-focused.`;
+
+    const userPrompt = `Topic: ${topic}
+Write a post that encourages comments or likes.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.8,
+            max_tokens: 500,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating YouTube community post:", error);
+        throw new Error("Failed to generate community post");
+    }
+}
