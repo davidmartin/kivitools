@@ -93,14 +93,14 @@ Ambas URLs funcionan y muestran **exactamente el mismo contenido**.
 
 ### 🎮 Twitch
 
-| Inglés                      | Español                     |
-| --------------------------- | --------------------------- |
-| `/twitch/stream-title`      | `/twitch/titulo-stream`     |
-| `/twitch/panel-description` | `/twitch/descripcion-panel` |
-| `/twitch/chat-command`      | `/twitch/comando-chat`      |
-| `/twitch/bio-generator`         | `/twitch/generador-bio`         |
-| `/twitch/rules-generator`       | `/twitch/generador-reglas`      |
-| `/twitch/stream-plan-generator` | `/twitch/planificador-stream`   |
+| Inglés                          | Español                       |
+| ------------------------------- | ----------------------------- |
+| `/twitch/stream-title`          | `/twitch/titulo-stream`       |
+| `/twitch/panel-description`     | `/twitch/descripcion-panel`   |
+| `/twitch/chat-command`          | `/twitch/comando-chat`        |
+| `/twitch/bio-generator`         | `/twitch/generador-bio`       |
+| `/twitch/rules-generator`       | `/twitch/generador-reglas`    |
+| `/twitch/stream-plan-generator` | `/twitch/planificador-stream` |
 
 ### 🎙️ ElevenLabs
 

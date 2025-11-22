@@ -164,14 +164,14 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 
 ### 3.8 Twitch Tools (6 herramientas)
 
-| Herramienta                | Descripción                     | Inputs                   | Outputs                          | Status |
-| -------------------------- | ------------------------------- | ------------------------ | -------------------------------- | ------ |
-| **Stream Title Generator** | Títulos atractivos para streams | Juego/tema, estilo       | Títulos optimizados (8 opciones) | ✅     |
-| **Chat Command Generator** | Genera respuestas para comandos | Comando, propósito, tono | Respuesta para bot de chat       | ✅     |
-| **Panel Description**      | Descripciones para paneles      | Tipo panel, contenido    | Descripción con formato          | ✅     |
-| **Bio Generator**          | Crea biografías atractivas      | Descripción, estilo      | Bio optimizada                   | ✅     |
-| **Rules Generator**        | Genera reglas para el chat      | Tono, enfoque            | Lista de reglas claras           | ✅     |
-| **Stream Plan Generator**  | Planifica contenido del stream  | Juego/actividad, duración| Plan detallado por segmentos     | ✅     |
+| Herramienta                | Descripción                     | Inputs                    | Outputs                          | Status |
+| -------------------------- | ------------------------------- | ------------------------- | -------------------------------- | ------ |
+| **Stream Title Generator** | Títulos atractivos para streams | Juego/tema, estilo        | Títulos optimizados (8 opciones) | ✅     |
+| **Chat Command Generator** | Genera respuestas para comandos | Comando, propósito, tono  | Respuesta para bot de chat       | ✅     |
+| **Panel Description**      | Descripciones para paneles      | Tipo panel, contenido     | Descripción con formato          | ✅     |
+| **Bio Generator**          | Crea biografías atractivas      | Descripción, estilo       | Bio optimizada                   | ✅     |
+| **Rules Generator**        | Genera reglas para el chat      | Tono, enfoque             | Lista de reglas claras           | ✅     |
+| **Stream Plan Generator**  | Planifica contenido del stream  | Juego/actividad, duración | Plan detallado por segmentos     | ✅     |
 
 ### 3.10 Amazon Tools (1 herramienta)
 

@@ -2390,7 +2390,7 @@ Genre-specific tips:
 Keep the original text intact - only add optimization tags and minor improvements for audio.`;
 
     try {
-               const completion = await deepseek.chat.completions.create({
+        const completion = await deepseek.chat.completions.create({
             model: "deepseek-chat",
             messages: [
                 { role: "system", content: systemPrompt },
