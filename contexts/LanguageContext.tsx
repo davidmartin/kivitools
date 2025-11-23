@@ -19,7 +19,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   // Cargar idioma guardado o detectar automáticamente
   useEffect(() => {
     const saved = localStorage.getItem("language") as Language;
-    
+
     if (saved && (saved === "es" || saved === "en")) {
       // Si hay un idioma guardado, usarlo
       setLanguageState(saved);
@@ -39,7 +39,18 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations.es] || key;
+    const keys = key.split(".");
+    let value: any = translations[language];
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && k in value) {
+        value = value[k];
+      } else {
+        return key;
+      }
+    }
+
+    return typeof value === "string" ? value : key;
   };
 
   return (

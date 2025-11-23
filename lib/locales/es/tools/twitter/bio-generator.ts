@@ -23,5 +23,8 @@ export const bio_generator = {
     "twitterBio.features.professional.description": "Equilibra personalidad con profesionalismo.",
     "twitterBio.features.instant.title": "⚡ Listo al Instante",
     "twitterBio.features.instant.description": "Úsalo inmediatamente en tu perfil.",
+    "twitterBio.features.optimized.title": "🚀 Optimizado",
+    "twitterBio.features.optimized.description": "Diseñado para maximizar engagement y seguidores.",
+    "twitterBio.result.charCount": "Recuento de caracteres",
 
 };
