@@ -9,7 +9,7 @@ export const youtube = {
   ...title_generator,
   ...description_generator,
   ...script_generator,
-  youtubeTagGenerator,
-  youtubeVideoIdeas,
-  youtubeCommunityPostGenerator,
+  ...youtubeTagGenerator,
+  ...youtubeVideoIdeas,
+  ...youtubeCommunityPostGenerator,
 };

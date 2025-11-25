@@ -28,6 +28,24 @@ export default function YouTubeToolsPage() {
       href: "/youtube/description-generator",
       icon: "📄",
     },
+    {
+      name: t("youtubeTagGenerator.title"),
+      description: t("youtubeTagGenerator.description"),
+      href: "/youtube/tag-generator",
+      icon: "🏷️",
+    },
+    {
+      name: t("youtubeVideoIdeas.title"),
+      description: t("youtubeVideoIdeas.description"),
+      href: "/youtube/video-ideas",
+      icon: "💡",
+    },
+    {
+      name: t("youtubeCommunityPost.title"),
+      description: t("youtubeCommunityPost.description"),
+      href: "/youtube/community-post-generator",
+      icon: "💬",
+    },
   ];
 
   return (

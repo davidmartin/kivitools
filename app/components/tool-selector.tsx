@@ -49,6 +49,9 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "youtubeScript.title", href: "/youtube/script-generator" },
     { name: "youtubeTitle.title", href: "/youtube/title-generator" },
     { name: "youtubeDescription.title", href: "/youtube/description-generator" },
+    { name: "youtubeTagGenerator.title", href: "/youtube/tag-generator" },
+    { name: "youtubeVideoIdeas.title", href: "/youtube/video-ideas" },
+    { name: "youtubeCommunityPost.title", href: "/youtube/community-post-generator" },
   ],
   reddit: [
     { name: "redditPost.title", href: "/reddit/post-generator" },

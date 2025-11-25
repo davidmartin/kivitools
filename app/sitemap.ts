@@ -115,6 +115,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/youtube/generador-descripciones", // Spanish alias
     "/youtube/script-generator",
     "/youtube/generador-guiones", // Spanish alias
+    "/youtube/tag-generator",
+    "/youtube/generador-tags", // Spanish alias
+    "/youtube/video-ideas",
+    "/youtube/ideas-videos", // Spanish alias
+    "/youtube/community-post-generator",
+    "/youtube/generador-post-comunidad", // Spanish alias
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
