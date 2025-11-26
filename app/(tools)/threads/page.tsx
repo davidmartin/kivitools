@@ -28,7 +28,7 @@ export default function ThreadsToolsPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-900/30 text-gray-600 dark:text-gray-400 rounded-full text-sm font-semibold mb-4">
-            <PlatformLogo platform="threads" size={20} />
+            <PlatformLogo platform="threads" size="sm" />
             Threads
           </div>
           <h1 className="text-5xl font-bold text-foreground mb-4">
