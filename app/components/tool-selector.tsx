@@ -10,7 +10,7 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
@@ -83,6 +83,22 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "forocochesPole.title", href: "/forocoches/pole-generator" },
     { name: "forocochesTroll.title", href: "/forocoches/troll-response" },
   ],
+  pinterest: [
+    { name: "pinterestPinDescription.title", href: "/pinterest/pin-description" },
+    { name: "pinterestBoardName.title", href: "/pinterest/board-name" },
+    { name: "pinterestProfileBio.title", href: "/pinterest/profile-bio" },
+  ],
+  spotify: [
+    { name: "spotifyPlaylistName.title", href: "/spotify/playlist-name" },
+    { name: "spotifyPlaylistDescription.title", href: "/spotify/playlist-description" },
+    { name: "spotifyArtistBio.title", href: "/spotify/artist-bio" },
+  ],
+  facebook: [
+    { name: "facebookPost.title", href: "/facebook/post-generator" },
+    { name: "facebookPageBio.title", href: "/facebook/page-bio" },
+    { name: "facebookAdCopy.title", href: "/facebook/ad-copy" },
+  ],
+  threads: [],
 };
 
 export default function ToolSelector({ platform }: ToolSelectorProps) {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 interface PlatformLogoProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads";
   size?: "sm" | "md" | "lg" | "xl";
   className?: string;
 }
@@ -15,7 +15,7 @@ const sizeConfig = {
 
 export default function PlatformLogo({ platform, size = "md", className = "" }: PlatformLogoProps) {
   const config = sizeConfig[size];
-  const needsInvert = platform === "twitter" || platform === "suno" || platform === "elevenlabs" || platform === "amazon";
+  const needsInvert = platform === "twitter" || platform === "suno" || platform === "elevenlabs" || platform === "amazon" || platform === "threads";
 
   return (
     <div

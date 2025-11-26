@@ -51,6 +51,13 @@ export default function Home() {
       color: "pink",
     },
     {
+      name: "Pinterest",
+      description: t("pinterest.page.description"),
+      href: "/pinterest",
+      icon: "📌",
+      color: "red",
+    },
+    {
       name: "Twitter",
       description: t("twitter.page.description"),
       href: "/twitter",
@@ -93,6 +100,13 @@ export default function Home() {
       color: "purple",
     },
     {
+      name: "Spotify",
+      description: t("spotify.page.description"),
+      href: "/spotify",
+      icon: "🎧",
+      color: "green",
+    },
+    {
       name: "Suno",
       description: t("suno.page.description"),
       href: "/suno",
@@ -119,6 +133,13 @@ export default function Home() {
       href: "/amazon",
       icon: "🛒",
       color: "orange",
+    },
+    {
+      name: "Facebook",
+      description: t("facebook.page.description"),
+      href: "/facebook",
+      icon: "📘",
+      color: "blue",
     },
     {
       name: "LinkedIn",

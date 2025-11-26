@@ -17,5 +17,17 @@ export const platforms = {
     "amazon.page.description": "Descriptions that sell more than a charismatic used car salesman.",
     "amazon.info.title": "What is Amazon Associates?",
     "amazon.info.description": "The Amazon Associates program allows you to earn commissions by recommending products. Our tools help you create persuasive content to boost your clicks and sales.",
+    "pinterest.page.description": "Pin descriptions so irresistible Pinterest will put you on the explore page (probably).",
+    "pinterest.info.title": "What is Pinterest?",
+    "pinterest.info.description": "Pinterest is the visual discovery platform where ideas come to life. Our tools help you create SEO-optimized content that stands out in searches.",
+    "spotify.page.description": "Playlist descriptions so vibrant Spotify will give you your own editorial playlist (well, almost).",
+    "spotify.info.title": "What is Spotify?",
+    "spotify.info.description": "Spotify is the world's most popular music streaming platform. Our tools help you create content that makes your playlists more discoverable.",
+    "facebook.page.description": "Facebook posts that get more engagement than your aunt sharing minions (without the minions).",
+    "facebook.info.title": "What is Facebook?",
+    "facebook.info.description": "Facebook remains the world's largest social network. Our tools help you create content optimized for the Facebook algorithm.",
+    "threads.page.description": "Threads posts so conversational people will think you're their best friend (without knowing you).",
+    "threads.info.title": "What is Threads?",
+    "threads.info.description": "Threads is Meta's conversation app. Our tools help you create casual and authentic posts that connect with your audience.",
 
 };

@@ -74,6 +74,21 @@ const nextConfig: NextConfig = {
       { source: "/elevenlabs/guion-podcast", destination: "/elevenlabs/podcast-script" },
       { source: "/elevenlabs/guion-anuncio", destination: "/elevenlabs/ad-script" },
       { source: "/elevenlabs/optimizador-audiolibro", destination: "/elevenlabs/audiobook-optimizer" },
+
+      // Pinterest - Rutas en español
+      { source: "/pinterest/generador-descripcion-pin", destination: "/pinterest/pin-description" },
+      { source: "/pinterest/generador-nombres-tablero", destination: "/pinterest/board-name" },
+      { source: "/pinterest/generador-bio-perfil", destination: "/pinterest/profile-bio" },
+
+      // Spotify - Rutas en español
+      { source: "/spotify/generador-nombres-playlist", destination: "/spotify/playlist-name" },
+      { source: "/spotify/generador-descripcion-playlist", destination: "/spotify/playlist-description" },
+      { source: "/spotify/generador-bio-artista", destination: "/spotify/artist-bio" },
+
+      // Facebook - Rutas en español
+      { source: "/facebook/generador-publicaciones", destination: "/facebook/post-generator" },
+      { source: "/facebook/bio-pagina", destination: "/facebook/page-bio" },
+      { source: "/facebook/texto-anuncio", destination: "/facebook/ad-copy" },
     ];
   },
 };

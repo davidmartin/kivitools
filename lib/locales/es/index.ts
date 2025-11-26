@@ -16,6 +16,9 @@ import { forocoches } from "./tools/forocoches";
 import { suno } from "./tools/suno";
 import { twitch } from "./tools/twitch";
 import { amazon } from "./tools/amazon";
+import { pinterest } from "./tools/pinterest";
+import { spotify } from "./tools/spotify";
+import { facebook } from "./tools/facebook";
 import { builder } from "./builder";
 import { dashboard } from "./dashboard";
 import { admin } from "./admin";
@@ -39,6 +42,9 @@ export const es = {
   ...suno,
   ...twitch,
   ...amazon,
+  ...pinterest,
+  ...spotify,
+  ...facebook,
   ...builder,
   ...dashboard,
   ...admin,
