@@ -28,8 +28,8 @@ Based on plan.md structure - extending existing Next.js app:
 
 **Purpose**: Project structure for new admin feature
 
-- [ ] T001 Create directory structure `app/api/admin/video-generator/prompt/` and `app/api/admin/video-generator/caption/`
-- [ ] T002 Create directory structure `app/admin/video-generator/`
+- [x] T001 Create directory structure `app/api/admin/video-generator/prompt/` and `app/api/admin/video-generator/caption/`
+- [x] T002 Create directory structure `app/admin/video-generator/`
 
 ---
 
@@ -39,14 +39,14 @@ Based on plan.md structure - extending existing Next.js app:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 [P] Add `generateVeo2Prompt()` function to `lib/deepseek.ts` - accepts platform, toolSlug, toolName, toolDescription, language; returns structured Veo 2 prompt with STYLE, ASPECT, DURATION, SCENE, CAMERA, TEXT, MOOD sections; prompt engineering must handle abstract/hard-to-visualize tools by focusing on user benefits and UI animations rather than literal tool representation
-- [ ] T004 [P] Add `generateTikTokCaption()` function to `lib/deepseek.ts` - accepts platform, toolSlug, toolName, toolDescription, language; returns caption text, hashtags array, and tool URL
-- [ ] T005 [P] Add video generator translation keys to `lib/locales/en/admin.ts` (~25 keys: title, subtitle, steps 1-4, form labels, button texts, error messages)
-- [ ] T006 [P] Add video generator translation keys to `lib/locales/es/admin.ts` (~25 keys matching English)
-- [ ] T007 [P] Add video generator translation keys to `lib/locales/pt/admin.ts` (~25 keys matching English)
-- [ ] T008 [P] Add video generator translation keys to `lib/locales/fr/admin.ts` (~25 keys matching English)
-- [ ] T009 [P] Add video generator translation keys to `lib/locales/de/admin.ts` (~25 keys matching English)
-- [ ] T010 [P] Add video generator translation keys to `lib/locales/it/admin.ts` (~25 keys matching English)
+- [x] T003 [P] Add `generateVeo2Prompt()` function to `lib/deepseek.ts` - accepts platform, toolSlug, toolName, toolDescription, language; returns structured Veo 2 prompt with STYLE, ASPECT, DURATION, SCENE, CAMERA, TEXT, MOOD sections; prompt engineering must handle abstract/hard-to-visualize tools by focusing on user benefits and UI animations rather than literal tool representation
+- [x] T004 [P] Add `generateTikTokCaption()` function to `lib/deepseek.ts` - accepts platform, toolSlug, toolName, toolDescription, language; returns caption text, hashtags array, and tool URL
+- [x] T005 [P] Add video generator translation keys to `lib/locales/en/admin.ts` (~25 keys: title, subtitle, steps 1-4, form labels, button texts, error messages)
+- [x] T006 [P] Add video generator translation keys to `lib/locales/es/admin.ts` (~25 keys matching English)
+- [x] T007 [P] Add video generator translation keys to `lib/locales/pt/admin.ts` (~25 keys matching English)
+- [x] T008 [P] Add video generator translation keys to `lib/locales/fr/admin.ts` (~25 keys matching English)
+- [x] T009 [P] Add video generator translation keys to `lib/locales/de/admin.ts` (~25 keys matching English)
+- [x] T010 [P] Add video generator translation keys to `lib/locales/it/admin.ts` (~25 keys matching English)
 
 **Checkpoint**: Foundation ready - DeepSeek functions and translations available for all stories
 
@@ -60,11 +60,11 @@ Based on plan.md structure - extending existing Next.js app:
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Create POST API route `app/api/admin/video-generator/prompt/route.ts` - verify admin auth (check user.labels.includes("admin") using Appwrite SDK, return 401/403 if unauthorized), validate request body (platform, toolSlug, toolName, toolDescription, language), call generateVeo2Prompt(), return {success, prompt} or {success: false, error}
-- [ ] T012 [US1] Create base admin page `app/admin/video-generator/page.tsx` with admin auth check (reuse pattern from app/admin/page.tsx), loading state, and access denied view
-- [ ] T013 [US1] Add tool selector dropdown to `app/admin/video-generator/page.tsx` - import PLATFORM_TOOLS from tool-selector.tsx, flatten to list with platform/name/href/slug, use HeroUI Button + Popover for dropdown, show platform emoji + tool name
-- [ ] T014 [US1] Add prompt generation section to `app/admin/video-generator/page.tsx` - "Generate Prompt" Button (onPress), loading state, display generated prompt in Card with pre-formatted text, copy button using navigator.clipboard.writeText(), include helper text with AI Studio link (aistudio.google.com/prompts/new_video) and fallback note if service unavailable
-- [ ] T015 [US1] Add step indicator to `app/admin/video-generator/page.tsx` - use HeroUI Chip components showing steps 1-4, highlight current step based on workflow state
+- [x] T011 [US1] Create POST API route `app/api/admin/video-generator/prompt/route.ts` - verify admin auth (check user.labels.includes("admin") using Appwrite SDK, return 401/403 if unauthorized), validate request body (platform, toolSlug, toolName, toolDescription, language), call generateVeo2Prompt(), return {success, prompt} or {success: false, error}
+- [x] T012 [US1] Create base admin page `app/admin/video-generator/page.tsx` with admin auth check (reuse pattern from app/admin/page.tsx), loading state, and access denied view
+- [x] T013 [US1] Add tool selector dropdown to `app/admin/video-generator/page.tsx` - import PLATFORM_TOOLS from tool-selector.tsx, flatten to list with platform/name/href/slug, use HeroUI Button + Popover for dropdown, show platform emoji + tool name
+- [x] T014 [US1] Add prompt generation section to `app/admin/video-generator/page.tsx` - "Generate Prompt" Button (onPress), loading state, display generated prompt in Card with pre-formatted text, copy button using navigator.clipboard.writeText(), include helper text with AI Studio link (aistudio.google.com/prompts/new_video) and fallback note if service unavailable
+- [x] T015 [US1] Add step indicator to `app/admin/video-generator/page.tsx` - use HeroUI Chip components showing steps 1-4, highlight current step based on workflow state
 
 **Checkpoint**: User Story 1 complete - admin can select tool, generate prompt, and copy it
 
@@ -78,9 +78,9 @@ Based on plan.md structure - extending existing Next.js app:
 
 ### Implementation for User Story 2
 
-- [ ] T016 [US2] Add video upload section to `app/admin/video-generator/page.tsx` - file input (accept="video/mp4"), styled with HeroUI Button, hidden native input pattern
-- [ ] T017 [US2] Add video validation to `app/admin/video-generator/page.tsx` - check file.type includes 'mp4', check file.size <= 100MB, show validation errors using Alert component
-- [ ] T018 [US2] Add video preview to `app/admin/video-generator/page.tsx` - create object URL with URL.createObjectURL(), display in native video element with controls, store in state as UploadedVideo type
+- [x] T016 [US2] Add video upload section to `app/admin/video-generator/page.tsx` - file input (accept="video/mp4"), styled with HeroUI Button, hidden native input pattern
+- [x] T017 [US2] Add video validation to `app/admin/video-generator/page.tsx` - check file.type includes 'mp4', check file.size <= 100MB, show validation errors using Alert component
+- [x] T018 [US2] Add video preview to `app/admin/video-generator/page.tsx` - create object URL with URL.createObjectURL(), display in native video element with controls, store in state as UploadedVideo type
 
 **Checkpoint**: User Story 2 complete - admin can upload video and see preview with validation
 
@@ -94,10 +94,10 @@ Based on plan.md structure - extending existing Next.js app:
 
 ### Implementation for User Story 3
 
-- [ ] T019 [US3] Create POST API route `app/api/admin/video-generator/caption/route.ts` - verify admin auth (check user.labels.includes("admin") using Appwrite SDK, return 401/403 if unauthorized), validate request body (platform, toolSlug, toolName, toolDescription, language), call generateTikTokCaption(), return {success, caption, hashtags, toolUrl} or error
-- [ ] T020 [US3] Add caption generation section to `app/admin/video-generator/page.tsx` - "Generate Caption" Button (appears after video upload), loading state, auto-generate when video is valid
-- [ ] T021 [US3] Add editable caption display to `app/admin/video-generator/page.tsx` - use HeroUI TextArea for caption text, display hashtags as Chip components, show tool URL, track isEdited state
-- [ ] T022 [US3] Add copy caption button to `app/admin/video-generator/page.tsx` - copies full caption with hashtags formatted as #tag1 #tag2, show success feedback
+- [x] T019 [US3] Create POST API route `app/api/admin/video-generator/caption/route.ts` - verify admin auth (check user.labels.includes("admin") using Appwrite SDK, return 401/403 if unauthorized), validate request body (platform, toolSlug, toolName, toolDescription, language), call generateTikTokCaption(), return {success, caption, hashtags, toolUrl} or error
+- [x] T020 [US3] Add caption generation section to `app/admin/video-generator/page.tsx` - "Generate Caption" Button (appears after video upload), loading state, auto-generate when video is valid
+- [x] T021 [US3] Add editable caption display to `app/admin/video-generator/page.tsx` - use HeroUI TextArea for caption text, display hashtags as Chip components, show tool URL, track isEdited state
+- [x] T022 [US3] Add copy caption button to `app/admin/video-generator/page.tsx` - copies full caption with hashtags formatted as #tag1 #tag2, show success feedback
 
 **Checkpoint**: User Story 3 complete - admin gets AI-generated caption, can edit it, and copy it
 
@@ -111,9 +111,9 @@ Based on plan.md structure - extending existing Next.js app:
 
 ### Implementation for User Story 4
 
-- [ ] T023 [US4] Add ready-to-publish section to `app/admin/video-generator/page.tsx` - Card with video preview, caption preview with copy button, download video Button
-- [ ] T024 [US4] Implement video download to `app/admin/video-generator/page.tsx` - create download link using object URL, trigger download with filename based on tool slug
-- [ ] T025 [US4] Add "Start Over" button to `app/admin/video-generator/page.tsx` - resets all state (selectedTool, prompt, video, caption), returns to step 1
+- [x] T023 [US4] Add ready-to-publish section to `app/admin/video-generator/page.tsx` - Card with video preview, caption preview with copy button, download video Button
+- [x] T024 [US4] Implement video download to `app/admin/video-generator/page.tsx` - create download link using object URL, trigger download with filename based on tool slug
+- [x] T025 [US4] Add "Start Over" button to `app/admin/video-generator/page.tsx` - resets all state (selectedTool, prompt, video, caption), returns to step 1
 
 **Checkpoint**: User Story 4 complete - admin can copy caption and download video for manual TikTok publishing
 
@@ -123,11 +123,11 @@ Based on plan.md structure - extending existing Next.js app:
 
 **Purpose**: Improvements across all user stories
 
-- [ ] T026 [P] Add dark mode support to `app/admin/video-generator/page.tsx` - verify all colors use HeroUI semantic classes (text-foreground, bg-surface, etc.)
-- [ ] T027 [P] Add responsive design to `app/admin/video-generator/page.tsx` - test on mobile viewport, adjust grid/flex layouts for smaller screens
-- [ ] T028 Test complete workflow: login as admin → select tool → generate prompt → copy prompt → (external: use VideoFX) → upload video → generate caption → edit caption → copy caption → download video → (external: post to TikTok)
-- [ ] T029 Test non-admin access: verify access denied page shows for non-admin users
-- [ ] T030 Test all 6 language translations: switch UI language and verify all videoGenerator keys display correctly
+- [x] T026 [P] Add dark mode support to `app/admin/video-generator/page.tsx` - verify all colors use HeroUI semantic classes (text-foreground, bg-surface, etc.)
+- [x] T027 [P] Add responsive design to `app/admin/video-generator/page.tsx` - test on mobile viewport, adjust grid/flex layouts for smaller screens
+- [x] T028 Test complete workflow: login as admin → select tool → generate prompt → copy prompt → (external: use VideoFX) → upload video → generate caption → edit caption → copy caption → download video → (external: post to TikTok)
+- [x] T029 Test non-admin access: verify access denied page shows for non-admin users
+- [x] T030 Test all 6 language translations: switch UI language and verify all videoGenerator keys display correctly
 
 ---
 
