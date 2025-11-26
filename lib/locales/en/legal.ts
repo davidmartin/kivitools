@@ -29,4 +29,50 @@ export const legal = {
     "terms.termination.title": "Termination",
     "terms.termination.description": "We reserve the right to terminate or suspend access to our service without prior notice for conduct we deem inappropriate.",
 
+    // Cookie Banner
+    "cookies.banner.title": "We Use Cookies (The Digital Kind, Not The Delicious Ones)",
+    "cookies.banner.description": "We use cookies to make your experience less confusing and more awesome. Some are essential (like oxygen, but for websites), others help us understand what you like. You're in charge of the non-essential ones!",
+    "cookies.banner.acceptAll": "Accept All",
+    "cookies.banner.rejectNonEssential": "Reject Non-Essential",
+    "cookies.banner.customize": "Customize",
+    "cookies.banner.moreInfo": "Learn more about our cookies",
+
+    // Cookie Preferences Modal
+    "cookies.preferences.title": "Cookie Preferences",
+    "cookies.preferences.save": "Save Preferences",
+    "cookies.preferences.cancel": "Cancel",
+    "cookies.preferences.essential.title": "Essential Cookies",
+    "cookies.preferences.essential.description": "These cookies are necessary for the website to function. Without them, things would get weird. Like, really weird. You can't turn these off.",
+    "cookies.preferences.analytics.title": "Analytics Cookies",
+    "cookies.preferences.analytics.description": "Help us understand which tools you love (and which ones need some TLC). We use Google Analytics to count visits, not to stalk you.",
+    "cookies.preferences.advertising.title": "Advertising Cookies",
+    "cookies.preferences.advertising.description": "Allow us to show you relevant ads through Google AdSense. These cookies help keep our tools free. No ads = we'd have to start charging. Nobody wants that.",
+
+    // Cookie Policy Page
+    "cookies.policy.title": "Cookie Policy",
+    "cookies.policy.lastUpdated": "Last updated: November 26, 2025",
+    "cookies.policy.intro": "This Cookie Policy explains what cookies are, how we use them, and your choices regarding cookies. We believe in transparency, so here's the full scoop on our digital crumbs.",
+    "cookies.policy.whatAreCookies.title": "What Are Cookies?",
+    "cookies.policy.whatAreCookies.description": "Cookies are small text files stored on your device when you visit a website. They help websites remember things about your visit, like your preferences. Think of them as sticky notes your browser keeps for us.",
+    "cookies.policy.howWeUse.title": "How We Use Cookies",
+    "cookies.policy.howWeUse.description": "We use cookies for three main purposes: keeping the site running smoothly (essential), understanding how you use our tools (analytics), and showing you relevant ads (advertising). Each category is explained below.",
+    "cookies.policy.table.name": "Cookie Name",
+    "cookies.policy.table.provider": "Provider",
+    "cookies.policy.table.purpose": "Purpose",
+    "cookies.policy.table.duration": "Duration",
+    "cookies.policy.cookie.consent": "Stores your cookie consent preferences so we don't bug you every visit",
+    "cookies.policy.cookie.turnstile": "Cloudflare security verification to protect against bots",
+    "cookies.policy.cookie.ga": "Unique visitor identifier for Google Analytics",
+    "cookies.policy.cookie.gaSession": "Session ID for Google Analytics to track page visits",
+    "cookies.policy.cookie.gid": "Distinguishes users for Google Analytics within a session",
+    "cookies.policy.cookie.adsense": "Personalized advertising through Google AdSense",
+    "cookies.policy.yourChoices.title": "Your Choices",
+    "cookies.policy.yourChoices.description": "You can change your cookie preferences at any time by clicking the 'Cookie Settings' link in our footer. You can also configure your browser to block all cookies, but this may affect your experience on our site.",
+    "cookies.policy.contact.title": "Questions?",
+    "cookies.policy.contact.description": "If you have any questions about our cookie practices, feel free to reach out to us through our contact page.",
+
+    // Footer Cookie Links
+    "footer.cookieSettings": "Cookie Settings",
+    "footer.cookiePolicy": "Cookie Policy",
+
 };

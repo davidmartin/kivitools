@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useCookieConsentSafe } from "@/contexts/CookieConsentContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useLanguage();
+  const { openPreferences } = useCookieConsentSafe();
 
   return (
     <footer className="bg-surface border-t border-border mt-auto">
@@ -75,6 +77,22 @@ export default function Footer() {
                 >
                   {t("footer.terms")}
                 </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cookie-policy"
+                  className="text-sm text-muted hover:text-accent transition-colors"
+                >
+                  {t("footer.cookiePolicy")}
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={openPreferences}
+                  className="text-sm text-muted hover:text-accent transition-colors"
+                >
+                  {t("footer.cookieSettings")}
+                </button>
               </li>
             </ul>
           </div>

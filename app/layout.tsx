@@ -7,9 +7,12 @@ import Breadcrumbs from "./components/breadcrumbs";
 import Script from "next/script";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "./components/google-analytics";
+import CookieBanner from "./components/cookie-banner";
+import CookiePreferencesModal from "./components/cookie-preferences-modal";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -182,14 +185,18 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased flex flex-col min-h-screen bg-mesh text-foreground selection:bg-accent selection:text-accent-foreground`}
       >
-        <GoogleAnalytics />
         <LanguageProvider>
-          <AuthProvider>
-            <Navigation />
-            <Breadcrumbs />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </AuthProvider>
+          <CookieConsentProvider>
+            <GoogleAnalytics />
+            <AuthProvider>
+              <Navigation />
+              <Breadcrumbs />
+              <main className="flex-1">{children}</main>
+              <Footer />
+              <CookieBanner />
+              <CookiePreferencesModal />
+            </AuthProvider>
+          </CookieConsentProvider>
         </LanguageProvider>
         <Analytics />
         <SpeedInsights />

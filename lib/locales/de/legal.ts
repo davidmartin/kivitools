@@ -29,4 +29,50 @@ export const legal = {
     "terms.termination.title": "Beendigung",
     "terms.termination.description": "Wir behalten uns das Recht vor, den Zugang zu unserem Dienst ohne vorherige Ankündigung zu beenden oder auszusetzen, wenn wir ein Verhalten als unangemessen erachten.",
 
+    // Cookie Banner
+    "cookies.banner.title": "Wir Verwenden Cookies (Die Digitalen, Nicht Die Leckeren)",
+    "cookies.banner.description": "Wir verwenden Cookies, um dein Erlebnis weniger verwirrend und cooler zu machen. Einige sind essentiell (wie Sauerstoff, aber für Websites), andere helfen uns zu verstehen, was dir gefällt. Du entscheidest über die nicht-essentiellen!",
+    "cookies.banner.acceptAll": "Alle Akzeptieren",
+    "cookies.banner.rejectNonEssential": "Nicht-Essentielle Ablehnen",
+    "cookies.banner.customize": "Anpassen",
+    "cookies.banner.moreInfo": "Mehr über unsere Cookies erfahren",
+
+    // Cookie Preferences Modal
+    "cookies.preferences.title": "Cookie-Einstellungen",
+    "cookies.preferences.save": "Einstellungen Speichern",
+    "cookies.preferences.cancel": "Abbrechen",
+    "cookies.preferences.essential.title": "Essentielle Cookies",
+    "cookies.preferences.essential.description": "Diese Cookies sind notwendig, damit die Website funktioniert. Ohne sie würden Dinge seltsam werden. Wirklich seltsam. Du kannst sie nicht deaktivieren.",
+    "cookies.preferences.analytics.title": "Analyse-Cookies",
+    "cookies.preferences.analytics.description": "Helfen uns zu verstehen, welche Tools du liebst (und welche Verbesserungen brauchen). Wir nutzen Google Analytics, um Besuche zu zählen, nicht um dich auszuspionieren.",
+    "cookies.preferences.advertising.title": "Werbe-Cookies",
+    "cookies.preferences.advertising.description": "Ermöglichen es uns, dir relevante Anzeigen über Google AdSense zu zeigen. Diese Cookies helfen, unsere Tools kostenlos zu halten. Keine Werbung = wir müssten Geld verlangen. Das will niemand.",
+
+    // Cookie Policy Page
+    "cookies.policy.title": "Cookie-Richtlinie",
+    "cookies.policy.lastUpdated": "Zuletzt aktualisiert: 26. November 2025",
+    "cookies.policy.intro": "Diese Cookie-Richtlinie erklärt, was Cookies sind, wie wir sie verwenden und deine Wahlmöglichkeiten. Wir glauben an Transparenz, also hier alle Infos über unsere digitalen Krümel.",
+    "cookies.policy.whatAreCookies.title": "Was Sind Cookies?",
+    "cookies.policy.whatAreCookies.description": "Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden, wenn du eine Website besuchst. Sie helfen Websites, sich an Dinge über deinen Besuch zu erinnern, wie deine Präferenzen. Stell sie dir als Haftnotizen vor, die dein Browser für uns aufbewahrt.",
+    "cookies.policy.howWeUse.title": "Wie Wir Cookies Verwenden",
+    "cookies.policy.howWeUse.description": "Wir verwenden Cookies für drei Hauptzwecke: die Website am Laufen halten (essentiell), verstehen, wie du unsere Tools nutzt (Analyse) und dir relevante Anzeigen zeigen (Werbung). Jede Kategorie wird unten erklärt.",
+    "cookies.policy.table.name": "Cookie-Name",
+    "cookies.policy.table.provider": "Anbieter",
+    "cookies.policy.table.purpose": "Zweck",
+    "cookies.policy.table.duration": "Dauer",
+    "cookies.policy.cookie.consent": "Speichert deine Cookie-Präferenzen, damit wir dich nicht bei jedem Besuch nerven",
+    "cookies.policy.cookie.turnstile": "Cloudflare-Sicherheitsverifizierung zum Schutz vor Bots",
+    "cookies.policy.cookie.ga": "Eindeutiger Besucheridentifikator für Google Analytics",
+    "cookies.policy.cookie.gaSession": "Sitzungs-ID für Google Analytics zur Verfolgung von Seitenbesuchen",
+    "cookies.policy.cookie.gid": "Unterscheidet Nutzer für Google Analytics innerhalb einer Sitzung",
+    "cookies.policy.cookie.adsense": "Personalisierte Werbung über Google AdSense",
+    "cookies.policy.yourChoices.title": "Deine Wahlmöglichkeiten",
+    "cookies.policy.yourChoices.description": "Du kannst deine Cookie-Einstellungen jederzeit ändern, indem du auf den Link 'Cookie-Einstellungen' in unserer Fußzeile klickst. Du kannst deinen Browser auch so konfigurieren, dass alle Cookies blockiert werden, aber das kann dein Erlebnis auf unserer Seite beeinträchtigen.",
+    "cookies.policy.contact.title": "Fragen?",
+    "cookies.policy.contact.description": "Wenn du Fragen zu unseren Cookie-Praktiken hast, kontaktiere uns gerne über unsere Kontaktseite.",
+
+    // Footer Cookie Links
+    "footer.cookieSettings": "Cookie-Einstellungen",
+    "footer.cookiePolicy": "Cookie-Richtlinie",
+
 };
