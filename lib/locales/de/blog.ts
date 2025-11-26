@@ -1,0 +1,26 @@
+export const blog = {
+    // Blog Section
+    "blog.badge": "Blog",
+    "blog.title": "Social Media Guides & Tricks",
+    "blog.description": "Meistern Sie Social Media mit unseren Artikeln und Tutorials. Tipps, Tricks und Strategien, um Ihre Reichweite zu vergrößern.",
+    "blog.readTime": "Lesezeit",
+    "blog.readMore": "Mehr lesen",
+    "blog.platform.tiktok": "TikTok",
+    "blog.platform.instagram": "Instagram",
+    "blog.platform.twitter": "Twitter",
+    "blog.platform.general": "Allgemein",
+    "blog.cta.title": "Bereit für viralen Content?",
+    "blog.cta.description": "Nutzen Sie unsere kostenlosen KI-Tools und legen Sie sofort los.",
+    "blog.cta.button": "Tools entdecken",
+    "blog.relatedTool.title": "Das kostenlose Tool testen",
+    "blog.relatedTool.description": "Setzen Sie das Gelernte mit unserem KI-Tool in die Praxis um.",
+    "blog.relatedTool.button": "Kostenloses Tool nutzen",
+    "blog.newsletter.title": "Kostenlose Content-Tipps erhalten",
+    "blog.newsletter.description": "Werden Sie Teil der Tausenden Creator, die jede Woche unsere besten Ratschläge erhalten.",
+    "blog.newsletter.placeholder": "ihre@email.de",
+    "blog.newsletter.button": "Abonnieren",
+    "blog.shareAgain": "Hat Ihnen dieser Artikel gefallen? Teilen Sie ihn!",
+    "blog.empty.title": "Demnächst verfügbar",
+    "blog.empty.description": "Wir bereiten tolle Guides vor, die Ihnen beim Wachstum in Social Media helfen. Schauen Sie bald wieder vorbei!",
+
+};

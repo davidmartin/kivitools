@@ -1,0 +1,27 @@
+export const description_generator = {
+    // YouTube Description Generator
+    "youtubeDescription.title": "Gerador de Descrição para YouTube",
+    "youtubeDescription.description": "Crie descrições completas e otimizadas para SEO. O algoritmo vai te amar!",
+    "youtubeDescription.form.topic": "Tema do Vídeo",
+    "youtubeDescription.form.topicPlaceholder": "Descreva seu vídeo aqui...",
+    "youtubeDescription.form.keywords": "Palavras-chave",
+    "youtubeDescription.form.keywordsPlaceholder": "Digite palavras-chave separadas por vírgulas...",
+    "youtubeDescription.form.language": "Idioma",
+    "youtubeDescription.form.generate": "Gerar Descrição",
+    "youtubeDescription.form.generating": "Gerando descrição matadora...",
+    "youtubeDescription.form.useAgain": "Gerar Outra",
+    "youtubeDescription.form.error.emptyTopic": "Coloca um tema aí, vai!",
+    "youtubeDescription.result.title": "Sua Descrição",
+    "youtubeDescription.result.copy": "Copiar",
+    "youtubeDescription.result.copied": "Descrição copiada!",
+    "youtubeDescription.result.success": "Descrição gerada com sucesso! Tá pronta pra bombar!",
+    "youtubeDescription.features.complete.title": "📝 Descrição Completa",
+    "youtubeDescription.features.complete.description": "Inclui resumo, timestamps e CTAs. Tudo que o YouTube adora!",
+    "youtubeDescription.features.seo.title": "🔍 Otimizada para SEO",
+    "youtubeDescription.features.seo.description": "Palavras-chave posicionadas estrategicamente. Google vai pirar!",
+    "youtubeDescription.features.links.title": "🔗 Espaço para Links",
+    "youtubeDescription.features.links.description": "Seções para redes sociais e recursos. Divulga tudo!",
+    "youtubeDescription.features.instant.title": "⚡ Resultado Instantâneo",
+    "youtubeDescription.features.instant.description": "Descrições completas em segundos. Tchau, preguiça!",
+
+};

@@ -1,0 +1,22 @@
+export const username_checker = {
+    // TikTok Username Checker
+    "usernameChecker.title": "Verifica Username TikTok",
+    "usernameChecker.description": "Controlla se il tuo username ideale è disponibile su TikTok. Semplice e veloce!",
+    "usernameChecker.form.username": "Username",
+    "usernameChecker.form.usernamePlaceholder": "Inserisci username...",
+    "usernameChecker.form.check": "Verifica Disponibilità",
+    "usernameChecker.form.checking": "Verifica in corso...",
+    "usernameChecker.form.checkAnother": "Verifica un Altro",
+    "usernameChecker.form.error.emptyUsername": "Inserisci un username",
+    "usernameChecker.result.available": "✅ Disponibile!",
+    "usernameChecker.result.unavailable": "❌ Non Disponibile",
+    "usernameChecker.result.suggestions": "Suggerimenti Alternativi:",
+    "usernameChecker.features.instant.title": "⚡ Verifica Istantanea",
+    "usernameChecker.features.instant.description": "Verifica la disponibilità in pochi secondi.",
+    "usernameChecker.features.suggestions.title": "💡 Suggerimenti Smart",
+    "usernameChecker.features.suggestions.description": "Ottieni alternative se il tuo nome non è disponibile.",
+    "usernameChecker.features.free.title": "🆓 Completamente Gratis",
+    "usernameChecker.features.free.description": "Nessun limite, controlla quanti nomi vuoi.",
+    "usernameChecker.features.simple.title": "✨ Super Semplice",
+    "usernameChecker.features.simple.description": "Inserisci il nome e basta.",
+};

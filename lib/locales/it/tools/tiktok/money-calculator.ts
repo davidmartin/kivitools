@@ -1,0 +1,22 @@
+export const money_calculator = {
+    // TikTok Money Calculator
+    "moneyCalculator.title": "Calcolatore Guadagni TikTok",
+    "moneyCalculator.description": "Inserisci qualsiasi username TikTok per vedere una stima istantanea dei guadagni per video.",
+    "moneyCalculator.form.followers": "Username TikTok",
+    "moneyCalculator.form.followersPlaceholder": "Es: @username",
+    "moneyCalculator.form.calculate": "Calcola Guadagni",
+    "moneyCalculator.form.calculating": "Recupero dati...",
+    "moneyCalculator.form.calculateAgain": "Calcola Altro Profilo",
+    "moneyCalculator.form.error.invalidFollowers": "Inserisci un username valido",
+    "moneyCalculator.result.title": "Guadagni Stimati per Video",
+    "moneyCalculator.result.perPost": "per video",
+    "moneyCalculator.result.disclaimer": "💡 Nota: Queste sono stime basate su medie del settore. I guadagni effettivi variano in base a molteplici fattori come nicchia, località e tipo di collaborazioni.",
+    "moneyCalculator.features.realistic.title": "📊 Stime Realistiche",
+    "moneyCalculator.features.realistic.description": "Basate su dati del settore e trend attuali.",
+    "moneyCalculator.features.detailed.title": "💰 Dettaglio Completo",
+    "moneyCalculator.features.detailed.description": "Vedi stime per post, mese e anno.",
+    "moneyCalculator.features.engagement.title": "📈 Considera l'Engagement",
+    "moneyCalculator.features.engagement.description": "Tiene conto del tuo tasso di engagement per maggiore precisione.",
+    "moneyCalculator.features.free.title": "🆓 Sempre Gratis",
+    "moneyCalculator.features.free.description": "Calcola senza limiti, senza registrazione.",
+};

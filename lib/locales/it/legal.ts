@@ -1,0 +1,31 @@
+export const legal = {
+    // Privacy Policy
+    "privacy.title": "Informativa sulla Privacy",
+    "privacy.lastUpdated": "Ultimo aggiornamento: 19 novembre 2025",
+    "privacy.intro": "Su KiviTools, la tua privacy è la nostra priorità. Questa Informativa sulla Privacy descrive come raccogliamo, utilizziamo e proteggiamo le tue informazioni quando accedi e utilizzi i nostri servizi.",
+    "privacy.noDataCollection.title": "Raccolta Dati Personali",
+    "privacy.noDataCollection.description": "KiviTools opera su un principio di minimizzazione dei dati. Non richiediamo registrazione o login per utilizzare i nostri strumenti. Di conseguenza, non raccogliamo Informazioni Personali Identificabili (PII) come nomi, indirizzi email o numeri di telefono dai nostri utenti.",
+    "privacy.usage.title": "Informazioni Tecniche e di Utilizzo",
+    "privacy.usage.description": "Per mantenere e migliorare la qualità del nostro servizio, possiamo raccogliere informazioni tecniche anonime e aggregate. Queste possono includere dati riguardanti il tipo di browser, sistema operativo, tipo di dispositivo e metriche di utilizzo degli strumenti. Queste informazioni sono utilizzate esclusivamente per scopi analitici e di ottimizzazione delle prestazioni.",
+    "privacy.cookies.title": "Politica sui Cookie",
+    "privacy.cookies.description": "Utilizziamo cookie tecnici essenziali per garantire il corretto funzionamento del nostro sito web. Questi cookie non tracciano la tua attività di navigazione al di fuori del nostro sito né raccolgono informazioni personali. Puoi configurare il tuo browser per rifiutare tutti i cookie, anche se questo potrebbe influire sulla funzionalità di alcuni strumenti.",
+    "privacy.thirdParty.title": "Elaborazione Dati e Terze Parti",
+    "privacy.thirdParty.description": "I nostri strumenti di Intelligenza Artificiale elaborano i dati in modo sicuro. Non archiviamo permanentemente i contenuti generati né li condividiamo con terze parti per scopi commerciali. L'interazione con i fornitori di servizi AI avviene tramite protocolli sicuri e crittografati per garantire la riservatezza dei tuoi dati.",
+    "privacy.changes.title": "Modifiche alla Policy",
+    "privacy.changes.description": "Ci riserviamo il diritto di modificare questa Informativa sulla Privacy in qualsiasi momento. Eventuali modifiche significative verranno comunicate attraverso il nostro sito web. Ti consigliamo di consultare periodicamente questa pagina per rimanere informato su come proteggiamo le tue informazioni.",
+
+    // Terms and Conditions
+    "terms.title": "Termini e Condizioni",
+    "terms.lastUpdated": "Ultimo aggiornamento: 9 novembre 2025",
+    "terms.intro": "Utilizzando KiviTools, accetti questi termini e condizioni.",
+    "terms.service.title": "Utilizzo del Servizio",
+    "terms.service.description": "KiviTools fornisce strumenti gratuiti di generazione contenuti alimentati da AI. Il servizio è fornito 'così com'è' senza garanzie di alcun tipo.",
+    "terms.conduct.title": "Condotta dell'Utente",
+    "terms.conduct.description": "Devi utilizzare i nostri strumenti in modo responsabile e legale. Non devi generare contenuti illegali, dannosi, offensivi o che violino i diritti altrui.",
+    "terms.intellectual.title": "Proprietà Intellettuale",
+    "terms.intellectual.description": "I contenuti che generi usando i nostri strumenti sono tuoi. Mantieni tutti i diritti sui contenuti che crei.",
+    "terms.limitation.title": "Limitazione di Responsabilità",
+    "terms.limitation.description": "KiviTools non è responsabile per eventuali danni derivanti dall'uso del nostro servizio. Utilizzi gli strumenti a tuo rischio.",
+    "terms.termination.title": "Risoluzione",
+    "terms.termination.description": "Ci riserviamo il diritto di terminare o sospendere l'accesso al nostro servizio senza preavviso per condotte che riteniamo inappropriate.",
+};

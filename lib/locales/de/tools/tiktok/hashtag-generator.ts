@@ -1,0 +1,26 @@
+export const hashtag_generator = {
+    // TikTok Hashtag Generator
+    "hashtagGenerator.title": "TikTok Hashtag-Generator",
+    "hashtagGenerator.description": "Finden Sie die besten Hashtags für Ihre TikTok-Videos. Steigern Sie Ihre Reichweite und Auffindbarkeit!",
+    "hashtagGenerator.form.keyword": "Keyword oder Thema",
+    "hashtagGenerator.form.keywordPlaceholder": "Z.B.: Fitness, Kochen, Mode...",
+    "hashtagGenerator.form.generate": "Hashtags generieren",
+    "hashtagGenerator.form.generating": "Hashtags werden gesucht...",
+    "hashtagGenerator.form.useAgain": "Erneut suchen",
+    "hashtagGenerator.form.error.emptyKeyword": "Bitte geben Sie ein Keyword ein",
+    "hashtagGenerator.result.title": "Empfohlene Hashtags",
+    "hashtagGenerator.result.copyAll": "Alle kopieren",
+    "hashtagGenerator.result.copied": "Hashtag in Zwischenablage kopiert!",
+    "hashtagGenerator.result.copiedAll": "Alle Hashtags in Zwischenablage kopiert!",
+    "hashtagGenerator.result.tip": "💡 Profi-Tipp: Mischen Sie Hashtags mit hoher, mittlerer und niedriger Konkurrenz für beste Ergebnisse. Hohe Relevanz = eng mit Ihrem Content verwandt.",
+    "hashtagGenerator.result.success": "✓ {count} Hashtags erfolgreich gefunden",
+    "hashtagGenerator.features.viewEstimates.title": "📊 Aufrufe-Schätzungen",
+    "hashtagGenerator.features.viewEstimates.description": "Sehen Sie geschätzte Aufrufe für jeden Hashtag zur Beliebtheitsbewertung.",
+    "hashtagGenerator.features.relevance.title": "🎯 Relevanz-Score",
+    "hashtagGenerator.features.relevance.description": "Wissen Sie, welche Hashtags für Ihren Content am relevantesten sind.",
+    "hashtagGenerator.features.mixMatch.title": "🔥 Mix & Match",
+    "hashtagGenerator.features.mixMatch.description": "Erhalten Sie eine ausgewogene Mischung aus Tags mit hoher, mittlerer und niedriger Konkurrenz.",
+    "hashtagGenerator.features.quickCopy.title": "📋 Schnelles Kopieren",
+    "hashtagGenerator.features.quickCopy.description": "Kopieren Sie einzelne Tags oder alle auf einmal für Ihre Videobeschreibung.",
+
+};

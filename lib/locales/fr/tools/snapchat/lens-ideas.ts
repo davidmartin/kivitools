@@ -1,0 +1,26 @@
+export const lens_ideas = {
+    // Snapchat Lens Ideas
+    "snapchatLensIdeas.title": "Générateur d'Idées de Filtres Snapchat",
+    "snapchatLensIdeas.description": "Des idées créatives pour tes propres Lenses Snapchat. Démarque-toi avec des effets uniques ! ✨",
+    "snapchatLensIdeas.form.topic": "Thème ou Concept",
+    "snapchatLensIdeas.form.topicPlaceholder": "Ex: maquillage, effets marrants...",
+    "snapchatLensIdeas.form.language": "Langue",
+    "snapchatLensIdeas.form.generate": "Générer des Idées",
+    "snapchatLensIdeas.form.generating": "Ça cogite...",
+    "snapchatLensIdeas.form.useAgain": "En Générer Plus",
+    "snapchatLensIdeas.form.error.emptyTopic": "Donne-moi un thème pour commencer !",
+    "snapchatLensIdeas.result.title": "Idées de Filtres",
+    "snapchatLensIdeas.result.copyAll": "Tout Copier",
+    "snapchatLensIdeas.result.copied": "Idée copiée !",
+    "snapchatLensIdeas.result.copiedAll": "Tout est copié !",
+    "snapchatLensIdeas.result.success": "✓ {count} idées générées",
+    "snapchatLensIdeas.features.innovative.title": "🚀 Innovant",
+    "snapchatLensIdeas.features.innovative.description": "Des concepts de Lens uniques et créatifs.",
+    "snapchatLensIdeas.features.feasible.title": "✅ Réalisable",
+    "snapchatLensIdeas.features.feasible.description": "Des idées faisables dans Lens Studio.",
+    "snapchatLensIdeas.features.popular.title": "⭐ Potentiel Viral",
+    "snapchatLensIdeas.features.popular.description": "Des concepts que les gens voudront utiliser et partager.",
+    "snapchatLensIdeas.features.detailed.title": "📝 Détaillé",
+    "snapchatLensIdeas.features.detailed.description": "Des descriptions complètes pour créer le Lens.",
+
+};

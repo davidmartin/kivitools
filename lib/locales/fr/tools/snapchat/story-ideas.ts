@@ -1,0 +1,26 @@
+export const story_ideas = {
+    // Snapchat Story Ideas
+    "snapchatStoryIdeas.title": "Générateur d'Idées de Stories Snapchat",
+    "snapchatStoryIdeas.description": "Des idées créatives pour tes Stories Snapchat. Plus jamais en panne d'inspiration ! 👻",
+    "snapchatStoryIdeas.form.topic": "Sujet ou Niche",
+    "snapchatStoryIdeas.form.topicPlaceholder": "Ex: vie quotidienne, voyage, bouffe...",
+    "snapchatStoryIdeas.form.language": "Langue",
+    "snapchatStoryIdeas.form.generate": "Générer des Idées",
+    "snapchatStoryIdeas.form.generating": "Ça réfléchit...",
+    "snapchatStoryIdeas.form.useAgain": "En Générer Plus",
+    "snapchatStoryIdeas.form.error.emptyTopic": "Dis-moi sur quoi tu veux poster !",
+    "snapchatStoryIdeas.result.title": "Idées de Stories",
+    "snapchatStoryIdeas.result.copyAll": "Tout Copier",
+    "snapchatStoryIdeas.result.copied": "Idée copiée !",
+    "snapchatStoryIdeas.result.copiedAll": "Tout est copié !",
+    "snapchatStoryIdeas.result.success": "✓ {count} idées générées",
+    "snapchatStoryIdeas.features.creative.title": "💡 Méga Créatif",
+    "snapchatStoryIdeas.features.creative.description": "Des idées uniques parfaites pour le format Snapchat.",
+    "snapchatStoryIdeas.features.trending.title": "🔥 Dans la Tendance",
+    "snapchatStoryIdeas.features.trending.description": "Des idées qui surfent sur les trends du moment.",
+    "snapchatStoryIdeas.features.diverse.title": "🎨 Varié",
+    "snapchatStoryIdeas.features.diverse.description": "Différents types de contenu et d'angles.",
+    "snapchatStoryIdeas.features.instant.title": "⚡ Prêt à l'Emploi",
+    "snapchatStoryIdeas.features.instant.description": "Des idées à utiliser direct.",
+
+};

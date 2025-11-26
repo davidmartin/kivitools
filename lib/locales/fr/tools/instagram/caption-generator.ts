@@ -1,0 +1,28 @@
+export const caption_generator = {
+    // Instagram Caption Generator
+    "captionGenerator.title": "Générateur de Légendes Instagram",
+    "captionGenerator.description": "Crée des légendes captivantes et parfaites pour tes posts Instagram. Fais briller chaque publication !",
+    "captionGenerator.form.topic": "Sujet du Post",
+    "captionGenerator.form.topicPlaceholder": "C'est quoi ton post ?",
+    "captionGenerator.form.tone": "Ton",
+    "captionGenerator.form.language": "Langue",
+    "captionGenerator.form.includeEmojis": "Inclure des emojis",
+    "captionGenerator.form.includeHashtags": "Inclure des hashtags",
+    "captionGenerator.form.generate": "Générer la Légende",
+    "captionGenerator.form.generating": "Génération...",
+    "captionGenerator.form.useAgain": "En Générer une Autre",
+    "captionGenerator.form.error.emptyTopic": "Entre un sujet, on peut pas inventer !",
+    "captionGenerator.result.title": "Ta Légende",
+    "captionGenerator.result.copy": "Copier la Légende",
+    "captionGenerator.result.copied": "Légende copiée dans le presse-papiers !",
+    "captionGenerator.result.success": "✓ Légende générée avec succès",
+    "captionGenerator.features.engaging.title": "💬 Légendes Engageantes",
+    "captionGenerator.features.engaging.description": "Crée des légendes qui lancent des conversations et boostent l'engagement.",
+    "captionGenerator.features.customizable.title": "🎨 Personnalisable",
+    "captionGenerator.features.customizable.description": "Choisis le ton, les emojis et les hashtags qui te ressemblent.",
+    "captionGenerator.features.hashtagReady.title": "#️⃣ Hashtags Inclus",
+    "captionGenerator.features.hashtagReady.description": "Reçois des hashtags pertinents automatiquement ajoutés à ta légende.",
+    "captionGenerator.features.multiLanguage.title": "🌍 Multi-Langues",
+    "captionGenerator.features.multiLanguage.description": "Génère des légendes dans plus de 13 langues différentes.",
+
+};

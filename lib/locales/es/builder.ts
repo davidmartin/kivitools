@@ -14,6 +14,7 @@ export const builder = {
     "builder.basicInfo.slugRequired": "Este campo es obligatorio",
     "builder.basicInfo.slugTaken": "Este ID ya está en uso",
     "builder.basicInfo.slugInvalid": "ID inválido. Solo letras minúsculas, números, guiones y guiones bajos (max 36 caracteres).",
+    "builder.basicInfo.slugAvailable": "¡ID disponible!",
     "builder.success.slugAvailable": "¡ID disponible!",
     "builder.inputs.title": "2. Entradas del Formulario",
     "builder.inputs.addInput": "Agregar Entrada",

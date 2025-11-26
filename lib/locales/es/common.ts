@@ -90,17 +90,22 @@ export const common = {
     // Languages
     "languages.en": "Inglés",
     "languages.es": "Español",
+    "languages.pt": "Portugués",
     "languages.fr": "Francés",
+    "languages.de": "Alemán",
+    "languages.it": "Italiano",
     "languages.zh": "Chino",
     "languages.hi": "Hindi",
     "languages.ar": "Árabe",
     "languages.ru": "Ruso",
-    "languages.de": "Alemán",
     "languages.ja": "Japonés",
     "languages.id": "Indonesio",
     "languages.vi": "Vietnamita",
     "languages.th": "Tailandés",
     "languages.ko": "Coreano",
+
+    // Language Selector
+    "nav.selectLanguage": "Seleccionar idioma",
 
     // Durations
     "durations.tiktok.short": "30 a 60 segundos",

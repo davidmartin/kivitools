@@ -1,0 +1,26 @@
+export const video_ideas = {
+    // TikTok Video Ideas
+    "videoIdeas.title": "Générateur d'Idées Vidéo TikTok",
+    "videoIdeas.description": "Tu fixes ta caméra sans savoir quoi filmer ? On te sauve de ce moment gênant.",
+    "videoIdeas.form.topic": "Sujet ou Niche",
+    "videoIdeas.form.topicPlaceholder": "Ex : fitness, cuisine, voyage, productivité...",
+    "videoIdeas.form.language": "Langue",
+    "videoIdeas.form.generate": "Générer des Idées",
+    "videoIdeas.form.generating": "Génération des idées...",
+    "videoIdeas.form.useAgain": "Plus d'Idées",
+    "videoIdeas.form.error.emptyTopic": "Entre un sujet s'il te plaît",
+    "videoIdeas.result.title": "Idées de Vidéos",
+    "videoIdeas.result.copyAll": "Tout Copier",
+    "videoIdeas.result.copied": "Idée copiée dans le presse-papiers !",
+    "videoIdeas.result.copiedAll": "Toutes les idées copiées !",
+    "videoIdeas.result.success": "✓ {count} idées générées avec succès",
+    "videoIdeas.features.creative.title": "💡 Idées Créatives",
+    "videoIdeas.features.creative.description": "Des idées variées sous différents angles et formats.",
+    "videoIdeas.features.trending.title": "🎯 Focus Tendances",
+    "videoIdeas.features.trending.description": "Des idées basées sur les trends TikTok et formats viraux du moment.",
+    "videoIdeas.features.multilang.title": "🌍 Multi-Langues",
+    "videoIdeas.features.multilang.description": "Génère des idées en 13 langues pour conquérir le monde.",
+    "videoIdeas.features.easyCopy.title": "📋 Copie Facile",
+    "videoIdeas.features.easyCopy.description": "Copie une idée ou toutes d'un seul clic.",
+
+};

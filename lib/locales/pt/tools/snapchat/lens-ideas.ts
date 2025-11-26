@@ -1,0 +1,26 @@
+export const lens_ideas = {
+    // Snapchat Lens Ideas
+    "snapchatLensIdeas.title": "Gerador de Ideias para Lentes do Snapchat",
+    "snapchatLensIdeas.description": "Ideias criativas pras suas próprias Lentes do Snapchat. Se destaque com efeitos únicos! ✨",
+    "snapchatLensIdeas.form.topic": "Tema ou Conceito",
+    "snapchatLensIdeas.form.topicPlaceholder": "Ex: maquiagem, efeitos engraçados...",
+    "snapchatLensIdeas.form.language": "Idioma",
+    "snapchatLensIdeas.form.generate": "Gerar Ideias",
+    "snapchatLensIdeas.form.generating": "Gerando...",
+    "snapchatLensIdeas.form.useAgain": "Gerar Mais",
+    "snapchatLensIdeas.form.error.emptyTopic": "Bota um tema aí, vai!",
+    "snapchatLensIdeas.result.title": "Ideias de Lentes",
+    "snapchatLensIdeas.result.copyAll": "Copiar Todas",
+    "snapchatLensIdeas.result.copied": "Ideia copiada!",
+    "snapchatLensIdeas.result.copiedAll": "Todas copiadas!",
+    "snapchatLensIdeas.result.success": "✓ {count} ideias geradas",
+    "snapchatLensIdeas.features.innovative.title": "🚀 Inovadoras",
+    "snapchatLensIdeas.features.innovative.description": "Conceitos de Lentes únicos e super criativos.",
+    "snapchatLensIdeas.features.feasible.title": "✅ Viáveis",
+    "snapchatLensIdeas.features.feasible.description": "Ideias que dá pra implementar no Lens Studio de verdade.",
+    "snapchatLensIdeas.features.popular.title": "⭐ Potencial Viral",
+    "snapchatLensIdeas.features.popular.description": "Conceitos que a galera vai querer usar e compartilhar.",
+    "snapchatLensIdeas.features.detailed.title": "📝 Detalhadas",
+    "snapchatLensIdeas.features.detailed.description": "Descrições completas pra você implementar a Lente.",
+
+};

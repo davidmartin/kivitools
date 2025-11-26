@@ -1,0 +1,16 @@
+export const dashboard = {
+    "dashboard.title": "I Miei Strumenti",
+    "dashboard.subtitle": "Gestisci i tuoi strumenti AI e controlla il loro stato.",
+    "dashboard.createTool": "Crea Nuovo Strumento",
+    "dashboard.empty.title": "Nessuno strumento ancora",
+    "dashboard.empty.description": "Inizia a creare i tuoi strumenti AI da condividere con la community.",
+    "dashboard.empty.button": "Inizia a Creare",
+    "dashboard.actions.view": "Visualizza",
+    "dashboard.actions.delete": "Elimina",
+    "dashboard.confirmDelete": "Sei sicuro di voler eliminare questo strumento?",
+    "dashboard.errorDelete": "Eliminazione strumento fallita",
+    "dashboard.errorFetch": "Caricamento strumenti utente fallito",
+    "dashboard.status.pending": "In Attesa",
+    "dashboard.status.approved": "Approvato",
+    "dashboard.status.rejected": "Rifiutato",
+};

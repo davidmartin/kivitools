@@ -1,0 +1,27 @@
+export const reel_script = {
+    // Instagram Reel Script
+    "reelScript.title": "Gerador de Roteiro pra Reels do Instagram",
+    "reelScript.description": "Crie roteiros perfeitos pros seus Reels. Conteúdo digno de viralizar garantido!",
+    "reelScript.form.topic": "Tema do Reel",
+    "reelScript.form.topicPlaceholder": "Sobre o que é seu Reel?",
+    "reelScript.form.tone": "Tom",
+    "reelScript.form.duration": "Duração",
+    "reelScript.form.language": "Idioma",
+    "reelScript.form.generate": "Gerar Roteiro",
+    "reelScript.form.generating": "Gerando...",
+    "reelScript.form.useAgain": "Gerar Outro",
+    "reelScript.form.error.emptyTopic": "Por favor, digite um tema",
+    "reelScript.result.title": "Seu Roteiro de Reel",
+    "reelScript.result.copy": "Copiar Roteiro",
+    "reelScript.result.copied": "Roteiro copiado!",
+    "reelScript.result.success": "✓ Roteiro gerado com sucesso",
+    "reelScript.features.engaging.title": "🎬 Conteúdo Envolvente",
+    "reelScript.features.engaging.description": "Roteiros projetados pra manter os viewers presos do início ao fim.",
+    "reelScript.features.timed.title": "⏱️ Timing Perfeito",
+    "reelScript.features.timed.description": "Roteiros adaptados pra duração que você escolher (15s, 30s ou 60s).",
+    "reelScript.features.viral.title": "🔥 Potencial Viral",
+    "reelScript.features.viral.description": "Baseado em formatos de Reel que realmente funcionam e viralizam.",
+    "reelScript.features.instant.title": "⚡ Copie & Grave",
+    "reelScript.features.instant.description": "Seu roteiro está pronto pra usar na hora.",
+
+};

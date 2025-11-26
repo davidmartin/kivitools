@@ -1,0 +1,27 @@
+export const hook_generator = {
+    // TikTok Hook Generator
+    "hookGenerator.title": "TikTok Hook-Generator",
+    "hookGenerator.description": "Hooks so gut, dass Menschen aufhören zu scrollen (ja, sogar Ihr Ex).",
+    "hookGenerator.form.topic": "Video-Thema",
+    "hookGenerator.form.topicPlaceholder": "Worum geht es in Ihrem Video?",
+    "hookGenerator.form.tone": "Tonfall",
+    "hookGenerator.form.language": "Sprache",
+    "hookGenerator.form.generate": "Hooks generieren",
+    "hookGenerator.form.generating": "Hooks werden generiert...",
+    "hookGenerator.form.useAgain": "Mehr Hooks generieren",
+    "hookGenerator.form.error.emptyTopic": "Bitte geben Sie ein Thema ein",
+    "hookGenerator.result.title": "Virale Hooks",
+    "hookGenerator.result.copyAll": "Alle kopieren",
+    "hookGenerator.result.copied": "Hook in Zwischenablage kopiert!",
+    "hookGenerator.result.copiedAll": "Alle Hooks in Zwischenablage kopiert!",
+    "hookGenerator.result.success": "✓ {count} Hooks erfolgreich generiert",
+    "hookGenerator.features.stopScroll.title": "⚡ Scrollen stoppen",
+    "hookGenerator.features.stopScroll.description": "Hooks, die in den ersten 3 Sekunden Aufmerksamkeit erregen.",
+    "hookGenerator.features.multipleStyles.title": "🎭 Mehrere Stile",
+    "hookGenerator.features.multipleStyles.description": "Fragen, schockierende Aussagen, Neugierlücken und mehr.",
+    "hookGenerator.features.proven.title": "🎯 Bewährte Muster",
+    "hookGenerator.features.proven.description": "Basierend auf viralen Hook-Formeln, die tatsächlich funktionieren.",
+    "hookGenerator.features.copyTest.title": "📋 Kopieren & Testen",
+    "hookGenerator.features.copyTest.description": "Kopieren Sie jeden Hook sofort und testen Sie, welcher am besten performt.",
+
+};

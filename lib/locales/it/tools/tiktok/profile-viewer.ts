@@ -1,0 +1,23 @@
+export const profile_viewer = {
+    // TikTok Profile Viewer
+    "profileViewer.title": "Visualizzatore Profilo TikTok",
+    "profileViewer.description": "Visualizza qualsiasi profilo TikTok in modo anonimo. Senza tracce o notifiche.",
+    "profileViewer.form.username": "Username",
+    "profileViewer.form.usernamePlaceholder": "Inserisci @username",
+    "profileViewer.form.view": "Visualizza Profilo",
+    "profileViewer.form.viewing": "Caricamento...",
+    "profileViewer.form.viewAnother": "Visualizza un Altro Profilo",
+    "profileViewer.form.error.emptyUsername": "Inserisci un username",
+    "profileViewer.result.title": "Informazioni Profilo",
+    "profileViewer.result.followers": "Follower",
+    "profileViewer.result.following": "Seguiti",
+    "profileViewer.result.likes": "Mi Piace",
+    "profileViewer.features.anonymous.title": "🕵️ Anonimo",
+    "profileViewer.features.anonymous.description": "Visualizza profili senza che nessuno lo sappia.",
+    "profileViewer.features.detailed.title": "📊 Info Dettagliate",
+    "profileViewer.features.detailed.description": "Statistiche complete del profilo.",
+    "profileViewer.features.noLogin.title": "🔓 Senza Login",
+    "profileViewer.features.noLogin.description": "Non serve account TikTok.",
+    "profileViewer.features.instant.title": "⚡ Istantaneo",
+    "profileViewer.features.instant.description": "Carica profili istantaneamente.",
+};

@@ -1,0 +1,27 @@
+export const hook_generator = {
+    // TikTok Hook Generator
+    "hookGenerator.title": "Gerador de Ganchos para TikTok",
+    "hookGenerator.description": "Ganchos tão bons que as pessoas vão parar de rolar o feed (sim, até seu ex).",
+    "hookGenerator.form.topic": "Tema do Vídeo",
+    "hookGenerator.form.topicPlaceholder": "Sobre o que é seu vídeo?",
+    "hookGenerator.form.tone": "Tom",
+    "hookGenerator.form.language": "Idioma",
+    "hookGenerator.form.generate": "Gerar Ganchos",
+    "hookGenerator.form.generating": "Gerando Ganchos...",
+    "hookGenerator.form.useAgain": "Gerar Mais Ganchos",
+    "hookGenerator.form.error.emptyTopic": "Por favor, digite um tema",
+    "hookGenerator.result.title": "Ganchos Virais",
+    "hookGenerator.result.copyAll": "Copiar Todos",
+    "hookGenerator.result.copied": "Gancho copiado!",
+    "hookGenerator.result.copiedAll": "Todos os ganchos copiados!",
+    "hookGenerator.result.success": "✓ {count} ganchos gerados com sucesso",
+    "hookGenerator.features.stopScroll.title": "⚡ Para o Scroll",
+    "hookGenerator.features.stopScroll.description": "Ganchos feitos para prender a atenção nos primeiros 3 segundos.",
+    "hookGenerator.features.multipleStyles.title": "🎭 Vários Estilos",
+    "hookGenerator.features.multipleStyles.description": "Perguntas, afirmações chocantes, lacunas de curiosidade e mais.",
+    "hookGenerator.features.proven.title": "🎯 Fórmulas Comprovadas",
+    "hookGenerator.features.proven.description": "Baseado em fórmulas de ganchos virais que realmente funcionam.",
+    "hookGenerator.features.copyTest.title": "📋 Copie e Teste",
+    "hookGenerator.features.copyTest.description": "Copie qualquer gancho instantaneamente e teste qual performa melhor.",
+
+};

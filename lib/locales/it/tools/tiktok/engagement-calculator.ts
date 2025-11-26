@@ -1,0 +1,22 @@
+export const engagement_calculator = {
+    // TikTok Engagement Calculator
+    "engagementCalculator.title": "Calcolatore Engagement Rate TikTok",
+    "engagementCalculator.description": "Calcola il tuo tasso di engagement TikTok. Misura quanto bene il tuo pubblico interagisce con i tuoi contenuti.",
+    "engagementCalculator.form.username": "Username TikTok",
+    "engagementCalculator.form.usernamePlaceholder": "Es: @username",
+    "engagementCalculator.form.calculate": "Calcola Engagement",
+    "engagementCalculator.form.calculating": "Calcolo in corso...",
+    "engagementCalculator.form.calculateAgain": "Calcola Altro Profilo",
+    "engagementCalculator.form.error.invalidUsername": "Inserisci un username valido",
+    "engagementCalculator.result.title": "Tasso di Engagement",
+    "engagementCalculator.result.rate": "Tasso",
+    "engagementCalculator.result.status": "Stato",
+    "engagementCalculator.features.accurate.title": "📊 Calcoli Accurati",
+    "engagementCalculator.features.accurate.description": "Metriche basate su dati TikTok reali.",
+    "engagementCalculator.features.insights.title": "💡 Insight Utili",
+    "engagementCalculator.features.insights.description": "Capisci come migliorare il tuo engagement.",
+    "engagementCalculator.features.free.title": "🆓 Gratis",
+    "engagementCalculator.features.free.description": "Nessun limite di utilizzo.",
+    "engagementCalculator.features.instant.title": "⚡ Istantaneo",
+    "engagementCalculator.features.instant.description": "Risultati in pochi secondi.",
+};

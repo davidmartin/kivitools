@@ -1,0 +1,26 @@
+export const comment_generator = {
+    // Reddit Comment Generator
+    "redditComment.title": "Générateur de Commentaires Reddit",
+    "redditComment.description": "Génère des commentaires pertinents et réfléchis pour n'importe quel post.",
+    "redditComment.form.context": "Contexte du Post",
+    "redditComment.form.contextPlaceholder": "Colle le titre ou contenu du post ici...",
+    "redditComment.form.tone": "Ton",
+    "redditComment.form.language": "Langue",
+    "redditComment.form.generate": "Générer le Commentaire",
+    "redditComment.form.generating": "Ça réfléchit...",
+    "redditComment.form.useAgain": "Un Autre !",
+    "redditComment.form.error.emptyContext": "Entre le contexte du post",
+    "redditComment.result.title": "Ton Commentaire",
+    "redditComment.result.copy": "Copier",
+    "redditComment.result.copied": "Commentaire copié !",
+    "redditComment.result.success": "Commentaire généré avec succès !",
+    "redditComment.features.relevant.title": "🎯 Pertinent",
+    "redditComment.features.relevant.description": "Répond directement au contenu du post.",
+    "redditComment.features.thoughtful.title": "💭 Réfléchi",
+    "redditComment.features.thoughtful.description": "Apporte de la valeur à la conversation.",
+    "redditComment.features.natural.title": "😊 Naturel",
+    "redditComment.features.natural.description": "Sonne comme un vrai commentaire.",
+    "redditComment.features.instant.title": "⚡ Résultats Instantanés",
+    "redditComment.features.instant.description": "Commentaires prêts en quelques secondes.",
+
+};

@@ -1,0 +1,22 @@
+export const profile_analytics = {
+    // TikTok Profile Analytics
+    "profileAnalytics.title": "Analisi Profilo TikTok",
+    "profileAnalytics.description": "Analizza qualsiasi profilo TikTok. Ottieni metriche dettagliate e statistiche di crescita.",
+    "profileAnalytics.form.username": "Username",
+    "profileAnalytics.form.usernamePlaceholder": "Es: @username",
+    "profileAnalytics.form.analyze": "Analizza Profilo",
+    "profileAnalytics.form.analyzing": "Analisi in corso...",
+    "profileAnalytics.form.analyzeAnother": "Analizza un Altro",
+    "profileAnalytics.form.error.emptyUsername": "Inserisci un username",
+    "profileAnalytics.result.title": "Analisi Profilo",
+    "profileAnalytics.result.engagement": "Engagement",
+    "profileAnalytics.result.avgViews": "Visualizzazioni Medie",
+    "profileAnalytics.features.comprehensive.title": "📈 Analisi Completa",
+    "profileAnalytics.features.comprehensive.description": "Tutte le metriche importanti in un unico posto.",
+    "profileAnalytics.features.growth.title": "📊 Trend di Crescita",
+    "profileAnalytics.features.growth.description": "Vedi come sta crescendo il profilo.",
+    "profileAnalytics.features.comparison.title": "⚖️ Confronto",
+    "profileAnalytics.features.comparison.description": "Confronta con le medie del settore.",
+    "profileAnalytics.features.export.title": "💾 Esporta Dati",
+    "profileAnalytics.features.export.description": "Scarica report in PDF.",
+};

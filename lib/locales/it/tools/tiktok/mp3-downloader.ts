@@ -1,0 +1,23 @@
+export const mp3_downloader = {
+    // TikTok MP3 Downloader
+    "mp3Downloader.title": "Downloader MP3 TikTok",
+    "mp3Downloader.description": "Estrai l'audio dai video TikTok e scaricalo come MP3. Gratis e illimitato.",
+    "mp3Downloader.form.videoUrl": "URL Video TikTok",
+    "mp3Downloader.form.videoUrlPlaceholder": "Incolla l'URL del video...",
+    "mp3Downloader.form.download": "Scarica MP3",
+    "mp3Downloader.form.downloading": "Estrazione audio...",
+    "mp3Downloader.form.downloadAnother": "Scarica un Altro",
+    "mp3Downloader.form.error.emptyUrl": "Inserisci un URL",
+    "mp3Downloader.form.error.invalidUrl": "URL TikTok non valido",
+    "mp3Downloader.result.title": "Audio Pronto",
+    "mp3Downloader.result.download": "Scarica MP3",
+    "mp3Downloader.result.success": "✓ Audio estratto con successo",
+    "mp3Downloader.features.highQuality.title": "🎵 Alta Qualità",
+    "mp3Downloader.features.highQuality.description": "Audio MP3 a 320kbps.",
+    "mp3Downloader.features.fast.title": "⚡ Veloce",
+    "mp3Downloader.features.fast.description": "Estrai audio in pochi secondi.",
+    "mp3Downloader.features.free.title": "🆓 Gratis",
+    "mp3Downloader.features.free.description": "Nessun costo o limite.",
+    "mp3Downloader.features.noWatermark.title": "🔇 Audio Pulito",
+    "mp3Downloader.features.noWatermark.description": "Nessun rumore o watermark.",
+};

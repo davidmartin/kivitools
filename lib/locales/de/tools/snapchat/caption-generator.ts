@@ -1,0 +1,27 @@
+export const caption_generator = {
+    // Snapchat Caption Generator
+    "snapchatCaption.title": "Snapchat Bildunterschrift-Generator",
+    "snapchatCaption.description": "Erstellen Sie lustige und kreative Bildunterschriften für Ihre Snaps. Lassen Sie jeden Snap zählen!",
+    "snapchatCaption.form.topic": "Snap-Thema",
+    "snapchatCaption.form.topicPlaceholder": "Worum geht es in Ihrem Snap?",
+    "snapchatCaption.form.tone": "Tonfall",
+    "snapchatCaption.form.language": "Sprache",
+    "snapchatCaption.form.includeEmojis": "Emojis einbeziehen",
+    "snapchatCaption.form.generate": "Bildunterschrift generieren",
+    "snapchatCaption.form.generating": "Wird generiert...",
+    "snapchatCaption.form.useAgain": "Weitere generieren",
+    "snapchatCaption.form.error.emptyTopic": "Bitte geben Sie ein Thema ein",
+    "snapchatCaption.result.title": "Ihre Bildunterschrift",
+    "snapchatCaption.result.copy": "Bildunterschrift kopieren",
+    "snapchatCaption.result.copied": "Bildunterschrift kopiert!",
+    "snapchatCaption.result.success": "✓ Bildunterschrift erfolgreich generiert",
+    "snapchatCaption.features.fun.title": "🎉 Lustig & Kreativ",
+    "snapchatCaption.features.fun.description": "Bildunterschriften, die Snapchats einzigartigen Geist einfangen.",
+    "snapchatCaption.features.short.title": "📱 Kurz & Direkt",
+    "snapchatCaption.features.short.description": "Perfekt für Snapchats schnelle Ansichtserfahrung.",
+    "snapchatCaption.features.emojis.title": "😊 Emoji-reich",
+    "snapchatCaption.features.emojis.description": "Option, relevante und lustige Emojis einzubeziehen.",
+    "snapchatCaption.features.instant.title": "⚡ Schnell",
+    "snapchatCaption.features.instant.description": "Kopieren und sofort in Ihrem Snap verwenden.",
+
+};

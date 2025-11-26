@@ -1,0 +1,16 @@
+export const aboutGenerator = {
+    "linkedinAbout.title": "Generatore Sezione Informazioni",
+    "linkedinAbout.description": "Scrivi una sezione 'Informazioni' che racconta la tua storia professionale.",
+    "linkedinAbout.form.role": "Ruolo Attuale",
+    "linkedinAbout.form.rolePlaceholder": "Es: Senior Product Designer",
+    "linkedinAbout.form.experience": "Anni di Esperienza",
+    "linkedinAbout.form.skills": "Competenze Chiave",
+    "linkedinAbout.form.skillsPlaceholder": "Es: UX Research, Figma, Agile...",
+    "linkedinAbout.form.achievements": "Risultati Chiave (Opzionale)",
+    "linkedinAbout.form.achievementsPlaceholder": "Es: Guidato redesign app, aumentato conversione del 20%...",
+    "linkedinAbout.form.generate": "Genera 'Informazioni'",
+    "linkedinAbout.form.generating": "Scrivendo...",
+    "linkedinAbout.result.title": "La Tua Sezione 'Informazioni'",
+    "linkedinAbout.result.copy": "Copia Testo",
+    "linkedinAbout.result.copied": "Copiato!",
+};

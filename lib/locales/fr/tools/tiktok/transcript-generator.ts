@@ -1,0 +1,26 @@
+export const transcript_generator = {
+    // TikTok Transcript Generator
+    "transcriptGenerator.title": "Générateur de Transcription TikTok",
+    "transcriptGenerator.description": "Transforme l'audio de n'importe quel TikTok en texte. Parfait pour les sous-titres et l'accessibilité !",
+    "transcriptGenerator.form.videoUrl": "URL de la Vidéo TikTok",
+    "transcriptGenerator.form.videoUrlPlaceholder": "Colle l'URL de la vidéo ici...",
+    "transcriptGenerator.form.language": "Langue de l'Audio",
+    "transcriptGenerator.form.generate": "Générer la Transcription",
+    "transcriptGenerator.form.generating": "En train de transcrire...",
+    "transcriptGenerator.form.useAgain": "Transcrire une Autre",
+    "transcriptGenerator.form.error.emptyUrl": "Eh, il faut une URL quand même !",
+    "transcriptGenerator.form.error.invalidUrl": "Cette URL TikTok a l'air louche...",
+    "transcriptGenerator.result.title": "Transcription",
+    "transcriptGenerator.result.copy": "Copier la Transcription",
+    "transcriptGenerator.result.copied": "Transcription copiée !",
+    "transcriptGenerator.result.success": "✓ Transcription terminée",
+    "transcriptGenerator.features.accurate.title": "🎯 Ultra Précis",
+    "transcriptGenerator.features.accurate.description": "Des transcriptions au poil grâce à l'IA avancée.",
+    "transcriptGenerator.features.fast.title": "⚡ Rapide comme l'Éclair",
+    "transcriptGenerator.features.fast.description": "Obtiens ta transcription en quelques secondes.",
+    "transcriptGenerator.features.multilang.title": "🌍 Polyglotte",
+    "transcriptGenerator.features.multilang.description": "Plus de 13 langues supportées. Impressionnant, non ?",
+    "transcriptGenerator.features.accessibility.title": "♿ Accessibilité",
+    "transcriptGenerator.features.accessibility.description": "Parfait pour créer du contenu accessible à tous.",
+
+};
