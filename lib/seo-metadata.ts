@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon";
+type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads";
 
 interface GenerateToolMetadataProps {
   platform: Platform;
@@ -26,6 +26,10 @@ const platformColors: Record<Platform, string> = {
   linkedin: "#0A66C2",
   forocoches: "#FF5722",
   amazon: "#FF9900",
+  pinterest: "#E60023",
+  spotify: "#1DB954",
+  facebook: "#1877F2",
+  threads: "#000000",
 };
 
 const platformNames: Record<Platform, string> = {
@@ -42,6 +46,10 @@ const platformNames: Record<Platform, string> = {
   linkedin: "LinkedIn",
   forocoches: "Forocoches",
   amazon: "Amazon",
+  pinterest: "Pinterest",
+  spotify: "Spotify",
+  facebook: "Facebook",
+  threads: "Threads",
 };
 
 /**

@@ -3621,3 +3621,668 @@ Write a post that encourages comments or likes.`;
         throw new Error("Failed to generate community post");
     }
 }
+
+// ============================================================================
+// PINTEREST TOOLS
+// ============================================================================
+
+// Pinterest Pin Description Generator
+export async function generatePinterestPinDescription({
+    topic,
+    keywords,
+    tone,
+    language,
+}: {
+    topic: string;
+    keywords?: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are an expert Pinterest SEO specialist. Create pin descriptions that:
+- Are optimized for Pinterest search algorithm
+- Include relevant keywords naturally
+- Drive clicks and saves
+- Are 100-500 characters long
+- Include a clear call-to-action
+Tone: ${tone}
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Create an SEO-optimized Pinterest pin description.
+
+Topic/Product: ${topic}
+${keywords ? `Keywords to include: ${keywords}` : ""}
+
+Requirements:
+- Write in ${targetLanguage}
+- Include relevant keywords naturally
+- Add a compelling call-to-action
+- Make it engaging and clickable
+- Stay under 500 characters
+- Include 2-3 relevant hashtags at the end
+
+Write ONLY the pin description, no titles or explanations.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.8,
+            max_tokens: 300,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating Pinterest pin description:", error);
+        throw new Error("Failed to generate pin description");
+    }
+}
+
+// Pinterest Board Name Generator
+export async function generatePinterestBoardNames({
+    theme,
+    style,
+    language,
+}: {
+    theme: string;
+    style: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a Pinterest board naming expert. Create catchy, searchable board names that:
+- Are SEO-friendly and searchable
+- Clearly describe the board content
+- Are creative and memorable
+- Are 50 characters or less each
+Style: ${style}
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Generate 5 creative Pinterest board names for:
+
+Theme: ${theme}
+Style preference: ${style}
+
+Requirements:
+- Write in ${targetLanguage}
+- Each name should be unique and creative
+- Make them searchable (include keywords)
+- Keep each under 50 characters
+- Mix descriptive and catchy names
+
+Return ONLY a JSON array of 5 strings, like: ["Name 1", "Name 2", "Name 3", "Name 4", "Name 5"]`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.9,
+            max_tokens: 300,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "[]";
+        const cleanContent = content.replace(/```json/g, "").replace(/```/g, "").trim();
+        return JSON.parse(cleanContent);
+    } catch (error) {
+        console.error("Error generating Pinterest board names:", error);
+        throw new Error("Failed to generate board names");
+    }
+}
+
+// Pinterest Profile Bio Generator
+export async function generatePinterestProfileBio({
+    businessType,
+    personality,
+    language,
+}: {
+    businessType: string;
+    personality: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a Pinterest profile optimization expert. Create bios that:
+- Clearly communicate what the account offers
+- Include relevant keywords for searchability
+- Have a personal touch
+- Are under 160 characters
+- Drive follows and saves
+Personality: ${personality}
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Create a Pinterest profile bio.
+
+Business/Account type: ${businessType}
+Personality style: ${personality}
+
+Requirements:
+- Write in ${targetLanguage}
+- Maximum 160 characters
+- Include what you share/offer
+- Add a touch of personality
+- Make it memorable and followable
+- Include 1-2 relevant keywords
+
+Write ONLY the bio text, nothing else.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.8,
+            max_tokens: 150,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating Pinterest profile bio:", error);
+        throw new Error("Failed to generate profile bio");
+    }
+}
+
+// Spotify Playlist Name Generator
+export async function generateSpotifyPlaylistNames({
+    mood,
+    genres,
+    occasion,
+    language,
+}: {
+    mood: string;
+    genres: string;
+    occasion?: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a Spotify playlist curator expert. Create playlist names that:
+- Capture the vibe/mood perfectly
+- Are creative and memorable
+- Make people want to click
+- Work well with Spotify's search algorithm
+- Reflect the music genres included
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Generate 5 creative Spotify playlist names.
+
+Mood/Vibe: ${mood}
+Genres: ${genres}
+${occasion ? `Occasion: ${occasion}` : ""}
+
+Requirements:
+- Write in ${targetLanguage}
+- Each name should be unique and catchy
+- Mix creative with descriptive names
+- Keep them between 3-40 characters
+- Make them shareable and memorable
+
+Return ONLY a JSON array of 5 strings, like: ["Name 1", "Name 2", "Name 3", "Name 4", "Name 5"]`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.9,
+            max_tokens: 300,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "[]";
+        const cleanContent = content.replace(/```json/g, "").replace(/```/g, "").trim();
+        return JSON.parse(cleanContent);
+    } catch (error) {
+        console.error("Error generating Spotify playlist names:", error);
+        throw new Error("Failed to generate playlist names");
+    }
+}
+
+// Spotify Playlist Description Generator
+export async function generateSpotifyPlaylistDescription({
+    playlistName,
+    mood,
+    genres,
+    targetAudience,
+    language,
+}: {
+    playlistName: string;
+    mood: string;
+    genres: string;
+    targetAudience?: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a Spotify playlist curator expert. Create descriptions that:
+- Capture the playlist's essence and vibe
+- Include relevant keywords for discoverability
+- Make listeners want to save and share
+- Describe the listening experience
+- Are optimized for Spotify's search
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Create a Spotify playlist description.
+
+Playlist name: ${playlistName}
+Mood/Vibe: ${mood}
+Genres: ${genres}
+${targetAudience ? `Target audience: ${targetAudience}` : ""}
+
+Requirements:
+- Write in ${targetLanguage}
+- Maximum 300 characters
+- Describe the vibe and listening experience
+- Include genre keywords naturally
+- Make it inviting and shareable
+- Add a call to action (follow, share, save)
+
+Write ONLY the description text, nothing else.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.8,
+            max_tokens: 250,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating Spotify playlist description:", error);
+        throw new Error("Failed to generate playlist description");
+    }
+}
+
+// Spotify Artist Bio Generator
+export async function generateSpotifyArtistBio({
+    artistName,
+    genre,
+    style,
+    achievements,
+    language,
+}: {
+    artistName: string;
+    genre: string;
+    style: string;
+    achievements?: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a music industry professional who writes artist bios. Create bios that:
+- Tell the artist's story compellingly
+- Highlight their unique sound and style
+- Include achievements and milestones
+- Connect emotionally with listeners
+- Are professional yet personable
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Create a Spotify artist bio.
+
+Artist name: ${artistName}
+Genre(s): ${genre}
+Style/Sound: ${style}
+${achievements ? `Achievements: ${achievements}` : ""}
+
+Requirements:
+- Write in ${targetLanguage}
+- Maximum 1500 characters (Spotify's limit)
+- Write in third person
+- Include genre and style descriptors
+- Make it engaging and professional
+- End with what listeners can expect
+
+Write ONLY the bio text, nothing else.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.8,
+            max_tokens: 600,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating Spotify artist bio:", error);
+        throw new Error("Failed to generate artist bio");
+    }
+}
+
+// ========================================
+// FACEBOOK TOOLS
+// ========================================
+
+// Facebook Post Generator
+export async function generateFacebookPost({
+    topic,
+    tone,
+    includeEmojis,
+    includeHashtags,
+    language,
+}: {
+    topic: string;
+    tone: string;
+    includeEmojis: boolean;
+    includeHashtags: boolean;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a social media expert who creates engaging Facebook posts. Create posts that:
+- Hook readers immediately
+- Encourage engagement (likes, comments, shares)
+- Are optimized for Facebook's algorithm
+- Use appropriate formatting and line breaks
+- Include a call-to-action when appropriate
+${includeEmojis ? "- Include relevant emojis strategically" : "- Do NOT use emojis"}
+${includeHashtags ? "- Include 2-3 relevant hashtags at the end" : "- Do NOT include hashtags"}
+Language: ${targetLanguage}
+Tone: ${tone}`;
+
+    const userPrompt = `Create an engaging Facebook post about: ${topic}
+
+Requirements:
+- Write in ${targetLanguage}
+- Use a ${tone} tone
+- Optimal length: 100-250 characters for best engagement
+- Include a hook in the first line
+- Add a call-to-action or question to encourage comments
+${includeEmojis ? "- Use 2-4 relevant emojis" : "- No emojis"}
+${includeHashtags ? "- Add 2-3 hashtags at the end" : "- No hashtags"}
+
+Write ONLY the post content, nothing else.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.85,
+            max_tokens: 500,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating Facebook post:", error);
+        throw new Error("Failed to generate post");
+    }
+}
+
+// Facebook Page Bio Generator
+export async function generateFacebookPageBio({
+    businessName,
+    industry,
+    description,
+    tone,
+    language,
+}: {
+    businessName: string;
+    industry: string;
+    description: string;
+    tone: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a branding expert who creates compelling Facebook Page bios. Create bios that:
+- Clearly communicate what the business does
+- Highlight unique value propositions
+- Build trust and credibility
+- Include a soft call-to-action
+- Are optimized for Facebook's format
+Language: ${targetLanguage}
+Tone: ${tone}`;
+
+    const userPrompt = `Create a Facebook Page bio.
+
+Business name: ${businessName}
+Industry: ${industry}
+Description: ${description}
+
+Requirements:
+- Write in ${targetLanguage}
+- Use a ${tone} tone
+- Maximum 255 characters (Facebook's About section limit)
+- Be clear about what the business offers
+- Include what makes them unique
+- Add a subtle call-to-action
+
+Write ONLY the bio text, nothing else.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.8,
+            max_tokens: 200,
+        });
+
+        return completion.choices[0]?.message?.content?.trim() || "";
+    } catch (error) {
+        console.error("Error generating Facebook page bio:", error);
+        throw new Error("Failed to generate page bio");
+    }
+}
+
+// Facebook Ad Copy Generator
+export async function generateFacebookAdCopy({
+    product,
+    targetAudience,
+    benefit,
+    tone,
+    language,
+}: {
+    product: string;
+    targetAudience: string;
+    benefit: string;
+    tone: string;
+    language: string;
+}): Promise<{ headline: string; primaryText: string }> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a Facebook Ads copywriter who creates high-converting ad copy. Create copy that:
+- Grabs attention immediately
+- Addresses the target audience's pain points
+- Highlights clear benefits
+- Includes a compelling call-to-action
+- Follows Facebook Ads best practices
+Language: ${targetLanguage}
+Tone: ${tone}`;
+
+    const userPrompt = `Create Facebook Ad copy.
+
+Product/Service: ${product}
+Target Audience: ${targetAudience}
+Main Benefit: ${benefit}
+
+Requirements:
+- Write in ${targetLanguage}
+- Use a ${tone} tone
+- Create TWO parts:
+  1. HEADLINE: Maximum 40 characters, attention-grabbing
+  2. PRIMARY TEXT: 125-150 characters, persuasive body copy with CTA
+
+Format your response EXACTLY like this:
+HEADLINE: [your headline here]
+PRIMARY TEXT: [your primary text here]`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.85,
+            max_tokens: 300,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        
+        // Parse the response
+        const headlineMatch = content.match(/HEADLINE:\s*(.+?)(?=PRIMARY TEXT:|$)/is);
+        const primaryTextMatch = content.match(/PRIMARY TEXT:\s*(.+)/is);
+
+        return {
+            headline: headlineMatch?.[1]?.trim() || content.split('\n')[0] || "",
+            primaryText: primaryTextMatch?.[1]?.trim() || content.split('\n').slice(1).join(' ').trim() || "",
+        };
+    } catch (error) {
+        console.error("Error generating Facebook ad copy:", error);
+        throw new Error("Failed to generate ad copy");
+    }
+}
+
+// ==========================================
+// THREADS FUNCTIONS
+// ==========================================
+
+// Threads Post Generator
+export async function generateThreadsPost({
+    topic,
+    tone,
+    style,
+    language,
+}: {
+    topic: string;
+    tone: string;
+    style: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a Threads content creator who writes engaging short-form posts. Create posts that:
+- Are conversational and authentic
+- Spark engagement and replies
+- Work well with Threads' text-first format
+- Are concise but impactful (under 500 characters each)
+Language: ${targetLanguage}
+Tone: ${tone}
+Style: ${style}`;
+
+    const userPrompt = `Create 5 engaging Threads posts about: ${topic}
+
+Requirements:
+- Write in ${targetLanguage}
+- Use a ${tone} tone
+- Style: ${style}
+- Each post under 500 characters
+- Make them conversation starters
+- Authentic, not corporate
+- Include relevant hashtags sparingly (1-2 max per post)
+
+Return ONLY the 5 posts, one per line, numbered 1-5.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.9,
+            max_tokens: 1500,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        
+        // Parse numbered list
+        const posts = content
+            .split(/\n+/)
+            .map(line => line.replace(/^\d+[\.\)]\s*/, '').trim())
+            .filter(line => line.length > 10);
+
+        return posts.slice(0, 5);
+    } catch (error) {
+        console.error("Error generating Threads posts:", error);
+        throw new Error("Failed to generate posts");
+    }
+}
+
+// Threads Bio Generator
+export async function generateThreadsBio({
+    name,
+    profession,
+    interests,
+    personality,
+    language,
+}: {
+    name: string;
+    profession: string;
+    interests: string;
+    personality: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a personal branding expert who creates engaging Threads bios. Create bios that:
+- Are authentic and personality-driven
+- Stand out from generic bios
+- Reflect the person's unique voice
+- Work within Threads' 150 character limit
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Create 5 unique Threads bio options.
+
+Name: ${name}
+Profession: ${profession}
+Interests: ${interests}
+Personality: ${personality}
+
+Requirements:
+- Write in ${targetLanguage}
+- Maximum 150 characters each
+- Show personality, not just job title
+- Be creative and memorable
+- Can include emojis sparingly
+- Make each one distinctly different
+
+Return ONLY the 5 bios, one per line, numbered 1-5.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.9,
+            max_tokens: 800,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        
+        // Parse numbered list
+        const bios = content
+            .split(/\n+/)
+            .map(line => line.replace(/^\d+[\.\)]\s*/, '').trim())
+            .filter(line => line.length > 5 && line.length <= 160);
+
+        return bios.slice(0, 5);
+    } catch (error) {
+        console.error("Error generating Threads bios:", error);
+        throw new Error("Failed to generate bios");
+    }
+}

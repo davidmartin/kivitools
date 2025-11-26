@@ -49,6 +49,16 @@ export default function Navigation() {
       ],
     },
     {
+      id: "pinterest",
+      name: t("nav.pinterest"),
+      emoji: "📌",
+      tools: [
+        { name: t("pinterestPinDescription.title"), href: "/pinterest/pin-description" },
+        { name: t("pinterestBoardName.title"), href: "/pinterest/board-name" },
+        { name: t("pinterestProfileBio.title"), href: "/pinterest/profile-bio" },
+      ],
+    },
+    {
       id: "twitter",
       name: t("nav.twitter"),
       emoji: "🐦",
@@ -109,6 +119,16 @@ export default function Navigation() {
       ],
     },
     {
+      id: "spotify",
+      name: t("nav.spotify"),
+      emoji: "🎧",
+      tools: [
+        { name: t("spotifyPlaylistName.title"), href: "/spotify/playlist-name" },
+        { name: t("spotifyPlaylistDescription.title"), href: "/spotify/playlist-description" },
+        { name: t("spotifyArtistBio.title"), href: "/spotify/artist-bio" },
+      ],
+    },
+    {
       id: "suno",
       name: t("nav.suno"),
       emoji: "🎵",
@@ -129,6 +149,16 @@ export default function Navigation() {
         { name: t("podcastScript.title"), href: "/elevenlabs/podcast-script" },
         { name: t("adScript.title"), href: "/elevenlabs/ad-script" },
         { name: t("audiobookOptimizer.title"), href: "/elevenlabs/audiobook-optimizer" },
+      ],
+    },
+    {
+      id: "facebook",
+      name: t("nav.facebook"),
+      emoji: "📘",
+      tools: [
+        { name: t("facebookPost.title"), href: "/facebook/post-generator" },
+        { name: t("facebookPageBio.title"), href: "/facebook/page-bio" },
+        { name: t("facebookAdCopy.title"), href: "/facebook/ad-copy" },
       ],
     },
     {
