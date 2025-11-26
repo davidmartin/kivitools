@@ -1,0 +1,16 @@
+export const dashboard = {
+    "dashboard.title": "Meine Tools",
+    "dashboard.subtitle": "Verwalten Sie Ihre KI-Tools und prüfen Sie deren Status.",
+    "dashboard.createTool": "Neues Tool erstellen",
+    "dashboard.empty.title": "Noch keine Tools",
+    "dashboard.empty.description": "Erstellen Sie Ihre eigenen KI-Tools und teilen Sie sie mit der Community.",
+    "dashboard.empty.button": "Jetzt starten",
+    "dashboard.actions.view": "Ansehen",
+    "dashboard.actions.delete": "Löschen",
+    "dashboard.confirmDelete": "Sind Sie sicher, dass Sie dieses Tool löschen möchten?",
+    "dashboard.errorDelete": "Tool konnte nicht gelöscht werden",
+    "dashboard.errorFetch": "Tools konnten nicht abgerufen werden",
+    "dashboard.status.pending": "Ausstehend",
+    "dashboard.status.approved": "Genehmigt",
+    "dashboard.status.rejected": "Abgelehnt",
+};

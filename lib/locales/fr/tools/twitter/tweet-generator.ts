@@ -1,0 +1,27 @@
+export const tweet_generator = {
+    // Tweet Generator
+    "tweetGenerator.title": "Générateur de Tweets",
+    "tweetGenerator.description": "Génère des tweets engageants sur n'importe quel sujet. Du contenu frais à volonté !",
+    "tweetGenerator.form.topic": "Sujet",
+    "tweetGenerator.form.topicPlaceholder": "De quoi veux-tu tweeter ?",
+    "tweetGenerator.form.tone": "Ton",
+    "tweetGenerator.form.language": "Langue",
+    "tweetGenerator.form.generate": "Générer les Tweets",
+    "tweetGenerator.form.generating": "Génération en cours...",
+    "tweetGenerator.form.useAgain": "En générer d'autres",
+    "tweetGenerator.form.error.emptyTopic": "Il nous faut un sujet pour créer la magie !",
+    "tweetGenerator.result.title": "Tweets Générés",
+    "tweetGenerator.result.copyAll": "Tout Copier",
+    "tweetGenerator.result.copied": "Tweet copié ! 🐦",
+    "tweetGenerator.result.copiedAll": "Tout copié ! 🎊",
+    "tweetGenerator.result.success": "✓ {count} tweets générés",
+    "tweetGenerator.features.engaging.title": "💬 Ultra Engageant",
+    "tweetGenerator.features.engaging.description": "Des tweets conçus pour les likes, retweets et réponses.",
+    "tweetGenerator.features.varied.title": "🎨 Variété",
+    "tweetGenerator.features.varied.description": "Différents styles et angles sur le même sujet.",
+    "tweetGenerator.features.optimal.title": "📊 Longueur Optimale",
+    "tweetGenerator.features.optimal.description": "Parfait pour un impact et engagement maximum.",
+    "tweetGenerator.features.instant.title": "⚡ Utilise Direct",
+    "tweetGenerator.features.instant.description": "Copie et publie en quelques secondes.",
+
+};

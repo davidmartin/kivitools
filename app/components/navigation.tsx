@@ -10,6 +10,8 @@ import { Button, Popover } from "@heroui/react";
 import ThemeToggle from "./theme-toggle";
 import PlatformLogo from "./platform-logo";
 import AppLogo from "./app-logo";
+import { UI_LANGUAGES } from "@/types";
+import type { Language } from "@/lib/translations";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -294,15 +296,18 @@ export default function Navigation() {
             <div className="w-px h-6 bg-border/50 mx-2" />
 
             {/* Language Selector */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="min-w-0 px-3 text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full"
-              onPress={() => setLanguage(language === "en" ? "es" : "en")}
-              aria-label={language === "en" ? "Cambiar a Español" : "Switch to English"}
+            <select
+              aria-label={t("nav.selectLanguage")}
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as Language)}
+              className="bg-transparent border-none hover:bg-surface/50 rounded-full px-3 py-1.5 text-sm font-medium text-foreground/80 hover:text-foreground cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/50"
             >
-              {language === "en" ? "ES" : "EN"}
-            </Button>
+              {UI_LANGUAGES.map((lang) => (
+                <option key={lang.code} value={lang.code} className="bg-surface text-foreground">
+                  {lang.code.toUpperCase()}
+                </option>
+              ))}
+            </select>
 
             {/* Theme Toggle */}
             <div className="ml-1 flex items-center gap-1">
@@ -336,15 +341,18 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              isIconOnly
-              className="text-foreground/80 hover:bg-surface/50 rounded-full"
-              onPress={() => setLanguage(language === "en" ? "es" : "en")}
+            <select
+              aria-label={t("nav.selectLanguage")}
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as Language)}
+              className="bg-transparent border-none hover:bg-surface/50 rounded-full px-2 py-1.5 text-sm font-medium text-foreground/80 hover:text-foreground cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent/50"
             >
-              {language === "en" ? "ES" : "EN"}
-            </Button>
+              {UI_LANGUAGES.map((lang) => (
+                <option key={lang.code} value={lang.code} className="bg-surface text-foreground">
+                  {lang.code.toUpperCase()}
+                </option>
+              ))}
+            </select>
 
             <ThemeToggle />
 

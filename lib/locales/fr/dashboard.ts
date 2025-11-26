@@ -1,0 +1,16 @@
+export const dashboard = {
+    "dashboard.title": "Mes outils",
+    "dashboard.subtitle": "Gère tes outils IA et suis leur statut.",
+    "dashboard.createTool": "Créer un nouvel outil",
+    "dashboard.empty.title": "Aucun outil pour l'instant",
+    "dashboard.empty.description": "Lance-toi et crée tes propres outils IA à partager avec la communauté !",
+    "dashboard.empty.button": "Commencer à créer",
+    "dashboard.actions.view": "Voir",
+    "dashboard.actions.delete": "Supprimer",
+    "dashboard.confirmDelete": "Tu es sûr de vouloir supprimer cet outil ? C'est définitif !",
+    "dashboard.errorDelete": "Échec de la suppression, réessaie",
+    "dashboard.errorFetch": "Impossible de récupérer tes outils",
+    "dashboard.status.pending": "En attente",
+    "dashboard.status.approved": "Approuvé",
+    "dashboard.status.rejected": "Refusé",
+};

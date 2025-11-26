@@ -1,0 +1,16 @@
+export const postGenerator = {
+    "linkedinPost.title": "Générateur de posts",
+    "linkedinPost.description": "Crée des posts pro qui génèrent de l'engagement (et pas juste des likes de ta mère).",
+    "linkedinPost.form.topic": "Sujet du post",
+    "linkedinPost.form.topicPlaceholder": "Ex : Leadership à distance, IA dans le marketing, astuces productivité...",
+    "linkedinPost.form.tone": "Ton",
+    "linkedinPost.form.tone.professional": "Professionnel",
+    "linkedinPost.form.tone.storytelling": "Storytelling",
+    "linkedinPost.form.tone.educational": "Éducatif",
+    "linkedinPost.form.tone.thoughtLeader": "Leader d'opinion",
+    "linkedinPost.form.generate": "Générer le post",
+    "linkedinPost.form.generating": "Rédaction en cours...",
+    "linkedinPost.result.title": "Ton post LinkedIn",
+    "linkedinPost.result.copy": "Copier le post",
+    "linkedinPost.result.copied": "Copié !",
+};

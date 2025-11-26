@@ -1,0 +1,23 @@
+export const video_downloader = {
+    // TikTok Video Downloader
+    "videoDownloader.title": "Downloader Video TikTok",
+    "videoDownloader.description": "Scarica video TikTok senza watermark. Gratis, veloce e illimitato.",
+    "videoDownloader.form.videoUrl": "URL Video TikTok",
+    "videoDownloader.form.videoUrlPlaceholder": "Incolla l'URL del video...",
+    "videoDownloader.form.download": "Scarica Video",
+    "videoDownloader.form.downloading": "Download in corso...",
+    "videoDownloader.form.downloadAnother": "Scarica un Altro",
+    "videoDownloader.form.error.emptyUrl": "Inserisci un URL",
+    "videoDownloader.form.error.invalidUrl": "URL TikTok non valido",
+    "videoDownloader.result.title": "Video Pronto",
+    "videoDownloader.result.download": "Scarica Ora",
+    "videoDownloader.result.success": "✓ Video elaborato con successo",
+    "videoDownloader.features.noWatermark.title": "🚫 Senza Watermark",
+    "videoDownloader.features.noWatermark.description": "Video puliti senza logo TikTok.",
+    "videoDownloader.features.hd.title": "🎬 Qualità HD",
+    "videoDownloader.features.hd.description": "Scarica nella migliore qualità disponibile.",
+    "videoDownloader.features.fast.title": "⚡ Super Veloce",
+    "videoDownloader.features.fast.description": "Scarica video in pochi secondi.",
+    "videoDownloader.features.unlimited.title": "♾️ Illimitato",
+    "videoDownloader.features.unlimited.description": "Scarica quanti video vuoi.",
+};

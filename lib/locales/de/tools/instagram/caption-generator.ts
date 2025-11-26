@@ -1,0 +1,28 @@
+export const caption_generator = {
+    // Instagram Caption Generator
+    "captionGenerator.title": "Instagram Bildunterschrift-Generator",
+    "captionGenerator.description": "Erstellen Sie ansprechende, perfekte Bildunterschriften für Ihre Instagram-Posts. Lassen Sie jeden Beitrag herausstechen!",
+    "captionGenerator.form.topic": "Beitragsthema",
+    "captionGenerator.form.topicPlaceholder": "Worum geht es in Ihrem Beitrag?",
+    "captionGenerator.form.tone": "Ton",
+    "captionGenerator.form.language": "Sprache",
+    "captionGenerator.form.includeEmojis": "Emojis einfügen",
+    "captionGenerator.form.includeHashtags": "Hashtags einfügen",
+    "captionGenerator.form.generate": "Bildunterschrift generieren",
+    "captionGenerator.form.generating": "Wird generiert...",
+    "captionGenerator.form.useAgain": "Weitere generieren",
+    "captionGenerator.form.error.emptyTopic": "Bitte geben Sie ein Thema ein",
+    "captionGenerator.result.title": "Ihre Bildunterschrift",
+    "captionGenerator.result.copy": "Bildunterschrift kopieren",
+    "captionGenerator.result.copied": "Bildunterschrift in die Zwischenablage kopiert!",
+    "captionGenerator.result.success": "✓ Bildunterschrift erfolgreich generiert",
+    "captionGenerator.features.engaging.title": "💬 Ansprechende Bildunterschriften",
+    "captionGenerator.features.engaging.description": "Erstellen Sie Bildunterschriften, die Gespräche anregen und das Engagement steigern.",
+    "captionGenerator.features.customizable.title": "🎨 Anpassbar",
+    "captionGenerator.features.customizable.description": "Wählen Sie Ton, Emojis und Hashtags passend zu Ihrem Stil.",
+    "captionGenerator.features.hashtagReady.title": "#️⃣ Hashtag-fertig",
+    "captionGenerator.features.hashtagReady.description": "Erhalten Sie relevante Hashtags automatisch zu Ihrer Bildunterschrift.",
+    "captionGenerator.features.multiLanguage.title": "🌍 Mehrsprachig",
+    "captionGenerator.features.multiLanguage.description": "Generieren Sie Bildunterschriften in über 13 verschiedenen Sprachen.",
+
+};

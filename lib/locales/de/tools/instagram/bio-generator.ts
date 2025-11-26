@@ -1,0 +1,27 @@
+export const bio_generator = {
+    // Instagram Bio Generator
+    "bioGenerator.title": "Instagram Bio-Generator",
+    "bioGenerator.description": "Erstellen Sie die perfekte Bio für Ihr Instagram-Profil. Der erste Eindruck zählt!",
+    "bioGenerator.form.description": "Beschreibung von Ihnen/Ihrer Marke",
+    "bioGenerator.form.descriptionPlaceholder": "Erzählen Sie uns von sich oder Ihrer Marke...",
+    "bioGenerator.form.tone": "Ton",
+    "bioGenerator.form.language": "Sprache",
+    "bioGenerator.form.includeEmojis": "Emojis einfügen",
+    "bioGenerator.form.generate": "Bio generieren",
+    "bioGenerator.form.generating": "Wird generiert...",
+    "bioGenerator.form.useAgain": "Weitere generieren",
+    "bioGenerator.form.error.emptyDescription": "Bitte geben Sie eine Beschreibung ein",
+    "bioGenerator.result.title": "Ihre Instagram Bio",
+    "bioGenerator.result.copy": "Bio kopieren",
+    "bioGenerator.result.copied": "Bio in die Zwischenablage kopiert!",
+    "bioGenerator.result.success": "✓ Bio erfolgreich generiert",
+    "bioGenerator.features.concise.title": "📏 Prägnant & Klar",
+    "bioGenerator.features.concise.description": "Perfekt gestaltet innerhalb des 150-Zeichen-Limits von Instagram.",
+    "bioGenerator.features.personality.title": "✨ Persönlichkeitsgetrieben",
+    "bioGenerator.features.personality.description": "Spiegelt Ihre einzigartige Persönlichkeit oder Markenidentität wider.",
+    "bioGenerator.features.professional.title": "🎯 Professionell & Persönlich",
+    "bioGenerator.features.professional.description": "Balanciert Professionalität mit einer persönlichen Note.",
+    "bioGenerator.features.instant.title": "⚡ Sofortige Ergebnisse",
+    "bioGenerator.features.instant.description": "Generieren und verwenden Sie Ihre neue Bio in Sekunden.",
+
+};

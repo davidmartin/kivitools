@@ -1,0 +1,27 @@
+export const script_generator = {
+    // YouTube Video Script Generator
+    "youtubeScript.title": "Gerador de Roteiro para YouTube",
+    "youtubeScript.description": "Gere roteiros profissionais para seus vídeos do YouTube com estrutura completa. Adeus, branco criativo!",
+    "youtubeScript.form.topic": "Tema do Vídeo",
+    "youtubeScript.form.topicPlaceholder": "Digite o tema do seu vídeo...",
+    "youtubeScript.form.tone": "Tom",
+    "youtubeScript.form.duration": "Duração",
+    "youtubeScript.form.language": "Idioma",
+    "youtubeScript.form.generate": "Gerar Roteiro",
+    "youtubeScript.form.generating": "Criando roteiro épico...",
+    "youtubeScript.form.useAgain": "Gerar Outro",
+    "youtubeScript.form.error.emptyTopic": "Coloca um tema aí, vai!",
+    "youtubeScript.result.title": "Seu Roteiro do YouTube",
+    "youtubeScript.result.copy": "Copiar",
+    "youtubeScript.result.copied": "Roteiro copiado!",
+    "youtubeScript.result.success": "Roteiro gerado com sucesso! Agora é só gravar!",
+    "youtubeScript.features.structured.title": "📋 Bem Estruturado",
+    "youtubeScript.features.structured.description": "Intro, desenvolvimento e conclusão perfeitamente organizados.",
+    "youtubeScript.features.engaging.title": "🎬 Conteúdo Envolvente",
+    "youtubeScript.features.engaging.description": "Roteiros que prendem sua audiência do início ao fim.",
+    "youtubeScript.features.seo.title": "🔍 Otimizado para SEO",
+    "youtubeScript.features.seo.description": "Inclui palavras-chave para maior alcance. Algoritmo feliz!",
+    "youtubeScript.features.instant.title": "⚡ Resultado Instantâneo",
+    "youtubeScript.features.instant.description": "Roteiros completos em segundos. Mágica pura!",
+
+};

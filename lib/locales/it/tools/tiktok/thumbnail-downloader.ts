@@ -1,0 +1,23 @@
+export const thumbnail_downloader = {
+    // TikTok Thumbnail Downloader
+    "thumbnailDownloader.title": "Downloader Thumbnail TikTok",
+    "thumbnailDownloader.description": "Scarica la miniatura o immagine di copertina di qualsiasi video TikTok in alta qualità.",
+    "thumbnailDownloader.form.videoUrl": "URL Video TikTok",
+    "thumbnailDownloader.form.videoUrlPlaceholder": "Incolla l'URL del video...",
+    "thumbnailDownloader.form.download": "Scarica Miniatura",
+    "thumbnailDownloader.form.downloading": "Recupero miniatura...",
+    "thumbnailDownloader.form.downloadAnother": "Scarica un'Altra",
+    "thumbnailDownloader.form.error.emptyUrl": "Inserisci un URL",
+    "thumbnailDownloader.form.error.invalidUrl": "URL TikTok non valido",
+    "thumbnailDownloader.result.title": "Miniatura Pronta",
+    "thumbnailDownloader.result.download": "Scarica Immagine",
+    "thumbnailDownloader.result.success": "✓ Miniatura ottenuta con successo",
+    "thumbnailDownloader.features.hd.title": "🖼️ Alta Risoluzione",
+    "thumbnailDownloader.features.hd.description": "Immagini nella migliore qualità.",
+    "thumbnailDownloader.features.instant.title": "⚡ Istantaneo",
+    "thumbnailDownloader.features.instant.description": "Scarica miniature istantaneamente.",
+    "thumbnailDownloader.features.free.title": "🆓 Gratis",
+    "thumbnailDownloader.features.free.description": "Nessun limite di download.",
+    "thumbnailDownloader.features.easy.title": "✨ Facile",
+    "thumbnailDownloader.features.easy.description": "Incolla URL e scarica.",
+};

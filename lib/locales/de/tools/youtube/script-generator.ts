@@ -1,0 +1,27 @@
+export const script_generator = {
+    // YouTube Video Script Generator
+    "youtubeScript.title": "YouTube Video-Skript-Generator",
+    "youtubeScript.description": "Generieren Sie professionelle Skripte für Ihre YouTube-Videos mit vollständiger Struktur.",
+    "youtubeScript.form.topic": "Video-Thema",
+    "youtubeScript.form.topicPlaceholder": "Bitte geben Sie Ihr Video-Thema ein...",
+    "youtubeScript.form.tone": "Ton",
+    "youtubeScript.form.duration": "Dauer",
+    "youtubeScript.form.language": "Sprache",
+    "youtubeScript.form.generate": "Skript generieren",
+    "youtubeScript.form.generating": "Wird generiert...",
+    "youtubeScript.form.useAgain": "Weiteres generieren",
+    "youtubeScript.form.error.emptyTopic": "Bitte geben Sie ein Thema ein",
+    "youtubeScript.result.title": "Ihr YouTube-Skript",
+    "youtubeScript.result.copy": "Kopieren",
+    "youtubeScript.result.copied": "Skript kopiert!",
+    "youtubeScript.result.success": "Skript erfolgreich generiert!",
+    "youtubeScript.features.structured.title": "📋 Gut strukturiert",
+    "youtubeScript.features.structured.description": "Intro, Hauptteil und Schluss perfekt organisiert.",
+    "youtubeScript.features.engaging.title": "🎬 Fesselnde Inhalte",
+    "youtubeScript.features.engaging.description": "Skripte, die Ihre Zuschauer bei der Stange halten.",
+    "youtubeScript.features.seo.title": "🔍 SEO-optimiert",
+    "youtubeScript.features.seo.description": "Enthält Keywords für bessere Reichweite.",
+    "youtubeScript.features.instant.title": "⚡ Sofortige Ergebnisse",
+    "youtubeScript.features.instant.description": "Vollständige Skripte in Sekunden.",
+
+};

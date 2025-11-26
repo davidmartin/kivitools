@@ -1,0 +1,15 @@
+export const threadGenerator = {
+    "forocochesThread.title": "Generatore di Thread",
+    "forocochesThread.description": "Crea thread leggendari con formato BBCode pronto da copiare e incollare.",
+    "forocochesThread.form.topic": "Argomento del Thread",
+    "forocochesThread.form.topicPlaceholder": "Es: Ho comprato una Dacia ed è successo questo...",
+    "forocochesThread.form.tone": "Stile",
+    "forocochesThread.form.tone.serious": "Serio (Argomento Serio)",
+    "forocochesThread.form.tone.troll": "Troll / Umorismo",
+    "forocochesThread.form.tone.story": "Storia (Testo Lungo)",
+    "forocochesThread.form.generate": "Genera Thread",
+    "forocochesThread.form.generating": "Scrivendo testo lungo...",
+    "forocochesThread.result.title": "Il Tuo Thread (BBCode)",
+    "forocochesThread.result.copy": "Copia BBCode",
+    "forocochesThread.result.copied": "Copiato!",
+};

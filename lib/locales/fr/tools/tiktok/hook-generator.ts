@@ -1,0 +1,27 @@
+export const hook_generator = {
+    // TikTok Hook Generator
+    "hookGenerator.title": "Générateur de Hooks TikTok",
+    "hookGenerator.description": "Des hooks tellement bons que les gens vont arrêter de scroller (oui, même ton ex).",
+    "hookGenerator.form.topic": "Sujet de la Vidéo",
+    "hookGenerator.form.topicPlaceholder": "C'est quoi ta vidéo ?",
+    "hookGenerator.form.tone": "Ton",
+    "hookGenerator.form.language": "Langue",
+    "hookGenerator.form.generate": "Générer des Hooks",
+    "hookGenerator.form.generating": "Génération des hooks...",
+    "hookGenerator.form.useAgain": "Encore des Hooks",
+    "hookGenerator.form.error.emptyTopic": "Entre un sujet s'il te plaît",
+    "hookGenerator.result.title": "Hooks Viraux",
+    "hookGenerator.result.copyAll": "Tout Copier",
+    "hookGenerator.result.copied": "Hook copié dans le presse-papiers !",
+    "hookGenerator.result.copiedAll": "Tous les hooks copiés !",
+    "hookGenerator.result.success": "✓ {count} hooks générés avec succès",
+    "hookGenerator.features.stopScroll.title": "⚡ Stop le Scroll",
+    "hookGenerator.features.stopScroll.description": "Des hooks conçus pour capter l'attention dès les 3 premières secondes.",
+    "hookGenerator.features.multipleStyles.title": "🎭 Plusieurs Styles",
+    "hookGenerator.features.multipleStyles.description": "Questions, déclarations choc, mystère... t'as le choix.",
+    "hookGenerator.features.proven.title": "🎯 Formules Prouvées",
+    "hookGenerator.features.proven.description": "Basé sur des formules de hooks viraux qui marchent vraiment.",
+    "hookGenerator.features.copyTest.title": "📋 Copie & Teste",
+    "hookGenerator.features.copyTest.description": "Copie n'importe quel hook et teste lequel cartonne le plus.",
+
+};

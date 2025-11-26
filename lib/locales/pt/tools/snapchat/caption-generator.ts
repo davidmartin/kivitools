@@ -1,0 +1,27 @@
+export const caption_generator = {
+    // Snapchat Caption Generator
+    "snapchatCaption.title": "Gerador de Legendas para Snapchat",
+    "snapchatCaption.description": "Crie legendas divertidas e criativas pros seus Snaps. Porque cada Snap merece brilhar! 👻",
+    "snapchatCaption.form.topic": "Assunto do Snap",
+    "snapchatCaption.form.topicPlaceholder": "Sobre o que é seu Snap?",
+    "snapchatCaption.form.tone": "Tom",
+    "snapchatCaption.form.language": "Idioma",
+    "snapchatCaption.form.includeEmojis": "Incluir emojis",
+    "snapchatCaption.form.generate": "Gerar Legenda",
+    "snapchatCaption.form.generating": "Gerando...",
+    "snapchatCaption.form.useAgain": "Gerar Outra",
+    "snapchatCaption.form.error.emptyTopic": "Ei, coloca um assunto aí!",
+    "snapchatCaption.result.title": "Sua Legenda",
+    "snapchatCaption.result.copy": "Copiar Legenda",
+    "snapchatCaption.result.copied": "Legenda copiada! Bora postar! 👻",
+    "snapchatCaption.result.success": "✓ Legenda criada com sucesso",
+    "snapchatCaption.features.fun.title": "🎉 Divertida & Criativa",
+    "snapchatCaption.features.fun.description": "Legendas que capturam o espírito único do Snapchat.",
+    "snapchatCaption.features.short.title": "📱 Curta & Direta",
+    "snapchatCaption.features.short.description": "Perfeita pro formato rápido do Snapchat.",
+    "snapchatCaption.features.emojis.title": "😊 Rica em Emojis",
+    "snapchatCaption.features.emojis.description": "Opção de incluir emojis relevantes e divertidos.",
+    "snapchatCaption.features.instant.title": "⚡ Rapidinha",
+    "snapchatCaption.features.instant.description": "Copia e usa na hora no seu Snap.",
+
+};

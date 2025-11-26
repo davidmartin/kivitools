@@ -1,0 +1,28 @@
+export const caption_generator = {
+    // Instagram Caption Generator
+    "captionGenerator.title": "Gerador de Legendas do Instagram",
+    "captionGenerator.description": "Crie legendas envolventes e perfeitas pros seus posts. Faça cada publicação brilhar!",
+    "captionGenerator.form.topic": "Tema do Post",
+    "captionGenerator.form.topicPlaceholder": "Sobre o que é seu post?",
+    "captionGenerator.form.tone": "Tom",
+    "captionGenerator.form.language": "Idioma",
+    "captionGenerator.form.includeEmojis": "Incluir emojis",
+    "captionGenerator.form.includeHashtags": "Incluir hashtags",
+    "captionGenerator.form.generate": "Gerar Legenda",
+    "captionGenerator.form.generating": "Gerando...",
+    "captionGenerator.form.useAgain": "Gerar Outra",
+    "captionGenerator.form.error.emptyTopic": "Por favor, digite um tema",
+    "captionGenerator.result.title": "Sua Legenda",
+    "captionGenerator.result.copy": "Copiar Legenda",
+    "captionGenerator.result.copied": "Legenda copiada!",
+    "captionGenerator.result.success": "✓ Legenda gerada com sucesso",
+    "captionGenerator.features.engaging.title": "💬 Legendas Envolventes",
+    "captionGenerator.features.engaging.description": "Crie legendas que iniciam conversas e explodem o engajamento.",
+    "captionGenerator.features.customizable.title": "🎨 Personalizável",
+    "captionGenerator.features.customizable.description": "Escolha tom, emojis e hashtags que combinam com seu estilo.",
+    "captionGenerator.features.hashtagReady.title": "#️⃣ Hashtags Incluídas",
+    "captionGenerator.features.hashtagReady.description": "Receba hashtags relevantes adicionadas automaticamente na sua legenda.",
+    "captionGenerator.features.multiLanguage.title": "🌍 Multi-Idiomas",
+    "captionGenerator.features.multiLanguage.description": "Gere legendas em mais de 13 idiomas diferentes.",
+
+};

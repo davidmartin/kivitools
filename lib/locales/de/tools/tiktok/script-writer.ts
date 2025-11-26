@@ -1,0 +1,27 @@
+export const script_writer = {
+    // TikTok Script Writer
+    "scriptWriter.title": "TikTok Skript-Generator",
+    "scriptWriter.description": "Ihr Gehirn: 💤 Unsere KI: 🚀 Erstellen Sie Skripte, die so gut sind, dass Ihr FYP Ihnen danken wird.",
+    "scriptWriter.form.topic": "Thema",
+    "scriptWriter.form.topicPlaceholder": "Bitte geben Sie Ihr Post-Thema ein...",
+    "scriptWriter.form.tone": "Tonfall",
+    "scriptWriter.form.duration": "Dauer",
+    "scriptWriter.form.language": "Sprache",
+    "scriptWriter.form.generate": "Skript generieren",
+    "scriptWriter.form.generating": "Wird generiert...",
+    "scriptWriter.form.useAgain": "Erneut verwenden",
+    "scriptWriter.result.title": "Generiertes Skript",
+    "scriptWriter.result.copy": "Skript kopieren",
+    "scriptWriter.result.copied": "Skript in Zwischenablage kopiert!",
+    "scriptWriter.result.success": "✓ Ergebnis erfolgreich generiert",
+    "scriptWriter.form.error.emptyTopic": "Bitte geben Sie ein Thema ein",
+    "scriptWriter.features.free.title": "🚀 Kostenlos (Weil Geld Aufwand ist)",
+    "scriptWriter.features.free.description": "Keine Kreditkarten, kein erstgeborenes Kind. Nichts. Null. Nada.",
+    "scriptWriter.features.smart.title": "✨ Mehr Ideen als Ihre Spotify-Playlist",
+    "scriptWriter.features.smart.description": "Die KI hat um 3 Uhr morgens bessere Ideen als Sie nach 5 Kaffees.",
+    "scriptWriter.features.multilang.title": "🌍 Spricht mehr Sprachen als Duolingo",
+    "scriptWriter.features.multilang.description": "13 Sprachen verfügbar. Ihr Schwarm aus dem Ausland wird Sie endlich verstehen.",
+    "scriptWriter.features.fast.title": "⚡ Kopieren, Einfügen, Gewinnen",
+    "scriptWriter.features.fast.description": "Strg+C, Strg+V, warten auf Millionen Views. So einfach.",
+
+};

@@ -1,0 +1,28 @@
+export const thread_maker = {
+    // Twitter Thread Maker
+    "threadMaker.title": "Creatore di Thread Twitter",
+    "threadMaker.description": "Crea thread Twitter virali con l'IA. Trasforma le tue idee in thread coinvolgenti!",
+    "threadMaker.form.topic": "Argomento del Thread",
+    "threadMaker.form.topicPlaceholder": "Di cosa vuoi twittare?",
+    "threadMaker.form.tone": "Tono",
+    "threadMaker.form.numberOfTweets": "Numero di Tweet",
+    "threadMaker.form.language": "Lingua",
+    "threadMaker.form.generate": "Genera Thread",
+    "threadMaker.form.generating": "Generando...",
+    "threadMaker.form.useAgain": "Genera un Altro",
+    "threadMaker.form.error.emptyTopic": "Per favore inserisci un argomento",
+    "threadMaker.result.title": "Il Tuo Thread Twitter",
+    "threadMaker.result.copyAll": "Copia Tutto",
+    "threadMaker.result.copied": "Tweet copiato!",
+    "threadMaker.result.copiedAll": "Thread completo copiato!",
+    "threadMaker.result.success": "✓ Thread generato con successo",
+    "threadMaker.features.viral.title": "🔥 Formato Virale",
+    "threadMaker.features.viral.description": "Thread strutturati per massimizzare engagement e retweet.",
+    "threadMaker.features.numbered.title": "🔢 Tweet Numerati",
+    "threadMaker.features.numbered.description": "Ogni tweet numerato automaticamente per una lettura facile.",
+    "threadMaker.features.flexible.title": "📏 Lunghezza Flessibile",
+    "threadMaker.features.flexible.description": "Scegli da 3 a 10 tweet in base al tuo contenuto.",
+    "threadMaker.features.instant.title": "⚡ Pubblica Veloce",
+    "threadMaker.features.instant.description": "Copia e incolla direttamente su Twitter.",
+
+};

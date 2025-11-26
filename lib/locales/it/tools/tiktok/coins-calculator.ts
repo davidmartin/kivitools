@@ -1,0 +1,22 @@
+export const coins_calculator = {
+    // TikTok Coins Calculator
+    "coinsCalculator.title": "Calcolatore Monete TikTok",
+    "coinsCalculator.description": "Converti le monete TikTok in soldi veri. Calcola quanto valgono le tue monete o quante ne servono.",
+    "coinsCalculator.form.coins": "Numero di Monete",
+    "coinsCalculator.form.coinsPlaceholder": "Es: 1000",
+    "coinsCalculator.form.calculate": "Calcola Valore",
+    "coinsCalculator.form.calculating": "Calcolo in corso...",
+    "coinsCalculator.form.calculateAgain": "Calcola Altro Importo",
+    "coinsCalculator.form.error.invalidCoins": "Inserisci un importo di monete valido",
+    "coinsCalculator.result.title": "Valore in Soldi Reali",
+    "coinsCalculator.result.usd": "USD",
+    "coinsCalculator.result.disclaimer": "💡 Nota: I prezzi possono variare per regione e pacchetto acquisto. Questa è una stima basata sui tassi standard di TikTok.",
+    "coinsCalculator.features.accurate.title": "💰 Conversione Accurata",
+    "coinsCalculator.features.accurate.description": "Basata sui tassi di conversione ufficiali di TikTok.",
+    "coinsCalculator.features.instant.title": "⚡ Istantaneo",
+    "coinsCalculator.features.instant.description": "Ottieni il valore in tempo reale senza attese.",
+    "coinsCalculator.features.free.title": "🆓 Gratis",
+    "coinsCalculator.features.free.description": "Usa il calcolatore senza limiti o costi.",
+    "coinsCalculator.features.simple.title": "✨ Facile da Usare",
+    "coinsCalculator.features.simple.description": "Inserisci l'importo e ottieni il risultato.",
+};

@@ -1,0 +1,28 @@
+export const title_generator = {
+    // YouTube Title Generator
+    "youtubeTitle.title": "Générateur de Titres YouTube",
+    "youtubeTitle.description": "Crée des titres accrocheurs qui font exploser tes vues et ton taux de clic.",
+    "youtubeTitle.form.topic": "Sujet de la Vidéo",
+    "youtubeTitle.form.topicPlaceholder": "Décris ta vidéo en quelques mots...",
+    "youtubeTitle.form.language": "Langue",
+    "youtubeTitle.form.generate": "Générer les Titres",
+    "youtubeTitle.form.generating": "Génération en cours...",
+    "youtubeTitle.form.useAgain": "En Générer Plus",
+    "youtubeTitle.form.error.emptyTopic": "Entre un sujet, on va pas deviner !",
+    "youtubeTitle.result.title": "Titres Proposés",
+    "youtubeTitle.result.option": "Option",
+    "youtubeTitle.result.copy": "Copier",
+    "youtubeTitle.result.copyAll": "Tout Copier",
+    "youtubeTitle.result.copied": "Titre copié !",
+    "youtubeTitle.result.copiedAll": "Tous les titres copiés !",
+    "youtubeTitle.result.success": "10 titres générés avec succès !",
+    "youtubeTitle.features.clickworthy.title": "🖱️ Taux de Clic Élevé",
+    "youtubeTitle.features.clickworthy.description": "Titres optimisés pour maximiser les clics.",
+    "youtubeTitle.features.variety.title": "🎨 Grande Variété",
+    "youtubeTitle.features.variety.description": "10 options différentes pour faire ton choix.",
+    "youtubeTitle.features.keywords.title": "🔑 Avec Mots-clés",
+    "youtubeTitle.features.keywords.description": "Inclut les termes de recherche populaires.",
+    "youtubeTitle.features.instant.title": "⚡ Résultats Instantanés",
+    "youtubeTitle.features.instant.description": "Titres prêts en quelques secondes.",
+
+};

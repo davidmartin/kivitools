@@ -1,0 +1,27 @@
+export const script_generator = {
+    // YouTube Video Script Generator
+    "youtubeScript.title": "Générateur de Scripts YouTube",
+    "youtubeScript.description": "Génère des scripts pro pour tes vidéos YouTube avec une structure béton.",
+    "youtubeScript.form.topic": "Sujet de la Vidéo",
+    "youtubeScript.form.topicPlaceholder": "Entre le sujet de ta vidéo...",
+    "youtubeScript.form.tone": "Ton",
+    "youtubeScript.form.duration": "Durée",
+    "youtubeScript.form.language": "Langue",
+    "youtubeScript.form.generate": "Générer le Script",
+    "youtubeScript.form.generating": "Génération en cours...",
+    "youtubeScript.form.useAgain": "En Générer un Autre",
+    "youtubeScript.form.error.emptyTopic": "Entre un sujet, sinon ça va être compliqué !",
+    "youtubeScript.result.title": "Ton Script YouTube",
+    "youtubeScript.result.copy": "Copier",
+    "youtubeScript.result.copied": "Script copié !",
+    "youtubeScript.result.success": "Script généré avec succès !",
+    "youtubeScript.features.structured.title": "📋 Bien Structuré",
+    "youtubeScript.features.structured.description": "Intro, développement et conclusion parfaitement organisés.",
+    "youtubeScript.features.engaging.title": "🎬 Contenu Captivant",
+    "youtubeScript.features.engaging.description": "Des scripts qui gardent ton audience scotchée.",
+    "youtubeScript.features.seo.title": "🔍 Optimisé SEO",
+    "youtubeScript.features.seo.description": "Inclut des mots-clés pour une meilleure portée.",
+    "youtubeScript.features.instant.title": "⚡ Résultats Instantanés",
+    "youtubeScript.features.instant.description": "Scripts complets en quelques secondes.",
+
+};

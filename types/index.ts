@@ -496,3 +496,24 @@ export interface ProductDescriptionGeneratorResponse {
     description?: string;
     error?: string;
 }
+
+// UI Language Configuration (for language selector)
+// Only include languages with complete translations
+export type UILanguage = 'en' | 'es' | 'pt' | 'fr' | 'de' | 'it';
+
+export interface LanguageConfig {
+    code: UILanguage;
+    name: string;
+    nativeName: string;
+    flag: string;
+}
+
+// Only show languages that have complete translations
+export const UI_LANGUAGES: readonly LanguageConfig[] = [
+    { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
+    { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
+    { code: 'pt', name: 'Portuguese', nativeName: 'Português', flag: '🇧🇷' },
+    { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷' },
+    { code: 'de', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' },
+    { code: 'it', name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹' },
+] as const;
