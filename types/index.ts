@@ -1,3 +1,6 @@
+// Cookie Consent Types
+export * from './cookie-consent';
+
 // Base interface for all tool requests with Turnstile protection
 export interface BaseToolRequest {
     turnstileToken?: string;

@@ -113,6 +113,26 @@ export default function AdminPage() {
                 <p className="text-muted">{t("admin.subtitle")}</p>
             </div>
 
+            {/* Admin Tools Section */}
+            <section>
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                    🛠️ {t("admin.adminTools")}
+                </h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <Link href="/admin/video-generator">
+                        <Card className="p-6 hover:border-accent transition-colors cursor-pointer h-full">
+                            <div className="flex items-start gap-4">
+                                <div className="text-4xl">🎬</div>
+                                <div>
+                                    <h3 className="text-lg font-bold mb-1">{t("admin.videoGenerator.title")}</h3>
+                                    <p className="text-sm text-muted">{t("admin.videoGenerator.subtitle")}</p>
+                                </div>
+                            </div>
+                        </Card>
+                    </Link>
+                </div>
+            </section>
+
             {/* Pending Tools Section */}
             <section>
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">

@@ -1,10 +1,19 @@
+"use client";
+
 import Script from "next/script";
+import { useCookieConsentSafe } from "@/contexts/CookieConsentContext";
 
 export default function GoogleAnalytics() {
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const { preferences } = useCookieConsentSafe();
 
   // Don't render in development
   if (process.env.NODE_ENV !== "production" || !GA_MEASUREMENT_ID) {
+    return null;
+  }
+
+  // Don't render if analytics consent is not given
+  if (!preferences?.analytics) {
     return null;
   }
 

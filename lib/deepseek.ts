@@ -4156,6 +4156,206 @@ PRIMARY TEXT: [your primary text here]`;
 }
 
 // ==========================================
+// VIDEO GENERATOR FOR ADMIN (TikTok Video Prompt Generator)
+// ==========================================
+
+// Generate Veo 2 Prompt for AI Studio Video Generation
+export async function generateVeo2Prompt({
+    platform,
+    toolSlug,
+    toolName,
+    toolDescription,
+    language,
+}: {
+    platform: string;
+    toolSlug: string;
+    toolName: string;
+    toolDescription: string;
+    language: string;
+}): Promise<string> {
+    const targetLanguage = languageNames[language] || "English";
+
+    // Platform color mapping for visual consistency
+    const platformColors: Record<string, string> = {
+        tiktok: "purple and pink",
+        instagram: "pink and magenta gradient",
+        twitter: "blue and white",
+        snapchat: "yellow and white",
+        youtube: "red and white",
+        reddit: "orange and white",
+        discord: "indigo and purple",
+        twitch: "purple and white",
+        suno: "gradient purple and blue",
+        elevenlabs: "dark blue and cyan",
+        linkedin: "blue and white",
+        forocoches: "blue and orange",
+        amazon: "orange and black",
+        pinterest: "red and white",
+        spotify: "green and black",
+        facebook: "blue and white",
+        threads: "black and white minimalist",
+    };
+
+    const platformColor = platformColors[platform] || "vibrant tech colors";
+
+    const systemPrompt = `You are an expert video prompt engineer for Google AI Studio (Veo 2). Create detailed, structured prompts that generate stunning 8-second vertical TikTok promotional videos.
+
+Your prompts MUST:
+- Generate visually striking content suitable for TikTok
+- Focus on MOTION and VISUAL STORYTELLING (not literal tool screenshots)
+- Use dynamic camera movements and transitions
+- Include text overlay suggestions (though Veo 2 may need post-editing)
+- Be optimized for 9:16 vertical format
+- Capture attention in the first 2 seconds
+
+For ABSTRACT or HARD-TO-VISUALIZE tools:
+- Focus on the FEELING and BENEFITS the tool provides
+- Use metaphorical visuals (e.g., creativity flowing, ideas sparking)
+- Show the RESULT/TRANSFORMATION, not the tool interface
+- Use dynamic particle effects, light rays, or abstract shapes
+
+ALWAYS output in this exact structure:
+**STYLE**: [visual aesthetic]
+**ASPECT**: 9:16 vertical format for TikTok
+**DURATION**: 8 seconds
+
+**SCENE**: [detailed scene description with motion]
+
+**CAMERA**: [camera movement]
+**TEXT OVERLAY**: [text suggestions]
+**MOOD**: [emotional tone]
+
+Write the prompt in ${targetLanguage}.`;
+
+    const userPrompt = `Create a Veo 2 video prompt for this KiviTools tool:
+
+Platform: ${platform}
+Tool Name: ${toolName}
+Tool Slug: ${toolSlug}
+Tool Description: ${toolDescription}
+
+Visual style should use ${platformColor} colors to match the ${platform} brand.
+
+Generate an engaging 8-second video prompt that makes viewers want to try this free AI tool. Focus on the transformation/benefit the user gets, not on showing a boring interface.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.85,
+            max_tokens: 800,
+        });
+
+        const prompt = completion.choices[0]?.message?.content?.trim();
+
+        if (!prompt) {
+            throw new Error("No prompt generated");
+        }
+
+        return prompt;
+    } catch (error) {
+        console.error("Error generating Veo 2 prompt:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate Veo 2 prompt"
+        );
+    }
+}
+
+// Generate TikTok Caption for Tool Promotion
+export async function generateTikTokToolCaption({
+    platform,
+    toolSlug,
+    toolName,
+    toolDescription,
+    language,
+}: {
+    platform: string;
+    toolSlug: string;
+    toolName: string;
+    toolDescription: string;
+    language: string;
+}): Promise<{ caption: string; hashtags: string[]; toolUrl: string }> {
+    const targetLanguage = languageNames[language] || "English";
+    const toolUrl = `https://kivitools.com/${platform}/${toolSlug}`;
+
+    const systemPrompt = `You are a viral TikTok copywriter who creates engaging captions for AI tool promotions. Create captions that:
+- Start with an attention-grabbing hook (emoji + bold statement)
+- Are conversational and Gen-Z friendly
+- Highlight the FREE and instant nature of the tool
+- Include a clear call-to-action
+- Generate 5-10 relevant hashtags that mix trending and niche tags
+- Are optimized for TikTok's algorithm
+
+Caption structure:
+1. Hook (attention grabber with emoji)
+2. Problem or pain point (1 line)
+3. Solution/benefit (1-2 lines)
+4. CTA (link in bio reference)
+5. Tool URL
+
+Write in ${targetLanguage}. Be punchy, fun, and authentic - NOT corporate.`;
+
+    const userPrompt = `Create a TikTok caption to promote this free AI tool:
+
+Platform: ${platform}
+Tool Name: ${toolName}
+Description: ${toolDescription}
+Tool URL: ${toolUrl}
+
+Generate:
+1. An engaging caption (max 300 characters before hashtags)
+2. 8 relevant hashtags (without # symbol)
+
+Format your response EXACTLY like this:
+CAPTION: [your caption here]
+HASHTAGS: hashtag1, hashtag2, hashtag3, hashtag4, hashtag5, hashtag6, hashtag7, hashtag8`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.9,
+            max_tokens: 500,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim();
+
+        if (!content) {
+            throw new Error("No caption generated");
+        }
+
+        // Parse caption
+        const captionMatch = content.match(/CAPTION:\s*(.+?)(?=HASHTAGS:|$)/is);
+        const hashtagsMatch = content.match(/HASHTAGS:\s*(.+)/i);
+
+        const caption = captionMatch?.[1]?.trim() || content.split('\n')[0] || "";
+        const hashtagsString = hashtagsMatch?.[1]?.trim() || "";
+        const hashtags = hashtagsString
+            .split(/[,\s]+/)
+            .map(tag => tag.replace(/^#/, '').trim())
+            .filter(tag => tag.length > 0)
+            .slice(0, 10);
+
+        return {
+            caption,
+            hashtags,
+            toolUrl,
+        };
+    } catch (error) {
+        console.error("Error generating TikTok caption:", error);
+        throw new Error(
+            error instanceof Error ? error.message : "Failed to generate TikTok caption"
+        );
+    }
+}
+
+// ==========================================
 // THREADS FUNCTIONS
 // ==========================================
 

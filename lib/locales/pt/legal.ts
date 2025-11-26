@@ -28,4 +28,50 @@ export const legal = {
     "terms.limitation.description": "O KiviTools não é responsável por quaisquer danos resultantes do uso do nosso serviço. Você usa as ferramentas por sua própria conta e risco.",
     "terms.termination.title": "Rescisão",
     "terms.termination.description": "Reservamo-nos o direito de encerrar ou suspender o acesso ao nosso serviço sem aviso prévio por conduta que consideramos inadequada.",
+
+    // Cookie Banner
+    "cookies.banner.title": "Usamos Cookies (Os Digitais, Não Os Deliciosos)",
+    "cookies.banner.description": "Usamos cookies para tornar sua experiência menos confusa e mais incrível. Alguns são essenciais (como oxigênio, mas para sites), outros nos ajudam a entender o que você gosta. Você decide sobre os não essenciais!",
+    "cookies.banner.acceptAll": "Aceitar Todos",
+    "cookies.banner.rejectNonEssential": "Rejeitar Não Essenciais",
+    "cookies.banner.customize": "Personalizar",
+    "cookies.banner.moreInfo": "Saiba mais sobre nossos cookies",
+
+    // Cookie Preferences Modal
+    "cookies.preferences.title": "Preferências de Cookies",
+    "cookies.preferences.save": "Salvar Preferências",
+    "cookies.preferences.cancel": "Cancelar",
+    "cookies.preferences.essential.title": "Cookies Essenciais",
+    "cookies.preferences.essential.description": "Esses cookies são necessários para o site funcionar. Sem eles, as coisas ficariam estranhas. Muito estranhas. Você não pode desativá-los.",
+    "cookies.preferences.analytics.title": "Cookies de Análise",
+    "cookies.preferences.analytics.description": "Nos ajudam a entender quais ferramentas você adora (e quais precisam de melhorias). Usamos o Google Analytics para contar visitas, não para te espionar.",
+    "cookies.preferences.advertising.title": "Cookies de Publicidade",
+    "cookies.preferences.advertising.description": "Permitem que mostremos anúncios relevantes através do Google AdSense. Esses cookies ajudam a manter nossas ferramentas gratuitas. Sem anúncios = teríamos que cobrar. Ninguém quer isso.",
+
+    // Cookie Policy Page
+    "cookies.policy.title": "Política de Cookies",
+    "cookies.policy.lastUpdated": "Última atualização: 26 de novembro de 2025",
+    "cookies.policy.intro": "Esta Política de Cookies explica o que são cookies, como os usamos e suas escolhas a respeito. Acreditamos em transparência, então aqui estão todas as informações sobre nossas migalhas digitais.",
+    "cookies.policy.whatAreCookies.title": "O Que São Cookies?",
+    "cookies.policy.whatAreCookies.description": "Cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você visita um site. Eles ajudam os sites a lembrar de coisas sobre sua visita, como suas preferências. Pense neles como post-its que seu navegador guarda para nós.",
+    "cookies.policy.howWeUse.title": "Como Usamos Cookies",
+    "cookies.policy.howWeUse.description": "Usamos cookies para três propósitos principais: manter o site funcionando bem (essenciais), entender como você usa nossas ferramentas (análise) e mostrar anúncios relevantes (publicidade). Cada categoria é explicada abaixo.",
+    "cookies.policy.table.name": "Nome do Cookie",
+    "cookies.policy.table.provider": "Provedor",
+    "cookies.policy.table.purpose": "Propósito",
+    "cookies.policy.table.duration": "Duração",
+    "cookies.policy.cookie.consent": "Armazena suas preferências de cookies para não te incomodar a cada visita",
+    "cookies.policy.cookie.turnstile": "Verificação de segurança do Cloudflare para proteger contra bots",
+    "cookies.policy.cookie.ga": "Identificador único de visitante para Google Analytics",
+    "cookies.policy.cookie.gaSession": "ID de sessão para Google Analytics para rastrear visitas de páginas",
+    "cookies.policy.cookie.gid": "Distingue usuários para Google Analytics dentro de uma sessão",
+    "cookies.policy.cookie.adsense": "Publicidade personalizada através do Google AdSense",
+    "cookies.policy.yourChoices.title": "Suas Escolhas",
+    "cookies.policy.yourChoices.description": "Você pode alterar suas preferências de cookies a qualquer momento clicando no link 'Configurações de Cookies' no nosso rodapé. Você também pode configurar seu navegador para bloquear todos os cookies, mas isso pode afetar sua experiência no nosso site.",
+    "cookies.policy.contact.title": "Dúvidas?",
+    "cookies.policy.contact.description": "Se você tiver alguma dúvida sobre nossas práticas de cookies, fique à vontade para entrar em contato conosco através da nossa página de contato.",
+
+    // Footer Cookie Links
+    "footer.cookieSettings": "Configurações de Cookies",
+    "footer.cookiePolicy": "Política de Cookies",
 };
