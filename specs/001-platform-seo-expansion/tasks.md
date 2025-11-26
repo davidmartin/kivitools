@@ -368,17 +368,17 @@ T036 + T037  # Artist Bio
 
 ### Estimated Time
 
-| Phase | Tasks | Estimated Time |
-|-------|-------|----------------|
-| Phase 1 (Setup) | 4 | 30 min |
-| Phase 2 (Foundational) | 5 | 1 hour |
-| Phase 3 (Pinterest) | 20 | 3.5 hours |
-| Phase 4 (Spotify) | 20 | 3.5 hours |
-| Phase 5 (Facebook) | 20 | 3.5 hours |
-| Phase 6 (Threads) | 16 | 2.5 hours |
-| Phase 7 (Expansion) | 20 | 2.5 hours |
-| Phase 8 (Polish) | 18 | 2.5 hours |
-| **Total** | **123** | **~19.5 hours** |
+| Phase                  | Tasks   | Estimated Time  |
+| ---------------------- | ------- | --------------- |
+| Phase 1 (Setup)        | 4       | 30 min          |
+| Phase 2 (Foundational) | 5       | 1 hour          |
+| Phase 3 (Pinterest)    | 20      | 3.5 hours       |
+| Phase 4 (Spotify)      | 20      | 3.5 hours       |
+| Phase 5 (Facebook)     | 20      | 3.5 hours       |
+| Phase 6 (Threads)      | 16      | 2.5 hours       |
+| Phase 7 (Expansion)    | 20      | 2.5 hours       |
+| Phase 8 (Polish)       | 18      | 2.5 hours       |
+| **Total**              | **123** | **~19.5 hours** |
 
 ---
 

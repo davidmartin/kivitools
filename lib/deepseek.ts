@@ -4140,7 +4140,7 @@ PRIMARY TEXT: [your primary text here]`;
         });
 
         const content = completion.choices[0]?.message?.content?.trim() || "";
-        
+
         // Parse the response
         const headlineMatch = content.match(/HEADLINE:\s*(.+?)(?=PRIMARY TEXT:|$)/is);
         const primaryTextMatch = content.match(/PRIMARY TEXT:\s*(.+)/is);
@@ -4207,7 +4207,7 @@ Return ONLY the 5 posts, one per line, numbered 1-5.`;
         });
 
         const content = completion.choices[0]?.message?.content?.trim() || "";
-        
+
         // Parse numbered list
         const posts = content
             .split(/\n+/)
@@ -4273,7 +4273,7 @@ Return ONLY the 5 bios, one per line, numbered 1-5.`;
         });
 
         const content = completion.choices[0]?.message?.content?.trim() || "";
-        
+
         // Parse numbered list
         const bios = content
             .split(/\n+/)

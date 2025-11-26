@@ -21,29 +21,29 @@ Expand KiviTools with 4 new high-traffic platforms (Pinterest, Spotify, Facebook
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
 ### Pre-Phase 0 Check
 
-| Principle | Status | Notes |
-|-----------|--------|-------|
+| Principle                              | Status  | Notes                                                         |
+| -------------------------------------- | ------- | ------------------------------------------------------------- |
 | I. HeroUI-First Component Architecture | ✅ PASS | All new tool pages use HeroUI components (Button, Card, etc.) |
-| II. Translation-Mandatory Content | ✅ PASS | All user-facing text uses `t()` function, keys in both ES/EN |
-| III. Tool Page Completeness Standard | ✅ PASS | Each tool includes all 8 mandatory sections |
-| IV. Performance Budget Enforcement | ✅ PASS | Target Lighthouse 90+, SSR for SEO |
-| V. Platform Integration Completeness | ✅ PASS | 10-point checklist followed for each platform |
+| II. Translation-Mandatory Content      | ✅ PASS | All user-facing text uses `t()` function, keys in both ES/EN  |
+| III. Tool Page Completeness Standard   | ✅ PASS | Each tool includes all 8 mandatory sections                   |
+| IV. Performance Budget Enforcement     | ✅ PASS | Target Lighthouse 90+, SSR for SEO                            |
+| V. Platform Integration Completeness   | ✅ PASS | 10-point checklist followed for each platform                 |
 
 **Pre-Phase 0 Gate**: PASSED - All principles can be satisfied.
 
 ### Post-Phase 1 Re-Check (Design Complete)
 
-| Principle | Status | Verification |
-|-----------|--------|--------------|
-| I. HeroUI-First | ✅ PASS | data-model.md specifies HeroUI Button, Card for all tools |
-| II. Translations | ✅ PASS | research.md defines translation key patterns for all content |
-| III. Tool Completeness | ✅ PASS | quickstart.md checklist ensures all 8 sections per tool |
-| IV. Performance | ✅ PASS | SSR specified, Lighthouse 90+ target in testing plan |
-| V. Platform Integration | ✅ PASS | 10-point checklist explicit in quickstart.md |
+| Principle               | Status  | Verification                                                 |
+| ----------------------- | ------- | ------------------------------------------------------------ |
+| I. HeroUI-First         | ✅ PASS | data-model.md specifies HeroUI Button, Card for all tools    |
+| II. Translations        | ✅ PASS | research.md defines translation key patterns for all content |
+| III. Tool Completeness  | ✅ PASS | quickstart.md checklist ensures all 8 sections per tool      |
+| IV. Performance         | ✅ PASS | SSR specified, Lighthouse 90+ target in testing plan         |
+| V. Platform Integration | ✅ PASS | 10-point checklist explicit in quickstart.md                 |
 
 **Post-Design Gate**: PASSED - Design adheres to all constitution principles.
 
@@ -145,5 +145,5 @@ PRD.md                                # UPDATE - Add platforms & tools
 > No constitution violations. Standard feature expansion following established patterns.
 
 | Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| N/A | - | - |
+| --------- | ---------- | ------------------------------------ |
+| N/A       | -          | -                                    |

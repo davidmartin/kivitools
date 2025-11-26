@@ -7,11 +7,13 @@
 ## Common Patterns
 
 ### Request Headers
+
 ```
 Content-Type: application/json
 ```
 
 ### Response Format
+
 ```typescript
 interface ApiResponse<T> {
   success: boolean;
@@ -21,11 +23,12 @@ interface ApiResponse<T> {
 ```
 
 ### Error Codes
-| Code | Description |
-|------|-------------|
-| 400 | Bad Request - Invalid input |
-| 403 | Forbidden - Turnstile verification failed |
-| 500 | Internal Server Error - Generation failed |
+
+| Code | Description                               |
+| ---- | ----------------------------------------- |
+| 400  | Bad Request - Invalid input               |
+| 403  | Forbidden - Turnstile verification failed |
+| 500  | Internal Server Error - Generation failed |
 
 ---
 
@@ -36,6 +39,7 @@ interface ApiResponse<T> {
 Generate SEO-optimized pin descriptions.
 
 **Request Body**:
+
 ```typescript
 {
   topic: string;        // Required, max 500 chars
@@ -47,10 +51,11 @@ Generate SEO-optimized pin descriptions.
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  description: string;  // Max 500 chars
+  description: string; // Max 500 chars
 }
 ```
 
@@ -61,16 +66,18 @@ Generate SEO-optimized pin descriptions.
 Generate creative Pinterest board names.
 
 **Request Body**:
+
 ```typescript
 {
-  theme: string;        // Required, max 200 chars
-  style: string;        // Required: "minimal" | "colorful" | "vintage" | "modern"
+  theme: string; // Required, max 200 chars
+  style: string; // Required: "minimal" | "colorful" | "vintage" | "modern"
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
@@ -85,20 +92,22 @@ Generate creative Pinterest board names.
 Generate Pinterest profile bio.
 
 **Request Body**:
+
 ```typescript
 {
-  businessType: string;   // Required, max 100 chars
-  personality: string;    // Required: "professional" | "friendly" | "creative"
+  businessType: string; // Required, max 100 chars
+  personality: string; // Required: "professional" | "friendly" | "creative"
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  bio: string;          // Max 160 chars
+  bio: string; // Max 160 chars
 }
 ```
 
@@ -111,17 +120,19 @@ Generate Pinterest profile bio.
 Generate creative playlist names.
 
 **Request Body**:
+
 ```typescript
 {
-  theme: string;        // Required, max 200 chars
-  mood: string;         // Required: "happy" | "chill" | "energetic" | "melancholic" | "romantic"
-  genre: string;        // Required: "pop" | "rock" | "hiphop" | "electronic" | "indie" | "classical"
+  theme: string; // Required, max 200 chars
+  mood: string; // Required: "happy" | "chill" | "energetic" | "melancholic" | "romantic"
+  genre: string; // Required: "pop" | "rock" | "hiphop" | "electronic" | "indie" | "classical"
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
@@ -136,6 +147,7 @@ Generate creative playlist names.
 Generate playlist description for Spotify.
 
 **Request Body**:
+
 ```typescript
 {
   theme: string;          // Required, max 200 chars
@@ -147,10 +159,11 @@ Generate playlist description for Spotify.
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  description: string;    // Max 300 chars
+  description: string; // Max 300 chars
 }
 ```
 
@@ -161,6 +174,7 @@ Generate playlist description for Spotify.
 Generate artist biography for Spotify.
 
 **Request Body**:
+
 ```typescript
 {
   artistName: string;     // Required, max 100 chars
@@ -172,10 +186,11 @@ Generate artist biography for Spotify.
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  bio: string;            // Max 1500 chars
+  bio: string; // Max 1500 chars
 }
 ```
 
@@ -188,21 +203,23 @@ Generate artist biography for Spotify.
 Generate engaging Facebook posts.
 
 **Request Body**:
+
 ```typescript
 {
-  topic: string;        // Required, max 500 chars
-  tone: string;         // Required, from TONES
-  ctaType: string;      // Required: "none" | "comment" | "share" | "link" | "shop"
+  topic: string; // Required, max 500 chars
+  tone: string; // Required, from TONES
+  ctaType: string; // Required: "none" | "comment" | "share" | "link" | "shop"
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  post: string;         // Optimal 40-80 chars
+  post: string; // Optimal 40-80 chars
 }
 ```
 
@@ -213,6 +230,7 @@ Generate engaging Facebook posts.
 Generate Facebook page about section.
 
 **Request Body**:
+
 ```typescript
 {
   businessType: string;   // Required, max 100 chars
@@ -224,10 +242,11 @@ Generate Facebook page about section.
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  bio: string;            // Max 255 chars
+  bio: string; // Max 255 chars
 }
 ```
 
@@ -238,23 +257,25 @@ Generate Facebook page about section.
 Generate Facebook ad copy with headline and primary text.
 
 **Request Body**:
+
 ```typescript
 {
-  product: string;      // Required, max 100 chars
-  audience: string;     // Required, max 200 chars
-  tone: string;         // Required, from TONES
-  cta: string;          // Required, max 50 chars
+  product: string; // Required, max 100 chars
+  audience: string; // Required, max 200 chars
+  tone: string; // Required, from TONES
+  cta: string; // Required, max 50 chars
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  headline: string;     // Max 40 chars
-  primaryText: string;  // Max 125 chars
+  headline: string; // Max 40 chars
+  primaryText: string; // Max 125 chars
 }
 ```
 
@@ -267,20 +288,22 @@ Generate Facebook ad copy with headline and primary text.
 Generate Threads posts.
 
 **Request Body**:
+
 ```typescript
 {
-  topic: string;        // Required, max 500 chars
-  tone: string;         // Required, from TONES
+  topic: string; // Required, max 500 chars
+  tone: string; // Required, from TONES
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  post: string;         // Max 500 chars
+  post: string; // Max 500 chars
 }
 ```
 
@@ -291,20 +314,22 @@ Generate Threads posts.
 Generate Threads profile bio.
 
 **Request Body**:
+
 ```typescript
 {
-  personality: string;  // Required, max 100 chars
-  interests: string;    // Required, max 200 chars
+  personality: string; // Required, max 100 chars
+  interests: string; // Required, max 200 chars
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
-  bio: string;          // Max 150 chars
+  bio: string; // Max 150 chars
 }
 ```
 
@@ -317,16 +342,18 @@ Generate Threads profile bio.
 Generate witty comment replies.
 
 **Request Body**:
+
 ```typescript
 {
-  originalComment: string;  // Required, max 500 chars
-  tone: string;             // Required, from TONES
+  originalComment: string; // Required, max 500 chars
+  tone: string; // Required, from TONES
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
@@ -341,16 +368,18 @@ Generate witty comment replies.
 Generate TikTok duet concepts.
 
 **Request Body**:
+
 ```typescript
 {
-  originalTopic: string;    // Required, max 300 chars
-  niche: string;            // Required: "comedy" | "dance" | "education" | "lifestyle" | "music"
+  originalTopic: string; // Required, max 300 chars
+  niche: string; // Required: "comedy" | "dance" | "education" | "lifestyle" | "music"
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;
@@ -367,17 +396,19 @@ Generate TikTok duet concepts.
 Generate Instagram carousel scripts.
 
 **Request Body**:
+
 ```typescript
 {
-  topic: string;        // Required, max 500 chars
-  slideCount: number;   // Required, 3-10
-  tone: string;         // Required, from TONES
+  topic: string; // Required, max 500 chars
+  slideCount: number; // Required, 3-10
+  tone: string; // Required, from TONES
   language: "en" | "es";
   turnstileToken: string;
 }
 ```
 
 **Response (200)**:
+
 ```typescript
 {
   success: true;

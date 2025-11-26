@@ -5,7 +5,7 @@
 **Status**: Draft  
 **Input**: User description: "Quiero tener mas plataformas famosas para poder tener mejor SEO y añadir mas tools a las plataformas, la idea es atraer al publico"
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Discover Pinterest Tools (Priority: P1)
 
@@ -90,7 +90,7 @@ An existing KiviTools user who regularly uses TikTok or Instagram tools discover
 - How does the system handle platform-specific character limits? → AI prompts enforce limits; UI displays character count where relevant
 - What happens when DeepSeek API is slow or fails? → Loading state shown; error message with retry option; graceful degradation
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -134,7 +134,7 @@ An existing KiviTools user who regularly uses TikTok or Instagram tools discover
 - Spanish translations will be created by the development team (not requiring professional translation services)
 - Platform selection is based on search volume and user demand data; no A/B testing required for platform prioritization
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 

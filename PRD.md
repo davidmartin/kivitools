@@ -92,27 +92,27 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 
 ### 3.2.1 Pinterest Tools (3 herramientas) ✅ NEW
 
-| Herramienta                 | Descripción                         | Inputs                     | Outputs                               | Status |
-| --------------------------- | ----------------------------------- | -------------------------- | ------------------------------------- | ------ |
-| **Pin Description Generator** | Genera descripciones SEO para pines | Tema, keywords, tono, idioma | Descripción optimizada con hashtags | ✅     |
-| **Board Name Generator**    | Crea nombres creativos para tableros | Tema, estilo, idioma       | 5 nombres de tablero únicos          | ✅     |
-| **Profile Bio Generator**   | Crea biografías para perfiles       | Descripción, nicho, tono, idioma | Bio optimizada (160 chars)       | ✅     |
+| Herramienta                   | Descripción                          | Inputs                           | Outputs                             | Status |
+| ----------------------------- | ------------------------------------ | -------------------------------- | ----------------------------------- | ------ |
+| **Pin Description Generator** | Genera descripciones SEO para pines  | Tema, keywords, tono, idioma     | Descripción optimizada con hashtags | ✅     |
+| **Board Name Generator**      | Crea nombres creativos para tableros | Tema, estilo, idioma             | 5 nombres de tablero únicos         | ✅     |
+| **Profile Bio Generator**     | Crea biografías para perfiles        | Descripción, nicho, tono, idioma | Bio optimizada (160 chars)          | ✅     |
 
 ### 3.2.2 Spotify Tools (3 herramientas) ✅ NEW
 
-| Herramienta                      | Descripción                           | Inputs                           | Outputs                                | Status |
-| -------------------------------- | ------------------------------------- | -------------------------------- | -------------------------------------- | ------ |
-| **Playlist Name Generator**      | Genera nombres creativos para playlists | Mood, género, idioma            | 5 nombres de playlist únicos          | ✅     |
-| **Playlist Description Generator** | Crea descripciones para playlists    | Nombre playlist, mood, canciones | Descripción optimizada (300 chars)    | ✅     |
-| **Artist Bio Generator**         | Crea biografías para artistas         | Nombre, género, estilo, logros  | Bio profesional para perfil de artista | ✅     |
+| Herramienta                        | Descripción                             | Inputs                           | Outputs                                | Status |
+| ---------------------------------- | --------------------------------------- | -------------------------------- | -------------------------------------- | ------ |
+| **Playlist Name Generator**        | Genera nombres creativos para playlists | Mood, género, idioma             | 5 nombres de playlist únicos           | ✅     |
+| **Playlist Description Generator** | Crea descripciones para playlists       | Nombre playlist, mood, canciones | Descripción optimizada (300 chars)     | ✅     |
+| **Artist Bio Generator**           | Crea biografías para artistas           | Nombre, género, estilo, logros   | Bio profesional para perfil de artista | ✅     |
 
 ### 3.2.3 Facebook Tools (3 herramientas) ✅ NEW
 
-| Herramienta              | Descripción                               | Inputs                              | Outputs                              | Status |
-| ------------------------ | ----------------------------------------- | ----------------------------------- | ------------------------------------ | ------ |
-| **Post Generator**       | Genera publicaciones para engagement      | Tema, tono, emojis, hashtags        | Publicación optimizada (100-250 chars) | ✅     |
-| **Page Bio Generator**   | Crea biografías profesionales para páginas | Negocio, industria, descripción     | Bio optimizada (255 chars)           | ✅     |
-| **Ad Copy Generator**    | Crea textos para anuncios de Facebook     | Producto, audiencia, beneficio      | Titular + Texto Principal            | ✅     |
+| Herramienta            | Descripción                                | Inputs                          | Outputs                                | Status |
+| ---------------------- | ------------------------------------------ | ------------------------------- | -------------------------------------- | ------ |
+| **Post Generator**     | Genera publicaciones para engagement       | Tema, tono, emojis, hashtags    | Publicación optimizada (100-250 chars) | ✅     |
+| **Page Bio Generator** | Crea biografías profesionales para páginas | Negocio, industria, descripción | Bio optimizada (255 chars)             | ✅     |
+| **Ad Copy Generator**  | Crea textos para anuncios de Facebook      | Producto, audiencia, beneficio  | Titular + Texto Principal              | ✅     |
 
 ### 3.3 Twitter/X Tools (11 herramientas)
 
