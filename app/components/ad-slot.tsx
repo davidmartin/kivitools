@@ -3,6 +3,13 @@
 import { useEffect, useRef } from "react";
 import { useCookieConsentSafe } from "@/contexts/CookieConsentContext";
 
+// Extend Window interface for AdSense
+declare global {
+  interface Window {
+    adsbygoogle?: { push: (params: object) => void }[];
+  }
+}
+
 interface AdSlotProps {
   slotId: string;
   format?: "auto" | "rectangle" | "horizontal" | "vertical";
@@ -37,7 +44,6 @@ export default function AdSlot({
 
     try {
       if (typeof window !== "undefined" && window.adsbygoogle) {
-        // @ts-ignore
         (window.adsbygoogle = window.adsbygoogle || []).push({});
         adLoaded.current = true;
       }
