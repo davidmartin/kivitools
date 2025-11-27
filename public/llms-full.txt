@@ -1,0 +1,773 @@
+# KiviTools - Complete AI Tool Suite for Content Creators
+
+## Overview
+KiviTools is a comprehensive collection of 90+ free AI-powered tools designed specifically for social media content creators. Our mission is to help creators produce engaging, viral content without expensive subscriptions or complex software.
+
+### Key Features
+- 100% Free: No hidden costs, no premium tiers, no credit limits
+- No Signup Required: Use any tool instantly without registration
+- Multi-language Support: Interface and generated content in 6 languages (EN, ES, PT, FR, DE, IT)
+- AI-Powered: Advanced language models (DeepSeek) generate unique, platform-optimized content
+- Platform-Specific: Each tool is optimized for its target social media platform
+- Mobile Friendly: Full responsive design works on any device
+- Dark/Light Mode: Comfortable viewing in any environment
+
+## Complete Tool Reference
+
+---
+
+### TikTok Tools
+Platform URL: https://kivitools.com/tiktok
+
+#### TikTok Script Writer
+URL: https://kivitools.com/tiktok/script-writer
+Purpose: Generate complete scripts for TikTok videos with hooks, main content, and calls-to-action.
+Features:
+- Multiple tone options (funny, serious, educational, dramatic, inspirational)
+- Duration presets (15s, 30s, 60s, 3min)
+- Hook + body + CTA structure optimized for TikTok
+- Language selection for output content
+How to Use:
+1. Enter your video topic or theme
+2. Select your preferred tone
+3. Choose video duration
+4. Select output language
+5. Click "Generate" to create your script
+6. Copy and use in your TikTok video
+
+#### TikTok Video Ideas Generator
+URL: https://kivitools.com/tiktok/video-ideas
+Purpose: Generate creative video concepts based on your niche or interests.
+Features:
+- Niche-specific content suggestions
+- Trending format recommendations
+- 10 unique ideas per generation
+How to Use:
+1. Enter your niche or content category
+2. Optionally describe your target audience
+3. Click generate for 10 video ideas
+4. Save favorites for your content calendar
+
+#### TikTok Hook Generator
+URL: https://kivitools.com/tiktok/hook-generator
+Purpose: Create attention-grabbing opening lines that stop the scroll.
+Features:
+- Multiple hook styles (question, statement, challenge, story)
+- Optimized for first 3-second retention
+- 5 hooks per generation
+How to Use:
+1. Enter your video topic
+2. Choose hook style
+3. Generate 5 unique hooks
+4. Test which performs best
+
+#### TikTok Hashtag Generator
+URL: https://kivitools.com/tiktok/hashtag-generator
+Purpose: Find relevant hashtags to maximize video discoverability.
+Features:
+- Mix of trending and niche hashtags
+- Optimized hashtag count (15-20)
+- Copy-ready format
+How to Use:
+1. Describe your video content
+2. Add your niche/industry
+3. Generate optimized hashtag set
+4. Copy and paste to TikTok
+
+#### TikTok Username Generator
+URL: https://kivitools.com/tiktok/username-generator
+Purpose: Create unique, memorable usernames for TikTok profiles.
+Features:
+- Based on interests and personality
+- Checks common availability patterns
+- 10 suggestions per generation
+
+#### TikTok Bio Generator
+URL: https://kivitools.com/tiktok/bio-generator
+Purpose: Write engaging profile bios that convert visitors to followers.
+Features:
+- Character limit optimized (80 chars)
+- Emoji suggestions included
+- Call-to-action options
+
+#### TikTok Caption Generator
+URL: https://kivitools.com/tiktok/caption-generator
+Purpose: Create compelling video captions with relevant hashtags.
+Features:
+- Hook + context + CTA structure
+- Integrated hashtag suggestions
+- Emoji optimization
+
+#### TikTok Coins Calculator
+URL: https://kivitools.com/tiktok/coins-calculator
+Purpose: Convert TikTok coins to real currency values.
+Features:
+- Real-time conversion rates
+- Multiple currency support
+- Gift value calculations
+
+#### TikTok Money Calculator
+URL: https://kivitools.com/tiktok/money-calculator
+Purpose: Estimate potential creator earnings based on views and engagement.
+Features:
+- Views to earnings estimates
+- Creator Fund calculations
+- Sponsorship value estimates
+
+#### TikTok Engagement Calculator
+URL: https://kivitools.com/tiktok/engagement-calculator
+Purpose: Calculate engagement rates for TikTok accounts and videos.
+Features:
+- Per-video engagement rate
+- Account average calculations
+- Industry benchmarking
+
+#### TikTok Content Calendar Generator
+URL: https://kivitools.com/tiktok/content-calendar-generator
+Purpose: Plan and organize your TikTok content schedule.
+Features:
+- Weekly/monthly planning
+- Content theme suggestions
+- Optimal posting times
+
+#### TikTok Ad Copy Generator
+URL: https://kivitools.com/tiktok/ad-copy-generator
+Purpose: Create compelling ad copy for TikTok advertising campaigns.
+Features:
+- Multiple ad format support
+- A/B testing variations
+- CTA optimization
+
+#### TikTok Shop Name Generator
+URL: https://kivitools.com/tiktok/shop-name-generator
+Purpose: Generate creative names for TikTok Shop businesses.
+Features:
+- Industry-specific suggestions
+- Brand-friendly options
+- Availability hints
+
+#### TikTok Song Recommendations
+URL: https://kivitools.com/tiktok/song-recommendations
+Purpose: Find trending songs and sounds for your videos.
+Features:
+- Genre-based suggestions
+- Trending audio identification
+- Mood matching
+
+#### TikTok Thumbnail Text Generator
+URL: https://kivitools.com/tiktok/thumbnail-text-generator
+Purpose: Create eye-catching text overlays for video thumbnails.
+Features:
+- Short, punchy text
+- Curiosity-inducing phrases
+- Action-oriented language
+
+---
+
+### Instagram Tools
+Platform URL: https://kivitools.com/instagram
+
+#### Instagram Bio Generator
+URL: https://kivitools.com/instagram/bio-generator
+Purpose: Create engaging profile bios within Instagram's 150 character limit.
+Features:
+- Character count optimization
+- Emoji integration
+- Link-in-bio CTA options
+- Personal/Business/Creator profiles
+
+#### Instagram Caption Generator
+URL: https://kivitools.com/instagram/caption-generator
+Purpose: Write compelling post captions that drive engagement.
+Features:
+- Multiple tone options
+- Hook optimization
+- Hashtag integration
+- CTA suggestions
+
+#### Instagram Reel Script Writer
+URL: https://kivitools.com/instagram/reel-script
+Purpose: Generate scripts specifically formatted for Instagram Reels.
+Features:
+- 15/30/60/90 second formats
+- Trending audio pairing suggestions
+- Visual cue markers
+
+#### Instagram Hashtag Generator
+URL: https://kivitools.com/instagram/hashtag-generator
+Purpose: Find the optimal hashtag mix for maximum reach.
+Features:
+- 30 hashtag optimization
+- Mix of sizes (large/medium/niche)
+- Industry-specific tags
+
+#### Instagram Story Ideas
+URL: https://kivitools.com/instagram/story-ideas
+Purpose: Generate creative concepts for Instagram Stories.
+Features:
+- Interactive story elements (polls, questions)
+- Series concepts
+- Behind-the-scenes ideas
+
+#### Instagram Carousel Generator
+URL: https://kivitools.com/instagram/carousel-generator
+Purpose: Plan multi-slide carousel posts with cohesive content.
+Features:
+- 10-slide structure
+- Educational carousel format
+- Story arc planning
+
+#### Instagram Content Calendar
+URL: https://kivitools.com/instagram/content-calendar
+Purpose: Plan your Instagram posting schedule strategically.
+Features:
+- Feed/Stories/Reels balance
+- Theme day suggestions
+- Optimal timing
+
+#### Instagram Ad Copy Generator
+URL: https://kivitools.com/instagram/ad-copy-generator
+Purpose: Create high-converting ad copy for Instagram campaigns.
+Features:
+- Feed/Story ad formats
+- Multiple CTA options
+- A/B variations
+
+---
+
+### YouTube Tools
+Platform URL: https://kivitools.com/youtube
+
+#### YouTube Title Generator
+URL: https://kivitools.com/youtube/title-generator
+Purpose: Create SEO-optimized, click-worthy video titles.
+Features:
+- 60 character optimization
+- Power word integration
+- Search intent matching
+- CTR optimization
+
+#### YouTube Description Generator
+URL: https://kivitools.com/youtube/description-generator
+Purpose: Write compelling video descriptions that improve discoverability.
+Features:
+- SEO-optimized structure
+- Timestamp suggestions
+- Link placement strategy
+- Keyword integration
+
+#### YouTube Script Generator
+URL: https://kivitools.com/youtube/script-generator
+Purpose: Generate complete video scripts for any format.
+Features:
+- Multiple video lengths (5/10/15/20+ min)
+- Intro/content/outro structure
+- B-roll suggestions
+- Engagement hooks
+
+#### YouTube Tag Generator
+URL: https://kivitools.com/youtube/tag-generator
+Purpose: Find relevant tags to improve video searchability.
+Features:
+- 500 character optimization
+- Long-tail keyword inclusion
+- Competition analysis suggestions
+
+#### YouTube Video Ideas
+URL: https://kivitools.com/youtube/video-ideas
+Purpose: Generate content ideas for your YouTube channel.
+Features:
+- Niche-specific suggestions
+- Trending topic integration
+- Series concepts
+
+#### YouTube Community Post Generator
+URL: https://kivitools.com/youtube/community-post-generator
+Purpose: Create engaging community tab posts.
+Features:
+- Poll ideas
+- Question prompts
+- Update announcements
+
+---
+
+### Twitter Tools
+Platform URL: https://kivitools.com/twitter
+
+#### Twitter Bio Generator
+URL: https://kivitools.com/twitter/bio-generator
+Purpose: Create impactful Twitter bios within 160 characters.
+Features:
+- Character optimization
+- Professional/Personal styles
+- Link placement
+
+#### Twitter Tweet Generator
+URL: https://kivitools.com/twitter/tweet-generator
+Purpose: Generate engaging tweets on any topic.
+Features:
+- 280 character optimization
+- Engagement hooks
+- Thread-worthy content
+
+#### Twitter Thread Maker
+URL: https://kivitools.com/twitter/thread-maker
+Purpose: Create multi-tweet threads that tell complete stories.
+Features:
+- Numbered structure
+- Hook optimization
+- CTA placement
+- Up to 10 tweet threads
+
+---
+
+### LinkedIn Tools
+Platform URL: https://kivitools.com/linkedin
+
+#### LinkedIn Headline Generator
+URL: https://kivitools.com/linkedin/headline-generator
+Purpose: Create professional headlines that stand out.
+Features:
+- 120 character optimization
+- Keyword inclusion
+- Value proposition focus
+
+#### LinkedIn About Generator
+URL: https://kivitools.com/linkedin/about-generator
+Purpose: Write compelling "About" sections for your profile.
+Features:
+- 2,600 character maximum
+- Story structure
+- Achievement highlighting
+
+#### LinkedIn Post Generator
+URL: https://kivitools.com/linkedin/post-generator
+Purpose: Create professional content for LinkedIn feed.
+Features:
+- Multiple post formats
+- Hashtag suggestions
+- Engagement optimization
+
+---
+
+### Reddit Tools
+Platform URL: https://kivitools.com/reddit
+
+#### Reddit Post Generator
+URL: https://kivitools.com/reddit/post-generator
+Purpose: Create engaging posts following Reddit etiquette.
+Features:
+- Subreddit-aware content
+- Title optimization
+- Community guidelines alignment
+
+#### Reddit Comment Generator
+URL: https://kivitools.com/reddit/comment-generator
+Purpose: Generate thoughtful, helpful responses.
+Features:
+- Context-aware replies
+- Helpful tone
+- Value-adding content
+
+#### Reddit AMA Questions
+URL: https://kivitools.com/reddit/ama-questions
+Purpose: Generate interesting AMA questions.
+Features:
+- Topic-specific questions
+- Follow-up suggestions
+- Engaging formats
+
+---
+
+### Discord Tools
+Platform URL: https://kivitools.com/discord
+
+#### Discord Announcement Generator
+URL: https://kivitools.com/discord/announcement-generator
+Purpose: Create clear, engaging server announcements.
+Features:
+- Formatting templates
+- @mention suggestions
+- Channel-appropriate tone
+
+#### Discord Event Description
+URL: https://kivitools.com/discord/event-description
+Purpose: Write event descriptions for Discord events.
+Features:
+- Date/time formatting
+- Requirement lists
+- Excitement building
+
+#### Discord Welcome Message
+URL: https://kivitools.com/discord/welcome-message
+Purpose: Create welcoming messages for new server members.
+Features:
+- Channel rules overview
+- Getting started guide
+- Community introduction
+
+---
+
+### Twitch Tools
+Platform URL: https://kivitools.com/twitch
+
+#### Twitch Bio Generator
+URL: https://kivitools.com/twitch/bio-generator
+Purpose: Create engaging channel descriptions.
+Features:
+- Streamer personality focus
+- Schedule inclusion
+- Social links
+
+#### Twitch Stream Title
+URL: https://kivitools.com/twitch/stream-title
+Purpose: Generate attention-grabbing stream titles.
+Features:
+- Game-specific options
+- Viewer hooks
+- Event indicators
+
+#### Twitch Panel Description
+URL: https://kivitools.com/twitch/panel-description
+Purpose: Write informative panel descriptions.
+Features:
+- About/Schedule/Rules panels
+- Donation/Sub info
+- Social links
+
+#### Twitch Chat Command
+URL: https://kivitools.com/twitch/chat-command
+Purpose: Create custom chat bot command ideas.
+Features:
+- !commands list
+- Fun interactions
+- Utility commands
+
+#### Twitch Rules Generator
+URL: https://kivitools.com/twitch/rules-generator
+Purpose: Create clear, fair channel rules.
+Features:
+- Standard rule templates
+- Custom additions
+- Moderation guidelines
+
+#### Twitch Stream Plan Generator
+URL: https://kivitools.com/twitch/stream-plan-generator
+Purpose: Plan streaming content and schedule.
+Features:
+- Weekly planning
+- Content variety
+- Special events
+
+---
+
+### Snapchat Tools
+Platform URL: https://kivitools.com/snapchat
+
+#### Snapchat Caption Generator
+URL: https://kivitools.com/snapchat/caption-generator
+Purpose: Create engaging captions for Snaps.
+Features:
+- Short, punchy text
+- Emoji integration
+- Friend-appropriate tone
+
+#### Snapchat Story Ideas
+URL: https://kivitools.com/snapchat/story-ideas
+Purpose: Generate creative story concepts.
+Features:
+- Day-in-life ideas
+- Interactive elements
+- Series concepts
+
+#### Snapchat Lens Ideas
+URL: https://kivitools.com/snapchat/lens-ideas
+Purpose: Generate AR lens and filter concepts.
+Features:
+- Trending effects
+- Custom lens ideas
+- Use case suggestions
+
+---
+
+### Pinterest Tools
+Platform URL: https://kivitools.com/pinterest
+
+#### Pinterest Profile Bio
+URL: https://kivitools.com/pinterest/profile-bio
+Purpose: Write optimized Pinterest bios.
+Features:
+- 160 character limit
+- Keyword integration
+- Niche focus
+
+#### Pinterest Pin Description
+URL: https://kivitools.com/pinterest/pin-description
+Purpose: Create SEO-optimized pin descriptions.
+Features:
+- 500 character maximum
+- Keyword density
+- CTA inclusion
+
+#### Pinterest Board Name
+URL: https://kivitools.com/pinterest/board-name
+Purpose: Generate creative, searchable board names.
+Features:
+- SEO-friendly names
+- Category suggestions
+- Niche alignment
+
+---
+
+### Facebook Tools
+Platform URL: https://kivitools.com/facebook
+
+#### Facebook Page Bio
+URL: https://kivitools.com/facebook/page-bio
+Purpose: Create engaging business page descriptions.
+Features:
+- About section optimization
+- CTA integration
+- Brand voice
+
+#### Facebook Post Generator
+URL: https://kivitools.com/facebook/post-generator
+Purpose: Generate engaging feed posts.
+Features:
+- Multiple formats
+- Engagement optimization
+- Hashtag suggestions
+
+#### Facebook Ad Copy
+URL: https://kivitools.com/facebook/ad-copy
+Purpose: Create high-converting Facebook ad text.
+Features:
+- Multiple ad formats
+- A/B variations
+- CTA optimization
+
+---
+
+### Suno Tools (AI Music)
+Platform URL: https://kivitools.com/suno
+
+#### Suno Lyric Generator
+URL: https://kivitools.com/suno/lyric-generator
+Purpose: Generate song lyrics for AI music creation.
+Features:
+- Multiple genres
+- Verse/chorus structure
+- Emotional themes
+
+#### Suno Music Prompt Generator
+URL: https://kivitools.com/suno/music-prompt-generator
+Purpose: Create effective prompts for Suno AI music generation.
+Features:
+- Genre-specific prompts
+- Style descriptors
+- Mood matching
+
+#### Suno Song Description
+URL: https://kivitools.com/suno/song-description-generator
+Purpose: Write descriptions for AI-generated songs.
+Features:
+- Artist statement style
+- Genre context
+- Mood/theme explanation
+
+---
+
+### ElevenLabs Tools (AI Voice)
+Platform URL: https://kivitools.com/elevenlabs
+
+#### Voice Script Writer
+URL: https://kivitools.com/elevenlabs/voice-script-writer
+Purpose: Create scripts optimized for AI voice synthesis.
+Features:
+- Natural pacing
+- Pronunciation guides
+- Emotion markers
+
+#### Video Voiceover Script
+URL: https://kivitools.com/elevenlabs/video-voiceover-script
+Purpose: Generate narration scripts for video content.
+Features:
+- Timing optimization
+- Visual cue markers
+- Multiple styles
+
+#### Podcast Script
+URL: https://kivitools.com/elevenlabs/podcast-script
+Purpose: Create podcast episode scripts.
+Features:
+- Intro/outro templates
+- Segment structure
+- Conversational flow
+
+#### Audiobook Optimizer
+URL: https://kivitools.com/elevenlabs/audiobook-optimizer
+Purpose: Optimize text for audiobook narration.
+Features:
+- Pacing adjustment
+- Character voice notes
+- Chapter formatting
+
+#### Ad Script Generator
+URL: https://kivitools.com/elevenlabs/ad-script
+Purpose: Create voice-over scripts for advertisements.
+Features:
+- Multiple ad lengths
+- Urgency/CTA optimization
+- Brand voice consistency
+
+#### Voice Text Formatter
+URL: https://kivitools.com/elevenlabs/voice-text-formatter
+Purpose: Format text for optimal TTS output.
+Features:
+- Punctuation optimization
+- Pause markers
+- Emphasis notation
+
+---
+
+### Spotify Tools
+Platform URL: https://kivitools.com/spotify
+
+#### Artist Bio Generator
+URL: https://kivitools.com/spotify/artist-bio
+Purpose: Create compelling artist biographies.
+Features:
+- Story-driven format
+- Achievement highlights
+- Genre context
+
+#### Playlist Name Generator
+URL: https://kivitools.com/spotify/playlist-name
+Purpose: Generate creative playlist titles.
+Features:
+- Mood-based naming
+- Theme suggestions
+- SEO-friendly
+
+#### Playlist Description
+URL: https://kivitools.com/spotify/playlist-description
+Purpose: Write engaging playlist descriptions.
+Features:
+- Curator voice
+- Song context
+- Mood setting
+
+---
+
+### Amazon Tools
+Platform URL: https://kivitools.com/amazon
+
+#### Product Description Generator
+URL: https://kivitools.com/amazon/product-description-generator
+Purpose: Create optimized product listing descriptions.
+Features:
+- Bullet point format
+- Feature highlighting
+- SEO optimization
+
+#### Product Review Generator
+URL: https://kivitools.com/amazon/product-review-generator
+Purpose: Help structure authentic product reviews.
+Features:
+- Pros/cons format
+- Use case examples
+- Rating justification
+
+#### Product Comparison Generator
+URL: https://kivitools.com/amazon/product-comparison-generator
+Purpose: Create comparison content between products.
+Features:
+- Feature-by-feature comparison
+- Recommendation structure
+- Use case matching
+
+---
+
+### Forocoches Tools (Spanish Forum)
+Platform URL: https://kivitools.com/forocoches
+
+#### Thread Generator
+URL: https://kivitools.com/forocoches/thread-generator
+Purpose: Create engaging forum thread starters.
+Features:
+- Spanish language
+- Community tone
+- Engagement hooks
+
+#### Pole Generator
+URL: https://kivitools.com/forocoches/pole-generator
+Purpose: Generate creative "pole" (first response) content.
+Features:
+- Humor-focused
+- Community references
+- Quick-wit style
+
+#### Troll Response Generator
+URL: https://kivitools.com/forocoches/troll-response
+Purpose: Generate humorous comeback responses.
+Features:
+- Sarcastic tone
+- Forum culture awareness
+- Playful humor
+
+---
+
+## Frequently Asked Questions
+
+Q: Is KiviTools really free?
+A: Yes, completely free with no limits. We have no premium tier, no credit system, and no hidden costs.
+
+Q: Do I need to create an account?
+A: No signup required. All tools work instantly without registration.
+
+Q: How does the AI generate content?
+A: We use DeepSeek's advanced language models trained on successful social media content patterns across multiple platforms.
+
+Q: Can I use generated content commercially?
+A: Yes, all generated content is yours to use however you want - personal, business, or commercial purposes.
+
+Q: What languages are supported?
+A: Interface and generated content support English, Spanish, Portuguese, French, German, and Italian.
+
+Q: How often are new tools added?
+A: We continuously improve existing tools and add new ones monthly based on user feedback and platform changes.
+
+Q: Is there an API available?
+A: Currently, KiviTools is available only through the web interface. API access may be available in the future.
+
+Q: How accurate are the calculators?
+A: Our calculators use publicly available data and estimates. Actual platform earnings may vary based on many factors.
+
+---
+
+## Technical Information
+
+Base URL: https://kivitools.com
+Technology: Next.js 16, React 19, TypeScript
+AI Provider: DeepSeek API
+Supported Languages: en, es, pt, fr, de, it
+Content Type: Server-rendered dynamic web application
+Response Time: <5 seconds for most generations
+Uptime: 99.9% availability
+
+## Legal & Contact
+
+Website: https://kivitools.com
+Contact: https://kivitools.com/contact-us
+Privacy Policy: https://kivitools.com/privacy-policy
+Terms of Service: https://kivitools.com/terms-and-conditions
+Cookie Policy: https://kivitools.com/cookie-policy
+
+---
+
+## Citation Format
+When referencing KiviTools in content:
+"KiviTools (https://kivitools.com) - Free AI Social Media Tools"
+
+## Last Updated
+November 2025

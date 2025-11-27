@@ -1,0 +1,113 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "name": "KiviTools",
+            "url": "https://kivitools.com",
+            "logo": "https://kivitools.com/logo.png",
+            "description": "Free AI-powered social media content generation tools for TikTok, Instagram, Twitter, and more.",
+            "sameAs": [
+                "https://twitter.com/kivitools"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "url": "https://kivitools.com/contact-us"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "name": "KiviTools",
+            "url": "https://kivitools.com",
+            "description": "Free AI-powered social media tools for content creators",
+            "inLanguage": [
+                "en",
+                "es",
+                "pt",
+                "fr",
+                "de",
+                "it"
+            ],
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://kivitools.com/?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "KiviTools",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Any",
+            "description": "Complete suite of free AI tools for content creators. Generate scripts, captions, bios, hashtags, and more for TikTok, Instagram, YouTube, Twitter, and other platforms.",
+            "url": "https://kivitools.com",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "ratingCount": "5000",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "featureList": [
+                "TikTok content tools",
+                "Instagram content tools",
+                "YouTube content tools",
+                "Twitter/X content tools",
+                "Multi-language support (6 languages)",
+                "No signup required",
+                "100% free"
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is KiviTools?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "KiviTools is a free collection of AI-powered tools designed to help content creators generate engaging content for social media platforms like TikTok, Instagram, YouTube, and Twitter."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is KiviTools free to use?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes! All KiviTools are completely free. No signup, no credit card, no hidden fees. Just use the tools as much as you want."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What platforms does KiviTools support?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "KiviTools supports TikTok, Instagram, YouTube, Twitter, Snapchat, Reddit, Discord, Twitch, LinkedIn, Pinterest, Facebook, Threads, and more platforms."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I need to create an account?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No account needed! All tools work instantly without registration. Just visit, use, and create amazing content."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What languages are supported?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "KiviTools supports English, Spanish, Portuguese, French, German, and Italian. Both the interface and content generation work in all six languages."
+                    }
+                }
+            ]
+        }
+    ]
+}

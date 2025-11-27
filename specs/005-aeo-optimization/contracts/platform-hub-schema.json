@@ -1,0 +1,125 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollectionPage",
+            "name": "TikTok Tools - Free AI Content Generators",
+            "description": "Free AI-powered tools for TikTok creators. Generate scripts, video ideas, hashtags, usernames, and more.",
+            "url": "https://kivitools.com/tiktok",
+            "inLanguage": "en",
+            "hasPart": [
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "TikTok Script Writer",
+                    "url": "https://kivitools.com/tiktok/script-writer",
+                    "description": "Generate viral TikTok scripts with AI"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "TikTok Video Ideas Generator",
+                    "url": "https://kivitools.com/tiktok/video-ideas",
+                    "description": "Get creative video ideas for your TikTok content"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "TikTok Hook Generator",
+                    "url": "https://kivitools.com/tiktok/hook-generator",
+                    "description": "Create attention-grabbing hooks for your videos"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "TikTok Hashtag Generator",
+                    "url": "https://kivitools.com/tiktok/hashtag-generator",
+                    "description": "Find trending hashtags to boost your reach"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "TikTok Username Generator",
+                    "url": "https://kivitools.com/tiktok/username-generator",
+                    "description": "Generate unique usernames for your TikTok account"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "TikTok Coins Calculator",
+                    "url": "https://kivitools.com/tiktok/coins-calculator",
+                    "description": "Calculate the value of TikTok coins and gifts"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "TikTok Money Calculator",
+                    "url": "https://kivitools.com/tiktok/money-calculator",
+                    "description": "Estimate earnings based on your TikTok metrics"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "TikTok Engagement Calculator",
+                    "url": "https://kivitools.com/tiktok/engagement-calculator",
+                    "description": "Calculate your TikTok engagement rate"
+                }
+            ],
+            "mainEntity": {
+                "@type": "ItemList",
+                "numberOfItems": 8,
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "url": "https://kivitools.com/tiktok/script-writer"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "url": "https://kivitools.com/tiktok/video-ideas"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "url": "https://kivitools.com/tiktok/hook-generator"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "url": "https://kivitools.com/tiktok/hashtag-generator"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "url": "https://kivitools.com/tiktok/username-generator"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "url": "https://kivitools.com/tiktok/coins-calculator"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "url": "https://kivitools.com/tiktok/money-calculator"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "url": "https://kivitools.com/tiktok/engagement-calculator"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://kivitools.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "TikTok Tools",
+                    "item": "https://kivitools.com/tiktok"
+                }
+            ]
+        }
+    ]
+}
