@@ -254,6 +254,7 @@ Phase 11 (Voice Assistant Testing) ───────────────
 ### Parallel Opportunities
 
 **Phase 1 (Setup)**:
+
 ```bash
 # Run in parallel:
 T002 "Create schema generator functions in lib/aeo/schemas.ts"
@@ -263,6 +264,7 @@ T005 "Create CollectionPage generator in lib/aeo/collection-page-generator.ts"
 ```
 
 **User Stories (Phase 3-7)** - Can all run in parallel after Phase 1:
+
 ```bash
 # Different developers can work on different user stories simultaneously:
 Developer A: Phase 3 (US1: SoftwareApplication schemas)
@@ -272,12 +274,14 @@ Developer D: Phase 6 (US4: CollectionPage for hubs)
 ```
 
 **Within US4 (CollectionPage)** - All platform hub pages in parallel:
+
 ```bash
 # Run in parallel:
 T039-T055 (all platform hub pages can be updated simultaneously)
 ```
 
 **Phase 8 (Multilingual)** - All language tests in parallel:
+
 ```bash
 # Run in parallel:
 T065 "Test SoftwareApplication schema in Spanish"
@@ -310,6 +314,7 @@ T069 "Test Speakable schema in Italian"
 ### Batch Update Strategy
 
 For updating 92 tool pages efficiently:
+
 1. First implement on 5-8 sample pages manually (different platforms)
 2. Create batch script based on working implementations
 3. Run batch script to update remaining pages

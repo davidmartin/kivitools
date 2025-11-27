@@ -36,24 +36,24 @@ export const DEFAULT_SPEAKABLE_SELECTORS = ['.tool-description', '.faq-answer-1'
  * ```
  */
 export function generateSpeakableJsonLd({
-  pageName,
-  url,
-  cssSelectors = DEFAULT_SPEAKABLE_SELECTORS,
-}: {
-  pageName: string;
-  url: string;
-  cssSelectors?: string[];
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: pageName,
+    pageName,
     url,
-    speakable: {
-      '@type': 'SpeakableSpecification',
-      cssSelector: cssSelectors,
-    },
-  };
+    cssSelectors = DEFAULT_SPEAKABLE_SELECTORS,
+}: {
+    pageName: string;
+    url: string;
+    cssSelectors?: string[];
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: pageName,
+        url,
+        speakable: {
+            '@type': 'SpeakableSpecification',
+            cssSelector: cssSelectors,
+        },
+    };
 }
 
 /**
@@ -63,22 +63,22 @@ export function generateSpeakableJsonLd({
  * Note: CSS selectors are preferred for simplicity.
  */
 export function generateSpeakableWithXPathJsonLd({
-  pageName,
-  url,
-  xpaths,
-}: {
-  pageName: string;
-  url: string;
-  xpaths: string[];
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: pageName,
+    pageName,
     url,
-    speakable: {
-      '@type': 'SpeakableSpecification',
-      xpath: xpaths,
-    },
-  };
+    xpaths,
+}: {
+    pageName: string;
+    url: string;
+    xpaths: string[];
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: pageName,
+        url,
+        speakable: {
+            '@type': 'SpeakableSpecification',
+            xpath: xpaths,
+        },
+    };
 }

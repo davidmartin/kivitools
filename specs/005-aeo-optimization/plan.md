@@ -21,15 +21,15 @@ Implement Answer Engine Optimization (AEO) across KiviTools to maximize visibili
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
-| Principle | Status | Notes |
-|-----------|--------|-------|
-| I. HeroUI-First Architecture | ✅ PASS | No UI changes required; AEO is structured data only |
+| Principle                         | Status  | Notes                                                                   |
+| --------------------------------- | ------- | ----------------------------------------------------------------------- |
+| I. HeroUI-First Architecture      | ✅ PASS | No UI changes required; AEO is structured data only                     |
 | II. Translation-Mandatory Content | ✅ PASS | Structured data uses existing translation keys; no new user-facing text |
-| III. Tool Page Completeness | ✅ PASS | Enhances existing complete pages with additional schemas |
-| IV. Performance Budget | ✅ PASS | JSON-LD is minimal (<2KB), no blocking resources |
-| V. Platform Integration | N/A | Not adding new platforms |
+| III. Tool Page Completeness       | ✅ PASS | Enhances existing complete pages with additional schemas                |
+| IV. Performance Budget            | ✅ PASS | JSON-LD is minimal (<2KB), no blocking resources                        |
+| V. Platform Integration           | N/A     | Not adding new platforms                                                |
 
 **Gate Result**: ✅ PASSED - No constitution violations. Proceed to Phase 0.
 
@@ -83,15 +83,15 @@ public/
 
 ## Post-Design Constitution Re-Check
 
-*GATE: Re-evaluation after Phase 1 design completion.*
+_GATE: Re-evaluation after Phase 1 design completion._
 
-| Principle | Status | Post-Design Notes |
-|-----------|--------|-------------------|
-| I. HeroUI-First Architecture | ✅ PASS | No UI component changes; only JSON-LD scripts added |
+| Principle                         | Status  | Post-Design Notes                                                      |
+| --------------------------------- | ------- | ---------------------------------------------------------------------- |
+| I. HeroUI-First Architecture      | ✅ PASS | No UI component changes; only JSON-LD scripts added                    |
 | II. Translation-Mandatory Content | ✅ PASS | All schema content pulls from existing translations via `t()` function |
-| III. Tool Page Completeness | ✅ PASS | Enhances complete pages; doesn't change 8-section requirement |
-| IV. Performance Budget | ✅ PASS | JSON-LD ~1-2KB per page; no impact on FCP/TTI/CLS |
-| V. Platform Integration | N/A | Not adding platforms |
+| III. Tool Page Completeness       | ✅ PASS | Enhances complete pages; doesn't change 8-section requirement          |
+| IV. Performance Budget            | ✅ PASS | JSON-LD ~1-2KB per page; no impact on FCP/TTI/CLS                      |
+| V. Platform Integration           | N/A     | Not adding platforms                                                   |
 
 **Post-Design Gate Result**: ✅ PASSED - Ready for Phase 2 task breakdown.
 
@@ -99,11 +99,11 @@ public/
 
 ## Phase Summary
 
-| Phase | Status | Output |
-|-------|--------|--------|
-| Phase 0: Research | ✅ Complete | [research.md](./research.md) |
-| Phase 1: Design | ✅ Complete | [data-model.md](./data-model.md), [quickstart.md](./quickstart.md), [contracts/](./contracts/) |
-| Phase 2: Tasks | ✅ Complete | [tasks.md](./tasks.md) |
+| Phase             | Status      | Output                                                                                         |
+| ----------------- | ----------- | ---------------------------------------------------------------------------------------------- |
+| Phase 0: Research | ✅ Complete | [research.md](./research.md)                                                                   |
+| Phase 1: Design   | ✅ Complete | [data-model.md](./data-model.md), [quickstart.md](./quickstart.md), [contracts/](./contracts/) |
+| Phase 2: Tasks    | ✅ Complete | [tasks.md](./tasks.md)                                                                         |
 
 ---
 

@@ -12,19 +12,19 @@
 // =============================================================================
 
 export interface HowToStep {
-  title: string;
-  description: string;
+    title: string;
+    description: string;
 }
 
 export interface FAQ {
-  question: string;
-  answer: string;
+    question: string;
+    answer: string;
 }
 
 export interface ToolInfo {
-  name: string;
-  url: string;
-  description: string;
+    name: string;
+    url: string;
+    description: string;
 }
 
 export type SupportedLanguage = 'en' | 'es' | 'pt' | 'fr' | 'de' | 'it';
@@ -50,47 +50,47 @@ export type SupportedLanguage = 'en' | 'es' | 'pt' | 'fr' | 'de' | 'it';
  * ```
  */
 export function generateSoftwareAppJsonLd({
-  name,
-  description,
-  url,
-  ratingCount = 1250,
-  ratingValue = '4.8',
-  language = 'en',
-}: {
-  name: string;
-  description: string;
-  url: string;
-  ratingCount?: number;
-  ratingValue?: string;
-  language?: SupportedLanguage;
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
     name,
     description,
-    applicationCategory: 'WebApplication',
-    operatingSystem: 'Any',
     url,
-    inLanguage: language,
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue,
-      ratingCount: ratingCount.toString(),
-      bestRating: '5',
-      worstRating: '1',
-    },
-    author: {
-      '@type': 'Organization',
-      name: 'KiviTools',
-      url: 'https://kivitools.com',
-    },
-  };
+    ratingCount = 1250,
+    ratingValue = '4.8',
+    language = 'en',
+}: {
+    name: string;
+    description: string;
+    url: string;
+    ratingCount?: number;
+    ratingValue?: string;
+    language?: SupportedLanguage;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name,
+        description,
+        applicationCategory: 'WebApplication',
+        operatingSystem: 'Any',
+        url,
+        inLanguage: language,
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+        },
+        aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue,
+            ratingCount: ratingCount.toString(),
+            bestRating: '5',
+            worstRating: '1',
+        },
+        author: {
+            '@type': 'Organization',
+            name: 'KiviTools',
+            url: 'https://kivitools.com',
+        },
+    };
 }
 
 /**
@@ -100,39 +100,39 @@ export function generateSoftwareAppJsonLd({
  * Purpose: Describes KiviTools as a complete software suite
  */
 export function generateSuiteAppJsonLd({
-  description,
-  language = 'en',
-}: {
-  description: string;
-  language?: SupportedLanguage;
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'KiviTools',
     description,
-    applicationCategory: 'MultimediaApplication',
-    operatingSystem: 'Any',
-    url: 'https://kivitools.com',
-    inLanguage: language,
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      ratingCount: '5000',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    author: {
-      '@type': 'Organization',
-      name: 'KiviTools',
-      url: 'https://kivitools.com',
-    },
-  };
+    language = 'en',
+}: {
+    description: string;
+    language?: SupportedLanguage;
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'KiviTools',
+        description,
+        applicationCategory: 'MultimediaApplication',
+        operatingSystem: 'Any',
+        url: 'https://kivitools.com',
+        inLanguage: language,
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+        },
+        aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.9',
+            ratingCount: '5000',
+            bestRating: '5',
+            worstRating: '1',
+        },
+        author: {
+            '@type': 'Organization',
+            name: 'KiviTools',
+            url: 'https://kivitools.com',
+        },
+    };
 }
 
 // =============================================================================
@@ -146,18 +146,18 @@ export function generateSuiteAppJsonLd({
  * Purpose: Shows navigation path in search results
  */
 export function generateBreadcrumbJsonLd({
-  items,
+    items,
 }: {
-  items: Array<{ name: string; url: string }>;
+    items: Array<{ name: string; url: string }>;
 }) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: items.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            item: item.url,
+        })),
+    };
 }

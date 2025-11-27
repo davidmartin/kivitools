@@ -9,7 +9,7 @@
 
 Answer Engine Optimization (AEO) focuses on optimizing content so AI assistants (ChatGPT, Claude, Perplexity, Google SGE, Bing Chat) and voice assistants (Siri, Alexa, Google Assistant) can understand, extract, and cite KiviTools as a source when answering user queries about social media tools.
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - AI Assistant Discovery (Priority: P1)
 
@@ -93,7 +93,7 @@ A user searches for "TikTok coin calculator" and sees KiviTools in search result
 - What happens when AI assistants misinterpret content? Monitor AI responses and adjust content clarity if misinterpretations occur.
 - How does system handle platform pages vs individual tool pages? Platform hub pages should have CollectionPage schema; tool pages should have SoftwareApplication + HowTo.
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -139,7 +139,7 @@ A user searches for "TikTok coin calculator" and sees KiviTools in search result
 - **Homepage**: Main entry point with WebSite, Organization, and SoftwareApplication (for the suite) schemas.
 - **llms.txt**: Machine-readable file describing site content for AI systems (similar to robots.txt but for LLMs).
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 

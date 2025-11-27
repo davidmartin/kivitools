@@ -19,13 +19,13 @@
 
 // Core schemas and types
 export {
-  generateSoftwareAppJsonLd,
-  generateSuiteAppJsonLd,
-  generateBreadcrumbJsonLd,
-  type HowToStep,
-  type FAQ,
-  type ToolInfo,
-  type SupportedLanguage,
+    generateSoftwareAppJsonLd,
+    generateSuiteAppJsonLd,
+    generateBreadcrumbJsonLd,
+    type HowToStep,
+    type FAQ,
+    type ToolInfo,
+    type SupportedLanguage,
 } from './schemas';
 
 // HowTo schema for featured snippets
@@ -33,9 +33,9 @@ export { generateHowToJsonLd, buildHowToSteps } from './howto-generator';
 
 // Speakable schema for voice assistants
 export {
-  generateSpeakableJsonLd,
-  generateSpeakableWithXPathJsonLd,
-  DEFAULT_SPEAKABLE_SELECTORS,
+    generateSpeakableJsonLd,
+    generateSpeakableWithXPathJsonLd,
+    DEFAULT_SPEAKABLE_SELECTORS,
 } from './speakable-generator';
 
 // CollectionPage schema for platform hubs

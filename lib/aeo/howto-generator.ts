@@ -35,47 +35,47 @@ import type { HowToStep, SupportedLanguage } from './schemas';
  * ```
  */
 export function generateHowToJsonLd({
-  toolName,
-  description,
-  steps,
-  language = 'en',
-  totalTime = 'PT2M', // Default: 2 minutes
-}: {
-  toolName: string;
-  description: string;
-  steps: HowToStep[];
-  language?: SupportedLanguage;
-  totalTime?: string; // ISO 8601 duration format
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: generateHowToName(toolName, language),
+    toolName,
     description,
-    inLanguage: language,
-    totalTime,
-    step: steps.map((step, index) => ({
-      '@type': 'HowToStep',
-      position: index + 1,
-      name: step.title,
-      text: step.description,
-    })),
-  };
+    steps,
+    language = 'en',
+    totalTime = 'PT2M', // Default: 2 minutes
+}: {
+    toolName: string;
+    description: string;
+    steps: HowToStep[];
+    language?: SupportedLanguage;
+    totalTime?: string; // ISO 8601 duration format
+}) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: generateHowToName(toolName, language),
+        description,
+        inLanguage: language,
+        totalTime,
+        step: steps.map((step, index) => ({
+            '@type': 'HowToStep',
+            position: index + 1,
+            name: step.title,
+            text: step.description,
+        })),
+    };
 }
 
 /**
  * Generate localized "How to use [Tool]" name
  */
 function generateHowToName(toolName: string, language: SupportedLanguage): string {
-  const templates: Record<SupportedLanguage, string> = {
-    en: `How to use ${toolName}`,
-    es: `Cómo usar ${toolName}`,
-    pt: `Como usar ${toolName}`,
-    fr: `Comment utiliser ${toolName}`,
-    de: `Wie man ${toolName} benutzt`,
-    it: `Come usare ${toolName}`,
-  };
-  return templates[language] || templates.en;
+    const templates: Record<SupportedLanguage, string> = {
+        en: `How to use ${toolName}`,
+        es: `Cómo usar ${toolName}`,
+        pt: `Como usar ${toolName}`,
+        fr: `Comment utiliser ${toolName}`,
+        de: `Wie man ${toolName} benutzt`,
+        it: `Come usare ${toolName}`,
+    };
+    return templates[language] || templates.en;
 }
 
 /**
@@ -87,16 +87,16 @@ function generateHowToName(toolName: string, language: SupportedLanguage): strin
  * ```
  */
 export function buildHowToSteps(
-  t: (key: string) => string,
-  toolKey: string,
-  stepCount: number = 3
+    t: (key: string) => string,
+    toolKey: string,
+    stepCount: number = 3
 ): HowToStep[] {
-  const steps: HowToStep[] = [];
-  for (let i = 1; i <= stepCount; i++) {
-    steps.push({
-      title: t(`${toolKey}.howItWorks.step${i}.title`),
-      description: t(`${toolKey}.howItWorks.step${i}.description`),
-    });
-  }
-  return steps;
+    const steps: HowToStep[] = [];
+    for (let i = 1; i <= stepCount; i++) {
+        steps.push({
+            title: t(`${toolKey}.howItWorks.step${i}.title`),
+            description: t(`${toolKey}.howItWorks.step${i}.description`),
+        });
+    }
+    return steps;
 }
