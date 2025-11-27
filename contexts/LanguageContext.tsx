@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react";
 import { translations, type Language } from "@/lib/translations";
 
 // Only include languages that have complete translations
@@ -10,59 +10,61 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  isHydrated: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-// Detect browser language and map to supported language
-function detectBrowserLanguage(): Language {
-  if (typeof navigator === 'undefined') return 'en';
-  
-  const browserLangs = navigator.languages || [navigator.language || 'en'];
-  
-  for (const browserLang of browserLangs) {
-    const lang = browserLang.toLowerCase().split('-')[0];
-    if (SUPPORTED_LANGUAGES.includes(lang as Language)) {
-      return lang as Language;
-    }
-  }
-  return 'en';
-}
-
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+  // Always start with 'en' for SSR consistency
+  const [language, setLanguageState] = useState<Language>('en');
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  // Cargar idioma guardado o detectar automáticamente
+  // After hydration, sync with what the blocking script detected
   useEffect(() => {
-    const saved = localStorage.getItem("language") as Language;
-
-    if (saved && SUPPORTED_LANGUAGES.includes(saved)) {
-      // Si hay un idioma guardado válido, usarlo
-      setLanguageState(saved);
-    } else {
-      // Detectar idioma del navegador
-      const detectedLang = detectBrowserLanguage();
-      setLanguageState(detectedLang);
-      // No guardamos en localStorage para permitir que cambie si el usuario cambia su idioma del navegador
-      // Solo guardamos cuando el usuario selecciona manualmente
-    }
+    // Read from localStorage first (user preference), then from what script detected
+    const savedLang = localStorage.getItem('language') as Language;
+    const htmlLang = document.documentElement.dataset.lang as Language;
+    
+    const detectedLang = savedLang && SUPPORTED_LANGUAGES.includes(savedLang) 
+      ? savedLang 
+      : (htmlLang && SUPPORTED_LANGUAGES.includes(htmlLang) ? htmlLang : 'en');
+    
+    setLanguageState(detectedLang);
+    setIsHydrated(true);
+    
+    // Mark as hydrated to show content (removes opacity: 0)
+    requestAnimationFrame(() => {
+      document.documentElement.dataset.hydrated = 'true';
+    });
   }, []);
 
-  const setLanguage = (lang: Language) => {
+  const setLanguage = useCallback((lang: Language) => {
     if (SUPPORTED_LANGUAGES.includes(lang)) {
       setLanguageState(lang);
       localStorage.setItem("language", lang);
+      // Update HTML attributes for consistency
+      document.documentElement.lang = lang;
+      document.documentElement.dataset.lang = lang;
     }
-  };
+  }, []);
 
-  const t = (key: string): string => {
+  const t = useCallback((key: string): string => {
     return (translations[language][key as keyof typeof translations.en] as string) || key;
-  };
+  }, [language]);
+
+  // Memoize context value to prevent unnecessary re-renders
+  const value = useMemo(() => ({
+    language,
+    setLanguage,
+    t,
+    isHydrated
+  }), [language, setLanguage, t, isHydrated]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );

@@ -16,7 +16,7 @@ import type { Language } from "@/lib/translations";
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t, isHydrated } = useLanguage();
   const { user, loading, logout } = useAuth();
   const router = useRouter();
 
@@ -195,6 +195,7 @@ export default function Navigation() {
 
   return (
     <nav
+      suppressHydrationWarning
       className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
         ? "bg-surface/70 backdrop-blur-xl border-b border-border/50 shadow-sm"
         : "bg-transparent border-b border-transparent"
@@ -226,7 +227,7 @@ export default function Navigation() {
                 size="sm"
                 className="gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full transition-all duration-200 data-[hover=true]:bg-surface/50"
               >
-                <span>{t("nav.platforms")}</span>
+                <span suppressHydrationWarning>{t("nav.platforms")}</span>
                 <svg
                   className="w-3 h-3 transition-transform duration-200 group-data-[open=true]:rotate-180"
                   fill="none"

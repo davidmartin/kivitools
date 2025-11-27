@@ -103,8 +103,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light" data-theme="light">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Theme & Language initialization - runs before page render to prevent flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var d=document.documentElement,s=['en','es','pt','fr','de','it'];try{var t=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme:dark)').matches,c=t||(p?'dark':'light');d.classList.add(c);d.style.colorScheme=c;var l=localStorage.getItem('language');if(!l||s.indexOf(l)<0){var n=navigator.languages||[navigator.language||'en'];for(var i=0;i<n.length;i++){var b=n[i].toLowerCase().split('-')[0];if(s.indexOf(b)>=0){l=b;break}}l=l||'en'}d.lang=l;d.dataset.lang=l}catch(e){d.classList.add('light');d.style.colorScheme='light';d.lang='en'}})()`,
+          }}
+        />
         {/* Preconnect to important domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -183,6 +189,7 @@ export default function RootLayout({
         />
       </head>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} antialiased flex flex-col min-h-screen bg-mesh text-foreground selection:bg-accent selection:text-accent-foreground`}
       >
         <LanguageProvider>

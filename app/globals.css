@@ -4,6 +4,16 @@
 /* HeroUI v3 styles - Must be after Tailwind */
 @import "@heroui/styles";
 
+/* Prevent flash of wrong language content */
+html:not([data-hydrated]) body {
+    opacity: 0;
+}
+
+html[data-hydrated] body {
+    opacity: 1;
+    transition: opacity 0.1s ease-in;
+}
+
 /* Configure Tailwind v4 dark mode with class strategy */
 @custom-variant dark (&:where(.dark, .dark *));
 
