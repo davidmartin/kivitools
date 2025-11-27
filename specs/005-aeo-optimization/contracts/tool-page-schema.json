@@ -1,0 +1,144 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "TikTok Script Writer",
+      "description": "Generate viral TikTok scripts with AI. Create engaging hooks, storylines, and calls-to-action in seconds.",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "url": "https://kivitools.com/tiktok/script-writer",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "KiviTools",
+        "url": "https://kivitools.com"
+      },
+      "featureList": [
+        "AI-powered script generation",
+        "Multiple tone options",
+        "Duration customization",
+        "Multi-language support",
+        "Free to use"
+      ],
+      "inLanguage": "en"
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to use TikTok Script Writer",
+      "description": "Generate viral TikTok scripts in 3 easy steps",
+      "totalTime": "PT2M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Enter your topic",
+          "text": "Type in the topic or theme you want your TikTok video to be about. Be as specific as possible for better results."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Choose your style",
+          "text": "Select the tone (funny, serious, educational) and duration (15s, 30s, 60s) that matches your content style."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Generate and copy",
+          "text": "Click generate to create your AI-powered script. Copy it directly to use in your TikTok video."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the TikTok Script Writer really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! The TikTok Script Writer is completely free to use. No signup required, no hidden fees, no limits on how many scripts you can generate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the AI generate TikTok scripts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our AI analyzes viral TikTok content patterns and uses advanced language models to create engaging scripts tailored to your topic, tone, and duration preferences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I edit the generated scripts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! The generated scripts are starting points. Feel free to modify, personalize, and add your unique voice to make them truly yours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What languages are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The TikTok Script Writer supports English, Spanish, Portuguese, French, German, and Italian. Select your preferred language before generating."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my scripts be unique?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, each script is uniquely generated based on your specific inputs. No two users will get identical scripts for the same topic."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "TikTok Script Writer - Free AI Tool",
+      "url": "https://kivitools.com/tiktok/script-writer",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".tool-description",
+          ".faq-answer-1"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kivitools.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "TikTok",
+          "item": "https://kivitools.com/tiktok"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Script Writer",
+          "item": "https://kivitools.com/tiktok/script-writer"
+        }
+      ]
+    }
+  ]
+}

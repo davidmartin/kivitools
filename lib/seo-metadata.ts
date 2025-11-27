@@ -142,6 +142,7 @@ export function generateToolMetadata({
 
 /**
  * Generate JSON-LD structured data for tool pages
+ * Enhanced with inLanguage for multilingual AEO support
  */
 export function generateToolJsonLd({
   platform,
@@ -149,7 +150,8 @@ export function generateToolJsonLd({
   title,
   description,
   englishSlug,
-}: Omit<GenerateToolMetadataProps, "spanishSlug">) {
+  language = 'en',
+}: Omit<GenerateToolMetadataProps, "spanishSlug"> & { language?: string }) {
   const baseUrl = "https://kivitools.com";
   const platformName = platformNames[platform];
   const url = `${baseUrl}/${platform}/${englishSlug}`;
@@ -160,6 +162,7 @@ export function generateToolJsonLd({
     name: `${platformName} ${toolName}`,
     applicationCategory: "WebApplication",
     operatingSystem: "Any",
+    inLanguage: language,
     offers: {
       "@type": "Offer",
       price: "0",
@@ -232,13 +235,16 @@ export function generateBreadcrumbJsonLd({
 
 /**
  * Generate FAQ JSON-LD
+ * Enhanced with inLanguage for multilingual AEO support
  */
 export function generateFaqJsonLd(
-  faqs: Array<{ question: string; answer: string }>
+  faqs: Array<{ question: string; answer: string }>,
+  language: string = 'en'
 ) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: language,
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,

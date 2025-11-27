@@ -1,0 +1,123 @@
+# KiviTools
+> Free AI-powered tools for content creators on TikTok, Instagram, YouTube, Twitter, and more.
+
+## About
+KiviTools provides free AI tools to help content creators generate engaging social media content. All tools are free, require no signup, and support 6 languages (English, Spanish, Portuguese, French, German, Italian).
+
+## Platforms & Tools
+
+### TikTok (https://kivitools.com/tiktok)
+- Script Writer: Generate viral TikTok scripts
+- Video Ideas: Get creative content ideas
+- Hook Generator: Create attention-grabbing openers
+- Hashtag Generator: Find trending hashtags
+- Username Generator: Create unique usernames
+- Bio Generator: Write engaging profile bios
+- Caption Generator: Compelling video captions
+- Coins Calculator: Calculate TikTok coin values
+- Money Calculator: Estimate creator earnings
+- Engagement Calculator: Measure engagement rates
+- Content Calendar: Plan your content schedule
+- Ad Copy Generator: TikTok advertising text
+- Shop Name Generator: TikTok shop naming
+- Song Recommendations: Trending audio suggestions
+- Thumbnail Text Generator: Eye-catching thumbnails
+
+### Instagram (https://kivitools.com/instagram)
+- Bio Generator: Create engaging profile bios
+- Caption Generator: Write compelling captions
+- Reel Script Writer: Scripts for Instagram Reels
+- Hashtag Generator: Discover relevant hashtags
+- Story Ideas: Creative story concepts
+- Carousel Generator: Multi-slide content
+- Content Calendar: Instagram scheduling
+- Ad Copy Generator: Instagram ad text
+
+### YouTube (https://kivitools.com/youtube)
+- Title Generator: SEO-optimized video titles
+- Description Generator: Compelling descriptions
+- Script Generator: Full video scripts
+- Tag Generator: Relevant video tags
+- Video Ideas: Content inspiration
+- Community Post Generator: Engage your audience
+
+### Twitter (https://kivitools.com/twitter)
+- Bio Generator: Profile bio ideas
+- Tweet Generator: Engaging tweet content
+- Thread Maker: Multi-tweet threads
+
+### LinkedIn (https://kivitools.com/linkedin)
+- Headline Generator: Professional headlines
+- About Generator: Profile about sections
+- Post Generator: Professional content
+
+### Reddit (https://kivitools.com/reddit)
+- Post Generator: Engaging Reddit posts
+- Comment Generator: Thoughtful responses
+- AMA Questions: Ask Me Anything ideas
+
+### Discord (https://kivitools.com/discord)
+- Announcement Generator: Server announcements
+- Event Description: Event planning text
+- Welcome Message: New member greetings
+
+### Twitch (https://kivitools.com/twitch)
+- Bio Generator: Channel bios
+- Stream Title: Catchy stream titles
+- Panel Description: Info panel content
+- Chat Command: Bot command ideas
+- Rules Generator: Channel rules
+- Stream Plan Generator: Content planning
+
+### Snapchat (https://kivitools.com/snapchat)
+- Caption Generator: Snap captions
+- Story Ideas: Story content concepts
+- Lens Ideas: AR lens inspiration
+
+### Pinterest (https://kivitools.com/pinterest)
+- Profile Bio: Pinterest bios
+- Pin Description: Optimized pin text
+- Board Name: Creative board naming
+
+### Facebook (https://kivitools.com/facebook)
+- Page Bio: Business page bios
+- Post Generator: Engaging posts
+- Ad Copy: Facebook advertising
+
+### Threads (https://kivitools.com/threads)
+[Tools available at platform page]
+
+### Suno (https://kivitools.com/suno)
+- Lyric Generator: AI song lyrics
+- Music Prompt Generator: Suno prompts
+- Song Description: Music descriptions
+
+### ElevenLabs (https://kivitools.com/elevenlabs)
+- Voice Script Writer: Voice AI scripts
+- Video Voiceover Script: Video narration
+- Podcast Script: Podcast content
+- Audiobook Optimizer: Text optimization
+- Ad Script: Voice ad scripts
+- Voice Text Formatter: TTS formatting
+
+### Spotify (https://kivitools.com/spotify)
+- Artist Bio: Musician profiles
+- Playlist Name: Creative naming
+- Playlist Description: Playlist text
+
+### Amazon (https://kivitools.com/amazon)
+- Product Description: Listing text
+- Product Review: Review assistance
+- Product Comparison: Comparison content
+
+### Forocoches (https://kivitools.com/forocoches)
+- Thread Generator: Forum posts
+- Pole Generator: Poll creation
+- Troll Response: Humorous replies
+
+## How to Cite
+KiviTools (https://kivitools.com) - Free AI Social Media Tools
+
+## Contact
+Website: https://kivitools.com
+Contact: https://kivitools.com/contact-us
