@@ -7,11 +7,9 @@
 ## Common Request/Response Patterns
 
 ### Authentication
-
 All endpoints use Cloudflare Turnstile for bot protection.
 
 ### Common Request Fields
-
 ```typescript
 {
   turnstileToken: string;  // Required - Cloudflare Turnstile token
@@ -20,7 +18,6 @@ All endpoints use Cloudflare Turnstile for bot protection.
 ```
 
 ### Common Response Format
-
 ```typescript
 // Success
 {
@@ -36,7 +33,6 @@ All endpoints use Cloudflare Turnstile for bot protection.
 ```
 
 ### HTTP Status Codes
-
 - `200` - Success
 - `400` - Bad Request (validation error)
 - `403` - Forbidden (Turnstile verification failed)
@@ -51,7 +47,6 @@ All endpoints use Cloudflare Turnstile for bot protection.
 Generate Bluesky posts (max 300 characters).
 
 **Request:**
-
 ```typescript
 {
   topic: string;           // Required - Post topic
@@ -62,7 +57,6 @@ Generate Bluesky posts (max 300 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -77,7 +71,6 @@ Generate Bluesky posts (max 300 characters).
 Generate Bluesky profile bio (max 256 characters).
 
 **Request:**
-
 ```typescript
 {
   description: string;     // Required - What the user does/is about
@@ -88,7 +81,6 @@ Generate Bluesky profile bio (max 256 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -103,7 +95,6 @@ Generate Bluesky profile bio (max 256 characters).
 Generate Bluesky thread (main post + replies).
 
 **Request:**
-
 ```typescript
 {
   topic: string;           // Required - Thread topic
@@ -115,7 +106,6 @@ Generate Bluesky thread (main post + replies).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -132,7 +122,6 @@ Generate Bluesky thread (main post + replies).
 Generate Lemon8 captions with formatting (max 2,200 characters).
 
 **Request:**
-
 ```typescript
 {
   topic: string;           // Required - Post topic
@@ -144,11 +133,10 @@ Generate Lemon8 captions with formatting (max 2,200 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
-  result: string; // Formatted caption with bullet points and emojis
+  result: string;          // Formatted caption with bullet points and emojis
 }
 ```
 
@@ -159,7 +147,6 @@ Generate Lemon8 captions with formatting (max 2,200 characters).
 Generate Lemon8 content ideas by niche.
 
 **Request:**
-
 ```typescript
 {
   niche: string;           // Required - beauty | fashion | travel | food | lifestyle | fitness
@@ -170,7 +157,6 @@ Generate Lemon8 content ideas by niche.
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -185,7 +171,6 @@ Generate Lemon8 content ideas by niche.
 Generate Lemon8 profile bio (max 80 characters).
 
 **Request:**
-
 ```typescript
 {
   niche: string;           // Required - User's content niche
@@ -196,7 +181,6 @@ Generate Lemon8 profile bio (max 80 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -213,7 +197,6 @@ Generate Lemon8 profile bio (max 80 characters).
 Generate Kick stream titles (max 140 characters).
 
 **Request:**
-
 ```typescript
 {
   game: string;            // Required - Game or activity
@@ -224,7 +207,6 @@ Generate Kick stream titles (max 140 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -239,7 +221,6 @@ Generate Kick stream titles (max 140 characters).
 Generate Kick channel bio (max 300 characters).
 
 **Request:**
-
 ```typescript
 {
   content: string;         // Required - What the streamer does
@@ -251,7 +232,6 @@ Generate Kick channel bio (max 300 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -266,7 +246,6 @@ Generate Kick channel bio (max 300 characters).
 Generate Kick chat rules.
 
 **Request:**
-
 ```typescript
 {
   strictness: string;      // Required - relaxed | moderate | strict
@@ -277,7 +256,6 @@ Generate Kick chat rules.
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -294,7 +272,6 @@ Generate Kick chat rules.
 Generate Telegram channel announcement with markdown formatting.
 
 **Request:**
-
 ```typescript
 {
   topic: string;           // Required - Announcement topic
@@ -306,11 +283,10 @@ Generate Telegram channel announcement with markdown formatting.
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
-  result: string; // Formatted announcement with Telegram markdown
+  result: string;          // Formatted announcement with Telegram markdown
 }
 ```
 
@@ -321,7 +297,6 @@ Generate Telegram channel announcement with markdown formatting.
 Generate Telegram channel description (max 255 characters).
 
 **Request:**
-
 ```typescript
 {
   topic: string;           // Required - Channel topic/purpose
@@ -332,7 +307,6 @@ Generate Telegram channel description (max 255 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -347,7 +321,6 @@ Generate Telegram channel description (max 255 characters).
 Generate Telegram group welcome message.
 
 **Request:**
-
 ```typescript
 {
   groupName: string;       // Required - Name of the group
@@ -359,11 +332,10 @@ Generate Telegram group welcome message.
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
-  result: string; // Formatted welcome message with markdown
+  result: string;          // Formatted welcome message with markdown
 }
 ```
 
@@ -376,7 +348,6 @@ Generate Telegram group welcome message.
 Generate BeReal captions (max 500 characters).
 
 **Request:**
-
 ```typescript
 {
   moment: string;          // Required - Description of the photo moment
@@ -387,7 +358,6 @@ Generate BeReal captions (max 500 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -402,7 +372,6 @@ Generate BeReal captions (max 500 characters).
 Generate BeReal profile bio (max 150 characters).
 
 **Request:**
-
 ```typescript
 {
   personality: string;     // Required - Brief personality description
@@ -413,7 +382,6 @@ Generate BeReal profile bio (max 150 characters).
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -428,7 +396,6 @@ Generate BeReal profile bio (max 150 characters).
 Generate RealMoji reaction ideas for friends' BeReals.
 
 **Request:**
-
 ```typescript
 {
   context: string;         // Required - Description of friend's BeReal
@@ -439,7 +406,6 @@ Generate RealMoji reaction ideas for friends' BeReals.
 ```
 
 **Response:**
-
 ```typescript
 {
   success: true;
@@ -452,15 +418,12 @@ Generate RealMoji reaction ideas for friends' BeReals.
 ## Validation Rules
 
 ### All Endpoints
-
 - `turnstileToken` - Required, validated via Cloudflare API
 - `language` - Optional, must be one of: en, es, pt, fr, de, it
 
 ### String Length Validations
-
 - `topic`, `description`, `moment` - Min 3 chars, max 500 chars
 - `game`, `content`, `niche` - Min 2 chars, max 200 chars
 
 ### Enum Validations
-
 Each endpoint validates tone/style/type against allowed values (documented above).
