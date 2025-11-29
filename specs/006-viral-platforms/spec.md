@@ -19,7 +19,7 @@ Based on current trends and gaps in the existing 18 platforms, the following vir
 4. **Telegram** - Messaging platform with channels and groups for content creators
 5. **BeReal** - Authentic photo-sharing app popular with Gen Z
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Bluesky Content Creator (Priority: P1)
 
@@ -107,7 +107,7 @@ A casual user wants to make their BeReal posts more interesting with better capt
 - How does the system handle platform-specific formatting (Telegram markdown, Lemon8 bullet points)? Include formatting guides in prompts.
 - What happens if a user enters content violating platform ToS (e.g., crypto promotions on Lemon8)? Display appropriate disclaimers.
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -115,7 +115,7 @@ A casual user wants to make their BeReal posts more interesting with better capt
 - **FR-002**: Each platform MUST have at minimum 3 tools following the standard tool structure
 - **FR-003**: System MUST generate content respecting each platform's character limits (Bluesky: 300, Lemon8: 2200, Kick: varies, Telegram: 4096, BeReal: 500)
 - **FR-004**: System MUST include platform-specific formatting (Telegram markdown, Lemon8 bullet points/emojis)
-- **FR-005**: System MUST support both English and Spanish output languages for all tools
+- **FR-005**: System MUST support all 6 UI languages (en, es, pt, fr, de, it) for translations and output
 - **FR-006**: Each tool MUST include Turnstile bot verification before generation
 - **FR-007**: All generations MUST be logged to Appwrite for analytics
 - **FR-008**: Each platform MUST have a hub page with all available tools
@@ -128,26 +128,31 @@ A casual user wants to make their BeReal posts more interesting with better capt
 ### Tool Specifications by Platform
 
 **Bluesky (3 tools minimum)**:
+
 - Post Generator - Generate posts under 300 chars
-- Bio Generator - Profile bio under 256 chars  
+- Bio Generator - Profile bio under 256 chars
 - Thread Composer - Multi-post threads with replies
 
 **Lemon8 (3 tools minimum)**:
+
 - Caption Generator - Aesthetic captions with formatting
 - Content Ideas Generator - Post ideas by niche
 - Profile Bio Generator - Discovery-optimized bios
 
 **Kick (3 tools minimum)**:
+
 - Stream Title Generator - Catchy titles for streams
 - Bio Generator - Channel bio and about section
 - Chat Rules Generator - Community guidelines
 
 **Telegram (3 tools - if included)**:
+
 - Announcement Generator - Formatted channel posts
 - Channel Description Generator - Channel/group descriptions
 - Welcome Message Generator - New member greetings
 
 **BeReal (3 tools - if included)**:
+
 - Caption Generator - Authentic, witty captions
 - Bio Generator - Casual profile bios
 - RealMoji Suggestions - Reaction ideas for friends
@@ -158,7 +163,7 @@ A casual user wants to make their BeReal posts more interesting with better capt
 - **Tool**: Represents a content generation tool (platform, slug, inputs, outputs, character limits)
 - **Generation**: Records each AI content generation (platform, tool, input, output, language, timestamp)
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 
@@ -167,7 +172,7 @@ A casual user wants to make their BeReal posts more interesting with better capt
 - **SC-003**: New platforms contribute at least 10% of total tool usage within 30 days of launch
 - **SC-004**: Users successfully complete content generation on first attempt 90% of the time
 - **SC-005**: Each platform achieves at least 100 unique users within the first week
-- **SC-006**: Both English and Spanish versions of all tools function correctly
+- **SC-006**: All 6 language versions (en, es, pt, fr, de, it) of all tools function correctly
 - **SC-007**: All new pages achieve Lighthouse SEO score of 90+
 - **SC-008**: Spanish URL aliases work correctly with no 404 errors
 

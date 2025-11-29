@@ -29,5 +29,17 @@ export const platforms = {
     "threads.page.description": "Threads-Posts, die so gesprächig sind, dass die Leute denken, Sie wären ihr bester Freund (ohne Sie zu kennen).",
     "threads.info.title": "Was ist Threads?",
     "threads.info.description": "Threads ist Metas Konversations-App. Unsere Tools helfen Ihnen, lockere und authentische Beiträge zu erstellen, die mit Ihrem Publikum eine Verbindung aufbauen.",
+    "bluesky.page.description": "Skeets so heiß, dass der Algorithmus nicht weiß, was er mit dir machen soll (dezentralisiert und köstlich).",
+    "bluesky.info.title": "Was ist Bluesky?",
+    "bluesky.info.description": "Bluesky ist das dezentralisierte soziale Netzwerk, das auf dem AT-Protokoll aufgebaut ist. Unsere Tools helfen dir, ansprechende Beiträge zu erstellen, die in benutzerdefinierten Feeds herausstechen.",
+    "kick.page.description": "Stream-Titel, die Zuschauer tatsächlich zum Klicken bringen (70/30 Split genehmigt).",
+    "kick.info.title": "Was ist Kick?",
+    "kick.info.description": "Kick ist die streamerfreundliche Plattform, die Twitch herausfordert. Unsere Tools helfen dir, Inhalte zu erstellen, die Zuschauer anziehen und deine Community aufbauen.",
+    "telegram.page.description": "Kanal-Posts so professionell, dass deine Abonnenten denken, du hättest ein Team engagiert (es ist nur KI, pst).",
+    "telegram.info.title": "Was ist Telegram?",
+    "telegram.info.description": "Telegram ist die Messaging-App mit Kanälen und Gruppen, die Millionen erreichen. Unsere Tools helfen dir, Ankündigungen zu erstellen, die deine Community begeistern.",
+    "bereal.page.description": "Bildunterschriften für wenn du 'real' bist, aber Hilfe brauchst, interessant zu sein (keine Filter, nur Vibes).",
+    "bereal.info.title": "Was ist BeReal?",
+    "bereal.info.description": "BeReal fängt authentische Momente mit deiner Vorder- und Rückkamera ein. Unsere Tools helfen dir, die perfekte Bildunterschrift zu deinem ungefilterten Leben hinzuzufügen.",
 
 };

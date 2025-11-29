@@ -46,6 +46,7 @@ For each platform (bluesky, lemon8, kick, telegram, bereal):
 #### Platform Logo (SVG)
 
 Place in `public/platforms/[platform].svg`. Ensure:
+
 - Viewbox is square or proper aspect ratio
 - No embedded raster images
 - Works on white background
@@ -131,7 +132,7 @@ export async function GET() {
 export const [tool] = {
   "[key].title": "Tool Title",
   "[key].description": "Short description for cards",
-  
+
   // Form
   "[key].form.input1": "Input Label",
   "[key].form.input1Placeholder": "Placeholder text...",
@@ -140,14 +141,14 @@ export const [tool] = {
   "[key].form.generating": "Generating...",
   "[key].form.useAgain": "Generate Another",
   "[key].form.error.empty": "This field is required",
-  
+
   // Results
   "[key].result.title": "Your Results",
   "[key].result.copy": "Copy",
   "[key].result.copied": "Copied!",
   "[key].result.copyAll": "Copy All",
   "[key].result.copiedAll": "All copied!",
-  
+
   // Features (4 cards)
   "[key].features.feature1.title": "🎯 Feature 1",
   "[key].features.feature1.description": "Description...",
@@ -157,11 +158,11 @@ export const [tool] = {
   "[key].features.feature3.description": "Description...",
   "[key].features.feature4.title": "🚀 Feature 4",
   "[key].features.feature4.description": "Description...",
-  
+
   // Hero
   "[key].hero.subtitle": "What is this tool?",
   "[key].hero.description": "Full explanation paragraph...",
-  
+
   // How It Works (3 steps)
   "[key].howItWorks.title": "How It Works",
   "[key].howItWorks.step1.title": "Step 1",
@@ -170,7 +171,7 @@ export const [tool] = {
   "[key].howItWorks.step2.description": "Description...",
   "[key].howItWorks.step3.title": "Step 3",
   "[key].howItWorks.step3.description": "Description...",
-  
+
   // FAQ (5 questions)
   "[key].faq.title": "Frequently Asked Questions",
   "[key].faq.q1": "Question 1?",
@@ -183,7 +184,7 @@ export const [tool] = {
   "[key].faq.a4": "Answer 4",
   "[key].faq.q5": "Question 5?",
   "[key].faq.a5": "Answer 5",
-  
+
   // Related Tools
   "[key].relatedTools.title": "Related Tools",
 };
@@ -225,32 +226,36 @@ npm run build
 
 ### 5. Platform Colors Reference
 
-| Platform | Primary Color | Tailwind Classes |
-|----------|--------------|------------------|
-| Bluesky | #0085FF | `bg-blue-500`, `text-blue-600` |
-| Lemon8 | #3EE98E | `bg-emerald-400`, `text-emerald-600` |
-| Kick | #53FC18 | `bg-green-400`, `text-green-500` |
-| Telegram | #0088CC | `bg-sky-500`, `text-sky-600` |
-| BeReal | #000000 | `bg-neutral-900`, `text-neutral-900` |
+| Platform | Primary Color | Tailwind Classes                     |
+| -------- | ------------- | ------------------------------------ |
+| Bluesky  | #0085FF       | `bg-blue-500`, `text-blue-600`       |
+| Lemon8   | #3EE98E       | `bg-emerald-400`, `text-emerald-600` |
+| Kick     | #53FC18       | `bg-green-400`, `text-green-500`     |
+| Telegram | #0088CC       | `bg-sky-500`, `text-sky-600`         |
+| BeReal   | #000000       | `bg-neutral-900`, `text-neutral-900` |
 
 ### 6. Common Issues
 
 #### Logo not showing
+
 - Check file exists in `/public/platforms/[platform].svg`
 - Verify platform added to `platform-logo.tsx` type union
 - Clear Next.js cache: `rm -rf .next`
 
 #### Translations not working
+
 - Verify key exists in ALL 6 language files
 - Check translation key matches exactly (case-sensitive)
 - Verify locale index.ts exports the new file
 
 #### Spanish URL not working
+
 - Check rewrite rule in `next.config.ts`
 - Restart dev server after config changes
 - Verify source and destination paths match
 
 #### Turnstile failing
+
 - Check `.env.local` has `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
 - Check `.env.local` has `TURNSTILE_SECRET_KEY`
 - Verify domain is allowed in Cloudflare dashboard

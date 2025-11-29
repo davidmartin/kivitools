@@ -19,6 +19,10 @@ import { amazon } from "./tools/amazon";
 import { pinterest } from "./tools/pinterest";
 import { spotify } from "./tools/spotify";
 import { facebook } from "./tools/facebook";
+import { bluesky } from "./tools/bluesky";
+import { kick } from "./tools/kick";
+import { telegram } from "./tools/telegram";
+import { bereal } from "./tools/bereal";
 import { builder } from "./builder";
 import { dashboard } from "./dashboard";
 import { admin } from "./admin";
@@ -45,6 +49,10 @@ export const en = {
   ...pinterest,
   ...spotify,
   ...facebook,
+  ...bluesky,
+  ...kick,
+  ...telegram,
+  ...bereal,
   ...builder,
   ...dashboard,
   ...admin,

@@ -4486,3 +4486,660 @@ Return ONLY the 5 bios, one per line, numbered 1-5.`;
         throw new Error("Failed to generate bios");
     }
 }
+
+// ===== BLUESKY TOOLS =====
+
+// Bluesky Post Generator (300 char limit)
+export async function generateBlueskyPost({
+    topic,
+    tone,
+    language,
+}: {
+    topic: string;
+    tone: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a Bluesky social media expert. Create engaging posts (skeets) that:
+- Fit within Bluesky's 300 character limit
+- Are conversational and authentic
+- Appeal to Bluesky's tech-savvy, decentralized-minded community
+- Feel human, not corporate or spammy
+- May include relevant hashtags or @mentions style formatting
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Create 5 engaging Bluesky posts about: ${topic}
+
+Tone: ${tone}
+
+Requirements:
+- Write in ${targetLanguage}
+- Maximum 300 characters each
+- Make each post unique in approach
+- Use conversational language
+- Can include emojis sparingly
+- Optimize for engagement and shares
+
+Return ONLY the 5 posts, one per line, numbered 1-5.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.9,
+            max_tokens: 1200,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+
+        // Parse numbered list
+        const posts = content
+            .split(/\n+/)
+            .map(line => line.replace(/^\d+[\.\)]\s*/, '').trim())
+            .filter(line => line.length > 10 && line.length <= 320);
+
+        return posts.slice(0, 5);
+    } catch (error) {
+        console.error("Error generating Bluesky posts:", error);
+        throw new Error("Failed to generate posts");
+    }
+}
+
+// Bluesky Bio Generator (256 char limit)
+export async function generateBlueskyBio({
+    name,
+    profession,
+    interests,
+    personality,
+    language,
+}: {
+    name: string;
+    profession: string;
+    interests: string;
+    personality: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+
+    const systemPrompt = `You are a personal branding expert specializing in Bluesky profiles. Create bios that:
+- Fit within Bluesky's 256 character limit
+- Are authentic and personality-driven
+- Appeal to Bluesky's decentralized, tech-savvy community
+- Show personality, not just credentials
+- May reference AT Protocol or decentralization if relevant
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Create 5 unique Bluesky bio options.
+
+Name: ${name}
+Profession: ${profession}
+Interests: ${interests}
+Personality: ${personality}
+
+Requirements:
+- Write in ${targetLanguage}
+- Maximum 256 characters each
+- Show personality and uniqueness
+- Be creative and memorable
+- Can include emojis sparingly
+- Make each one distinctly different
+
+Return ONLY the 5 bios, one per line, numbered 1-5.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.9,
+            max_tokens: 1000,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+
+        // Parse numbered list
+        const bios = content
+            .split(/\n+/)
+            .map(line => line.replace(/^\d+[\.\)]\s*/, '').trim())
+            .filter(line => line.length > 5 && line.length <= 270);
+
+        return bios.slice(0, 5);
+    } catch (error) {
+        console.error("Error generating Bluesky bios:", error);
+        throw new Error("Failed to generate bios");
+    }
+}
+
+// Bluesky Thread Composer (300 char per post)
+export async function generateBlueskyThread({
+    topic,
+    tone,
+    postCount,
+    language,
+}: {
+    topic: string;
+    tone: string;
+    postCount: number;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language as keyof typeof languageNames] || "English";
+    const count = Math.min(Math.max(postCount, 3), 10); // Clamp between 3-10
+
+    const systemPrompt = `You are a Bluesky thread writer expert. Create compelling thread posts that:
+- Each post is max 300 characters
+- Flow naturally from one to the next
+- Start with a strong hook
+- End with a conclusion or call-to-action
+- Appeal to Bluesky's tech-savvy community
+Language: ${targetLanguage}`;
+
+    const userPrompt = `Create a ${count}-post Bluesky thread about: ${topic}
+
+Tone: ${tone}
+
+Requirements:
+- Write in ${targetLanguage}
+- Each post maximum 300 characters
+- First post should hook the reader
+- Posts should connect naturally (can use thread indicators like 1/X, 🧵)
+- Final post should wrap up or have a CTA
+- Make it informative and engaging
+
+Return EXACTLY ${count} posts, one per line, numbered 1-${count}.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            temperature: 0.85,
+            max_tokens: 2000,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+
+        // Parse numbered list
+        const posts = content
+            .split(/\n+/)
+            .map(line => line.replace(/^\d+[\.\)\/]\s*/, '').trim())
+            .filter(line => line.length > 10 && line.length <= 320);
+
+        return posts.slice(0, count);
+    } catch (error) {
+        console.error("Error generating Bluesky thread:", error);
+        throw new Error("Failed to generate thread");
+    }
+}
+
+// ============================================
+// KICK FUNCTIONS
+// ============================================
+
+export async function generateKickStreamTitle({
+    game,
+    style,
+    language = "en",
+}: {
+    game: string;
+    style?: string;
+    language?: string;
+}): Promise<string[]> {
+    const styleText = style || "energetic";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a Kick streaming expert. Generate 8 catchy stream titles for a Kick streamer playing "${game}" in ${langText}.
+
+KICK STREAM TITLE GUIDELINES:
+- Maximum 140 characters
+- Be engaging and click-worthy
+- Use gaming slang appropriately
+- Can include emotes/emojis
+- Create curiosity or hype
+- Match the ${styleText} vibe
+
+FORMAT YOUR RESPONSE AS A NUMBERED LIST:
+1. [title]
+2. [title]
+...
+
+Generate only the titles, no explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 1000,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const titles = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""));
+
+    return titles.length > 0 ? titles : [content.trim()];
+}
+
+export async function generateKickBio({
+    name,
+    content,
+    personality,
+    language = "en",
+}: {
+    name: string;
+    content: string;
+    personality?: string;
+    language?: string;
+}): Promise<string[]> {
+    const personalityText = personality || "entertaining";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a Kick streamer bio expert. Generate 5 unique bio options for a Kick profile in ${langText}.
+
+PROFILE INFO:
+- Streamer name: ${name}
+- Content type: ${content}
+- Personality: ${personalityText}
+
+KICK BIO GUIDELINES:
+- Maximum 300 characters
+- Show personality and content style
+- Include streaming schedule hint if fits
+- Use gaming/streaming culture references
+- Can include emotes/emojis
+- Be memorable and unique
+
+FORMAT YOUR RESPONSE AS:
+1. [bio]
+2. [bio]
+3. [bio]
+4. [bio]
+5. [bio]
+
+Generate only the bios, no explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 1000,
+    });
+
+    const content_response = completion.choices[0]?.message?.content || "";
+
+    const bios = content_response
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""));
+
+    return bios.length > 0 ? bios : [content_response.trim()];
+}
+
+export async function generateKickChatRules({
+    channel,
+    strictness,
+    language = "en",
+}: {
+    channel: string;
+    strictness?: string;
+    language?: string;
+}): Promise<string> {
+    const strictnessText = strictness || "balanced";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a Kick chat moderation expert. Generate chat rules for a Kick channel called "${channel}" in ${langText}.
+
+STRICTNESS LEVEL: ${strictnessText}
+
+KICK CHAT RULES GUIDELINES:
+- 5-8 clear rules
+- Use numbered format
+- Be clear but not aggressive
+- Include both "do" and "don't" rules
+- Match the channel's vibe
+- Include consequences briefly
+
+FORMAT YOUR RESPONSE AS:
+📋 Chat Rules for ${channel}
+
+1. [Rule]
+2. [Rule]
+...
+
+Generate only the rules, no extra commentary.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.7,
+        max_tokens: 1000,
+    });
+
+    return completion.choices[0]?.message?.content?.trim() || "";
+}
+
+// ============================================
+// TELEGRAM FUNCTIONS
+// ============================================
+
+export async function generateTelegramAnnouncement({
+    topic,
+    tone,
+    language = "en",
+}: {
+    topic: string;
+    tone?: string;
+    language?: string;
+}): Promise<string[]> {
+    const toneText = tone || "professional";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a Telegram channel admin expert. Generate 3 announcement posts for a Telegram channel about "${topic}" in ${langText}.
+
+TELEGRAM ANNOUNCEMENT GUIDELINES:
+- Use Telegram formatting (bold, italic, etc.)
+- Maximum 4096 characters
+- Be clear and informative
+- Use emojis appropriately
+- Include call-to-action
+- Match the ${toneText} tone
+
+FORMAT YOUR RESPONSE AS:
+---ANNOUNCEMENT 1---
+[announcement]
+---ANNOUNCEMENT 2---
+[announcement]
+---ANNOUNCEMENT 3---
+[announcement]
+
+Generate only the announcements, no explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 2000,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const announcements = content
+        .split(/---ANNOUNCEMENT \d+---/)
+        .map(a => a.trim())
+        .filter(a => a.length > 0);
+
+    return announcements.length > 0 ? announcements : [content.trim()];
+}
+
+export async function generateTelegramChannelDescription({
+    name,
+    topic,
+    audience,
+    language = "en",
+}: {
+    name: string;
+    topic: string;
+    audience?: string;
+    language?: string;
+}): Promise<string[]> {
+    const audienceText = audience || "general";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a Telegram channel expert. Generate 5 channel descriptions for a Telegram channel called "${name}" about "${topic}" in ${langText}.
+
+TARGET AUDIENCE: ${audienceText}
+
+TELEGRAM CHANNEL DESCRIPTION GUIDELINES:
+- Maximum 255 characters (STRICT LIMIT)
+- Be clear about channel purpose
+- Show value proposition
+- Use 1-2 relevant emojis
+- Include content frequency hint if fits
+- Be inviting and professional
+
+FORMAT YOUR RESPONSE AS:
+1. [description]
+2. [description]
+3. [description]
+4. [description]
+5. [description]
+
+Generate only the descriptions, no explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 1000,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const descriptions = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""));
+
+    return descriptions.length > 0 ? descriptions : [content.trim()];
+}
+
+export async function generateTelegramWelcomeMessage({
+    channel,
+    type,
+    language = "en",
+}: {
+    channel: string;
+    type?: string;
+    language?: string;
+}): Promise<string[]> {
+    const typeText = type || "community";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a Telegram community manager. Generate 3 welcome messages for new members joining a Telegram ${typeText} called "${channel}" in ${langText}.
+
+TELEGRAM WELCOME MESSAGE GUIDELINES:
+- Warm and welcoming tone
+- Explain what the channel/group is about
+- Include basic rules or guidelines
+- Point to important resources
+- Use emojis appropriately
+- Encourage participation
+
+FORMAT YOUR RESPONSE AS:
+---MESSAGE 1---
+[welcome message]
+---MESSAGE 2---
+[welcome message]
+---MESSAGE 3---
+[welcome message]
+
+Generate only the messages, no explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 2000,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const messages = content
+        .split(/---MESSAGE \d+---/)
+        .map(m => m.trim())
+        .filter(m => m.length > 0);
+
+    return messages.length > 0 ? messages : [content.trim()];
+}
+
+// ============================================
+// BEREAL FUNCTIONS
+// ============================================
+
+export async function generateBeRealCaption({
+    context,
+    mood,
+    language = "en",
+}: {
+    context: string;
+    mood?: string;
+    language?: string;
+}): Promise<string[]> {
+    const moodText = mood || "authentic";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a BeReal caption expert. Generate 5 authentic, real captions for a BeReal moment about "${context}" in ${langText}.
+
+BEREAL CAPTION GUIDELINES:
+- Maximum 500 characters
+- Be genuine and unfiltered
+- Match the ${moodText} mood
+- No fake positivity - keep it real
+- Use humor if appropriate
+- Can be self-deprecating
+- Minimal emojis (0-1)
+
+FORMAT YOUR RESPONSE AS:
+1. [caption]
+2. [caption]
+3. [caption]
+4. [caption]
+5. [caption]
+
+Generate only the captions, no explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 1200,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const captions = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""));
+
+    return captions.length > 0 ? captions : [content.trim()];
+}
+
+export async function generateBeRealBio({
+    name,
+    vibe,
+    interests,
+    language = "en",
+}: {
+    name: string;
+    vibe?: string;
+    interests?: string;
+    language?: string;
+}): Promise<string[]> {
+    const vibeText = vibe || "authentic";
+    const interestsText = interests || "life";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a BeReal bio expert. Generate 5 authentic bio options for a BeReal profile in ${langText}.
+
+PROFILE INFO:
+- Name: ${name}
+- Vibe: ${vibeText}
+- Interests: ${interestsText}
+
+BEREAL BIO GUIDELINES:
+- Maximum 150 characters (STRICT LIMIT)
+- Be genuine and real
+- No trying to be perfect
+- Show real personality
+- Can be witty or self-aware
+- Minimal emoji (0-1)
+
+FORMAT YOUR RESPONSE AS:
+1. [bio]
+2. [bio]
+3. [bio]
+4. [bio]
+5. [bio]
+
+Generate only the bios, no explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 800,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const bios = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""));
+
+    return bios.length > 0 ? bios : [content.trim()];
+}
+
+export async function generateBeRealRealmojiIdeas({
+    situation,
+    personality,
+    language = "en",
+}: {
+    situation: string;
+    personality?: string;
+    language?: string;
+}): Promise<string[]> {
+    const personalityText = personality || "expressive";
+    const langText = language === "es" ? "Spanish" : language === "pt" ? "Portuguese" : language === "fr" ? "French" : language === "de" ? "German" : language === "it" ? "Italian" : "English";
+
+    const prompt = `You are a BeReal RealMoji expert. Generate 8 creative RealMoji reaction ideas for the situation "${situation}" in ${langText}.
+
+PERSONALITY: ${personalityText}
+
+REALMOJI IDEAS GUIDELINES:
+- Describe facial expressions clearly
+- Match the situation's energy
+- Be creative and fun
+- Include emotion description
+- Can be exaggerated or subtle
+- Think about what would make friends laugh
+
+FORMAT YOUR RESPONSE AS:
+1. [Expression name]: [Description of the face/pose]
+2. [Expression name]: [Description of the face/pose]
+...
+
+Generate only the ideas, no explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 1200,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const ideas = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""));
+
+    return ideas.length > 0 ? ideas : [content.trim()];
+}

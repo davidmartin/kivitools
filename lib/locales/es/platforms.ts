@@ -29,5 +29,17 @@ export const platforms = {
     "threads.page.description": "Posts de Threads tan conversacionales que la gente pensará que eres su mejor amigo (sin conocerte).",
     "threads.info.title": "¿Qué es Threads?",
     "threads.info.description": "Threads es la app de conversaciones de Meta. Nuestras herramientas te ayudan a crear posts casuales y auténticos que conectan con tu audiencia.",
+    "bluesky.page.description": "Skeets tan fuego que el algoritmo no sabe qué hacer contigo (descentralizado y delicioso).",
+    "bluesky.info.title": "¿Qué es Bluesky?",
+    "bluesky.info.description": "Bluesky es la red social descentralizada construida sobre el Protocolo AT. Nuestras herramientas te ayudan a crear posts atractivos que destacan en feeds personalizados.",
+    "kick.page.description": "Títulos de stream que hacen que los viewers realmente hagan clic (split 70/30 aprobado).",
+    "kick.info.title": "¿Qué es Kick?",
+    "kick.info.description": "Kick es la plataforma amigable con streamers que compite con Twitch. Nuestras herramientas te ayudan a crear contenido que atrae viewers y construye tu comunidad.",
+    "telegram.page.description": "Posts de canal tan profesionales que tus suscriptores pensarán que contrataste un equipo (es solo IA, shh).",
+    "telegram.info.title": "¿Qué es Telegram?",
+    "telegram.info.description": "Telegram es la app de mensajería con canales y grupos que llegan a millones. Nuestras herramientas te ayudan a crear anuncios que enganchan a tu comunidad.",
+    "bereal.page.description": "Captions para cuando estás 'siendo real' pero necesitas ayuda para ser interesante (sin filtros, solo vibras).",
+    "bereal.info.title": "¿Qué es BeReal?",
+    "bereal.info.description": "BeReal captura momentos auténticos con tu cámara frontal y trasera. Nuestras herramientas te ayudan a añadir el caption perfecto a tu vida sin filtros.",
 
 };

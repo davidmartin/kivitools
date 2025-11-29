@@ -10,7 +10,7 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "lemon8" | "kick" | "telegram" | "bereal";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
@@ -99,6 +99,31 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "facebookAdCopy.title", href: "/facebook/ad-copy" },
   ],
   threads: [],
+  bluesky: [
+    { name: "blueskyPostGenerator.title", href: "/bluesky/post-generator" },
+    { name: "blueskyBioGenerator.title", href: "/bluesky/bio-generator" },
+    { name: "blueskyThreadComposer.title", href: "/bluesky/thread-composer" },
+  ],
+  lemon8: [
+    { name: "lemon8CaptionGenerator.title", href: "/lemon8/caption-generator" },
+    { name: "lemon8ContentIdeas.title", href: "/lemon8/content-ideas" },
+    { name: "lemon8BioGenerator.title", href: "/lemon8/bio-generator" },
+  ],
+  kick: [
+    { name: "kickStreamTitle.title", href: "/kick/stream-title" },
+    { name: "kickBioGenerator.title", href: "/kick/bio-generator" },
+    { name: "kickChatRules.title", href: "/kick/chat-rules" },
+  ],
+  telegram: [
+    { name: "telegramAnnouncement.title", href: "/telegram/announcement-generator" },
+    { name: "telegramChannelDescription.title", href: "/telegram/channel-description" },
+    { name: "telegramWelcomeMessage.title", href: "/telegram/welcome-message" },
+  ],
+  bereal: [
+    { name: "berealCaptionGenerator.title", href: "/bereal/caption-generator" },
+    { name: "berealBioGenerator.title", href: "/bereal/bio-generator" },
+    { name: "berealRealmojiIdeas.title", href: "/bereal/realmoji-ideas" },
+  ],
 };
 
 export default function ToolSelector({ platform }: ToolSelectorProps) {

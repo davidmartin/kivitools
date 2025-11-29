@@ -37,6 +37,14 @@ Both URLs display the **same page** (no redirects). This is implemented via `nex
 | `/facebook/page-bio`       | `/facebook/bio-pagina`              |
 | `/facebook/ad-copy`        | `/facebook/texto-anuncio`           |
 
+### Bluesky
+
+| English URL                | Spanish URL                        |
+| -------------------------- | ---------------------------------- |
+| `/bluesky/post-generator`  | `/bluesky/generador-publicaciones` |
+| `/bluesky/bio-generator`   | `/bluesky/generador-bio`           |
+| `/bluesky/thread-composer` | `/bluesky/compositor-hilos`        |
+
 ### TikTok
 
 | English URL                     | Spanish URL                       |
