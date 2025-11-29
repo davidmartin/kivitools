@@ -191,6 +191,52 @@ export default function Navigation() {
         { name: t("productDescriptionGenerator.title"), href: "/amazon/product-description-generator" },
       ],
     },
+    {
+      id: "threads",
+      name: t("nav.threads"),
+      emoji: "🔗",
+      tools: [],
+    },
+    {
+      id: "bluesky",
+      name: t("nav.bluesky"),
+      emoji: "🦋",
+      tools: [
+        { name: t("blueskyPostGenerator.title"), href: "/bluesky/post-generator" },
+        { name: t("blueskyBioGenerator.title"), href: "/bluesky/bio-generator" },
+        { name: t("blueskyThreadComposer.title"), href: "/bluesky/thread-composer" },
+      ],
+    },
+    {
+      id: "kick",
+      name: t("nav.kick"),
+      emoji: "🎮",
+      tools: [
+        { name: t("kickStreamTitle.title"), href: "/kick/stream-title" },
+        { name: t("kickBioGenerator.title"), href: "/kick/bio-generator" },
+        { name: t("kickChatRules.title"), href: "/kick/chat-rules" },
+      ],
+    },
+    {
+      id: "telegram",
+      name: t("nav.telegram"),
+      emoji: "✈️",
+      tools: [
+        { name: t("telegramAnnouncement.title"), href: "/telegram/announcement-generator" },
+        { name: t("telegramChannelDescription.title"), href: "/telegram/channel-description" },
+        { name: t("telegramWelcomeMessage.title"), href: "/telegram/welcome-message" },
+      ],
+    },
+    {
+      id: "bereal",
+      name: t("nav.bereal"),
+      emoji: "📷",
+      tools: [
+        { name: t("berealCaptionGenerator.title"), href: "/bereal/caption-generator" },
+        { name: t("berealBioGenerator.title"), href: "/bereal/bio-generator" },
+        { name: t("berealRealmojiIdeas.title"), href: "/bereal/realmoji-ideas" },
+      ],
+    },
   ];
 
   return (

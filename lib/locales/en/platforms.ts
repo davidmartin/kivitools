@@ -29,5 +29,17 @@ export const platforms = {
     "threads.page.description": "Threads posts so conversational people will think you're their best friend (without knowing you).",
     "threads.info.title": "What is Threads?",
     "threads.info.description": "Threads is Meta's conversation app. Our tools help you create casual and authentic posts that connect with your audience.",
+    "bluesky.page.description": "Skeets so fire the algorithm doesn't even know what to do with you (decentralized and delicious).",
+    "bluesky.info.title": "What is Bluesky?",
+    "bluesky.info.description": "Bluesky is the decentralized social network built on the AT Protocol. Our tools help you create engaging posts that stand out in custom feeds.",
+    "kick.page.description": "Stream titles that make viewers actually click (70/30 split approved).",
+    "kick.info.title": "What is Kick?",
+    "kick.info.description": "Kick is the streamer-friendly platform taking on Twitch. Our tools help you create content that attracts viewers and builds your community.",
+    "telegram.page.description": "Channel posts so professional your subscribers will think you hired a team (it's just AI, shh).",
+    "telegram.info.title": "What is Telegram?",
+    "telegram.info.description": "Telegram is the messaging app with channels and groups that reach millions. Our tools help you create announcements that engage your community.",
+    "bereal.page.description": "Captions for when you're 'being real' but need help being interesting (no filters, just vibes).",
+    "bereal.info.title": "What is BeReal?",
+    "bereal.info.description": "BeReal captures authentic moments with your front and back camera. Our tools help you add the perfect caption to your unfiltered life.",
 
 };

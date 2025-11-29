@@ -114,6 +114,14 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 | **Page Bio Generator** | Crea biografías profesionales para páginas | Negocio, industria, descripción | Bio optimizada (255 chars)             | ✅     |
 | **Ad Copy Generator**  | Crea textos para anuncios de Facebook      | Producto, audiencia, beneficio  | Titular + Texto Principal              | ✅     |
 
+### 3.2.4 Bluesky Tools (3 herramientas) ✅ NEW
+
+| Herramienta         | Descripción                     | Inputs                                     | Outputs                                | Status |
+| ------------------- | ------------------------------- | ------------------------------------------ | -------------------------------------- | ------ |
+| **Post Generator**  | Genera publicaciones atractivas | Tema, tono, idioma                         | 5 posts optimizados (300 chars)        | ✅     |
+| **Bio Generator**   | Crea biografías para perfiles   | Nombre, profesión, intereses, personalidad | Bio profesional (256 chars)            | ✅     |
+| **Thread Composer** | Compone hilos estructurados     | Tema, tono, número de posts, idioma        | Hilo completo con 3-10 posts numerados | ✅     |
+
 ### 3.3 Twitter/X Tools (11 herramientas)
 
 #### Content Generation

@@ -148,6 +148,41 @@ export default function Home() {
       icon: "💼",
       color: "blue",
     },
+    {
+      name: "Threads",
+      description: t("threads.page.description"),
+      href: "/threads",
+      icon: "🔗",
+      color: "black",
+    },
+    {
+      name: "Bluesky",
+      description: t("bluesky.page.description"),
+      href: "/bluesky",
+      icon: "🦋",
+      color: "blue",
+    },
+    {
+      name: "Kick",
+      description: t("kick.page.description"),
+      href: "/kick",
+      icon: "🎮",
+      color: "green",
+    },
+    {
+      name: "Telegram",
+      description: t("telegram.page.description"),
+      href: "/telegram",
+      icon: "✈️",
+      color: "blue",
+    },
+    {
+      name: "BeReal",
+      description: t("bereal.page.description"),
+      href: "/bereal",
+      icon: "📷",
+      color: "black",
+    },
   ];
 
   // Popular Tools

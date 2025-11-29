@@ -89,6 +89,11 @@ const nextConfig: NextConfig = {
       { source: "/facebook/generador-publicaciones", destination: "/facebook/post-generator" },
       { source: "/facebook/bio-pagina", destination: "/facebook/page-bio" },
       { source: "/facebook/texto-anuncio", destination: "/facebook/ad-copy" },
+
+      // Bluesky - Rutas en español
+      { source: "/bluesky/generador-publicaciones", destination: "/bluesky/post-generator" },
+      { source: "/bluesky/generador-bio", destination: "/bluesky/bio-generator" },
+      { source: "/bluesky/compositor-hilos", destination: "/bluesky/thread-composer" },
     ];
   },
 };
