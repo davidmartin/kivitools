@@ -5,7 +5,7 @@
 
 ## Summary
 
-Expandir KiviTools con 28 nuevas herramientas organizadas en 3 fases para maximizar el tráfico orgánico de Google. Las herramientas incluyen calculadoras (no-AI, client-side), generadores de nombres/bios (AI-powered), y herramientas para nuevas plataformas (Podcast, Email, Dating, etc.). Cada herramienta funciona como una landing page SEO-optimizada con URLs bilingües (EN/ES).
+Expandir KiviTools con 27 nuevas herramientas organizadas en 3 fases para maximizar el tráfico orgánico de Google. Las herramientas incluyen calculadoras (no-AI, client-side), generadores de nombres/bios (AI-powered), y herramientas para nuevas plataformas (Podcast, Email, Dating, etc.). Cada herramienta funciona como una landing page SEO-optimizada con URLs bilingües (EN/ES).
 
 ## Technical Context
 
@@ -111,9 +111,9 @@ docs/RUTAS_ALIAS.md                    # Document new routes
 
 ## Implementation Phases
 
-### Phase 1: Quick Wins (10 tools, 2 weeks)
+### Phase 1: Quick Wins (9 NEW tools, 2 weeks)
 
-**Goal**: High-impact, low-effort tools with excellent SEO potential.
+**Goal**: High-impact, low-effort tools with excellent SEO potential. Note: TikTok Engagement Calculator already exists.
 
 | # | Tool | Platform | Type | Priority |
 |---|------|----------|------|----------|
@@ -187,6 +187,7 @@ Each tool requires these files/updates:
 - [ ] `app/(tools)/[platform]/layout.tsx` - Platform layout
 - [ ] `app/components/navigation.tsx` - Add platform to nav
 - [ ] `app/components/tool-selector.tsx` - Add platform tools
+- [ ] `app/components/platform-logo.tsx` - Add platform to logo component
 - [ ] `lib/seo-metadata.ts` - Add platform colors/names
 - [ ] `app/page.tsx` - Add to home page platforms array
 - [ ] `public/platforms/[platform].svg` - Platform logo (if available)

@@ -183,12 +183,12 @@ Plataformas no cubiertas actualmente con alto potencial:
 
 ### Implementación por Fases
 
-#### Fase 1: Quick Wins (2 semanas) - 10 herramientas
+#### Fase 1: Quick Wins (2 semanas) - 9 herramientas NUEVAS
 
-Herramientas de baja dificultad y alto impacto SEO:
+Herramientas de baja dificultad y alto impacto SEO (nota: TikTok Engagement Calculator ya existe):
 
 1. Instagram Engagement Rate Calculator
-2. TikTok Engagement Rate Calculator
+2. ~~TikTok Engagement Rate Calculator~~ *(YA EXISTE)*
 3. YouTube Channel Name Generator
 4. Podcast Name Generator
 5. Discord Server Name Generator

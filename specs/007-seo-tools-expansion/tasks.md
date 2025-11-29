@@ -40,6 +40,7 @@
 - [ ] T008 [P] Add Podcast to tool-selector.tsx in app/components/tool-selector.tsx
 - [ ] T009 [P] Add Podcast to home page platforms array in app/page.tsx
 - [ ] T010 [P] Create Podcast logo placeholder in public/platforms/podcast.svg
+- [ ] T010b [P] Add Podcast to platform-logo.tsx in app/components/platform-logo.tsx
 
 ### Email Platform Hub
 
@@ -51,6 +52,7 @@
 - [ ] T016 [P] Add Email to tool-selector.tsx in app/components/tool-selector.tsx
 - [ ] T017 [P] Add Email to home page platforms array in app/page.tsx
 - [ ] T018 [P] Create Email logo placeholder in public/platforms/email.svg
+- [ ] T018b [P] Add Email to platform-logo.tsx in app/components/platform-logo.tsx
 
 ### Dating Platform Hub
 
@@ -62,6 +64,7 @@
 - [ ] T024 [P] Add Dating to tool-selector.tsx in app/components/tool-selector.tsx
 - [ ] T025 [P] Add Dating to home page platforms array in app/page.tsx
 - [ ] T026 [P] Create Dating logo placeholder in public/platforms/dating.svg
+- [ ] T026b [P] Add Dating to platform-logo.tsx in app/components/platform-logo.tsx
 
 **Checkpoint**: All 3 new platform hubs (Podcast, Email, Dating) ready - Phase 1 tools can now be implemented
 
@@ -172,6 +175,7 @@
 - [ ] T084 [P] [US2] Add GitHub to tool-selector.tsx in app/components/tool-selector.tsx
 - [ ] T085 [P] [US2] Add GitHub to home page platforms array in app/page.tsx
 - [ ] T086 [P] [US2] Create GitHub logo placeholder in public/platforms/github.svg
+- [ ] T086b [P] [US2] Add GitHub to platform-logo.tsx in app/components/platform-logo.tsx
 
 ### New Platform Hub: Gaming
 
@@ -183,6 +187,7 @@
 - [ ] T092 [P] [US2] Add Gaming to tool-selector.tsx in app/components/tool-selector.tsx
 - [ ] T093 [P] [US2] Add Gaming to home page platforms array in app/page.tsx
 - [ ] T094 [P] [US2] Create Gaming logo placeholder in public/platforms/gaming.svg
+- [ ] T094b [P] [US2] Add Gaming to platform-logo.tsx in app/components/platform-logo.tsx
 
 ### Tool 10: YouTube Earnings Calculator (Calculator - No AI)
 
@@ -292,6 +297,7 @@
 - [ ] T158 [P] [US3] Add all 6 new platforms to home page in app/page.tsx
 - [ ] T159 [P] [US3] Add translations for all 6 new platforms to lib/locales/en/ and lib/locales/es/
 - [ ] T160 [P] [US3] Create logo placeholders for all 6 new platforms in public/platforms/
+- [ ] T160b [P] [US3] Add all 6 new platforms to platform-logo.tsx in app/components/platform-logo.tsx
 
 ### Tool 20: Medium Article Title Generator (AI)
 
@@ -459,13 +465,13 @@ After MVP:
 | Phase | Tasks | Tools | Description |
 |-------|-------|-------|-------------|
 | 1 | T001-T002 | 0 | Setup |
-| 2 | T003-T026 | 0 | 3 new platform hubs (Podcast, Email, Dating) |
+| 2 | T003-T026b | 0 | 3 new platform hubs (Podcast, Email, Dating) + platform-logo.tsx |
 | 3 | T027-T078 | 9 | Quick Wins - MVP tools |
-| 4 | T079-T148 | 10 | Medium expansion + 2 hubs (GitHub, Gaming) |
-| 5 | T149-T208 | 8 | New platforms + 6 hubs |
+| 4 | T079-T094b | 10 | Medium expansion + 2 hubs (GitHub, Gaming) + platform-logo.tsx |
+| 5 | T149-T208 | 8 | New platforms + 6 hubs + platform-logo.tsx |
 | 6 | T209-T216 | 0 | Polish |
 
-**Total**: 216 tasks, 27 new tools, 11 new platform hubs
+**Total**: 222 tasks (216 + 6 platform-logo.tsx updates), 27 new tools, 11 new platform hubs
 
 ---
 
