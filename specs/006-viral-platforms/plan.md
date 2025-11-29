@@ -21,27 +21,27 @@ Add 5 new viral platforms (Bluesky, Lemon8, Kick, Telegram, BeReal) to KiviTools
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
-| Principle | Status | Notes |
-|-----------|--------|-------|
+| Principle                        | Status  | Notes                                                                 |
+| -------------------------------- | ------- | --------------------------------------------------------------------- |
 | **I. HeroUI-First Architecture** | ✅ PASS | All tools will use `<Button>`, `<Card>`, `<Input>` from @heroui/react |
-| **II. Translation-Mandatory** | ✅ PASS | All 6 languages (en, es, pt, fr, de, it) will have translations |
-| **III. Tool Page Completeness** | ✅ PASS | All 8 sections mandatory per tool |
-| **IV. Performance Budget** | ✅ PASS | Following existing patterns meeting < 5s generation |
-| **V. Platform Integration** | ✅ PASS | Full 10-step checklist per platform |
+| **II. Translation-Mandatory**    | ✅ PASS | All 6 languages (en, es, pt, fr, de, it) will have translations       |
+| **III. Tool Page Completeness**  | ✅ PASS | All 8 sections mandatory per tool                                     |
+| **IV. Performance Budget**       | ✅ PASS | Following existing patterns meeting < 5s generation                   |
+| **V. Platform Integration**      | ✅ PASS | Full 10-step checklist per platform                                   |
 
 **Pre-Phase 0 Gate**: ✅ PASSED - No violations
 
 ### Post-Design Re-check (Phase 1)
 
-| Principle | Status | Verification |
-|-----------|--------|--------------|
-| **I. HeroUI-First** | ✅ PASS | Tool page templates use HeroUI components only |
+| Principle                     | Status  | Verification                                       |
+| ----------------------------- | ------- | -------------------------------------------------- |
+| **I. HeroUI-First**           | ✅ PASS | Tool page templates use HeroUI components only     |
 | **II. Translation-Mandatory** | ✅ PASS | Translation key structure defined in data-model.md |
-| **III. Tool Completeness** | ✅ PASS | All 8 sections specified per tool |
-| **IV. Performance Budget** | ✅ PASS | Character limits enforced per platform |
-| **V. Platform Integration** | ✅ PASS | 10-step checklist in quickstart.md |
+| **III. Tool Completeness**    | ✅ PASS | All 8 sections specified per tool                  |
+| **IV. Performance Budget**    | ✅ PASS | Character limits enforced per platform             |
+| **V. Platform Integration**   | ✅ PASS | 10-step checklist in quickstart.md                 |
 
 **Post-Phase 1 Gate**: ✅ PASSED - Ready for Phase 2 (tasks)
 

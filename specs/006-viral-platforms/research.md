@@ -10,6 +10,7 @@
 **Decision**: Include as P1 priority platform
 
 **Rationale**:
+
 - Fastest-growing Twitter/X alternative with 25M+ users (as of Nov 2024)
 - Decentralized protocol (AT Protocol) with open API
 - Character limit: 300 characters per post
@@ -17,12 +18,14 @@
 - Growing creator community migrating from Twitter
 
 **Alternatives Considered**:
+
 - Mastodon: More established but fragmented across instances, harder to explain to users
 - Threads: Already in KiviTools (threads platform exists)
 
 **Platform-specific requirements**:
+
 - Post character limit: 300 chars
-- Bio character limit: 256 chars  
+- Bio character limit: 256 chars
 - Thread format: Main post + replies (no native threading)
 - No hashtag system (uses searchable text)
 - Custom feeds via algorithms users can choose
@@ -36,6 +39,7 @@
 **Decision**: Include as P2 priority platform
 
 **Rationale**:
+
 - ByteDance's lifestyle platform (TikTok's sister app)
 - 5M+ monthly active users, growing rapidly
 - Combines Instagram aesthetics + Pinterest discoverability
@@ -43,9 +47,11 @@
 - Strong among Gen Z and millennials
 
 **Alternatives Considered**:
+
 - Xiaohongshu (RED): Similar but primarily Chinese market, less relevant for EN/ES users
 
 **Platform-specific requirements**:
+
 - Caption character limit: 2,200 chars
 - Bio character limit: 80 chars
 - Strong emphasis on formatted text (bullet points, spacing)
@@ -61,6 +67,7 @@
 **Decision**: Include as P3 priority platform
 
 **Rationale**:
+
 - Fastest-growing Twitch competitor
 - 95/5 revenue split vs Twitch's 50/50
 - More relaxed content policies
@@ -68,10 +75,12 @@
 - Major streamers migrating (xQc, Adin Ross, etc.)
 
 **Alternatives Considered**:
+
 - Rumble: More political/news focused, different audience
 - YouTube Gaming: Already have YouTube platform
 
 **Platform-specific requirements**:
+
 - Stream title limit: 140 chars
 - Bio limit: 300 chars
 - Panel descriptions: No strict limit
@@ -87,6 +96,7 @@
 **Decision**: Include as P4 priority platform
 
 **Rationale**:
+
 - 900M+ monthly active users
 - Essential for crypto, tech, news communities
 - Channel/group management is complex
@@ -94,10 +104,12 @@
 - Growing creator economy
 
 **Alternatives Considered**:
+
 - Signal: More privacy-focused but no channel system
 - WhatsApp Channels: Limited functionality
 
 **Platform-specific requirements**:
+
 - Message limit: 4,096 chars
 - Channel description: 255 chars
 - Supports Markdown (bold, italic, code, links)
@@ -113,6 +125,7 @@
 **Decision**: Include as P5 priority platform
 
 **Rationale**:
+
 - 73M+ downloads, 25M daily active users
 - Authenticity-focused platform
 - Popular with Gen Z
@@ -120,10 +133,12 @@
 - Growing brand presence
 
 **Alternatives Considered**:
+
 - Dispo: Similar concept but less popular
 - Locket: Widget-based, different use case
 
 **Platform-specific requirements**:
+
 - Caption limit: 500 chars
 - Bio limit: 150 chars
 - Focus on authenticity and humor
@@ -141,26 +156,35 @@
 Based on existing `platform-logo.tsx` pattern:
 
 ```typescript
-const needsInvert = platform === "twitter" || platform === "suno" || platform === "elevenlabs" || platform === "amazon" || platform === "threads";
+const needsInvert =
+  platform === "twitter" ||
+  platform === "suno" ||
+  platform === "elevenlabs" ||
+  platform === "amazon" ||
+  platform === "threads";
 ```
 
 **New platforms requiring dark mode invert**:
+
 - `kick` - Green on transparent, needs invert for dark mode
 - `bereal` - Black text/logo, needs invert for dark mode
 
 **New platforms NOT requiring invert**:
+
 - `bluesky` - Blue logo works on both backgrounds
-- `lemon8` - Green logo works on both backgrounds  
+- `lemon8` - Green logo works on both backgrounds
 - `telegram` - Blue logo works on both backgrounds
 
 ### Existing Pattern Analysis
 
 **Translation file structure** (from `lib/locales/en/`):
+
 - `common.ts` - Navigation keys (`nav.bluesky`, etc.)
 - `platforms.ts` - Platform descriptions (`bluesky.page.description`)
 - `tools/[platform]/[tool].ts` - Tool-specific translations
 
 **API route pattern** (from existing tools):
+
 ```typescript
 // Required imports
 import { NextRequest, NextResponse } from "next/server";
@@ -174,6 +198,7 @@ import { verifyTurnstileToken } from "@/lib/turnstile";
 ```
 
 **DeepSeek function pattern**:
+
 ```typescript
 export async function generate[Platform][Tool]({
   param1,
@@ -193,31 +218,31 @@ export async function generate[Platform][Tool]({
 
 Following existing patterns in `next.config.ts`:
 
-| English | Spanish |
-|---------|---------|
-| `post-generator` | `generador-publicaciones` |
-| `bio-generator` | `generador-bio` |
-| `thread-composer` | `compositor-hilos` |
-| `caption-generator` | `generador-subtitulos` |
-| `content-ideas` | `ideas-contenido` |
-| `stream-title` | `titulo-stream` |
-| `chat-rules` | `reglas-chat` |
-| `announcement-generator` | `generador-anuncios` |
-| `channel-description` | `descripcion-canal` |
-| `welcome-message` | `mensaje-bienvenida` |
-| `realmoji-ideas` | `ideas-realmoji` |
+| English                  | Spanish                   |
+| ------------------------ | ------------------------- |
+| `post-generator`         | `generador-publicaciones` |
+| `bio-generator`          | `generador-bio`           |
+| `thread-composer`        | `compositor-hilos`        |
+| `caption-generator`      | `generador-subtitulos`    |
+| `content-ideas`          | `ideas-contenido`         |
+| `stream-title`           | `titulo-stream`           |
+| `chat-rules`             | `reglas-chat`             |
+| `announcement-generator` | `generador-anuncios`      |
+| `channel-description`    | `descripcion-canal`       |
+| `welcome-message`        | `mensaje-bienvenida`      |
+| `realmoji-ideas`         | `ideas-realmoji`          |
 
 ---
 
 ## Character Limits Summary
 
-| Platform | Post/Content | Bio | Notes |
-|----------|-------------|-----|-------|
-| Bluesky | 300 chars | 256 chars | No hashtags |
-| Lemon8 | 2,200 chars | 80 chars | Formatting important |
-| Kick | 140 chars (title) | 300 chars | Stream titles |
-| Telegram | 4,096 chars | 255 chars | Markdown support |
-| BeReal | 500 chars | 150 chars | Authenticity focus |
+| Platform | Post/Content      | Bio       | Notes                |
+| -------- | ----------------- | --------- | -------------------- |
+| Bluesky  | 300 chars         | 256 chars | No hashtags          |
+| Lemon8   | 2,200 chars       | 80 chars  | Formatting important |
+| Kick     | 140 chars (title) | 300 chars | Stream titles        |
+| Telegram | 4,096 chars       | 255 chars | Markdown support     |
+| BeReal   | 500 chars         | 150 chars | Authenticity focus   |
 
 ---
 

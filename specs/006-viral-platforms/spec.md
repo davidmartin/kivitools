@@ -20,10 +20,14 @@ Based on current trends and gaps in the existing 18 platforms, the following vir
 5. **BeReal** - Authentic photo-sharing app popular with Gen Z
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## User Scenarios & Testing _(mandatory)_
 =======
 ## User Scenarios & Testing *(mandatory)*
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+## User Scenarios & Testing _(mandatory)_
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 
 ### User Story 1 - Bluesky Content Creator (Priority: P1)
 
@@ -112,10 +116,14 @@ A casual user wants to make their BeReal posts more interesting with better capt
 - What happens if a user enters content violating platform ToS (e.g., crypto promotions on Lemon8)? Display appropriate disclaimers.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Requirements _(mandatory)_
 =======
 ## Requirements *(mandatory)*
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+## Requirements _(mandatory)_
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 
 ### Functional Requirements
 
@@ -124,10 +132,14 @@ A casual user wants to make their BeReal posts more interesting with better capt
 - **FR-003**: System MUST generate content respecting each platform's character limits (Bluesky: 300, Lemon8: 2200, Kick: varies, Telegram: 4096, BeReal: 500)
 - **FR-004**: System MUST include platform-specific formatting (Telegram markdown, Lemon8 bullet points/emojis)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **FR-005**: System MUST support all 6 UI languages (en, es, pt, fr, de, it) for translations and output
 =======
 - **FR-005**: System MUST support both English and Spanish output languages for all tools
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+- **FR-005**: System MUST support all 6 UI languages (en, es, pt, fr, de, it) for translations and output
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - **FR-006**: Each tool MUST include Turnstile bot verification before generation
 - **FR-007**: All generations MUST be logged to Appwrite for analytics
 - **FR-008**: Each platform MUST have a hub page with all available tools
@@ -141,6 +153,7 @@ A casual user wants to make their BeReal posts more interesting with better capt
 
 **Bluesky (3 tools minimum)**:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 - Post Generator - Generate posts under 300 chars
 - Bio Generator - Profile bio under 256 chars
@@ -149,39 +162,58 @@ A casual user wants to make their BeReal posts more interesting with better capt
 **Lemon8 (3 tools minimum)**:
 
 =======
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Post Generator - Generate posts under 300 chars
-- Bio Generator - Profile bio under 256 chars  
+- Bio Generator - Profile bio under 256 chars
 - Thread Composer - Multi-post threads with replies
 
 **Lemon8 (3 tools minimum)**:
+<<<<<<< HEAD
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Caption Generator - Aesthetic captions with formatting
 - Content Ideas Generator - Post ideas by niche
 - Profile Bio Generator - Discovery-optimized bios
 
 **Kick (3 tools minimum)**:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Stream Title Generator - Catchy titles for streams
 - Bio Generator - Channel bio and about section
 - Chat Rules Generator - Community guidelines
 
 **Telegram (3 tools - if included)**:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Announcement Generator - Formatted channel posts
 - Channel Description Generator - Channel/group descriptions
 - Welcome Message Generator - New member greetings
 
 **BeReal (3 tools - if included)**:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Caption Generator - Authentic, witty captions
 - Bio Generator - Casual profile bios
 - RealMoji Suggestions - Reaction ideas for friends
@@ -193,10 +225,14 @@ A casual user wants to make their BeReal posts more interesting with better capt
 - **Generation**: Records each AI content generation (platform, tool, input, output, language, timestamp)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Success Criteria _(mandatory)_
 =======
 ## Success Criteria *(mandatory)*
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+## Success Criteria _(mandatory)_
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 
 ### Measurable Outcomes
 
@@ -206,10 +242,14 @@ A casual user wants to make their BeReal posts more interesting with better capt
 - **SC-004**: Users successfully complete content generation on first attempt 90% of the time
 - **SC-005**: Each platform achieves at least 100 unique users within the first week
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **SC-006**: All 6 language versions (en, es, pt, fr, de, it) of all tools function correctly
 =======
 - **SC-006**: Both English and Spanish versions of all tools function correctly
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+- **SC-006**: All 6 language versions (en, es, pt, fr, de, it) of all tools function correctly
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - **SC-007**: All new pages achieve Lighthouse SEO score of 90+
 - **SC-008**: Spanish URL aliases work correctly with no 404 errors
 

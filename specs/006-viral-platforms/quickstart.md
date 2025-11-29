@@ -47,9 +47,13 @@ For each platform (bluesky, lemon8, kick, telegram, bereal):
 
 Place in `public/platforms/[platform].svg`. Ensure:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Viewbox is square or proper aspect ratio
 - No embedded raster images
 - Works on white background
@@ -136,10 +140,14 @@ export const [tool] = {
   "[key].title": "Tool Title",
   "[key].description": "Short description for cards",
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
   // Form
   "[key].form.input1": "Input Label",
   "[key].form.input1Placeholder": "Placeholder text...",
@@ -149,10 +157,14 @@ export const [tool] = {
   "[key].form.useAgain": "Generate Another",
   "[key].form.error.empty": "This field is required",
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
   // Results
   "[key].result.title": "Your Results",
   "[key].result.copy": "Copy",
@@ -160,10 +172,14 @@ export const [tool] = {
   "[key].result.copyAll": "Copy All",
   "[key].result.copiedAll": "All copied!",
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
   // Features (4 cards)
   "[key].features.feature1.title": "🎯 Feature 1",
   "[key].features.feature1.description": "Description...",
@@ -174,6 +190,7 @@ export const [tool] = {
   "[key].features.feature4.title": "🚀 Feature 4",
   "[key].features.feature4.description": "Description...",
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   // Hero
   "[key].hero.subtitle": "What is this tool?",
@@ -186,6 +203,13 @@ export const [tool] = {
   "[key].hero.description": "Full explanation paragraph...",
   
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+  // Hero
+  "[key].hero.subtitle": "What is this tool?",
+  "[key].hero.description": "Full explanation paragraph...",
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
   // How It Works (3 steps)
   "[key].howItWorks.title": "How It Works",
   "[key].howItWorks.step1.title": "Step 1",
@@ -195,10 +219,14 @@ export const [tool] = {
   "[key].howItWorks.step3.title": "Step 3",
   "[key].howItWorks.step3.description": "Description...",
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
   // FAQ (5 questions)
   "[key].faq.title": "Frequently Asked Questions",
   "[key].faq.q1": "Question 1?",
@@ -212,10 +240,14 @@ export const [tool] = {
   "[key].faq.q5": "Question 5?",
   "[key].faq.a5": "Answer 5",
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
   // Related Tools
   "[key].relatedTools.title": "Related Tools",
 };
@@ -258,6 +290,9 @@ npm run build
 ### 5. Platform Colors Reference
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 | Platform | Primary Color | Tailwind Classes                     |
 | -------- | ------------- | ------------------------------------ |
 | Bluesky  | #0085FF       | `bg-blue-500`, `text-blue-600`       |
@@ -265,6 +300,7 @@ npm run build
 | Kick     | #53FC18       | `bg-green-400`, `text-green-500`     |
 | Telegram | #0088CC       | `bg-sky-500`, `text-sky-600`         |
 | BeReal   | #000000       | `bg-neutral-900`, `text-neutral-900` |
+<<<<<<< HEAD
 =======
 | Platform | Primary Color | Tailwind Classes |
 |----------|--------------|------------------|
@@ -274,41 +310,59 @@ npm run build
 | Telegram | #0088CC | `bg-sky-500`, `text-sky-600` |
 | BeReal | #000000 | `bg-neutral-900`, `text-neutral-900` |
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 
 ### 6. Common Issues
 
 #### Logo not showing
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Check file exists in `/public/platforms/[platform].svg`
 - Verify platform added to `platform-logo.tsx` type union
 - Clear Next.js cache: `rm -rf .next`
 
 #### Translations not working
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Verify key exists in ALL 6 language files
 - Check translation key matches exactly (case-sensitive)
 - Verify locale index.ts exports the new file
 
 #### Spanish URL not working
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Check rewrite rule in `next.config.ts`
 - Restart dev server after config changes
 - Verify source and destination paths match
 
 #### Turnstile failing
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 7de53d3 (spec(006): Add viral platforms specification and implementation plan)
+=======
+
+>>>>>>> 0bbfe39 (Add SVG logos for new platforms and update specifications)
 - Check `.env.local` has `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
 - Check `.env.local` has `TURNSTILE_SECRET_KEY`
 - Verify domain is allowed in Cloudflare dashboard
