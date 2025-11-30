@@ -48,6 +48,7 @@ export default function Navigation() {
         { name: t("captionGenerator.title"), href: "/instagram/caption-generator" },
         { name: t("bioGenerator.title"), href: "/instagram/bio-generator" },
         { name: t("reelScript.title"), href: "/instagram/reel-script" },
+        { name: t("instagramEngagementCalculator.title"), href: "/instagram/engagement-calculator" },
       ],
     },
     {
@@ -88,6 +89,7 @@ export default function Navigation() {
         { name: t("youtubeScript.title"), href: "/youtube/script-generator" },
         { name: t("youtubeTitle.title"), href: "/youtube/title-generator" },
         { name: t("youtubeDescription.title"), href: "/youtube/description-generator" },
+        { name: t("youtubeChannelNameGenerator.title"), href: "/youtube/channel-name-generator" },
       ],
     },
     {
@@ -235,6 +237,36 @@ export default function Navigation() {
         { name: t("berealCaptionGenerator.title"), href: "/bereal/caption-generator" },
         { name: t("berealBioGenerator.title"), href: "/bereal/bio-generator" },
         { name: t("berealRealmojiIdeas.title"), href: "/bereal/realmoji-ideas" },
+      ],
+    },
+    {
+      id: "podcast",
+      name: t("nav.podcast"),
+      emoji: "🎙️",
+      tools: [
+        { name: t("podcastNameGenerator.title"), href: "/podcast/name-generator" },
+        { name: t("podcastDescriptionGenerator.title"), href: "/podcast/description-generator" },
+        { name: t("podcastEpisodeTitleGenerator.title"), href: "/podcast/episode-title-generator" },
+      ],
+    },
+    {
+      id: "email",
+      name: t("nav.email"),
+      emoji: "📧",
+      tools: [
+        { name: t("emailSubjectGenerator.title"), href: "/email/subject-generator" },
+        { name: t("emailNewsletterGenerator.title"), href: "/email/newsletter-generator" },
+        { name: t("emailSignatureGenerator.title"), href: "/email/signature-generator" },
+      ],
+    },
+    {
+      id: "dating",
+      name: t("nav.dating"),
+      emoji: "💕",
+      tools: [
+        { name: t("datingBioGenerator.title"), href: "/dating/bio-generator" },
+        { name: t("datingOpenerGenerator.title"), href: "/dating/opener-generator" },
+        { name: t("datingProfileReview.title"), href: "/dating/profile-review" },
       ],
     },
   ];

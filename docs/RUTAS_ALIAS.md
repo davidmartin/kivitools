@@ -62,11 +62,12 @@ Both URLs display the **same page** (no redirects). This is implemented via `nex
 
 ### Instagram
 
-| English URL                    | Spanish URL                       |
-| ------------------------------ | --------------------------------- |
-| `/instagram/bio-generator`     | `/instagram/generador-bio`        |
-| `/instagram/caption-generator` | `/instagram/generador-subtitulos` |
-| `/instagram/reel-script`       | `/instagram/guion-reel`           |
+| English URL                        | Spanish URL                         |
+| ---------------------------------- | ----------------------------------- |
+| `/instagram/bio-generator`         | `/instagram/generador-bio`          |
+| `/instagram/caption-generator`     | `/instagram/generador-subtitulos`   |
+| `/instagram/reel-script`           | `/instagram/guion-reel`             |
+| `/instagram/engagement-calculator` | `/instagram/calculadora-engagement` |
 
 ### Twitter
 
@@ -86,11 +87,12 @@ Both URLs display the **same page** (no redirects). This is implemented via `nex
 
 ### YouTube
 
-| English URL                      | Spanish URL                        |
-| -------------------------------- | ---------------------------------- |
-| `/youtube/title-generator`       | `/youtube/generador-titulos`       |
-| `/youtube/description-generator` | `/youtube/generador-descripciones` |
-| `/youtube/script-generator`      | `/youtube/generador-guiones`       |
+| English URL                       | Spanish URL                        |
+| --------------------------------- | ---------------------------------- |
+| `/youtube/title-generator`        | `/youtube/generador-titulos`       |
+| `/youtube/description-generator`  | `/youtube/generador-descripciones` |
+| `/youtube/script-generator`       | `/youtube/generador-guiones`       |
+| `/youtube/channel-name-generator` | `/youtube/generador-nombre-canal`  |
 
 ### Reddit
 

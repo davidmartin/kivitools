@@ -183,6 +183,27 @@ export default function Home() {
       icon: "📷",
       color: "black",
     },
+    {
+      name: "Podcast",
+      description: t("podcast.page.description"),
+      href: "/podcast",
+      icon: "🎙️",
+      color: "orange",
+    },
+    {
+      name: "Email",
+      description: t("email.page.description"),
+      href: "/email",
+      icon: "📧",
+      color: "cyan",
+    },
+    {
+      name: "Dating",
+      description: t("dating.page.description"),
+      href: "/dating",
+      icon: "💕",
+      color: "pink",
+    },
   ];
 
   // Popular Tools

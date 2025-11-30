@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal";
+type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating";
 
 interface GenerateToolMetadataProps {
   platform: Platform;
@@ -34,6 +34,9 @@ const platformColors: Record<Platform, string> = {
   kick: "#53FC18",
   telegram: "#0088CC",
   bereal: "#000000",
+  podcast: "#FF6B35",
+  email: "#00BCD4",
+  dating: "#FF1493",
 };
 
 const platformNames: Record<Platform, string> = {
@@ -58,6 +61,9 @@ const platformNames: Record<Platform, string> = {
   kick: "Kick",
   telegram: "Telegram",
   bereal: "BeReal",
+  podcast: "Podcast",
+  email: "Email",
+  dating: "Dating",
 };
 
 /**
@@ -238,6 +244,42 @@ export function generateBreadcrumbJsonLd({
         item: `${baseUrl}/${platform}/${englishSlug}`,
       },
     ],
+  };
+}
+
+/**
+ * Generate Collection Page JSON-LD for platform hub pages
+ */
+export function generateCollectionPageJsonLd({
+  platform,
+  tools,
+}: {
+  platform: Platform;
+  tools: Array<{ name: string; slug: string }>;
+}) {
+  const baseUrl = "https://kivitools.com";
+  const platformName = platformNames[platform];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `${platformName} AI Tools`,
+    description: `Free AI-powered tools for ${platformName}. Generate content, names, descriptions, and more.`,
+    url: `${baseUrl}/${platform}`,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: tools.map((tool, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: tool.name,
+        url: `${baseUrl}/${platform}/${tool.slug}`,
+      })),
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "KiviTools",
+      url: baseUrl,
+    },
   };
 }
 

@@ -46,6 +46,12 @@ export default function YouTubeToolsPage() {
       href: "/youtube/community-post-generator",
       icon: "💬",
     },
+    {
+      name: t("youtubeChannelNameGenerator.title"),
+      description: t("youtubeChannelNameGenerator.description"),
+      href: "/youtube/channel-name-generator",
+      icon: "🎬",
+    },
   ];
 
   return (

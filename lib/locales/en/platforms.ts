@@ -41,5 +41,17 @@ export const platforms = {
     "bereal.page.description": "Captions for when you're 'being real' but need help being interesting (no filters, just vibes).",
     "bereal.info.title": "What is BeReal?",
     "bereal.info.description": "BeReal captures authentic moments with your front and back camera. Our tools help you add the perfect caption to your unfiltered life.",
+    "podcast.page.title": "Free AI Podcast Tools",
+    "podcast.page.description": "Names so catchy your listeners will remember you even without listening (but please, do listen).",
+    "podcast.info.title": "What are Podcast Tools?",
+    "podcast.info.description": "Podcasting is booming and so should your content. Our AI tools help you create memorable podcast names, compelling descriptions, and episode titles that get downloads.",
+    "email.page.title": "Free AI Email Marketing Tools",
+    "email.page.description": "Subject lines that escape the spam folder faster than your ex's messages (finally, good open rates).",
+    "email.info.title": "What are Email Marketing Tools?",
+    "email.info.description": "Email marketing remains the king of ROI. Our AI tools help you craft subject lines that get opened, newsletters that get read, and signatures that get remembered.",
+    "dating.page.title": "Free AI Dating Profile Tools",
+    "dating.page.description": "Bios that get right swipes faster than you can say 'looking for the Jim to my Pam' (originality sold separately).",
+    "dating.info.title": "What are Dating Profile Tools?",
+    "dating.info.description": "First impressions matter, especially online. Our AI tools help you create dating profiles that stand out, conversation starters that actually start conversations, and bios that are authentically you.",
 
 };

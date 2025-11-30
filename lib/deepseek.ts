@@ -5143,3 +5143,123 @@ Generate only the ideas, no explanations.`;
 
     return ideas.length > 0 ? ideas : [content.trim()];
 }
+
+// YouTube Channel Name Generator
+export async function generateYouTubeChannelNames({
+    niche,
+    style,
+    keywords,
+}: {
+    niche: string;
+    style: string;
+    keywords?: string;
+}): Promise<string[]> {
+    const styleDescriptions: Record<string, string> = {
+        professional: "professional, authoritative, and trustworthy",
+        creative: "creative, unique, and memorable",
+        fun: "fun, playful, and energetic",
+        minimalist: "short, simple, and clean (1-2 words max)",
+        brandable: "brandable, catchy, and business-ready",
+    };
+
+    const styleDesc = styleDescriptions[style] || styleDescriptions.creative;
+    const keywordsText = keywords ? `\nIncorporate these keywords if possible: ${keywords}` : "";
+
+    const prompt = `You are an expert YouTube channel branding specialist. Generate 15 unique channel name ideas for a ${niche} channel.
+
+STYLE: ${styleDesc}${keywordsText}
+
+CHANNEL NAME REQUIREMENTS:
+- Easy to spell and pronounce
+- Memorable and unique
+- Available as a YouTube handle (likely)
+- No special characters except underscores
+- Between 3-30 characters
+- Related to the niche
+- NOT generic or overused
+
+FORMAT YOUR RESPONSE AS:
+1. [channel name]
+2. [channel name]
+...
+
+Generate only the names, one per line, without explanations or @ symbols.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 500,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const names = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, "").replace(/^[@]+/, ""))
+        .filter(name => name.length > 0 && name.length <= 30);
+
+    return names.length > 0 ? names.slice(0, 15) : [content.trim()];
+}
+
+// Podcast Name Generator
+export async function generatePodcastNames({
+    topic,
+    style,
+    keywords,
+}: {
+    topic: string;
+    style: string;
+    keywords?: string;
+}): Promise<string[]> {
+    const styleDescriptions: Record<string, string> = {
+        professional: "professional, authoritative, and industry-focused",
+        conversational: "friendly, casual, and approachable",
+        creative: "creative, unique, and attention-grabbing",
+        witty: "clever, punny, and memorable",
+        minimalist: "short, simple, and clean (1-3 words max)",
+    };
+
+    const styleDesc = styleDescriptions[style] || styleDescriptions.creative;
+    const keywordsText = keywords ? `\nIncorporate these keywords if possible: ${keywords}` : "";
+
+    const prompt = `You are an expert podcast naming specialist. Generate 15 unique podcast name ideas about "${topic}".
+
+STYLE: ${styleDesc}${keywordsText}
+
+PODCAST NAME REQUIREMENTS:
+- Catchy and memorable
+- Easy to say and spell
+- Clear about the topic (mostly)
+- Unique and not generic
+- Works well as a brand
+- Between 2-6 words typically
+- No special characters
+
+FORMAT YOUR RESPONSE AS:
+1. [podcast name]
+2. [podcast name]
+...
+
+Generate only the names, one per line, without explanations or taglines.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 500,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const names = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""))
+        .filter(name => name.length > 0 && name.length <= 60);
+
+    return names.length > 0 ? names.slice(0, 15) : [content.trim()];
+}

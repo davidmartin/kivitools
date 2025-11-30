@@ -115,50 +115,50 @@ docs/RUTAS_ALIAS.md                    # Document new routes
 
 **Goal**: High-impact, low-effort tools with excellent SEO potential. Note: TikTok Engagement Calculator already exists.
 
-| # | Tool | Platform | Type | Priority |
-|---|------|----------|------|----------|
-| 1 | Instagram Engagement Rate Calculator | Instagram | Calculator (client-side) | P1 |
-| 2 | TikTok Engagement Rate Calculator | TikTok | Calculator - EXISTS ✅ | - |
-| 3 | YouTube Channel Name Generator | YouTube | AI Generator | P1 |
-| 4 | Podcast Name Generator | Podcast (NEW) | AI Generator | P1 |
-| 5 | Discord Server Name Generator | Discord | AI Generator | P1 |
-| 6 | Twitch Username Generator | Twitch | AI Generator | P1 |
-| 7 | Email Subject Line Generator | Email (NEW) | AI Generator | P1 |
-| 8 | Tinder Bio Generator | Dating (NEW) | AI Generator | P1 |
-| 9 | YouTube Channel Description Generator | YouTube | AI Generator | P1 |
-| 10 | LinkedIn Summary Generator | LinkedIn | AI Generator | P1 |
+| #   | Tool                                  | Platform      | Type                     | Priority |
+| --- | ------------------------------------- | ------------- | ------------------------ | -------- |
+| 1   | Instagram Engagement Rate Calculator  | Instagram     | Calculator (client-side) | P1       |
+| 2   | TikTok Engagement Rate Calculator     | TikTok        | Calculator - EXISTS ✅   | -        |
+| 3   | YouTube Channel Name Generator        | YouTube       | AI Generator             | P1       |
+| 4   | Podcast Name Generator                | Podcast (NEW) | AI Generator             | P1       |
+| 5   | Discord Server Name Generator         | Discord       | AI Generator             | P1       |
+| 6   | Twitch Username Generator             | Twitch        | AI Generator             | P1       |
+| 7   | Email Subject Line Generator          | Email (NEW)   | AI Generator             | P1       |
+| 8   | Tinder Bio Generator                  | Dating (NEW)  | AI Generator             | P1       |
+| 9   | YouTube Channel Description Generator | YouTube       | AI Generator             | P1       |
+| 10  | LinkedIn Summary Generator            | LinkedIn      | AI Generator             | P1       |
 
 **New Platforms to Create**: Podcast, Email, Dating (3 new platform hubs)
 
 ### Phase 2: Medium Expansion (10 tools, 3 weeks)
 
-| # | Tool | Platform | Type | Priority |
-|---|------|----------|------|----------|
-| 1 | YouTube Earnings Calculator | YouTube | Calculator (client-side) | P2 |
-| 2 | Spotify Streams Calculator | Spotify | Calculator (client-side) | P2 |
-| 3 | Twitch Sub Calculator | Twitch | Calculator (client-side) | P2 |
-| 4 | Podcast Episode Title Generator | Podcast | AI Generator | P2 |
-| 5 | Podcast Description Generator | Podcast | AI Generator | P2 |
-| 6 | Show Notes Generator | Podcast | AI Generator | P2 |
-| 7 | Cold Email Generator | Email | AI Generator | P2 |
-| 8 | Newsletter Name Generator | Email | AI Generator | P2 |
-| 9 | GitHub Profile README Generator | GitHub (NEW) | AI Generator | P2 |
-| 10 | Gamertag Generator | Gaming (NEW) | AI Generator | P2 |
+| #   | Tool                            | Platform     | Type                     | Priority |
+| --- | ------------------------------- | ------------ | ------------------------ | -------- |
+| 1   | YouTube Earnings Calculator     | YouTube      | Calculator (client-side) | P2       |
+| 2   | Spotify Streams Calculator      | Spotify      | Calculator (client-side) | P2       |
+| 3   | Twitch Sub Calculator           | Twitch       | Calculator (client-side) | P2       |
+| 4   | Podcast Episode Title Generator | Podcast      | AI Generator             | P2       |
+| 5   | Podcast Description Generator   | Podcast      | AI Generator             | P2       |
+| 6   | Show Notes Generator            | Podcast      | AI Generator             | P2       |
+| 7   | Cold Email Generator            | Email        | AI Generator             | P2       |
+| 8   | Newsletter Name Generator       | Email        | AI Generator             | P2       |
+| 9   | GitHub Profile README Generator | GitHub (NEW) | AI Generator             | P2       |
+| 10  | Gamertag Generator              | Gaming (NEW) | AI Generator             | P2       |
 
 **New Platforms to Create**: GitHub, Gaming (2 new platform hubs)
 
 ### Phase 3: New Platforms (8 tools, 4 weeks)
 
-| # | Tool | Platform | Type | Priority |
-|---|------|----------|------|----------|
-| 1 | Medium Article Title Generator | Medium (NEW) | AI Generator | P3 |
-| 2 | Etsy Product Description | Etsy (NEW) | AI Generator | P3 |
-| 3 | OnlyFans Bio Generator | OnlyFans (NEW) | AI Generator | P3 |
-| 4 | Patreon Tier Description | Patreon (NEW) | AI Generator | P3 |
-| 5 | Fiverr Gig Description | Fiverr (NEW) | AI Generator | P3 |
-| 6 | Substack Welcome Email | Substack (NEW) | AI Generator | P3 |
-| 7 | Dating App Bio Generator | Dating | AI Generator | P3 |
-| 8 | Portfolio Bio Generator | General | AI Generator | P3 |
+| #   | Tool                           | Platform       | Type         | Priority |
+| --- | ------------------------------ | -------------- | ------------ | -------- |
+| 1   | Medium Article Title Generator | Medium (NEW)   | AI Generator | P3       |
+| 2   | Etsy Product Description       | Etsy (NEW)     | AI Generator | P3       |
+| 3   | OnlyFans Bio Generator         | OnlyFans (NEW) | AI Generator | P3       |
+| 4   | Patreon Tier Description       | Patreon (NEW)  | AI Generator | P3       |
+| 5   | Fiverr Gig Description         | Fiverr (NEW)   | AI Generator | P3       |
+| 6   | Substack Welcome Email         | Substack (NEW) | AI Generator | P3       |
+| 7   | Dating App Bio Generator       | Dating         | AI Generator | P3       |
+| 8   | Portfolio Bio Generator        | General        | AI Generator | P3       |
 
 **New Platforms to Create**: Medium, Etsy, OnlyFans, Patreon, Fiverr, Substack (6 new platform hubs)
 
@@ -167,6 +167,7 @@ docs/RUTAS_ALIAS.md                    # Document new routes
 Each tool requires these files/updates:
 
 ### For Calculator Tools (No AI)
+
 - [ ] `app/(tools)/[platform]/[tool]/page.tsx` - Client component with calculation logic
 - [ ] `lib/translations.ts` or `lib/locales/*/[platform].ts` - Add all translation keys (ES/EN)
 - [ ] `next.config.ts` - Add Spanish URL rewrite
@@ -174,6 +175,7 @@ Each tool requires these files/updates:
 - [ ] Navigation update (if needed)
 
 ### For AI Generator Tools
+
 - [ ] `app/(tools)/[platform]/[tool]/page.tsx` - Client component
 - [ ] `app/api/tools/[platform]/[tool]/route.ts` - API route with DeepSeek
 - [ ] `lib/deepseek.ts` - Add generation function
@@ -183,6 +185,7 @@ Each tool requires these files/updates:
 - [ ] Navigation update (if needed)
 
 ### For New Platforms
+
 - [ ] `app/(tools)/[platform]/page.tsx` - Platform hub page
 - [ ] `app/(tools)/[platform]/layout.tsx` - Platform layout
 - [ ] `app/components/navigation.tsx` - Add platform to nav
@@ -208,12 +211,14 @@ Before merging any tool:
 ## Dependencies & Risks
 
 ### Dependencies
+
 - DeepSeek API availability and rate limits
 - Appwrite database for logging
 - Turnstile for bot protection
 - Vercel deployment
 
 ### Risks
+
 - **Risk**: High competition keywords may take longer to rank
   - **Mitigation**: Focus on long-tail Spanish keywords initially
 - **Risk**: DeepSeek API costs increase with more tools

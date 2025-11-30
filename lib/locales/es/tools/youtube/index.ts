@@ -4,6 +4,7 @@ import { description_generator } from "./description-generator";
 import { youtubeTagGenerator } from "./tag-generator";
 import { youtubeVideoIdeas } from "./video-ideas";
 import { youtubeCommunityPostGenerator } from "./community-post-generator";
+import { youtubeChannelNameGenerator } from "./channel-name-generator";
 
 export const youtube = {
   ...title_generator,
@@ -12,4 +13,5 @@ export const youtube = {
   ...youtubeTagGenerator,
   ...youtubeVideoIdeas,
   ...youtubeCommunityPostGenerator,
+  ...youtubeChannelNameGenerator,
 };

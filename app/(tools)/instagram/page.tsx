@@ -28,6 +28,12 @@ export default function InstagramToolsPage() {
       href: "/instagram/reel-script",
       icon: "🎬",
     },
+    {
+      name: t("instagramEngagementCalculator.title"),
+      description: t("instagramEngagementCalculator.description"),
+      href: "/instagram/engagement-calculator",
+      icon: "📊",
+    },
   ];
 
   return (

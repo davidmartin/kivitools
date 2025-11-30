@@ -188,7 +188,7 @@ Plataformas no cubiertas actualmente con alto potencial:
 Herramientas de baja dificultad y alto impacto SEO (nota: TikTok Engagement Calculator ya existe):
 
 1. Instagram Engagement Rate Calculator
-2. ~~TikTok Engagement Rate Calculator~~ *(YA EXISTE)*
+2. ~~TikTok Engagement Rate Calculator~~ _(YA EXISTE)_
 3. YouTube Channel Name Generator
 4. Podcast Name Generator
 5. Discord Server Name Generator

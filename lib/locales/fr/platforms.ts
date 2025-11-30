@@ -41,5 +41,16 @@ export const platforms = {
     "bereal.page.description": "Des légendes pour quand tu 'es real' mais que t'as besoin d'aide pour être intéressant (sans filtre, juste des vibes).",
     "bereal.info.title": "C'est quoi BeReal ?",
     "bereal.info.description": "BeReal capture des moments authentiques avec ta caméra avant et arrière. Nos outils t'aident à ajouter la légende parfaite à ta vie sans filtre.",
-
+    "podcast.page.title": "Outils IA Gratuits pour Podcast",
+    "podcast.page.description": "Des noms tellement accrocheurs que tes auditeurs se souviendront de toi même sans t'écouter (mais écoute quand même).",
+    "podcast.info.title": "C'est quoi les Outils Podcast ?",
+    "podcast.info.description": "Le podcasting explose et ton contenu devrait aussi. Nos outils IA t'aident à créer des noms mémorables, des descriptions convaincantes et des titres d'épisodes qui génèrent des téléchargements.",
+    "email.page.title": "Outils IA Gratuits pour Email Marketing",
+    "email.page.description": "Des objets qui échappent au spam plus vite que les messages de ton ex (enfin, de bons taux d'ouverture).",
+    "email.info.title": "C'est quoi les Outils Email Marketing ?",
+    "email.info.description": "L'email marketing reste le roi du ROI. Nos outils IA t'aident à créer des objets qui sont ouverts, des newsletters qui sont lues et des signatures dont on se souvient.",
+    "dating.page.title": "Outils IA Gratuits pour Profil de Rencontre",
+    "dating.page.description": "Des bios qui récoltent des swipes à droite plus vite que tu peux dire 'cherche le Jim de ma Pam' (originalité non incluse).",
+    "dating.info.title": "C'est quoi les Outils Profil de Rencontre ?",
+    "dating.info.description": "Les premières impressions comptent, surtout en ligne. Nos outils IA t'aident à créer des profils de rencontre qui se démarquent, des phrases d'accroche qui marchent vraiment et des bios authentiquement toi.",
 };

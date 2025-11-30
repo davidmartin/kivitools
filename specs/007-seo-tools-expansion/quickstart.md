@@ -53,17 +53,20 @@ export default function InstagramEngagementCalculatorPage() {
     const f = parseInt(followers) || 0;
     const l = parseInt(likes) || 0;
     const c = parseInt(comments) || 0;
-    
+
     if (f === 0) return;
-    
+
     const rate = ((l + c) / f) * 100;
     setResult(Math.round(rate * 100) / 100);
   };
 
   const getEngagementLevel = (rate: number) => {
-    if (rate >= 6) return { text: t("calculator.excellent"), color: "text-green-600" };
-    if (rate >= 3) return { text: t("calculator.good"), color: "text-blue-600" };
-    if (rate >= 1) return { text: t("calculator.average"), color: "text-yellow-600" };
+    if (rate >= 6)
+      return { text: t("calculator.excellent"), color: "text-green-600" };
+    if (rate >= 3)
+      return { text: t("calculator.good"), color: "text-blue-600" };
+    if (rate >= 1)
+      return { text: t("calculator.average"), color: "text-yellow-600" };
     return { text: t("calculator.low"), color: "text-red-600" };
   };
 
@@ -198,6 +201,7 @@ In `docs/RUTAS_ALIAS.md`:
 ### Step 1: Create Page Component
 
 Similar to calculator, but with:
+
 - `turnstileToken` state
 - `TurnstileWidget` component
 - API fetch instead of client calculation
@@ -307,12 +311,12 @@ Return ONLY the names, one per line, numbered 1-10.`;
   });
 
   const content = completion.choices[0]?.message?.content || "";
-  
+
   // Parse numbered list
   const names = content
     .split("\n")
-    .map(line => line.replace(/^\d+\.\s*/, "").trim())
-    .filter(name => name.length > 0 && name.length <= 30);
+    .map((line) => line.replace(/^\d+\.\s*/, "").trim())
+    .filter((name) => name.length > 0 && name.length <= 30);
 
   return names;
 }
@@ -323,27 +327,33 @@ Return ONLY the names, one per line, numbered 1-10.`;
 ### Full Checklist
 
 1. **Create platform directory**:
+
    ```bash
    mkdir -p app/\(tools\)/podcast
    ```
 
 2. **Create hub page** (`page.tsx`):
+
    - List all tools for this platform
    - Platform description
    - Platform badge
 
 3. **Create layout** (`layout.tsx`):
+
    - Metadata for platform
    - Breadcrumbs
 
 4. **Update navigation** (`app/components/navigation.tsx`):
+
    - Add to `platforms` array
 
 5. **Add translations**:
+
    - `nav.podcast` key
    - Platform page translations
 
 6. **Update SEO** (`lib/seo-metadata.ts`):
+
    - Add platform to `platformColors`
    - Add platform to `platformNames`
 

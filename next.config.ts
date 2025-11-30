@@ -33,6 +33,7 @@ const nextConfig: NextConfig = {
       { source: "/instagram/generador-bio", destination: "/instagram/bio-generator" },
       { source: "/instagram/generador-subtitulos", destination: "/instagram/caption-generator" },
       { source: "/instagram/guion-reel", destination: "/instagram/reel-script" },
+      { source: "/instagram/calculadora-engagement", destination: "/instagram/engagement-calculator" },
 
       // Twitter - Rutas en español
       { source: "/twitter/generador-bio", destination: "/twitter/bio-generator" },
@@ -48,6 +49,7 @@ const nextConfig: NextConfig = {
       { source: "/youtube/generador-titulos", destination: "/youtube/title-generator" },
       { source: "/youtube/generador-descripciones", destination: "/youtube/description-generator" },
       { source: "/youtube/generador-guiones", destination: "/youtube/script-generator" },
+      { source: "/youtube/generador-nombre-canal", destination: "/youtube/channel-name-generator" },
 
       // Reddit - Rutas en español
       { source: "/reddit/generador-publicaciones", destination: "/reddit/post-generator" },
