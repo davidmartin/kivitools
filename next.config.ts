@@ -116,6 +116,14 @@ const nextConfig: NextConfig = {
       { source: "/patreon/generador-descripcion-tier", destination: "/patreon/tier-description-generator" },
       { source: "/patreon/generador-pagina-about", destination: "/patreon/about-page-generator" },
       { source: "/patreon/generador-post", destination: "/patreon/post-generator" },
+
+      // Blog - Rutas en español (bilingual posts)
+      { source: "/blog/guia-crecer-twitter-2025", destination: "/blog/twitter-growth-guide-2025" },
+      { source: "/blog/guia-perfil-linkedin-2025", destination: "/blog/linkedin-profile-guide-2025" },
+      { source: "/blog/guia-calendario-contenido-2025", destination: "/blog/content-calendar-guide-2025" },
+      { source: "/blog/guia-empezar-twitch-2025", destination: "/blog/twitch-streaming-guide-2025" },
+      { source: "/blog/guia-reddit-portada-2025", destination: "/blog/reddit-front-page-guide-2025" },
+      { source: "/blog/estrategia-playlist-spotify-2025", destination: "/blog/spotify-playlist-strategy-2025" },
     ];
   },
 };
