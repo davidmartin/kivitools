@@ -41,5 +41,16 @@ export const platforms = {
     "bereal.page.description": "Bildunterschriften für wenn du 'real' bist, aber Hilfe brauchst, interessant zu sein (keine Filter, nur Vibes).",
     "bereal.info.title": "Was ist BeReal?",
     "bereal.info.description": "BeReal fängt authentische Momente mit deiner Vorder- und Rückkamera ein. Unsere Tools helfen dir, die perfekte Bildunterschrift zu deinem ungefilterten Leben hinzuzufügen.",
-
+    "podcast.page.title": "Kostenlose KI Podcast-Tools",
+    "podcast.page.description": "Namen so einprägsam, dass deine Hörer sich an dich erinnern, auch ohne zuzuhören (aber bitte, hör zu).",
+    "podcast.info.title": "Was sind Podcast-Tools?",
+    "podcast.info.description": "Podcasting boomt und dein Content sollte es auch. Unsere KI-Tools helfen dir, einprägsame Namen, überzeugende Beschreibungen und Episodentitel zu erstellen, die Downloads bringen.",
+    "email.page.title": "Kostenlose KI E-Mail-Marketing-Tools",
+    "email.page.description": "Betreffzeilen, die dem Spam-Ordner schneller entkommen als die Nachrichten deines Ex (endlich gute Öffnungsraten).",
+    "email.info.title": "Was sind E-Mail-Marketing-Tools?",
+    "email.info.description": "E-Mail-Marketing ist nach wie vor König des ROI. Unsere KI-Tools helfen dir, Betreffzeilen zu erstellen, die geöffnet werden, Newsletter, die gelesen werden, und Signaturen, an die man sich erinnert.",
+    "dating.page.title": "Kostenlose KI Dating-Profil-Tools",
+    "dating.page.description": "Bios, die schneller rechts gewischt werden, als du 'auf der Suche nach meiner zweiten Hälfte' sagen kannst (Originalität nicht inbegriffen).",
+    "dating.info.title": "Was sind Dating-Profil-Tools?",
+    "dating.info.description": "Der erste Eindruck zählt, besonders online. Unsere KI-Tools helfen dir, Dating-Profile zu erstellen, die herausstechen, Gesprächseinstiege, die wirklich funktionieren, und Bios, die authentisch du sind.",
 };

@@ -10,7 +10,7 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "lemon8" | "kick" | "telegram" | "bereal";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "lemon8" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
@@ -34,6 +34,7 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "captionGenerator.title", href: "/instagram/caption-generator" },
     { name: "bioGenerator.title", href: "/instagram/bio-generator" },
     { name: "reelScript.title", href: "/instagram/reel-script" },
+    { name: "instagramEngagementCalculator.title", href: "/instagram/engagement-calculator" },
   ],
   twitter: [
     { name: "threadMaker.title", href: "/twitter/thread-maker" },
@@ -52,6 +53,7 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "youtubeTagGenerator.title", href: "/youtube/tag-generator" },
     { name: "youtubeVideoIdeas.title", href: "/youtube/video-ideas" },
     { name: "youtubeCommunityPost.title", href: "/youtube/community-post-generator" },
+    { name: "youtubeChannelNameGenerator.title", href: "/youtube/channel-name-generator" },
   ],
   reddit: [
     { name: "redditPost.title", href: "/reddit/post-generator" },
@@ -123,6 +125,21 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "berealCaptionGenerator.title", href: "/bereal/caption-generator" },
     { name: "berealBioGenerator.title", href: "/bereal/bio-generator" },
     { name: "berealRealmojiIdeas.title", href: "/bereal/realmoji-ideas" },
+  ],
+  podcast: [
+    { name: "podcastNameGenerator.title", href: "/podcast/name-generator" },
+    { name: "podcastDescriptionGenerator.title", href: "/podcast/description-generator" },
+    { name: "podcastEpisodeTitleGenerator.title", href: "/podcast/episode-title-generator" },
+  ],
+  email: [
+    { name: "emailSubjectGenerator.title", href: "/email/subject-generator" },
+    { name: "emailNewsletterGenerator.title", href: "/email/newsletter-generator" },
+    { name: "emailSignatureGenerator.title", href: "/email/signature-generator" },
+  ],
+  dating: [
+    { name: "datingBioGenerator.title", href: "/dating/bio-generator" },
+    { name: "datingOpenerGenerator.title", href: "/dating/opener-generator" },
+    { name: "datingProfileReview.title", href: "/dating/profile-review" },
   ],
 };
 

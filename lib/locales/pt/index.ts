@@ -23,6 +23,9 @@ import { bluesky } from "./tools/bluesky";
 import { kick } from "./tools/kick";
 import { telegram } from "./tools/telegram";
 import { bereal } from "./tools/bereal";
+import { podcast } from "./tools/podcast";
+import { email } from "./tools/email";
+import { dating } from "./tools/dating";
 import { builder } from "./builder";
 import { dashboard } from "./dashboard";
 import { admin } from "./admin";
@@ -53,6 +56,9 @@ export const pt = {
     ...kick,
     ...telegram,
     ...bereal,
+    ...podcast,
+    ...email,
+    ...dating,
     ...builder,
     ...dashboard,
     ...admin,

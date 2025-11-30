@@ -1,14 +1,15 @@
-import { postGenerator } from "./post-generator";
 import { bioGenerator } from "./bio-generator";
+import { postGenerator } from "./post-generator";
 import { threadComposer } from "./thread-composer";
 
 export const bluesky = {
-    "bluesky.page.title": "Outils Bluesky",
-    "bluesky.page.description": "Des skeets tellement feu que l'algorithme ne sait plus quoi faire (décentralisé et délicieux)",
-    "bluesky.info.title": "Pourquoi Utiliser les Outils Bluesky ?",
-    "bluesky.info.description": "Bluesky est le réseau social décentralisé basé sur le protocole AT. C'est là que traînent les tech-savvy, les fans d'open-source et ceux qui ont quitté Twitter sans regret. Nos outils IA créent du contenu natif pour la plateforme - pas des tweets recyclés.",
+    // Bluesky Page
+    "bluesky.page.title": "Bluesky Tools",
+    "bluesky.page.description": "Skeets so fire the algorithm doesn't even know what to do with you (decentralized and delicious)",
+    "bluesky.info.title": "Why Use Bluesky Tools?",
+    "bluesky.info.description": "Bluesky is the decentralized social network built on the AT Protocol. It's where the tech-savvy, open-source-loving, 'I left Twitter and never looked back' crowd hangs out. Our AI tools help you create content that feels native to the platform - not recycled tweets or corporate fluff. Generate posts, craft the perfect bio, and compose threads that make people actually read to the end.",
 
-    ...postGenerator,
     ...bioGenerator,
+    ...postGenerator,
     ...threadComposer,
 };

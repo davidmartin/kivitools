@@ -3,7 +3,7 @@ import { comment_generator } from "./comment-generator";
 import { post_generator } from "./post-generator";
 
 export const reddit = {
-  ...ama_generator,
-  ...comment_generator,
-  ...post_generator,
+    ...ama_generator,
+    ...comment_generator,
+    ...post_generator,
 };
