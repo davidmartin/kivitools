@@ -2012,6 +2012,356 @@ Return exactly 3 descriptions, one per line, separated by clear markers.`;
     }
 }
 
+// Suno Song Title Generator
+export async function generateSunoSongTitles({
+    description,
+    genre,
+    mood,
+    language,
+}: {
+    description: string;
+    genre: string;
+    mood: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are a creative music industry expert who specializes in crafting memorable, catchy song titles. Create titles that:
+- Are memorable and unique
+- Match the genre and mood
+- Evoke emotion and curiosity
+- Work well for streaming platforms
+- Are concise but impactful (1-5 words typically)
+- Could trend on music charts
+
+Generate titles in ${targetLanguage}.`;
+
+    const userPrompt = `Generate 10 creative and unique song titles for a song with these characteristics:
+- Description/Theme: ${description}
+- Genre: ${genre}
+- Mood: ${mood}
+- Language: ${targetLanguage}
+
+Return ONLY the 10 titles, one per line, numbered 1-10.
+Do not include any explanations or additional text.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 500,
+            temperature: 0.9,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        const titles = content
+            .split("\n")
+            .map((line: string) => line.replace(/^\d+[\.\)]\s*/, "").trim())
+            .filter((line: string) => line.length > 0)
+            .slice(0, 10);
+
+        return titles.length > 0 ? titles : ["Untitled Song"];
+    } catch (error) {
+        console.error("Error generating song titles:", error);
+        throw new Error("Failed to generate song titles");
+    }
+}
+
+// Suno Song Tag Generator
+export async function generateSunoSongTags({
+    description,
+    genre,
+    mood,
+    language,
+}: {
+    description: string;
+    genre: string;
+    mood: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert at music metadata and discoverability optimization. Create tags that:
+- Maximize discoverability on Suno and music platforms
+- Include a mix of broad and niche tags
+- Cover genre, mood, theme, and production style
+- Are commonly searched terms
+- Follow music industry tagging best practices
+- Include relevant trending tags
+
+Generate tags in ${targetLanguage}.`;
+
+    const userPrompt = `Generate 18 optimized tags for a song on Suno with these characteristics:
+- Description/Theme: ${description}
+- Genre: ${genre}
+- Mood: ${mood}
+- Language: ${targetLanguage}
+
+Categories to cover:
+- 3-4 genre tags
+- 3-4 mood/vibe tags
+- 4-5 theme/topic tags
+- 2-3 production style tags
+- 2-3 audience/era tags
+
+Return ONLY the tags as a comma-separated list on a single line.
+Do not number them or add any explanations.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 400,
+            temperature: 0.85,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        const tags = content
+            .split(",")
+            .map((tag: string) => tag.trim())
+            .filter((tag: string) => tag.length > 0)
+            .slice(0, 20);
+
+        return tags.length > 0 ? tags : ["music", "song"];
+    } catch (error) {
+        console.error("Error generating song tags:", error);
+        throw new Error("Failed to generate song tags");
+    }
+}
+
+// Suno Album Name Generator
+export async function generateSunoAlbumNames({
+    concept,
+    genre,
+    releaseType,
+    trackCount,
+    language,
+}: {
+    concept: string;
+    genre: string;
+    releaseType: string;
+    trackCount?: number;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+    const trackInfo = trackCount ? `(${trackCount} tracks)` : "";
+
+    const systemPrompt = `You are a creative music branding expert who specializes in album naming. Create album names that:
+- Capture the album's essence and theme
+- Are memorable and marketable
+- Work well for the release type (album, EP, single, mixtape)
+- Match the genre aesthetic
+- Sound professional and artistic
+- Could be displayed on streaming platforms
+
+Generate names in ${targetLanguage}.`;
+
+    const userPrompt = `Generate 10 creative album/release names for:
+- Concept/Theme: ${concept}
+- Genre: ${genre}
+- Release Type: ${releaseType} ${trackInfo}
+- Language: ${targetLanguage}
+
+Return ONLY the 10 names, one per line, numbered 1-10.
+Do not include any explanations or additional text.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 500,
+            temperature: 0.9,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        const names = content
+            .split("\n")
+            .map((line: string) => line.replace(/^\d+[\.\)]\s*/, "").trim())
+            .filter((line: string) => line.length > 0)
+            .slice(0, 10);
+
+        return names.length > 0 ? names : ["Untitled Album"];
+    } catch (error) {
+        console.error("Error generating album names:", error);
+        throw new Error("Failed to generate album names");
+    }
+}
+
+// Suno Cover Art Prompt Generator
+export async function generateSunoCoverArtPrompts({
+    songTitle,
+    genre,
+    mood,
+    artStyle,
+    targetPlatform,
+    language,
+}: {
+    songTitle: string;
+    genre: string;
+    mood: string;
+    artStyle: string;
+    targetPlatform: string;
+    language: string;
+}): Promise<string[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const platformInstructions: Record<string, string> = {
+        midjourney: "Include Midjourney parameters like --ar 1:1 --v 6 --style raw at the end. Use :: for emphasis.",
+        dalle: "Write as natural, descriptive prose. DALL-E prefers detailed sentences over keywords.",
+        "stable-diffusion": "Include negative prompts. Use (parentheses) for emphasis and weights like :1.5.",
+        generic: "Write a balanced, detailed prompt that works with any AI image generator.",
+    };
+
+    const platformGuide = platformInstructions[targetPlatform] || platformInstructions.generic;
+
+    const systemPrompt = `You are an expert at creating prompts for AI image generators, specializing in album cover art. Create prompts that:
+- Produce visually stunning, professional album covers
+- Match the music's mood and genre
+- Work specifically for ${targetPlatform}
+- Include appropriate artistic style directions
+- Specify composition, lighting, and color palette
+- Result in 1:1 square format suitable for album art
+
+${platformGuide}
+
+Generate prompts in ${targetLanguage}.`;
+
+    const userPrompt = `Create 4 detailed AI art prompts for an album cover with:
+- Song/Album Title: ${songTitle}
+- Genre: ${genre}
+- Mood: ${mood}
+- Art Style: ${artStyle}
+- Target Platform: ${targetPlatform}
+- Language: ${targetLanguage}
+
+Each prompt should be unique and ready to paste into ${targetPlatform}.
+Number each prompt 1-4 and make them detailed (2-4 sentences each).`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 1200,
+            temperature: 0.9,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+        // Split by numbered lines
+        const prompts = content
+            .split(/\n(?=\d+[\.\)])/g)
+            .map((line: string) => line.replace(/^\d+[\.\)]\s*/, "").trim())
+            .filter((line: string) => line.length > 20)
+            .slice(0, 5);
+
+        return prompts.length > 0 ? prompts : ["Album cover art"];
+    } catch (error) {
+        console.error("Error generating cover art prompts:", error);
+        throw new Error("Failed to generate cover art prompts");
+    }
+}
+
+// Suno Remix Idea Generator
+export interface RemixIdea {
+    title: string;
+    targetGenre: string;
+    tempoChange: "faster" | "slower" | "similar";
+    keepElements: string[];
+    addElements: string[];
+    productionNotes: string;
+}
+
+export async function generateSunoRemixIdeas({
+    originalSong,
+    originalGenre,
+    remixStyle,
+    language,
+}: {
+    originalSong: string;
+    originalGenre: string;
+    remixStyle: string;
+    language: string;
+}): Promise<RemixIdea[]> {
+    const targetLanguage = languageNames[language] || "English";
+
+    const systemPrompt = `You are an expert music producer and remix artist. Create detailed, actionable remix concepts that:
+- Transform the original while keeping its essence
+- Match the requested remix style
+- Include specific production directions
+- Are achievable in Suno AI
+- Offer fresh creative perspectives
+- Include genre-appropriate elements
+
+Generate ideas in ${targetLanguage}.`;
+
+    const userPrompt = `Generate 6 detailed remix ideas for:
+- Original Song: ${originalSong}
+- Original Genre: ${originalGenre}
+- Remix Style: ${remixStyle}
+- Language: ${targetLanguage}
+
+For EACH remix idea, provide in this EXACT JSON format:
+{
+  "title": "Creative remix title",
+  "targetGenre": "New genre",
+  "tempoChange": "faster" | "slower" | "similar",
+  "keepElements": ["element1", "element2"],
+  "addElements": ["new element1", "new element2"],
+  "productionNotes": "Brief production guidance"
+}
+
+Return a JSON array of 6 remix ideas.`;
+
+    try {
+        const completion = await deepseek.chat.completions.create({
+            model: MODEL_NAME,
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userPrompt },
+            ],
+            max_tokens: 2000,
+            temperature: 0.9,
+        });
+
+        const content = completion.choices[0]?.message?.content?.trim() || "";
+
+        // Try to extract JSON array from content
+        const jsonMatch = content.match(/\[[\s\S]*\]/);
+        if (jsonMatch) {
+            try {
+                const parsed = JSON.parse(jsonMatch[0]) as RemixIdea[];
+                return parsed.slice(0, 7);
+            } catch {
+                // If JSON parsing fails, create default structure
+            }
+        }
+
+        // Fallback: return default ideas
+        return [{
+            title: "Club Remix",
+            targetGenre: "House",
+            tempoChange: "faster",
+            keepElements: ["melody", "vocals"],
+            addElements: ["four-on-floor beat", "synth bass"],
+            productionNotes: "Add driving beat and electronic elements"
+        }];
+    } catch (error) {
+        console.error("Error generating remix ideas:", error);
+        throw new Error("Failed to generate remix ideas");
+    }
+}
+
 // ==================== ElevenLabs Tools ====================
 
 export async function generateVoiceScript({

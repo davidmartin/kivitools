@@ -72,8 +72,13 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
   ],
   suno: [
     { name: "sunoLyricGenerator.title", href: "/suno/lyric-generator" },
-    { name: "sunoMusicPrompt.title", href: "/suno/music-prompt-generator" },
-    { name: "sunoSongDescription.title", href: "/suno/song-description-generator" },
+    { name: "sunoPromptGenerator.title", href: "/suno/prompt-generator" },
+    { name: "sunoDescriptionGenerator.title", href: "/suno/description-generator" },
+    { name: "sunoSongTitleGenerator.title", href: "/suno/song-title-generator" },
+    { name: "sunoSongTagGenerator.title", href: "/suno/song-tag-generator" },
+    { name: "sunoAlbumNameGenerator.title", href: "/suno/album-name-generator" },
+    { name: "sunoCoverArtPromptGenerator.title", href: "/suno/cover-art-prompt-generator" },
+    { name: "sunoRemixIdeaGenerator.title", href: "/suno/remix-idea-generator" },
   ],
   elevenlabs: [
     { name: "voiceScriptWriter.title", href: "/elevenlabs/voice-script-writer" },

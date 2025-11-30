@@ -172,6 +172,19 @@ Both URLs display the **same page** (no redirects). This is implemented via `nex
 | `/patreon/about-page-generator`       | `/patreon/generador-pagina-about`     |
 | `/patreon/post-generator`             | `/patreon/generador-post`             |
 
+### Suno
+
+| English URL                        | Spanish URL                           |
+| ---------------------------------- | ------------------------------------- |
+| `/suno/lyric-generator`            | `/suno/generador-letras`              |
+| `/suno/prompt-generator`           | `/suno/generador-prompts`             |
+| `/suno/description-generator`      | `/suno/generador-descripciones`       |
+| `/suno/song-title-generator`       | `/suno/generador-titulos-canciones`   |
+| `/suno/song-tag-generator`         | `/suno/generador-etiquetas-canciones` |
+| `/suno/album-name-generator`       | `/suno/generador-nombres-album`       |
+| `/suno/cover-art-prompt-generator` | `/suno/generador-prompts-portada`     |
+| `/suno/remix-idea-generator`       | `/suno/generador-ideas-remix`         |
+
 ---
 
 ## Spanish URL Naming Conventions

@@ -498,29 +498,61 @@ export default function SunoLyricGeneratorPage() {
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
               {t("sunoLyricGenerator.relatedTools.title")}
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link
-                href="/suno/music-prompt-generator"
-                className="bg-surface hover:bg-accent-hover border border-border rounded-lg p-4 text-center transition-colors"
+                href="/suno/prompt-generator"
+                className="bg-surface hover:bg-purple-50 dark:hover:bg-purple-900/20 border border-border rounded-lg p-4 text-center transition-colors"
               >
-                <span className="text-sm font-medium text-foreground hover:text-accent">
-                  🎶 Music Prompt
+                <span className="text-sm font-medium text-foreground hover:text-purple-600">
+                  {t("sunoPromptGenerator.title")}
                 </span>
               </Link>
               <Link
-                href="/suno/song-description-generator"
-                className="bg-surface hover:bg-accent-hover border border-border rounded-lg p-4 text-center transition-colors"
+                href="/suno/description-generator"
+                className="bg-surface hover:bg-purple-50 dark:hover:bg-purple-900/20 border border-border rounded-lg p-4 text-center transition-colors"
               >
-                <span className="text-sm font-medium text-foreground hover:text-accent">
-                  📝 Song Description
+                <span className="text-sm font-medium text-foreground hover:text-purple-600">
+                  {t("sunoDescriptionGenerator.title")}
                 </span>
               </Link>
               <Link
-                href="/suno"
-                className="bg-surface hover:bg-accent-hover border border-border rounded-lg p-4 text-center transition-colors"
+                href="/suno/song-title-generator"
+                className="bg-surface hover:bg-purple-50 dark:hover:bg-purple-900/20 border border-border rounded-lg p-4 text-center transition-colors"
               >
-                <span className="text-sm font-medium text-foreground hover:text-accent">
-                  🎵 All Suno Tools
+                <span className="text-sm font-medium text-foreground hover:text-purple-600">
+                  {t("sunoSongTitleGenerator.title")}
+                </span>
+              </Link>
+              <Link
+                href="/suno/song-tag-generator"
+                className="bg-surface hover:bg-purple-50 dark:hover:bg-purple-900/20 border border-border rounded-lg p-4 text-center transition-colors"
+              >
+                <span className="text-sm font-medium text-foreground hover:text-purple-600">
+                  {t("sunoSongTagGenerator.title")}
+                </span>
+              </Link>
+              <Link
+                href="/suno/album-name-generator"
+                className="bg-surface hover:bg-purple-50 dark:hover:bg-purple-900/20 border border-border rounded-lg p-4 text-center transition-colors"
+              >
+                <span className="text-sm font-medium text-foreground hover:text-purple-600">
+                  {t("sunoAlbumNameGenerator.title")}
+                </span>
+              </Link>
+              <Link
+                href="/suno/cover-art-prompt-generator"
+                className="bg-surface hover:bg-purple-50 dark:hover:bg-purple-900/20 border border-border rounded-lg p-4 text-center transition-colors"
+              >
+                <span className="text-sm font-medium text-foreground hover:text-purple-600">
+                  {t("sunoCoverArtPromptGenerator.title")}
+                </span>
+              </Link>
+              <Link
+                href="/suno/remix-idea-generator"
+                className="bg-surface hover:bg-purple-50 dark:hover:bg-purple-900/20 border border-border rounded-lg p-4 text-center transition-colors"
+              >
+                <span className="text-sm font-medium text-foreground hover:text-purple-600">
+                  {t("sunoRemixIdeaGenerator.title")}
                 </span>
               </Link>
             </div>

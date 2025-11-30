@@ -400,13 +400,18 @@ El producto está inspirado en [claptools.com](https://claptools.com/), buscando
 | **Comment Generator** | Crea comentarios relevantes  | Contexto, tono     | Comentario constructivo         | ✅     |
 | **AMA Questions**     | Genera preguntas para AMAs   | Tema, audiencia    | Lista de preguntas interesantes | ✅     |
 
-### 3.8 Suno Tools (3 herramientas)
+### 3.8 Suno Tools (8 herramientas)
 
-| Herramienta                    | Descripción                        | Inputs                         | Outputs                          | Status |
-| ------------------------------ | ---------------------------------- | ------------------------------ | -------------------------------- | ------ |
-| **Lyric Generator**            | Genera letras para canciones       | Tema, género, estilo, idioma   | Letra completa con estructura    | ✅     |
-| **Music Prompt Generator**     | Crea prompts para generar música   | Género, mood, instrumentos     | Prompt optimizado para Suno AI   | ✅     |
-| **Song Description Generator** | Descripciones para publicar música | Género, tema, mood, plataforma | Descripción atractiva con emojis | ✅     |
+| Herramienta                    | Descripción                             | Inputs                                   | Outputs                           | Status |
+| ------------------------------ | --------------------------------------- | ---------------------------------------- | --------------------------------- | ------ |
+| **Lyric Generator**            | Genera letras para canciones            | Tema, género, estilo, idioma             | Letra completa con estructura     | ✅     |
+| **Music Prompt Generator**     | Crea prompts para generar música        | Género, mood, instrumentos               | Prompt optimizado para Suno AI    | ✅     |
+| **Song Description Generator** | Descripciones para publicar música      | Género, tema, mood, plataforma           | Descripción atractiva con emojis  | ✅     |
+| **Song Title Generator**       | Genera títulos creativos para canciones | Tema, género, mood, idioma               | 10 títulos únicos                 | ✅     |
+| **Song Tag Generator**         | Etiquetas para mejorar descubrimiento   | Género, mood, instrumentos, idioma       | 10 tags relevantes y optimizados  | ✅     |
+| **Album Name Generator**       | Nombres para álbumes/EPs                | Concepto, tipo release, idioma           | 10 nombres de álbum               | ✅     |
+| **Cover Art Prompt Generator** | Prompts para arte de portada            | Título, mood, género, estilo, plataforma | 5 prompts para Midjourney/DALL-E  | ✅     |
+| **Remix Idea Generator**       | Ideas estructuradas para remixes        | Canción original, género, estilo remix   | 5 conceptos con tempo y elementos | ✅     |
 
 ### 3.9 ElevenLabs Tools (6 herramientas)
 
@@ -688,7 +693,7 @@ Todas las herramientas de generación de contenido utilizarán modelos de lengua
 - ✅ **Reddit:** Post Generator, Comment Generator, AMA Questions (3 tools)
 - ✅ **Discord:** Announcement, Welcome Message, Event Description (3 tools)
 - ✅ **Twitch:** Stream Title, Chat Command, Panel Description (3 tools)
-- ✅ **Suno:** Lyric Generator, Music Prompt Generator, Song Description Generator (3 tools)
+- ✅ **Suno:** 8 tools - Lyric Generator, Music Prompt Generator, Song Description Generator, Song Title Generator, Song Tag Generator, Album Name Generator, Cover Art Prompt Generator, Remix Idea Generator
 - ✅ **ElevenLabs:** Voice Script Writer, Video Voiceover Script, Voice Text Formatter (3 tools)
 - ✅ Legal pages: Privacy Policy, Terms & Conditions, Contact Us
 - ✅ Navigation improved with all 9 platforms (TikTok, Instagram, Twitter, Snapchat, YouTube, Reddit, Discord, Twitch, Suno, ElevenLabs)
@@ -699,7 +704,7 @@ Todas las herramientas de generación de contenido utilizarán modelos de lengua
 - ⏳ SEO optimization
 - ⏳ Mejoras de UX basadas en feedback
 
-**Tools Count:** 34 herramientas activas (de 60+ planificadas)
+**Tools Count:** 39 herramientas activas (de 60+ planificadas)
 
 ### Phase 3: Full Platform Coverage (Weeks 9-12)
 
