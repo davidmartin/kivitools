@@ -10,7 +10,7 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "lemon8" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "lemon8" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
@@ -140,6 +140,26 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "datingBioGenerator.title", href: "/dating/bio-generator" },
     { name: "datingOpenerGenerator.title", href: "/dating/opener-generator" },
     { name: "datingProfileReview.title", href: "/dating/profile-review" },
+  ],
+  medium: [
+    { name: "mediumArticleTitle.title", href: "/medium/article-title-generator" },
+    { name: "mediumArticleIntro.title", href: "/medium/article-intro-generator" },
+    { name: "mediumBio.title", href: "/medium/bio-generator" },
+  ],
+  etsy: [
+    { name: "etsyProductTitle.title", href: "/etsy/product-title-generator" },
+    { name: "etsyProductDescription.title", href: "/etsy/product-description-generator" },
+    { name: "etsyShopAnnouncement.title", href: "/etsy/shop-announcement-generator" },
+  ],
+  onlyfans: [
+    { name: "onlyfansBio.title", href: "/onlyfans/bio-generator" },
+    { name: "onlyfansPostCaption.title", href: "/onlyfans/post-caption-generator" },
+    { name: "onlyfansPromo.title", href: "/onlyfans/promo-generator" },
+  ],
+  patreon: [
+    { name: "patreonTierDescription.title", href: "/patreon/tier-description-generator" },
+    { name: "patreonAboutPage.title", href: "/patreon/about-page-generator" },
+    { name: "patreonPost.title", href: "/patreon/post-generator" },
   ],
 };
 

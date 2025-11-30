@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating";
+type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon";
 
 interface GenerateToolMetadataProps {
   platform: Platform;
@@ -37,6 +37,10 @@ const platformColors: Record<Platform, string> = {
   podcast: "#FF6B35",
   email: "#00BCD4",
   dating: "#FF1493",
+  medium: "#000000",
+  etsy: "#F56400",
+  onlyfans: "#00AFF0",
+  patreon: "#FF424D",
 };
 
 const platformNames: Record<Platform, string> = {
@@ -64,6 +68,10 @@ const platformNames: Record<Platform, string> = {
   podcast: "Podcast",
   email: "Email",
   dating: "Dating",
+  medium: "Medium",
+  etsy: "Etsy",
+  onlyfans: "OnlyFans",
+  patreon: "Patreon",
 };
 
 /**

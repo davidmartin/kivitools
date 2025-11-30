@@ -53,4 +53,29 @@ export const platforms = {
     "dating.page.description": "Des bios qui récoltent des swipes à droite plus vite que tu peux dire 'cherche le Jim de ma Pam' (originalité non incluse).",
     "dating.info.title": "C'est quoi les Outils Profil de Rencontre ?",
     "dating.info.description": "Les premières impressions comptent, surtout en ligne. Nos outils IA t'aident à créer des profils de rencontre qui se démarquent, des phrases d'accroche qui marchent vraiment et des bios authentiquement toi.",
+
+    // Medium
+    "medium.page.title": "Outils IA Gratuits pour Medium",
+    "medium.page.description": "Des articles tellement profonds que les gens vont croire que tu lis vraiment des livres (spoiler : l'IA a fait le gros du boulot).",
+    "medium.info.title": "C'est quoi Medium ?",
+    "medium.info.description": "Medium est LA plateforme pour du contenu long qui se lit vraiment. Nos outils IA t'aident à créer des titres qui accrochent et des intros qui font scroller.",
+
+    // Etsy
+    "etsy.page.title": "Outils IA Gratuits pour Etsy",
+    "etsy.page.description": "Des descriptions de produits qui vendent plus vite que les gâteaux de mamie au marché.",
+    "etsy.info.title": "C'est quoi Etsy ?",
+    "etsy.info.description": "Etsy est le marketplace mondial pour les trésors faits main et vintage. Nos outils IA t'aident à rédiger des annonces optimisées SEO qui convertissent les visiteurs en acheteurs.",
+
+    // OnlyFans
+    "onlyfans.page.title": "Outils IA Gratuits pour OnlyFans",
+    "onlyfans.page.description": "Des légendes et bios tellement captivantes que tes abonnés oublieront pourquoi ils sont venus... pour le contenu.",
+    "onlyfans.info.title": "C'est quoi OnlyFans ?",
+    "onlyfans.info.description": "OnlyFans est la plateforme de créateurs qui a changé la donne. Nos outils IA t'aident à écrire des bios et légendes pro qui font grandir ton audience.",
+
+    // Patreon
+    "patreon.page.title": "Outils IA Gratuits pour Patreon",
+    "patreon.page.description": "Des descriptions de tiers tellement convaincantes que tes patrons vont upgrade plus vite que tu peux dire 'contenu exclusif'.",
+    "patreon.info.title": "C'est quoi Patreon ?",
+    "patreon.info.description": "Patreon permet aux créateurs de gagner grâce à leurs plus grands fans. Nos outils IA t'aident à créer des descriptions de tiers et des posts qui transforment les followers occasionnels en patrons fidèles.",
+
 };

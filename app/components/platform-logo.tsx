@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 interface PlatformLogoProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon";
   size?: "sm" | "md" | "lg" | "xl";
   className?: string;
 }
@@ -15,7 +15,7 @@ const sizeConfig = {
 
 export default function PlatformLogo({ platform, size = "md", className = "" }: PlatformLogoProps) {
   const config = sizeConfig[size];
-  const needsInvert = platform === "twitter" || platform === "suno" || platform === "elevenlabs" || platform === "amazon" || platform === "threads" || platform === "kick" || platform === "bereal" || platform === "podcast" || platform === "email";
+  const needsInvert = platform === "twitter" || platform === "suno" || platform === "elevenlabs" || platform === "amazon" || platform === "threads" || platform === "kick" || platform === "bereal" || platform === "podcast" || platform === "email" || platform === "medium" || platform === "onlyfans" || platform === "dating";
 
   return (
     <div

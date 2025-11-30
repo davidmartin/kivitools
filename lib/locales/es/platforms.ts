@@ -53,4 +53,29 @@ export const platforms = {
     "dating.page.description": "Bios que consiguen swipes a la derecha más rápido de lo que puedes decir 'buscando al Jim de mi Pam' (originalidad no incluida).",
     "dating.info.title": "¿Qué son las Herramientas de Perfil de Citas?",
     "dating.info.description": "Las primeras impresiones importan, especialmente online. Nuestras herramientas de IA te ayudan a crear perfiles de citas que destacan, inicios de conversación que realmente funcionan y bios auténticamente tuyas.",
+
+    // Medium
+    "medium.page.title": "Herramientas IA Gratis para Medium",
+    "medium.page.description": "Artículos tan profundos que la gente pensará que realmente lees libros (spoiler: la IA hizo el trabajo pesado).",
+    "medium.info.title": "¿Qué es Medium?",
+    "medium.info.description": "Medium es la plataforma preferida para contenido largo que realmente se lee. Nuestras herramientas de IA te ayudan a crear titulares que enganchan y intros que mantienen scrolleando.",
+
+    // Etsy
+    "etsy.page.title": "Herramientas IA Gratis para Etsy",
+    "etsy.page.description": "Descripciones de productos que venden más rápido que las galletas de tu abuela en una venta de pasteles.",
+    "etsy.info.title": "¿Qué es Etsy?",
+    "etsy.info.description": "Etsy es el marketplace global para tesoros hechos a mano y vintage. Nuestras herramientas de IA te ayudan a escribir listados optimizados para SEO que convierten visitantes en compradores.",
+
+    // OnlyFans
+    "onlyfans.page.title": "Herramientas IA Gratis para OnlyFans",
+    "onlyfans.page.description": "Captions y bios tan atractivas que tus suscriptores olvidarán por qué vinieron... al contenido.",
+    "onlyfans.info.title": "¿Qué es OnlyFans?",
+    "onlyfans.info.description": "OnlyFans es la plataforma de creadores que cambió el juego. Nuestras herramientas de IA te ayudan a escribir bios y captions profesionales que hacen crecer tu audiencia.",
+
+    // Patreon
+    "patreon.page.title": "Herramientas IA Gratis para Patreon",
+    "patreon.page.description": "Descripciones de niveles tan convincentes que tus patrons se actualizarán más rápido de lo que puedes decir 'contenido exclusivo'.",
+    "patreon.info.title": "¿Qué es Patreon?",
+    "patreon.info.description": "Patreon empodera a los creadores para ganar de sus fans más fieles. Nuestras herramientas de IA te ayudan a crear descripciones de niveles y posts que convierten seguidores casuales en patrons leales.",
+
 };

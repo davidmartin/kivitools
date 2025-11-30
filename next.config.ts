@@ -96,6 +96,26 @@ const nextConfig: NextConfig = {
       { source: "/bluesky/generador-publicaciones", destination: "/bluesky/post-generator" },
       { source: "/bluesky/generador-bio", destination: "/bluesky/bio-generator" },
       { source: "/bluesky/compositor-hilos", destination: "/bluesky/thread-composer" },
+
+      // Medium - Rutas en español
+      { source: "/medium/generador-titulos-articulo", destination: "/medium/article-title-generator" },
+      { source: "/medium/generador-intro-articulo", destination: "/medium/article-intro-generator" },
+      { source: "/medium/generador-bio", destination: "/medium/bio-generator" },
+
+      // Etsy - Rutas en español
+      { source: "/etsy/generador-titulo-producto", destination: "/etsy/product-title-generator" },
+      { source: "/etsy/generador-descripcion-producto", destination: "/etsy/product-description-generator" },
+      { source: "/etsy/generador-anuncio-tienda", destination: "/etsy/shop-announcement-generator" },
+
+      // OnlyFans - Rutas en español
+      { source: "/onlyfans/generador-bio", destination: "/onlyfans/bio-generator" },
+      { source: "/onlyfans/generador-caption-post", destination: "/onlyfans/post-caption-generator" },
+      { source: "/onlyfans/generador-promo", destination: "/onlyfans/promo-generator" },
+
+      // Patreon - Rutas en español
+      { source: "/patreon/generador-descripcion-tier", destination: "/patreon/tier-description-generator" },
+      { source: "/patreon/generador-pagina-about", destination: "/patreon/about-page-generator" },
+      { source: "/patreon/generador-post", destination: "/patreon/post-generator" },
     ];
   },
 };
