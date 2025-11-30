@@ -1,18 +1,19 @@
-<!--
-==========================================================================
-SYNC IMPACT REPORT
-==========================================================================
+# <!--
+
+# SYNC IMPACT REPORT
+
 Version change: N/A → 1.0.0 (initial constitution)
 Modified principles: N/A (new document)
 Added sections: Core Principles (7), Technology Stack, Quality Gates, Governance
 Removed sections: N/A
 Templates status:
-  - .specify/templates/spec-template.md: ✅ Compatible (no changes needed)
-  - .specify/templates/plan-template.md: ✅ Compatible (Constitution Check section present)
-  - .specify/templates/tasks-template.md: ✅ Compatible (no changes needed)
-Follow-up TODOs: None
-==========================================================================
--->
+
+- .specify/templates/spec-template.md: ✅ Compatible (no changes needed)
+- .specify/templates/plan-template.md: ✅ Compatible (Constitution Check section present)
+- .specify/templates/tasks-template.md: ✅ Compatible (no changes needed)
+  Follow-up TODOs: None
+  ==========================================================================
+  -->
 
 # KiviTools Constitution
 
@@ -25,6 +26,7 @@ Follow-up TODOs: None
 Every piece of user-facing text MUST use the translation system. No hardcoded strings in any language.
 
 **Requirements**:
+
 - All text uses `t("key.name")` from `useLanguage()` hook
 - Translation keys MUST exist in BOTH `es` and `en` sections of `lib/locales/`
 - Keys use flat dot notation: `"toolName.form.submit"`, NOT nested objects
@@ -39,6 +41,7 @@ Every piece of user-facing text MUST use the translation system. No hardcoded st
 All UI elements MUST use HeroUI v3 Beta components. Native HTML elements are forbidden where HeroUI equivalents exist.
 
 **Requirements**:
+
 - Use `<Button onPress={...}>` NOT `<button onClick={...}>`
 - Use `<Input>`, `<TextArea>`, `<Select>` NOT native `<input>`, `<textarea>`, `<select>`
 - Import from `@heroui/react` only
@@ -52,6 +55,7 @@ All UI elements MUST use HeroUI v3 Beta components. Native HTML elements are for
 All API routes MUST implement proper security controls before any AI generation.
 
 **Requirements**:
+
 - Cloudflare Turnstile verification on ALL tool API routes
 - DeepSeek API key MUST remain server-side only (never exposed to client)
 - All generations logged to Appwrite with sanitized request data
@@ -65,6 +69,7 @@ All API routes MUST implement proper security controls before any AI generation.
 Adding a new platform MUST update ALL 10 integration points. Missing any breaks functionality.
 
 **Checklist**:
+
 1. Platform hub page: `app/(tools)/[platform]/page.tsx`
 2. Navigation: `app/components/navigation.tsx`
 3. Translations: Navigation keys in `lib/locales/[lang]/common.ts`
@@ -83,6 +88,7 @@ Adding a new platform MUST update ALL 10 integration points. Missing any breaks 
 Every tool page MUST include all 8 sections for SEO completeness and user experience.
 
 **Required Sections**:
+
 1. Header (badge, title, description)
 2. Tool selector (platform navigation)
 3. Form (inputs with validation + Turnstile widget)
@@ -99,6 +105,7 @@ Every tool page MUST include all 8 sections for SEO completeness and user experi
 All tool API routes MUST follow the established security and logging pattern.
 
 **Pattern**:
+
 ```
 1. Extract request body
 2. Verify Turnstile token (return 403 if invalid)
@@ -115,6 +122,7 @@ All tool API routes MUST follow the established security and logging pattern.
 All user-facing content MUST be comedic, fun, and lighthearted. Corporate speak is forbidden.
 
 **Guidelines**:
+
 - Be playful: Use humor and self-deprecation
 - Be relatable: Reference common creator frustrations
 - Keep it punchy: Short, memorable phrases
@@ -132,15 +140,18 @@ All user-facing content MUST be comedic, fun, and lighthearted. Corporate speak 
 **AI**: DeepSeek API (deepseek-chat model, temperature 0.85-0.9 for creative tasks)
 
 **Backend Services**:
+
 - Appwrite: Generation logging, user management
 - Cloudflare Turnstile: Bot verification
 
 **Styling Constraints**:
+
 - NEVER use gradients (`bg-linear-to-*` or `bg-gradient-to-*`)
 - Use solid colors and HeroUI semantic tokens
 - Tailwind v4 syntax required (`bg-linear-to-br` NOT `bg-gradient-to-br`)
 
 **Platform Color Scheme**:
+
 - TikTok/Suno/Twitch: Purple (`bg-purple-100`, `text-purple-600`)
 - Instagram: Pink (`bg-pink-100`, `text-pink-600`)
 - Twitter/Bluesky: Blue (`bg-blue-100`, `text-blue-600`)
@@ -170,6 +181,7 @@ All user-facing content MUST be comedic, fun, and lighthearted. Corporate speak 
 This constitution supersedes all other development practices for KiviTools.
 
 **Amendment Process**:
+
 1. Document proposed change with rationale
 2. Verify impact on existing tools/platforms
 3. Update all affected templates if principles change
@@ -179,6 +191,7 @@ This constitution supersedes all other development practices for KiviTools.
    - PATCH: Clarifications or typo fixes
 
 **Compliance**:
+
 - All PRs MUST verify adherence to these principles
 - Complexity additions MUST be justified against simplicity goals
 - Runtime guidance in `.github/copilot-instructions.md` supplements this constitution
