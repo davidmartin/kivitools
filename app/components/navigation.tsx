@@ -269,6 +269,46 @@ export default function Navigation() {
         { name: t("datingProfileReview.title"), href: "/dating/profile-review" },
       ],
     },
+    {
+      id: "medium",
+      name: t("nav.medium"),
+      emoji: "📝",
+      tools: [
+        { name: t("mediumArticleTitle.title"), href: "/medium/article-title-generator" },
+        { name: t("mediumArticleIntro.title"), href: "/medium/article-intro-generator" },
+        { name: t("mediumBio.title"), href: "/medium/bio-generator" },
+      ],
+    },
+    {
+      id: "etsy",
+      name: t("nav.etsy"),
+      emoji: "🛍️",
+      tools: [
+        { name: t("etsyProductTitle.title"), href: "/etsy/product-title-generator" },
+        { name: t("etsyProductDescription.title"), href: "/etsy/product-description-generator" },
+        { name: t("etsyShopAnnouncement.title"), href: "/etsy/shop-announcement-generator" },
+      ],
+    },
+    {
+      id: "onlyfans",
+      name: t("nav.onlyfans"),
+      emoji: "💎",
+      tools: [
+        { name: t("onlyfansBio.title"), href: "/onlyfans/bio-generator" },
+        { name: t("onlyfansPostCaption.title"), href: "/onlyfans/post-caption-generator" },
+        { name: t("onlyfansPromo.title"), href: "/onlyfans/promo-generator" },
+      ],
+    },
+    {
+      id: "patreon",
+      name: t("nav.patreon"),
+      emoji: "❤️",
+      tools: [
+        { name: t("patreonTierDescription.title"), href: "/patreon/tier-description-generator" },
+        { name: t("patreonAboutPage.title"), href: "/patreon/about-page-generator" },
+        { name: t("patreonPost.title"), href: "/patreon/post-generator" },
+      ],
+    },
   ];
 
   return (

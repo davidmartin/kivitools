@@ -53,4 +53,29 @@ export const platforms = {
     "dating.page.description": "Bios, die schneller rechts gewischt werden, als du 'auf der Suche nach meiner zweiten Hälfte' sagen kannst (Originalität nicht inbegriffen).",
     "dating.info.title": "Was sind Dating-Profil-Tools?",
     "dating.info.description": "Der erste Eindruck zählt, besonders online. Unsere KI-Tools helfen dir, Dating-Profile zu erstellen, die herausstechen, Gesprächseinstiege, die wirklich funktionieren, und Bios, die authentisch du sind.",
+
+    // Medium
+    "medium.page.title": "Kostenlose KI Medium-Tools",
+    "medium.page.description": "Artikel so tiefgründig, dass die Leute denken, du liest wirklich Bücher (Spoiler: Die KI hat die schwere Arbeit gemacht).",
+    "medium.info.title": "Was ist Medium?",
+    "medium.info.description": "Medium ist DIE Plattform für Long-Form-Content, der wirklich gelesen wird. Unsere KI-Tools helfen dir, Überschriften zu erstellen, die fesseln, und Intros, die zum Weiterscrollen animieren.",
+
+    // Etsy
+    "etsy.page.title": "Kostenlose KI Etsy-Tools",
+    "etsy.page.description": "Produktbeschreibungen, die schneller verkaufen als Omas Plätzchen auf dem Weihnachtsmarkt.",
+    "etsy.info.title": "Was ist Etsy?",
+    "etsy.info.description": "Etsy ist der globale Marktplatz für handgemachte und Vintage-Schätze. Unsere KI-Tools helfen dir, SEO-optimierte Listings zu schreiben, die Besucher in Käufer verwandeln.",
+
+    // OnlyFans
+    "onlyfans.page.title": "Kostenlose KI OnlyFans-Tools",
+    "onlyfans.page.description": "Bildunterschriften und Bios so fesselnd, dass deine Abonnenten vergessen, warum sie gekommen sind... für den Content.",
+    "onlyfans.info.title": "Was ist OnlyFans?",
+    "onlyfans.info.description": "OnlyFans ist die Creator-Plattform, die das Spiel verändert hat. Unsere KI-Tools helfen dir, professionelle Bios und Bildunterschriften zu schreiben, die dein Publikum wachsen lassen.",
+
+    // Patreon
+    "patreon.page.title": "Kostenlose KI Patreon-Tools",
+    "patreon.page.description": "Tier-Beschreibungen so überzeugend, dass deine Patrons schneller upgraden, als du 'exklusiver Content' sagen kannst.",
+    "patreon.info.title": "Was ist Patreon?",
+    "patreon.info.description": "Patreon ermöglicht Creatorn, von ihren größten Fans zu verdienen. Unsere KI-Tools helfen dir, Tier-Beschreibungen und Posts zu erstellen, die Gelegenheits-Follower in treue Patrons verwandeln.",
+
 };

@@ -140,6 +140,38 @@ Both URLs display the **same page** (no redirects). This is implemented via `nex
 | `/amazon/product-review-generator`      | `/amazon/generador-resenas-producto`      |
 | `/amazon/product-comparison-generator`  | `/amazon/generador-comparativa-productos` |
 
+### Medium
+
+| English URL                       | Spanish URL                          |
+| --------------------------------- | ------------------------------------ |
+| `/medium/article-title-generator` | `/medium/generador-titulos-articulo` |
+| `/medium/article-intro-generator` | `/medium/generador-intro-articulo`   |
+| `/medium/bio-generator`           | `/medium/generador-bio`              |
+
+### Etsy
+
+| English URL                           | Spanish URL                            |
+| ------------------------------------- | -------------------------------------- |
+| `/etsy/product-title-generator`       | `/etsy/generador-titulo-producto`      |
+| `/etsy/product-description-generator` | `/etsy/generador-descripcion-producto` |
+| `/etsy/shop-announcement-generator`   | `/etsy/generador-anuncio-tienda`       |
+
+### OnlyFans
+
+| English URL                        | Spanish URL                        |
+| ---------------------------------- | ---------------------------------- |
+| `/onlyfans/bio-generator`          | `/onlyfans/generador-bio`          |
+| `/onlyfans/post-caption-generator` | `/onlyfans/generador-caption-post` |
+| `/onlyfans/promo-generator`        | `/onlyfans/generador-promo`        |
+
+### Patreon
+
+| English URL                           | Spanish URL                           |
+| ------------------------------------- | ------------------------------------- |
+| `/patreon/tier-description-generator` | `/patreon/generador-descripcion-tier` |
+| `/patreon/about-page-generator`       | `/patreon/generador-pagina-about`     |
+| `/patreon/post-generator`             | `/patreon/generador-post`             |
+
 ---
 
 ## Spanish URL Naming Conventions

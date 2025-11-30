@@ -13,6 +13,8 @@ Auto-generated from all feature plans. Last updated: 2025-11-25
 - N/A (structured data is rendered server-side, no database changes) (005-aeo-optimization)
 - TypeScript 5.x, Next.js 16.0.1 + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, DeepSeek API (006-viral-platforms)
 - Appwrite (generation logs) (006-viral-platforms)
+- TypeScript 5.x, Next.js 16.0.1 with App Router + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, DeepSeek API (deepseek-chat model) (008-creator-platforms)
+- Appwrite (generation logs), Cloudflare Turnstile (bot protection) (008-creator-platforms)
 
 - TypeScript 5.x with Next.js 16.0.1 + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, DeepSeek API (001-platform-seo-expansion)
 
@@ -32,9 +34,9 @@ npm test && npm run lint
 TypeScript 5.x with Next.js 16.0.1: Follow standard conventions
 
 ## Recent Changes
+- 008-creator-platforms: Added TypeScript 5.x, Next.js 16.0.1 with App Router + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, DeepSeek API (deepseek-chat model)
 - 006-viral-platforms: Added TypeScript 5.x, Next.js 16.0.1 + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, DeepSeek API
 - 005-aeo-optimization: Added TypeScript 5.x, React 19.2.0, Next.js 16.0.1 + @heroui/react v3.0.0-beta.1, @heroui/styles, Tailwind CSS v4
-- 004-cookie-policy: Added TypeScript 5.x, Next.js 16.0.1, React 19 + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, @iconify/reac
 
 
 <!-- MANUAL ADDITIONS START -->

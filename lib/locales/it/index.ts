@@ -26,6 +26,10 @@ import { bereal } from "./tools/bereal";
 import { podcast } from "./tools/podcast";
 import { email } from "./tools/email";
 import { dating } from "./tools/dating";
+import { medium } from "./tools/medium";
+import { etsy } from "./tools/etsy";
+import { onlyfans } from "./tools/onlyfans";
+import { patreon } from "./tools/patreon";
 import { builder } from "./builder";
 import { dashboard } from "./dashboard";
 import { admin } from "./admin";
@@ -59,6 +63,10 @@ export const it = {
     ...podcast,
     ...email,
     ...dating,
+    ...medium,
+    ...etsy,
+    ...onlyfans,
+    ...patreon,
     ...builder,
     ...dashboard,
     ...admin,

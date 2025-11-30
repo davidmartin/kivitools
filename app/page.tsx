@@ -204,6 +204,34 @@ export default function Home() {
       icon: "💕",
       color: "pink",
     },
+    {
+      name: "Medium",
+      description: t("medium.page.description"),
+      href: "/medium",
+      icon: "📝",
+      color: "black",
+    },
+    {
+      name: "Etsy",
+      description: t("etsy.page.description"),
+      href: "/etsy",
+      icon: "🛍️",
+      color: "orange",
+    },
+    {
+      name: "OnlyFans",
+      description: t("onlyfans.page.description"),
+      href: "/onlyfans",
+      icon: "💎",
+      color: "cyan",
+    },
+    {
+      name: "Patreon",
+      description: t("patreon.page.description"),
+      href: "/patreon",
+      icon: "❤️",
+      color: "red",
+    },
   ];
 
   // Popular Tools
@@ -556,7 +584,7 @@ export default function Home() {
               <p className="text-muted font-medium">{t("stats.time")}</p>
             </div>
             <div className="text-center p-6 glass rounded-2xl">
-              <div className="text-5xl font-black text-gradient mb-2">9</div>
+              <div className="text-5xl font-black text-gradient mb-2">28</div>
               <p className="text-muted font-medium">{t("stats.platforms")}</p>
             </div>
           </div>

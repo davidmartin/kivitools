@@ -54,4 +54,28 @@ export const platforms = {
     "dating.info.title": "What are Dating Profile Tools?",
     "dating.info.description": "First impressions matter, especially online. Our AI tools help you create dating profiles that stand out, conversation starters that actually start conversations, and bios that are authentically you.",
 
+    // Medium
+    "medium.page.title": "Free AI Medium Tools",
+    "medium.page.description": "Articles so profound people will think you actually read books (spoiler: AI did the heavy lifting).",
+    "medium.info.title": "What is Medium?",
+    "medium.info.description": "Medium is the go-to platform for long-form content that actually gets read. Our AI tools help you craft headlines that hook readers and intros that keep them scrolling.",
+
+    // Etsy
+    "etsy.page.title": "Free AI Etsy Tools",
+    "etsy.page.description": "Product descriptions that sell faster than your grandma's homemade cookies at a bake sale.",
+    "etsy.info.title": "What is Etsy?",
+    "etsy.info.description": "Etsy is the global marketplace for handmade and vintage treasures. Our AI tools help you write SEO-optimized listings that convert browsers into buyers.",
+
+    // OnlyFans
+    "onlyfans.page.title": "Free AI OnlyFans Tools",
+    "onlyfans.page.description": "Captions and bios so engaging your subscribers will forget they came for... the content.",
+    "onlyfans.info.title": "What is OnlyFans?",
+    "onlyfans.info.description": "OnlyFans is the creator platform that changed the game. Our AI tools help you write professional bios and captions that grow your audience.",
+
+    // Patreon
+    "patreon.page.title": "Free AI Patreon Tools",
+    "patreon.page.description": "Tier descriptions so compelling your patrons will upgrade faster than you can say 'exclusive content'.",
+    "patreon.info.title": "What is Patreon?",
+    "patreon.info.description": "Patreon empowers creators to earn from their biggest fans. Our AI tools help you craft tier descriptions and posts that turn casual followers into loyal patrons.",
+
 };

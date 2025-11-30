@@ -5263,3 +5263,591 @@ Generate only the names, one per line, without explanations or taglines.`;
 
     return names.length > 0 ? names.slice(0, 15) : [content.trim()];
 }
+
+// ==================== MEDIUM PLATFORM ====================
+
+// Medium Article Title Generator
+export async function generateMediumArticleTitles({
+    topic,
+    tone,
+    language = "en",
+}: {
+    topic: string;
+    tone: string;
+    language?: string;
+}): Promise<string[]> {
+    const langText = languageNames[language] || "English";
+    const toneDescriptions: Record<string, string> = {
+        professional: "professional, authoritative, and trustworthy",
+        conversational: "friendly, casual, and approachable",
+        provocative: "thought-provoking, bold, and attention-grabbing",
+        inspirational: "uplifting, motivational, and empowering",
+        educational: "informative, clear, and educational",
+    };
+
+    const toneDesc = toneDescriptions[tone] || toneDescriptions.professional;
+
+    const prompt = `You are an expert Medium headline writer. Generate 5 compelling article titles about "${topic}" in ${langText}.
+
+TONE: ${toneDesc}
+
+MEDIUM HEADLINE REQUIREMENTS:
+- Hook readers immediately
+- Create curiosity or promise value
+- Optimized for Medium's feed algorithm
+- Between 6-12 words typically
+- Avoid clickbait but be compelling
+- Work well on social shares
+
+FORMAT YOUR RESPONSE AS:
+1. [title]
+2. [title]
+3. [title]
+4. [title]
+5. [title]
+
+Generate only the titles, one per line, without explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 400,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const titles = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""))
+        .filter(title => title.length > 0);
+
+    return titles.length > 0 ? titles.slice(0, 5) : [content.trim()];
+}
+
+// Medium Article Intro Generator
+export async function generateMediumArticleIntros({
+    topic,
+    keyPoints,
+    tone,
+    language = "en",
+}: {
+    topic: string;
+    keyPoints?: string;
+    tone: string;
+    language?: string;
+}): Promise<string> {
+    const langText = languageNames[language] || "English";
+    const keyPointsText = keyPoints ? `\nKey points to cover: ${keyPoints}` : "";
+
+    const prompt = `You are an expert Medium writer. Write an engaging article introduction (hook paragraph) about "${topic}" in ${langText}.
+
+TONE: ${tone}${keyPointsText}
+
+MEDIUM INTRO REQUIREMENTS:
+- Hook readers in the first sentence
+- Create curiosity about the rest of the article
+- 100-200 words maximum
+- Establish credibility or relatability
+- End with a transition to the main content
+- Reduce bounce rate by engaging immediately
+
+Write only the introduction paragraph, no titles or formatting.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 400,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.trim();
+}
+
+// Medium Bio Generator
+export async function generateMediumBio({
+    expertise,
+    personality,
+    language = "en",
+}: {
+    expertise: string;
+    personality?: string;
+    language?: string;
+}): Promise<string[]> {
+    const langText = languageNames[language] || "English";
+    const personalityText = personality || "professional yet approachable";
+
+    const prompt = `You are an expert Medium profile writer. Generate 5 author bio options for someone with expertise in "${expertise}" in ${langText}.
+
+PERSONALITY: ${personalityText}
+
+MEDIUM BIO REQUIREMENTS:
+- Maximum 160 characters each (this is CRITICAL)
+- Establish authority and expertise
+- Add personality or a unique angle
+- Encourage follows
+- Work well on author cards
+
+FORMAT YOUR RESPONSE AS:
+1. [bio - max 160 chars]
+2. [bio - max 160 chars]
+3. [bio - max 160 chars]
+4. [bio - max 160 chars]
+5. [bio - max 160 chars]
+
+Generate only the bios, one per line, without explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 500,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const bios = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""))
+        .filter(bio => bio.length > 0 && bio.length <= 200);
+
+    return bios.length > 0 ? bios.slice(0, 5) : [content.trim()];
+}
+
+// ==================== ETSY PLATFORM ====================
+
+// Etsy Product Title Generator
+export async function generateEtsyProductTitles({
+    product,
+    keywords,
+    category,
+    language = "en",
+}: {
+    product: string;
+    keywords?: string;
+    category?: string;
+    language?: string;
+}): Promise<string[]> {
+    const langText = languageNames[language] || "English";
+    const keywordsText = keywords ? `\nInclude these SEO keywords: ${keywords}` : "";
+    const categoryText = category ? `\nCategory: ${category}` : "";
+
+    const prompt = `You are an Etsy SEO specialist. Generate 5 SEO-optimized product titles for "${product}" in ${langText}.
+${keywordsText}${categoryText}
+
+ETSY TITLE REQUIREMENTS:
+- Maximum 140 characters each (CRITICAL for Etsy)
+- Front-load important keywords
+- Include product type, style, and use case
+- Avoid keyword stuffing but be descriptive
+- Natural reading while SEO-optimized
+- Consider what buyers search for
+
+FORMAT YOUR RESPONSE AS:
+1. [title - max 140 chars]
+2. [title - max 140 chars]
+3. [title - max 140 chars]
+4. [title - max 140 chars]
+5. [title - max 140 chars]
+
+Generate only the titles, one per line, without explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 500,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const titles = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""))
+        .filter(title => title.length > 0 && title.length <= 160);
+
+    return titles.length > 0 ? titles.slice(0, 5) : [content.trim()];
+}
+
+// Etsy Product Description Generator
+export async function generateEtsyProductDescriptions({
+    product,
+    materials,
+    features,
+    language = "en",
+}: {
+    product: string;
+    materials?: string;
+    features?: string;
+    language?: string;
+}): Promise<string> {
+    const langText = languageNames[language] || "English";
+    const materialsText = materials ? `\nMaterials: ${materials}` : "";
+    const featuresText = features ? `\nKey features: ${features}` : "";
+
+    const prompt = `You are an Etsy copywriter. Write a compelling product description for "${product}" in ${langText}.
+${materialsText}${featuresText}
+
+ETSY DESCRIPTION REQUIREMENTS:
+- Opening hook that captures attention
+- Clear benefits and features
+- Include materials and dimensions section
+- Care instructions if applicable
+- SEO-friendly with natural keywords
+- Format with clear sections
+- 200-400 words
+- End with a call to action
+
+Write the description with appropriate formatting and sections.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 800,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.trim();
+}
+
+// Etsy Shop Announcement Generator
+export async function generateEtsyShopAnnouncement({
+    shopName,
+    brandStory,
+    specialty,
+    language = "en",
+}: {
+    shopName: string;
+    brandStory?: string;
+    specialty: string;
+    language?: string;
+}): Promise<string> {
+    const langText = languageNames[language] || "English";
+    const brandStoryText = brandStory ? `\nBrand story: ${brandStory}` : "";
+
+    const prompt = `You are an Etsy branding expert. Write a shop announcement for "${shopName}" specializing in ${specialty} in ${langText}.
+${brandStoryText}
+
+ETSY SHOP ANNOUNCEMENT REQUIREMENTS:
+- Welcome visitors warmly
+- Tell your brand story
+- Highlight what makes your shop unique
+- Include current promotions or news (generic placeholders OK)
+- Build trust and connection
+- Maximum 5000 characters
+- End with encouragement to browse
+
+Write the announcement with personality and warmth.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 1000,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.trim();
+}
+
+// ==================== ONLYFANS PLATFORM ====================
+
+// OnlyFans Bio Generator (SFW)
+export async function generateOnlyFansBio({
+    niche,
+    personality,
+    language = "en",
+}: {
+    niche: string;
+    personality?: string;
+    language?: string;
+}): Promise<string[]> {
+    const langText = languageNames[language] || "English";
+    const personalityText = personality || "engaging and authentic";
+
+    const prompt = `You are a professional social media bio writer. Generate 5 bio options for a content creator in the "${niche}" niche in ${langText}.
+
+PERSONALITY: ${personalityText}
+
+BIO REQUIREMENTS:
+- Maximum 1000 characters each
+- Professional and engaging
+- Tease exclusive content (keep it tasteful and SFW)
+- Encourage subscriptions
+- Show personality
+- NO explicit or adult content - keep it work-safe
+- Focus on the creator's value proposition
+
+FORMAT YOUR RESPONSE AS:
+1. [bio]
+2. [bio]
+3. [bio]
+4. [bio]
+5. [bio]
+
+Generate only the bios, one per line, without explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 1200,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const bios = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""))
+        .filter(bio => bio.length > 0 && bio.length <= 1000);
+
+    return bios.length > 0 ? bios.slice(0, 5) : [content.trim()];
+}
+
+// OnlyFans Post Caption Generator (SFW)
+export async function generateOnlyFansPostCaptions({
+    contentType,
+    mood,
+    language = "en",
+}: {
+    contentType: string;
+    mood?: string;
+    language?: string;
+}): Promise<string[]> {
+    const langText = languageNames[language] || "English";
+    const moodText = mood || "playful";
+
+    const prompt = `You are a social media caption writer. Generate 5 engaging post captions for a content creator posting "${contentType}" in ${langText}.
+
+MOOD: ${moodText}
+
+CAPTION REQUIREMENTS:
+- Build anticipation and engagement
+- Encourage comments and interaction
+- Show personality
+- Keep it professional and SFW (safe for work)
+- NO explicit content - focus on engagement
+- 50-200 characters each
+- Include a call to action
+
+FORMAT YOUR RESPONSE AS:
+1. [caption]
+2. [caption]
+3. [caption]
+4. [caption]
+5. [caption]
+
+Generate only the captions, one per line, without explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 600,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const captions = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""))
+        .filter(caption => caption.length > 0);
+
+    return captions.length > 0 ? captions.slice(0, 5) : [content.trim()];
+}
+
+// OnlyFans Promo Generator (SFW for cross-platform)
+export async function generateOnlyFansPromo({
+    platform,
+    niche,
+    language = "en",
+}: {
+    platform: string;
+    niche: string;
+    language?: string;
+}): Promise<string[]> {
+    const langText = languageNames[language] || "English";
+
+    const prompt = `You are a social media marketing expert. Generate 5 promotional posts for a ${niche} content creator to post on ${platform} in ${langText}.
+
+PROMO REQUIREMENTS:
+- Platform-safe (NO explicit or adult content)
+- Hint at exclusive content without being explicit
+- Drive curiosity and clicks
+- Follow ${platform} community guidelines
+- Professional and engaging
+- Include subtle call to action
+- 100-280 characters each (Twitter-friendly)
+
+FORMAT YOUR RESPONSE AS:
+1. [promo text]
+2. [promo text]
+3. [promo text]
+4. [promo text]
+5. [promo text]
+
+Generate only the promotional texts, one per line, without explanations.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        max_tokens: 600,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    const promos = content
+        .split(/\n/)
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))
+        .map(line => line.replace(/^\d+\.\s*/, ""))
+        .filter(promo => promo.length > 0);
+
+    return promos.length > 0 ? promos.slice(0, 5) : [content.trim()];
+}
+
+// ==================== PATREON PLATFORM ====================
+
+// Patreon Tier Description Generator
+export async function generatePatreonTierDescriptions({
+    creatorType,
+    tierNames,
+    benefits,
+    language = "en",
+}: {
+    creatorType: string;
+    tierNames?: string;
+    benefits?: string;
+    language?: string;
+}): Promise<string> {
+    const langText = languageNames[language] || "English";
+    const tierNamesText = tierNames ? `\nTier names to use: ${tierNames}` : "\nCreate 3 tier names (entry, mid, premium level)";
+    const benefitsText = benefits ? `\nBenefits to highlight: ${benefits}` : "";
+
+    const prompt = `You are a Patreon strategy expert. Create tier descriptions for a ${creatorType} creator in ${langText}.
+${tierNamesText}${benefitsText}
+
+PATREON TIER REQUIREMENTS:
+- Create 3 tiers (entry $5, mid $15, premium $30 range)
+- Clear value proposition for each tier
+- Escalating benefits that make sense
+- Use "patrons" not "subscribers"
+- Encourage upgrades with exclusive perks
+- Professional yet personal tone
+- 100-200 words per tier
+
+FORMAT YOUR RESPONSE AS:
+## [Tier 1 Name] - $X/month
+[Description with benefits]
+
+## [Tier 2 Name] - $X/month
+[Description with benefits]
+
+## [Tier 3 Name] - $X/month
+[Description with benefits]
+
+Write the complete tier descriptions with clear formatting.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 1200,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.trim();
+}
+
+// Patreon About Page Generator
+export async function generatePatreonAboutPage({
+    creatorName,
+    creatorType,
+    mission,
+    language = "en",
+}: {
+    creatorName: string;
+    creatorType: string;
+    mission?: string;
+    language?: string;
+}): Promise<string> {
+    const langText = languageNames[language] || "English";
+    const missionText = mission ? `\nMission: ${mission}` : "";
+
+    const prompt = `You are a Patreon copywriter. Write an About page for ${creatorName}, a ${creatorType} creator, in ${langText}.
+${missionText}
+
+PATREON ABOUT PAGE REQUIREMENTS:
+- Tell the creator's story
+- Explain what patrons get and why it matters
+- Show passion and authenticity
+- Use "patrons" not "subscribers"
+- Include why Patreon support helps
+- 500-800 words
+- End with a warm invitation to join
+
+Write the complete About page content with appropriate formatting and sections.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 1500,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.trim();
+}
+
+// Patreon Post Generator
+export async function generatePatreonPosts({
+    postType,
+    topic,
+    tier,
+    language = "en",
+}: {
+    postType: string;
+    topic: string;
+    tier?: string;
+    language?: string;
+}): Promise<string> {
+    const langText = languageNames[language] || "English";
+    const tierText = tier ? `\nThis is for ${tier} tier patrons` : "\nThis is a public post";
+
+    const prompt = `You are a Patreon content creator. Write a ${postType} post about "${topic}" in ${langText}.
+${tierText}
+
+PATREON POST REQUIREMENTS:
+- Engaging and valuable content
+- Thank patrons for their support
+- Use "patrons" not "subscribers"
+- Match the post type (update, behind-the-scenes, announcement, etc.)
+- Include a call to engagement
+- 200-400 words
+- Personal and authentic tone
+
+Write the complete post content.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.8,
+        max_tokens: 800,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.trim();
+}

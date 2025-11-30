@@ -53,4 +53,29 @@ export const platforms = {
     "dating.page.description": "Bio che ottengono swipe a destra più velocemente di quanto puoi dire 'cerco la Jim del mio Pam' (originalità non inclusa).",
     "dating.info.title": "Cosa sono gli Strumenti Profilo Dating?",
     "dating.info.description": "Le prime impressioni contano, specialmente online. I nostri strumenti AI ti aiutano a creare profili di dating che spiccano, aperture di conversazione che funzionano davvero e bio autenticamente tue.",
+
+    // Medium
+    "medium.page.title": "Strumenti AI Gratuiti per Medium",
+    "medium.page.description": "Articoli così profondi che la gente penserà che leggi davvero libri (spoiler: l'AI ha fatto il lavoro pesante).",
+    "medium.info.title": "Cos'è Medium?",
+    "medium.info.description": "Medium è LA piattaforma per contenuti lunghi che vengono davvero letti. I nostri strumenti AI ti aiutano a creare titoli che catturano e intro che fanno scrollare.",
+
+    // Etsy
+    "etsy.page.title": "Strumenti AI Gratuiti per Etsy",
+    "etsy.page.description": "Descrizioni prodotto che vendono più velocemente dei biscotti della nonna al mercato.",
+    "etsy.info.title": "Cos'è Etsy?",
+    "etsy.info.description": "Etsy è il marketplace globale per tesori fatti a mano e vintage. I nostri strumenti AI ti aiutano a scrivere inserzioni ottimizzate SEO che convertono visitatori in acquirenti.",
+
+    // OnlyFans
+    "onlyfans.page.title": "Strumenti AI Gratuiti per OnlyFans",
+    "onlyfans.page.description": "Didascalie e bio così coinvolgenti che i tuoi iscritti dimenticheranno perché sono venuti... per il contenuto.",
+    "onlyfans.info.title": "Cos'è OnlyFans?",
+    "onlyfans.info.description": "OnlyFans è la piattaforma per creator che ha cambiato le regole del gioco. I nostri strumenti AI ti aiutano a scrivere bio e didascalie professionali che fanno crescere il tuo pubblico.",
+
+    // Patreon
+    "patreon.page.title": "Strumenti AI Gratuiti per Patreon",
+    "patreon.page.description": "Descrizioni tier così convincenti che i tuoi patron faranno upgrade più velocemente di quanto puoi dire 'contenuto esclusivo'.",
+    "patreon.info.title": "Cos'è Patreon?",
+    "patreon.info.description": "Patreon permette ai creator di guadagnare dai loro fan più grandi. I nostri strumenti AI ti aiutano a creare descrizioni tier e post che trasformano follower occasionali in patron fedeli.",
+
 };
