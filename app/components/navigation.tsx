@@ -138,8 +138,13 @@ export default function Navigation() {
       emoji: "🎵",
       tools: [
         { name: t("sunoLyricGenerator.title"), href: "/suno/lyric-generator" },
-        { name: t("sunoMusicPrompt.title"), href: "/suno/music-prompt-generator" },
-        { name: t("sunoSongDescription.title"), href: "/suno/song-description-generator" },
+        { name: t("sunoPromptGenerator.title"), href: "/suno/prompt-generator" },
+        { name: t("sunoDescriptionGenerator.title"), href: "/suno/description-generator" },
+        { name: t("sunoSongTitleGenerator.title"), href: "/suno/song-title-generator" },
+        { name: t("sunoSongTagGenerator.title"), href: "/suno/song-tag-generator" },
+        { name: t("sunoAlbumNameGenerator.title"), href: "/suno/album-name-generator" },
+        { name: t("sunoCoverArtPromptGenerator.title"), href: "/suno/cover-art-prompt-generator" },
+        { name: t("sunoRemixIdeaGenerator.title"), href: "/suno/remix-idea-generator" },
       ],
     },
     {

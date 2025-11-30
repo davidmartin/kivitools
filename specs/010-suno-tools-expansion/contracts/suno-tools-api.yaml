@@ -1,0 +1,510 @@
+openapi: 3.0.3
+info:
+  title: Suno Tools API
+  description: API endpoints for Suno music creation tools
+  version: 1.0.0
+
+servers:
+  - url: /api/tools/suno
+    description: Suno tools API base path
+
+paths:
+  /song-title-generator:
+    post:
+      summary: Generate song titles
+      description: Generate 10 creative song title suggestions based on description, genre, and mood
+      operationId: generateSongTitles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SongTitleRequest"
+      responses:
+        "200":
+          description: Successful generation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SongTitleResponse"
+        "400":
+          description: Invalid request (missing or invalid fields)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "403":
+          description: Bot verification failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    get:
+      summary: Health check
+      operationId: songTitleHealthCheck
+      responses:
+        "200":
+          description: Service status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+  /song-tag-generator:
+    post:
+      summary: Generate song tags
+      description: Generate 15-20 optimized tags for Suno discoverability
+      operationId: generateSongTags
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SongTagRequest"
+      responses:
+        "200":
+          description: Successful generation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SongTagResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "500":
+          $ref: "#/components/responses/ServerError"
+    get:
+      summary: Health check
+      operationId: songTagHealthCheck
+      responses:
+        "200":
+          description: Service status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+  /album-name-generator:
+    post:
+      summary: Generate album names
+      description: Generate 10 album/EP name suggestions based on concept
+      operationId: generateAlbumNames
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AlbumNameRequest"
+      responses:
+        "200":
+          description: Successful generation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AlbumNameResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "500":
+          $ref: "#/components/responses/ServerError"
+    get:
+      summary: Health check
+      operationId: albumNameHealthCheck
+      responses:
+        "200":
+          description: Service status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+  /cover-art-prompt-generator:
+    post:
+      summary: Generate cover art prompts
+      description: Generate 3-5 AI art prompts for album/single covers
+      operationId: generateCoverArtPrompts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CoverArtPromptRequest"
+      responses:
+        "200":
+          description: Successful generation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CoverArtPromptResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "500":
+          $ref: "#/components/responses/ServerError"
+    get:
+      summary: Health check
+      operationId: coverArtHealthCheck
+      responses:
+        "200":
+          description: Service status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+  /remix-idea-generator:
+    post:
+      summary: Generate remix ideas
+      description: Generate 5-7 creative remix concepts with detailed suggestions
+      operationId: generateRemixIdeas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RemixIdeaRequest"
+      responses:
+        "200":
+          description: Successful generation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RemixIdeaResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "500":
+          $ref: "#/components/responses/ServerError"
+    get:
+      summary: Health check
+      operationId: remixIdeaHealthCheck
+      responses:
+        "200":
+          description: Service status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+components:
+  schemas:
+    # Enums
+    Genre:
+      type: string
+      enum:
+        [
+          pop,
+          rap,
+          indie,
+          rock,
+          reggaeton,
+          electronic,
+          rnb,
+          acoustic,
+          metal,
+          jazz,
+        ]
+
+    Mood:
+      type: string
+      enum:
+        [
+          uplifting,
+          energetic,
+          sad,
+          romantic,
+          aggressive,
+          calm,
+          mysterious,
+          motivational,
+          playful,
+          dark,
+        ]
+
+    OutputLanguage:
+      type: string
+      enum: [en, es]
+
+    ReleaseType:
+      type: string
+      enum: [album, ep, single, mixtape]
+
+    ArtStyle:
+      type: string
+      enum:
+        [
+          digital-art,
+          photography,
+          illustration,
+          3d-render,
+          abstract,
+          minimalist,
+          vintage,
+          neon,
+        ]
+
+    ArtPlatform:
+      type: string
+      enum: [midjourney, dalle, stable-diffusion, generic]
+
+    RemixStyle:
+      type: string
+      enum:
+        [
+          genre-flip,
+          club-remix,
+          acoustic,
+          orchestral,
+          lo-fi,
+          experimental,
+          vintage,
+        ]
+
+    # Request Schemas
+    SongTitleRequest:
+      type: object
+      required: [description, genre, mood, language, turnstileToken]
+      properties:
+        description:
+          type: string
+          minLength: 1
+          maxLength: 500
+          description: Song theme/story description
+        genre:
+          $ref: "#/components/schemas/Genre"
+        mood:
+          $ref: "#/components/schemas/Mood"
+        language:
+          $ref: "#/components/schemas/OutputLanguage"
+        turnstileToken:
+          type: string
+          description: Cloudflare Turnstile verification token
+
+    SongTagRequest:
+      type: object
+      required: [description, genre, mood, language, turnstileToken]
+      properties:
+        description:
+          type: string
+          minLength: 1
+          maxLength: 500
+        genre:
+          $ref: "#/components/schemas/Genre"
+        mood:
+          $ref: "#/components/schemas/Mood"
+        language:
+          $ref: "#/components/schemas/OutputLanguage"
+        turnstileToken:
+          type: string
+
+    AlbumNameRequest:
+      type: object
+      required: [concept, genre, releaseType, language, turnstileToken]
+      properties:
+        concept:
+          type: string
+          minLength: 1
+          maxLength: 500
+          description: Album concept/theme description
+        genre:
+          $ref: "#/components/schemas/Genre"
+        releaseType:
+          $ref: "#/components/schemas/ReleaseType"
+        trackCount:
+          type: integer
+          minimum: 1
+          maximum: 30
+        language:
+          $ref: "#/components/schemas/OutputLanguage"
+        turnstileToken:
+          type: string
+
+    CoverArtPromptRequest:
+      type: object
+      required:
+        [
+          songTitle,
+          genre,
+          mood,
+          artStyle,
+          targetPlatform,
+          language,
+          turnstileToken,
+        ]
+      properties:
+        songTitle:
+          type: string
+          minLength: 1
+          maxLength: 200
+          description: Song or album title
+        genre:
+          $ref: "#/components/schemas/Genre"
+        mood:
+          $ref: "#/components/schemas/Mood"
+        artStyle:
+          $ref: "#/components/schemas/ArtStyle"
+        targetPlatform:
+          $ref: "#/components/schemas/ArtPlatform"
+        language:
+          $ref: "#/components/schemas/OutputLanguage"
+        turnstileToken:
+          type: string
+
+    RemixIdeaRequest:
+      type: object
+      required:
+        [originalSong, originalGenre, remixStyle, language, turnstileToken]
+      properties:
+        originalSong:
+          type: string
+          minLength: 1
+          maxLength: 500
+          description: Description of the original song
+        originalGenre:
+          $ref: "#/components/schemas/Genre"
+        remixStyle:
+          $ref: "#/components/schemas/RemixStyle"
+        language:
+          $ref: "#/components/schemas/OutputLanguage"
+        turnstileToken:
+          type: string
+
+    # Response Schemas
+    SongTitleResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        titles:
+          type: array
+          items:
+            type: string
+          minItems: 10
+          maxItems: 10
+        error:
+          type: string
+
+    SongTagResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        tags:
+          type: array
+          items:
+            type: string
+          minItems: 15
+          maxItems: 20
+        error:
+          type: string
+
+    AlbumNameResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        names:
+          type: array
+          items:
+            type: string
+          minItems: 10
+          maxItems: 10
+        error:
+          type: string
+
+    CoverArtPromptResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        prompts:
+          type: array
+          items:
+            type: string
+          minItems: 3
+          maxItems: 5
+        error:
+          type: string
+
+    RemixIdea:
+      type: object
+      properties:
+        title:
+          type: string
+        targetGenre:
+          type: string
+        tempoChange:
+          type: string
+          enum: [faster, slower, similar]
+        keepElements:
+          type: array
+          items:
+            type: string
+        addElements:
+          type: array
+          items:
+            type: string
+        productionNotes:
+          type: string
+
+    RemixIdeaResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        ideas:
+          type: array
+          items:
+            $ref: "#/components/schemas/RemixIdea"
+          minItems: 5
+          maxItems: 7
+        error:
+          type: string
+
+    ErrorResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: string
+
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: ok
+        service:
+          type: string
+
+  responses:
+    BadRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    Forbidden:
+      description: Bot verification failed
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+    ServerError:
+      description: Server error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"

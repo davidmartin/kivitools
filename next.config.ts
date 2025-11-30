@@ -124,6 +124,13 @@ const nextConfig: NextConfig = {
       { source: "/blog/guia-empezar-twitch-2025", destination: "/blog/twitch-streaming-guide-2025" },
       { source: "/blog/guia-reddit-portada-2025", destination: "/blog/reddit-front-page-guide-2025" },
       { source: "/blog/estrategia-playlist-spotify-2025", destination: "/blog/spotify-playlist-strategy-2025" },
+
+      // Suno - Rutas en español
+      { source: "/suno/generador-titulos-canciones", destination: "/suno/song-title-generator" },
+      { source: "/suno/generador-tags-canciones", destination: "/suno/song-tag-generator" },
+      { source: "/suno/generador-nombres-album", destination: "/suno/album-name-generator" },
+      { source: "/suno/generador-prompts-portada", destination: "/suno/cover-art-prompt-generator" },
+      { source: "/suno/generador-ideas-remix", destination: "/suno/remix-idea-generator" },
     ];
   },
 };
