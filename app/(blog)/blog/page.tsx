@@ -2,11 +2,13 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/blog-data";
+import { getPostsByLanguage } from "@/lib/blog-data";
 
 export default function BlogPage() {
-  const { t } = useLanguage();
-  const posts = getAllPosts();
+  const { t, language } = useLanguage();
+  // Blog only supports es/en - default to es for other languages
+  const blogLanguage = language === "en" ? "en" : "es";
+  const posts = getPostsByLanguage(blogLanguage);
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
