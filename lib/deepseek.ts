@@ -1,12 +1,39 @@
 import OpenAI from "openai";
 
-// Cliente OpenRouter configurado
+// ============================================
+// AI Provider Configuration
+// ============================================
+// Set AI_PROVIDER in .env.local to switch between providers:
+// - "deepseek" → Uses DeepSeek API directly (cheaper, good quality)
+// - "openrouter" → Uses OpenRouter API (access to multiple models)
+// ============================================
+
+const AI_PROVIDER = process.env.AI_PROVIDER || "openrouter";
+
+// Provider configurations
+const providers = {
+    deepseek: {
+        baseURL: "https://api.deepseek.com/v1",
+        apiKey: process.env.DEEPSEEK_API_KEY,
+        model: "deepseek-chat",
+    },
+    openrouter: {
+        baseURL: "https://openrouter.ai/api/v1",
+        apiKey: process.env.OPENROUTER_API_KEY,
+        model: "x-ai/grok-4.1-fast",
+    },
+};
+
+// Get current provider config
+const currentProvider = providers[AI_PROVIDER as keyof typeof providers] || providers.openrouter;
+
+// Cliente AI configurado según el provider seleccionado
 const deepseek = new OpenAI({
-    baseURL: "https://openrouter.ai/api/v1",
-    apiKey: process.env.OPENROUTER_API_KEY,
+    baseURL: currentProvider.baseURL,
+    apiKey: currentProvider.apiKey,
 });
 
-const MODEL_NAME = "x-ai/grok-4.1-fast";
+const MODEL_NAME = process.env.AI_MODEL || currentProvider.model;
 
 // Mapeo de idiomas a nombres completos (compartido)
 const languageNames: Record<string, string> = {
