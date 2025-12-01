@@ -41,8 +41,9 @@ export const home = {
     "home.features.free.description": "Ja, wirklich kostenlos. Keine versteckten Abos, kein '3 Tage gratis'. Ihr Geldbeutel kann sich entspannen.",
     "home.features.noSignup.title": "Keine Registrierung nötig",
     "home.features.noSignup.description": "E-Mail? Passwort? Wer hat dafür Zeit? Einfach rein, erstellen und fertig. So einfach ist das.",
-    "home.features.aiPowered.title": "KI, die wirklich funktioniert",
-    "home.features.aiPowered.description": "Unsere KI gibt Ihnen keine seltsamen philosophischen Antworten. Nur nützliche Inhalte für jede Plattform.",
+    "home.features.aiPowered.title": "Angetrieben von DeepSeek AI",
+    "home.features.aiPowered.description": "Wir verwenden DeepSeek, eines der fortschrittlichsten KI-Modelle. Keine seltsamen philosophischen Antworten, nur Inhalte, die wirklich funktionieren.",
+    "home.features.aiPowered.learnMore": "Mehr erfahren →",
     "home.features.multiLanguage.title": "Jede digitale Plattform",
     "home.features.multiLanguage.description": "TikTok, Suno, Instagram, Twitch, Discord... Wenn es online existiert, haben wir wahrscheinlich ein Tool dafür.",
 

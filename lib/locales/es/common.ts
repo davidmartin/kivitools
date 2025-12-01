@@ -154,4 +154,28 @@ export const common = {
     "auth.register.google": "Registrarse con Google",
     "auth.register.hasAccount": "¿Ya tienes una cuenta?",
     "auth.register.loginLink": "Inicia Sesión",
+
+    // DeepSeek Branding
+    "footer.poweredBy": "Impulsado por",
+    "footer.deepseek": "DeepSeek",
+    "footer.poweredByDeepseek": "Impulsado por DeepSeek AI",
+
+    // Technology Page
+    "technology.title": "Nuestra Tecnología",
+    "technology.metaTitle": "Stack Tecnológico | KiviTools - Impulsado por DeepSeek AI",
+    "technology.metaDescription": "Descubre cómo KiviTools usa DeepSeek AI para potenciar más de 100 herramientas gratuitas de creación de contenido para creadores de todo el mundo.",
+    "technology.heroTitle": "El Cerebro Detrás de KiviTools",
+    "technology.heroSubtitle": "Elegimos DeepSeek AI porque las buenas herramientas merecen buena IA (y no vamos a entrenar nuestro propio modelo, seamos realistas).",
+    "technology.whyDeepseek": "¿Por qué DeepSeek?",
+    "technology.whyDeepseekText": "DeepSeek es uno de los modelos de IA más avanzados que existen, y potencia cada herramienta en KiviTools. Desde scripts de TikTok hasta captions de Instagram, desde títulos de YouTube hasta hilos de Twitter - todo es magia de DeepSeek detrás de escenas.",
+    "technology.feature1Title": "Ultra Rápido",
+    "technology.feature1Text": "Genera contenido en segundos, no minutos. Porque tu momento viral no va a esperar.",
+    "technology.feature2Title": "Resultados de Verdad Buenos",
+    "technology.feature2Text": "DeepSeek entiende el contexto como un humano. Bueno, casi. Ok, a veces mejor que los humanos.",
+    "technology.feature3Title": "100+ Herramientas",
+    "technology.feature3Text": "Un modelo de IA potenciando herramientas para TikTok, Instagram, YouTube, Twitter y más. Es como tener un ejército creativo.",
+    "technology.feature4Title": "Siempre Gratis",
+    "technology.feature4Text": "Sí, de verdad. Sin costos ocultos, sin tier premium que realmente funcione. Solo herramientas gratis.",
+    "technology.cta": "Prueba Nuestras Herramientas",
+    "technology.ctaSubtext": "Mira lo que la IA de DeepSeek puede hacer por tu contenido",
 };

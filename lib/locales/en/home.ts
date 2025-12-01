@@ -41,8 +41,9 @@ export const home = {
     "home.features.free.description": "Yes, actually free. No surprise subscriptions, no 'free for 3 days'. Your wallet can chill.",
     "home.features.noSignup.title": "No Signup (We like you, but not that much)",
     "home.features.noSignup.description": "Email? Password? Who has time for that? Just get in, create, and bounce. That simple.",
-    "home.features.aiPowered.title": "AI That Actually Works",
-    "home.features.aiPowered.description": "Our AI won't give you weird philosophical answers. Just useful content for any platform.",
+    "home.features.aiPowered.title": "Powered by DeepSeek AI",
+    "home.features.aiPowered.description": "We use DeepSeek, one of the most advanced AI models out there. No weird philosophical answers, just content that actually works.",
+    "home.features.aiPowered.learnMore": "Learn more →",
     "home.features.multiLanguage.title": "Any Digital Platform",
     "home.features.multiLanguage.description": "TikTok, Suno, Instagram, Twitch, Discord... If it exists online, we probably have a tool for it.",
 

@@ -154,4 +154,28 @@ export const common = {
     "auth.register.google": "Sign up with Google",
     "auth.register.hasAccount": "Already have an account?",
     "auth.register.loginLink": "Login",
+
+    // DeepSeek Branding
+    "footer.poweredBy": "Powered by",
+    "footer.deepseek": "DeepSeek",
+    "footer.poweredByDeepseek": "Powered by DeepSeek AI",
+
+    // Technology Page
+    "technology.title": "Our Technology",
+    "technology.metaTitle": "Technology Stack | KiviTools - Powered by DeepSeek AI",
+    "technology.metaDescription": "Discover how KiviTools uses DeepSeek AI to power 100+ free content creation tools for creators worldwide.",
+    "technology.heroTitle": "The Brain Behind KiviTools",
+    "technology.heroSubtitle": "We chose DeepSeek AI because good tools deserve great AI (and we're not about to train our own model, let's be real).",
+    "technology.whyDeepseek": "Why DeepSeek?",
+    "technology.whyDeepseekText": "DeepSeek is one of the most advanced AI models out there, and it powers every single tool on KiviTools. From TikTok scripts to Instagram captions, from YouTube titles to Twitter threads - it's all DeepSeek magic behind the scenes.",
+    "technology.feature1Title": "Lightning Fast",
+    "technology.feature1Text": "Generate content in seconds, not minutes. Because your viral moment won't wait.",
+    "technology.feature2Title": "Actually Good Results",
+    "technology.feature2Text": "DeepSeek understands context like a human. Well, almost. Okay, sometimes better than humans.",
+    "technology.feature3Title": "100+ Tools",
+    "technology.feature3Text": "One AI model powering tools for TikTok, Instagram, YouTube, Twitter, and more. It's like having a creative army.",
+    "technology.feature4Title": "Always Free",
+    "technology.feature4Text": "Yes, really. No hidden fees, no premium tier that actually works. Just free tools.",
+    "technology.cta": "Try Our Tools",
+    "technology.ctaSubtext": "See what DeepSeek-powered AI can do for your content",
 };

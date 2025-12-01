@@ -131,6 +131,9 @@ const nextConfig: NextConfig = {
       { source: "/suno/generador-nombres-album", destination: "/suno/album-name-generator" },
       { source: "/suno/generador-prompts-portada", destination: "/suno/cover-art-prompt-generator" },
       { source: "/suno/generador-ideas-remix", destination: "/suno/remix-idea-generator" },
+
+      // About/Legal - Rutas en español
+      { source: "/sobre/tecnologia", destination: "/about/technology" },
     ];
   },
 };

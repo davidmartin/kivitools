@@ -41,8 +41,9 @@ export const home = {
     "home.features.free.description": "Sì, veramente gratis. Niente abbonamenti nascosti, niente 'gratis per 3 giorni'. Il tuo portafoglio può rilassarsi.",
     "home.features.noSignup.title": "Senza Registrazione (Ci piaci, ma non così tanto)",
     "home.features.noSignup.description": "Email? Password? Chi ha tempo? Entra, crea e via. Così semplice.",
-    "home.features.aiPowered.title": "AI che Funziona Davvero",
-    "home.features.aiPowered.description": "La nostra AI non ti darà risposte filosofiche strane. Solo contenuti utili per qualsiasi piattaforma.",
+    "home.features.aiPowered.title": "Alimentato da DeepSeek AI",
+    "home.features.aiPowered.description": "Usiamo DeepSeek, uno dei modelli AI più avanzati. Niente risposte filosofiche strane, solo contenuti che funzionano davvero.",
+    "home.features.aiPowered.learnMore": "Scopri di più →",
     "home.features.multiLanguage.title": "Qualsiasi Piattaforma Digitale",
     "home.features.multiLanguage.description": "TikTok, Suno, Instagram, Twitch, Discord... Se esiste online, probabilmente abbiamo uno strumento per quello.",
 
