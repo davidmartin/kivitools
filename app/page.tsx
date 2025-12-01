@@ -546,9 +546,12 @@ export default function Home() {
               <h3 className="text-xl font-bold text-foreground mb-3">
                 {t("home.features.aiPowered.title")}
               </h3>
-              <p className="text-muted">
+              <p className="text-muted mb-4">
                 {t("home.features.aiPowered.description")}
               </p>
+              <Link href="/about/technology" className="text-primary hover:text-primary/80 text-sm font-medium transition-colors">
+                {t("home.features.aiPowered.learnMore")}
+              </Link>
             </div>
 
             <div className="glass p-8 rounded-2xl text-center hover:bg-white/10 transition-colors">

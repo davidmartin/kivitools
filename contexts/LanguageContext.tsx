@@ -52,7 +52,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const t = useCallback((key: string): string => {
-    return (translations[language][key as keyof typeof translations.en] as string) || key;
+    const langTranslations = translations[language] as unknown as Record<string, string>;
+    return langTranslations[key] || key;
   }, [language]);
 
   // Memoize context value to prevent unnecessary re-renders

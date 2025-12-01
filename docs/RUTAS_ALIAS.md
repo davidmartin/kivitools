@@ -185,6 +185,12 @@ Both URLs display the **same page** (no redirects). This is implemented via `nex
 | `/suno/cover-art-prompt-generator` | `/suno/generador-prompts-portada`     |
 | `/suno/remix-idea-generator`       | `/suno/generador-ideas-remix`         |
 
+### About / Legal Pages
+
+| English URL         | Spanish URL         |
+| ------------------- | ------------------- |
+| `/about/technology` | `/sobre/tecnologia` |
+
 ---
 
 ## Spanish URL Naming Conventions
