@@ -1,13 +1,25 @@
 "use client";
 
-import { useEffect } from "react";
-import { Button, Card } from "@heroui/react";
+import { useEffect, Suspense } from "react";
+import { Button, Card, Spinner } from "@heroui/react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function LoginPage() {
+// Loading fallback
+function LoginLoading() {
+    return (
+        <div className="container mx-auto px-4 py-20 flex justify-center">
+            <Card className="w-full max-w-md p-6 flex items-center justify-center">
+                <Spinner size="lg" />
+            </Card>
+        </div>
+    );
+}
+
+// Main login content
+function LoginContent() {
     const { loginWithGoogle, user } = useAuth();
     const { t } = useLanguage();
     const searchParams = useSearchParams();
@@ -78,5 +90,14 @@ export default function LoginPage() {
                 </p>
             </Card>
         </div>
+    );
+}
+
+// Wrapper with Suspense boundary
+export default function LoginPage() {
+    return (
+        <Suspense fallback={<LoginLoading />}>
+            <LoginContent />
+        </Suspense>
     );
 }

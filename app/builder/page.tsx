@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Button, Input, Select, TextArea, Card, Spinner } from "@heroui/react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -25,7 +25,20 @@ const PLATFORMS = [
     "forocoches", "linkedin"
 ];
 
-export default function BuilderPage() {
+// Loading fallback component
+function BuilderLoading() {
+    return (
+        <div className="min-h-screen flex items-center justify-center px-4">
+            <div className="text-center">
+                <Spinner size="lg" />
+                <p className="text-muted mt-4">Loading builder...</p>
+            </div>
+        </div>
+    );
+}
+
+// Main content component that uses useSearchParams
+function BuilderContent() {
     const { user } = useAuth();
     const { t, language } = useLanguage();
     const router = useRouter();
@@ -631,5 +644,14 @@ export default function BuilderPage() {
                 </Button>
             </div>
         </div>
+    );
+}
+
+// Wrapper component with Suspense boundary
+export default function BuilderPage() {
+    return (
+        <Suspense fallback={<BuilderLoading />}>
+            <BuilderContent />
+        </Suspense>
     );
 }
