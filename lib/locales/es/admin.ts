@@ -19,6 +19,22 @@ export const admin = {
     "admin.backHome": "Volver al Inicio",
     "admin.allTools": "Todas las Herramientas",
 
+    // Edit Modal
+    "admin.viewDetails": "Ver Detalles",
+    "admin.edit": "Editar",
+    "admin.editTool": "Editar Herramienta",
+    "admin.editModal.basicInfo": "Información Básica",
+    "admin.editModal.name": "Nombre",
+    "admin.editModal.slug": "Slug (URL)",
+    "admin.editModal.platform": "Plataforma",
+    "admin.editModal.description": "Descripción",
+    "admin.editModal.inputs": "Campos del Formulario",
+    "admin.editModal.addInput": "Añadir Campo",
+    "admin.editModal.noInputs": "No hay campos definidos",
+    "admin.editModal.promptTemplate": "Plantilla de Prompt IA",
+    "admin.success.saved": "¡Herramienta guardada exitosamente!",
+    "admin.error.save": "Error al guardar la herramienta",
+
     // Video Generator
     "admin.videoGenerator.title": "Generador de Videos TikTok",
     "admin.videoGenerator.subtitle": "Genera prompts para Veo 2 y captions de TikTok para tus herramientas",

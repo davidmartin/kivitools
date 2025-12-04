@@ -24,6 +24,8 @@ Auto-generated from all feature plans. Last updated: 2025-11-25
 - N/A (static content only, no database changes) (014-deepseek-platform)
 - TypeScript 5.x (Next.js 16.0.1) + Next.js App Router, existing blog infrastructure (015-deepseek-blog-seo)
 - Static data in `lib/blog-data.ts` (BlogPost array) (015-deepseek-blog-seo)
+- TypeScript 5.x (Next.js 16.0.1 with App Router) + @heroui/react v3.0.0-beta.1, appwrite SDK, DeepSeek/OpenRouter API (016-hero-tool-search)
+- Appwrite - existing "tools" collection with fields: name, description, platform, slug, author_name, author_id, status, inputs, prompt_template (016-hero-tool-search)
 
 - TypeScript 5.x with Next.js 16.0.1 + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, DeepSeek API (001-platform-seo-expansion)
 
@@ -43,9 +45,9 @@ npm test && npm run lint
 TypeScript 5.x with Next.js 16.0.1: Follow standard conventions
 
 ## Recent Changes
+- 016-hero-tool-search: Added TypeScript 5.x (Next.js 16.0.1 with App Router) + @heroui/react v3.0.0-beta.1, appwrite SDK, DeepSeek/OpenRouter API
 - 015-deepseek-blog-seo: Added TypeScript 5.x (Next.js 16.0.1) + Next.js App Router, existing blog infrastructure
 - 014-deepseek-platform: Added TypeScript 5.x with Next.js 16.0.1 (App Router) + @heroui/react v3.0.0-beta.1, Tailwind CSS v4
-- 014-deepseek-platform: Added TypeScript 5.x with Next.js 16.0.1 (App Router) + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, OpenAI SDK (for DeepSeek API)
 
 
 <!-- MANUAL ADDITIONS START -->

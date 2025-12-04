@@ -160,6 +160,26 @@ export const common = {
     "footer.deepseek": "DeepSeek",
     "footer.poweredByDeepseek": "Impulsado por DeepSeek AI",
 
+    // Hero Search
+    "search.placeholder": "Buscar herramientas... (ej. 'caption instagram')",
+    "search.noResults": "No encontramos herramientas. ¡Pero podemos solucionarlo! 🛠️",
+    "search.createTool": "Crear esta herramienta",
+    "search.createToolPrompt": "¿No encuentras lo que necesitas? ¡Vamos a crearlo! 🚀",
+    "search.loading": "Buscando...",
+    "search.official": "Oficial",
+    "search.community": "Comunidad",
+    "search.by": "por",
+    "search.viewMore": "Ver más resultados",
+    "search.resultsFor": "Resultados para",
+    "search.pressEnter": "Presiona Enter para buscar",
+    "search.recentSearches": "Búsquedas recientes",
+    "search.clearRecent": "Limpiar",
+    "search.noRecentSearches": "Sin búsquedas recientes",
+    "search.trySearching": "Prueba buscar 'script tiktok' o 'caption instagram'",
+    "search.createToolCta": "¿No ves lo que necesitas? ¡Crea tu propia herramienta!",
+    "search.createToolCtaFew": "¿Solo {count} resultados? ¡Crea una herramienta para '{query}'!",
+    "search.error": "¡Ups! La búsqueda tropezó. ¿Lo intentamos de nuevo? 🔄",
+
     // Technology Page
     "technology.title": "Nuestra Tecnología",
     "technology.metaTitle": "Stack Tecnológico | KiviTools - Impulsado por DeepSeek AI",

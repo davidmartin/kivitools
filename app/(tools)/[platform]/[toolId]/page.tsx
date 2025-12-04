@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { Button } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PlatformBadge from "@/app/components/platform-badge";
 import TurnstileWidget from "@/app/components/turnstile-widget";
 import { databases } from "@/lib/appwrite-client";
+import { Query } from "appwrite";
 import { notFound } from "next/navigation";
 
 interface ToolInput {
@@ -26,7 +27,8 @@ interface CustomTool {
     author_name: string;
 }
 
-export default function CustomToolPage({ params }: { params: { platform: string; toolId: string } }) {
+export default function CustomToolPage({ params }: { params: Promise<{ platform: string; toolId: string }> }) {
+    const resolvedParams = use(params);
     const { t } = useLanguage();
     const [tool, setTool] = useState<CustomTool | null>(null);
     const [inputs, setInputs] = useState<ToolInput[]>([]);
@@ -40,20 +42,27 @@ export default function CustomToolPage({ params }: { params: { platform: string;
     useEffect(() => {
         const fetchTool = async () => {
             try {
-                // We need to query by slug or ID. Assuming toolId is the document ID for now.
-                // If using slug, we'd need a query.
-                const doc = await databases.getDocument(
+                // Query by slug instead of document ID
+                const response = await databases.listDocuments(
                     process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID!,
                     "tools",
-                    params.toolId
+                    [
+                        Query.equal("slug", resolvedParams.toolId),
+                        Query.equal("status", "approved"),
+                        Query.limit(1)
+                    ]
                 );
                 
+                if (response.documents.length === 0) {
+                    setError("Tool not found");
+                    return;
+                }
+                
+                const doc = response.documents[0];
                 setTool(doc as unknown as CustomTool);
                 setInputs(JSON.parse(doc.inputs));
             } catch (err) {
                 console.error(err);
-                // If not found, we should probably redirect or show 404
-                // notFound(); // Can't call this in useEffect easily
                 setError("Tool not found");
             } finally {
                 setIsLoading(false);
@@ -61,7 +70,7 @@ export default function CustomToolPage({ params }: { params: { platform: string;
         };
 
         fetchTool();
-    }, [params.toolId]);
+    }, [resolvedParams.toolId]);
 
     const handleInputChange = (id: string, value: any) => {
         setFormValues(prev => ({ ...prev, [id]: value }));
@@ -70,6 +79,11 @@ export default function CustomToolPage({ params }: { params: { platform: string;
     const handleGenerate = async () => {
         if (!turnstileToken) {
             setError(t("turnstile.failed"));
+            return;
+        }
+        
+        if (!tool) {
+            setError("Tool not found");
             return;
         }
 
@@ -82,7 +96,7 @@ export default function CustomToolPage({ params }: { params: { platform: string;
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    toolId: params.toolId,
+                    toolId: tool.$id, // Use the actual document ID, not the slug
                     inputs: formValues,
                     turnstileToken
                 }),
