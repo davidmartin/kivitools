@@ -5,6 +5,7 @@ import { Card, Accordion } from "@heroui/react";
 import LatestTools from "./components/latest-tools";
 import AdSlot from "./components/ad-slot";
 import PlatformLogo from "./components/platform-logo";
+import HeroSearch from "./components/hero-search";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
@@ -322,6 +323,11 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-muted max-w-xl mb-10 animate-slide-up leading-relaxed" style={{ animationDelay: "0.2s" }}>
               {t("home.hero.description")}
             </p>
+
+            {/* Hero Search Bar */}
+            <div className="mb-10 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+              <HeroSearch className="max-w-xl" />
+            </div>
 
             <div className="flex flex-wrap gap-6 animate-slide-up" style={{ animationDelay: "0.4s" }}>
               <Link

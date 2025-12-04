@@ -1,13 +1,46 @@
 "use client";
 
+import { useEffect } from "react";
 import { Button, Card } from "@heroui/react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 export default function LoginPage() {
-    const { loginWithGoogle } = useAuth();
+    const { loginWithGoogle, user } = useAuth();
     const { t } = useLanguage();
+    const searchParams = useSearchParams();
+
+    // Handle redirect after login when createTool param is present
+    useEffect(() => {
+        if (user) {
+            // User just logged in - check for createTool redirect
+            const createToolQuery = searchParams.get("createTool");
+            
+            if (createToolQuery) {
+                // Redirect to builder with the query
+                window.location.href = `/builder?query=${encodeURIComponent(createToolQuery)}`;
+            } else {
+                // Check sessionStorage for saved query (from HeroSearch)
+                const savedQuery = typeof window !== "undefined" 
+                    ? sessionStorage.getItem("kivi_create_tool_query") 
+                    : null;
+                
+                if (savedQuery) {
+                    // Clear sessionStorage
+                    sessionStorage.removeItem("kivi_create_tool_query");
+                    sessionStorage.removeItem("kivi_create_tool_language");
+                    
+                    // Redirect to builder
+                    window.location.href = `/builder?query=${encodeURIComponent(savedQuery)}`;
+                } else {
+                    // Normal login - redirect to home or dashboard
+                    window.location.href = "/";
+                }
+            }
+        }
+    }, [user, searchParams]);
 
     return (
         <div className="container mx-auto px-4 py-20 flex justify-center">

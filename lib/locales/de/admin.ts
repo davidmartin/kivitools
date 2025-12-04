@@ -16,6 +16,22 @@ export const admin = {
     "admin.success.approved": "Tool erfolgreich genehmigt",
     "admin.success.rejected": "Tool abgelehnt",
     "admin.allTools": "Alle Tools",
+
+    // Edit Modal
+    "admin.viewDetails": "Details Ansehen",
+    "admin.edit": "Bearbeiten",
+    "admin.editTool": "Tool Bearbeiten",
+    "admin.editModal.basicInfo": "Grundinformationen",
+    "admin.editModal.name": "Name",
+    "admin.editModal.slug": "Slug (URL)",
+    "admin.editModal.platform": "Plattform",
+    "admin.editModal.description": "Beschreibung",
+    "admin.editModal.inputs": "Formularfelder",
+    "admin.editModal.addInput": "Feld hinzufügen",
+    "admin.editModal.noInputs": "Keine Felder definiert",
+    "admin.editModal.promptTemplate": "KI-Prompt-Vorlage",
+    "admin.success.saved": "Tool erfolgreich gespeichert!",
+    "admin.error.save": "Tool konnte nicht gespeichert werden",
     "admin.accessDenied": "Zugriff verweigert. Sie sind kein Administrator.",
     "admin.backHome": "Zurück zur Startseite",
 

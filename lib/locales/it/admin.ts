@@ -16,6 +16,22 @@ export const admin = {
     "admin.success.approved": "Strumento approvato con successo",
     "admin.success.rejected": "Strumento rifiutato",
     "admin.allTools": "Tutti gli Strumenti",
+
+    // Edit Modal
+    "admin.viewDetails": "Vedi Dettagli",
+    "admin.edit": "Modifica",
+    "admin.editTool": "Modifica Strumento",
+    "admin.editModal.basicInfo": "Informazioni Base",
+    "admin.editModal.name": "Nome",
+    "admin.editModal.slug": "Slug (URL)",
+    "admin.editModal.platform": "Piattaforma",
+    "admin.editModal.description": "Descrizione",
+    "admin.editModal.inputs": "Campi del Modulo",
+    "admin.editModal.addInput": "Aggiungi Campo",
+    "admin.editModal.noInputs": "Nessun campo definito",
+    "admin.editModal.promptTemplate": "Modello di Prompt IA",
+    "admin.success.saved": "Strumento salvato con successo!",
+    "admin.error.save": "Salvataggio strumento fallito",
     "admin.accessDenied": "Accesso Negato. Non sei un admin.",
     "admin.backHome": "Torna alla Home",
 

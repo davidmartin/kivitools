@@ -16,6 +16,22 @@ export const admin = {
     "admin.success.approved": "Tool approved successfully",
     "admin.success.rejected": "Tool rejected",
     "admin.allTools": "All Tools",
+
+    // Edit Modal
+    "admin.viewDetails": "View Details",
+    "admin.edit": "Edit",
+    "admin.editTool": "Edit Tool",
+    "admin.editModal.basicInfo": "Basic Information",
+    "admin.editModal.name": "Name",
+    "admin.editModal.slug": "Slug (URL)",
+    "admin.editModal.platform": "Platform",
+    "admin.editModal.description": "Description",
+    "admin.editModal.inputs": "Form Inputs",
+    "admin.editModal.addInput": "Add Input",
+    "admin.editModal.noInputs": "No inputs defined",
+    "admin.editModal.promptTemplate": "AI Prompt Template",
+    "admin.success.saved": "Tool saved successfully!",
+    "admin.error.save": "Failed to save tool",
     "admin.accessDenied": "Access Denied. You are not an admin.",
     "admin.backHome": "Back to Home",
 

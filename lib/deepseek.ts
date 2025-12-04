@@ -6228,3 +6228,191 @@ Write the complete post content.`;
     const content = completion.choices[0]?.message?.content || "";
     return content.trim();
 }
+
+// ============================================
+// Auto-Create Tool Generator
+// Feature: 016-hero-tool-search
+// ============================================
+
+/**
+ * Platform detection keywords for auto-create
+ */
+const platformKeywords: Record<string, string[]> = {
+    tiktok: ["tiktok", "tik tok", "tt", "fyp", "duet", "stitch"],
+    instagram: ["instagram", "ig", "insta", "reels", "stories", "carousel"],
+    twitter: ["twitter", "tweet", "x", "thread", "x.com"],
+    youtube: ["youtube", "yt", "video", "shorts", "channel", "subscriber"],
+    snapchat: ["snapchat", "snap", "snaps", "lens", "filter"],
+    reddit: ["reddit", "subreddit", "post", "karma", "upvote"],
+    discord: ["discord", "server", "bot", "channel", "role"],
+    twitch: ["twitch", "stream", "streamer", "clip", "vod"],
+    linkedin: ["linkedin", "professional", "career", "job", "network"],
+    pinterest: ["pinterest", "pin", "board", "idea"],
+    facebook: ["facebook", "fb", "meta", "page", "group"],
+    spotify: ["spotify", "playlist", "music", "podcast"],
+    suno: ["suno", "ai music", "song", "lyrics", "melody"],
+    telegram: ["telegram", "channel", "group", "bot"],
+    threads: ["threads", "meta threads"],
+    bluesky: ["bluesky", "bsky", "at protocol"],
+    kick: ["kick", "streaming", "live"],
+    medium: ["medium", "article", "blog", "story"],
+    email: ["email", "newsletter", "subject line", "cold email"],
+    podcast: ["podcast", "episode", "show notes", "audio"],
+    dating: ["dating", "tinder", "bumble", "hinge", "bio", "profile"],
+    onlyfans: ["onlyfans", "of", "creator", "ppv", "subscriber"],
+    patreon: ["patreon", "patron", "tier", "membership"],
+    etsy: ["etsy", "shop", "product", "listing", "handmade"],
+    amazon: ["amazon", "product", "review", "listing"],
+    general: ["content", "text", "generate", "write", "create"],
+};
+
+/**
+ * Detect the most likely platform from user query
+ */
+function detectPlatformFromQuery(query: string): string {
+    const lowerQuery = query.toLowerCase();
+
+    for (const [platform, keywords] of Object.entries(platformKeywords)) {
+        for (const keyword of keywords) {
+            if (lowerQuery.includes(keyword)) {
+                return platform;
+            }
+        }
+    }
+
+    return "general";
+}
+
+/**
+ * Generate a tool configuration from a user's search query.
+ * Used when user wants to auto-create a tool that doesn't exist.
+ *
+ * @param query - User's search query describing the tool they want
+ * @param language - Output language for tool name/description
+ * @param suggestedPlatform - Optional platform override
+ * @returns AutoCreateConfig with name, description, platform, promptTemplate, inputs
+ */
+export async function generateToolFromQuery({
+    query,
+    language = "en",
+    suggestedPlatform,
+}: {
+    query: string;
+    language: "en" | "es";
+    suggestedPlatform?: string;
+}): Promise<{
+    name: string;
+    description: string;
+    platform: string;
+    promptTemplate: string;
+    inputs: Array<{
+        id: string;
+        label: string;
+        type: "text" | "textarea" | "select" | "number";
+        placeholder?: string;
+        options?: string;
+        required: boolean;
+    }>;
+}> {
+    const platform = suggestedPlatform || detectPlatformFromQuery(query);
+    const langText = languageNames[language] || "English";
+
+    const prompt = `You are an AI tool designer for content creators. Based on the user's request, design a tool configuration.
+
+USER REQUEST: "${query}"
+DETECTED PLATFORM: ${platform}
+OUTPUT LANGUAGE: ${langText}
+
+Generate a JSON configuration for this tool with the following structure:
+{
+  "name": "Tool Name (max 50 chars, ${langText})",
+  "description": "Brief description of what the tool does (max 150 chars, ${langText})",
+  "platform": "${platform}",
+  "promptTemplate": "The AI prompt template that will generate content. Use {{input_id}} placeholders for user inputs. Be specific and include best practices for the platform.",
+  "inputs": [
+    {
+      "id": "unique_id",
+      "label": "Field Label (${langText})",
+      "type": "text|textarea|select|number",
+      "placeholder": "Example placeholder (${langText})",
+      "options": "option1,option2,option3 (only for select type)",
+      "required": true|false
+    }
+  ]
+}
+
+GUIDELINES:
+- Name should be catchy and descriptive
+- Description should explain the value proposition
+- promptTemplate should be detailed and produce high-quality content
+- Include 2-5 relevant input fields
+- Use appropriate field types (textarea for long content, select for choices)
+- Make the first/main input required
+- Include a "tone" or "style" select if relevant
+- Include a "language" input if content can be multilingual
+
+Return ONLY valid JSON, no explanation.`;
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.7,
+        max_tokens: 1500,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+
+    // Parse JSON from response
+    try {
+        // Extract JSON from response (handle markdown code blocks)
+        let jsonStr = content.trim();
+        if (jsonStr.startsWith("```json")) {
+            jsonStr = jsonStr.slice(7);
+        } else if (jsonStr.startsWith("```")) {
+            jsonStr = jsonStr.slice(3);
+        }
+        if (jsonStr.endsWith("```")) {
+            jsonStr = jsonStr.slice(0, -3);
+        }
+        jsonStr = jsonStr.trim();
+
+        const config = JSON.parse(jsonStr);
+
+        // Validate and normalize the response
+        return {
+            name: String(config.name || query).slice(0, 50),
+            description: String(config.description || `Generate ${query} content`).slice(0, 150),
+            platform: String(config.platform || platform),
+            promptTemplate: String(config.promptTemplate || `Generate content about: {{topic}}`),
+            inputs: Array.isArray(config.inputs)
+                ? config.inputs.map((input: Record<string, unknown>) => ({
+                    id: String(input.id || "input_" + Math.random().toString(36).slice(2, 8)),
+                    label: String(input.label || "Input"),
+                    type: ["text", "textarea", "select", "number"].includes(input.type as string)
+                        ? (input.type as "text" | "textarea" | "select" | "number")
+                        : "text",
+                    placeholder: input.placeholder ? String(input.placeholder) : undefined,
+                    options: input.options ? String(input.options) : undefined,
+                    required: Boolean(input.required),
+                }))
+                : [{ id: "topic", label: "Topic", type: "text" as const, required: true }],
+        };
+    } catch {
+        // Fallback configuration if parsing fails
+        return {
+            name: query.slice(0, 50),
+            description: `Generate ${query} content for ${platform}`,
+            platform,
+            promptTemplate: `You are a ${platform} content expert. Generate content about: {{topic}}\n\nMake it engaging and platform-appropriate.`,
+            inputs: [
+                {
+                    id: "topic",
+                    label: language === "es" ? "Tema" : "Topic",
+                    type: "textarea",
+                    placeholder: language === "es" ? "Describe lo que quieres generar..." : "Describe what you want to generate...",
+                    required: true,
+                },
+            ],
+        };
+    }
+}
