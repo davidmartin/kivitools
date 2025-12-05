@@ -3,11 +3,11 @@ import { captionGenerator } from "./caption-generator";
 import { realmojiIdeas } from "./realmoji-ideas";
 
 export const bereal = {
-    // Page level translations (using English as fallback)
-    "bereal.page.title": "BeReal Tools",
-    "bereal.page.description": "Free AI tools for authentic BeReal content. Captions, bios, and RealMoji ideas that keep it 100% real.",
-    "bereal.info.title": "Why BeReal?",
-    "bereal.info.description": "BeReal is the anti-Instagram - no filters, no curating, just real moments. Our tools help you add personality to your authentic posts without losing the genuine vibe.",
+    // Page level translations
+    "bereal.page.title": "Strumenti BeReal",
+    "bereal.page.description": "Strumenti IA gratuiti per contenuti BeReal autentici. Didascalie, bio e idee RealMoji che restano 100% vere.",
+    "bereal.info.title": "Perché BeReal?",
+    "bereal.info.description": "BeReal è l'anti-Instagram - niente filtri, niente curation, solo momenti veri. I nostri strumenti ti aiutano ad aggiungere personalità ai tuoi post autentici senza perdere la vibe genuina.",
 
     // Tool translations
     ...bioGenerator,

@@ -4,11 +4,12 @@ import { welcomeMessage } from "./welcome-message";
 
 export const telegram = {
     // Page level translations
-    "telegram.page.title": "Telegram Tools",
-    "telegram.page.description": "Free AI tools for Telegram channels and groups. Announcements, descriptions, and welcome messages that grow your community.",
-    "telegram.info.title": "Why Telegram?",
-    "telegram.info.description": "Telegram is the messaging platform with over 800 million users. Whether you run a channel, group, or community, our tools help you communicate professionally and grow your audience.",
+    "telegram.page.title": "Outils Telegram",
+    "telegram.page.description": "Outils IA gratuits pour tes chaînes et groupes Telegram. Annonces, descriptions et messages de bienvenue qui font grandir ta communauté.",
+    "telegram.info.title": "Pourquoi Telegram ?",
+    "telegram.info.description": "Telegram est la plateforme de messagerie avec plus de 800 millions d'utilisateurs. Que tu gères une chaîne, un groupe ou une communauté, nos outils t'aident à communiquer de manière professionnelle et à faire grandir ton audience.",
 
+    // Spread tool translations
     ...announcementGenerator,
     ...channelDescription,
     ...welcomeMessage,
