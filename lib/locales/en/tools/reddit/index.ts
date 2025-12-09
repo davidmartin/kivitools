@@ -6,4 +6,8 @@ export const reddit = {
   ...ama_generator,
   ...comment_generator,
   ...post_generator,
+
+  // Alias for compatibility with tools-index.ts
+  "redditPostGenerator.title": "Reddit Post Generator",
+  "redditPostGenerator.description": "Posts that work on Reddit without getting downvoted to oblivion",
 };

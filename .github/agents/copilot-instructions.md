@@ -26,6 +26,10 @@ Auto-generated from all feature plans. Last updated: 2025-11-25
 - Static data in `lib/blog-data.ts` (BlogPost array) (015-deepseek-blog-seo)
 - TypeScript 5.x (Next.js 16.0.1 with App Router) + @heroui/react v3.0.0-beta.1, appwrite SDK, DeepSeek/OpenRouter API (016-hero-tool-search)
 - Appwrite - existing "tools" collection with fields: name, description, platform, slug, author_name, author_id, status, inputs, prompt_template (016-hero-tool-search)
+- TypeScript 5.x / Next.js 16.0.1 + @heroui/react v3.0.0-beta.1, Tailwind CSS v4 (017-homepage-tools-feed)
+- N/A (client-side filtering of static tool index) (017-homepage-tools-feed)
+- TypeScript 5.x with Next.js 16.0.1 (App Router) + @heroui/react v3.0.0-beta.1, React 19, Tailwind CSS v4, next-intl or custom i18n (017-homepage-tools-feed)
+- Client-side filtering/sorting (tools data from `lib/tools-index.ts`), URL state via query params (017-homepage-tools-feed)
 
 - TypeScript 5.x with Next.js 16.0.1 + @heroui/react v3.0.0-beta.1, Tailwind CSS v4, DeepSeek API (001-platform-seo-expansion)
 
@@ -45,9 +49,9 @@ npm test && npm run lint
 TypeScript 5.x with Next.js 16.0.1: Follow standard conventions
 
 ## Recent Changes
+- 017-homepage-tools-feed: Added TypeScript 5.x with Next.js 16.0.1 (App Router) + @heroui/react v3.0.0-beta.1, React 19, Tailwind CSS v4, next-intl or custom i18n
+- 017-homepage-tools-feed: Added TypeScript 5.x / Next.js 16.0.1 + @heroui/react v3.0.0-beta.1, Tailwind CSS v4
 - 016-hero-tool-search: Added TypeScript 5.x (Next.js 16.0.1 with App Router) + @heroui/react v3.0.0-beta.1, appwrite SDK, DeepSeek/OpenRouter API
-- 015-deepseek-blog-seo: Added TypeScript 5.x (Next.js 16.0.1) + Next.js App Router, existing blog infrastructure
-- 014-deepseek-platform: Added TypeScript 5.x with Next.js 16.0.1 (App Router) + @heroui/react v3.0.0-beta.1, Tailwind CSS v4
 
 
 <!-- MANUAL ADDITIONS START -->

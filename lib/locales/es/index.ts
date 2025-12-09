@@ -11,6 +11,7 @@ import { twitter } from "./tools/twitter";
 import { youtube } from "./tools/youtube";
 import { reddit } from "./tools/reddit";
 import { snapchat } from "./tools/snapchat";
+import { discord } from "./tools/discord";
 import { linkedin } from "./tools/linkedin";
 import { forocoches } from "./tools/forocoches";
 import { suno } from "./tools/suno";
@@ -48,6 +49,7 @@ export const es = {
   ...youtube,
   ...reddit,
   ...snapchat,
+  ...discord,
   ...linkedin,
   ...forocoches,
   ...suno,

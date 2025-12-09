@@ -116,6 +116,21 @@ html[data-hydrated] body {
     --color-surface-foreground: oklch(98% 0.01 280);
 }
 
+/* HeroUI Card surface overrides for dark mode */
+.dark .card--default,
+.dark .card {
+    --surface-secondary: oklch(15% 0.03 280);
+    background-color: oklch(15% 0.03 280);
+    border: 1px solid oklch(25% 0.04 280);
+}
+
+.card--default,
+.card {
+    --surface-secondary: oklch(97% 0.01 280);
+    background-color: oklch(97% 0.01 280);
+    border: 1px solid oklch(90% 0.02 280);
+}
+
 /* Glassmorphism Utilities */
 .glass {
     background: rgba(255, 255, 255, 0.7);

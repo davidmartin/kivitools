@@ -15,4 +15,10 @@ export const youtube = {
   ...youtubeVideoIdeas,
   ...youtubeCommunityPostGenerator,
   ...youtubeChannelNameGenerator,
+
+  // Alias for compatibility with tools-index.ts
+  "youtubeTitleGenerator.title": "YouTube Title Generator",
+  "youtubeTitleGenerator.description": "Titles that get clicks without looking like clickbait (well, maybe a little)",
+  "youtubeDescriptionGenerator.title": "YouTube Description Generator",
+  "youtubeDescriptionGenerator.description": "SEO-optimized descriptions with keywords and timestamps YouTube loves",
 };

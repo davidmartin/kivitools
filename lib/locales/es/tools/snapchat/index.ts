@@ -6,4 +6,8 @@ export const snapchat = {
   ...lens_ideas,
   ...caption_generator,
   ...story_ideas,
+
+  // Alias para compatibilidad con tools-index.ts
+  "snapchatCaptionGenerator.title": "Generador de Captions para Snapchat",
+  "snapchatCaptionGenerator.description": "Captions para Snaps que son mejores que 'Hola' con cara de perrito",
 };

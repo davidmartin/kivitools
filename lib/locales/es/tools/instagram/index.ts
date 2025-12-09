@@ -19,4 +19,12 @@ export const instagram = {
   ...instagramContentCalendar,
   ...instagramAdCopyGenerator,
   ...instagramCarouselGenerator,
+
+  // Alias para compatibilidad con tools-index.ts
+  "instagramBioGenerator.title": "Generador de Bio para Instagram",
+  "instagramBioGenerator.description": "Crea bios atractivas que conviertan visitantes en seguidores",
+  "instagramCaptionGenerator.title": "Generador de Captions para Instagram",
+  "instagramCaptionGenerator.description": "Captions que consiguen likes más rápido que puedes decir 'aesthetic'",
+  "instagramReelScript.title": "Generador de Guiones para Reels",
+  "instagramReelScript.description": "Guiones virales para Reels con ganchos y CTAs que realmente funcionan",
 };

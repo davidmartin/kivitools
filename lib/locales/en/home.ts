@@ -35,6 +35,9 @@ export const home = {
     "home.platformsSection.title": "Choose Your Platform",
     "home.platformsSection.description": "Social media? Music? Forums? Streaming? We've got AI tools for any digital platform you use.",
 
+    // Homepage - Tools Feed
+    "home.feed.card.useTool": "Use Tool",
+
     // Homepage - Features
     "home.features.title": "Why KiviTools and Not Some Boring Tool?",
     "home.features.free.title": "100% Free (Not Kidding)",

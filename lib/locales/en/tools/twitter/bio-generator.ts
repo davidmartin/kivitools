@@ -2,6 +2,10 @@ export const bio_generator = {
     // Twitter Bio Generator
     "twitterBio.title": "Twitter Bio Generator",
     "twitterBio.description": "Create an impactful bio for your Twitter profile. Attract more followers!",
+
+    // Alias keys for tool card display
+    "twitterBioGenerator.title": "Twitter Bio Generator",
+    "twitterBioGenerator.description": "Craft a memorable Twitter bio that stands out",
     "twitterBio.form.description": "Description of You/Your Brand",
     "twitterBio.form.descriptionPlaceholder": "Tell us about yourself...",
     "twitterBio.form.tone": "Tone",

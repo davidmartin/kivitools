@@ -7,6 +7,7 @@
  */
 
 import { OfficialTool } from "@/types/search";
+import { Platform } from "@/types";
 
 /**
  * Complete index of all official tools.
@@ -25,6 +26,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/script-writer",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 86,
+        featured: true,
+        tags: ["tiktok", "script", "writer", "scripts", "good"],
+
     },
     {
         id: "tiktok-video-ideas",
@@ -35,6 +41,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/video-ideas",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 92,
+        featured: true,
+        tags: ["tiktok", "video", "ideas", "viral"],
+
     },
     {
         id: "tiktok-hook-generator",
@@ -45,6 +56,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/hook-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 86,
+        featured: true,
+        tags: ["tiktok", "hook", "generator", "hooks", "stop"],
+
     },
     {
         id: "tiktok-hashtag-generator",
@@ -55,6 +71,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/hashtag-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 91,
+        featured: true,
+        tags: ["tiktok", "hashtag", "generator", "best", "hashtags"],
+
     },
     {
         id: "tiktok-username-generator",
@@ -65,6 +86,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/username-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 92,
+        featured: false,
+        tags: ["tiktok", "username", "generator", "unique", "usernames"],
+
     },
     {
         id: "tiktok-bio-generator",
@@ -75,6 +101,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/bio-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 93,
+        featured: false,
+        tags: ["tiktok", "bio", "generator", "engaging"],
+
     },
     {
         id: "tiktok-caption-generator",
@@ -85,6 +116,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/caption-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 95,
+        featured: false,
+        tags: ["tiktok", "caption", "generator", "captions"],
+
     },
     {
         id: "tiktok-coins-calculator",
@@ -95,6 +131,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/coins-calculator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 88,
+        featured: false,
+        tags: ["tiktok", "coins", "calculator", "calculate"],
+
     },
     {
         id: "tiktok-money-calculator",
@@ -105,6 +146,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/money-calculator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 88,
+        featured: false,
+        tags: ["tiktok", "money", "calculator", "estimate", "earnings"],
+
     },
     {
         id: "tiktok-engagement-calculator",
@@ -115,6 +161,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/engagement-calculator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 85,
+        featured: false,
+        tags: ["tiktok", "engagement", "calculator", "calculate"],
+
     },
     {
         id: "tiktok-ad-copy-generator",
@@ -125,6 +176,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/ad-copy-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 94,
+        featured: false,
+        tags: ["tiktok", "copy", "generator"],
+
     },
     {
         id: "tiktok-shop-name-generator",
@@ -135,6 +191,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/shop-name-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 85,
+        featured: false,
+        tags: ["tiktok", "shop", "name", "generator", "creative"],
+
     },
     {
         id: "tiktok-thumbnail-text-generator",
@@ -145,6 +206,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/thumbnail-text-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 86,
+        featured: false,
+        tags: ["tiktok", "thumbnail", "text", "generator"],
+
     },
     {
         id: "tiktok-content-calendar-generator",
@@ -155,6 +221,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/content-calendar-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 90,
+        featured: false,
+        tags: ["tiktok", "content", "calendar", "plan"],
+
     },
     {
         id: "tiktok-song-recommendations",
@@ -165,6 +236,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "tiktok",
         href: "/tiktok/song-recommendations",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 93,
+        featured: false,
+        tags: ["tiktok", "song", "recommendations", "trending", "songs"],
+
     },
 
     // ============================================================================
@@ -179,6 +255,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/caption-generator",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 88,
+        featured: true,
+        tags: ["instagram", "caption", "generator", "engaging"],
+
     },
     {
         id: "instagram-bio-generator",
@@ -189,6 +270,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/bio-generator",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 94,
+        featured: true,
+        tags: ["instagram", "bio", "generator", "perfect"],
+
     },
     {
         id: "instagram-hashtag-generator",
@@ -199,6 +285,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/hashtag-generator",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 89,
+        featured: false,
+        tags: ["instagram", "hashtag", "generator", "best", "hashtags"],
+
     },
     {
         id: "instagram-reel-script",
@@ -209,6 +300,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/reel-script",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 85,
+        featured: true,
+        tags: ["instagram", "reel", "script", "write", "scripts"],
+
     },
     {
         id: "instagram-story-ideas",
@@ -219,6 +315,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/story-ideas",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 91,
+        featured: false,
+        tags: ["instagram", "story", "ideas", "creative"],
+
     },
     {
         id: "instagram-carousel-generator",
@@ -229,6 +330,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/carousel-generator",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 87,
+        featured: false,
+        tags: ["instagram", "carousel", "generator", "post"],
+
     },
     {
         id: "instagram-engagement-calculator",
@@ -239,6 +345,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/engagement-calculator",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 92,
+        featured: false,
+        tags: ["instagram", "engagement", "calculator", "calculate"],
+
     },
     {
         id: "instagram-content-calendar",
@@ -249,6 +360,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/content-calendar",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 89,
+        featured: false,
+        tags: ["instagram", "content", "calendar", "plan"],
+
     },
     {
         id: "instagram-ad-copy-generator",
@@ -259,6 +375,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "instagram",
         href: "/instagram/ad-copy-generator",
         icon: "📸",
+        dateAdded: "2024-01-01",
+        popularity: 87,
+        featured: false,
+        tags: ["instagram", "copy", "generator"],
+
     },
 
     // ============================================================================
@@ -273,6 +394,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitter",
         href: "/twitter/tweet-generator",
         icon: "🐦",
+        dateAdded: "2024-01-01",
+        popularity: 86,
+        featured: true,
+        tags: ["twitter", "tweet", "generator", "viral", "tweets"],
+
     },
     {
         id: "twitter-thread-maker",
@@ -283,6 +409,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitter",
         href: "/twitter/thread-maker",
         icon: "🐦",
+        dateAdded: "2024-01-01",
+        popularity: 81,
+        featured: true,
+        tags: ["twitter", "thread", "maker", "engaging"],
+
     },
     {
         id: "twitter-bio-generator",
@@ -293,6 +424,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitter",
         href: "/twitter/bio-generator",
         icon: "🐦",
+        dateAdded: "2024-01-01",
+        popularity: 85,
+        featured: true,
+        tags: ["twitter", "bio", "generator", "write", "perfect"],
+
     },
 
     // ============================================================================
@@ -307,6 +443,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "youtube",
         href: "/youtube/title-generator",
         icon: "📺",
+        dateAdded: "2024-01-01",
+        popularity: 86,
+        featured: true,
+        tags: ["youtube", "title", "generator", "clickable"],
+
     },
     {
         id: "youtube-description-generator",
@@ -317,6 +458,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "youtube",
         href: "/youtube/description-generator",
         icon: "📺",
+        dateAdded: "2024-01-01",
+        popularity: 83,
+        featured: true,
+        tags: ["youtube", "description", "generator", "write", "seo"],
+
     },
     {
         id: "youtube-script-generator",
@@ -327,6 +473,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "youtube",
         href: "/youtube/script-generator",
         icon: "📺",
+        dateAdded: "2024-01-01",
+        popularity: 84,
+        featured: true,
+        tags: ["youtube", "script", "generator", "scripts"],
+
     },
     {
         id: "youtube-video-ideas",
@@ -337,6 +488,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "youtube",
         href: "/youtube/video-ideas",
         icon: "📺",
+        dateAdded: "2024-01-01",
+        popularity: 86,
+        featured: false,
+        tags: ["youtube", "video", "ideas", "creative"],
+
     },
     {
         id: "youtube-tag-generator",
@@ -347,6 +503,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "youtube",
         href: "/youtube/tag-generator",
         icon: "📺",
+        dateAdded: "2024-01-01",
+        popularity: 90,
+        featured: false,
+        tags: ["youtube", "tag", "generator", "tags", "better"],
+
     },
     {
         id: "youtube-channel-name-generator",
@@ -357,6 +518,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "youtube",
         href: "/youtube/channel-name-generator",
         icon: "📺",
+        dateAdded: "2024-01-01",
+        popularity: 89,
+        featured: false,
+        tags: ["youtube", "channel", "name", "generator", "perfect"],
+
     },
     {
         id: "youtube-community-post-generator",
@@ -367,6 +533,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "youtube",
         href: "/youtube/community-post-generator",
         icon: "📺",
+        dateAdded: "2024-01-01",
+        popularity: 84,
+        featured: false,
+        tags: ["youtube", "community", "post", "generator"],
+
     },
 
     // ============================================================================
@@ -381,6 +552,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "reddit",
         href: "/reddit/post-generator",
         icon: "🤖",
+        dateAdded: "2024-01-01",
+        popularity: 77,
+        featured: true,
+        tags: ["reddit", "post", "generator", "posts"],
+
     },
     {
         id: "reddit-comment-generator",
@@ -391,6 +567,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "reddit",
         href: "/reddit/comment-generator",
         icon: "🤖",
+        dateAdded: "2024-01-01",
+        popularity: 80,
+        featured: false,
+        tags: ["reddit", "comment", "generator", "write"],
+
     },
     {
         id: "reddit-ama-questions",
@@ -401,6 +582,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "reddit",
         href: "/reddit/ama-questions",
         icon: "🤖",
+        dateAdded: "2024-01-01",
+        popularity: 76,
+        featured: false,
+        tags: ["reddit", "ama", "questions"],
+
     },
 
     // ============================================================================
@@ -415,6 +601,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "discord",
         href: "/discord/announcement-generator",
         icon: "💬",
+        dateAdded: "2024-01-01",
+        popularity: 74,
+        featured: true,
+        tags: ["discord", "announcement", "generator", "server", "announcements"],
+
     },
     {
         id: "discord-welcome-message",
@@ -425,6 +616,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "discord",
         href: "/discord/welcome-message",
         icon: "💬",
+        dateAdded: "2024-01-01",
+        popularity: 70,
+        featured: false,
+        tags: ["discord", "welcome", "message", "write"],
+
     },
     {
         id: "discord-event-description",
@@ -435,6 +631,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "discord",
         href: "/discord/event-description",
         icon: "💬",
+        dateAdded: "2024-01-01",
+        popularity: 69,
+        featured: false,
+        tags: ["discord", "event", "description", "descriptions"],
+
     },
 
     // ============================================================================
@@ -449,6 +650,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "snapchat",
         href: "/snapchat/caption-generator",
         icon: "👻",
+        dateAdded: "2024-01-01",
+        popularity: 77,
+        featured: true,
+        tags: ["snapchat", "caption", "generator", "captions"],
+
     },
     {
         id: "snapchat-story-ideas",
@@ -459,6 +665,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "snapchat",
         href: "/snapchat/story-ideas",
         icon: "👻",
+        dateAdded: "2024-01-01",
+        popularity: 83,
+        featured: true,
+        tags: ["snapchat", "story", "ideas"],
+
     },
     {
         id: "snapchat-lens-ideas",
@@ -469,6 +680,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "snapchat",
         href: "/snapchat/lens-ideas",
         icon: "👻",
+        dateAdded: "2024-01-01",
+        popularity: 83,
+        featured: false,
+        tags: ["snapchat", "lens", "ideas", "creative"],
+
     },
 
     // ============================================================================
@@ -483,6 +699,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "suno",
         href: "/suno/lyric-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 69,
+        featured: true,
+        tags: ["suno", "lyric", "generator", "song", "lyrics"],
+
     },
     {
         id: "suno-music-prompt-generator",
@@ -493,6 +714,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "suno",
         href: "/suno/music-prompt-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 60,
+        featured: false,
+        tags: ["suno", "music", "prompt", "generator"],
+
     },
     {
         id: "suno-song-title-generator",
@@ -503,6 +729,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "suno",
         href: "/suno/song-title-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 67,
+        featured: false,
+        tags: ["suno", "song", "title", "generator"],
+
     },
     {
         id: "suno-song-description-generator",
@@ -513,6 +744,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "suno",
         href: "/suno/song-description-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 64,
+        featured: false,
+        tags: ["suno", "song", "description", "generator", "write"],
+
     },
     {
         id: "suno-album-name-generator",
@@ -523,6 +759,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "suno",
         href: "/suno/album-name-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 61,
+        featured: false,
+        tags: ["suno", "album", "name", "generator"],
+
     },
     {
         id: "suno-cover-art-prompt-generator",
@@ -533,6 +774,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "suno",
         href: "/suno/cover-art-prompt-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 66,
+        featured: false,
+        tags: ["suno", "cover", "art", "prompt", "generator"],
+
     },
     {
         id: "suno-remix-idea-generator",
@@ -543,6 +789,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "suno",
         href: "/suno/remix-idea-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 68,
+        featured: false,
+        tags: ["suno", "remix", "idea", "generator"],
+
     },
     {
         id: "suno-song-tag-generator",
@@ -553,6 +804,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "suno",
         href: "/suno/song-tag-generator",
         icon: "🎵",
+        dateAdded: "2024-01-01",
+        popularity: 60,
+        featured: false,
+        tags: ["suno", "song", "tag", "generator"],
+
     },
 
     // ============================================================================
@@ -567,6 +823,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "elevenlabs",
         href: "/elevenlabs/voice-script-writer",
         icon: "🎙️",
+        dateAdded: "2024-01-01",
+        popularity: 61,
+        featured: true,
+        tags: ["elevenlabs", "voice", "script", "writer", "write"],
+
     },
     {
         id: "elevenlabs-video-voiceover-script",
@@ -577,6 +838,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "elevenlabs",
         href: "/elevenlabs/video-voiceover-script",
         icon: "🎙️",
+        dateAdded: "2024-01-01",
+        popularity: 69,
+        featured: false,
+        tags: ["elevenlabs", "video", "voiceover", "script"],
+
     },
     {
         id: "elevenlabs-podcast-script",
@@ -587,6 +853,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "elevenlabs",
         href: "/elevenlabs/podcast-script",
         icon: "🎙️",
+        dateAdded: "2024-01-01",
+        popularity: 61,
+        featured: false,
+        tags: ["elevenlabs", "podcast", "script", "write"],
+
     },
     {
         id: "elevenlabs-ad-script",
@@ -597,6 +868,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "elevenlabs",
         href: "/elevenlabs/ad-script",
         icon: "🎙️",
+        dateAdded: "2024-01-01",
+        popularity: 70,
+        featured: false,
+        tags: ["elevenlabs", "script", "scripts"],
+
     },
     {
         id: "elevenlabs-audiobook-optimizer",
@@ -607,6 +883,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "elevenlabs",
         href: "/elevenlabs/audiobook-optimizer",
         icon: "🎙️",
+        dateAdded: "2024-01-01",
+        popularity: 67,
+        featured: false,
+        tags: ["elevenlabs", "audiobook", "optimizer", "optimize"],
+
     },
     {
         id: "elevenlabs-voice-text-formatter",
@@ -617,6 +898,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "elevenlabs",
         href: "/elevenlabs/voice-text-formatter",
         icon: "🎙️",
+        dateAdded: "2024-01-01",
+        popularity: 61,
+        featured: false,
+        tags: ["elevenlabs", "voice", "text", "formatter", "format"],
+
     },
 
     // ============================================================================
@@ -631,6 +917,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "linkedin",
         href: "/linkedin/post-generator",
         icon: "💼",
+        dateAdded: "2024-01-01",
+        popularity: 78,
+        featured: false,
+        tags: ["linkedin", "post", "generator", "posts"],
+
     },
     {
         id: "linkedin-headline-generator",
@@ -641,6 +932,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "linkedin",
         href: "/linkedin/headline-generator",
         icon: "💼",
+        dateAdded: "2024-01-01",
+        popularity: 78,
+        featured: false,
+        tags: ["linkedin", "headline", "generator", "compelling", "headlines"],
+
     },
     {
         id: "linkedin-about-generator",
@@ -651,6 +947,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "linkedin",
         href: "/linkedin/about-generator",
         icon: "💼",
+        dateAdded: "2024-01-01",
+        popularity: 71,
+        featured: false,
+        tags: ["linkedin", "about", "generator", "write"],
+
     },
 
     // ============================================================================
@@ -665,6 +966,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitch",
         href: "/twitch/bio-generator",
         icon: "🎮",
+        dateAdded: "2024-01-01",
+        popularity: 75,
+        featured: false,
+        tags: ["twitch", "bio", "generator"],
+
     },
     {
         id: "twitch-stream-title",
@@ -675,6 +981,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitch",
         href: "/twitch/stream-title",
         icon: "🎮",
+        dateAdded: "2024-01-01",
+        popularity: 66,
+        featured: false,
+        tags: ["twitch", "stream", "title", "generator"],
+
     },
     {
         id: "twitch-panel-description",
@@ -685,6 +996,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitch",
         href: "/twitch/panel-description",
         icon: "🎮",
+        dateAdded: "2024-01-01",
+        popularity: 68,
+        featured: false,
+        tags: ["twitch", "panel", "description", "write"],
+
     },
     {
         id: "twitch-chat-command",
@@ -695,6 +1011,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitch",
         href: "/twitch/chat-command",
         icon: "🎮",
+        dateAdded: "2024-01-01",
+        popularity: 71,
+        featured: false,
+        tags: ["twitch", "chat", "command", "generator"],
+
     },
     {
         id: "twitch-rules-generator",
@@ -705,6 +1026,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitch",
         href: "/twitch/rules-generator",
         icon: "🎮",
+        dateAdded: "2024-01-01",
+        popularity: 75,
+        featured: false,
+        tags: ["twitch", "rules", "generator", "channel"],
+
     },
     {
         id: "twitch-stream-plan-generator",
@@ -715,6 +1041,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "twitch",
         href: "/twitch/stream-plan-generator",
         icon: "🎮",
+        dateAdded: "2024-01-01",
+        popularity: 65,
+        featured: false,
+        tags: ["twitch", "stream", "plan", "generator"],
+
     },
 
     // ============================================================================
@@ -729,6 +1060,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "kick",
         href: "/kick/bio-generator",
         icon: "🥊",
+        dateAdded: "2024-01-01",
+        popularity: 62,
+        featured: false,
+        tags: ["kick", "bio", "generator"],
+
     },
     {
         id: "kick-stream-title",
@@ -739,6 +1075,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "kick",
         href: "/kick/stream-title",
         icon: "🥊",
+        dateAdded: "2024-01-01",
+        popularity: 62,
+        featured: false,
+        tags: ["kick", "stream", "title", "generator"],
+
     },
     {
         id: "kick-chat-rules",
@@ -749,6 +1090,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "kick",
         href: "/kick/chat-rules",
         icon: "🥊",
+        dateAdded: "2024-01-01",
+        popularity: 59,
+        featured: false,
+        tags: ["kick", "chat", "rules", "generator"],
+
     },
 
     // ============================================================================
@@ -763,6 +1109,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "spotify",
         href: "/spotify/playlist-name",
         icon: "🎧",
+        dateAdded: "2024-01-01",
+        popularity: 59,
+        featured: false,
+        tags: ["spotify", "playlist", "name", "generator"],
+
     },
     {
         id: "spotify-playlist-description",
@@ -773,6 +1124,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "spotify",
         href: "/spotify/playlist-description",
         icon: "🎧",
+        dateAdded: "2024-01-01",
+        popularity: 56,
+        featured: false,
+        tags: ["spotify", "playlist", "description", "write"],
+
     },
     {
         id: "spotify-artist-bio",
@@ -783,6 +1139,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "spotify",
         href: "/spotify/artist-bio",
         icon: "🎧",
+        dateAdded: "2024-01-01",
+        popularity: 57,
+        featured: false,
+        tags: ["spotify", "artist", "bio", "generator"],
+
     },
 
     // ============================================================================
@@ -797,6 +1158,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "facebook",
         href: "/facebook/post-generator",
         icon: "👍",
+        dateAdded: "2024-01-01",
+        popularity: 78,
+        featured: false,
+        tags: ["facebook", "post", "generator", "posts"],
+
     },
     {
         id: "facebook-ad-copy",
@@ -807,6 +1173,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "facebook",
         href: "/facebook/ad-copy",
         icon: "👍",
+        dateAdded: "2024-01-01",
+        popularity: 74,
+        featured: false,
+        tags: ["facebook", "copy", "generator"],
+
     },
     {
         id: "facebook-page-bio",
@@ -817,6 +1188,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "facebook",
         href: "/facebook/page-bio",
         icon: "👍",
+        dateAdded: "2024-01-01",
+        popularity: 80,
+        featured: false,
+        tags: ["facebook", "page", "bio", "generator", "write"],
+
     },
 
     // ============================================================================
@@ -831,6 +1207,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "pinterest",
         href: "/pinterest/pin-description",
         icon: "📌",
+        dateAdded: "2024-01-01",
+        popularity: 54,
+        featured: false,
+        tags: ["pinterest", "pin", "description", "write"],
+
     },
     {
         id: "pinterest-board-name",
@@ -841,6 +1222,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "pinterest",
         href: "/pinterest/board-name",
         icon: "📌",
+        dateAdded: "2024-01-01",
+        popularity: 52,
+        featured: false,
+        tags: ["pinterest", "board", "name", "generator"],
+
     },
     {
         id: "pinterest-profile-bio",
@@ -851,6 +1237,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "pinterest",
         href: "/pinterest/profile-bio",
         icon: "📌",
+        dateAdded: "2024-01-01",
+        popularity: 59,
+        featured: false,
+        tags: ["pinterest", "profile", "bio"],
+
     },
 
     // ============================================================================
@@ -865,6 +1256,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "bluesky",
         href: "/bluesky/post-generator",
         icon: "🦋",
+        dateAdded: "2024-01-01",
+        popularity: 63,
+        featured: false,
+        tags: ["bluesky", "post", "generator", "posts"],
+
     },
     {
         id: "bluesky-bio-generator",
@@ -875,6 +1271,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "bluesky",
         href: "/bluesky/bio-generator",
         icon: "🦋",
+        dateAdded: "2024-01-01",
+        popularity: 50,
+        featured: false,
+        tags: ["bluesky", "bio", "generator"],
+
     },
     {
         id: "bluesky-thread-composer",
@@ -885,6 +1286,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "bluesky",
         href: "/bluesky/thread-composer",
         icon: "🦋",
+        dateAdded: "2024-01-01",
+        popularity: 50,
+        featured: false,
+        tags: ["bluesky", "thread", "composer", "compose"],
+
     },
 
     // ============================================================================
@@ -899,6 +1305,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "telegram",
         href: "/telegram/channel-description",
         icon: "✈️",
+        dateAdded: "2024-01-01",
+        popularity: 52,
+        featured: false,
+        tags: ["telegram", "channel", "description", "write"],
+
     },
     {
         id: "telegram-welcome-message",
@@ -909,6 +1320,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "telegram",
         href: "/telegram/welcome-message",
         icon: "✈️",
+        dateAdded: "2024-01-01",
+        popularity: 61,
+        featured: false,
+        tags: ["telegram", "welcome", "message", "messages"],
+
     },
     {
         id: "telegram-announcement-generator",
@@ -919,6 +1335,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "telegram",
         href: "/telegram/announcement-generator",
         icon: "✈️",
+        dateAdded: "2024-01-01",
+        popularity: 51,
+        featured: false,
+        tags: ["telegram", "announcement", "generator", "announcements"],
+
     },
 
     // ============================================================================
@@ -933,6 +1354,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "bereal",
         href: "/bereal/caption-generator",
         icon: "📷",
+        dateAdded: "2024-01-01",
+        popularity: 58,
+        featured: false,
+        tags: ["bereal", "caption", "generator", "captions"],
+
     },
     {
         id: "bereal-bio-generator",
@@ -943,6 +1369,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "bereal",
         href: "/bereal/bio-generator",
         icon: "📷",
+        dateAdded: "2024-01-01",
+        popularity: 56,
+        featured: false,
+        tags: ["bereal", "bio", "generator"],
+
     },
     {
         id: "bereal-realmoji-ideas",
@@ -953,6 +1384,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "bereal",
         href: "/bereal/realmoji-ideas",
         icon: "📷",
+        dateAdded: "2024-01-01",
+        popularity: 63,
+        featured: false,
+        tags: ["bereal", "realmoji", "ideas"],
+
     },
 
     // ============================================================================
@@ -967,6 +1403,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "medium",
         href: "/medium/article-title-generator",
         icon: "📝",
+        dateAdded: "2024-01-01",
+        popularity: 50,
+        featured: false,
+        tags: ["medium", "article", "title", "generator"],
+
     },
     {
         id: "medium-article-intro-generator",
@@ -977,6 +1418,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "medium",
         href: "/medium/article-intro-generator",
         icon: "📝",
+        dateAdded: "2024-01-01",
+        popularity: 61,
+        featured: false,
+        tags: ["medium", "article", "intro", "generator", "write"],
+
     },
     {
         id: "medium-bio-generator",
@@ -987,6 +1433,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "medium",
         href: "/medium/bio-generator",
         icon: "📝",
+        dateAdded: "2024-01-01",
+        popularity: 64,
+        featured: false,
+        tags: ["medium", "bio", "generator"],
+
     },
 
     // ============================================================================
@@ -1001,6 +1452,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "etsy",
         href: "/etsy/product-title-generator",
         icon: "🛒",
+        dateAdded: "2024-01-01",
+        popularity: 62,
+        featured: false,
+        tags: ["etsy", "product", "title", "generator"],
+
     },
     {
         id: "etsy-product-description-generator",
@@ -1011,6 +1467,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "etsy",
         href: "/etsy/product-description-generator",
         icon: "🛒",
+        dateAdded: "2024-01-01",
+        popularity: 55,
+        featured: false,
+        tags: ["etsy", "product", "description", "generator", "write"],
+
     },
     {
         id: "etsy-shop-announcement-generator",
@@ -1021,6 +1482,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "etsy",
         href: "/etsy/shop-announcement-generator",
         icon: "🛒",
+        dateAdded: "2024-01-01",
+        popularity: 54,
+        featured: false,
+        tags: ["etsy", "shop", "announcement", "generator"],
+
     },
 
     // ============================================================================
@@ -1035,6 +1501,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "onlyfans",
         href: "/onlyfans/bio-generator",
         icon: "💎",
+        dateAdded: "2024-01-01",
+        popularity: 50,
+        featured: false,
+        tags: ["onlyfans", "bio", "generator"],
+
     },
     {
         id: "onlyfans-post-caption-generator",
@@ -1045,6 +1516,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "onlyfans",
         href: "/onlyfans/post-caption-generator",
         icon: "💎",
+        dateAdded: "2024-01-01",
+        popularity: 63,
+        featured: false,
+        tags: ["onlyfans", "post", "caption", "generator"],
+
     },
     {
         id: "onlyfans-promo-generator",
@@ -1055,6 +1531,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "onlyfans",
         href: "/onlyfans/promo-generator",
         icon: "💎",
+        dateAdded: "2024-01-01",
+        popularity: 52,
+        featured: false,
+        tags: ["onlyfans", "promo", "generator", "promotional", "content"],
+
     },
 
     // ============================================================================
@@ -1069,6 +1550,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "patreon",
         href: "/patreon/about-page-generator",
         icon: "🎨",
+        dateAdded: "2024-01-01",
+        popularity: 62,
+        featured: false,
+        tags: ["patreon", "about", "page", "generator", "write"],
+
     },
     {
         id: "patreon-post-generator",
@@ -1079,6 +1565,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "patreon",
         href: "/patreon/post-generator",
         icon: "🎨",
+        dateAdded: "2024-01-01",
+        popularity: 64,
+        featured: false,
+        tags: ["patreon", "post", "generator", "posts"],
+
     },
     {
         id: "patreon-tier-description-generator",
@@ -1089,6 +1580,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "patreon",
         href: "/patreon/tier-description-generator",
         icon: "🎨",
+        dateAdded: "2024-01-01",
+        popularity: 65,
+        featured: false,
+        tags: ["patreon", "tier", "description", "generator", "write"],
+
     },
 
     // ============================================================================
@@ -1103,6 +1599,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "dating",
         href: "/dating/bio-generator",
         icon: "💕",
+        dateAdded: "2024-01-01",
+        popularity: 62,
+        featured: false,
+        tags: ["dating", "bio", "generator", "profile"],
+
     },
     {
         id: "dating-opener-generator",
@@ -1113,6 +1614,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "dating",
         href: "/dating/opener-generator",
         icon: "💕",
+        dateAdded: "2024-01-01",
+        popularity: 65,
+        featured: false,
+        tags: ["dating", "opener", "generator", "conversation", "openers"],
+
     },
     {
         id: "dating-profile-review",
@@ -1123,6 +1629,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "dating",
         href: "/dating/profile-review",
         icon: "💕",
+        dateAdded: "2024-01-01",
+        popularity: 52,
+        featured: false,
+        tags: ["dating", "profile", "review", "feedback"],
+
     },
 
     // ============================================================================
@@ -1137,6 +1648,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "amazon",
         href: "/amazon/product-description-generator",
         icon: "📦",
+        dateAdded: "2024-01-01",
+        popularity: 59,
+        featured: false,
+        tags: ["amazon", "product", "description", "generator", "write"],
+
     },
     {
         id: "amazon-product-review-generator",
@@ -1147,6 +1663,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "amazon",
         href: "/amazon/product-review-generator",
         icon: "📦",
+        dateAdded: "2024-01-01",
+        popularity: 65,
+        featured: false,
+        tags: ["amazon", "product", "review", "generator"],
+
     },
     {
         id: "amazon-product-comparison-generator",
@@ -1157,6 +1678,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "amazon",
         href: "/amazon/product-comparison-generator",
         icon: "📦",
+        dateAdded: "2024-01-01",
+        popularity: 62,
+        featured: false,
+        tags: ["amazon", "product", "comparison", "generator", "compare"],
+
     },
 
     // ============================================================================
@@ -1171,6 +1697,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "forocoches",
         href: "/forocoches/thread-generator",
         icon: "🚗",
+        dateAdded: "2024-01-01",
+        popularity: 51,
+        featured: false,
+        tags: ["forocoches", "thread", "generator", "forum", "threads"],
+
     },
     {
         id: "forocoches-pole-generator",
@@ -1181,6 +1712,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "forocoches",
         href: "/forocoches/pole-generator",
         icon: "🚗",
+        dateAdded: "2024-01-01",
+        popularity: 63,
+        featured: false,
+        tags: ["forocoches", "pole", "generator", "posts"],
+
     },
     {
         id: "forocoches-troll-response",
@@ -1191,6 +1727,11 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "forocoches",
         href: "/forocoches/troll-response",
         icon: "🚗",
+        dateAdded: "2024-01-01",
+        popularity: 60,
+        featured: false,
+        tags: ["forocoches", "troll", "response", "responses"],
+
     },
 
     // ============================================================================
@@ -1205,8 +1746,52 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         platform: "podcast",
         href: "/podcast/name-generator",
         icon: "🎙️",
+        dateAdded: "2024-01-01",
+        popularity: 64,
+        featured: false,
+        tags: ["podcast", "name", "generator", "names"],
+
     },
 ];
+
+/**
+ * Complete list of all platforms for filtering.
+ * Feature: 017-homepage-tools-feed
+ */
+export const PLATFORMS: Platform[] = [
+    "tiktok",
+    "instagram",
+    "twitter",
+    "snapchat",
+    "youtube",
+    "reddit",
+    "discord",
+    "twitch",
+    "elevenlabs",
+    "amazon",
+    "bereal",
+    "bluesky",
+    "dating",
+    "email",
+    "etsy",
+    "facebook",
+    "forocoches",
+    "kick",
+    "linkedin",
+    "mastodon",
+    "medium",
+    "onlyfans",
+    "patreon",
+    "pinterest",
+    "podcast",
+    "shopify",
+    "suno",
+    "telegram",
+    "threads",
+    "vimeo",
+    "whatsapp",
+    "wordpress"
+] as const;
 
 /**
  * Platform metadata for search result display.

@@ -6,6 +6,8 @@
  * official tools and community tools with auto-create capability.
  */
 
+import { Tool, Platform } from "./index";
+
 // ============================================================================
 // Core Search Types
 // ============================================================================
@@ -28,17 +30,11 @@ export interface SearchResult {
 
 /**
  * Static official tool from the tools index.
- * These are built-in tools maintained by the platform.
+ * Extends Tool with translation keys for i18n.
  */
-export interface OfficialTool {
-    id: string;
-    name: string;
-    nameKey: string;
-    description: string;
-    descriptionKey: string;
-    platform: string;
-    href: string;
-    icon: string;
+export interface OfficialTool extends Tool {
+    nameKey: string;          // Translation key for name
+    descriptionKey: string;   // Translation key for description
 }
 
 /**

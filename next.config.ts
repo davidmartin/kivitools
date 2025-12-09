@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   // Rutas alias en español (SEO multilingüe)
   async rewrites() {
     return [
+      // Centralized Tools Page (Feature 017)
+      { source: "/herramientas", destination: "/tools" },
+
       // Amazon - Rutas en español
       { source: "/amazon/generador-descripcion-producto", destination: "/amazon/product-description-generator" },
       { source: "/amazon/generador-resenas-producto", destination: "/amazon/product-review-generator" },
@@ -134,6 +137,45 @@ const nextConfig: NextConfig = {
 
       // About/Legal - Rutas en español
       { source: "/sobre/tecnologia", destination: "/about/technology" },
+    ];
+  },
+
+  // 301 Redirects: Platform hub pages → /tools?platform=X (SEO preservation)
+  async redirects() {
+    return [
+      { source: "/tiktok", destination: "/tools?platform=tiktok", permanent: true },
+      { source: "/instagram", destination: "/tools?platform=instagram", permanent: true },
+      { source: "/twitter", destination: "/tools?platform=twitter", permanent: true },
+      { source: "/snapchat", destination: "/tools?platform=snapchat", permanent: true },
+      { source: "/youtube", destination: "/tools?platform=youtube", permanent: true },
+      { source: "/reddit", destination: "/tools?platform=reddit", permanent: true },
+      { source: "/discord", destination: "/tools?platform=discord", permanent: true },
+      { source: "/twitch", destination: "/tools?platform=twitch", permanent: true },
+      { source: "/spotify", destination: "/tools?platform=spotify", permanent: true },
+      { source: "/suno", destination: "/tools?platform=suno", permanent: true },
+      { source: "/elevenlabs", destination: "/tools?platform=elevenlabs", permanent: true },
+      { source: "/forocoches", destination: "/tools?platform=forocoches", permanent: true },
+      { source: "/amazon", destination: "/tools?platform=amazon", permanent: true },
+      { source: "/facebook", destination: "/tools?platform=facebook", permanent: true },
+      { source: "/linkedin", destination: "/tools?platform=linkedin", permanent: true },
+      { source: "/threads", destination: "/tools?platform=threads", permanent: true },
+      { source: "/bluesky", destination: "/tools?platform=bluesky", permanent: true },
+      { source: "/kick", destination: "/tools?platform=kick", permanent: true },
+      { source: "/telegram", destination: "/tools?platform=telegram", permanent: true },
+      { source: "/bereal", destination: "/tools?platform=bereal", permanent: true },
+      { source: "/podcast", destination: "/tools?platform=podcast", permanent: true },
+      { source: "/email", destination: "/tools?platform=email", permanent: true },
+      { source: "/dating", destination: "/tools?platform=dating", permanent: true },
+      { source: "/medium", destination: "/tools?platform=medium", permanent: true },
+      { source: "/etsy", destination: "/tools?platform=etsy", permanent: true },
+      { source: "/onlyfans", destination: "/tools?platform=onlyfans", permanent: true },
+      { source: "/patreon", destination: "/tools?platform=patreon", permanent: true },
+      { source: "/pinterest", destination: "/tools?platform=pinterest", permanent: true },
+      { source: "/shopify", destination: "/tools?platform=shopify", permanent: true },
+      { source: "/vimeo", destination: "/tools?platform=vimeo", permanent: true },
+      { source: "/whatsapp", destination: "/tools?platform=whatsapp", permanent: true },
+      { source: "/wordpress", destination: "/tools?platform=wordpress", permanent: true },
+      { source: "/mastodon", destination: "/tools?platform=mastodon", permanent: true },
     ];
   },
 };

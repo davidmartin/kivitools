@@ -500,6 +500,70 @@ export interface ProductDescriptionGeneratorResponse {
     error?: string;
 }
 
+// Tool metadata for centralized tools page
+export interface Tool {
+    id: string;                    // Unique identifier (e.g., "tiktok-script-writer")
+    name: string;                  // Display name (e.g., "Script Writer")
+    description: string;           // Short description for cards
+    platform: Platform;            // Platform identifier
+    href: string;                  // URL path (e.g., "/tiktok/script-writer")
+    icon: string;                  // Emoji icon (e.g., "🎬")
+    dateAdded: string;             // ISO date when tool was added (e.g., "2024-03-15")
+    popularity: number;            // Popularity score 0-100 (for sorting)
+    featured: boolean;             // Whether tool is featured (top 20 tools)
+    tags: string[];                // Searchable tags (e.g., ["content", "video", "ai"])
+}
+
+// Platform identifier for filtering
+export type Platform =
+    | "tiktok"
+    | "instagram"
+    | "twitter"
+    | "snapchat"
+    | "youtube"
+    | "reddit"
+    | "discord"
+    | "twitch"
+    | "elevenlabs"
+    | "amazon"
+    | "bereal"
+    | "bluesky"
+    | "dating"
+    | "email"
+    | "etsy"
+    | "facebook"
+    | "forocoches"
+    | "linkedin"
+    | "mastodon"
+    | "onlyfans"
+    | "pinterest"
+    | "shopify"
+    | "suno"
+    | "telegram"
+    | "threads"
+    | "vimeo"
+    | "whatsapp"
+    | "wordpress";
+
+// Platform metadata for filtering UI
+export interface PlatformInfo {
+    id: Platform;
+    name: string;                  // Display name (e.g., "TikTok")
+    emoji: string;                 // Platform emoji icon
+    color: string;                 // Brand color (e.g., "purple-600")
+    toolCount: number;             // Number of tools for this platform
+}
+
+// Sort options for tools
+export type SortOption = "featured" | "newest" | "popular" | "a-z";
+
+// Filter state for tools page
+export interface FilterState {
+    platform: Platform | "all";    // Selected platform or "all"
+    search: string;                // Search query (debounced)
+    sort: SortOption;              // Sort method
+}
+
 // UI Language Configuration (for language selector)
 // Only include languages with complete translations
 export type UILanguage = 'en' | 'es' | 'pt' | 'fr' | 'de' | 'it';

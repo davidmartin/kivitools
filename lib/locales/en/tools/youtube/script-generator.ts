@@ -2,6 +2,10 @@ export const script_generator = {
     // YouTube Video Script Generator
     "youtubeScript.title": "YouTube Video Script Generator",
     "youtubeScript.description": "Generate professional scripts for your YouTube videos with complete structure.",
+
+    // Alias keys for tool card display
+    "youtubeScriptGenerator.title": "YouTube Video Script Generator",
+    "youtubeScriptGenerator.description": "Create engaging scripts for your YouTube videos",
     "youtubeScript.form.topic": "Video Topic",
     "youtubeScript.form.topicPlaceholder": "Please enter your video topic...",
     "youtubeScript.form.tone": "Tone",

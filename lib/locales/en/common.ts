@@ -38,6 +38,11 @@ export const common = {
     "nav.dashboard": "Dashboard",
     "nav.createTool": "Create Tool",
 
+    // Common UI
+    "common.featured": "Featured",
+    "common.loading": "Loading...",
+    "common.error": "Error",
+
     // Voice Styles
     "voiceStyles.narration": "Narration",
     "voiceStyles.conversational": "Conversational",
@@ -198,4 +203,34 @@ export const common = {
     "technology.feature4Text": "Yes, really. No hidden fees, no premium tier that actually works. Just free tools.",
     "technology.cta": "Try Our Tools",
     "technology.ctaSubtext": "See what DeepSeek-powered AI can do for your content",
+
+    // Homepage Tools Feed
+    "home.feed.title": "All Tools",
+    "home.feed.description": "Find the perfect AI tool for your content (because scrolling is easier than thinking)",
+    "home.feed.filter.featured": "Featured",
+    "home.feed.filter.popular": "Popular",
+    "home.feed.filter.new": "New",
+    "home.feed.filter.all": "All",
+    "home.feed.platforms.all": "All Platforms",
+    "home.feed.platforms.title": "Platforms",
+    "home.feed.empty.title": "No tools found",
+    "home.feed.empty.description": "Try adjusting your filters or search query (or accept that perfection is hard to find)",
+    "home.feed.card.useTool": "Use Tool",
+    "home.feed.count": "{count} tools",
+
+    // Tools Page (Feature 017)
+    "toolsPage.title": "All Tools",
+    "toolsPage.description": "Browse 100+ free AI-powered tools for content creation",
+    "toolsPage.filters.all": "All Platforms",
+    "toolsPage.filters.platform": "Filter by platform",
+    "toolsPage.filters.search": "Search tools...",
+    "toolsPage.filters.searchPlaceholder": "Search by name or description",
+    "toolsPage.sort.featured": "Featured",
+    "toolsPage.sort.newest": "Newest",
+    "toolsPage.sort.popular": "Popular",
+    "toolsPage.sort.alphabetical": "A-Z",
+    "toolsPage.showing": "Showing {count} of {total} tools",
+    "toolsPage.endOfFeed": "🎉 You've seen all {count} tools!",
+    "toolsPage.noResults": "No tools found",
+    "toolsPage.noResultsDesc": "Try adjusting your filters or search query",
 };

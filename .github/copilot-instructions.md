@@ -92,7 +92,7 @@ When creating new tools, think broadly about what platforms could benefit from t
 1. **Be Playful**: Use humor, exaggeration, and self-deprecation
 2. **Be Relatable**: Reference common user frustrations and experiences
 3. **Be Honest**: Acknowledge the absurdity of social media while helping users succeed
-4. **Use Emojis Sparingly**: Only use emojis when they add meaningful context or emphasis (e.g., platform icons, emphasis in marketing copy). Never use emojis just for decoration. Navigation, buttons, and UI elements should be clean and professional.
+4. **NO Emojis in UI**: NEVER use emojis in navigation, buttons, selectors, filters, or any UI element. Use Lucide React icons instead (e.g., `<Search />`, `<Star />`, `<TrendingUp />`). Emojis are only acceptable in marketing copy or user-generated content examples.
 5. **Keep It Short**: Punchy, memorable phrases work best
 6. **No Corporate Speak**: Avoid buzzwords like "leverage", "synergy", "optimize" unless used ironically
 
@@ -263,6 +263,13 @@ export const translations = {
    - `className`: Additional Tailwind classes
 
 **BEFORE writing any component, check if there's a HeroUI component for it.**
+
+**IMPORTANT**: When using a HeroUI component for the first time or if unsure about its API:
+
+1. **Check the official documentation**: https://v3.heroui.com/docs/components-list
+2. Review the TypeScript definitions in `node_modules/@heroui/react/dist/components/[component-name]/`
+3. Look for compound components (e.g., `Select.Trigger`, `Select.Popover`, `ListBox.Item`)
+4. Always verify the API structure matches the installed version (v3.0.0+)
 
 ### HeroUI v3 Theme System
 
@@ -483,6 +490,13 @@ For every tool, you MUST add these translation keys in both `es` and `en`:
 ### HeroUI v3 Components
 
 **CRITICAL**: Always use HeroUI v3 components instead of native HTML elements.
+
+**IMPORTANT**: When using a HeroUI component for the first time or if unsure about its API:
+
+1. **Check the official documentation**: https://v3.heroui.com/docs/components-list
+2. Review the TypeScript definitions in `node_modules/@heroui/react/dist/components/[component-name]/`
+3. Look for compound components (e.g., `Select.Trigger`, `Select.Popover`, `ListBox.Item`)
+4. Always verify the API structure matches the installed version (v3.0.0+)
 
 - Use compound component pattern: `<Card><Card.Header><Card.Title>...</Card.Title></Card.Header></Card>`
 - Button events use `onPress`, NOT `onClick`

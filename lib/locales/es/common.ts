@@ -38,6 +38,11 @@ export const common = {
     "nav.dashboard": "Panel",
     "nav.createTool": "Crear Tool",
 
+    // Common UI
+    "common.featured": "Destacada",
+    "common.loading": "Cargando...",
+    "common.error": "Error",
+
     // Voice Styles
     "voiceStyles.narration": "Narración",
     "voiceStyles.conversational": "Conversacional",
@@ -198,4 +203,34 @@ export const common = {
     "technology.feature4Text": "Sí, de verdad. Sin costos ocultos, sin tier premium que realmente funcione. Solo herramientas gratis.",
     "technology.cta": "Prueba Nuestras Herramientas",
     "technology.ctaSubtext": "Mira lo que la IA de DeepSeek puede hacer por tu contenido",
+
+    // Homepage Tools Feed
+    "home.feed.title": "Todas las Herramientas",
+    "home.feed.description": "Encuentra la herramienta de IA perfecta para tu contenido (porque scrollear es más fácil que pensar)",
+    "home.feed.filter.featured": "Destacadas",
+    "home.feed.filter.popular": "Populares",
+    "home.feed.filter.new": "Nuevas",
+    "home.feed.filter.all": "Todas",
+    "home.feed.platforms.all": "Todas las Plataformas",
+    "home.feed.platforms.title": "Plataformas",
+    "home.feed.empty.title": "No se encontraron herramientas",
+    "home.feed.empty.description": "Intenta ajustar tus filtros o búsqueda (o acepta que la perfección es difícil de encontrar)",
+    "home.feed.card.useTool": "Usar Herramienta",
+    "home.feed.count": "{count} herramientas",
+
+    // Tools Page (Feature 017)
+    "toolsPage.title": "Todas las Herramientas",
+    "toolsPage.description": "Explora más de 100 herramientas de IA gratuitas para creación de contenido",
+    "toolsPage.filters.all": "Todas las Plataformas",
+    "toolsPage.filters.platform": "Filtrar por plataforma",
+    "toolsPage.filters.search": "Buscar herramientas...",
+    "toolsPage.filters.searchPlaceholder": "Buscar por nombre o descripción",
+    "toolsPage.sort.featured": "Destacadas",
+    "toolsPage.sort.newest": "Más Recientes",
+    "toolsPage.sort.popular": "Más Populares",
+    "toolsPage.sort.alphabetical": "A-Z",
+    "toolsPage.showing": "Mostrando {count} de {total} herramientas",
+    "toolsPage.endOfFeed": "🎉 ¡Has visto todas las {count} herramientas!",
+    "toolsPage.noResults": "No se encontraron herramientas",
+    "toolsPage.noResultsDesc": "Intenta ajustar tus filtros o búsqueda",
 };
