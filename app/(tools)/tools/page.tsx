@@ -368,13 +368,13 @@ function ToolsPageContent() {
                         </div>
                         <ListBox.ItemIndicator />
                       </ListBox.Item>
-                      {PLATFORMS.map((platform) => {
-                        const metadata = PLATFORM_METADATA[platform];
+                      {PLATFORMS.map((platformKey) => {
+                        const metadata = PLATFORM_METADATA[platformKey];
                         if (!metadata) return null;
                         return (
-                          <ListBox.Item key={platform} id={platform} textValue={metadata.name}>
+                          <ListBox.Item key={platformKey} id={platformKey} textValue={metadata.name}>
                             <div className="flex items-center gap-2">
-                              <PlatformLogo platform={metadata.name as any} size="sm" />
+                              <PlatformLogo platform={platformKey} size="sm" />
                               <span>{metadata.name}</span>
                             </div>
                             <ListBox.ItemIndicator />
