@@ -48,9 +48,10 @@ function ToolsPageContent() {
   const sortParam = (searchParams.get("sort") as SortOption) || "newest";
   const searchQuery = searchParams.get("q") || "";
   
-  // Language filter - "all" means show all languages, otherwise filter by specific language
-  // On first visit, show user's UI language; once they select "all", keep it as "all"
-  const languageParam = searchParams.get("lang") || "all";
+  // Language filter - use user's UI language by default if no param in URL
+  // If user explicitly selects "all", the URL will have ?lang=all
+  const langFromUrl = searchParams.get("lang");
+  const languageParam = langFromUrl !== null ? langFromUrl : uiLanguage;
 
   // ============================================================================
   // Local State
@@ -266,7 +267,7 @@ function ToolsPageContent() {
   const handleClearFilters = () => {
     setSearch("");
     setPlatformSelection(new Set());
-    setLanguageSelection(new Set(["all"]));
+    setLanguageSelection(new Set([uiLanguage])); // Reset to user's language
     router.push(`/tools`);
   };
 
