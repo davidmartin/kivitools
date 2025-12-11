@@ -32,8 +32,8 @@ function ToolCardComponent({
   const { t } = useLanguage();
   const platform = PLATFORM_METADATA[tool.platform];
   
-  // Get platform color
-  const platformColor = platformColors[tool.platform as keyof typeof platformColors];
+  // Get platform color with fallback
+  const platformColor = platformColors[tool.platform as keyof typeof platformColors] || "#6B7280";
   
   // Helper to check if color is dark (using luminance calculation)
   const isColorDark = (hexColor: string): boolean => {
@@ -85,6 +85,11 @@ function ToolCardComponent({
                     | "podcast"
                     | "threads"
                     | "email"
+                    | "ai-art"
+                    | "whatsapp"
+                    | "career"
+                    | "seo"
+                    | "marketing"
                 }
                 size="md"
               />

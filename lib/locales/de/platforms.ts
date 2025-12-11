@@ -78,4 +78,62 @@ export const platforms = {
     "patreon.info.title": "Was ist Patreon?",
     "patreon.info.description": "Patreon ermöglicht Creatorn, von ihren größten Fans zu verdienen. Unsere KI-Tools helfen dir, Tier-Beschreibungen und Posts zu erstellen, die Gelegenheits-Follower in treue Patrons verwandeln.",
 
+    // AI Art
+    "aiArt.page.title": "Kostenlose KI-Kunst Prompt-Tools",
+    "aiArt.page.description": "Prompts so gut, dass Midjourney denkt, du bist ein professioneller Künstler (Spoiler: bist du nicht, aber wen kümmert's).",
+    "aiArt.info.title": "Was sind KI-Kunst-Tools?",
+    "aiArt.info.description": "KI-Kunstgeneratoren wie Midjourney, DALL-E und Stable Diffusion erstellen atemberaubende Bilder aus Text. Unsere Tools helfen dir, die perfekten Prompts zu erstellen, um die Kunst zu bekommen, die du wirklich willst.",
+    "aiArtPromptGenerator.title": "KI-Kunst Prompt-Generator",
+    "aiArtPromptGenerator.description": "Erstelle detaillierte Prompts für Midjourney, DALL-E oder Stable Diffusion, die atemberaubende Bilder produzieren.",
+    "aiArtImageDescriber.title": "Bildbeschreiber",
+    "aiArtImageDescriber.description": "Generiere detaillierte visuelle Beschreibungen, perfekt zum Nachbilden von Bildern mit KI-Kunst-Tools.",
+    "aiArtNegativePrompt.title": "Negativ-Prompt Generator",
+    "aiArtNegativePrompt.description": "Erstelle effektive Negativ-Prompts, um unerwünschte Elemente in deiner KI-generierten Kunst zu vermeiden.",
+
+    // WhatsApp
+    "whatsapp.page.title": "Kostenlose KI WhatsApp-Tools",
+    "whatsapp.page.description": "Nachrichten so professionell, dass deine Kunden denken, du hast einen Texter eingestellt (es ist nur KI, pssst).",
+    "whatsapp.info.title": "Was sind WhatsApp Business-Tools?",
+    "whatsapp.info.description": "WhatsApp ist die weltweit beliebteste Messaging-App mit über 2 Milliarden Nutzern. Unsere Tools helfen dir, professionelle Nachrichten zu erstellen, die Gespräche in Kunden verwandeln.",
+    "whatsappBusinessMessage.title": "Business-Nachrichten Generator",
+    "whatsappBusinessMessage.description": "Erstelle professionelle WhatsApp-Nachrichten für Kundenservice, Verkauf und Follow-ups.",
+    "whatsappStatusIdeas.title": "Status-Ideen Generator",
+    "whatsappStatusIdeas.description": "Generiere kreative und ansprechende WhatsApp-Status-Updates, die Views bekommen.",
+    "whatsappQuickReplies.title": "Schnellantworten Generator",
+    "whatsappQuickReplies.description": "Erstelle effiziente Schnellantwort-Vorlagen für häufige Kundenfragen.",
+
+    // Career
+    "career.page.title": "Kostenlose KI Karriere-Tools",
+    "career.page.description": "Lebensläufe so poliert, dass Recruiter denken, du hast ein persönliches Branding-Team (es ist nur KI).",
+    "career.info.title": "Was sind Karriere-Tools?",
+    "career.info.description": "Deinen Traumjob zu bekommen erfordert Herausstechen. Unsere KI-Tools helfen dir, überzeugende Lebensläufe und Anschreiben zu erstellen, die das ATS überstehen und dich zu Vorstellungsgesprächen bringen.",
+    "careerResumeSummary.title": "Lebenslauf-Zusammenfassung Generator",
+    "careerResumeSummary.description": "Erstelle eine kraftvolle professionelle Zusammenfassung, die deinen Wert in Sekunden hervorhebt.",
+    "careerCoverLetter.title": "Anschreiben Generator",
+    "careerCoverLetter.description": "Generiere personalisierte Anschreiben, die auf spezifische Stellenbeschreibungen zugeschnitten sind.",
+
+    // SEO
+    "seo.page.title": "Kostenlose KI SEO-Tools",
+    "seo.page.description": "Meta-Beschreibungen so optimiert, dass Google denkt, du hast eine SEO-Agentur beauftragt (hast du nicht).",
+    "seo.info.title": "Was sind SEO-Tools?",
+    "seo.info.description": "Suchmaschinenoptimierung ist entscheidend für Sichtbarkeit. Unsere KI-Tools helfen dir, Meta-Tags, Titel und Schema-Markup zu erstellen, die deine Rankings verbessern.",
+    "seoMetaDescription.title": "Meta-Beschreibungen Generator",
+    "seoMetaDescription.description": "Erstelle klickwürdige Meta-Beschreibungen, die CTR und Rankings verbessern.",
+    "seoTitleGenerator.title": "SEO-Titel Generator",
+    "seoTitleGenerator.description": "Generiere optimierte Seitentitel, die gut ranken und Klicks anziehen.",
+    "seoSchemaMarkup.title": "Schema-Markup Generator",
+    "seoSchemaMarkup.description": "Erstelle JSON-LD Schema-Markup für Rich Snippets in Suchergebnissen.",
+
+    // Marketing
+    "marketing.page.title": "Kostenlose KI Marketing-Tools",
+    "marketing.page.description": "Slogans und Copy so catchy, dass deine Konkurrenz weinen wird (vor Neid).",
+    "marketing.info.title": "Was sind Marketing-Tools?",
+    "marketing.info.description": "Guter Marketing-Copy konvertiert. Unsere KI-Tools helfen dir, überzeugende Produktbewertungen, einprägsame Slogans und überzeugende Inhalte zu erstellen, die verkaufen.",
+    "marketingProductReview.title": "Produktbewertungs Generator",
+    "marketingProductReview.description": "Generiere authentisch klingende Produktbewertungen für jeden Artikel oder Service.",
+    "marketingSloganGenerator.title": "Slogan Generator",
+    "marketingSloganGenerator.description": "Erstelle einprägsame Marken-Slogans und Taglines, die im Kopf bleiben.",
+    "marketingEmailSubjectLine.title": "E-Mail-Betreff Generator",
+    "marketingEmailSubjectLine.description": "Erstelle Betreffzeilen, die Öffnungsraten verbessern und den Spam-Ordner vermeiden.",
+
 };

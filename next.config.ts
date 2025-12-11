@@ -179,6 +179,11 @@ const nextConfig: NextConfig = {
       { source: "/whatsapp", destination: "/tools?platform=whatsapp", permanent: true },
       { source: "/wordpress", destination: "/tools?platform=wordpress", permanent: true },
       { source: "/mastodon", destination: "/tools?platform=mastodon", permanent: true },
+      // New platforms added in June 2025
+      { source: "/ai-art", destination: "/tools?platform=ai-art", permanent: true },
+      { source: "/career", destination: "/tools?platform=career", permanent: true },
+      { source: "/seo", destination: "/tools?platform=seo", permanent: true },
+      { source: "/marketing", destination: "/tools?platform=marketing", permanent: true },
 
       // ═══════════════════════════════════════════════════════════════
       // Static Tools → Dynamic Appwrite Tools (301 SEO Redirects)

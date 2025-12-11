@@ -78,4 +78,62 @@ export const platforms = {
     "patreon.info.title": "Cos'è Patreon?",
     "patreon.info.description": "Patreon permette ai creator di guadagnare dai loro fan più grandi. I nostri strumenti AI ti aiutano a creare descrizioni tier e post che trasformano follower occasionali in patron fedeli.",
 
+    // AI Art
+    "aiArt.page.title": "Strumenti Gratuiti per Prompt Arte AI",
+    "aiArt.page.description": "Prompt così buoni che Midjourney penserà che sei un artista professionista (spoiler: non lo sei, ma chi se ne frega).",
+    "aiArt.info.title": "Cosa sono gli Strumenti di Arte AI?",
+    "aiArt.info.description": "I generatori di arte AI come Midjourney, DALL-E e Stable Diffusion creano immagini straordinarie dal testo. I nostri strumenti ti aiutano a creare i prompt perfetti per ottenere l'arte che vuoi davvero.",
+    "aiArtPromptGenerator.title": "Generatore di Prompt Arte AI",
+    "aiArtPromptGenerator.description": "Crea prompt dettagliati per Midjourney, DALL-E o Stable Diffusion che producono immagini straordinarie.",
+    "aiArtImageDescriber.title": "Descrittore di Immagini",
+    "aiArtImageDescriber.description": "Genera descrizioni visive dettagliate perfette per ricreare immagini con strumenti di arte AI.",
+    "aiArtNegativePrompt.title": "Generatore di Prompt Negativi",
+    "aiArtNegativePrompt.description": "Crea prompt negativi efficaci per evitare elementi indesiderati nella tua arte generata da AI.",
+
+    // WhatsApp
+    "whatsapp.page.title": "Strumenti AI Gratuiti per WhatsApp",
+    "whatsapp.page.description": "Messaggi così professionali che i tuoi clienti penseranno che hai assunto un copywriter (è solo AI, shh).",
+    "whatsapp.info.title": "Cosa sono gli Strumenti WhatsApp Business?",
+    "whatsapp.info.description": "WhatsApp è l'app di messaggistica più popolare al mondo con oltre 2 miliardi di utenti. I nostri strumenti ti aiutano a creare messaggi professionali che convertono conversazioni in clienti.",
+    "whatsappBusinessMessage.title": "Generatore di Messaggi Business",
+    "whatsappBusinessMessage.description": "Crea messaggi WhatsApp professionali per servizio clienti, vendite e follow-up.",
+    "whatsappStatusIdeas.title": "Generatore di Idee per Stato",
+    "whatsappStatusIdeas.description": "Genera aggiornamenti di stato WhatsApp creativi e coinvolgenti che ottengono visualizzazioni.",
+    "whatsappQuickReplies.title": "Generatore di Risposte Rapide",
+    "whatsappQuickReplies.description": "Crea template di risposte rapide efficienti per domande comuni dei clienti.",
+
+    // Career
+    "career.page.title": "Strumenti AI Gratuiti per Carriera",
+    "career.page.description": "CV così curati che i recruiter penseranno che hai un team di branding personale (è solo AI).",
+    "career.info.title": "Cosa sono gli Strumenti di Carriera?",
+    "career.info.description": "Ottenere il tuo lavoro dei sogni richiede distinguersi. I nostri strumenti AI ti aiutano a creare CV e lettere di presentazione convincenti che superano l'ATS e ti portano ai colloqui.",
+    "careerResumeSummary.title": "Generatore di Sommario CV",
+    "careerResumeSummary.description": "Crea un sommario professionale potente che evidenzia il tuo valore in secondi.",
+    "careerCoverLetter.title": "Generatore di Lettera di Presentazione",
+    "careerCoverLetter.description": "Genera lettere di presentazione personalizzate adattate a specifiche descrizioni di lavoro.",
+
+    // SEO
+    "seo.page.title": "Strumenti AI Gratuiti per SEO",
+    "seo.page.description": "Meta descrizioni così ottimizzate che Google penserà che hai assunto un'agenzia SEO (non l'hai fatto).",
+    "seo.info.title": "Cosa sono gli Strumenti SEO?",
+    "seo.info.description": "L'ottimizzazione per i motori di ricerca è cruciale per la visibilità. I nostri strumenti AI ti aiutano a creare meta tag, titoli e schema markup che migliorano i tuoi ranking.",
+    "seoMetaDescription.title": "Generatore di Meta Descrizioni",
+    "seoMetaDescription.description": "Crea meta descrizioni accattivanti che migliorano CTR e ranking.",
+    "seoTitleGenerator.title": "Generatore di Titoli SEO",
+    "seoTitleGenerator.description": "Genera titoli di pagina ottimizzati che si posizionano bene e attirano clic.",
+    "seoSchemaMarkup.title": "Generatore di Schema Markup",
+    "seoSchemaMarkup.description": "Crea schema markup JSON-LD per rich snippet nei risultati di ricerca.",
+
+    // Marketing
+    "marketing.page.title": "Strumenti AI Gratuiti per Marketing",
+    "marketing.page.description": "Slogan e copy così accattivanti che i tuoi competitor piangeranno (di invidia).",
+    "marketing.info.title": "Cosa sono gli Strumenti di Marketing?",
+    "marketing.info.description": "Un buon copy marketing converte. I nostri strumenti AI ti aiutano a creare recensioni prodotto convincenti, slogan memorabili e contenuti persuasivi che vendono.",
+    "marketingProductReview.title": "Generatore di Recensioni Prodotto",
+    "marketingProductReview.description": "Genera recensioni prodotto dal suono autentico per qualsiasi articolo o servizio.",
+    "marketingSloganGenerator.title": "Generatore di Slogan",
+    "marketingSloganGenerator.description": "Crea slogan e tagline di marca memorabili che rimangono in mente.",
+    "marketingEmailSubjectLine.title": "Generatore di Oggetti Email",
+    "marketingEmailSubjectLine.description": "Crea righe oggetto che migliorano i tassi di apertura ed evitano la cartella spam.",
+
 };

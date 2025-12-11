@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon";
+type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon" | "whatsapp" | "mastodon" | "shopify" | "vimeo" | "wordpress" | "ai-art" | "career" | "seo" | "marketing";
 
 interface GenerateToolMetadataProps {
   platform: Platform;
@@ -41,6 +41,15 @@ export const platformColors: Record<Platform, string> = {
   etsy: "#F56400",
   onlyfans: "#00AFF0",
   patreon: "#FF424D",
+  whatsapp: "#25D366",
+  mastodon: "#6364FF",
+  shopify: "#96BF48",
+  vimeo: "#1AB7EA",
+  wordpress: "#21759B",
+  "ai-art": "#9333EA",
+  career: "#3B82F6",
+  seo: "#10B981",
+  marketing: "#F97316",
 };
 
 const platformNames: Record<Platform, string> = {
@@ -72,6 +81,15 @@ const platformNames: Record<Platform, string> = {
   etsy: "Etsy",
   onlyfans: "OnlyFans",
   patreon: "Patreon",
+  whatsapp: "WhatsApp",
+  mastodon: "Mastodon",
+  shopify: "Shopify",
+  vimeo: "Vimeo",
+  wordpress: "WordPress",
+  "ai-art": "AI Art",
+  career: "Career",
+  seo: "SEO",
+  marketing: "Marketing",
 };
 
 /**

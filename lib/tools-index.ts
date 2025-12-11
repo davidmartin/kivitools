@@ -1899,7 +1899,12 @@ export const PLATFORMS: Platform[] = [
     "threads",
     "vimeo",
     "whatsapp",
-    "wordpress"
+    "wordpress",
+    "ai-art",
+    "career",
+    "seo",
+    "marketing",
+    "spotify"
 ] as const;
 
 /**
@@ -1938,6 +1943,15 @@ export const PLATFORM_METADATA: Record<
     threads: { name: "Threads", icon: "🧵", color: "black" },
     email: { name: "Email", icon: "📧", color: "gray" },
     general: { name: "General", icon: "🔧", color: "gray" },
+    "ai-art": { name: "AI Art", icon: "🎨", color: "purple" },
+    career: { name: "Career", icon: "💼", color: "blue" },
+    seo: { name: "SEO", icon: "🔍", color: "green" },
+    marketing: { name: "Marketing", icon: "📈", color: "orange" },
+    whatsapp: { name: "WhatsApp", icon: "💬", color: "green" },
+    mastodon: { name: "Mastodon", icon: "🦣", color: "purple" },
+    shopify: { name: "Shopify", icon: "🛍️", color: "green" },
+    vimeo: { name: "Vimeo", icon: "🎬", color: "blue" },
+    wordpress: { name: "WordPress", icon: "📝", color: "blue" },
 };
 
 /**

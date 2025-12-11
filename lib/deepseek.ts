@@ -6416,3 +6416,554 @@ Return ONLY valid JSON, no explanation.`;
         };
     }
 }
+// ============================================
+// AI Art Tools (Midjourney, DALL-E, Stable Diffusion)
+// ============================================
+
+export async function generateAiArtPrompt(params: {
+    subject: string;
+    style?: string;
+    mood?: string;
+    platform?: string;
+    language?: string;
+}): Promise<string[]> {
+    const { subject, style = "photorealistic", mood = "dramatic", platform = "midjourney", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const platformGuides: Record<string, string> = {
+        midjourney: "Use Midjourney syntax with parameters like --ar 16:9, --v 6, --style raw. Include lighting, camera angles, and artistic references.",
+        "dall-e": "Use natural language descriptions. Be specific about composition, lighting, colors, and style. Avoid technical parameters.",
+        "stable-diffusion": "Include weights like (keyword:1.2), negative prompts syntax, and model-specific tags. Add quality boosters.",
+    };
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "system",
+                content: `You are an expert AI art prompt engineer specializing in ${platform}. ${platformGuides[platform] || platformGuides.midjourney}`,
+            },
+            {
+                role: "user",
+                content: `Generate 5 unique, detailed ${platform} prompts for: "${subject}"
+                
+Style: ${style}
+Mood: ${mood}
+
+Requirements:
+- Each prompt should be optimized for ${platform}
+- Include specific artistic details (lighting, composition, colors, textures)
+- Vary the approaches while maintaining the core subject
+- Make prompts immediately usable (copy-paste ready)
+
+Return ONLY the 5 prompts, one per line, no numbering or explanations.`,
+            },
+        ],
+        temperature: 0.9,
+        max_tokens: 2000,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n").filter(line => line.trim().length > 20);
+}
+
+export async function generateImageDescriber(params: {
+    concept: string;
+    language?: string;
+}): Promise<string> {
+    const { concept, language = "en" } = params;
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `You are an AI art expert. Create an extremely detailed visual description for: "${concept}"
+
+Include:
+- Main subject details (position, expression, clothing, features)
+- Environment and background (setting, time of day, weather)
+- Lighting (direction, intensity, color temperature, shadows)
+- Color palette (dominant colors, accents, color harmony)
+- Mood and atmosphere
+- Textures and materials
+- Composition and framing
+- Artistic style references
+
+Write as a single detailed paragraph, 150-200 words. Make it painterly and evocative.`,
+            },
+        ],
+        temperature: 0.85,
+        max_tokens: 500,
+    });
+
+    return completion.choices[0]?.message?.content || "";
+}
+
+export async function generateNegativePrompt(params: {
+    style: string;
+    platform?: string;
+    language?: string;
+}): Promise<string> {
+    const { style, platform = "stable-diffusion", language = "en" } = params;
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate an optimized negative prompt for ${platform} to avoid common AI art issues.
+
+Target style: ${style}
+
+Include terms to avoid:
+- Anatomical issues (bad hands, extra fingers, deformed faces)
+- Quality issues (blurry, low resolution, pixelated)
+- Style issues appropriate for the target style
+- Composition issues
+
+Return ONLY the negative prompt, comma-separated, ready to use.`,
+            },
+        ],
+        temperature: 0.7,
+        max_tokens: 300,
+    });
+
+    return completion.choices[0]?.message?.content || "";
+}
+
+// ============================================
+// WhatsApp Tools
+// ============================================
+
+export async function generateWhatsAppBusinessMessage(params: {
+    businessType: string;
+    messageType: string;
+    language?: string;
+}): Promise<string[]> {
+    const { businessType, messageType, language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const messageTypes: Record<string, string> = {
+        welcome: "Welcome message for new customers",
+        follow_up: "Follow-up message after purchase",
+        promotion: "Promotional message with offer",
+        reminder: "Appointment/order reminder",
+        thank_you: "Thank you message after interaction",
+    };
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate 5 professional WhatsApp Business messages in ${langName}.
+
+Business type: ${businessType}
+Message type: ${messageTypes[messageType] || messageType}
+
+Requirements:
+- Keep messages under 200 characters for best readability
+- Use appropriate emojis (1-3 max)
+- Include clear call-to-action
+- Sound professional but friendly
+- Be culturally appropriate for ${langName} speakers
+
+Return ONLY the 5 messages, one per line, no numbering.`,
+            },
+        ],
+        temperature: 0.85,
+        max_tokens: 1000,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n").filter(line => line.trim().length > 10);
+}
+
+export async function generateWhatsAppStatus(params: {
+    topic: string;
+    mood?: string;
+    language?: string;
+}): Promise<string[]> {
+    const { topic, mood = "casual", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate 8 WhatsApp status ideas in ${langName}.
+
+Topic: ${topic}
+Mood: ${mood}
+
+Requirements:
+- Short and impactful (under 100 characters)
+- Use relevant emojis
+- Mix of quotes, thoughts, and observations
+- Engaging and shareable
+- Appropriate for personal status updates
+
+Return ONLY the 8 status ideas, one per line.`,
+            },
+        ],
+        temperature: 0.9,
+        max_tokens: 800,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n").filter(line => line.trim().length > 5);
+}
+
+export async function generateWhatsAppQuickReplies(params: {
+    scenario: string;
+    language?: string;
+}): Promise<string[]> {
+    const { scenario, language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate 10 quick reply templates in ${langName} for: "${scenario}"
+
+Requirements:
+- Concise and efficient (under 50 characters)
+- Professional yet friendly
+- Cover common variations of the scenario
+- Easy to customize with [PLACEHOLDERS] where needed
+- Include appropriate emojis when relevant
+
+Return ONLY the 10 quick replies, one per line.`,
+            },
+        ],
+        temperature: 0.8,
+        max_tokens: 600,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n").filter(line => line.trim().length > 3);
+}
+
+// ============================================
+// Career Tools (Resume/CV, Cover Letter)
+// ============================================
+
+export async function generateResumeSummary(params: {
+    profession: string;
+    experience: string;
+    skills?: string;
+    language?: string;
+}): Promise<string[]> {
+    const { profession, experience, skills = "", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate 5 professional resume/CV summary sections in ${langName}.
+
+Profession: ${profession}
+Years of experience: ${experience}
+${skills ? `Key skills: ${skills}` : ""}
+
+Requirements:
+- 2-4 sentences each
+- Highlight achievements and value proposition
+- Use strong action verbs
+- Quantify results when possible
+- ATS-friendly keywords
+- No first-person pronouns (I, my, me)
+
+Return ONLY the 5 summaries, separated by blank lines.`,
+            },
+        ],
+        temperature: 0.8,
+        max_tokens: 1500,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n\n").filter(p => p.trim().length > 30);
+}
+
+export async function generateCoverLetter(params: {
+    jobTitle: string;
+    company: string;
+    skills: string;
+    experience?: string;
+    language?: string;
+}): Promise<string> {
+    const { jobTitle, company, skills, experience = "", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Write a compelling cover letter in ${langName}.
+
+Position: ${jobTitle}
+Company: ${company}
+Key skills: ${skills}
+${experience ? `Experience highlights: ${experience}` : ""}
+
+Requirements:
+- 3-4 paragraphs
+- Professional but personable tone
+- Specific to the role and company
+- Highlight relevant achievements
+- Include a clear call to action
+- Format ready to copy-paste
+
+Write the complete cover letter.`,
+            },
+        ],
+        temperature: 0.75,
+        max_tokens: 1000,
+    });
+
+    return completion.choices[0]?.message?.content || "";
+}
+
+// ============================================
+// SEO Tools
+// ============================================
+
+export async function generateMetaDescription(params: {
+    page: string;
+    keywords: string;
+    language?: string;
+}): Promise<string[]> {
+    const { page, keywords, language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate 5 SEO-optimized meta descriptions in ${langName}.
+
+Page content: ${page}
+Target keywords: ${keywords}
+
+Requirements:
+- 150-160 characters each (strict limit)
+- Include primary keyword naturally
+- Compelling and click-worthy
+- Include call-to-action when appropriate
+- Unique value proposition
+- No keyword stuffing
+
+Return ONLY the 5 meta descriptions, one per line.`,
+            },
+        ],
+        temperature: 0.8,
+        max_tokens: 800,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n").filter(line => line.trim().length > 50);
+}
+
+export async function generateSeoTitle(params: {
+    topic: string;
+    keywords: string;
+    language?: string;
+}): Promise<string[]> {
+    const { topic, keywords, language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate 8 SEO-optimized title tags in ${langName}.
+
+Page topic: ${topic}
+Target keywords: ${keywords}
+
+Requirements:
+- 50-60 characters each (strict limit for SERP display)
+- Primary keyword near the beginning
+- Compelling and click-worthy
+- Include power words when appropriate
+- Brand can be added with " | Brand" at end
+- Various formats: how-to, listicles, questions, statements
+
+Return ONLY the 8 titles, one per line.`,
+            },
+        ],
+        temperature: 0.85,
+        max_tokens: 600,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n").filter(line => line.trim().length > 20);
+}
+
+export async function generateSchemaMarkup(params: {
+    pageType: string;
+    content: string;
+    language?: string;
+}): Promise<string> {
+    const { pageType, content, language = "en" } = params;
+    
+    const schemaTypes: Record<string, string> = {
+        article: "Article or BlogPosting",
+        product: "Product with offer",
+        faq: "FAQPage with questions",
+        howto: "HowTo with steps",
+        local: "LocalBusiness",
+        recipe: "Recipe",
+        event: "Event",
+    };
+
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate JSON-LD structured data for: ${schemaTypes[pageType] || pageType}
+
+Content description: ${content}
+
+Requirements:
+- Valid JSON-LD format
+- Include all recommended properties
+- Use schema.org vocabulary
+- Include @context and @type
+- Add placeholder values like [YOUR_URL], [YOUR_IMAGE] where needed
+- Make it ready to paste into <script type="application/ld+json">
+
+Return ONLY the JSON-LD code, no explanations.`,
+            },
+        ],
+        temperature: 0.6,
+        max_tokens: 1500,
+    });
+
+    return completion.choices[0]?.message?.content || "";
+}
+
+// ============================================
+// Additional High-Value Tools
+// ============================================
+
+export async function generateEmailSubjectLine(params: {
+    emailPurpose: string;
+    audience?: string;
+    language?: string;
+}): Promise<string[]> {
+    const { emailPurpose, audience = "general", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate 10 high-converting email subject lines in ${langName}.
+
+Email purpose: ${emailPurpose}
+Target audience: ${audience}
+
+Requirements:
+- Under 50 characters for mobile optimization
+- Variety: curiosity, urgency, personalization, questions
+- Avoid spam trigger words
+- A/B testing ready (similar concepts, different angles)
+- Include emoji variations where appropriate
+
+Return ONLY the 10 subject lines, one per line.`,
+            },
+        ],
+        temperature: 0.9,
+        max_tokens: 600,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n").filter(line => line.trim().length > 5);
+}
+
+export async function generateProductReview(params: {
+    product: string;
+    rating: string;
+    language?: string;
+}): Promise<string> {
+    const { product, rating, language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Write a helpful product review in ${langName}.
+
+Product: ${product}
+Rating: ${rating} out of 5 stars
+
+Requirements:
+- 150-250 words
+- Balanced (mention pros and cons)
+- Include specific use cases
+- Helpful for other buyers
+- Natural, authentic tone
+- Include who would benefit from this product
+
+Write the complete review.`,
+            },
+        ],
+        temperature: 0.8,
+        max_tokens: 500,
+    });
+
+    return completion.choices[0]?.message?.content || "";
+}
+
+export async function generateSlogan(params: {
+    brand: string;
+    industry: string;
+    values?: string;
+    language?: string;
+}): Promise<string[]> {
+    const { brand, industry, values = "", language = "en" } = params;
+    const langName = languageNames[language] || "English";
+    
+    const completion = await deepseek.chat.completions.create({
+        model: MODEL_NAME,
+        messages: [
+            {
+                role: "user",
+                content: `Generate 10 memorable brand slogans/taglines in ${langName}.
+
+Brand name: ${brand}
+Industry: ${industry}
+${values ? `Brand values: ${values}` : ""}
+
+Requirements:
+- Short and memorable (3-8 words)
+- Unique and ownable
+- Easy to remember
+- Evokes emotion or benefit
+- Various styles: playful, professional, inspirational
+- Avoid clichés
+
+Return ONLY the 10 slogans, one per line.`,
+            },
+        ],
+        temperature: 0.95,
+        max_tokens: 500,
+    });
+
+    const content = completion.choices[0]?.message?.content || "";
+    return content.split("\n").filter(line => line.trim().length > 3);
+}

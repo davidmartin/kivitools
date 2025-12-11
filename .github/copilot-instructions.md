@@ -2,11 +2,11 @@
 
 ## ⚠️ CRITICAL REMINDER: Complete Platform Integration Checklist
 
-**When adding a NEW PLATFORM, you MUST update ALL 10 files/locations:**
+**When adding a NEW PLATFORM, you MUST update ALL 11 files/locations:**
 
 1. ✅ Platform hub page (`app/(tools)/[platform]/page.tsx`)
 2. ✅ Navigation header (`app/components/navigation.tsx`)
-3. ✅ Translations (`lib/translations.ts`) - **MUST include `"nav.[platform]": "[Platform Name]"` in BOTH es and en**
+3. ✅ Translations (`lib/locales/[lang]/*.ts`) - **MUST include `"nav.[platform]": "[Platform Name]"` in ALL 6 languages**
 4. ✅ SEO metadata (`lib/seo-metadata.ts`)
 5. ✅ Tool selector (`app/components/tool-selector.tsx`)
 6. ✅ **Platform logo** (`app/components/platform-logo.tsx` + logo file in `/public/platforms/`)
@@ -14,12 +14,14 @@
 8. ✅ Spanish URL rewrites (`next.config.ts`)
 9. ✅ Routes documentation (`docs/RUTAS_ALIAS.md`)
 10. ✅ PRD update (`PRD.md`)
+11. ✅ **APPWRITE TOOLS UPLOAD** (`scripts/upload-new-platforms-tools.mjs`) - **Tools are stored in Appwrite DB, not as static pages!**
 
-**DO NOT skip steps 3, 6 and 7** - they are easy to forget:
+**DO NOT skip steps 3, 6, 7 and 11** - they are easy to forget:
 
-- Step 3: Must add `nav.[platform]` translation key
+- Step 3: Must add `nav.[platform]` translation key in ALL 6 languages
 - Step 6: Platform logo component + SVG file
 - Step 7: Home page platforms array
+- Step 11: **Tools must be uploaded to Appwrite database** (run `node scripts/upload-new-platforms-tools.mjs`)
 
 ---
 
@@ -832,6 +834,67 @@ PRD.md                                             ← Update status
   ],
 },
 ```
+
+### 11. **Upload Tools to Appwrite Database**
+
+**CRITICAL**: Tools are NOT stored as static pages. They are stored in the Appwrite database and loaded dynamically by the platform hub pages using `AppwriteToolsList` component.
+
+#### Appwrite Tools Collection Schema
+
+Each tool is stored with this structure (one document per language):
+
+```javascript
+{
+  name: "Tool Name",              // Translated name for this language
+  description: "Tool description", // Translated description
+  platform: "platform-slug",       // e.g., "ai-art", "whatsapp"
+  slug: "tool-slug",               // e.g., "prompt-generator"
+  language: "en",                  // "en", "es", "pt", "fr", "de", "it"
+  status: "approved",              // Must be "approved" to show
+  author_name: "KiviTools",
+  author_id: "system",
+  inputs: JSON.stringify([...]),   // Form inputs configuration
+  prompt_template: "..."           // AI prompt template
+}
+```
+
+#### Upload Script Pattern
+
+Use the pattern from `scripts/upload-missing-tools.mjs` or create a new script:
+
+```javascript
+import { Client, Databases, ID, Query } from "node-appwrite";
+
+const NEW_TOOLS = [
+  {
+    platform: "platform-name",
+    slug: "tool-slug",
+    names: {
+      en: "English Name",
+      es: "Nombre en Español",
+      pt: "Nome em Português",
+      fr: "Nom en Français",
+      de: "Deutscher Name",
+      it: "Nome in Italiano",
+    },
+    descriptions: {
+      en: "English description",
+      es: "Descripción en español",
+      // ... all 6 languages
+    },
+  },
+];
+
+// Creates 6 documents per tool (one for each language)
+```
+
+Run: `node scripts/upload-new-platforms-tools.mjs`
+
+#### Existing Upload Scripts
+
+- `scripts/upload-missing-tools.mjs` - Reference implementation
+- `scripts/upload-new-platforms-tools.mjs` - New platforms tools
+- `scripts/upload-tiktok-tools.mjs` - TikTok specific tools
 
 **AFTER COMPLETING ALL STEPS:** Go to step "MANDATORY: Test All New Tools After Creation" and test every tool you just created before considering the work done.
 

@@ -314,6 +314,54 @@ export default function Navigation() {
         { name: t("patreonPost.title"), href: "/patreon/post-generator" },
       ],
     },
+    {
+      id: "ai-art",
+      name: t("nav.aiArt"),
+      emoji: "🎨",
+      tools: [
+        { name: t("aiArtPromptGenerator.title"), href: "/ai-art/prompt-generator" },
+        { name: t("aiArtImageDescriber.title"), href: "/ai-art/image-describer" },
+        { name: t("aiArtNegativePrompt.title"), href: "/ai-art/negative-prompt" },
+      ],
+    },
+    {
+      id: "whatsapp",
+      name: t("nav.whatsapp"),
+      emoji: "💬",
+      tools: [
+        { name: t("whatsappBusinessMessage.title"), href: "/whatsapp/business-message" },
+        { name: t("whatsappStatusIdeas.title"), href: "/whatsapp/status-ideas" },
+        { name: t("whatsappQuickReplies.title"), href: "/whatsapp/quick-replies" },
+      ],
+    },
+    {
+      id: "career",
+      name: t("nav.career"),
+      emoji: "💼",
+      tools: [
+        { name: t("careerResumeSummary.title"), href: "/career/resume-summary" },
+        { name: t("careerCoverLetter.title"), href: "/career/cover-letter" },
+      ],
+    },
+    {
+      id: "seo",
+      name: t("nav.seo"),
+      emoji: "🔍",
+      tools: [
+        { name: t("seoMetaDescription.title"), href: "/seo/meta-description" },
+        { name: t("seoTitleGenerator.title"), href: "/seo/title-generator" },
+        { name: t("seoSchemaMarkup.title"), href: "/seo/schema-markup" },
+      ],
+    },
+    {
+      id: "marketing",
+      name: t("nav.marketing"),
+      emoji: "📈",
+      tools: [
+        { name: t("marketingProductReview.title"), href: "/marketing/product-review" },
+        { name: t("marketingSloganGenerator.title"), href: "/marketing/slogan-generator" },
+      ],
+    },
   ];
 
   return (

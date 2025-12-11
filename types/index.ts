@@ -549,7 +549,11 @@ export type Platform =
     | "threads"
     | "vimeo"
     | "whatsapp"
-    | "wordpress";
+    | "wordpress"
+    | "ai-art"
+    | "career"
+    | "seo"
+    | "marketing";
 
 // Platform metadata for filtering UI
 export interface PlatformInfo {

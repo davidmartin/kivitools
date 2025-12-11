@@ -78,4 +78,62 @@ export const platforms = {
     "patreon.info.title": "What is Patreon?",
     "patreon.info.description": "Patreon empowers creators to earn from their biggest fans. Our AI tools help you craft tier descriptions and posts that turn casual followers into loyal patrons.",
 
+    // AI Art
+    "aiArt.page.title": "Free AI Art Prompt Tools",
+    "aiArt.page.description": "Prompts so good Midjourney will think you're a professional artist (spoiler: you're not, but who cares).",
+    "aiArt.info.title": "What are AI Art Tools?",
+    "aiArt.info.description": "AI art generators like Midjourney, DALL-E, and Stable Diffusion create stunning images from text prompts. Our tools help you craft the perfect prompts to get the art you actually want.",
+    "aiArtPromptGenerator.title": "AI Art Prompt Generator",
+    "aiArtPromptGenerator.description": "Create detailed prompts for Midjourney, DALL-E, or Stable Diffusion that produce stunning images.",
+    "aiArtImageDescriber.title": "Image Describer",
+    "aiArtImageDescriber.description": "Generate detailed visual descriptions perfect for recreating images with AI art tools.",
+    "aiArtNegativePrompt.title": "Negative Prompt Generator",
+    "aiArtNegativePrompt.description": "Create effective negative prompts to avoid unwanted elements in your AI-generated art.",
+
+    // WhatsApp
+    "whatsapp.page.title": "Free AI WhatsApp Tools",
+    "whatsapp.page.description": "Messages so professional your clients will think you hired a copywriter (it's just AI, shh).",
+    "whatsapp.info.title": "What are WhatsApp Business Tools?",
+    "whatsapp.info.description": "WhatsApp is the world's most popular messaging app with over 2 billion users. Our tools help you create professional messages that convert conversations into customers.",
+    "whatsappBusinessMessage.title": "Business Message Generator",
+    "whatsappBusinessMessage.description": "Create professional WhatsApp messages for customer service, sales, and follow-ups.",
+    "whatsappStatusIdeas.title": "Status Ideas Generator",
+    "whatsappStatusIdeas.description": "Generate creative and engaging WhatsApp status updates that get views.",
+    "whatsappQuickReplies.title": "Quick Replies Generator",
+    "whatsappQuickReplies.description": "Create efficient quick reply templates for common customer questions.",
+
+    // Career
+    "career.page.title": "Free AI Career Tools",
+    "career.page.description": "Resumes so polished recruiters will wonder if you have a personal branding team (it's just AI).",
+    "career.info.title": "What are Career Tools?",
+    "career.info.description": "Landing your dream job requires standing out. Our AI tools help you create compelling resumes and cover letters that get you past the ATS and into interviews.",
+    "careerResumeSummary.title": "Resume Summary Generator",
+    "careerResumeSummary.description": "Create a powerful professional summary that highlights your value in seconds.",
+    "careerCoverLetter.title": "Cover Letter Generator",
+    "careerCoverLetter.description": "Generate personalized cover letters tailored to specific job descriptions.",
+
+    // SEO
+    "seo.page.title": "Free AI SEO Tools",
+    "seo.page.description": "Meta descriptions so optimized Google will think you hired an SEO agency (you didn't).",
+    "seo.info.title": "What are SEO Tools?",
+    "seo.info.description": "Search engine optimization is crucial for visibility. Our AI tools help you create meta tags, titles, and schema markup that boost your rankings.",
+    "seoMetaDescription.title": "Meta Description Generator",
+    "seoMetaDescription.description": "Create click-worthy meta descriptions that improve CTR and rankings.",
+    "seoTitleGenerator.title": "SEO Title Generator",
+    "seoTitleGenerator.description": "Generate optimized page titles that rank well and attract clicks.",
+    "seoSchemaMarkup.title": "Schema Markup Generator",
+    "seoSchemaMarkup.description": "Create JSON-LD schema markup for rich snippets in search results.",
+
+    // Marketing
+    "marketing.page.title": "Free AI Marketing Tools",
+    "marketing.page.description": "Slogans and copy so catchy your competitors will cry (from jealousy).",
+    "marketing.info.title": "What are Marketing Tools?",
+    "marketing.info.description": "Great marketing copy converts. Our AI tools help you create compelling product reviews, memorable slogans, and persuasive content that sells.",
+    "marketingProductReview.title": "Product Review Generator",
+    "marketingProductReview.description": "Generate authentic-sounding product reviews for any item or service.",
+    "marketingSloganGenerator.title": "Slogan Generator",
+    "marketingSloganGenerator.description": "Create memorable brand slogans and taglines that stick in people's minds.",
+    "marketingEmailSubjectLine.title": "Email Subject Line Generator",
+    "marketingEmailSubjectLine.description": "Craft subject lines that boost open rates and avoid the spam folder.",
+
 };

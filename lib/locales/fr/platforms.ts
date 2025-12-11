@@ -78,4 +78,62 @@ export const platforms = {
     "patreon.info.title": "C'est quoi Patreon ?",
     "patreon.info.description": "Patreon permet aux créateurs de gagner grâce à leurs plus grands fans. Nos outils IA t'aident à créer des descriptions de tiers et des posts qui transforment les followers occasionnels en patrons fidèles.",
 
+    // AI Art
+    "aiArt.page.title": "Outils Gratuits de Prompts pour Art IA",
+    "aiArt.page.description": "Des prompts tellement bons que Midjourney va penser que tu es artiste pro (spoiler: tu l'es pas, mais on s'en fiche).",
+    "aiArt.info.title": "C'est quoi les Outils d'Art IA ?",
+    "aiArt.info.description": "Les générateurs d'art IA comme Midjourney, DALL-E et Stable Diffusion créent des images époustouflantes à partir de texte. Nos outils t'aident à créer les prompts parfaits pour obtenir l'art que tu veux vraiment.",
+    "aiArtPromptGenerator.title": "Générateur de Prompts Art IA",
+    "aiArtPromptGenerator.description": "Crée des prompts détaillés pour Midjourney, DALL-E ou Stable Diffusion qui produisent des images époustouflantes.",
+    "aiArtImageDescriber.title": "Descripteur d'Images",
+    "aiArtImageDescriber.description": "Génère des descriptions visuelles détaillées parfaites pour recréer des images avec des outils d'art IA.",
+    "aiArtNegativePrompt.title": "Générateur de Prompts Négatifs",
+    "aiArtNegativePrompt.description": "Crée des prompts négatifs efficaces pour éviter les éléments indésirables dans ton art généré par IA.",
+
+    // WhatsApp
+    "whatsapp.page.title": "Outils Gratuits IA pour WhatsApp",
+    "whatsapp.page.description": "Des messages tellement pros que tes clients vont penser que t'as embauché un copywriter (c'est juste l'IA, chut).",
+    "whatsapp.info.title": "C'est quoi les Outils WhatsApp Business ?",
+    "whatsapp.info.description": "WhatsApp est l'app de messagerie la plus populaire au monde avec plus de 2 milliards d'utilisateurs. Nos outils t'aident à créer des messages pro qui convertissent les conversations en clients.",
+    "whatsappBusinessMessage.title": "Générateur de Messages Business",
+    "whatsappBusinessMessage.description": "Crée des messages WhatsApp pro pour le service client, les ventes et les suivis.",
+    "whatsappStatusIdeas.title": "Générateur d'Idées de Statut",
+    "whatsappStatusIdeas.description": "Génère des mises à jour de statut WhatsApp créatives et engageantes qui obtiennent des vues.",
+    "whatsappQuickReplies.title": "Générateur de Réponses Rapides",
+    "whatsappQuickReplies.description": "Crée des modèles de réponses rapides efficaces pour les questions courantes des clients.",
+
+    // Career
+    "career.page.title": "Outils Gratuits IA pour Carrière",
+    "career.page.description": "Des CV tellement polis que les recruteurs vont penser que t'as une équipe de branding perso (c'est juste l'IA).",
+    "career.info.title": "C'est quoi les Outils de Carrière ?",
+    "career.info.description": "Décrocher ton job de rêve nécessite de te démarquer. Nos outils IA t'aident à créer des CV et lettres de motivation convaincants qui passent l'ATS et te mènent aux entretiens.",
+    "careerResumeSummary.title": "Générateur de Résumé CV",
+    "careerResumeSummary.description": "Crée un résumé professionnel puissant qui met en valeur ta valeur en secondes.",
+    "careerCoverLetter.title": "Générateur de Lettre de Motivation",
+    "careerCoverLetter.description": "Génère des lettres de motivation personnalisées adaptées à des offres d'emploi spécifiques.",
+
+    // SEO
+    "seo.page.title": "Outils Gratuits IA pour SEO",
+    "seo.page.description": "Des méta descriptions tellement optimisées que Google va penser que t'as embauché une agence SEO (tu l'as pas fait).",
+    "seo.info.title": "C'est quoi les Outils SEO ?",
+    "seo.info.description": "L'optimisation pour les moteurs de recherche est cruciale pour la visibilité. Nos outils IA t'aident à créer des méta tags, titres et schema markup qui améliorent tes classements.",
+    "seoMetaDescription.title": "Générateur de Méta Descriptions",
+    "seoMetaDescription.description": "Crée des méta descriptions attrayantes qui améliorent le CTR et les classements.",
+    "seoTitleGenerator.title": "Générateur de Titres SEO",
+    "seoTitleGenerator.description": "Génère des titres de page optimisés qui se classent bien et attirent les clics.",
+    "seoSchemaMarkup.title": "Générateur de Schema Markup",
+    "seoSchemaMarkup.description": "Crée du schema markup JSON-LD pour les rich snippets dans les résultats de recherche.",
+
+    // Marketing
+    "marketing.page.title": "Outils Gratuits IA pour Marketing",
+    "marketing.page.description": "Des slogans et du copy tellement accrocheurs que ta concurrence va pleurer (de jalousie).",
+    "marketing.info.title": "C'est quoi les Outils de Marketing ?",
+    "marketing.info.description": "Un bon copy marketing convertit. Nos outils IA t'aident à créer des avis produits convaincants, des slogans mémorables et du contenu persuasif qui vend.",
+    "marketingProductReview.title": "Générateur d'Avis Produits",
+    "marketingProductReview.description": "Génère des avis produits au son authentique pour n'importe quel article ou service.",
+    "marketingSloganGenerator.title": "Générateur de Slogans",
+    "marketingSloganGenerator.description": "Crée des slogans et taglines de marque mémorables qui restent dans la tête des gens.",
+    "marketingEmailSubjectLine.title": "Générateur d'Objets d'Email",
+    "marketingEmailSubjectLine.description": "Crée des lignes d'objet qui améliorent les taux d'ouverture et évitent le dossier spam.",
+
 };
