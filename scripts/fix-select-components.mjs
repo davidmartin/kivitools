@@ -22,23 +22,23 @@ const FILES = [
 async function fixFile(filePath) {
   const fullPath = path.join(rootDir, filePath);
   console.log(`\n📝 Fixing: ${filePath}`);
-  
+
   let content = await fs.readFile(fullPath, 'utf-8');
-  
+
   // Replace SelectItem with ListBox.Item
   content = content.replace(/<SelectItem /g, '<ListBox.Item ');
   content = content.replace(/<\/SelectItem>/g, '</ListBox.Item>');
-  
+
   // Replace value prop with id prop for ListBox.Item
   content = content.replace(/(<ListBox\.Item[^>]*)\svalue="([^"]+)"/g, '$1');
-  
+
   await fs.writeFile(fullPath, content, 'utf-8');
   console.log(`  ✅ Fixed SelectItem → ListBox.Item`);
 }
 
 async function main() {
   console.log('🚀 Fixing Select components...\n');
-  
+
   for (const file of FILES) {
     try {
       await fixFile(file);
@@ -46,7 +46,7 @@ async function main() {
       console.error(`  ❌ Error: ${error.message}`);
     }
   }
-  
+
   console.log('\n✅ All files fixed!');
 }
 

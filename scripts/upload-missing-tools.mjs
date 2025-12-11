@@ -299,10 +299,10 @@ async function uploadMissingTools() {
 
   for (const tool of MISSING_TOOLS) {
     console.log(`\n📦 ${tool.platform}/${tool.slug}`);
-    
+
     for (const lang of LANGUAGES) {
       const exists = await checkExists(tool.platform, tool.slug, lang);
-      
+
       if (exists) {
         console.log(`   ⏭️  [${lang}] Ya existe`);
         results.skipped++;

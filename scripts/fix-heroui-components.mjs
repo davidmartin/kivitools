@@ -26,7 +26,7 @@ const FILES_TO_FIX = [
 async function fixFile(filePath) {
   const fullPath = path.join(rootDir, filePath);
   console.log(`\n📝 Processing: ${filePath}`);
-  
+
   let content = await fs.readFile(fullPath, 'utf-8');
   let modified = false;
 
@@ -36,7 +36,7 @@ async function fixFile(filePath) {
     const imports = importMatch[1].split(',').map(i => i.trim());
     const neededImports = ['Input', 'Select', 'SelectItem', 'TextArea'];
     const missingImports = neededImports.filter(i => !imports.includes(i));
-    
+
     if (missingImports.length > 0) {
       const allImports = [...imports, ...missingImports].join(', ');
       content = content.replace(
@@ -75,7 +75,7 @@ async function fixFile(filePath) {
                 }}
               />`;
   });
-  
+
   if (inputMatches > 0) {
     modified = true;
     console.log(`  ✅ Replaced ${inputMatches} <input> elements`);

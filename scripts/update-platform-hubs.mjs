@@ -45,7 +45,7 @@ const PLATFORM_COLORS = {
 
 // Plataformas que ya fueron migradas a Appwrite
 const MIGRATED_PLATFORMS = [
-  "amazon", "bereal", "bluesky", "discord", "elevenlabs", "etsy", 
+  "amazon", "bereal", "bluesky", "discord", "elevenlabs", "etsy",
   "forocoches", "instagram", "kick", "linkedin", "medium", "onlyfans",
   "patreon", "pinterest", "reddit", "snapchat", "suno", "telegram",
   "tiktok", "twitch", "twitter", "youtube"
@@ -56,31 +56,31 @@ const MIGRATED_PLATFORMS = [
  */
 function updatePlatformHub(platform) {
   const pageFile = path.join(TOOLS_DIR, platform, "page.tsx");
-  
+
   if (!fs.existsSync(pageFile)) {
     console.log(`   ⚠️  No existe: ${pageFile}`);
     return false;
   }
-  
+
   const content = fs.readFileSync(pageFile, "utf-8");
-  
+
   // Verificar si ya está actualizada
   if (content.includes("AppwriteToolsList")) {
     console.log(`   ✅ Ya actualizada: ${platform}`);
     return true;
   }
-  
+
   // Verificar si tiene el patrón de tools hardcodeadas
   if (!content.includes("const tools = [")) {
     console.log(`   ⚠️  No tiene tools hardcodeadas: ${platform}`);
     return false;
   }
-  
+
   const colors = PLATFORM_COLORS[platform] || { from: "purple-500", to: "pink-500" };
-  
+
   // Reemplazar imports
   let newContent = content;
-  
+
   // Añadir import de AppwriteToolsList si no existe
   if (!newContent.includes("AppwriteToolsList")) {
     // Encontrar la línea de imports y añadir
@@ -92,27 +92,27 @@ function updatePlatformHub(platform) {
       );
     }
   }
-  
+
   // Eliminar import de Link si ya no se usa
   if (!newContent.includes("<Link") || newContent.match(/<Link.*?href=\{tool\.href\}/)) {
     newContent = newContent.replace(/import Link from "next\/link";\n?/, "");
   }
-  
+
   // Eliminar import de Card si ya no se usa directamente
   if (newContent.includes("AppwriteToolsList") && !newContent.match(/<Card[\s>]/)) {
     newContent = newContent.replace(/import \{ Card \} from "@heroui\/react";\n?/, "");
   }
-  
+
   // Eliminar el array de tools hardcodeado
   newContent = newContent.replace(
     /const tools = \[\s*\{[\s\S]*?\}\s*,?\s*\];\s*/,
     ""
   );
-  
+
   // Reemplazar el grid de tools por AppwriteToolsList
   // Buscar el patrón: {/* Tools Grid */} ... </div> (que contiene tools.map)
   const toolsGridPattern = /\{\/\*\s*Tools Grid[^*]*\*\/\}\s*<div[^>]*>\s*\{tools\.map[\s\S]*?\}\s*<\/div>/;
-  
+
   if (toolsGridPattern.test(newContent)) {
     newContent = newContent.replace(
       toolsGridPattern,
@@ -124,7 +124,7 @@ function updatePlatformHub(platform) {
         />`
     );
   }
-  
+
   // Guardar
   fs.writeFileSync(pageFile, newContent);
   console.log(`   ✅ Actualizada: ${platform}`);

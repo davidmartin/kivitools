@@ -39,21 +39,21 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 function extractToolsFromPlatform(filePath) {
   try {
     const content = fs.readFileSync(filePath, "utf-8");
-    
+
     // Buscar el patrón: const tools = [ ... ];
     const toolsMatch = content.match(/const\s+tools\s*=\s*\[([\s\S]*?)\];/);
-    
+
     if (!toolsMatch) {
       return null;
     }
 
     const toolsContent = toolsMatch[1];
     const toolObjects = [];
-    
+
     // Dividir por objetos individuales (cada { ... })
     // Encontrar todos los objetos separados por comas
     const objMatches = toolsContent.match(/\{[^{}]*name:[^{}]*href:[^{}]*icon:[^{}]*\}/g);
-    
+
     if (!objMatches) {
       return null;
     }
@@ -62,21 +62,21 @@ function extractToolsFromPlatform(filePath) {
       // Extraer href (siempre es un string "...")
       const hrefMatch = objStr.match(/href:\s*"([^"]+)"/);
       if (!hrefMatch) continue;
-      
+
       const href = hrefMatch[1];
-      
+
       // Extraer icon (siempre es un emoji "...")
       const iconMatch = objStr.match(/icon:\s*"([^"]+)"/);
       const icon = iconMatch ? iconMatch[1] : "🛠️";
-      
+
       // Extraer baseSlug del href
       const parts = href.split("/");
       const baseSlug = parts[parts.length - 1];
-      
+
       // Extraer name y description (puede ser t(...) o string)
       const nameMatch = objStr.match(/name:\s*(.+?),/);
       const descriptionMatch = objStr.match(/description:\s*(.+?),/);
-      
+
       const name = nameMatch ? nameMatch[1].trim() : "";
       const description = descriptionMatch ? descriptionMatch[1].trim() : "";
 
@@ -111,11 +111,11 @@ function extractToolDetails(platform, baseSlug) {
     if (fs.existsSync(filePath)) {
       try {
         const content = fs.readFileSync(filePath, "utf-8");
-        
+
         // Buscar inputs
         const inputsMatch = content.match(/const\s+inputs\s*=\s*\[([\s\S]*?)\];/);
         const inputs = inputsMatch ? parseInputsArray(inputsMatch[1]) : null;
-        
+
         // Buscar promptTemplate
         const promptMatch = content.match(/const\s+promptTemplate\s*=\s*`([\s\S]*?)`;/);
         const promptTemplate = promptMatch ? promptMatch[1] : null;

@@ -44,7 +44,7 @@ const PLATFORMS = {
 function generatePlatformPage(platform) {
   const config = PLATFORMS[platform];
   const platformCapitalized = platform.charAt(0).toUpperCase() + platform.slice(1);
-  
+
   return `"use client";
 
 import PlatformLogo from "@/app/components/platform-logo";
@@ -107,12 +107,12 @@ let fixed = 0;
 
 for (const platform of Object.keys(PLATFORMS)) {
   const pageFile = path.join(TOOLS_DIR, platform, "page.tsx");
-  
+
   if (!fs.existsSync(pageFile)) {
     console.log(`   ⚠️  No existe: ${platform}`);
     continue;
   }
-  
+
   const newContent = generatePlatformPage(platform);
   fs.writeFileSync(pageFile, newContent);
   console.log(`   ✅ Regenerada: ${platform}`);

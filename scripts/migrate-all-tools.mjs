@@ -135,9 +135,9 @@ const SLUG_PATTERNS = {
  */
 function translateSlug(baseSlug, lang) {
     if (lang === "en") return baseSlug;
-    
+
     let translated = baseSlug;
-    
+
     // Aplicar patrones de traducción
     for (const [pattern, translations] of Object.entries(SLUG_PATTERNS)) {
         if (translated.includes(pattern.replace(/-$/, "").replace(/^-/, ""))) {
@@ -149,7 +149,7 @@ function translateSlug(baseSlug, lang) {
             );
         }
     }
-    
+
     return translated;
 }
 
@@ -231,11 +231,11 @@ const CONCEPTS = {
  */
 function generateToolName(platform, baseSlug, lang) {
     const platformName = PLATFORM_NAMES[platform]?.[lang] || platform;
-    
+
     // Detectar tipo de herramienta
     let toolType = "";
     let concept = "";
-    
+
     if (baseSlug.includes("-generator")) {
         toolType = TOOL_TYPE_NAMES.generator[lang];
         concept = baseSlug.replace("-generator", "");
@@ -255,11 +255,11 @@ function generateToolName(platform, baseSlug, lang) {
         // Fallback: capitalizar
         return `${platformName} ${baseSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}`;
     }
-    
+
     // Traducir concepto
     const conceptKey = concept.replace(/-/g, "");
     const translatedConcept = CONCEPTS[conceptKey]?.[lang] || concept.charAt(0).toUpperCase() + concept.slice(1);
-    
+
     // Construir nombre según idioma
     if (lang === "es") {
         return `${toolType} de ${translatedConcept} ${platformName}`;
@@ -272,7 +272,7 @@ function generateToolName(platform, baseSlug, lang) {
     } else if (lang === "it") {
         return `${toolType} di ${translatedConcept} ${platformName}`;
     }
-    
+
     // English default
     return `${platformName} ${translatedConcept} ${toolType}`;
 }
@@ -282,7 +282,7 @@ function generateToolName(platform, baseSlug, lang) {
  */
 function generateDescription(platform, baseSlug, lang) {
     const platformName = PLATFORM_NAMES[platform]?.[lang] || platform;
-    
+
     const descriptions = {
         en: `Generate amazing ${baseSlug.replace(/-/g, " ")} for ${platformName} with AI. Free and easy to use.`,
         es: `Genera ${baseSlug.replace(/-/g, " ")} increíbles para ${platformName} con IA. Gratis y fácil de usar.`,
@@ -291,7 +291,7 @@ function generateDescription(platform, baseSlug, lang) {
         de: `Erstelle erstaunliche ${baseSlug.replace(/-/g, " ")} für ${platformName} mit KI. Kostenlos und einfach.`,
         it: `Genera ${baseSlug.replace(/-/g, " ")} incredibili per ${platformName} con IA. Gratis e facile da usare.`,
     };
-    
+
     return descriptions[lang] || descriptions.en;
 }
 
@@ -307,7 +307,7 @@ function generateInputs(baseSlug) {
     const basicInputs = [
         { id: "topic", label: "Topic", type: "text", placeholder: "Describe your content...", required: true },
     ];
-    
+
     // Detectar si necesita selector de tono
     if (baseSlug.includes("generator") || baseSlug.includes("writer") || baseSlug.includes("maker")) {
         basicInputs.push({
@@ -318,7 +318,7 @@ function generateInputs(baseSlug) {
             required: true
         });
     }
-    
+
     // Añadir selector de idioma para output
     basicInputs.push({
         id: "language",
@@ -326,7 +326,7 @@ function generateInputs(baseSlug) {
         type: "language",
         required: true
     });
-    
+
     return basicInputs;
 }
 
@@ -336,7 +336,7 @@ function generateInputs(baseSlug) {
 function generatePromptTemplate(platform, baseSlug) {
     const platformName = PLATFORM_NAMES[platform]?.en || platform;
     const toolDescription = baseSlug.replace(/-/g, " ");
-    
+
     return `You are an expert ${platformName} content creator. Generate high-quality ${toolDescription} based on the user's input.
 
 Topic: {{topic}}
@@ -385,9 +385,9 @@ async function createTool(data) {
         console.log(`   [DRY-RUN] Would create: ${data.name} (${data.language})`);
         return { $id: "dry-run-id" };
     }
-    
+
     const docId = ID.unique();
-    
+
     await databases.createDocument(
         DATABASE_ID,
         TOOLS_COLLECTION_ID,
@@ -407,7 +407,7 @@ async function createTool(data) {
         },
         [Permission.read(Role.any())]
     );
-    
+
     return { $id: docId };
 }
 
@@ -419,69 +419,69 @@ async function migrate() {
     console.log("\n" + "═".repeat(70));
     console.log("🚀 MIGRACIÓN UNIVERSAL DE TOOLS A APPWRITE");
     console.log("═".repeat(70));
-    
+
     if (DRY_RUN) {
         console.log("⚠️  MODO DRY-RUN: No se crearán documentos reales\n");
     }
-    
+
     if (PLATFORM_FILTER) {
         console.log(`🎯 Filtrando por plataforma: ${PLATFORM_FILTER}\n`);
     }
-    
+
     // Cargar JSON de tools extraídas
     const jsonPath = path.join(__dirname, "data", "all-tools.json");
-    
+
     if (!fs.existsSync(jsonPath)) {
         console.error("❌ No se encontró scripts/data/all-tools.json");
         console.error("   Ejecuta primero: node scripts/extract-all-tools.mjs");
         process.exit(1);
     }
-    
+
     const data = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
     const { platforms } = data;
-    
+
     console.log(`📦 Plataformas: ${Object.keys(platforms).length}`);
     console.log(`🌍 Idiomas: ${LANGUAGES.join(", ")}`);
     console.log("-".repeat(70));
-    
+
     let totalCreated = 0;
     let totalSkipped = 0;
     let totalErrors = 0;
-    
+
     // Procesar cada plataforma
     for (const [platform, platformData] of Object.entries(platforms)) {
         if (PLATFORM_FILTER && platform !== PLATFORM_FILTER) {
             continue;
         }
-        
+
         const { tools } = platformData;
-        
+
         console.log(`\n📱 ${platform.toUpperCase()} (${tools.length} tools)`);
-        
+
         for (const tool of tools) {
             const { baseSlug, icon } = tool;
             console.log(`   🔧 ${baseSlug}`);
-            
+
             // Generar inputs y prompt
             const inputs = generateInputs(baseSlug);
             const promptTemplate = generatePromptTemplate(platform, baseSlug);
-            
+
             // Crear para cada idioma
             for (const lang of LANGUAGES) {
                 const slug = translateSlug(baseSlug, lang);
                 const name = generateToolName(platform, baseSlug, lang);
                 const description = generateDescription(platform, baseSlug, lang);
-                
+
                 try {
                     // Verificar si existe
                     const exists = await toolExists(name, platform, lang);
-                    
+
                     if (exists) {
                         console.log(`      ⏭️  [${lang}] Skipped (exists): ${name}`);
                         totalSkipped++;
                         continue;
                     }
-                    
+
                     // Crear tool
                     await createTool({
                         name,
@@ -493,13 +493,13 @@ async function migrate() {
                         inputs,
                         promptTemplate,
                     });
-                    
+
                     console.log(`      ✅ [${lang}] Created: ${name}`);
                     totalCreated++;
-                    
+
                     // Delay para evitar rate limiting
                     await new Promise(resolve => setTimeout(resolve, 100));
-                    
+
                 } catch (error) {
                     console.error(`      ❌ [${lang}] Error: ${error.message}`);
                     totalErrors++;
@@ -507,7 +507,7 @@ async function migrate() {
             }
         }
     }
-    
+
     // Resumen final
     console.log("\n" + "═".repeat(70));
     console.log("📊 RESUMEN DE MIGRACIÓN");
@@ -516,13 +516,13 @@ async function migrate() {
     console.log(`   ⏭️  Skipped: ${totalSkipped}`);
     console.log(`   ❌ Errores:  ${totalErrors}`);
     console.log(`   📈 Total:    ${totalCreated + totalSkipped + totalErrors}`);
-    
+
     if (DRY_RUN) {
         console.log("\n⚠️  Esto fue un DRY-RUN. Ejecuta sin --dry-run para migrar realmente.");
     } else {
         console.log("\n🎉 Migración completada!");
     }
-    
+
     console.log("═".repeat(70) + "\n");
 }
 
