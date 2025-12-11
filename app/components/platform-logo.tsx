@@ -1,7 +1,8 @@
 import Image from "next/image";
+import type { Platform } from "@/types";
 
 interface PlatformLogoProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon" | "ai-art" | "whatsapp" | "career" | "seo" | "marketing";
+  platform: Platform;
   size?: "sm" | "md" | "lg" | "xl";
   className?: string;
 }

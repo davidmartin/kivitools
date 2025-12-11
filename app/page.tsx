@@ -233,51 +233,40 @@ export default function Home() {
       icon: "❤️",
       color: "red",
     },
-  ];
-
-  // Popular Tools
-  const popularTools = [
     {
-      name: t("scriptWriter.title"),
-      description: t("scriptWriter.description"),
-      href: "/tiktok/script-writer",
-      icon: "🎵",
-      iconClass: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+      name: "AI Art",
+      description: t("aiArt.page.description"),
+      href: "/tools?platform=ai-art",
+      icon: "🎨",
+      color: "purple",
     },
     {
-      name: t("bioGenerator.title"),
-      description: t("bioGenerator.description"),
-      href: "/instagram/bio-generator",
-      icon: "📸",
-      iconClass: "bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400",
+      name: "WhatsApp",
+      description: t("whatsapp.page.description"),
+      href: "/tools?platform=whatsapp",
+      icon: "💬",
+      color: "green",
     },
     {
-      name: t("youtubeTitle.title"),
-      description: t("youtubeTitle.description"),
-      href: "/youtube/title-generator",
-      icon: "🎥",
-      iconClass: "bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400",
+      name: "Career",
+      description: t("career.page.description"),
+      href: "/tools?platform=career",
+      icon: "💼",
+      color: "blue",
     },
     {
-      name: t("moneyCalculator.title"),
-      description: t("moneyCalculator.description"),
-      href: "/tiktok/money-calculator",
-      icon: "💰",
-      iconClass: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+      name: "SEO",
+      description: t("seo.page.description"),
+      href: "/tools?platform=seo",
+      icon: "🔍",
+      color: "green",
     },
     {
-      name: t("captionGenerator.title"),
-      description: t("captionGenerator.description"),
-      href: "/instagram/caption-generator",
-      icon: "📝",
-      iconClass: "bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400",
-    },
-    {
-      name: t("videoIdeas.title"),
-      description: t("videoIdeas.description"),
-      href: "/tiktok/video-ideas",
-      icon: "💡",
-      iconClass: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+      name: "Marketing",
+      description: t("marketing.page.description"),
+      href: "/tools?platform=marketing",
+      icon: "📈",
+      color: "orange",
     },
   ];
 
@@ -400,46 +389,6 @@ export default function Home() {
 
       {/* Latest Tools Section */}
       <LatestTools />
-
-      {/* Popular Tools Section */}
-      <section className="py-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              {t("home.popularTools.title")}
-            </h2>
-            <p className="text-xl text-muted">
-              {t("home.popularTools.description")}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {popularTools.map((tool, index) => (
-              <Link
-                key={index}
-                href={tool.href}
-                className="group block h-full"
-              >
-                <Card className="glass-card h-full border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
-                  <Card.Header className="flex flex-row items-center gap-4 pt-6 px-6">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl ${tool.iconClass}`}>
-                      {tool.icon}
-                    </div>
-                    <Card.Title className="text-xl font-bold group-hover:text-primary transition-colors">
-                      {tool.name}
-                    </Card.Title>
-                  </Card.Header>
-                  <Card.Content className="px-6 pb-6">
-                    <Card.Description className="text-muted text-base">
-                      {tool.description}
-                    </Card.Description>
-                  </Card.Content>
-                </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Create Tool CTA Section */}
       <section className="py-12 px-4">

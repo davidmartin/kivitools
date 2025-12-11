@@ -30,6 +30,7 @@ export const home = {
     "home.latestTools.title": "Últimas Ferramentas Adicionadas",
     "home.latestTools.description": "Descubra as ferramentas mais recentes que criamos para você",
     "home.latestTools.viewAll": "Ver todas as ferramentas",
+    "home.latestTools.new": "Novo",
 
     // Homepage - Platforms Section
     "home.platformsSection.title": "Escolha Sua Plataforma",
