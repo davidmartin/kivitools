@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@heroui/react";
+import { Button, Select, Label, ListBox, TextField, Input } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import TurnstileWidget from "@/app/components/turnstile-widget";
@@ -142,87 +142,69 @@ export default function SpotifyPlaylistDescriptionPage() {
           <div className="bg-surface rounded-2xl p-8 shadow-lg border border-border mb-8">
             <div className="space-y-6">
               {/* Playlist Name */}
-              <div>
-                <label htmlFor="playlistName" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistDescription.form.playlistName")}
-                </label>
-                <input
-                  id="playlistName"
-                  type="text"
+              <TextField className="w-full" name="playlistName" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyPlaylistDescription.form.playlistName")}</Label>
+                <Input
                   value={playlistName}
                   onChange={(e) => setPlaylistName(e.target.value)}
                   placeholder={t("spotifyPlaylistDescription.form.playlistNamePlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Mood */}
-              <div>
-                <label htmlFor="mood" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistDescription.form.mood")}
-                </label>
-                <input
-                  id="mood"
-                  type="text"
+              <TextField className="w-full" name="mood" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyPlaylistDescription.form.mood")}</Label>
+                <Input
                   value={mood}
                   onChange={(e) => setMood(e.target.value)}
                   placeholder={t("spotifyPlaylistDescription.form.moodPlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Genres */}
-              <div>
-                <label htmlFor="genres" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistDescription.form.genres")}
-                </label>
-                <input
-                  id="genres"
-                  type="text"
+              <TextField className="w-full" name="genres" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyPlaylistDescription.form.genres")}</Label>
+                <Input
                   value={genres}
                   onChange={(e) => setGenres(e.target.value)}
                   placeholder={t("spotifyPlaylistDescription.form.genresPlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Target Audience (optional) */}
-              <div>
-                <label htmlFor="targetAudience" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistDescription.form.targetAudience")}
-                </label>
-                <input
-                  id="targetAudience"
-                  type="text"
+              <TextField className="w-full" name="targetAudience" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyPlaylistDescription.form.targetAudience")}</Label>
+                <Input
                   value={targetAudience}
                   onChange={(e) => setTargetAudience(e.target.value)}
                   placeholder={t("spotifyPlaylistDescription.form.targetAudiencePlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Language */}
               <div>
-                <label htmlFor="language" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistDescription.form.language")}
-                </label>
-                <select
-                  id="language"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value as "en" | "es")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("spotifyPlaylistDescription.form.language")}</Label>
+                <Select
+                  selectedKey={language}
+                  onSelectionChange={(key) => setLanguage(key as "en" | "es")}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {LANGUAGES.map((l) => (
-                    <option key={l.value} value={l.value}>
-                      {t(l.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {LANGUAGES.map((l) => (
+                        <ListBox.Item key={l.value} id={l.value} textValue={t(l.labelKey)}>
+                          {t(l.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Turnstile */}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@heroui/react";
+import { Button, Select, Label, ListBox, TextField, TextArea } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import TurnstileWidget from "@/app/components/turnstile-widget";
@@ -138,39 +138,40 @@ export default function FacebookPostGeneratorPage() {
           <div className="bg-surface rounded-2xl p-8 shadow-lg border border-border mb-8">
             <div className="space-y-6">
               {/* Topic */}
-              <div>
-                <label htmlFor="topic" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookPost.form.topic")}
-                </label>
-                <textarea
-                  id="topic"
+              <TextField className="w-full" name="topic" isDisabled={isLoading}>
+                <Label>{t("facebookPost.form.topic")}</Label>
+                <TextArea
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
                   placeholder={t("facebookPost.form.topicPlaceholder")}
                   rows={2}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground resize-none"
                 />
-              </div>
+              </TextField>
 
               {/* Tone */}
               <div>
-                <label htmlFor="tone" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookPost.form.tone")}
-                </label>
-                <select
-                  id="tone"
-                  value={tone}
-                  onChange={(e) => setTone(e.target.value)}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("facebookPost.form.tone")}</Label>
+                <Select
+                  selectedKey={tone}
+                  onSelectionChange={(key) => setTone(key as string)}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {TONES.map((t_) => (
-                    <option key={t_.value} value={t_.value}>
-                      {t(t_.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {TONES.map((t_) => (
+                        <ListBox.Item key={t_.value} id={t_.value} textValue={t(t_.labelKey)}>
+                          {t(t_.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Checkboxes */}
@@ -199,22 +200,28 @@ export default function FacebookPostGeneratorPage() {
 
               {/* Language */}
               <div>
-                <label htmlFor="language" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookPost.form.language")}
-                </label>
-                <select
-                  id="language"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value as "en" | "es")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("facebookPost.form.language")}</Label>
+                <Select
+                  selectedKey={language}
+                  onSelectionChange={(key) => setLanguage(key as "en" | "es")}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {LANGUAGES.map((l) => (
-                    <option key={l.value} value={l.value}>
-                      {t(l.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {LANGUAGES.map((l) => (
+                        <ListBox.Item key={l.value} id={l.value} textValue={t(l.labelKey)}>
+                          {t(l.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Turnstile */}

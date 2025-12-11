@@ -60,4 +60,12 @@ export const builder = {
     "builder.assistant.skip": "Vou fazer manualmente",
     "builder.assistant.hint": "💡 Dica: Seja específico! Quanto mais detalhes, melhor o resultado.",
     "builder.assistant.showAgain": "Precisa de ajuda? Deixe a IA preencher",
+
+    // Missing keys
+    "builder.basicInfo.language": "Idioma da Ferramenta",
+    "builder.basicInfo.languageHelp": "O idioma em que esta ferramenta está escrita",
+    "builder.basicInfo.icon": "Ícone da Ferramenta",
+    "builder.basicInfo.iconHelp": "Escolha um emoji que represente sua ferramenta",
+    "builder.inputs.typeLanguage": "Seletor de Idioma",
+    "builder.inputs.languageHint": "Isso mostrará uma lista suspensa com todos os idiomas suportados (Inglês, Espanhol, Francês, etc.)",
 };

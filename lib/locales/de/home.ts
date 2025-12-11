@@ -1,9 +1,9 @@
 export const home = {
     // Homepage - Hero
-    "home.hero.title": "Kostenlose KI-Tools",
-    "home.hero.subtitle": "für jede digitale Plattform",
-    "home.hero.description": "Kreative Blockade? Keine Sorge, unsere KI hat mehr Ideen als Sie heute Kaffees getrunken haben. Erstellen Sie Inhalte für TikTok, Suno, Instagram, Twitch und jede erdenkliche Plattform. Keine Registrierung, kein Drama, keine Ausreden. 100% kostenlos (ja, wirklich kostenlos).",
-    "home.hero.cta": "Jetzt loslegen! 🚀",
+    "home.hero.title": "Erstelle Viralen Content",
+    "home.hero.subtitle": "mit Künstlicher Intelligenz",
+    "home.hero.description": "Generiere Scripts, Captions, Hashtags und Bios, die auf TikTok, Instagram, YouTube und +25 Plattformen viral gehen. Unsere KI erstellt viralen Content in Sekunden. 100% kostenlos, ohne Anmeldung, ohne Ausreden.",
+    "home.hero.cta": "Content Kostenlos Erstellen",
     "home.hero.trusted": "Über 50.000 Creator vertrauen uns",
     "home.hero.explore": "Tools entdecken",
     "home.hero.create": "Tool erstellen",

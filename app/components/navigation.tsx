@@ -343,45 +343,13 @@ export default function Navigation() {
               Blog
             </Link>
 
-            {/* Platforms Dropdown */}
-            <Popover>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="gap-1 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full transition-all duration-200 data-[hover=true]:bg-surface/50"
-              >
-                <span suppressHydrationWarning>{t("nav.platforms")}</span>
-                <svg
-                  className="w-3 h-3 transition-transform duration-200 group-data-[open=true]:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </Button>
-              <Popover.Content className="w-72 p-0 bg-surface/80 backdrop-blur-xl border border-border/50 shadow-xl rounded-2xl overflow-hidden">
-                <div className="max-h-[60vh] overflow-y-auto p-2 space-y-1 custom-scrollbar">
-                  {platforms.map((platform) => (
-                    <Link
-                      key={platform.id}
-                      href={`/${platform.id}`}
-                      className="flex items-center gap-3 px-3 py-2.5 text-sm text-foreground/90 hover:text-foreground hover:bg-foreground/5 rounded-xl transition-colors group"
-                    >
-                      <div className="p-1.5 rounded-lg bg-surface border border-border/50 group-hover:border-accent/50 transition-colors">
-                        <PlatformLogo platform={platform.id as any} size="sm" />
-                      </div>
-                      <span className="font-medium">{platform.name}</span>
-                    </Link>
-                  ))}
-                </div>
-              </Popover.Content>
-            </Popover>
+            {/* Tools Link (Feature 017) */}
+            <Link
+              href="/tools"
+              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-surface/50 rounded-full transition-all duration-200"
+            >
+              <span suppressHydrationWarning>{t("nav.tools")}</span>
+            </Link>
 
             {/* Auth Buttons (Desktop) */}
             {!loading && (

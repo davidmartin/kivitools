@@ -1269,6 +1269,58 @@ Format: Return as numbered list.
 
 ---
 
+## Appendix C: Implemented Features
+
+### ✅ Feature 017: Homepage Tools Feed (Centralized Tools Page)
+
+**Status:** Completed  
+**Implementation Date:** December 2025  
+**Spec Location:** `specs/017-homepage-tools-feed/`
+
+**Summary:**
+Centralized `/tools` page that replaces individual platform hub pages. Users can browse, filter, search, and sort all 109+ tools from a single location.
+
+**Key Features Implemented:**
+
+- ✅ Infinite scroll grid with 3-column responsive layout
+- ✅ Platform filtering (33 platforms) with horizontal chips
+- ✅ Search functionality with debounce (300ms)
+- ✅ Sort options: Featured, Newest, Popular, A-Z
+- ✅ URL-based state management (`?platform=X&sort=Y&q=Z`)
+- ✅ 301 redirects from `/platform` → `/tools?platform=X`
+- ✅ ARIA accessibility (feed pattern, keyboard navigation)
+- ✅ Loading skeleton state
+- ✅ Screen reader announcements
+- ✅ Header search integration (Enter to search in /tools)
+- ✅ SEO optimization (canonical URLs, hreflang)
+
+**User Stories Completed:**
+
+1. US1: Browse all tools with infinite scroll
+2. US2: Filter by platform from homepage cards
+3. US3: Sort tools by criteria
+4. US4: Search tools by name/description/tags
+5. US5: Platform filter chips on /tools page
+
+**Technical Stack:**
+
+- Next.js 16.0.1 App Router
+- React hooks (useState, useEffect, useMemo)
+- Custom useDebounce hook
+- URL state with useSearchParams
+- HeroUI v3 components
+- Tailwind CSS v4 semantic tokens
+
+**Performance Metrics:**
+
+- Initial load: < 500ms (30 tools)
+- Filter response: < 300ms
+- Search debounce: 300ms
+- Infinite scroll batch: 30 tools/load
+- Total tools: 109+ indexed
+
+---
+
 **END OF DOCUMENT**
 
 _Este PRD es un documento vivo y debe actualizarse regularmente durante el ciclo de desarrollo._

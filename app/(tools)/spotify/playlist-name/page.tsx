@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@heroui/react";
+import { Button, Select, Label, ListBox, TextField, Input } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import TurnstileWidget from "@/app/components/turnstile-widget";
@@ -150,71 +150,59 @@ export default function SpotifyPlaylistNamePage() {
           <div className="bg-surface rounded-2xl p-8 shadow-lg border border-border mb-8">
             <div className="space-y-6">
               {/* Mood */}
-              <div>
-                <label htmlFor="mood" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistName.form.mood")}
-                </label>
-                <input
-                  id="mood"
-                  type="text"
+              <TextField className="w-full" name="mood" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyPlaylistName.form.mood")}</Label>
+                <Input
                   value={mood}
                   onChange={(e) => setMood(e.target.value)}
                   placeholder={t("spotifyPlaylistName.form.moodPlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Genres */}
-              <div>
-                <label htmlFor="genres" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistName.form.genres")}
-                </label>
-                <input
-                  id="genres"
-                  type="text"
+              <TextField className="w-full" name="genres" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyPlaylistName.form.genres")}</Label>
+                <Input
                   value={genres}
                   onChange={(e) => setGenres(e.target.value)}
                   placeholder={t("spotifyPlaylistName.form.genresPlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Occasion (optional) */}
-              <div>
-                <label htmlFor="occasion" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistName.form.occasion")}
-                </label>
-                <input
-                  id="occasion"
-                  type="text"
+              <TextField className="w-full" name="occasion" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyPlaylistName.form.occasion")}</Label>
+                <Input
                   value={occasion}
                   onChange={(e) => setOccasion(e.target.value)}
                   placeholder={t("spotifyPlaylistName.form.occasionPlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Language */}
               <div>
-                <label htmlFor="language" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyPlaylistName.form.language")}
-                </label>
-                <select
-                  id="language"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value as "en" | "es")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("spotifyPlaylistName.form.language")}</Label>
+                <Select
+                  selectedKey={language}
+                  onSelectionChange={(key) => setLanguage(key as "en" | "es")}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {LANGUAGES.map((l) => (
-                    <option key={l.value} value={l.value}>
-                      {t(l.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {LANGUAGES.map((l) => (
+                        <ListBox.Item key={l.value} id={l.value} textValue={t(l.labelKey)}>
+                          {t(l.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Turnstile */}

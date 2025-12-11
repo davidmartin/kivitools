@@ -20,6 +20,17 @@ export default function Breadcrumbs() {
     return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
   };
 
+  // Extract clean slug from path (remove Appwrite ID suffix if present)
+  // Example: "bio-generator-693940e600126c33eeae" -> "bio-generator"
+  const getCleanSlug = (path: string): string => {
+    // Check if path ends with a 20-character hex ID (Appwrite document ID)
+    const match = path.match(/^(.+)-([a-f0-9]{20})$/);
+    if (match) {
+      return match[1]; // Return slug without ID
+    }
+    return path;
+  };
+
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
     const paths = pathname.split("/").filter(Boolean);
     const breadcrumbs: BreadcrumbItem[] = [
@@ -31,6 +42,7 @@ export default function Breadcrumbs() {
       currentPath += `/${path}`;
       
       let label = path;
+      const cleanPath = getCleanSlug(path);
 
       // Try to translate
       if (index === 0) {
@@ -44,15 +56,15 @@ export default function Breadcrumbs() {
            label = path.charAt(0).toUpperCase() + path.slice(1);
         }
       } else if (index === 1) {
-        // Tool
-        const camelCase = toCamelCase(path);
+        // Tool - use clean slug without ID
+        const camelCase = toCamelCase(cleanPath);
         const key = `${camelCase}.title`;
         const translated = t(key);
         if (translated !== key) {
           label = translated;
         } else {
-           // Fallback formatting
-           label = path
+           // Fallback formatting - use clean path without ID
+           label = cleanPath
             .split("-")
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(" ");

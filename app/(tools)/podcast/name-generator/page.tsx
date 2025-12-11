@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@heroui/react";
+import { Button, Select, Label, ListBox, TextField, Input } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import TurnstileWidget from "@/app/components/turnstile-widget";
@@ -93,56 +93,64 @@ export default function PodcastNameGeneratorPage() {
         <div className="bg-surface rounded-2xl p-8 shadow-lg mb-8">
           <div className="space-y-6">
             {/* Topic Input */}
-            <div>
-              <label htmlFor="topic" className="block text-sm font-medium text-foreground mb-2">
-                {t("podcastNameGenerator.form.topic")}
-              </label>
-              <input
-                id="topic"
-                type="text"
+            <TextField className="w-full" name="topic" type="text" isDisabled={isLoading}>
+              <Label>{t("podcastNameGenerator.form.topic")}</Label>
+              <Input
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 placeholder={t("podcastNameGenerator.form.topicPlaceholder")}
-                disabled={isLoading}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-surface text-foreground"
               />
-            </div>
+            </TextField>
 
             {/* Style Select */}
             <div>
-              <label htmlFor="style" className="block text-sm font-medium text-foreground mb-2">
-                {t("podcastNameGenerator.form.style")}
-              </label>
-              <select
-                id="style"
-                value={style}
-                onChange={(e) => setStyle(e.target.value)}
-                disabled={isLoading}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-surface text-foreground"
+              <Label>{t("podcastNameGenerator.form.style")}</Label>
+              <Select
+                selectedKey={style}
+                onSelectionChange={(key) => setStyle(key as string)}
+                isDisabled={isLoading}
+                className="w-full"
               >
-                <option value="professional">{t("podcastNameGenerator.form.styleOptions.professional")}</option>
-                <option value="conversational">{t("podcastNameGenerator.form.styleOptions.conversational")}</option>
-                <option value="creative">{t("podcastNameGenerator.form.styleOptions.creative")}</option>
-                <option value="witty">{t("podcastNameGenerator.form.styleOptions.witty")}</option>
-                <option value="minimalist">{t("podcastNameGenerator.form.styleOptions.minimalist")}</option>
-              </select>
+                <Select.Trigger>
+                  <Select.Value />
+                  <Select.Indicator />
+                </Select.Trigger>
+                <Select.Popover>
+                  <ListBox>
+                    <ListBox.Item id="professional" textValue={t("podcastNameGenerator.form.styleOptions.professional")}>
+                      {t("podcastNameGenerator.form.styleOptions.professional")}
+                      <ListBox.ItemIndicator />
+                    </ListBox.Item>
+                    <ListBox.Item id="conversational" textValue={t("podcastNameGenerator.form.styleOptions.conversational")}>
+                      {t("podcastNameGenerator.form.styleOptions.conversational")}
+                      <ListBox.ItemIndicator />
+                    </ListBox.Item>
+                    <ListBox.Item id="creative" textValue={t("podcastNameGenerator.form.styleOptions.creative")}>
+                      {t("podcastNameGenerator.form.styleOptions.creative")}
+                      <ListBox.ItemIndicator />
+                    </ListBox.Item>
+                    <ListBox.Item id="witty" textValue={t("podcastNameGenerator.form.styleOptions.witty")}>
+                      {t("podcastNameGenerator.form.styleOptions.witty")}
+                      <ListBox.ItemIndicator />
+                    </ListBox.Item>
+                    <ListBox.Item id="minimalist" textValue={t("podcastNameGenerator.form.styleOptions.minimalist")}>
+                      {t("podcastNameGenerator.form.styleOptions.minimalist")}
+                      <ListBox.ItemIndicator />
+                    </ListBox.Item>
+                  </ListBox>
+                </Select.Popover>
+              </Select>
             </div>
 
             {/* Keywords Input */}
-            <div>
-              <label htmlFor="keywords" className="block text-sm font-medium text-foreground mb-2">
-                {t("podcastNameGenerator.form.keywords")}
-              </label>
-              <input
-                id="keywords"
-                type="text"
+            <TextField className="w-full" name="keywords" type="text" isDisabled={isLoading}>
+              <Label>{t("podcastNameGenerator.form.keywords")}</Label>
+              <Input
                 value={keywords}
                 onChange={(e) => setKeywords(e.target.value)}
                 placeholder={t("podcastNameGenerator.form.keywordsPlaceholder")}
-                disabled={isLoading}
-                className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-surface text-foreground"
               />
-            </div>
+            </TextField>
 
             {/* Error Display */}
             {error && (

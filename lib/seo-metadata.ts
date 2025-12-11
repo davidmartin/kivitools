@@ -12,7 +12,7 @@ interface GenerateToolMetadataProps {
   keywords?: string[];
 }
 
-const platformColors: Record<Platform, string> = {
+export const platformColors: Record<Platform, string> = {
   tiktok: "#000000",
   instagram: "#E4405F",
   twitter: "#1DA1F2",

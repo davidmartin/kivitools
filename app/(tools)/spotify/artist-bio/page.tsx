@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@heroui/react";
+import { Button, Select, Label, ListBox, TextField, Input, TextArea } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import TurnstileWidget from "@/app/components/turnstile-widget";
@@ -142,87 +142,70 @@ export default function SpotifyArtistBioPage() {
           <div className="bg-surface rounded-2xl p-8 shadow-lg border border-border mb-8">
             <div className="space-y-6">
               {/* Artist Name */}
-              <div>
-                <label htmlFor="artistName" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyArtistBio.form.artistName")}
-                </label>
-                <input
-                  id="artistName"
-                  type="text"
+              <TextField className="w-full" name="artistName" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyArtistBio.form.artistName")}</Label>
+                <Input
                   value={artistName}
                   onChange={(e) => setArtistName(e.target.value)}
                   placeholder={t("spotifyArtistBio.form.artistNamePlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Genre */}
-              <div>
-                <label htmlFor="genre" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyArtistBio.form.genre")}
-                </label>
-                <input
-                  id="genre"
-                  type="text"
+              <TextField className="w-full" name="genre" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyArtistBio.form.genre")}</Label>
+                <Input
                   value={genre}
                   onChange={(e) => setGenre(e.target.value)}
                   placeholder={t("spotifyArtistBio.form.genrePlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Style */}
-              <div>
-                <label htmlFor="style" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyArtistBio.form.style")}
-                </label>
-                <input
-                  id="style"
-                  type="text"
+              <TextField className="w-full" name="style" type="text" isDisabled={isLoading}>
+                <Label>{t("spotifyArtistBio.form.style")}</Label>
+                <Input
                   value={style}
                   onChange={(e) => setStyle(e.target.value)}
                   placeholder={t("spotifyArtistBio.form.stylePlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Achievements (optional) */}
-              <div>
-                <label htmlFor="achievements" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyArtistBio.form.achievements")}
-                </label>
-                <textarea
-                  id="achievements"
+              <TextField className="w-full" name="achievements" isDisabled={isLoading}>
+                <Label>{t("spotifyArtistBio.form.achievements")}</Label>
+                <TextArea
                   value={achievements}
                   onChange={(e) => setAchievements(e.target.value)}
                   placeholder={t("spotifyArtistBio.form.achievementsPlaceholder")}
                   rows={2}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground resize-none"
                 />
-              </div>
+              </TextField>
 
               {/* Language */}
               <div>
-                <label htmlFor="language" className="block text-sm font-medium text-foreground mb-2">
-                  {t("spotifyArtistBio.form.language")}
-                </label>
-                <select
-                  id="language"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value as "en" | "es")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("spotifyArtistBio.form.language")}</Label>
+                <Select
+                  selectedKey={language}
+                  onSelectionChange={(key) => setLanguage(key as "en" | "es")}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {LANGUAGES.map((l) => (
-                    <option key={l.value} value={l.value}>
-                      {t(l.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {LANGUAGES.map((l) => (
+                        <ListBox.Item key={l.value} id={l.value} textValue={t(l.labelKey)}>
+                          {t(l.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Turnstile */}

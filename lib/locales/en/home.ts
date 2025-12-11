@@ -1,9 +1,9 @@
 export const home = {
     // Homepage - Hero
-    "home.hero.title": "Free AI-Powered Tools",
-    "home.hero.subtitle": "for Any Digital Platform",
-    "home.hero.description": "Creative block? Don't worry, our AI has more ideas than you've had coffees today. Create content for TikTok, Suno, Instagram, Twitch, and any platform you can think of. No signup, no drama, no excuses. 100% free (yes, actually free).",
-    "home.hero.cta": "Get Started! 🚀",
+    "home.hero.title": "Create Viral Content",
+    "home.hero.subtitle": "with Artificial Intelligence",
+    "home.hero.description": "Generate scripts, captions, hashtags, and bios that go viral on TikTok, Instagram, YouTube, and 25+ platforms. Our AI creates viral content in seconds. 100% free, no signup, no excuses.",
+    "home.hero.cta": "Create Content Free",
     "home.hero.trusted": "Trusted by 50K+ creators",
     "home.hero.explore": "Explore Tools",
     "home.hero.create": "Create Tool",
@@ -34,6 +34,9 @@ export const home = {
     // Homepage - Platforms Section
     "home.platformsSection.title": "Choose Your Platform",
     "home.platformsSection.description": "Social media? Music? Forums? Streaming? We've got AI tools for any digital platform you use.",
+
+    // Homepage - Tools Feed
+    "home.feed.card.useTool": "Use Tool",
 
     // Homepage - Features
     "home.features.title": "Why KiviTools and Not Some Boring Tool?",

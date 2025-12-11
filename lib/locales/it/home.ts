@@ -1,9 +1,9 @@
 export const home = {
     // Homepage - Hero
-    "home.hero.title": "Strumenti AI Gratuiti",
-    "home.hero.subtitle": "per Qualsiasi Piattaforma Digitale",
-    "home.hero.description": "Blocco creativo? Non preoccuparti, la nostra AI ha più idee di quanti caffè hai bevuto oggi. Crea contenuti per TikTok, Suno, Instagram, Twitch e qualsiasi piattaforma ti venga in mente. Senza registrazione, senza drammi, senza scuse. 100% gratis (sì, davvero gratis).",
-    "home.hero.cta": "Inizia Subito! 🚀",
+    "home.hero.title": "Crea Contenuti Virali",
+    "home.hero.subtitle": "con l'Intelligenza Artificiale",
+    "home.hero.description": "Genera script, didascalie, hashtag e bio che spopolano su TikTok, Instagram, YouTube e +25 piattaforme. La nostra AI crea contenuti virali in pochi secondi. 100% gratis, senza registrazione, senza scuse.",
+    "home.hero.cta": "Crea Contenuti Gratis",
     "home.hero.trusted": "Scelto da oltre 50K creatori",
     "home.hero.explore": "Esplora Strumenti",
     "home.hero.create": "Crea Strumento",

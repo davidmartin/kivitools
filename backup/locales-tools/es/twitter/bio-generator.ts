@@ -1,0 +1,34 @@
+export const bio_generator = {
+    // Twitter Bio Generator
+    "twitterBio.title": "Generador de Bio para Twitter",
+    "twitterBio.description": "Crea una bio impactante para tu perfil de Twitter. ¡Atrae más seguidores!",
+
+    // Alias keys for tool card display
+    "twitterBioGenerator.title": "Generador de Bio para Twitter",
+    "twitterBioGenerator.description": "Crea una bio memorable que destaque en Twitter",
+    "twitterBio.form.description": "Descripción de Ti/Tu Marca",
+    "twitterBio.form.descriptionPlaceholder": "Cuéntanos sobre ti...",
+    "twitterBio.form.tone": "Tono",
+    "twitterBio.form.language": "Idioma",
+    "twitterBio.form.includeEmojis": "Incluir emojis",
+    "twitterBio.form.generate": "Generar Bio",
+    "twitterBio.form.generating": "Generando...",
+    "twitterBio.form.useAgain": "Generar Otra",
+    "twitterBio.form.error.emptyDescription": "Por favor ingresa una descripción",
+    "twitterBio.result.title": "Tu Bio de Twitter",
+    "twitterBio.result.copy": "Copiar Bio",
+    "twitterBio.result.copied": "¡Bio copiada!",
+    "twitterBio.result.success": "✓ Bio generada exitosamente",
+    "twitterBio.features.concise.title": "📏 Breve y Poderosa",
+    "twitterBio.features.concise.description": "160 caracteres máximo, optimizados para impacto.",
+    "twitterBio.features.memorable.title": "✨ Memorable",
+    "twitterBio.features.memorable.description": "Destaca y deja una impresión duradera.",
+    "twitterBio.features.professional.title": "🎯 Profesional",
+    "twitterBio.features.professional.description": "Equilibra personalidad con profesionalismo.",
+    "twitterBio.features.instant.title": "⚡ Listo al Instante",
+    "twitterBio.features.instant.description": "Úsalo inmediatamente en tu perfil.",
+    "twitterBio.features.optimized.title": "🚀 Optimizado",
+    "twitterBio.features.optimized.description": "Diseñado para maximizar engagement y seguidores.",
+    "twitterBio.result.charCount": "Recuento de caracteres",
+
+};
