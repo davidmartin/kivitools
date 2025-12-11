@@ -51,6 +51,22 @@ for ENV in "${ENVIRONMENTS[@]}"; do
     echo "tool-suggestions" | vercel env add APPWRITE_SUGGESTIONS_COLLECTION_ID "$ENV"
 done
 
+# NEXT_PUBLIC Appwrite Variables (Client-side - Required for browser)
+echo "📝 Añadiendo NEXT_PUBLIC_APPWRITE_ENDPOINT a todos los entornos..."
+for ENV in "${ENVIRONMENTS[@]}"; do
+    echo "https://fra.cloud.appwrite.io/v1" | vercel env add NEXT_PUBLIC_APPWRITE_ENDPOINT "$ENV"
+done
+
+echo "📝 Añadiendo NEXT_PUBLIC_APPWRITE_PROJECT_ID a todos los entornos..."
+for ENV in "${ENVIRONMENTS[@]}"; do
+    echo "691995a40019c6415c84" | vercel env add NEXT_PUBLIC_APPWRITE_PROJECT_ID "$ENV"
+done
+
+echo "📝 Añadiendo NEXT_PUBLIC_APPWRITE_DATABASE_ID a todos los entornos..."
+for ENV in "${ENVIRONMENTS[@]}"; do
+    echo "691996c100092f2e06cc" | vercel env add NEXT_PUBLIC_APPWRITE_DATABASE_ID "$ENV"
+done
+
 # Cloudflare Turnstile
 echo "📝 Añadiendo NEXT_PUBLIC_TURNSTILE_SITE_KEY a todos los entornos..."
 for ENV in "${ENVIRONMENTS[@]}"; do

@@ -32,6 +32,16 @@ echo "contact_messages" | vercel env add APPWRITE_CONTACT_COLLECTION_ID producti
 echo "📝 Añadiendo APPWRITE_SUGGESTIONS_COLLECTION_ID..."
 echo "tool-suggestions" | vercel env add APPWRITE_SUGGESTIONS_COLLECTION_ID production
 
+# NEXT_PUBLIC Appwrite Variables (Client-side)
+echo "📝 Añadiendo NEXT_PUBLIC_APPWRITE_ENDPOINT..."
+echo "https://fra.cloud.appwrite.io/v1" | vercel env add NEXT_PUBLIC_APPWRITE_ENDPOINT production
+
+echo "📝 Añadiendo NEXT_PUBLIC_APPWRITE_PROJECT_ID..."
+echo "691995a40019c6415c84" | vercel env add NEXT_PUBLIC_APPWRITE_PROJECT_ID production
+
+echo "📝 Añadiendo NEXT_PUBLIC_APPWRITE_DATABASE_ID..."
+echo "691996c100092f2e06cc" | vercel env add NEXT_PUBLIC_APPWRITE_DATABASE_ID production
+
 # Cloudflare Turnstile
 echo "📝 Añadiendo NEXT_PUBLIC_TURNSTILE_SITE_KEY..."
 echo "0x4AAAAAACBMWVCEjs6FnoUx" | vercel env add NEXT_PUBLIC_TURNSTILE_SITE_KEY production
