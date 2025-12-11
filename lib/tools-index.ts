@@ -29,6 +29,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 86,
         featured: true,
+        language: "en",
         tags: ["tiktok", "script", "writer", "scripts", "good"],
 
     },
@@ -44,6 +45,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 92,
         featured: true,
+        language: "en",
         tags: ["tiktok", "video", "ideas", "viral"],
 
     },
@@ -59,6 +61,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 86,
         featured: true,
+        language: "en",
         tags: ["tiktok", "hook", "generator", "hooks", "stop"],
 
     },
@@ -74,6 +77,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 91,
         featured: true,
+        language: "en",
         tags: ["tiktok", "hashtag", "generator", "best", "hashtags"],
 
     },
@@ -89,6 +93,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 92,
         featured: false,
+        language: "en",
         tags: ["tiktok", "username", "generator", "unique", "usernames"],
 
     },
@@ -104,6 +109,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 93,
         featured: false,
+        language: "en",
         tags: ["tiktok", "bio", "generator", "engaging"],
 
     },
@@ -119,6 +125,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 95,
         featured: false,
+        language: "en",
         tags: ["tiktok", "caption", "generator", "captions"],
 
     },
@@ -134,6 +141,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 88,
         featured: false,
+        language: "en",
         tags: ["tiktok", "coins", "calculator", "calculate"],
 
     },
@@ -149,6 +157,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 88,
         featured: false,
+        language: "en",
         tags: ["tiktok", "money", "calculator", "estimate", "earnings"],
 
     },
@@ -164,6 +173,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 85,
         featured: false,
+        language: "en",
         tags: ["tiktok", "engagement", "calculator", "calculate"],
 
     },
@@ -179,6 +189,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 94,
         featured: false,
+        language: "en",
         tags: ["tiktok", "copy", "generator"],
 
     },
@@ -194,6 +205,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 85,
         featured: false,
+        language: "en",
         tags: ["tiktok", "shop", "name", "generator", "creative"],
 
     },
@@ -209,6 +221,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 86,
         featured: false,
+        language: "en",
         tags: ["tiktok", "thumbnail", "text", "generator"],
 
     },
@@ -224,6 +237,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 90,
         featured: false,
+        language: "en",
         tags: ["tiktok", "content", "calendar", "plan"],
 
     },
@@ -239,6 +253,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 93,
         featured: false,
+        language: "en",
         tags: ["tiktok", "song", "recommendations", "trending", "songs"],
 
     },
@@ -258,6 +273,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 88,
         featured: true,
+        language: "en",
         tags: ["instagram", "caption", "generator", "engaging"],
 
     },
@@ -273,6 +289,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 94,
         featured: true,
+        language: "en",
         tags: ["instagram", "bio", "generator", "perfect"],
 
     },
@@ -288,6 +305,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 89,
         featured: false,
+        language: "en",
         tags: ["instagram", "hashtag", "generator", "best", "hashtags"],
 
     },
@@ -303,6 +321,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 85,
         featured: true,
+        language: "en",
         tags: ["instagram", "reel", "script", "write", "scripts"],
 
     },
@@ -318,6 +337,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 91,
         featured: false,
+        language: "en",
         tags: ["instagram", "story", "ideas", "creative"],
 
     },
@@ -333,6 +353,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 87,
         featured: false,
+        language: "en",
         tags: ["instagram", "carousel", "generator", "post"],
 
     },
@@ -348,6 +369,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 92,
         featured: false,
+        language: "en",
         tags: ["instagram", "engagement", "calculator", "calculate"],
 
     },
@@ -363,6 +385,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 89,
         featured: false,
+        language: "en",
         tags: ["instagram", "content", "calendar", "plan"],
 
     },
@@ -378,6 +401,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 87,
         featured: false,
+        language: "en",
         tags: ["instagram", "copy", "generator"],
 
     },
@@ -397,6 +421,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 86,
         featured: true,
+        language: "en",
         tags: ["twitter", "tweet", "generator", "viral", "tweets"],
 
     },
@@ -412,6 +437,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 81,
         featured: true,
+        language: "en",
         tags: ["twitter", "thread", "maker", "engaging"],
 
     },
@@ -427,6 +453,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 85,
         featured: true,
+        language: "en",
         tags: ["twitter", "bio", "generator", "write", "perfect"],
 
     },
@@ -446,6 +473,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 86,
         featured: true,
+        language: "en",
         tags: ["youtube", "title", "generator", "clickable"],
 
     },
@@ -461,6 +489,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 83,
         featured: true,
+        language: "en",
         tags: ["youtube", "description", "generator", "write", "seo"],
 
     },
@@ -476,6 +505,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 84,
         featured: true,
+        language: "en",
         tags: ["youtube", "script", "generator", "scripts"],
 
     },
@@ -491,6 +521,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 86,
         featured: false,
+        language: "en",
         tags: ["youtube", "video", "ideas", "creative"],
 
     },
@@ -506,6 +537,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 90,
         featured: false,
+        language: "en",
         tags: ["youtube", "tag", "generator", "tags", "better"],
 
     },
@@ -521,6 +553,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 89,
         featured: false,
+        language: "en",
         tags: ["youtube", "channel", "name", "generator", "perfect"],
 
     },
@@ -536,6 +569,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 84,
         featured: false,
+        language: "en",
         tags: ["youtube", "community", "post", "generator"],
 
     },
@@ -555,6 +589,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 77,
         featured: true,
+        language: "en",
         tags: ["reddit", "post", "generator", "posts"],
 
     },
@@ -570,6 +605,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 80,
         featured: false,
+        language: "en",
         tags: ["reddit", "comment", "generator", "write"],
 
     },
@@ -585,6 +621,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 76,
         featured: false,
+        language: "en",
         tags: ["reddit", "ama", "questions"],
 
     },
@@ -604,6 +641,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 74,
         featured: true,
+        language: "en",
         tags: ["discord", "announcement", "generator", "server", "announcements"],
 
     },
@@ -619,6 +657,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 70,
         featured: false,
+        language: "en",
         tags: ["discord", "welcome", "message", "write"],
 
     },
@@ -634,6 +673,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 69,
         featured: false,
+        language: "en",
         tags: ["discord", "event", "description", "descriptions"],
 
     },
@@ -653,6 +693,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 77,
         featured: true,
+        language: "en",
         tags: ["snapchat", "caption", "generator", "captions"],
 
     },
@@ -668,6 +709,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 83,
         featured: true,
+        language: "en",
         tags: ["snapchat", "story", "ideas"],
 
     },
@@ -683,6 +725,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 83,
         featured: false,
+        language: "en",
         tags: ["snapchat", "lens", "ideas", "creative"],
 
     },
@@ -702,6 +745,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 69,
         featured: true,
+        language: "en",
         tags: ["suno", "lyric", "generator", "song", "lyrics"],
 
     },
@@ -717,6 +761,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 60,
         featured: false,
+        language: "en",
         tags: ["suno", "music", "prompt", "generator"],
 
     },
@@ -732,6 +777,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 67,
         featured: false,
+        language: "en",
         tags: ["suno", "song", "title", "generator"],
 
     },
@@ -747,6 +793,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 64,
         featured: false,
+        language: "en",
         tags: ["suno", "song", "description", "generator", "write"],
 
     },
@@ -762,6 +809,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 61,
         featured: false,
+        language: "en",
         tags: ["suno", "album", "name", "generator"],
 
     },
@@ -777,6 +825,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 66,
         featured: false,
+        language: "en",
         tags: ["suno", "cover", "art", "prompt", "generator"],
 
     },
@@ -792,6 +841,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 68,
         featured: false,
+        language: "en",
         tags: ["suno", "remix", "idea", "generator"],
 
     },
@@ -807,6 +857,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 60,
         featured: false,
+        language: "en",
         tags: ["suno", "song", "tag", "generator"],
 
     },
@@ -826,6 +877,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 61,
         featured: true,
+        language: "en",
         tags: ["elevenlabs", "voice", "script", "writer", "write"],
 
     },
@@ -841,6 +893,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 69,
         featured: false,
+        language: "en",
         tags: ["elevenlabs", "video", "voiceover", "script"],
 
     },
@@ -856,6 +909,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 61,
         featured: false,
+        language: "en",
         tags: ["elevenlabs", "podcast", "script", "write"],
 
     },
@@ -871,6 +925,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 70,
         featured: false,
+        language: "en",
         tags: ["elevenlabs", "script", "scripts"],
 
     },
@@ -886,6 +941,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 67,
         featured: false,
+        language: "en",
         tags: ["elevenlabs", "audiobook", "optimizer", "optimize"],
 
     },
@@ -901,6 +957,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 61,
         featured: false,
+        language: "en",
         tags: ["elevenlabs", "voice", "text", "formatter", "format"],
 
     },
@@ -920,6 +977,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 78,
         featured: false,
+        language: "en",
         tags: ["linkedin", "post", "generator", "posts"],
 
     },
@@ -935,6 +993,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 78,
         featured: false,
+        language: "en",
         tags: ["linkedin", "headline", "generator", "compelling", "headlines"],
 
     },
@@ -950,6 +1009,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 71,
         featured: false,
+        language: "en",
         tags: ["linkedin", "about", "generator", "write"],
 
     },
@@ -969,6 +1029,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 75,
         featured: false,
+        language: "en",
         tags: ["twitch", "bio", "generator"],
 
     },
@@ -984,6 +1045,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 66,
         featured: false,
+        language: "en",
         tags: ["twitch", "stream", "title", "generator"],
 
     },
@@ -999,6 +1061,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 68,
         featured: false,
+        language: "en",
         tags: ["twitch", "panel", "description", "write"],
 
     },
@@ -1014,6 +1077,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 71,
         featured: false,
+        language: "en",
         tags: ["twitch", "chat", "command", "generator"],
 
     },
@@ -1029,6 +1093,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 75,
         featured: false,
+        language: "en",
         tags: ["twitch", "rules", "generator", "channel"],
 
     },
@@ -1044,6 +1109,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 65,
         featured: false,
+        language: "en",
         tags: ["twitch", "stream", "plan", "generator"],
 
     },
@@ -1063,6 +1129,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 62,
         featured: false,
+        language: "en",
         tags: ["kick", "bio", "generator"],
 
     },
@@ -1078,6 +1145,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 62,
         featured: false,
+        language: "en",
         tags: ["kick", "stream", "title", "generator"],
 
     },
@@ -1093,6 +1161,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 59,
         featured: false,
+        language: "en",
         tags: ["kick", "chat", "rules", "generator"],
 
     },
@@ -1112,6 +1181,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 59,
         featured: false,
+        language: "en",
         tags: ["spotify", "playlist", "name", "generator"],
 
     },
@@ -1127,6 +1197,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 56,
         featured: false,
+        language: "en",
         tags: ["spotify", "playlist", "description", "write"],
 
     },
@@ -1142,6 +1213,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 57,
         featured: false,
+        language: "en",
         tags: ["spotify", "artist", "bio", "generator"],
 
     },
@@ -1161,6 +1233,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 78,
         featured: false,
+        language: "en",
         tags: ["facebook", "post", "generator", "posts"],
 
     },
@@ -1176,6 +1249,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 74,
         featured: false,
+        language: "en",
         tags: ["facebook", "copy", "generator"],
 
     },
@@ -1191,6 +1265,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 80,
         featured: false,
+        language: "en",
         tags: ["facebook", "page", "bio", "generator", "write"],
 
     },
@@ -1210,6 +1285,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 54,
         featured: false,
+        language: "en",
         tags: ["pinterest", "pin", "description", "write"],
 
     },
@@ -1225,6 +1301,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 52,
         featured: false,
+        language: "en",
         tags: ["pinterest", "board", "name", "generator"],
 
     },
@@ -1240,6 +1317,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 59,
         featured: false,
+        language: "en",
         tags: ["pinterest", "profile", "bio"],
 
     },
@@ -1259,6 +1337,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 63,
         featured: false,
+        language: "en",
         tags: ["bluesky", "post", "generator", "posts"],
 
     },
@@ -1274,6 +1353,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 50,
         featured: false,
+        language: "en",
         tags: ["bluesky", "bio", "generator"],
 
     },
@@ -1289,6 +1369,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 50,
         featured: false,
+        language: "en",
         tags: ["bluesky", "thread", "composer", "compose"],
 
     },
@@ -1308,6 +1389,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 52,
         featured: false,
+        language: "en",
         tags: ["telegram", "channel", "description", "write"],
 
     },
@@ -1323,6 +1405,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 61,
         featured: false,
+        language: "en",
         tags: ["telegram", "welcome", "message", "messages"],
 
     },
@@ -1338,6 +1421,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 51,
         featured: false,
+        language: "en",
         tags: ["telegram", "announcement", "generator", "announcements"],
 
     },
@@ -1357,6 +1441,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 58,
         featured: false,
+        language: "en",
         tags: ["bereal", "caption", "generator", "captions"],
 
     },
@@ -1372,6 +1457,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 56,
         featured: false,
+        language: "en",
         tags: ["bereal", "bio", "generator"],
 
     },
@@ -1387,6 +1473,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 63,
         featured: false,
+        language: "en",
         tags: ["bereal", "realmoji", "ideas"],
 
     },
@@ -1406,6 +1493,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 50,
         featured: false,
+        language: "en",
         tags: ["medium", "article", "title", "generator"],
 
     },
@@ -1421,6 +1509,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 61,
         featured: false,
+        language: "en",
         tags: ["medium", "article", "intro", "generator", "write"],
 
     },
@@ -1436,6 +1525,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 64,
         featured: false,
+        language: "en",
         tags: ["medium", "bio", "generator"],
 
     },
@@ -1455,6 +1545,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 62,
         featured: false,
+        language: "en",
         tags: ["etsy", "product", "title", "generator"],
 
     },
@@ -1470,6 +1561,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 55,
         featured: false,
+        language: "en",
         tags: ["etsy", "product", "description", "generator", "write"],
 
     },
@@ -1485,6 +1577,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 54,
         featured: false,
+        language: "en",
         tags: ["etsy", "shop", "announcement", "generator"],
 
     },
@@ -1504,6 +1597,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 50,
         featured: false,
+        language: "en",
         tags: ["onlyfans", "bio", "generator"],
 
     },
@@ -1519,6 +1613,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 63,
         featured: false,
+        language: "en",
         tags: ["onlyfans", "post", "caption", "generator"],
 
     },
@@ -1534,6 +1629,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 52,
         featured: false,
+        language: "en",
         tags: ["onlyfans", "promo", "generator", "promotional", "content"],
 
     },
@@ -1553,6 +1649,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 62,
         featured: false,
+        language: "en",
         tags: ["patreon", "about", "page", "generator", "write"],
 
     },
@@ -1568,6 +1665,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 64,
         featured: false,
+        language: "en",
         tags: ["patreon", "post", "generator", "posts"],
 
     },
@@ -1583,6 +1681,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 65,
         featured: false,
+        language: "en",
         tags: ["patreon", "tier", "description", "generator", "write"],
 
     },
@@ -1602,6 +1701,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 62,
         featured: false,
+        language: "en",
         tags: ["dating", "bio", "generator", "profile"],
 
     },
@@ -1617,6 +1717,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 65,
         featured: false,
+        language: "en",
         tags: ["dating", "opener", "generator", "conversation", "openers"],
 
     },
@@ -1632,6 +1733,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 52,
         featured: false,
+        language: "en",
         tags: ["dating", "profile", "review", "feedback"],
 
     },
@@ -1651,6 +1753,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 59,
         featured: false,
+        language: "en",
         tags: ["amazon", "product", "description", "generator", "write"],
 
     },
@@ -1666,6 +1769,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 65,
         featured: false,
+        language: "en",
         tags: ["amazon", "product", "review", "generator"],
 
     },
@@ -1681,6 +1785,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 62,
         featured: false,
+        language: "en",
         tags: ["amazon", "product", "comparison", "generator", "compare"],
 
     },
@@ -1700,6 +1805,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 51,
         featured: false,
+        language: "en",
         tags: ["forocoches", "thread", "generator", "forum", "threads"],
 
     },
@@ -1715,6 +1821,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 63,
         featured: false,
+        language: "en",
         tags: ["forocoches", "pole", "generator", "posts"],
 
     },
@@ -1730,6 +1837,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 60,
         featured: false,
+        language: "en",
         tags: ["forocoches", "troll", "response", "responses"],
 
     },
@@ -1749,6 +1857,7 @@ export const OFFICIAL_TOOLS: OfficialTool[] = [
         dateAdded: "2024-01-01",
         popularity: 64,
         featured: false,
+        language: "en",
         tags: ["podcast", "name", "generator", "names"],
 
     },

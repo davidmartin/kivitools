@@ -9,11 +9,12 @@ import { ID, Permission, Role, Query } from "appwrite";
 import { useRouter, useSearchParams } from "next/navigation";
 import PlatformBadge from "@/app/components/platform-badge";
 import type { AutoCreateConfig } from "@/types/search";
+import { UI_LANGUAGES } from "@/types";
 
 interface ToolInput {
     id: string;
     label: string;
-    type: "text" | "textarea" | "select" | "number";
+    type: "text" | "textarea" | "select" | "number" | "language";
     placeholder?: string;
     options?: string; // Comma separated for UI
     required: boolean;
@@ -54,6 +55,8 @@ function BuilderContent() {
     const [slug, setSlug] = useState("");
     const [slugError, setSlugError] = useState("");
     const [slugAvailable, setSlugAvailable] = useState<boolean | null>(null);
+    const [toolLanguage, setToolLanguage] = useState<string>(language); // Language of the tool
+    const [toolIcon, setToolIcon] = useState("🛠️"); // Tool icon (emoji)
     
     // AI Assistant state
     const [showAssistant, setShowAssistant] = useState(true);
@@ -262,10 +265,14 @@ function BuilderContent() {
                 throw new Error(slugError || t("builder.error.slugInvalid"));
             }
             
+            // Generate unique document ID: slug-randomId
+            const docId = ID.unique();
+            const fullSlug = `${slug}-${docId}`;
+            
             await databases.createDocument(
                 process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID!,
                 "tools",
-                slug, // Use slug as Document ID
+                docId, // Use Appwrite's unique ID
                 {
                     name,
                     description,
@@ -275,7 +282,9 @@ function BuilderContent() {
                     status: "pending",
                     author_name: user.name,
                     author_id: user.$id,
-                    slug
+                    slug,
+                    language: toolLanguage,
+                    icon: toolIcon,
                 },
                 [
                     Permission.read(Role.any()),
@@ -552,6 +561,44 @@ function BuilderContent() {
                             rows={2}
                         />
                     </div>
+
+                    {/* Language and Icon Row */}
+                    <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label className="block text-sm font-medium mb-1">
+                                {t("builder.basicInfo.language") || "Tool Language"}
+                            </label>
+                            <select 
+                                className="w-full px-4 py-2 border border-border rounded-lg bg-surface"
+                                value={toolLanguage}
+                                onChange={(e) => setToolLanguage(e.target.value)}
+                            >
+                                {UI_LANGUAGES.map(lang => (
+                                    <option key={lang.code} value={lang.code}>
+                                        {lang.flag} {lang.nativeName} ({lang.name})
+                                    </option>
+                                ))}
+                            </select>
+                            <p className="text-xs text-muted mt-1">
+                                {t("builder.basicInfo.languageHelp") || "The language this tool is written in"}
+                            </p>
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium mb-1">
+                                {t("builder.basicInfo.icon") || "Tool Icon"}
+                            </label>
+                            <input 
+                                className="w-full px-4 py-2 border border-border rounded-lg bg-surface text-2xl"
+                                value={toolIcon}
+                                onChange={(e) => setToolIcon(e.target.value)}
+                                placeholder="🛠️"
+                                maxLength={4}
+                            />
+                            <p className="text-xs text-muted mt-1">
+                                {t("builder.basicInfo.iconHelp") || "Pick an emoji that represents your tool"}
+                            </p>
+                        </div>
+                    </div>
                 </Card>
 
                 {/* Inputs Configuration */}
@@ -598,6 +645,7 @@ function BuilderContent() {
                                             <option value="textarea">{t("builder.inputs.typeTextarea")}</option>
                                             <option value="number">{t("builder.inputs.typeNumber")}</option>
                                             <option value="select">{t("builder.inputs.typeSelect")}</option>
+                                            <option value="language">{t("builder.inputs.typeLanguage") || "Language Selector"}</option>
                                         </select>
                                     </div>
                                     {input.type === "select" && (
@@ -609,6 +657,13 @@ function BuilderContent() {
                                                 onChange={(e) => updateInput(idx, "options", e.target.value)}
                                                 placeholder={t("builder.inputs.optionsPlaceholder")}
                                             />
+                                        </div>
+                                    )}
+                                    {input.type === "language" && (
+                                        <div className="md:col-span-3">
+                                            <p className="text-xs text-muted italic">
+                                                {t("builder.inputs.languageHint") || "This will show a dropdown with all supported languages (English, Spanish, French, etc.)"}
+                                            </p>
                                         </div>
                                     )}
                                 </div>

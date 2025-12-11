@@ -8,6 +8,7 @@ import Script from "next/script";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { CookieConsentProvider } from "@/contexts/CookieConsentContext";
+import { ToolsProvider } from "@/contexts/ToolsContext";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "./components/google-analytics";
@@ -22,21 +23,24 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kivitools.com"),
   title: {
-    default: "KiviTools - Free AI-Powered Social Media Tools",
+    default: "KiviTools - Crea Contenido Viral con IA Gratis | TikTok, Instagram, YouTube",
     template: "%s | KiviTools",
   },
   description:
-    "Create engaging TikTok scripts, Instagram captions, and Twitter threads with AI. Free tools for content creators. No signup required.",
+    "Genera contenido viral para TikTok, Instagram, YouTube y +25 redes sociales con IA. Scripts, captions, hashtags, bios. 100% gratis, sin registro.",
   keywords: [
     "KiviTools",
-    "TikTok script writer",
+    "crear contenido viral con IA",
+    "generador de contenido IA gratis",
+    "AI text generation",
+    "TikTok script generator",
     "Instagram caption generator",
-    "Twitter thread maker",
-    "social media tools",
+    "contenido viral IA",
+    "herramientas IA creadores",
     "AI content creator",
-    "free social media tools",
-    "generador de contenido IA",
-    "herramientas redes sociales gratis",
+    "social media AI tools",
+    "generador de scripts TikTok",
+    "generador de hashtags IA",
   ],
   authors: [{ name: "KiviTools", url: "https://kivitools.com" }],
   creator: "KiviTools",
@@ -51,24 +55,24 @@ export const metadata: Metadata = {
     locale: "en_US",
     alternateLocale: ["es_ES"],
     url: "https://kivitools.com",
-    title: "KiviTools - Free AI Social Media Tools",
+    title: "KiviTools - Crea Contenido Viral con IA Gratis",
     description:
-      "Create viral social media content with AI. TikTok scripts, Instagram captions, and more.",
+      "Genera scripts, captions, hashtags y bios virales para TikTok, Instagram, YouTube y +25 plataformas. 100% gratis.",
     siteName: "KiviTools",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "KiviTools - AI Social Media Tools",
+        alt: "KiviTools - Crea Contenido Viral con IA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KiviTools - Free AI Social Media Tools",
+    title: "KiviTools - Crea Contenido Viral con IA Gratis",
     description:
-      "Create viral social media content with AI. TikTok scripts, Instagram captions, and more.",
+      "Genera scripts, captions, hashtags y bios virales para TikTok, Instagram, YouTube y +25 plataformas. 100% gratis.",
     images: ["/twitter-image.png"],
     creator: "@kivitools",
   },
@@ -196,12 +200,14 @@ export default function RootLayout({
           <CookieConsentProvider>
             <GoogleAnalytics />
             <AuthProvider>
-              <Navigation />
-              <Breadcrumbs />
-              <main className="flex-1">{children}</main>
-              <Footer />
-              <CookieBanner />
-              <CookiePreferencesModal />
+              <ToolsProvider>
+                <Navigation />
+                <Breadcrumbs />
+                <main className="flex-1">{children}</main>
+                <Footer />
+                <CookieBanner />
+                <CookiePreferencesModal />
+              </ToolsProvider>
             </AuthProvider>
           </CookieConsentProvider>
         </LanguageProvider>

@@ -17,6 +17,7 @@ import { Star } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PlatformLogo from "./platform-logo";
 import { PLATFORM_METADATA } from "@/lib/tools-index";
+import { platformColors } from "@/lib/seo-metadata";
 import type { OfficialTool } from "@/types/search";
 
 interface ToolCardProps {
@@ -30,14 +31,29 @@ function ToolCardComponent({
 }: ToolCardProps) {
   const { t } = useLanguage();
   const platform = PLATFORM_METADATA[tool.platform];
+  
+  // Get platform color
+  const platformColor = platformColors[tool.platform as keyof typeof platformColors];
+  
+  // Helper to check if color is dark (using luminance calculation)
+  const isColorDark = (hexColor: string): boolean => {
+    const hex = hexColor.replace('#', '');
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    return luminance < 0.3; // Only very dark colors like #000000
+  };
+  
+  const isDarkColor = isColorDark(platformColor);
 
   return (
     <Link href={tool.href} className="block group h-full">
       <Card className="glass-card h-full border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300">
-        <Card.Content className="p-5">
-          <div className="flex items-start gap-4">
-            {/* Platform Icon */}
-            <div className="shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+        <Card.Content className="p-3">
+          <div className="flex items-center gap-3">
+            {/* Platform Icon - Compact */}
+            <div className="shrink-0 transform group-hover:scale-105 transition-transform duration-300">
               <PlatformLogo
                 platform={
                   tool.platform as
@@ -74,58 +90,37 @@ function ToolCardComponent({
               />
             </div>
 
-            {/* Content */}
+            {/* Content - Compact hierarchy */}
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-2 flex-wrap">
-                <h3 className="font-bold text-foreground group-hover:text-primary truncate transition-colors text-lg">
-                  {t(tool.nameKey)}
+              <div className="flex items-center gap-2">
+                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors text-base leading-tight truncate">
+                  {t(tool.nameKey) !== tool.nameKey ? t(tool.nameKey) : tool.name}
                 </h3>
                 
-                {/* Featured Badge */}
+                {/* Featured Badge - subtle, only on hover */}
                 {tool.featured && (
-                  <Chip
-                    size="sm"
-                    variant="soft"
-                    className="shrink-0 bg-primary/10 text-primary border-primary/20"
-                  >
-                    <Star className="w-3 h-3 mr-1 fill-current" />
-                    {t("common.featured")}
-                  </Chip>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                    <Star className="w-3.5 h-3.5 text-primary fill-current" />
+                  </div>
                 )}
               </div>
               
-              {/* Platform Chip */}
-              <div className="mb-2">
-                <Chip size="sm" variant="soft" className="bg-white/10 text-muted border-white/10">
-                  {platform?.name || tool.platform}
-                </Chip>
-              </div>
-              
-              <p className="text-sm text-muted line-clamp-2 leading-relaxed">
-                {t(tool.descriptionKey)}
+              <p className="text-xs text-muted line-clamp-1 leading-snug mt-0.5">
+                {t(tool.descriptionKey) !== tool.descriptionKey ? t(tool.descriptionKey) : tool.description}
               </p>
             </div>
 
-            {/* Action - optional, hidden on mobile */}
-            {showActionButton && (
-              <div className="shrink-0 hidden sm:flex items-center">
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="text-muted group-hover:text-primary group-hover:bg-primary/10 transition-all"
-                >
-                  {t("home.feed.card.useTool")}
-                  <svg 
-                    className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Button>
-              </div>
-            )}
+            {/* Action Arrow - only visible on hover */}
+            <div className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg 
+                className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </div>
         </Card.Content>
       </Card>

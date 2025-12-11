@@ -41,7 +41,16 @@ export const common = {
     // Common UI
     "common.featured": "Destacada",
     "common.loading": "Cargando...",
+    "common.selectOption": "Selecciona una opción",
+    "common.generate": "Generar",
+    "common.generateAgain": "Generar de nuevo",
+    "common.generating": "Generando...",
+    "common.copy": "Copiar",
+    "common.copied": "¡Copiado!",
     "common.error": "Error",
+
+    // Custom Tools
+    "customTool.createdBy": "Creado por",
 
     // Voice Styles
     "voiceStyles.narration": "Narración",
@@ -134,15 +143,6 @@ export const common = {
     "durations.youtube.medium": "5-10 minutos",
     "durations.youtube.long": "15-20 minutos",
 
-    // Common
-    "common.error": "¡Ups! Algo salió mal (no es tu culpa, probablemente)",
-    "common.required": "Este campo es requerido (sí, lo sabemos, molesto)",
-    "common.copied": "¡Copiado! 🎉 ¡Ahora a ser viral!",
-    "common.copyFailed": "Error al copiar (prueba Ctrl+C a la antigua)",
-    "common.explore": "Explorar",
-    "common.communityTools": "Herramientas de la Comunidad",
-    "common.by": "por",
-
     // Cloudflare Turnstile
     "turnstile.verifying": "Verificando que eres humano...",
     "turnstile.error": "Error de verificación. Por favor recarga la página.",
@@ -223,6 +223,8 @@ export const common = {
     "toolsPage.description": "Explora más de 100 herramientas de IA gratuitas para creación de contenido",
     "toolsPage.filters.all": "Todas las Plataformas",
     "toolsPage.filters.platform": "Filtrar por plataforma",
+    "toolsPage.filters.language": "Idioma",
+    "toolsPage.filters.allLanguages": "Todos los idiomas",
     "toolsPage.filters.search": "Buscar herramientas...",
     "toolsPage.filters.searchPlaceholder": "Buscar por nombre o descripción",
     "toolsPage.sort.featured": "Destacadas",

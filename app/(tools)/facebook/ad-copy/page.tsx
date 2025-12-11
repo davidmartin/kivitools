@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@heroui/react";
+import { Button, Select, Label, ListBox, TextField, Input } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import TurnstileWidget from "@/app/components/turnstile-widget";
@@ -149,91 +149,85 @@ export default function FacebookAdCopyPage() {
           <div className="bg-surface rounded-2xl p-8 shadow-lg border border-border mb-8">
             <div className="space-y-6">
               {/* Product */}
-              <div>
-                <label htmlFor="product" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookAdCopy.form.product")}
-                </label>
-                <input
-                  id="product"
-                  type="text"
+              <TextField className="w-full" name="product" type="text" isDisabled={isLoading}>
+                <Label>{t("facebookAdCopy.form.product")}</Label>
+                <Input
                   value={product}
                   onChange={(e) => setProduct(e.target.value)}
                   placeholder={t("facebookAdCopy.form.productPlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Target Audience */}
-              <div>
-                <label htmlFor="targetAudience" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookAdCopy.form.targetAudience")}
-                </label>
-                <input
-                  id="targetAudience"
-                  type="text"
+              <TextField className="w-full" name="targetAudience" type="text" isDisabled={isLoading}>
+                <Label>{t("facebookAdCopy.form.targetAudience")}</Label>
+                <Input
                   value={targetAudience}
                   onChange={(e) => setTargetAudience(e.target.value)}
                   placeholder={t("facebookAdCopy.form.targetAudiencePlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Benefit */}
-              <div>
-                <label htmlFor="benefit" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookAdCopy.form.benefit")}
-                </label>
-                <input
-                  id="benefit"
-                  type="text"
+              <TextField className="w-full" name="benefit" type="text" isDisabled={isLoading}>
+                <Label>{t("facebookAdCopy.form.benefit")}</Label>
+                <Input
                   value={benefit}
                   onChange={(e) => setBenefit(e.target.value)}
                   placeholder={t("facebookAdCopy.form.benefitPlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Tone */}
               <div>
-                <label htmlFor="tone" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookAdCopy.form.tone")}
-                </label>
-                <select
-                  id="tone"
-                  value={tone}
-                  onChange={(e) => setTone(e.target.value)}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("facebookAdCopy.form.tone")}</Label>
+                <Select
+                  selectedKey={tone}
+                  onSelectionChange={(key) => setTone(key as string)}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {TONES.map((t_) => (
-                    <option key={t_.value} value={t_.value}>
-                      {t(t_.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {TONES.map((t_) => (
+                        <ListBox.Item key={t_.value} id={t_.value} textValue={t(t_.labelKey)}>
+                          {t(t_.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Language */}
               <div>
-                <label htmlFor="language" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookAdCopy.form.language")}
-                </label>
-                <select
-                  id="language"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value as "en" | "es")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("facebookAdCopy.form.language")}</Label>
+                <Select
+                  selectedKey={language}
+                  onSelectionChange={(key) => setLanguage(key as "en" | "es")}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {LANGUAGES.map((l) => (
-                    <option key={l.value} value={l.value}>
-                      {t(l.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {LANGUAGES.map((l) => (
+                        <ListBox.Item key={l.value} id={l.value} textValue={t(l.labelKey)}>
+                          {t(l.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Turnstile */}

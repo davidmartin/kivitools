@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@heroui/react";
+import { Button, Select, Label, ListBox, TextField, Input, TextArea } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import TurnstileWidget from "@/app/components/turnstile-widget";
@@ -146,91 +146,86 @@ export default function FacebookPageBioPage() {
           <div className="bg-surface rounded-2xl p-8 shadow-lg border border-border mb-8">
             <div className="space-y-6">
               {/* Business Name */}
-              <div>
-                <label htmlFor="businessName" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookPageBio.form.businessName")}
-                </label>
-                <input
-                  id="businessName"
-                  type="text"
+              <TextField className="w-full" name="businessName" type="text" isDisabled={isLoading}>
+                <Label>{t("facebookPageBio.form.businessName")}</Label>
+                <Input
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
                   placeholder={t("facebookPageBio.form.businessNamePlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Industry */}
-              <div>
-                <label htmlFor="industry" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookPageBio.form.industry")}
-                </label>
-                <input
-                  id="industry"
-                  type="text"
+              <TextField className="w-full" name="industry" type="text" isDisabled={isLoading}>
+                <Label>{t("facebookPageBio.form.industry")}</Label>
+                <Input
                   value={industry}
                   onChange={(e) => setIndustry(e.target.value)}
                   placeholder={t("facebookPageBio.form.industryPlaceholder")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
                 />
-              </div>
+              </TextField>
 
               {/* Description */}
-              <div>
-                <label htmlFor="description" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookPageBio.form.description")}
-                </label>
-                <textarea
-                  id="description"
+              <TextField className="w-full" name="description" isDisabled={isLoading}>
+                <Label>{t("facebookPageBio.form.description")}</Label>
+                <TextArea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder={t("facebookPageBio.form.descriptionPlaceholder")}
                   rows={3}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground resize-none"
                 />
-              </div>
+              </TextField>
 
               {/* Tone */}
               <div>
-                <label htmlFor="tone" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookPageBio.form.tone")}
-                </label>
-                <select
-                  id="tone"
-                  value={tone}
-                  onChange={(e) => setTone(e.target.value)}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("facebookPageBio.form.tone")}</Label>
+                <Select
+                  selectedKey={tone}
+                  onSelectionChange={(key) => setTone(key as string)}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {TONES.map((t_) => (
-                    <option key={t_.value} value={t_.value}>
-                      {t(t_.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {TONES.map((t_) => (
+                        <ListBox.Item key={t_.value} id={t_.value} textValue={t(t_.labelKey)}>
+                          {t(t_.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Language */}
               <div>
-                <label htmlFor="language" className="block text-sm font-medium text-foreground mb-2">
-                  {t("facebookPageBio.form.language")}
-                </label>
-                <select
-                  id="language"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value as "en" | "es")}
-                  disabled={isLoading}
-                  className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-surface text-foreground"
+                <Label>{t("facebookPageBio.form.language")}</Label>
+                <Select
+                  selectedKey={language}
+                  onSelectionChange={(key) => setLanguage(key as "en" | "es")}
+                  isDisabled={isLoading}
+                  className="w-full"
                 >
-                  {LANGUAGES.map((l) => (
-                    <option key={l.value} value={l.value}>
-                      {t(l.labelKey)}
-                    </option>
-                  ))}
-                </select>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {LANGUAGES.map((l) => (
+                        <ListBox.Item key={l.value} id={l.value} textValue={t(l.labelKey)}>
+                          {t(l.labelKey)}
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </div>
 
               {/* Turnstile */}

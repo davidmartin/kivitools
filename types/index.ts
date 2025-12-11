@@ -512,6 +512,7 @@ export interface Tool {
     popularity: number;            // Popularity score 0-100 (for sorting)
     featured: boolean;             // Whether tool is featured (top 20 tools)
     tags: string[];                // Searchable tags (e.g., ["content", "video", "ai"])
+    language: string;              // Language of the tool content (e.g., "en", "es")
 }
 
 // Platform identifier for filtering
@@ -533,11 +534,16 @@ export type Platform =
     | "etsy"
     | "facebook"
     | "forocoches"
+    | "kick"
     | "linkedin"
     | "mastodon"
+    | "medium"
     | "onlyfans"
+    | "patreon"
     | "pinterest"
+    | "podcast"
     | "shopify"
+    | "spotify"
     | "suno"
     | "telegram"
     | "threads"

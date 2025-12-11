@@ -10,7 +10,6 @@ import { Button, Popover } from "@heroui/react";
 import ThemeToggle from "./theme-toggle";
 import PlatformLogo from "./platform-logo";
 import AppLogo from "./app-logo";
-import NavSearch from "./nav-search";
 import { UI_LANGUAGES } from "@/types";
 import type { Language } from "@/lib/translations";
 
@@ -333,11 +332,6 @@ export default function Navigation() {
               <AppLogo />
             </div>
           </Link>
-
-          {/* Search Bar (Desktop) */}
-          <div className="hidden md:block flex-1 max-w-md mx-4">
-            <NavSearch />
-          </div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-1">

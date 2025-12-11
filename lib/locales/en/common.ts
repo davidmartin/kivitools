@@ -42,6 +42,15 @@ export const common = {
     "common.featured": "Featured",
     "common.loading": "Loading...",
     "common.error": "Error",
+    "common.selectOption": "Select an option",
+    "common.generate": "Generate",
+    "common.generateAgain": "Generate Again",
+    "common.generating": "Generating...",
+    "common.copy": "Copy",
+    "common.copied": "Copied!",
+
+    // Custom Tools
+    "customTool.createdBy": "Created by",
 
     // Voice Styles
     "voiceStyles.narration": "Narration",
@@ -134,15 +143,6 @@ export const common = {
     "durations.youtube.medium": "5-10 minutes",
     "durations.youtube.long": "15-20 minutes",
 
-    // Common
-    "common.error": "Oops! Something went wrong (not your fault, probably)",
-    "common.required": "This field is required (we know, annoying)",
-    "common.copied": "Copied! 🎉 Now go be viral!",
-    "common.copyFailed": "Failed to copy (try Ctrl+C old school style)",
-    "common.explore": "Explore",
-    "common.communityTools": "Community Tools",
-    "common.by": "by",
-
     // Cloudflare Turnstile
     "turnstile.verifying": "Verifying you're human...",
     "turnstile.error": "Verification error. Please reload the page.",
@@ -223,6 +223,8 @@ export const common = {
     "toolsPage.description": "Browse 100+ free AI-powered tools for content creation",
     "toolsPage.filters.all": "All Platforms",
     "toolsPage.filters.platform": "Filter by platform",
+    "toolsPage.filters.language": "Language",
+    "toolsPage.filters.allLanguages": "All Languages",
     "toolsPage.filters.search": "Search tools...",
     "toolsPage.filters.searchPlaceholder": "Search by name or description",
     "toolsPage.sort.featured": "Featured",

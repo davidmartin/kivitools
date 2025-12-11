@@ -1,24 +1,39 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { Suspense, useMemo, useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTools } from "@/contexts/ToolsContext";
 import { useDebounce } from "@/lib/hooks/use-debounce";
-import { OFFICIAL_TOOLS, PLATFORMS, PLATFORM_METADATA } from "@/lib/tools-index";
+import { PLATFORMS, PLATFORM_METADATA } from "@/lib/tools-index";
 import { ToolCard } from "@/app/components/tool-card";
-import { Select, Label, ListBox, ComboBox, Input } from "@heroui/react";
+import { Select, Label, ListBox } from "@heroui/react";
 import type { Platform, SortOption } from "@/types";
 import type { Selection } from "@react-types/shared";
 import PlatformLogo from "@/app/components/platform-logo";
-import { Search, X } from "lucide-react";
+import { Search, X, Globe } from "lucide-react";
+
+// Available languages for filtering
+const TOOL_LANGUAGES = [
+  { value: "all", label: "All Languages" },
+  { value: "en", label: "English" },
+  { value: "es", label: "Español" },
+  { value: "pt", label: "Português" },
+  { value: "fr", label: "Français" },
+  { value: "de", label: "Deutsch" },
+  { value: "it", label: "Italiano" },
+] as const;
 
 const INITIAL_DISPLAY_COUNT = 30;
 const LOAD_MORE_COUNT = 30;
 
-export default function ToolsPage() {
-  const { t } = useLanguage();
+function ToolsPageContent() {
+  const { t, language: uiLanguage } = useLanguage();
   const router = useRouter();
   const searchParams = useSearchParams();
+  
+  // Get tools from Appwrite
+  const { tools: appwriteTools, loading: toolsLoading } = useTools();
 
   // ============================================================================
   // URL State Management
@@ -26,12 +41,16 @@ export default function ToolsPage() {
 
   const platformsParam = searchParams.get("platform") || "";
   const selectedPlatforms = useMemo(() => {
-    if (!platformsParam) return new Set<string>();
+    if (!platformsParam || platformsParam === "all") return new Set<string>();
     return new Set(platformsParam.split(",").filter(Boolean));
   }, [platformsParam]);
   
-  const sortParam = (searchParams.get("sort") as SortOption) || "featured";
+  const sortParam = (searchParams.get("sort") as SortOption) || "newest";
   const searchQuery = searchParams.get("q") || "";
+  
+  // Language filter - "all" means show all languages, otherwise filter by specific language
+  // On first visit, show user's UI language; once they select "all", keep it as "all"
+  const languageParam = searchParams.get("lang") || "all";
 
   // ============================================================================
   // Local State
@@ -43,6 +62,7 @@ export default function ToolsPage() {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [platformSelection, setPlatformSelection] = useState<Selection>(selectedPlatforms);
   const [sortSelection, setSortSelection] = useState<Selection>(new Set([sortParam]));
+  const [languageSelection, setLanguageSelection] = useState<Selection>(new Set([languageParam]));
   
   const debouncedSearch = useDebounce(search, 300);
 
@@ -55,12 +75,43 @@ export default function ToolsPage() {
     setSortSelection(new Set([sortParam]));
   }, [sortParam]);
 
+  useEffect(() => {
+    setLanguageSelection(new Set([languageParam]));
+  }, [languageParam]);
+
+  // ============================================================================
+  // Convert Appwrite tools to display format
+  // ============================================================================
+  
+  const toolsForDisplay = useMemo(() => {
+    return appwriteTools.map((tool) => ({
+      id: tool.$id,
+      name: tool.name,
+      nameKey: tool.name, // Use name as fallback for translation key
+      description: tool.description,
+      descriptionKey: tool.description, // Use description as fallback
+      platform: tool.platform as Platform,
+      href: `/${tool.platform}/${tool.slug}-${tool.$id}`,
+      icon: tool.icon || "🛠️",
+      dateAdded: tool.$createdAt,
+      language: tool.language || "en",
+      featured: false,
+      popularity: 50,
+      tags: [] as string[], // Empty tags for community tools
+    }));
+  }, [appwriteTools]);
+
   // ============================================================================
   // Filtering & Sorting Logic
   // ============================================================================
 
   const filteredTools = useMemo(() => {
-    let result = [...OFFICIAL_TOOLS];
+    let result = [...toolsForDisplay];
+
+    // Language filter
+    if (languageParam && languageParam !== "all") {
+      result = result.filter((tool) => tool.language === languageParam);
+    }
 
     // Platform filter (multiple selection)
     if (selectedPlatforms.size > 0) {
@@ -73,18 +124,14 @@ export default function ToolsPage() {
       result = result.filter(
         (tool) =>
           tool.name.toLowerCase().includes(q) ||
-          tool.description.toLowerCase().includes(q) ||
-          tool.tags?.some((tag) => tag.toLowerCase().includes(q))
+          tool.description.toLowerCase().includes(q)
       );
     }
 
     // Sort
     switch (sortParam) {
       case "featured":
-        return [
-          ...result.filter((t) => t.featured).sort((a, b) => (b.popularity || 0) - (a.popularity || 0)),
-          ...result.filter((t) => !t.featured).sort((a, b) => (b.popularity || 0) - (a.popularity || 0)),
-        ];
+        return result.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
       case "newest":
         return result.sort((a, b) => (b.dateAdded || "").localeCompare(a.dateAdded || ""));
       case "popular":
@@ -94,7 +141,7 @@ export default function ToolsPage() {
       default:
         return result;
     }
-  }, [selectedPlatforms, debouncedSearch, sortParam]);
+  }, [toolsForDisplay, selectedPlatforms, debouncedSearch, sortParam, languageParam]);
 
   const displayedTools = filteredTools.slice(0, displayedCount);
 
@@ -102,13 +149,15 @@ export default function ToolsPage() {
   // Effects
   // ============================================================================
 
-  // Initial load
+  // Initial load - track both local and tools loading
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsInitialLoad(false);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!toolsLoading) {
+      const timer = setTimeout(() => {
+        setIsInitialLoad(false);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [toolsLoading]);
 
   // ============================================================================
   // Infinite Scroll Effect
@@ -135,7 +184,7 @@ export default function ToolsPage() {
   useEffect(() => {
     setDisplayedCount(INITIAL_DISPLAY_COUNT);
     window.scrollTo(0, 0);
-  }, [selectedPlatforms, debouncedSearch, sortParam]);
+  }, [selectedPlatforms, debouncedSearch, sortParam, languageParam]);
 
   // Sync search input with URL
   useEffect(() => {
@@ -217,7 +266,22 @@ export default function ToolsPage() {
   const handleClearFilters = () => {
     setSearch("");
     setPlatformSelection(new Set());
-    router.push("/tools");
+    setLanguageSelection(new Set(["all"]));
+    router.push(`/tools`);
+  };
+
+  const handleLanguageChange = (selection: Selection) => {
+    setLanguageSelection(selection);
+    const key = selection instanceof Set ? Array.from(selection)[0] as string : languageParam;
+    if (key) {
+      const params = new URLSearchParams(searchParams.toString());
+      if (key === "all") {
+        params.delete("lang");
+      } else {
+        params.set("lang", key);
+      }
+      router.push(`/tools?${params.toString()}`);
+    }
   };
 
   // ============================================================================
@@ -265,32 +329,93 @@ export default function ToolsPage() {
             {/* Filters Row: Platform Selector + Sort */}
             <div className="flex flex-col sm:flex-row gap-4 justify-end">
               {/* Platform Multi-Selector */}
-              <ComboBox>
+              <div>
                 <Label>Plataforma</Label>
-                <ComboBox.InputGroup>
-                  <Input placeholder="Todas las plataformas" />
-                  <ComboBox.Trigger />
-                </ComboBox.InputGroup>
-                <ComboBox.Popover>
-                  <ListBox
-                    selectionMode="multiple"
-                    selectedKeys={platformSelection}
-                    onSelectionChange={handlePlatformChange}
-                  >
-                    {PLATFORMS.map((platform) => {
-                      const metadata = PLATFORM_METADATA[platform];
-                      if (!metadata) return null;
-                      return (
-                        <ListBox.Item key={platform} id={platform} textValue={metadata.name} className="flex gap-2">
-                          <PlatformLogo platform={metadata.name as any} size="sm" className="relative z-10" />
-                           {metadata.name}
+                <Select
+                  selectedKey={
+                    selectedPlatforms.size === 0
+                      ? "all"
+                      : selectedPlatforms.size === 1
+                      ? Array.from(selectedPlatforms)[0]
+                      : "multiple"
+                  }
+                  onSelectionChange={(key) => {
+                    if (key === "all" || key === "multiple" || key === null) {
+                      handlePlatformChange(new Set());
+                    } else {
+                      handlePlatformChange(new Set([key as string]));
+                    }
+                  }}
+                  className="w-full min-w-[200px]"
+                  placeholder="Todas las plataformas"
+                >
+                  <Select.Trigger>
+                    <Select.Value>
+                      {selectedPlatforms.size === 0
+                        ? "Todas las plataformas"
+                        : selectedPlatforms.size === 1
+                        ? PLATFORM_METADATA[Array.from(selectedPlatforms)[0] as Platform]?.name
+                        : `${selectedPlatforms.size} plataformas`}
+                    </Select.Value>
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      <ListBox.Item key="all" id="all" textValue="Todas las plataformas">
+                        <div className="flex items-center gap-2">
+                          <span>Todas las plataformas</span>
+                        </div>
+                        <ListBox.ItemIndicator />
+                      </ListBox.Item>
+                      {PLATFORMS.map((platform) => {
+                        const metadata = PLATFORM_METADATA[platform];
+                        if (!metadata) return null;
+                        return (
+                          <ListBox.Item key={platform} id={platform} textValue={metadata.name}>
+                            <div className="flex items-center gap-2">
+                              <PlatformLogo platform={metadata.name as any} size="sm" />
+                              <span>{metadata.name}</span>
+                            </div>
+                            <ListBox.ItemIndicator />
+                          </ListBox.Item>
+                        );
+                      })}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
+              </div>
+
+              {/* Language Selector */}
+              <div>
+                <Label>{t("toolsPage.filters.language") || "Idioma"}</Label>
+                <Select
+                  selectedKey={languageParam}
+                  onSelectionChange={(key) => {
+                    if (key) {
+                      handleLanguageChange(new Set([key as string]));
+                    }
+                  }}
+                  className="w-full min-w-[180px]"
+                  placeholder={t("toolsPage.filters.allLanguages") || "Todos los idiomas"}
+                >
+                  <Select.Trigger>
+                    <Select.Value>
+                      {TOOL_LANGUAGES.find(l => l.value === languageParam)?.label || "Todos los idiomas"}
+                    </Select.Value>
+                    <Select.Indicator />
+                  </Select.Trigger>
+                  <Select.Popover>
+                    <ListBox>
+                      {TOOL_LANGUAGES.map((lang) => (
+                        <ListBox.Item key={lang.value} id={lang.value} textValue={lang.label}>
+                          <span>{lang.label}</span>
                           <ListBox.ItemIndicator />
                         </ListBox.Item>
-                      );
-                    })}
-                  </ListBox>
-                </ComboBox.Popover>
-              </ComboBox>
+                      ))}
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
+              </div>
 
               {/* Sort Selector */}
               <Select placeholder="Seleccionar orden" defaultSelectedKey="featured">
@@ -324,76 +449,24 @@ export default function ToolsPage() {
                 </Select.Popover>
               </Select>
             </div>
-
-            {/* Active Filters Summary */}
-            {(selectedPlatforms.size > 0 || debouncedSearch) && (
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm text-muted">Filtros activos:</span>
-                {Array.from(selectedPlatforms).map((platform) => {
-                  const metadata = PLATFORM_METADATA[platform as Platform];
-                  if (!metadata) return null;
-                  return (
-                    <div key={platform} className="flex items-center gap-1.5 px-3 py-1.5 bg-accent-soft text-accent rounded-full text-sm font-medium">
-                      <span className="capitalize">
-                        <PlatformLogo platform={metadata.name as any} size="sm" className="relative z-10" />
-                         {metadata.name}
-                      </span>
-                      <button
-                        onClick={() => {
-                          const newPlatforms = new Set(selectedPlatforms);
-                          newPlatforms.delete(platform);
-                          handlePlatformChange(newPlatforms);
-                        }}
-                        className="hover:text-accent-hover transition-colors"
-                        aria-label={`Quitar filtro de ${metadata.name}`}
-                      >
-                        ✕
-                      </button>
-                    </div>
-                  );
-                })}
-                {debouncedSearch && (
-                  <div className="flex items-center gap-1.5 px-3 py-1.5 bg-accent-soft text-accent rounded-full text-sm font-medium">
-                    <span>"{debouncedSearch}"</span>
-                    <button
-                      onClick={() => handleSearchChange("")}
-                      className="hover:text-accent-hover transition-colors"
-                      aria-label="Quitar búsqueda"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                )}
-                <button
-                  onClick={handleClearFilters}
-                  className="text-sm text-accent hover:text-accent-hover font-medium transition-colors"
-                >
-                  Limpiar todo
-                </button>
-              </div>
-            )}
           </div>
         </div>
 
         {/* Tools Grid */}
-        {isInitialLoad ? (
+        {isInitialLoad || toolsLoading ? (
           /* Loading Skeleton */
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {Array.from({ length: 6 }).map((_, i) => (
+          <div className="grid grid-cols-1 gap-4 mb-8">
+            {Array.from({ length: 12 }).map((_, i) => (
               <div
                 key={i}
-                className="bg-surface border border-border rounded-xl p-6 animate-pulse"
+                className="bg-surface border border-border rounded-xl p-3 animate-pulse"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-muted/20 rounded-full"></div>
-                  <div className="flex-1">
-                    <div className="h-4 bg-muted/20 rounded w-3/4 mb-2"></div>
-                    <div className="h-3 bg-muted/20 rounded w-1/2"></div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-muted/20 rounded-full shrink-0"></div>
+                  <div className="flex-1 min-w-0">
+                    <div className="h-4 bg-muted/20 rounded w-1/3 mb-1"></div>
+                    <div className="h-3 bg-muted/20 rounded w-2/3"></div>
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="h-3 bg-muted/20 rounded"></div>
-                  <div className="h-3 bg-muted/20 rounded w-5/6"></div>
                 </div>
               </div>
             ))}
@@ -401,7 +474,7 @@ export default function ToolsPage() {
         ) : filteredTools.length > 0 ? (
           <>
             <div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+              className="grid grid-cols-1 gap-4 mb-8"
               role="feed"
               aria-label="Tools feed"
               aria-busy={isLoading}
@@ -417,7 +490,6 @@ export default function ToolsPage() {
                   <ToolCard 
                     tool={tool} 
                     showActionButton={false} 
-                    variant="minimal" 
                   />
                 </div>
               ))}
@@ -481,5 +553,42 @@ export default function ToolsPage() {
         )}
       </div>
     </div>
+  );
+}
+
+function ToolsPageLoading() {
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="mb-8">
+          <div className="h-12 bg-muted/20 rounded w-1/3 mb-4 animate-pulse"></div>
+          <div className="h-6 bg-muted/20 rounded w-2/3 animate-pulse"></div>
+        </div>
+        <div className="grid grid-cols-1 gap-4">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div
+              key={i}
+              className="bg-surface border border-border rounded-xl p-3 animate-pulse"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-muted/20 rounded-full shrink-0"></div>
+                <div className="flex-1 min-w-0">
+                  <div className="h-4 bg-muted/20 rounded w-1/3 mb-1"></div>
+                  <div className="h-3 bg-muted/20 rounded w-2/3"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ToolsPage() {
+  return (
+    <Suspense fallback={<ToolsPageLoading />}>
+      <ToolsPageContent />
+    </Suspense>
   );
 }
