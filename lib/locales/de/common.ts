@@ -165,10 +165,12 @@ export const common = {
     // Auth
     "auth.login.title": "Anmelden",
     "auth.login.google": "Mit Google anmelden",
+    "auth.login.discord": "Mit Discord anmelden",
     "auth.login.noAccount": "Sie haben noch kein Konto?",
     "auth.login.registerLink": "Registrieren",
     "auth.register.title": "Registrieren",
     "auth.register.google": "Mit Google registrieren",
+    "auth.register.discord": "Mit Discord registrieren",
     "auth.register.hasAccount": "Sie haben bereits ein Konto?",
     "auth.register.loginLink": "Anmelden",
 

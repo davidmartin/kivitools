@@ -9,6 +9,7 @@ interface AuthContextType {
     loading: boolean;
     login: () => void; // We'll use OAuth or redirect to login page
     loginWithGoogle: () => void;
+    loginWithDiscord: () => void;
     logout: () => Promise<void>;
     checkSession: () => Promise<void>;
 }
@@ -51,6 +52,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     };
 
+    const loginWithDiscord = () => {
+        try {
+            account.createOAuth2Session(
+                OAuthProvider.Discord,
+                `${window.location.origin}/`, // success (redirect to home)
+                `${window.location.origin}/login` // failure (redirect back to login)
+            );
+        } catch (error) {
+            console.error("Discord login failed", error);
+        }
+    };
+
     const logout = async () => {
         try {
             await account.deleteSession("current");
@@ -62,7 +75,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
 
     return (
-        <AuthContext.Provider value={{ user, loading, login, loginWithGoogle, logout, checkSession }}>
+        <AuthContext.Provider value={{ user, loading, login, loginWithGoogle, loginWithDiscord, logout, checkSession }}>
             {children}
         </AuthContext.Provider>
     );

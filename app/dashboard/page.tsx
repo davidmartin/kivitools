@@ -9,6 +9,8 @@ import { Query } from "appwrite";
 import { Button, Card, Chip } from "@heroui/react";
 import Link from "next/link";
 
+import { Copy, Check, Key } from "lucide-react";
+
 interface UserTool {
     $id: string;
     name: string;
@@ -88,11 +90,19 @@ export default function DashboardPage() {
                     <h1 className="text-3xl font-bold mb-2">{t("dashboard.title")}</h1>
                     <p className="text-muted">{t("dashboard.subtitle")}</p>
                 </div>
-                <Link href="/builder">
-                    <Button variant="primary" size="lg">
-                        {t("dashboard.createTool")}
-                    </Button>
-                </Link>
+                <div className="flex gap-3">
+                    <Link href="/dashboard/api-access">
+                        <Button variant="secondary" size="lg">
+                            <Key className="w-4 h-4 mr-2" />
+                            API
+                        </Button>
+                    </Link>
+                    <Link href="/builder">
+                        <Button variant="primary" size="lg">
+                            {t("dashboard.createTool")}
+                        </Button>
+                    </Link>
+                </div>
             </div>
 
             {tools.length === 0 ? (
