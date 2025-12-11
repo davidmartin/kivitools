@@ -207,6 +207,10 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                 );
             
             case "select":
+                // Handle options as either comma-separated string or array
+                const selectOptions = Array.isArray(input.options) 
+                    ? input.options 
+                    : (typeof input.options === "string" ? input.options.split(",") : []);
                 return (
                     <Select
                         selectedKey={formValues[input.id] || ""}
@@ -221,9 +225,9 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                         </Select.Trigger>
                         <Select.Popover>
                             <ListBox>
-                                {input.options?.split(",").map(opt => (
-                                    <ListBox.Item key={opt.trim()} id={opt.trim()} textValue={opt.trim()}>
-                                        {opt.trim()}
+                                {selectOptions.map(opt => (
+                                    <ListBox.Item key={String(opt).trim()} id={String(opt).trim()} textValue={String(opt).trim()}>
+                                        {String(opt).trim()}
                                         <ListBox.ItemIndicator />
                                     </ListBox.Item>
                                 ))}
