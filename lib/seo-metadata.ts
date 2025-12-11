@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon" | "whatsapp" | "mastodon" | "shopify" | "vimeo" | "wordpress" | "ai-art" | "career" | "seo" | "marketing";
+type Platform = "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "linkedin" | "forocoches" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon" | "whatsapp" | "mastodon" | "shopify" | "vimeo" | "wordpress" | "ai-art" | "career" | "seo" | "marketing" | "content" | "presentation" | "voice";
 
 interface GenerateToolMetadataProps {
   platform: Platform;
@@ -50,6 +50,9 @@ export const platformColors: Record<Platform, string> = {
   career: "#3B82F6",
   seo: "#10B981",
   marketing: "#F97316",
+  content: "#14B8A6",
+  presentation: "#F59E0B",
+  voice: "#8B5CF6",
 };
 
 const platformNames: Record<Platform, string> = {
@@ -90,6 +93,9 @@ const platformNames: Record<Platform, string> = {
   career: "Career",
   seo: "SEO",
   marketing: "Marketing",
+  content: "Content Writing",
+  presentation: "Presentations",
+  voice: "Voice & Podcast",
 };
 
 /**

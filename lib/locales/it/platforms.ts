@@ -136,4 +136,22 @@ export const platforms = {
     "marketingEmailSubjectLine.title": "Generatore di Oggetti Email",
     "marketingEmailSubjectLine.description": "Crea righe oggetto che migliorano i tassi di apertura ed evitano la cartella spam.",
 
+    // Content Writing
+    "content.page.title": "Strumenti AI Gratuiti per Scrittura Contenuti",
+    "content.page.description": "Post di blog così buoni che Google penserà che sei uno scrittore professionista (plot twist: sei solo furbo con l'AI).",
+    "content.info.title": "Cosa sono gli Strumenti di Scrittura?",
+    "content.info.description": "I contenuti di qualità sono re. I nostri strumenti AI ti aiutano a scrivere intro di blog accattivanti, schemi di articoli e riscrivere paragrafi che tengono i lettori coinvolti.",
+
+    // Presentation
+    "presentation.page.title": "Strumenti AI Gratuiti per Presentazioni",
+    "presentation.page.description": "Slide così curate che il tuo pubblico dimenticherà che le hai fatte 20 minuti prima del meeting.",
+    "presentation.info.title": "Cosa sono gli Strumenti di Presentazione?",
+    "presentation.info.description": "Le grandi presentazioni vincono affari e impressionano il pubblico. I nostri strumenti AI ti aiutano a creare contenuti slide convincenti, schemi e pitch deck che ottengono risultati.",
+
+    // Voice & Podcast
+    "voice.page.title": "Strumenti AI Gratuiti per Voice e Podcast",
+    "voice.page.description": "Script podcast così coinvolgenti che i tuoi ascoltatori cancelleranno Spotify Premium solo per ascoltarti (ok, forse no).",
+    "voice.info.title": "Cosa sono gli Strumenti Voice e Podcast?",
+    "voice.info.description": "I contenuti audio stanno esplodendo. I nostri strumenti AI ti aiutano a creare intro podcast, schemi episodi e script voiceover che catturano il tuo pubblico.",
+
 };

@@ -136,4 +136,22 @@ export const platforms = {
     "marketingEmailSubjectLine.title": "E-Mail-Betreff Generator",
     "marketingEmailSubjectLine.description": "Erstelle Betreffzeilen, die Öffnungsraten verbessern und den Spam-Ordner vermeiden.",
 
+    // Content Writing
+    "content.page.title": "Kostenlose KI Content-Writing-Tools",
+    "content.page.description": "Blogposts so gut, dass Google denkt, du bist ein professioneller Autor (Plot Twist: du bist nur clever mit KI).",
+    "content.info.title": "Was sind Content-Writing-Tools?",
+    "content.info.description": "Qualitätsinhalt ist König. Unsere KI-Tools helfen dir, fesselnde Blog-Intros, Artikel-Gliederungen zu schreiben und Absätze umzuschreiben, die Leser von Anfang bis Ende fesseln.",
+
+    // Presentation
+    "presentation.page.title": "Kostenlose KI Präsentations-Tools",
+    "presentation.page.description": "Slides so poliert, dass dein Publikum vergisst, dass du sie 20 Minuten vor dem Meeting gemacht hast.",
+    "presentation.info.title": "Was sind Präsentations-Tools?",
+    "presentation.info.description": "Großartige Präsentationen gewinnen Deals und beeindrucken Publikum. Unsere KI-Tools helfen dir, überzeugenden Slide-Content, Gliederungen und Pitch Decks zu erstellen, die Ergebnisse bringen.",
+
+    // Voice & Podcast
+    "voice.page.title": "Kostenlose KI Voice- und Podcast-Tools",
+    "voice.page.description": "Podcast-Scripts so fesselnd, dass deine Hörer ihr Spotify Premium kündigen nur um dich zu hören (okay, vielleicht nicht).",
+    "voice.info.title": "Was sind Voice- und Podcast-Tools?",
+    "voice.info.description": "Audio-Content boomt. Unsere KI-Tools helfen dir, Podcast-Intros, Episoden-Gliederungen und Voiceover-Scripts zu erstellen, die dein Publikum fesseln.",
+
 };

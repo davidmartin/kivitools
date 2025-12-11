@@ -136,4 +136,22 @@ export const platforms = {
     "marketingEmailSubjectLine.title": "Gerador de Assuntos de Email",
     "marketingEmailSubjectLine.description": "Crie linhas de assunto que melhoram as taxas de abertura e evitam a pasta de spam.",
 
+    // Content Writing
+    "content.page.title": "Ferramentas Grátis de IA para Redação de Conteúdo",
+    "content.page.description": "Posts de blog tão bons que o Google vai pensar que você é escritor profissional (plot twist: você só é esperto com IA).",
+    "content.info.title": "O que são Ferramentas de Redação?",
+    "content.info.description": "Conteúdo de qualidade é rei. Nossas ferramentas de IA ajudam você a escrever intros de blog atraentes, esquemas de artigos e reescrever parágrafos que mantêm os leitores engajados.",
+
+    // Presentation
+    "presentation.page.title": "Ferramentas Grátis de IA para Apresentações",
+    "presentation.page.description": "Slides tão polidos que sua audiência vai esquecer que você os fez 20 minutos antes da reunião.",
+    "presentation.info.title": "O que são Ferramentas de Apresentação?",
+    "presentation.info.description": "Ótimas apresentações fecham negócios e impressionam audiências. Nossas ferramentas de IA ajudam você a criar conteúdo de slides convincente, esquemas e pitch decks que conseguem resultados.",
+
+    // Voice & Podcast
+    "voice.page.title": "Ferramentas Grátis de IA para Voz e Podcast",
+    "voice.page.description": "Scripts de podcast tão envolventes que seus ouvintes vão cancelar o Spotify Premium só para te ouvir (ok, talvez não).",
+    "voice.info.title": "O que são Ferramentas de Voz e Podcast?",
+    "voice.info.description": "Conteúdo de áudio está bombando. Nossas ferramentas de IA ajudam você a criar intros de podcast, esquemas de episódios e scripts de voz que cativam sua audiência.",
+
 };

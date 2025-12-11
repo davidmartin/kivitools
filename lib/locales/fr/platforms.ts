@@ -136,4 +136,22 @@ export const platforms = {
     "marketingEmailSubjectLine.title": "Générateur d'Objets d'Email",
     "marketingEmailSubjectLine.description": "Crée des lignes d'objet qui améliorent les taux d'ouverture et évitent le dossier spam.",
 
+    // Content Writing
+    "content.page.title": "Outils Gratuits IA pour Rédaction de Contenu",
+    "content.page.description": "Des posts de blog tellement bons que Google va penser que t'es un écrivain pro (plot twist: t'es juste malin avec l'IA).",
+    "content.info.title": "C'est quoi les Outils de Rédaction ?",
+    "content.info.description": "Le contenu de qualité est roi. Nos outils IA t'aident à écrire des intros de blog accrocheuses, des plans d'articles et réécrire des paragraphes qui gardent les lecteurs captivés.",
+
+    // Presentation
+    "presentation.page.title": "Outils Gratuits IA pour Présentations",
+    "presentation.page.description": "Des slides tellement polies que ton audience va oublier que tu les as faites 20 minutes avant la réunion.",
+    "presentation.info.title": "C'est quoi les Outils de Présentation ?",
+    "presentation.info.description": "Les grandes présentations gagnent des deals et impressionnent les audiences. Nos outils IA t'aident à créer du contenu de slides convaincant, des plans et des pitch decks qui obtiennent des résultats.",
+
+    // Voice & Podcast
+    "voice.page.title": "Outils Gratuits IA pour Voix et Podcast",
+    "voice.page.description": "Des scripts de podcast tellement captivants que tes auditeurs vont annuler leur Spotify Premium juste pour t'écouter (ok, peut-être pas).",
+    "voice.info.title": "C'est quoi les Outils de Voix et Podcast ?",
+    "voice.info.description": "Le contenu audio explose. Nos outils IA t'aident à créer des intros de podcast, des plans d'épisodes et des scripts de voix off qui captivent ton audience.",
+
 };

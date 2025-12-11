@@ -16,7 +16,7 @@ const sizeConfig = {
 
 export default function PlatformLogo({ platform, size = "md", className = "" }: PlatformLogoProps) {
   const config = sizeConfig[size];
-  const needsInvert = platform === "twitter" || platform === "suno" || platform === "elevenlabs" || platform === "amazon" || platform === "threads" || platform === "kick" || platform === "bereal" || platform === "podcast" || platform === "email" || platform === "medium" || platform === "onlyfans" || platform === "dating" || platform === "ai-art" || platform === "career" || platform === "seo" || platform === "marketing";
+  const needsInvert = platform === "twitter" || platform === "suno" || platform === "elevenlabs" || platform === "amazon" || platform === "threads" || platform === "kick" || platform === "bereal" || platform === "podcast" || platform === "email" || platform === "medium" || platform === "onlyfans" || platform === "dating" || platform === "ai-art" || platform === "career" || platform === "seo" || platform === "marketing" || platform === "content" || platform === "presentation" || platform === "voice";
 
   return (
     <div

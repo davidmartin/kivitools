@@ -136,4 +136,22 @@ export const platforms = {
     "marketingEmailSubjectLine.title": "Generador de Asuntos de Email",
     "marketingEmailSubjectLine.description": "Crea líneas de asunto que mejoran las tasas de apertura y evitan la carpeta de spam.",
 
+    // Content Writing
+    "content.page.title": "Herramientas IA Gratis para Redacción de Contenido",
+    "content.page.description": "Posts de blog tan buenos que Google pensará que eres escritor profesional (plot twist: solo eres listo con la IA).",
+    "content.info.title": "¿Qué son las Herramientas de Redacción?",
+    "content.info.description": "El contenido de calidad es el rey. Nuestras herramientas de IA te ayudan a escribir intros de blog atractivas, esquemas de artículos y reescribir párrafos que mantienen a los lectores enganchados.",
+
+    // Presentation
+    "presentation.page.title": "Herramientas IA Gratis para Presentaciones",
+    "presentation.page.description": "Diapositivas tan pulidas que tu audiencia olvidará que las hiciste 20 minutos antes de la reunión.",
+    "presentation.info.title": "¿Qué son las Herramientas de Presentación?",
+    "presentation.info.description": "Las grandes presentaciones ganan negocios e impresionan audiencias. Nuestras herramientas de IA te ayudan a crear contenido de slides convincente, esquemas y pitch decks que consiguen resultados.",
+
+    // Voice & Podcast
+    "voice.page.title": "Herramientas IA Gratis para Voz y Podcast",
+    "voice.page.description": "Scripts de podcast tan atrapantes que tus oyentes cancelarán su Spotify Premium solo por escucharte (bueno, quizás no).",
+    "voice.info.title": "¿Qué son las Herramientas de Voz y Podcast?",
+    "voice.info.description": "El contenido de audio está en auge. Nuestras herramientas de IA te ayudan a crear intros de podcast, esquemas de episodios y scripts de voz en off que cautivan a tu audiencia.",
+
 };

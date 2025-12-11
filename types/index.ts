@@ -553,7 +553,10 @@ export type Platform =
     | "ai-art"
     | "career"
     | "seo"
-    | "marketing";
+    | "marketing"
+    | "content"
+    | "presentation"
+    | "voice";
 
 // Platform metadata for filtering UI
 export interface PlatformInfo {

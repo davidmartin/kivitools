@@ -136,4 +136,22 @@ export const platforms = {
     "marketingEmailSubjectLine.title": "Email Subject Line Generator",
     "marketingEmailSubjectLine.description": "Craft subject lines that boost open rates and avoid the spam folder.",
 
+    // Content Writing
+    "content.page.title": "Free AI Content Writing Tools",
+    "content.page.description": "Blog posts so good Google will think you're a professional writer (plot twist: you're just smart with AI).",
+    "content.info.title": "What are Content Writing Tools?",
+    "content.info.description": "Quality content is king. Our AI tools help you write engaging blog intros, article outlines, and rewrite paragraphs that keep readers hooked from start to finish.",
+
+    // Presentation
+    "presentation.page.title": "Free AI Presentation Tools",
+    "presentation.page.description": "Slides so polished your audience will forget you made them 20 minutes before the meeting.",
+    "presentation.info.title": "What are Presentation Tools?",
+    "presentation.info.description": "Great presentations win deals and impress audiences. Our AI tools help you create compelling slide content, outlines, and pitch decks that get results.",
+
+    // Voice & Podcast
+    "voice.page.title": "Free AI Voice & Podcast Tools",
+    "voice.page.description": "Podcast scripts so engaging your listeners will cancel their Spotify Premium just to hear you (okay, maybe not).",
+    "voice.info.title": "What are Voice & Podcast Tools?",
+    "voice.info.description": "Audio content is booming. Our AI tools help you create podcast intros, episode outlines, and voiceover scripts that captivate your audience.",
+
 };
