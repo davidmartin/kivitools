@@ -139,6 +139,8 @@ export const common = {
     "common.error": "Ops! Algo deu errado (não é sua culpa, provavelmente)",
     "common.required": "Este campo é obrigatório (sim, sabemos, chato)",
     "common.copied": "Copiado! 🎉 Agora vai viralizar!",
+    "common.result": "Resultado",
+    "common.copyResult": "Copiar Resultado",
     "common.copyFailed": "Falha ao copiar (tenta Ctrl+C à moda antiga)",
     "common.explore": "Explorar",
     "common.communityTools": "Ferramentas da Comunidade",

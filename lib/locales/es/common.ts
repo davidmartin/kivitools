@@ -55,6 +55,8 @@ export const common = {
     "common.generating": "Generando...",
     "common.copy": "Copiar",
     "common.copied": "¡Copiado!",
+    "common.result": "Resultado",
+    "common.copyResult": "Copiar Resultado",
     "common.error": "Error",
 
     // Custom Tools
