@@ -283,16 +283,16 @@ const INPUT_TRANSLATIONS = {
 
 async function updateToolInputs() {
     console.log('🔧 Starting Career Tools Input Fix...\n');
-    
+
     let updatedCount = 0;
     let errorCount = 0;
-    
+
     for (const [slug, config] of Object.entries(TOOL_INPUTS)) {
         console.log(`\n📝 Processing: ${slug}`);
-        
+
         // Get all language versions of this tool
         const languages = ['en', 'es', 'pt', 'fr', 'de', 'it'];
-        
+
         for (const lang of languages) {
             try {
                 // Find the tool document
@@ -301,14 +301,14 @@ async function updateToolInputs() {
                     Query.equal('language', lang),
                     Query.limit(1)
                 ]);
-                
+
                 if (result.documents.length === 0) {
                     console.log(`  ⚠️ [${lang}] Tool not found`);
                     continue;
                 }
-                
+
                 const doc = result.documents[0];
-                
+
                 // Get the correct inputs for this language
                 let inputs;
                 if (lang === 'en') {
@@ -319,34 +319,34 @@ async function updateToolInputs() {
                     // Fall back to English if no translation available
                     inputs = config.inputs;
                 }
-                
+
                 // Update the document
                 const updateData = {
                     inputs: JSON.stringify(inputs)
                 };
-                
+
                 // Add prompt template only for English (or if it should be the same)
                 if (lang === 'en' && config.prompt_template) {
                     updateData.prompt_template = config.prompt_template;
                 }
-                
+
                 await databases.updateDocument(
                     DATABASE_ID,
                     COLLECTION_ID,
                     doc.$id,
                     updateData
                 );
-                
+
                 console.log(`  ✅ [${lang}] Updated successfully`);
                 updatedCount++;
-                
+
             } catch (err) {
                 console.log(`  ❌ [${lang}] Error: ${err.message}`);
                 errorCount++;
             }
         }
     }
-    
+
     console.log('\n' + '='.repeat(50));
     console.log(`✅ Updated: ${updatedCount} documents`);
     console.log(`❌ Errors: ${errorCount}`);

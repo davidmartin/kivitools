@@ -132,13 +132,13 @@ const SPANISH_INPUTS = {
 
 async function updateToolInputs() {
     console.log('🔧 Starting Career Tools Input Fix...\n');
-    
+
     let updatedCount = 0;
     let errorCount = 0;
-    
+
     for (const [slug, config] of Object.entries(TOOL_INPUTS)) {
         console.log(`\n📝 Processing: ${slug}`);
-        
+
         // Process English first
         try {
             const result = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
@@ -146,10 +146,10 @@ async function updateToolInputs() {
                 Query.equal('language', 'en'),
                 Query.limit(1)
             ]);
-            
+
             if (result.documents.length > 0) {
                 const doc = result.documents[0];
-                
+
                 await databases.updateDocument(
                     DATABASE_ID,
                     COLLECTION_ID,
@@ -159,7 +159,7 @@ async function updateToolInputs() {
                         prompt_template: config.prompt_template
                     }
                 );
-                
+
                 console.log(`  ✅ [en] Updated successfully`);
                 updatedCount++;
             } else {
@@ -169,7 +169,7 @@ async function updateToolInputs() {
             console.log(`  ❌ [en] Error: ${err.message}`);
             errorCount++;
         }
-        
+
         // Process Spanish
         if (SPANISH_INPUTS[slug]) {
             try {
@@ -178,10 +178,10 @@ async function updateToolInputs() {
                     Query.equal('language', 'es'),
                     Query.limit(1)
                 ]);
-                
+
                 if (result.documents.length > 0) {
                     const doc = result.documents[0];
-                    
+
                     await databases.updateDocument(
                         DATABASE_ID,
                         COLLECTION_ID,
@@ -190,7 +190,7 @@ async function updateToolInputs() {
                             inputs: JSON.stringify(SPANISH_INPUTS[slug])
                         }
                     );
-                    
+
                     console.log(`  ✅ [es] Updated successfully`);
                     updatedCount++;
                 } else {
@@ -202,7 +202,7 @@ async function updateToolInputs() {
             }
         }
     }
-    
+
     console.log('\n' + '='.repeat(50));
     console.log(`✅ Updated: ${updatedCount} documents`);
     console.log(`❌ Errors: ${errorCount}`);

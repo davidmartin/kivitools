@@ -308,7 +308,9 @@ function ToolsPageContent() {
                 {filteredTools.length}
               </div>
               <div className="text-sm text-muted">
-                {filteredTools.length === 1 ? "herramienta disponible" : "herramientas disponibles"}
+                {filteredTools.length === 1 
+                  ? t("toolsPage.toolsCountSingular").replace("{count}", "").trim()
+                  : t("toolsPage.toolsCount").replace("{count}", "").trim()}
               </div>
             </div>
           </div>
@@ -322,7 +324,7 @@ function ToolsPageContent() {
                 type="search"
                 value={search}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                placeholder="Buscar herramientas por nombre o descripción..."
+                placeholder={t("toolsPage.filters.searchPlaceholder")}
                 className="w-full pl-12 pr-4 py-3.5 text-sm text-foreground border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/50 placeholder:text-muted/70 transition-all input"
               />
             </div>
@@ -331,7 +333,7 @@ function ToolsPageContent() {
             <div className="flex flex-col sm:flex-row gap-4 justify-end">
               {/* Platform Multi-Selector */}
               <div>
-                <Label>Plataforma</Label>
+                <Label>{t("toolsPage.filters.platform")}</Label>
                 <Select
                   selectedKey={
                     selectedPlatforms.size === 0
@@ -348,23 +350,23 @@ function ToolsPageContent() {
                     }
                   }}
                   className="w-full min-w-[200px]"
-                  placeholder="Todas las plataformas"
+                  placeholder={t("toolsPage.filters.all")}
                 >
                   <Select.Trigger>
                     <Select.Value>
                       {selectedPlatforms.size === 0
-                        ? "Todas las plataformas"
+                        ? t("toolsPage.filters.all")
                         : selectedPlatforms.size === 1
                         ? PLATFORM_METADATA[Array.from(selectedPlatforms)[0] as Platform]?.name
-                        : `${selectedPlatforms.size} plataformas`}
+                        : `${selectedPlatforms.size} ${t("toolsPage.filters.platform").toLowerCase()}`}
                     </Select.Value>
                     <Select.Indicator />
                   </Select.Trigger>
                   <Select.Popover>
                     <ListBox>
-                      <ListBox.Item key="all" id="all" textValue="Todas las plataformas">
+                      <ListBox.Item key="all" id="all" textValue={t("toolsPage.filters.all")}>
                         <div className="flex items-center gap-2">
-                          <span>Todas las plataformas</span>
+                          <span>{t("toolsPage.filters.all")}</span>
                         </div>
                         <ListBox.ItemIndicator />
                       </ListBox.Item>
@@ -388,7 +390,7 @@ function ToolsPageContent() {
 
               {/* Language Selector */}
               <div>
-                <Label>{t("toolsPage.filters.language") || "Idioma"}</Label>
+                <Label>{t("toolsPage.filters.language")}</Label>
                 <Select
                   selectedKey={languageParam}
                   onSelectionChange={(key) => {
@@ -397,11 +399,11 @@ function ToolsPageContent() {
                     }
                   }}
                   className="w-full min-w-[180px]"
-                  placeholder={t("toolsPage.filters.allLanguages") || "Todos los idiomas"}
+                  placeholder={t("toolsPage.filters.allLanguages")}
                 >
                   <Select.Trigger>
                     <Select.Value>
-                      {TOOL_LANGUAGES.find(l => l.value === languageParam)?.label || "Todos los idiomas"}
+                      {TOOL_LANGUAGES.find(l => l.value === languageParam)?.label || t("toolsPage.filters.allLanguages")}
                     </Select.Value>
                     <Select.Indicator />
                   </Select.Trigger>
@@ -419,8 +421,8 @@ function ToolsPageContent() {
               </div>
 
               {/* Sort Selector */}
-              <Select placeholder="Seleccionar orden" defaultSelectedKey="featured">
-                <Label>Ordenar</Label>
+              <Select placeholder={t("toolsPage.sort.label")} defaultSelectedKey="featured">
+                <Label>{t("toolsPage.sort.label")}</Label>
                 <Select.Trigger>
                   <Select.Value />
                   <Select.Indicator />
@@ -430,16 +432,16 @@ function ToolsPageContent() {
                     selectedKeys={sortSelection}
                     onSelectionChange={handleSortChange}
                   >
-                    <ListBox.Item key="featured" id="featured" textValue="Destacadas">
-                      Destacadas
+                    <ListBox.Item key="featured" id="featured" textValue={t("toolsPage.sort.featured")}>
+                      {t("toolsPage.sort.featured")}
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
-                    <ListBox.Item key="newest" id="newest" textValue="Más recientes">
-                      Más recientes
+                    <ListBox.Item key="newest" id="newest" textValue={t("toolsPage.sort.newest")}>
+                      {t("toolsPage.sort.newest")}
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
-                    <ListBox.Item key="popular" id="popular" textValue="Más populares">
-                      Más populares
+                    <ListBox.Item key="popular" id="popular" textValue={t("toolsPage.sort.popular")}>
+                      {t("toolsPage.sort.popular")}
                       <ListBox.ItemIndicator />
                     </ListBox.Item>
                     <ListBox.Item key="a-z" id="a-z" textValue="A-Z">
@@ -503,9 +505,9 @@ function ToolsPageContent() {
               aria-atomic="true"
               className="sr-only"
             >
-              {isLoading && "Cargando más herramientas..."}
+              {isLoading && t("toolsPage.loadingMore")}
               {!isLoading && displayedCount > INITIAL_DISPLAY_COUNT && 
-                `Cargadas ${displayedCount} de ${filteredTools.length} herramientas`
+                t("toolsPage.loadedCount").replace("{count}", String(displayedCount)).replace("{total}", String(filteredTools.length))
               }
             </div>
 
@@ -514,7 +516,7 @@ function ToolsPageContent() {
               <div className="text-center py-8">
                 <div className="inline-flex items-center gap-2 px-6 py-3 bg-surface border border-border rounded-full">
                   <div className="w-4 h-4 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
-                  <span className="text-sm text-muted">Cargando más herramientas...</span>
+                  <span className="text-sm text-muted">{t("toolsPage.loadingMore")}</span>
                 </div>
               </div>
             )}
@@ -525,10 +527,10 @@ function ToolsPageContent() {
                 <div className="inline-flex items-center gap-3 px-8 py-4 bg-success-soft text-success-soft-foreground rounded-2xl shadow-sm">
                   <div className="text-left">
                     <div className="font-bold">
-                      ¡Has visto todas las herramientas!
+                      {t("toolsPage.endOfFeedTitle")}
                     </div>
                     <div className="text-sm opacity-80">
-                      {filteredTools.length} herramientas en total
+                      {t("toolsPage.toolsCount").replace("{count}", String(filteredTools.length))}
                     </div>
                   </div>
                 </div>
@@ -539,16 +541,16 @@ function ToolsPageContent() {
           /* No Results State */
           <div className="text-center py-20">
             <h3 className="text-3xl font-bold text-foreground mb-3">
-              No se encontraron herramientas
+              {t("toolsPage.noResults")}
             </h3>
             <p className="text-lg text-muted mb-8 max-w-md mx-auto">
-              Intenta seleccionar otra plataforma o borra los filtros activos
+              {t("toolsPage.noResultsDesc")}
             </p>
             <button
               onClick={() => router.push("/tools")}
               className="px-8 py-4 bg-accent text-white rounded-xl font-semibold hover:bg-accent-hover transition-all hover:scale-105 shadow-lg"
             >
-              Ver todas las herramientas
+              {t("toolsPage.clearFilters")}
             </button>
           </div>
         )}

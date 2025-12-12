@@ -858,6 +858,94 @@ Each tool is stored with this structure (one document per language):
 }
 ```
 
+#### ⚠️ CRITICAL: Tool Quality Requirements
+
+**EVERY tool MUST have these 3 elements properly configured:**
+
+1. **Description** - Must be:
+
+   - Specific to the tool's actual purpose (NOT generic like "Generate amazing X for Y with AI")
+   - Engaging and fun (following the tone guidelines)
+   - Descriptive of what the tool actually does
+   - ❌ BAD: "Generate amazing lyric generator for Suno with AI. Free and easy to use."
+   - ✅ GOOD: "Create song lyrics that'll make listeners hit repeat until their thumbs hurt. From heartbreak ballads to club bangers."
+
+2. **Inputs** - Must be:
+
+   - Specific to what the tool generates (NOT generic topic/tone for everything)
+   - Relevant to the platform and tool type
+   - Example for Suno Lyric Generator:
+     - ❌ BAD: `[{"id":"topic","label":"Topic"},{"id":"tone","label":"Tone"}]`
+     - ✅ GOOD: `[{"id":"genre","label":"Music Genre","type":"select","options":"Pop,Rock,Hip-Hop,R&B,Country,Electronic,Jazz,Folk"},{"id":"mood","label":"Song Mood","type":"select","options":"Happy,Sad,Romantic,Angry,Chill,Energetic,Nostalgic"},{"id":"theme","label":"Song Theme","type":"text","placeholder":"Love, heartbreak, party, life journey..."},{"id":"language","label":"Lyrics Language","type":"language"}]`
+
+3. **Prompt Template** - Must be:
+   - Detailed and specific to the tool's purpose
+   - Reference ALL inputs provided by the user
+   - Include clear instructions for the AI output format
+   - ❌ BAD: "You are an expert Suno content creator. Generate high-quality lyric generator based on the user's input."
+   - ✅ GOOD: "You are a professional songwriter and lyricist. Create original song lyrics based on:\n\n- Genre: {genre}\n- Mood: {mood}\n- Theme: {theme}\n- Language: {language}\n\nGenerate complete lyrics including:\n1. Verse 1 (4-6 lines)\n2. Chorus (4 lines, catchy and memorable)\n3. Verse 2 (4-6 lines)\n4. Bridge (2-4 lines)\n5. Final Chorus\n\nMake the lyrics:\n- Emotionally resonant\n- Easy to sing along\n- With natural rhyme schemes\n- Matching the {mood} mood perfectly"
+
+#### Tool Quality Audit Script
+
+Run this to audit all tools for a platform:
+
+```bash
+node -e "
+const { Client, Databases, Query } = require('node-appwrite');
+require('dotenv').config({ path: '.env.local' });
+
+const client = new Client()
+    .setEndpoint(process.env.APPWRITE_ENDPOINT)
+    .setProject(process.env.APPWRITE_PROJECT_ID)
+    .setKey(process.env.APPWRITE_API_KEY);
+
+const databases = new Databases(client);
+const DATABASE_ID = process.env.APPWRITE_DATABASE_ID;
+
+async function auditPlatform(platform) {
+    const result = await databases.listDocuments(DATABASE_ID, 'tools', [
+        Query.equal('platform', platform),
+        Query.equal('language', 'en'),
+        Query.limit(50)
+    ]);
+
+    console.log(\`\\n📊 \${platform.toUpperCase()} TOOLS AUDIT\\n\`);
+
+    for (const tool of result.documents) {
+        const issues = [];
+
+        // Check description quality
+        if (!tool.description || tool.description.includes('Generate amazing') || tool.description.length < 50) {
+            issues.push('❌ Generic/poor description');
+        }
+
+        // Check inputs quality
+        const inputs = typeof tool.inputs === 'string' ? JSON.parse(tool.inputs) : tool.inputs;
+        const hasGenericInputs = inputs?.some(i => i.id === 'topic' && i.label === 'Topic');
+        if (hasGenericInputs || !inputs || inputs.length < 2) {
+            issues.push('❌ Generic/minimal inputs');
+        }
+
+        // Check prompt quality
+        if (!tool.prompt_template || tool.prompt_template.includes('Generate high-quality') || tool.prompt_template.length < 200) {
+            issues.push('❌ Generic/poor prompt');
+        }
+
+        if (issues.length > 0) {
+            console.log(\`🔴 \${tool.name} (\${tool.slug})\`);
+            issues.forEach(i => console.log(\`   \${i}\`));
+        } else {
+            console.log(\`🟢 \${tool.name} (\${tool.slug}) - OK\`);
+        }
+    }
+}
+
+auditPlatform('PLATFORM_NAME').catch(console.error);
+"
+```
+
+Replace `PLATFORM_NAME` with the platform to audit (e.g., 'suno', 'tiktok', 'instagram').
+
 #### Upload Script Pattern
 
 Use the pattern from `scripts/upload-missing-tools.mjs` or create a new script:

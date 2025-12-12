@@ -212,10 +212,17 @@ export const common = {
     "toolsPage.sort.newest": "Più recenti",
     "toolsPage.sort.popular": "Popolari",
     "toolsPage.sort.alphabetical": "A-Z",
+    "toolsPage.sort.label": "Ordina per",
     "toolsPage.showing": "Mostrando {count} di {total} strumenti",
+    "toolsPage.toolsCount": "{count} strumenti disponibili",
+    "toolsPage.toolsCountSingular": "{count} strumento disponibile",
+    "toolsPage.loadingMore": "Caricando altri strumenti...",
+    "toolsPage.loadedCount": "Caricati {count} di {total} strumenti",
     "toolsPage.endOfFeed": "🎉 Hai visto tutti i {count} strumenti!",
+    "toolsPage.endOfFeedTitle": "Hai visto tutti gli strumenti!",
     "toolsPage.noResults": "Nessuno strumento trovato",
     "toolsPage.noResultsDesc": "Prova a modificare i filtri o la ricerca",
+    "toolsPage.clearFilters": "Vedi tutti gli strumenti",
 
     // Search
     "search.placeholder": "Cerca strumenti... (es. 'caption instagram')",
