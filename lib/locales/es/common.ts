@@ -60,6 +60,21 @@ export const common = {
     // Custom Tools
     "customTool.createdBy": "Creado por",
 
+    // Smart Placeholders for form inputs
+    "placeholder.topic": "ej., Cómo empezar un podcast, Mejores rutinas matutinas, IA en 2025...",
+    "placeholder.title": "ej., Mi Título Increíble, 5 Tips para el Éxito...",
+    "placeholder.description": "ej., Una breve descripción de tu contenido o tema...",
+    "placeholder.content": "ej., Ingresa tu contenido, ideas o texto aquí...",
+    "placeholder.keywords": "ej., palabra1, palabra2, palabra3",
+    "placeholder.hashtags": "ej., #trending #viral #contenido #fyp",
+    "placeholder.audience": "ej., Jóvenes profesionales, Estudiantes, Padres, Gamers...",
+    "placeholder.style": "ej., Profesional, Casual, Divertido, Inspirador...",
+    "placeholder.name": "ej., Tu nombre, marca o nombre del canal...",
+    "placeholder.url": "ej., https://ejemplo.com o tu enlace",
+    "placeholder.textarea": "Ingresa tu texto o ideas aquí...",
+    "placeholder.number": "Ingresa un número...",
+    "placeholder.default": "Ingresa un valor...",
+
     // Voice Styles
     "voiceStyles.narration": "Narración",
     "voiceStyles.conversational": "Conversacional",

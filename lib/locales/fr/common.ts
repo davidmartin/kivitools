@@ -165,6 +165,21 @@ export const common = {
     // Custom Tools
     "customTool.createdBy": "Créé par",
 
+    // Smart Placeholders for form inputs
+    "placeholder.topic": "ex., Comment démarrer un podcast, Meilleures routines matinales, IA en 2025...",
+    "placeholder.title": "ex., Mon Titre Incroyable, 5 Conseils pour Réussir...",
+    "placeholder.description": "ex., Une brève description de votre contenu ou sujet...",
+    "placeholder.content": "ex., Entrez votre contenu, idées ou texte ici...",
+    "placeholder.keywords": "ex., mot1, mot2, mot3",
+    "placeholder.hashtags": "ex., #trending #viral #contenu #fyp",
+    "placeholder.audience": "ex., Jeunes professionnels, Étudiants, Parents, Gamers...",
+    "placeholder.style": "ex., Professionnel, Décontracté, Drôle, Inspirant...",
+    "placeholder.name": "ex., Votre nom, marque ou nom de chaîne...",
+    "placeholder.url": "ex., https://exemple.com ou votre lien",
+    "placeholder.textarea": "Entrez votre texte ou idées ici...",
+    "placeholder.number": "Entrez un nombre...",
+    "placeholder.default": "Entrez une valeur...",
+
     // DeepSeek Branding
     "footer.poweredBy": "Propulsé par",
     "footer.deepseek": "DeepSeek",

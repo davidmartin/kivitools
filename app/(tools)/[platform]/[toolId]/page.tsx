@@ -14,6 +14,75 @@ import { LANGUAGES } from "@/types";
 const getInputId = (input: ToolInput): string => input.id || input.name || "";
 const getInputLabel = (input: ToolInput): string => input.label || input.name || "";
 
+// Smart placeholder generator based on input name/label when placeholder is not provided
+const getInputPlaceholder = (input: ToolInput, t: (key: string) => string): string => {
+    // If placeholder is already defined, use it
+    if (input.placeholder) return input.placeholder;
+    
+    // Generate smart placeholder based on input name/id
+    const inputName = (input.id || input.name || "").toLowerCase();
+    const inputLabel = (input.label || input.name || "").toLowerCase();
+    
+    // Common placeholders based on input type/name
+    const placeholderMap: Record<string, string> = {
+        // Topic variations
+        "topic": t("placeholder.topic") || "e.g., How to start a podcast, Best morning routines...",
+        "tema": t("placeholder.topic") || "ej., Cómo empezar un podcast, Mejores rutinas matutinas...",
+        "subject": t("placeholder.topic") || "e.g., The topic you want to create content about...",
+        "theme": t("placeholder.topic") || "e.g., The main theme or idea...",
+        
+        // Title variations
+        "title": t("placeholder.title") || "e.g., My Amazing Video Title",
+        "titulo": t("placeholder.title") || "ej., Mi Título Increíble",
+        
+        // Description variations  
+        "description": t("placeholder.description") || "e.g., A brief description of your content...",
+        "descripcion": t("placeholder.description") || "ej., Una breve descripción de tu contenido...",
+        
+        // Content variations
+        "content": t("placeholder.content") || "e.g., Enter your content here...",
+        "text": t("placeholder.content") || "e.g., Enter your text here...",
+        "script": t("placeholder.content") || "e.g., Your script or text...",
+        
+        // Keywords
+        "keywords": t("placeholder.keywords") || "e.g., keyword1, keyword2, keyword3",
+        "hashtags": t("placeholder.hashtags") || "e.g., #trending #viral #content",
+        
+        // Target/Audience
+        "audience": t("placeholder.audience") || "e.g., Young professionals, Students, Parents...",
+        "target": t("placeholder.audience") || "e.g., Your target audience...",
+        
+        // Style/Tone
+        "style": t("placeholder.style") || "e.g., Professional, Casual, Funny...",
+        "mood": t("placeholder.style") || "e.g., Energetic, Calm, Inspiring...",
+        
+        // Name/Brand
+        "name": t("placeholder.name") || "e.g., Your name or brand...",
+        "brand": t("placeholder.name") || "e.g., Your brand name...",
+        
+        // URL
+        "url": t("placeholder.url") || "e.g., https://example.com",
+        "link": t("placeholder.url") || "e.g., https://your-link.com",
+    };
+    
+    // Try to find a matching placeholder
+    for (const [key, placeholder] of Object.entries(placeholderMap)) {
+        if (inputName.includes(key) || inputLabel.includes(key)) {
+            return placeholder;
+        }
+    }
+    
+    // Default fallback based on type
+    switch (input.type) {
+        case "textarea":
+            return t("placeholder.textarea") || "Enter your text here...";
+        case "number":
+            return t("placeholder.number") || "Enter a number...";
+        default:
+            return t("placeholder.default") || "Enter value...";
+    }
+};
+
 export default function CustomToolPage({ params }: { params: Promise<{ platform: string; toolId: string }> }) {
     const resolvedParams = use(params);
     const { t, language: uiLanguage } = useLanguage();
@@ -198,11 +267,13 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
     // Render input based on type
     const renderInput = (input: ToolInput) => {
         const inputId = getInputId(input);
+        const smartPlaceholder = getInputPlaceholder(input, t);
+        
         switch (input.type) {
             case "textarea":
                 return (
                     <TextArea
-                        placeholder={input.placeholder}
+                        placeholder={smartPlaceholder}
                         value={formValues[inputId] || ""}
                         onChange={(e) => handleInputChange(inputId, e.target.value)}
                         rows={3}
@@ -270,7 +341,7 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                 return (
                     <Input
                         type="number"
-                        placeholder={input.placeholder}
+                        placeholder={smartPlaceholder}
                         value={formValues[inputId] || ""}
                         onChange={(e) => handleInputChange(inputId, e.target.value)}
                         disabled={isGenerating}
@@ -282,7 +353,7 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                 return (
                     <Input
                         type="text"
-                        placeholder={input.placeholder}
+                        placeholder={smartPlaceholder}
                         value={formValues[inputId] || ""}
                         onChange={(e) => handleInputChange(inputId, e.target.value)}
                         disabled={isGenerating}
