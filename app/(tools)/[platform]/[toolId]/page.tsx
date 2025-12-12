@@ -10,6 +10,10 @@ import { databases } from "@/lib/appwrite-client";
 import { Query } from "appwrite";
 import { LANGUAGES } from "@/types";
 
+// Helper functions to support both old (name) and new (id/label) input formats
+const getInputId = (input: ToolInput): string => input.id || input.name || "";
+const getInputLabel = (input: ToolInput): string => input.label || input.name || "";
+
 export default function CustomToolPage({ params }: { params: Promise<{ platform: string; toolId: string }> }) {
     const resolvedParams = use(params);
     const { t, language: uiLanguage } = useLanguage();
@@ -43,7 +47,7 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                     const defaultValues: Record<string, any> = {};
                     foundTool.inputs.forEach(input => {
                         if (input.type === "language") {
-                            defaultValues[input.id] = uiLanguage;
+                            defaultValues[getInputId(input)] = uiLanguage;
                         }
                     });
                     setFormValues(defaultValues);
@@ -77,7 +81,7 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                         const defaultValues: Record<string, any> = {};
                         parsedTool.inputs.forEach(input => {
                             if (input.type === "language") {
-                                defaultValues[input.id] = uiLanguage;
+                                defaultValues[getInputId(input)] = uiLanguage;
                             }
                         });
                         setFormValues(defaultValues);
@@ -112,7 +116,7 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                     const defaultValues: Record<string, any> = {};
                     parsedTool.inputs.forEach(input => {
                         if (input.type === "language") {
-                            defaultValues[input.id] = uiLanguage;
+                            defaultValues[getInputId(input)] = uiLanguage;
                         }
                     });
                     setFormValues(defaultValues);
@@ -193,13 +197,14 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
 
     // Render input based on type
     const renderInput = (input: ToolInput) => {
+        const inputId = getInputId(input);
         switch (input.type) {
             case "textarea":
                 return (
                     <TextArea
                         placeholder={input.placeholder}
-                        value={formValues[input.id] || ""}
-                        onChange={(e) => handleInputChange(input.id, e.target.value)}
+                        value={formValues[inputId] || ""}
+                        onChange={(e) => handleInputChange(inputId, e.target.value)}
                         rows={3}
                         disabled={isGenerating}
                         className="w-full"
@@ -213,8 +218,8 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                     : (typeof input.options === "string" ? input.options.split(",") : []);
                 return (
                     <Select
-                        selectedKey={formValues[input.id] || ""}
-                        onSelectionChange={(key) => handleInputChange(input.id, key as string)}
+                        selectedKey={formValues[inputId] || ""}
+                        onSelectionChange={(key) => handleInputChange(inputId, key as string)}
                         isDisabled={isGenerating}
                         className="w-full"
                         placeholder={t("common.selectOption") || "Select an option"}
@@ -239,8 +244,8 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
             case "language":
                 return (
                     <Select
-                        selectedKey={formValues[input.id] || uiLanguage}
-                        onSelectionChange={(key) => handleInputChange(input.id, key as string)}
+                        selectedKey={formValues[inputId] || uiLanguage}
+                        onSelectionChange={(key) => handleInputChange(inputId, key as string)}
                         isDisabled={isGenerating}
                         className="w-full"
                     >
@@ -266,8 +271,8 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                     <Input
                         type="number"
                         placeholder={input.placeholder}
-                        value={formValues[input.id] || ""}
-                        onChange={(e) => handleInputChange(input.id, e.target.value)}
+                        value={formValues[inputId] || ""}
+                        onChange={(e) => handleInputChange(inputId, e.target.value)}
                         disabled={isGenerating}
                         className="w-full"
                     />
@@ -278,8 +283,8 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                     <Input
                         type="text"
                         placeholder={input.placeholder}
-                        value={formValues[input.id] || ""}
-                        onChange={(e) => handleInputChange(input.id, e.target.value)}
+                        value={formValues[inputId] || ""}
+                        onChange={(e) => handleInputChange(inputId, e.target.value)}
                         disabled={isGenerating}
                         className="w-full"
                     />
@@ -339,9 +344,9 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                 <div className="bg-surface rounded-2xl shadow-xl p-8 space-y-6">
                     <div className="space-y-4">
                         {tool.inputs.map((input) => (
-                            <div key={input.id}>
+                            <div key={getInputId(input)}>
                                 <label className="block text-sm font-medium text-foreground mb-2">
-                                    {input.label}
+                                    {getInputLabel(input)}
                                     {input.required && <span className="text-danger ml-1">*</span>}
                                 </label>
                                 {renderInput(input)}

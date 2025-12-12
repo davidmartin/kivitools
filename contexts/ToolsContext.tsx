@@ -5,13 +5,15 @@ import { databases } from "@/lib/appwrite-client";
 import { Query } from "appwrite";
 
 // Tool input field configuration
+// Supports both old format (name) and new format (id/label)
 export interface ToolInput {
-    id: string;
-    label: string;
+    id?: string;      // New format uses id
+    name?: string;    // Old format uses name (fallback for id)
+    label?: string;   // New format uses label
     type: "text" | "textarea" | "select" | "number" | "language";
     placeholder?: string;
-    options?: string; // Comma separated for select type
-    required: boolean;
+    options?: string | string[]; // Comma separated string or array for select type
+    required?: boolean;
 }
 
 // Tool document from Appwrite
