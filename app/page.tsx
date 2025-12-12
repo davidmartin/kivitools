@@ -246,6 +246,7 @@ export default function Home() {
       color: "orange",
     },
     {
+      id: "onlyfans",
       name: "OnlyFans",
       description: t("onlyfans.page.description"),
       href: "/tools?platform=onlyfans",
@@ -253,6 +254,7 @@ export default function Home() {
       color: "cyan",
     },
     {
+      id: "patreon",
       name: "Patreon",
       description: t("patreon.page.description"),
       href: "/tools?platform=patreon",
@@ -260,6 +262,7 @@ export default function Home() {
       color: "red",
     },
     {
+      id: "ai-art",
       name: "AI Art",
       description: t("aiArt.page.description"),
       href: "/tools?platform=ai-art",
@@ -267,6 +270,7 @@ export default function Home() {
       color: "purple",
     },
     {
+      id: "whatsapp",
       name: t("nav.whatsapp"),
       description: t("whatsapp.page.description"),
       href: "/tools?platform=whatsapp",
@@ -274,6 +278,7 @@ export default function Home() {
       color: "green",
     },
     {
+      id: "career",
       name: t("nav.career"),
       description: t("career.page.description"),
       href: "/tools?platform=career",
@@ -281,6 +286,7 @@ export default function Home() {
       color: "blue",
     },
     {
+      id: "seo",
       name: t("nav.seo"),
       description: t("seo.page.description"),
       href: "/tools?platform=seo",
@@ -288,6 +294,7 @@ export default function Home() {
       color: "green",
     },
     {
+      id: "marketing",
       name: t("nav.marketing"),
       description: t("marketing.page.description"),
       href: "/tools?platform=marketing",
@@ -295,6 +302,7 @@ export default function Home() {
       color: "orange",
     },
     {
+      id: "content",
       name: t("nav.content"),
       description: t("content.page.description"),
       href: "/tools?platform=content",
@@ -302,20 +310,20 @@ export default function Home() {
       color: "teal",
     },
     {
+      id: "presentation",
       name: t("nav.presentation"),
       description: t("presentation.page.description"),
       href: "/tools?platform=presentation",
       icon: "📊",
       color: "amber",
-      id: "presentation",
     },
     {
+      id: "voice",
       name: t("nav.voice"),
       description: t("voice.page.description"),
       href: "/tools?platform=voice",
       icon: "🎙️",
       color: "violet",
-      id: "voice",
     },
   ];
 
@@ -490,7 +498,7 @@ export default function Home() {
                     <div className="w-full">
                       <div className="flex justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300">
                         <PlatformLogo
-                          platform={platform.name.toLowerCase().replace(/\s+/g, '-') as any}
+                          platform={platform.id as any}
                           size="lg"
                         />
                       </div>
