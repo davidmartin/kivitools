@@ -462,7 +462,7 @@ export default function Home() {
                     <div className="w-full">
                       <div className="flex justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300">
                         <PlatformLogo
-                          platform={platform.name.toLowerCase() as any}
+                          platform={platform.name.toLowerCase().replace(/\s+/g, '-') as any}
                           size="lg"
                         />
                       </div>
