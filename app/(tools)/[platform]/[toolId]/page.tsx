@@ -392,7 +392,12 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
 
     return (
         <div className="min-h-screen bg-background py-12 px-4">
-            <div className="max-w-4xl mx-auto">
+            {/* Main tool container - protected from auto-ads insertion */}
+            <div 
+                className="max-w-4xl mx-auto" 
+                data-nosnippet 
+                data-ad-slot-exclude="true"
+            >
                 {/* Header */}
                 <div className="text-center mb-12">
                     <PlatformBadge platform={tool.platform as any} className="mb-4" />
@@ -411,8 +416,8 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
                     </p>
                 </div>
 
-                {/* Main Card */}
-                <div className="bg-surface rounded-2xl shadow-xl p-8 space-y-6">
+                {/* Main Card - no-ads zone */}
+                <div className="bg-surface rounded-2xl shadow-xl p-8 space-y-6 relative z-10 tool-content-protected">
                     <div className="space-y-4">
                         {tool.inputs.map((input) => (
                             <div key={getInputId(input)}>

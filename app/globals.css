@@ -201,3 +201,53 @@ html[data-hydrated] body {
         radial-gradient(at 0% 100%, oklch(from var(--color-primary) l c h / 0.15) 0px, transparent 50%);
     background-attachment: fixed;
 }
+
+/* ============================================
+   AdSense Protection - Prevent Auto Ads 
+   from overlapping tool content
+   ============================================ */
+
+/* Protect main content containers from ad insertion */
+[data-ad-slot-exclude="true"] {
+    position: relative;
+    z-index: 10;
+}
+
+/* Force AdSense auto-ads to respect content boundaries */
+[data-ad-slot-exclude="true"] ins.adsbygoogle,
+[data-ad-slot-exclude="true"] [data-ad-client],
+[data-nosnippet] ins.adsbygoogle,
+[data-nosnippet] [data-ad-client] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Prevent floating/overlay ads from covering content */
+.tool-content-protected {
+    position: relative;
+    z-index: 50;
+    isolation: isolate;
+}
+
+/* Hide ads that position themselves absolutely over content */
+main ins.adsbygoogle[data-ad-format="auto"],
+main ins.adsbygoogle[data-full-width-responsive="true"] {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+/* Designated ad areas only - prevent insertion elsewhere */
+.ad-container {
+    min-height: 90px;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+/* Ensure tool forms and results stay on top */
+.bg-surface {
+    position: relative;
+    z-index: 20;
+}
