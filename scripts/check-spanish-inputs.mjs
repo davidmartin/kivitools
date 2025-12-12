@@ -19,15 +19,15 @@ async function checkAllSunoInputs() {
         Query.equal("language", "en"),
         Query.limit(50)
     ]);
-    
+
     console.log("=== CHECKING ALL SUNO TOOLS (EN) FOR SPANISH TEXT ===\n");
-    
+
     for (const doc of result.documents) {
         console.log("Tool:", doc.name, "(" + doc.slug + ")");
         try {
             const inputs = typeof doc.inputs === 'string' ? JSON.parse(doc.inputs) : doc.inputs;
             let hasSpanish = false;
-            
+
             for (const i of inputs) {
                 const text = (i.label || "") + " " + (i.placeholder || "");
                 // Check for Spanish text patterns
@@ -38,7 +38,7 @@ async function checkAllSunoInputs() {
                     hasSpanish = true;
                 }
             }
-            
+
             if (!hasSpanish) {
                 console.log("  ✅ All English");
             }
