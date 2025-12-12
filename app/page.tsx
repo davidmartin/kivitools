@@ -38,6 +38,7 @@ export default function Home() {
   // Plataformas disponibles
   const platforms = [
     {
+      id: "tiktok",
       name: "TikTok",
       description: t("tiktok.page.description"),
       href: "/tools?platform=tiktok",
@@ -45,6 +46,7 @@ export default function Home() {
       color: "purple",
     },
     {
+      id: "instagram",
       name: "Instagram",
       description: t("instagram.page.description"),
       href: "/tools?platform=instagram",
@@ -52,6 +54,7 @@ export default function Home() {
       color: "pink",
     },
     {
+      id: "pinterest",
       name: "Pinterest",
       description: t("pinterest.page.description"),
       href: "/tools?platform=pinterest",
@@ -59,6 +62,7 @@ export default function Home() {
       color: "red",
     },
     {
+      id: "twitter",
       name: "Twitter",
       description: t("twitter.page.description"),
       href: "/tools?platform=twitter",
@@ -66,6 +70,7 @@ export default function Home() {
       color: "blue",
     },
     {
+      id: "snapchat",
       name: "Snapchat",
       description: t("snapchat.page.description"),
       href: "/tools?platform=snapchat",
@@ -73,6 +78,7 @@ export default function Home() {
       color: "yellow",
     },
     {
+      id: "youtube",
       name: "YouTube",
       description: t("youtube.page.description"),
       href: "/tools?platform=youtube",
@@ -80,6 +86,7 @@ export default function Home() {
       color: "red",
     },
     {
+      id: "reddit",
       name: "Reddit",
       description: t("reddit.page.description"),
       href: "/tools?platform=reddit",
@@ -87,6 +94,7 @@ export default function Home() {
       color: "orange",
     },
     {
+      id: "discord",
       name: "Discord",
       description: t("discord.page.description"),
       href: "/tools?platform=discord",
@@ -94,6 +102,7 @@ export default function Home() {
       color: "indigo",
     },
     {
+      id: "twitch",
       name: "Twitch",
       description: t("twitch.page.description"),
       href: "/tools?platform=twitch",
@@ -101,6 +110,7 @@ export default function Home() {
       color: "purple",
     },
     {
+      id: "spotify",
       name: "Spotify",
       description: t("spotify.page.description"),
       href: "/tools?platform=spotify",
@@ -108,6 +118,7 @@ export default function Home() {
       color: "green",
     },
     {
+      id: "suno",
       name: "Suno",
       description: t("suno.page.description"),
       href: "/tools?platform=suno",
@@ -115,6 +126,7 @@ export default function Home() {
       color: "purple",
     },
     {
+      id: "elevenlabs",
       name: "ElevenLabs",
       description: t("elevenlabs.page.description"),
       href: "/tools?platform=elevenlabs",
@@ -122,6 +134,7 @@ export default function Home() {
       color: "purple",
     },
     {
+      id: "forocoches",
       name: "Forocoches",
       description: t("forocoches.page.description"),
       href: "/tools?platform=forocoches",
@@ -129,6 +142,7 @@ export default function Home() {
       color: "green",
     },
     {
+      id: "amazon",
       name: "Amazon",
       description: t("amazon.page.description"),
       href: "/tools?platform=amazon",
@@ -136,6 +150,7 @@ export default function Home() {
       color: "orange",
     },
     {
+      id: "facebook",
       name: "Facebook",
       description: t("facebook.page.description"),
       href: "/tools?platform=facebook",
@@ -143,6 +158,7 @@ export default function Home() {
       color: "blue",
     },
     {
+      id: "linkedin",
       name: "LinkedIn",
       description: t("linkedin.page.description"),
       href: "/tools?platform=linkedin",
@@ -150,6 +166,7 @@ export default function Home() {
       color: "blue",
     },
     {
+      id: "threads",
       name: "Threads",
       description: t("threads.page.description"),
       href: "/tools?platform=threads",
@@ -157,6 +174,7 @@ export default function Home() {
       color: "black",
     },
     {
+      id: "bluesky",
       name: "Bluesky",
       description: t("bluesky.page.description"),
       href: "/tools?platform=bluesky",
@@ -164,6 +182,7 @@ export default function Home() {
       color: "blue",
     },
     {
+      id: "kick",
       name: "Kick",
       description: t("kick.page.description"),
       href: "/tools?platform=kick",
@@ -171,6 +190,7 @@ export default function Home() {
       color: "green",
     },
     {
+      id: "telegram",
       name: "Telegram",
       description: t("telegram.page.description"),
       href: "/tools?platform=telegram",
@@ -178,6 +198,7 @@ export default function Home() {
       color: "blue",
     },
     {
+      id: "bereal",
       name: "BeReal",
       description: t("bereal.page.description"),
       href: "/tools?platform=bereal",
@@ -185,6 +206,7 @@ export default function Home() {
       color: "black",
     },
     {
+      id: "podcast",
       name: "Podcast",
       description: t("podcast.page.description"),
       href: "/tools?platform=podcast",
@@ -192,6 +214,7 @@ export default function Home() {
       color: "orange",
     },
     {
+      id: "email",
       name: "Email",
       description: t("email.page.description"),
       href: "/tools?platform=email",
@@ -199,6 +222,7 @@ export default function Home() {
       color: "cyan",
     },
     {
+      id: "dating",
       name: "Dating",
       description: t("dating.page.description"),
       href: "/tools?platform=dating",
@@ -206,6 +230,7 @@ export default function Home() {
       color: "pink",
     },
     {
+      id: "medium",
       name: "Medium",
       description: t("medium.page.description"),
       href: "/tools?platform=medium",
@@ -213,6 +238,7 @@ export default function Home() {
       color: "black",
     },
     {
+      id: "etsy",
       name: "Etsy",
       description: t("etsy.page.description"),
       href: "/tools?platform=etsy",
@@ -281,6 +307,7 @@ export default function Home() {
       href: "/tools?platform=presentation",
       icon: "📊",
       color: "amber",
+      id: "presentation",
     },
     {
       name: t("nav.voice"),
@@ -288,6 +315,7 @@ export default function Home() {
       href: "/tools?platform=voice",
       icon: "🎙️",
       color: "violet",
+      id: "voice",
     },
   ];
 
