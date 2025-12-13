@@ -4,9 +4,20 @@ const nextConfig: NextConfig = {
   // Optimizar imports de HeroUI
   transpilePackages: ["@heroui/react", "@heroui/styles"],
 
-  // Opcional: Optimizar tamaño del bundle
+  // Performance optimizations
   experimental: {
-    optimizePackageImports: ["@heroui/react"],
+    // Optimize package imports for smaller bundles
+    optimizePackageImports: ["@heroui/react", "lucide-react"],
+  },
+
+  // Image optimization for better LCP
+  images: {
+    // Enable AVIF for better compression
+    formats: ["image/avif", "image/webp"],
+    // Define device sizes for responsive images
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    // Smaller sizes for icons/logos
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
   },
 
   // Rutas alias en español (SEO multilingüe)

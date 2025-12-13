@@ -37,19 +37,18 @@ html[data-hydrated] body {
     --color-surface: oklch(100% 0 0);
     --color-surface-foreground: oklch(20% 0.02 280);
 
-    /* Animations */
-    --animate-fade-in: fade-in 0.6s ease-out forwards;
-    --animate-slide-up: slide-up 0.8s ease-out forwards;
-    --animate-float: float 6s ease-in-out infinite;
-    --animate-float-slow: float 10s ease-in-out infinite;
-    --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
-    --animate-pulse-strong: pulse-strong 4s ease-in-out infinite;
+    /* Optimized Animations - GPU accelerated with will-change */
+    --animate-fade-in: fade-in 0.4s ease-out forwards;
+    --animate-slide-up: slide-up 0.5s ease-out forwards;
+    --animate-float: float 8s ease-in-out infinite;
+    --animate-float-slow: float 12s ease-in-out infinite;
+    --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
+    --animate-pulse-strong: pulse-strong 5s ease-in-out infinite;
 
     @keyframes fade-in {
         from {
             opacity: 0;
         }
-
         to {
             opacity: 1;
         }
@@ -58,50 +57,40 @@ html[data-hydrated] body {
     @keyframes slide-up {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translate3d(0, 20px, 0);
         }
-
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
         }
     }
 
+    /* Optimized float - uses transform3d for GPU acceleration */
     @keyframes float {
-
-        0%,
-        100% {
-            transform: translateY(0);
+        0%, 100% {
+            transform: translate3d(0, 0, 0);
         }
-
         50% {
-            transform: translateY(-10px);
+            transform: translate3d(0, -10px, 0);
         }
     }
 
     @keyframes pulse-glow {
-
-        0%,
-        100% {
+        0%, 100% {
             box-shadow: 0 0 20px -5px var(--color-primary);
         }
-
         50% {
             box-shadow: 0 0 30px 0px var(--color-secondary);
         }
     }
 
+    /* Simplified pulse-strong - no scale transform to avoid layout shifts */
     @keyframes pulse-strong {
-
-        0%,
-        100% {
+        0%, 100% {
             opacity: 0.3;
-            transform: scale(1);
         }
-
         50% {
-            opacity: 0.6;
-            transform: scale(1.1);
+            opacity: 0.5;
         }
     }
 }
@@ -149,7 +138,9 @@ html[data-hydrated] body {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    @apply rounded-2xl transition-all duration-300;
+    @apply rounded-2xl transition-colors duration-300;
+    /* Prevent CLS: no transform on hover, only visual changes */
+    will-change: border-color, box-shadow;
 }
 
 .dark .glass-card {
@@ -158,7 +149,7 @@ html[data-hydrated] body {
 }
 
 .glass-card:hover {
-    transform: translateY(-5px);
+    /* No translateY to prevent CLS */
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
     border-color: var(--color-primary);
 }

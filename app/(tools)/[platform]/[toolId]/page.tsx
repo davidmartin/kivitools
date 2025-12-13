@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, use, Suspense } from "react";
 import { Button, Input, TextArea, Select, Label, ListBox } from "@heroui/react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTools, type ToolInput, type ParsedTool } from "@/contexts/ToolsContext";
@@ -82,6 +82,34 @@ const getInputPlaceholder = (input: ToolInput, t: (key: string) => string): stri
             return t("placeholder.default") || "Enter value...";
     }
 };
+
+// Optimized loading skeleton to prevent CLS
+function ToolSkeleton() {
+    return (
+        <div className="min-h-screen bg-background py-12 px-4">
+            <div className="max-w-4xl mx-auto">
+                {/* Header skeleton */}
+                <div className="text-center mb-12">
+                    <div className="h-6 w-24 bg-foreground/10 rounded-full mx-auto mb-4 animate-pulse" />
+                    <div className="h-12 w-64 bg-foreground/10 rounded-lg mx-auto mb-4 animate-pulse" />
+                    <div className="h-6 w-96 bg-foreground/5 rounded-lg mx-auto animate-pulse" />
+                </div>
+                {/* Form skeleton */}
+                <div className="bg-surface rounded-2xl shadow-xl p-8 space-y-6">
+                    <div className="space-y-4">
+                        <div className="h-4 w-20 bg-foreground/10 rounded animate-pulse" />
+                        <div className="h-12 w-full bg-foreground/5 rounded-lg animate-pulse" />
+                    </div>
+                    <div className="space-y-4">
+                        <div className="h-4 w-24 bg-foreground/10 rounded animate-pulse" />
+                        <div className="h-24 w-full bg-foreground/5 rounded-lg animate-pulse" />
+                    </div>
+                    <div className="h-12 w-full bg-primary/20 rounded-lg animate-pulse" />
+                </div>
+            </div>
+        </div>
+    );
+}
 
 export default function CustomToolPage({ params }: { params: Promise<{ platform: string; toolId: string }> }) {
     const resolvedParams = use(params);
@@ -364,14 +392,7 @@ export default function CustomToolPage({ params }: { params: Promise<{ platform:
     };
 
     if (isLoading || toolsLoading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                    <div className="animate-spin h-8 w-8 border-4 border-accent border-t-transparent rounded-full mx-auto mb-4"></div>
-                    <p className="text-muted">{t("common.loading") || "Loading..."}</p>
-                </div>
-            </div>
-        );
+        return <ToolSkeleton />;
     }
     
     if (!tool) {
