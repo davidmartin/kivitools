@@ -154,4 +154,10 @@ export const platforms = {
     "voice.info.title": "¿Qué son las Herramientas de Voz y Podcast?",
     "voice.info.description": "El contenido de audio está en auge. Nuestras herramientas de IA te ayudan a crear intros de podcast, esquemas de episodios y scripts de voz en off que cautivan a tu audiencia.",
 
+    // AI Writing
+    "aiWriting.page.title": "Herramientas de Escritura IA Gratis",
+    "aiWriting.page.description": "Haz que tus textos escritos por IA suenen tan humanos que ni ChatGPT reconocerá su propia obra.",
+    "aiWriting.info.title": "¿Qué son las Herramientas de Escritura IA?",
+    "aiWriting.info.description": "¿Los detectores de IA arruinan tu vida? Nuestras herramientas te ayudan a humanizar texto IA, parafrasear contenido y generar ensayos que pasan cualquier control de plagio.",
+
 };

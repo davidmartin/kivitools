@@ -154,4 +154,10 @@ export const platforms = {
     "voice.info.title": "What are Voice & Podcast Tools?",
     "voice.info.description": "Audio content is booming. Our AI tools help you create podcast intros, episode outlines, and voiceover scripts that captivate your audience.",
 
+    // AI Writing
+    "aiWriting.page.title": "Free AI Writing Tools",
+    "aiWriting.page.description": "Make your AI-written essays and content sound so human that even ChatGPT won't recognize its own work.",
+    "aiWriting.info.title": "What are AI Writing Tools?",
+    "aiWriting.info.description": "AI content detectors ruining your life? Our tools help you humanize AI text, paraphrase content, and generate essays that pass any plagiarism check.",
+
 };

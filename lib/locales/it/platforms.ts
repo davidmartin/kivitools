@@ -154,4 +154,10 @@ export const platforms = {
     "voice.info.title": "Cosa sono gli Strumenti Voice e Podcast?",
     "voice.info.description": "I contenuti audio stanno esplodendo. I nostri strumenti AI ti aiutano a creare intro podcast, schemi episodi e script voiceover che catturano il tuo pubblico.",
 
+    // AI Writing
+    "aiWriting.page.title": "Strumenti Gratuiti di Scrittura IA",
+    "aiWriting.page.description": "Fai suonare i tuoi testi scritti dall'IA così umani che nemmeno ChatGPT riconoscerà il proprio lavoro.",
+    "aiWriting.info.title": "Cosa sono gli Strumenti di Scrittura IA?",
+    "aiWriting.info.description": "I rilevatori di IA ti rovinano la vita? I nostri strumenti ti aiutano a umanizzare il testo IA, parafrasare contenuti e generare saggi che superano qualsiasi controllo antiplagio.",
+
 };

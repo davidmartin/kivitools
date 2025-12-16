@@ -154,4 +154,10 @@ export const platforms = {
     "voice.info.title": "Was sind Voice- und Podcast-Tools?",
     "voice.info.description": "Audio-Content boomt. Unsere KI-Tools helfen dir, Podcast-Intros, Episoden-Gliederungen und Voiceover-Scripts zu erstellen, die dein Publikum fesseln.",
 
+    // AI Writing
+    "aiWriting.page.title": "Kostenlose KI-Schreib-Tools",
+    "aiWriting.page.description": "Lass deine KI-geschriebenen Texte so menschlich klingen, dass selbst ChatGPT seine eigene Arbeit nicht erkennt.",
+    "aiWriting.info.title": "Was sind KI-Schreib-Tools?",
+    "aiWriting.info.description": "KI-Detektoren ruinieren dein Leben? Unsere Tools helfen dir, KI-Text zu vermenschlichen, Inhalte umzuschreiben und Aufsätze zu erstellen, die jede Plagiatprüfung bestehen.",
+
 };

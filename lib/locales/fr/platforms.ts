@@ -154,4 +154,10 @@ export const platforms = {
     "voice.info.title": "C'est quoi les Outils de Voix et Podcast ?",
     "voice.info.description": "Le contenu audio explose. Nos outils IA t'aident à créer des intros de podcast, des plans d'épisodes et des scripts de voix off qui captivent ton audience.",
 
+    // AI Writing
+    "aiWriting.page.title": "Outils Gratuits d'Écriture IA",
+    "aiWriting.page.description": "Fais sonner tes textes générés par IA tellement humains que même ChatGPT ne reconnaîtra pas son propre travail.",
+    "aiWriting.info.title": "C'est quoi les Outils d'Écriture IA ?",
+    "aiWriting.info.description": "Les détecteurs d'IA ruinent ta vie ? Nos outils t'aident à humaniser le texte IA, paraphraser le contenu et générer des dissertations qui passent toute vérification de plagiat.",
+
 };

@@ -19,7 +19,7 @@ const sizeConfig = {
 const NEEDS_INVERT = new Set([
   "twitter", "suno", "elevenlabs", "amazon", "threads", "kick", 
   "bereal", "podcast", "email", "medium", "onlyfans", "dating", 
-  "ai-art", "career", "seo", "marketing", "content", "presentation", "voice"
+  "ai-art", "career", "seo", "marketing", "content", "presentation", "voice", "ai-writing"
 ]);
 
 export default function PlatformLogo({ 

@@ -40,6 +40,7 @@ export const common = {
     "nav.content": "Inhalt",
     "nav.presentation": "Präsentationen",
     "nav.voice": "Stimme & Podcast",
+    "nav.aiWriting": "KI-Schreiben",
     "nav.suggestTool": "Tool vorschlagen",
     "nav.login": "Anmelden",
     "nav.logout": "Abmelden",

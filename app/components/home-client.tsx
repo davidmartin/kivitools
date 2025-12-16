@@ -54,6 +54,7 @@ const PLATFORMS: Platform[] = [
     { id: "content", name: "Content", descriptionKey: "content.page.description", href: "/tools?platform=content", icon: "✍️", color: "teal" },
     { id: "presentation", name: "Presentation", descriptionKey: "presentation.page.description", href: "/tools?platform=presentation", icon: "📊", color: "amber" },
     { id: "voice", name: "Voice", descriptionKey: "voice.page.description", href: "/tools?platform=voice", icon: "🎙️", color: "violet" },
+    { id: "ai-writing", name: "AI Writing", descriptionKey: "aiWriting.page.description", href: "/tools?platform=ai-writing", icon: "🤖", color: "indigo" },
 ];
 
 export default function HomeClient() {

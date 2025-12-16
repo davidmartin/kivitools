@@ -362,6 +362,16 @@ export default function Navigation() {
         { name: t("marketingSloganGenerator.title"), href: "/marketing/slogan-generator" },
       ],
     },
+    {
+      id: "ai-writing",
+      name: t("nav.aiWriting"),
+      emoji: "🤖",
+      tools: [
+        { name: "AI Text Humanizer", href: "/ai-writing/text-humanizer" },
+        { name: "Paraphrasing Tool", href: "/ai-writing/paraphrasing-tool" },
+        { name: "Essay Generator", href: "/ai-writing/essay-generator" },
+      ],
+    },
   ];
 
   return (

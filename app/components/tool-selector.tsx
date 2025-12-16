@@ -10,7 +10,7 @@ interface Tool {
 }
 
 interface ToolSelectorProps {
-  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "lemon8" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon";
+  platform: "tiktok" | "instagram" | "twitter" | "snapchat" | "youtube" | "reddit" | "discord" | "twitch" | "suno" | "elevenlabs" | "forocoches" | "linkedin" | "amazon" | "pinterest" | "spotify" | "facebook" | "threads" | "bluesky" | "lemon8" | "kick" | "telegram" | "bereal" | "podcast" | "email" | "dating" | "medium" | "etsy" | "onlyfans" | "patreon" | "ai-writing";
 }
 
 const PLATFORM_TOOLS: Record<string, Tool[]> = {
@@ -165,6 +165,11 @@ const PLATFORM_TOOLS: Record<string, Tool[]> = {
     { name: "patreonTierDescription.title", href: "/patreon/tier-description-generator" },
     { name: "patreonAboutPage.title", href: "/patreon/about-page-generator" },
     { name: "patreonPost.title", href: "/patreon/post-generator" },
+  ],
+  "ai-writing": [
+    { name: "AI Text Humanizer", href: "/ai-writing/text-humanizer" },
+    { name: "Paraphrasing Tool", href: "/ai-writing/paraphrasing-tool" },
+    { name: "Essay Generator", href: "/ai-writing/essay-generator" },
   ],
 };
 
