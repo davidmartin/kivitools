@@ -19,20 +19,20 @@ async function getToolStats() {
         Query.equal('status', 'approved'),
         Query.limit(500)
     ]);
-    
+
     const platforms = {};
     result.documents.forEach(tool => {
         const p = tool.platform;
         if (!platforms[p]) platforms[p] = [];
         platforms[p].push(tool.slug);
     });
-    
+
     console.log('\n📊 CURRENT TOOLS BY PLATFORM:\n');
     Object.keys(platforms).sort().forEach(platform => {
         console.log(`\n🔷 ${platform.toUpperCase()} (${platforms[platform].length} tools):`);
         platforms[platform].forEach(tool => console.log(`   - ${tool}`));
     });
-    
+
     console.log(`\n\n📈 TOTAL: ${result.documents.length} tools across ${Object.keys(platforms).length} platforms`);
 }
 

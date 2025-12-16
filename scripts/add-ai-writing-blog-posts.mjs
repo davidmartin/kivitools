@@ -17,8 +17,8 @@ let content = fs.readFileSync(blogDataPath, 'utf-8');
 
 // Check if ai-writing posts already exist
 if (content.includes('how-to-humanize-ai-text-bypass-detectors-2025')) {
-  console.log('✅ AI Writing blog posts already exist. Skipping.');
-  process.exit(0);
+    console.log('✅ AI Writing blog posts already exist. Skipping.');
+    process.exit(0);
 }
 
 // New blog posts
@@ -316,22 +316,22 @@ const closingMarker = '];\n\nexport function getPostBySlug';
 const insertPosition = content.indexOf(closingMarker);
 
 if (insertPosition !== -1) {
-  const before = content.substring(0, insertPosition);
-  const after = content.substring(insertPosition);
-  
-  // Check if last post ends with a comma
-  const trimmedBefore = before.trimEnd();
-  const needsComma = !trimmedBefore.endsWith(',');
-  
-  content = trimmedBefore + (needsComma ? ',' : '') + newPosts + '\n' + after;
-  
-  fs.writeFileSync(blogDataPath, content, 'utf-8');
-  console.log('✅ Added 3 AI Writing blog posts to blog-data.ts');
-  console.log('   - how-to-humanize-ai-text-bypass-detectors-2025 (EN)');
-  console.log('   - como-humanizar-texto-ia-evitar-detectores-2025 (ES)');
-  console.log('   - best-free-essay-generators-2025 (EN)');
+    const before = content.substring(0, insertPosition);
+    const after = content.substring(insertPosition);
+
+    // Check if last post ends with a comma
+    const trimmedBefore = before.trimEnd();
+    const needsComma = !trimmedBefore.endsWith(',');
+
+    content = trimmedBefore + (needsComma ? ',' : '') + newPosts + '\n' + after;
+
+    fs.writeFileSync(blogDataPath, content, 'utf-8');
+    console.log('✅ Added 3 AI Writing blog posts to blog-data.ts');
+    console.log('   - how-to-humanize-ai-text-bypass-detectors-2025 (EN)');
+    console.log('   - como-humanizar-texto-ia-evitar-detectores-2025 (ES)');
+    console.log('   - best-free-essay-generators-2025 (EN)');
 } else {
-  console.error('❌ Could not find the closing of blogPosts array');
-  console.error('Looking for marker: "];" followed by "export function getPostBySlug"');
-  process.exit(1);
+    console.error('❌ Could not find the closing of blogPosts array');
+    console.error('Looking for marker: "];" followed by "export function getPostBySlug"');
+    process.exit(1);
 }
