@@ -685,13 +685,13 @@ Write in {language}. Create narration that complements visuals.`
 
 async function uploadTools() {
     console.log('\\n🚀 Uploading Platform Expansion Tools (Batch 3)...\\n');
-    
+
     const languages = ['en', 'es', 'pt', 'fr', 'de', 'it'];
     let totalCreated = 0;
-    
+
     for (const tool of TOOLS) {
         console.log(`\\n📦 Processing: ${tool.platform}/${tool.slug}`);
-        
+
         for (const lang of languages) {
             // Check if already exists
             const existing = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
@@ -699,12 +699,12 @@ async function uploadTools() {
                 Query.equal('slug', tool.slug),
                 Query.equal('language', lang)
             ]);
-            
+
             if (existing.total > 0) {
                 console.log(`   ⚠️  ${lang.toUpperCase()}: Already exists`);
                 continue;
             }
-            
+
             // Create localized inputs
             const localizedInputs = tool.inputs.map(input => ({
                 id: input.id,
@@ -714,7 +714,7 @@ async function uploadTools() {
                 placeholder: input.placeholder,
                 required: input.required !== false
             }));
-            
+
             const doc = {
                 name: tool.names[lang],
                 description: tool.descriptions[lang],
@@ -727,13 +727,13 @@ async function uploadTools() {
                 inputs: JSON.stringify(localizedInputs),
                 prompt_template: tool.prompt_template
             };
-            
+
             await databases.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), doc);
             console.log(`   ✅ ${lang.toUpperCase()}: Created`);
             totalCreated++;
         }
     }
-    
+
     console.log(`\\n🎉 Done! Created ${totalCreated} documents across ${TOOLS.length} tools`);
     console.log('\\nTools created:');
     TOOLS.forEach(t => console.log(`  - ${t.platform}/${t.slug}`));

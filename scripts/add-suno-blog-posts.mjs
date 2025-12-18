@@ -17,8 +17,8 @@ let content = fs.readFileSync(blogDataPath, 'utf-8');
 
 // Check if posts already exist
 if (content.includes('suno-style-blender-guide-2025')) {
-  console.log('✅ Suno blog posts already exist. Skipping.');
-  process.exit(0);
+    console.log('✅ Suno blog posts already exist. Skipping.');
+    process.exit(0);
 }
 
 // New blog posts for Suno tools
@@ -398,22 +398,22 @@ const closingMarker = '];\n\nexport function getPostBySlug';
 const insertPosition = content.indexOf(closingMarker);
 
 if (insertPosition !== -1) {
-  const before = content.substring(0, insertPosition);
-  const after = content.substring(insertPosition);
-  
-  // Check if last post ends with a comma
-  const trimmedBefore = before.trimEnd();
-  const needsComma = !trimmedBefore.endsWith(',');
-  
-  content = trimmedBefore + (needsComma ? ',' : '') + newPosts + '\n' + after;
-  
-  fs.writeFileSync(blogDataPath, content, 'utf-8');
-  console.log('✅ Added 4 Suno blog posts to blog-data.ts');
-  console.log('   - suno-style-blender-guide-2025 (EN)');
-  console.log('   - guia-mezclador-estilos-suno-2025 (ES)');
-  console.log('   - suno-hook-generator-catchy-melodies-2025 (EN)');
-  console.log('   - suno-song-structure-professional-guide-2025 (EN)');
+    const before = content.substring(0, insertPosition);
+    const after = content.substring(insertPosition);
+
+    // Check if last post ends with a comma
+    const trimmedBefore = before.trimEnd();
+    const needsComma = !trimmedBefore.endsWith(',');
+
+    content = trimmedBefore + (needsComma ? ',' : '') + newPosts + '\n' + after;
+
+    fs.writeFileSync(blogDataPath, content, 'utf-8');
+    console.log('✅ Added 4 Suno blog posts to blog-data.ts');
+    console.log('   - suno-style-blender-guide-2025 (EN)');
+    console.log('   - guia-mezclador-estilos-suno-2025 (ES)');
+    console.log('   - suno-hook-generator-catchy-melodies-2025 (EN)');
+    console.log('   - suno-song-structure-professional-guide-2025 (EN)');
 } else {
-  console.error('❌ Could not find the closing of blogPosts array');
-  process.exit(1);
+    console.error('❌ Could not find the closing of blogPosts array');
+    process.exit(1);
 }

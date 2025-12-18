@@ -167,10 +167,10 @@ Reference iconic hooks mentally: "Bad Guy" bass line, "Blinding Lights" synth, "
 
 async function uploadTool() {
     console.log('\\n🎵 Uploading Suno Hook Generator tool...\\n');
-    
+
     const languages = ['en', 'es', 'pt', 'fr', 'de', 'it'];
     let created = 0;
-    
+
     for (const lang of languages) {
         // Check if already exists
         const existing = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
@@ -178,12 +178,12 @@ async function uploadTool() {
             Query.equal('slug', TOOL.slug),
             Query.equal('language', lang)
         ]);
-        
+
         if (existing.total > 0) {
             console.log(`⚠️  ${lang.toUpperCase()}: Already exists, skipping`);
             continue;
         }
-        
+
         // Create localized inputs
         const localizedInputs = TOOL.inputs.map(input => {
             const labelKey = `label${lang.charAt(0).toUpperCase() + lang.slice(1)}`;
@@ -196,7 +196,7 @@ async function uploadTool() {
                 required: input.required !== false
             };
         });
-        
+
         const doc = {
             name: TOOL.names[lang],
             description: TOOL.descriptions[lang],
@@ -209,12 +209,12 @@ async function uploadTool() {
             inputs: JSON.stringify(localizedInputs),
             prompt_template: TOOL.prompt_template
         };
-        
+
         await databases.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), doc);
         console.log(`✅ ${lang.toUpperCase()}: Created ${TOOL.names[lang]}`);
         created++;
     }
-    
+
     console.log(`\\n🎉 Done! Created ${created} documents for hook-generator`);
 }
 
