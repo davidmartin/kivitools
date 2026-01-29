@@ -270,4 +270,32 @@ export const common = {
     "toolsPage.noResults": "No tools found",
     "toolsPage.noResultsDesc": "Try adjusting your filters or search query",
     "toolsPage.clearFilters": "View all tools",
+
+    // Picturalia Banner
+    "picturaliaBanner.new": "New Launch",
+    "picturaliaBanner.title": "Transform Your Photos into Art with AI",
+    "picturaliaBanner.description": "Love KiviTools? You'll love Picturalia. Turn your selfies and photos into masterpieces like Simpson, LEGO, Anime, and more.",
+    "picturaliaBanner.cta": "Try Picturalia Free",
+
+    // Footer Products
+    "footer.products": "Our Products",
+    "footer.picturaliaDesc": "Transform photos with AI",
+
+    // Picturalia Pro Tip (SEO Backlinks)
+    "proTip.title": "Pro Tip",
+    "proTip.default.heading": "Want to upgrade your photos?",
+    "proTip.default.description": "Use our advanced AI at Picturalia to transform any image into stunning art.",
+    "proTip.default.link": "Try Picturalia",
+
+    "proTip.instagram.heading": "Make Your Instagram Feed Pop",
+    "proTip.instagram.description": "Generate amazing avatars and transform your selfies into art (Simpson, Anime, LEGO) to get more likes.",
+    "proTip.instagram.link": "Edit Instagram Photos",
+
+    "proTip.tiktok.heading": "Create Viral Visuals for TikTok",
+    "proTip.tiktok.description": "Need a unique profile picture? Turn your face into an anime character or game hero in seconds.",
+    "proTip.tiktok.link": "Generate TikTok Avatars",
+
+    "proTip.pinterest.heading": "Images That Get Saved",
+    "proTip.pinterest.description": "Create aesthetic and unique pins by transforming normal photos into watercolors or oil paintings.",
+    "proTip.pinterest.link": "Create Artistic Pins",
 };

@@ -273,4 +273,14 @@ export const common = {
     "home.feed.empty.description": "Tente ajustar seus filtros ou busca (ou aceite que a perfeição é difícil de encontrar)",
     "home.feed.card.useTool": "Usar Ferramenta",
     "home.feed.count": "{count} ferramentas",
+    
+    // Picturalia Banner
+    "picturaliaBanner.new": "Novo Lançamento",
+    "picturaliaBanner.title": "Transforme suas Fotos em Arte com IA",
+    "picturaliaBanner.description": "Gosta do KiviTools? Você vai amar o Picturalia. Transforme suas selfies e fotos em obras-primas estilo Simpson, LEGO, Anime e mais.",
+    "picturaliaBanner.cta": "Experimentar Picturalia Grátis",
+
+    // Footer Products
+    "footer.products": "Nossos Produtos",
+    "footer.picturaliaDesc": "Transforme fotos com IA",
 };

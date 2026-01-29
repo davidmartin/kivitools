@@ -4,6 +4,8 @@ import { Card, Accordion } from "@heroui/react";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+import PicturaliaBanner from "./picturalia-banner";
+
 const FAQS = [
     { q: "home.faq.q1", a: "home.faq.a1" },
     { q: "home.faq.q2", a: "home.faq.a2" },
@@ -99,6 +101,13 @@ export default function HomeStaticSections() {
                 </div>
             </section>
 
+            {/* Picturalia Banner Section */}
+            <section className="py-20 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <PicturaliaBanner />
+                </div>
+            </section>
+
             {/* Testimonials Section */}
             <section className="py-32 px-4 relative">
                 <div className="absolute inset-0 bg-surface/30 backdrop-blur-sm -z-10" />
@@ -144,7 +153,7 @@ export default function HomeStaticSections() {
                             {t("home.faq.subtitle")}
                         </p>
                     </div>
-                    
+
                     <Accordion className="w-full" variant="surface">
                         {FAQS.map((faq, index) => (
                             <Accordion.Item key={index} className="group mb-2 rounded-xl border border-white/5 bg-white/5 px-2 data-[open=true]:bg-white/10 transition-colors">
@@ -153,7 +162,7 @@ export default function HomeStaticSections() {
                                         {t(faq.q)}
                                         <Accordion.Indicator className="text-muted group-data-[open=true]:rotate-180 transition-transform">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </Accordion.Indicator>
                                     </Accordion.Trigger>

@@ -4,6 +4,7 @@ import PlatformLogo from "@/app/components/platform-logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CustomToolsList from "@/app/components/custom-tools-list";
 import AppwriteToolsList from "@/app/components/appwrite-tools-list";
+import PicturaliaProTip from "@/app/components/picturalia-pro-tip";
 
 export default function InstagramToolsPage() {
   const { t } = useLanguage();
@@ -36,11 +37,14 @@ export default function InstagramToolsPage() {
         </div>
 
         {/* Tools Grid - From Appwrite */}
-        <AppwriteToolsList 
-          platform="instagram" 
-          gradientFrom="pink-500" 
-          gradientTo="orange-500" 
+        <AppwriteToolsList
+          platform="instagram"
+          gradientFrom="pink-500"
+          gradientTo="orange-500"
         />
+
+        {/* SEO Cross-Promotion */}
+        <PicturaliaProTip platform="instagram" />
 
         {/* Custom User Tools */}
         <CustomToolsList platform="instagram" />

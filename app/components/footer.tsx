@@ -113,6 +113,29 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Products */}
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-4">
+              {t("footer.products")}
+            </h4>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://picturalia.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors"
+                >
+                  <span className="font-medium text-foreground group-hover:text-accent">Picturalia</span>
+                  <span className="text-xs px-1.5 py-0.5 rounded-full bg-purple-500/10 text-purple-500 border border-purple-500/20">New</span>
+                </a>
+                <p className="text-xs text-muted/60 mt-1">
+                  {t("footer.picturaliaDesc")}
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-border">
@@ -128,10 +151,10 @@ export default function Footer() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="122" height="122" rx="16" fill="currentColor" fillOpacity="0.1"/>
-                <path d="M61 25C41.118 25 25 41.118 25 61s16.118 36 36 36 36-16.118 36-36S80.882 25 61 25zm0 8c15.464 0 28 12.536 28 28S76.464 89 61 89 33 76.464 33 61s12.536-28 28-28z" fill="currentColor"/>
-                <path d="M61 45c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zm0 8c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8z" fill="currentColor"/>
-                <circle cx="61" cy="61" r="4" fill="currentColor"/>
+                <rect width="122" height="122" rx="16" fill="currentColor" fillOpacity="0.1" />
+                <path d="M61 25C41.118 25 25 41.118 25 61s16.118 36 36 36 36-16.118 36-36S80.882 25 61 25zm0 8c15.464 0 28 12.536 28 28S76.464 89 61 89 33 76.464 33 61s12.536-28 28-28z" fill="currentColor" />
+                <path d="M61 45c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zm0 8c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8z" fill="currentColor" />
+                <circle cx="61" cy="61" r="4" fill="currentColor" />
               </svg>
               <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
                 {t("footer.poweredBy")} {t("footer.deepseek")}

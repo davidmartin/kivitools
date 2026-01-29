@@ -4,6 +4,7 @@ import PlatformLogo from "@/app/components/platform-logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CustomToolsList from "@/app/components/custom-tools-list";
 import AppwriteToolsList from "@/app/components/appwrite-tools-list";
+import PicturaliaProTip from "@/app/components/picturalia-pro-tip";
 
 export default function TiktokToolsPage() {
   const { t } = useLanguage();
@@ -36,11 +37,14 @@ export default function TiktokToolsPage() {
         </div>
 
         {/* Tools Grid - From Appwrite */}
-        <AppwriteToolsList 
-          platform="tiktok" 
-          gradientFrom="cyan-500" 
-          gradientTo="fuchsia-500" 
+        <AppwriteToolsList
+          platform="tiktok"
+          gradientFrom="cyan-500"
+          gradientTo="fuchsia-500"
         />
+
+        {/* SEO Cross-Promotion */}
+        <PicturaliaProTip platform="tiktok" />
 
         {/* Custom User Tools */}
         <CustomToolsList platform="tiktok" />

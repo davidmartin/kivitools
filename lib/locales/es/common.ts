@@ -270,4 +270,32 @@ export const common = {
     "toolsPage.noResults": "No se encontraron herramientas",
     "toolsPage.noResultsDesc": "Intenta ajustar tus filtros o búsqueda",
     "toolsPage.clearFilters": "Ver todas las herramientas",
+
+    // Picturalia Banner
+    "picturaliaBanner.new": "Nuevo Lanzamiento",
+    "picturaliaBanner.title": "Transforma tus Fotos en Arte con IA",
+    "picturaliaBanner.description": "¿Te gusta KiviTools? Te encantará Picturalia. Convierte tus selfies y fotos en obras maestras estilo Simpson, LEGO, Anime y más.",
+    "picturaliaBanner.cta": "Probar Picturalia Gratis",
+
+    // Footer Products
+    "footer.products": "Nuestros Productos",
+    "footer.picturaliaDesc": "Transforma fotos con IA",
+
+    // Picturalia Pro Tip (SEO Backlinks)
+    "proTip.title": "Consejo Pro",
+    "proTip.default.heading": "¿Quieres mejorar tus fotos?",
+    "proTip.default.description": "Usa nuestra IA avanzada en Picturalia para transformar cualquier imagen en arte.",
+    "proTip.default.link": "Prueba Picturalia",
+
+    "proTip.instagram.heading": "Haz que tu Feed de Instagram destaque",
+    "proTip.instagram.description": "Genera avatares increíbles y transforma tus selfies en obras de arte (Simpson, Anime, LEGO) para ganar más likes.",
+    "proTip.instagram.link": "Crear Fotos para Instagram",
+
+    "proTip.tiktok.heading": "Crea Visuales Virales para TikTok",
+    "proTip.tiktok.description": "¿Necesitas una foto de perfil única? Convierte tu cara en un personaje de anime o videojuego en segundos.",
+    "proTip.tiktok.link": "Generar Avatares para TikTok",
+
+    "proTip.pinterest.heading": "Imágenes que guardan miles",
+    "proTip.pinterest.description": "Crea pines estéticos y únicos transformando fotos normales en acuarelas o pinturas al óleo.",
+    "proTip.pinterest.link": "Crear Pines Artísticos",
 };
